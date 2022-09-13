@@ -1,0 +1,178 @@
+.poln_naim {position: absolute;
+    width: 1040px;
+    height: 50px;
+    left: 60px;
+    top: 136px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.qr_adres {position: absolute;
+    width: 1040px;
+    height: 50px;
+    left: 60px;
+    top: 254px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.pocht_adres2 {position: absolute;
+    width: 1040px;
+    height: 50px;
+    left: 60px;
+    top: 372px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.unn3 {position: absolute;
+    width: 400px;
+    height: 50px;
+    left: 60px;
+    top: 490px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.ogrn3 {position: absolute;
+    width: 590px;
+    height: 50px;
+    left: 510px;
+    top: 490px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.telefon2 {position: absolute;
+    width: 400px;
+    height: 50px;
+    left: 60px;
+    top: 608px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.email2 {position: absolute;
+    width: 590px;
+    height: 50px;
+    left: 510px;
+    top: 608px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.izm_pas2 {position: absolute;
+    width: 152px;
+    height: 18px;
+    left: 60px;
+    top: 708px;
+
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    /* identical to box height, or 18px */
+
+
+    color: #104781;}
+
+.new_pas_2 {position: absolute;
+    width: 400px;
+    height: 50px;
+    left: 60px;
+    top: 794px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.new_pas_22 {position: absolute;
+    width: 590px;
+    height: 50px;
+    left: 510px;
+    top: 794px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.doks2 {position: absolute;
+    width: 101px;
+    height: 18px;
+    left: 60px;
+    top: 894px;
+
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    /* identical to box height, or 18px */
+
+
+    color: #104781;
+}
+
+.doks_txt2 {position: absolute;
+    width: 425px;
+    height: 105px;
+    left: 60px;
+    top: 942px;
+
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    /* or 21px */
+
+
+    color: #406C9A;}
+
+
+
+.doks_img2{position: absolute;
+    width: 94px;
+    height: 94px;
+    left: 600px;
+    top: 948px;}
+
+.doks_img_txt {position: absolute;
+    width: 194px;
+    height: 18px;
+    left: 709px;
+    top: 964px;
+
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    /* identical to box height, or 18px */
+
+    text-decoration-line: underline;
+
+    color: #104781;
+}
+
+.knopka3 {position: absolute;
+    width: 360px;
+    height: 55px;
+    left: 400px;
+    top: 1327px;
+
+
+    background: #37DCF5;
+    border-radius: 10px;
+
+    border: none;
+
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    /* or 18px */
+
+    text-align: center;
+
+    color: #00345F;}
