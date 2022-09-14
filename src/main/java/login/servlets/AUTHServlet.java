@@ -31,8 +31,6 @@ public class AUTHServlet extends HttpServlet {
 
             ResultSet rs = ps.executeQuery();
 
-            res.setContentType("text/html");
-
             if (rs.next()) {
                 pw.println(rs.getString(1));
                 pw.println(rs.getString(2));
@@ -40,7 +38,6 @@ public class AUTHServlet extends HttpServlet {
                 HttpSession sesh = req.getSession(true);
                 sesh.setAttribute("currentSessionUser", email);
                 res.sendRedirect("/Sobr");
-                pw.println(sesh);
             } else {
                 pw.println("denied");
                 res.sendRedirect("/Sobr/login.html");
