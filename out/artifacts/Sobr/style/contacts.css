@@ -1,0 +1,100 @@
+.bc{
+    position: absolute;
+    top: 127px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #406C9A;
+    margin-left: 80px;
+}
+
+.bc a{
+    text-decoration: none;
+    color: #406C9A;
+}
+
+.heading{
+    position: absolute;
+    width: 131px;
+    height: 38px;
+    top: 188px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    color: #104781;
+    margin-left: 80px;
+}
+
+.recs{
+    position: absolute;
+    width: 600px;
+    height: 210px;
+    top: 256px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #406C9A;
+    margin-left: 80px;
+}
+
+.time{
+    position: absolute;
+    margin-left: 80px;
+    padding: 0;
+    width: 500px;
+    height: 21px;
+    top: 516px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #104781;
+}
+
+.time li{
+    list-style: none;
+    padding-bottom: 15px;
+}
+
+.links{
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #406C9A;
+    position: absolute;
+    width: 700px;
+    height: 84px;
+    top: 659px;
+    margin-left: 80px;
+}
+
+.links_h{
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #104781;
+    position: absolute;
+    width: 200px;
+    height: 21px;
+    top: 623px;
+    margin-left: 80px;
+}
+
+.base_bg {
+    margin-top: 846px;
+}
+
+.base{
+    margin-top: 846px;
+}
