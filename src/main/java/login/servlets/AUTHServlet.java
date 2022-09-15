@@ -6,15 +6,13 @@ import jakarta.servlet.annotation.*;
 import java.sql.*;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.nio.charset.StandardCharsets;
-
 
 @WebServlet("/AUTHServ")
 public class AUTHServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        PrintWriter pw = new PrintWriter("C:\\Users\\manager\\Desktop\\SK_EE\\src\\main\\webapp\\scripts\\popa.txt", StandardCharsets.UTF_8);
+        PrintWriter out = res.getWriter();
 
         String email = req.getParameter("email");
         String pwd = req.getParameter("pwd");
@@ -32,20 +30,16 @@ public class AUTHServlet extends HttpServlet {
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
-                pw.println(rs.getString(1));
-                pw.println(rs.getString(2));
-                pw.println("success");
                 HttpSession sesh = req.getSession(true);
                 sesh.setAttribute("currentSessionUser", email);
-                res.sendRedirect("http://localhost:8080/Sobr");
+                out.println(1);
             } else {
-                pw.println("denied");
-                res.sendRedirect("/Sobr/login.html");
+                out.println(0);
             }
 
             rs.close();
             ps.close();
-            pw.close();
+            out.close();
 
         } catch (Exception e) {
             e.printStackTrace();
