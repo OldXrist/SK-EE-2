@@ -6,6 +6,8 @@
         <element id="directory" name="classes">
           <element id="module-output" name="Sobr" />
           <element id="jpa-descriptors" facet="Sobr/jpa/JPA" />
+          <element id="module-output" name="SK-EE-2" />
+          <element id="jpa-descriptors" facet="SK-EE-2/jpa/JPA" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="postgresql-42.5.0" />
@@ -19,10 +21,11 @@
           <element id="library" level="project" name="Maven: jakarta.json:jakarta.json-api:2.1.0" />
           <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.65" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-annotations-api:9.0.65" />
+          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:4.0.1" />
+          <element id="library" level="project" name="Maven: org.postgresql:postgresql:42.4.2" />
         </element>
       </element>
-      <element id="javaee-facet-resources" facet="Sobr/web/Web" />
-      <element id="artifact" artifact-name="Sobr:war" />
+      <element id="javaee-facet-resources" facet="SK-EE-2/web/Web" />
     </root>
   </artifact>
 </component>

@@ -37,7 +37,7 @@ public class AUTHServlet extends HttpServlet {
                 pw.println("success");
                 HttpSession sesh = req.getSession(true);
                 sesh.setAttribute("currentSessionUser", email);
-                res.sendRedirect("/Sobr");
+                res.sendRedirect("http://localhost:8080/Sobr");
             } else {
                 pw.println("denied");
                 res.sendRedirect("/Sobr/login.html");
