@@ -61,7 +61,6 @@ h2{
     height: 50px;
     background: #E6F5F7;
     border-radius: 10px;
-    border: none;
     padding: 17px;
     font-family: 'Exo 2';
     font-style: normal;
@@ -69,11 +68,23 @@ h2{
     font-size: 16px;
     line-height: 100%;
     color: #406C9A;
-
+    border-style:solid;
+    border-color: #E6F5F7;
 }
 
 .form_f:focus{
     outline: none;
+}
+
+.err{
+    margin-left: 60px;
+    margin-bottom: 15px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    color: #FF0000;
 }
 
 .check{
@@ -112,7 +123,7 @@ h2{
 }
 
 .remember{
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     list-style: none;
     font-family: 'Exo 2';
     font-style: normal;
