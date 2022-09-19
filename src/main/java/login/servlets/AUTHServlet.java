@@ -32,9 +32,12 @@ public class AUTHServlet extends HttpServlet {
             if (rs.next()) {
                 HttpSession sesh = req.getSession(true);
                 sesh.setAttribute("currentSessionUser", email);
+                out.println("JSESSIONID = "+sesh.getId());
+                sql = "UPDATE reg SET session_id = ? WHERE email = ?";
+                PreparedStatement prs = c.prepareStatement(sql);
+                prs.setString(1, sesh.getId());
+                prs.setString(2, email);
                 out.println(1);
-            } else {
-                out.println(0);
             }
 
             rs.close();
