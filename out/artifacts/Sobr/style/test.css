@@ -1,0 +1,20 @@
+#player {
+    position: absolute;
+    width: 560px;
+    height: 587px;
+    margin-left: 970px;
+    top: 126px;
+
+    background: #D9D9D9;
+}
+
+#player2 {
+    position: absolute;
+    width: 560px;
+    height: 587px;
+    margin-left: 970px;
+    top: 753px;
+
+    background: #D9D9D9;
+}
+

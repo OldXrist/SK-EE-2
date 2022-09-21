@@ -1,0 +1,135 @@
+.bc{
+    position: absolute;
+    top: 127px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #406C9A;
+    margin-left: 80px;
+}
+
+.bc a{
+    text-decoration: none;
+    color: #406C9A;
+}
+
+.heading{
+    position: absolute;
+    width: 131px;
+    height: 38px;
+    top: 188px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    color: #104781;
+    margin-left: 80px;
+}
+
+.help_menu{
+    position: absolute;
+    width: 434px;
+    height: 217px;
+    top: 276px;
+    background: #BAF3FC;
+    border-radius: 15px;
+    padding-left: 60px;
+    padding-top: 50px;
+    margin-left: 80px;
+}
+
+.help_menu ul{
+    padding: 0;
+}
+
+.help_menu ul li{
+    list-style: none;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    color: #406C9A;
+    padding-bottom: 15px;
+}
+
+.ep{
+    position: absolute;
+    width: 1160px;
+    height: 90px;
+    top: 543px;
+    background: #BAF3FC;
+    border-radius: 15px;
+    margin-left: 80px;
+}
+
+.ep p{
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    color: #104781;
+    margin: 0;
+    padding-left: 60px;
+    padding-top: 36px;
+    padding-bottom: 66px;
+}
+
+.check{
+    position: absolute;
+    padding-left: 28px;
+    width: 500px;
+    height: 200px;
+    top: 663px;
+    margin-left: 80px;
+}
+
+.check ul li{
+    list-style: none;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #406C9A;
+    padding-bottom: 15px;
+}
+
+.check ul li a{
+    padding-left: 10px;
+}
+
+.cb{
+    width: 17px;
+    height: 17px;
+    border: 1px solid #406C9A;
+    border-radius: 2px;
+}
+
+.start_btn{
+    width: 300px;
+    height: 56px;
+    background: #37DCF5;
+    border-radius: 10px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    color: #00345F;
+    border: none;
+    margin-top: 15px;
+}
+
+.base_bg {
+    margin-top: 951px;
+}
+
+.base{
+    margin-top: 951px;
+}
