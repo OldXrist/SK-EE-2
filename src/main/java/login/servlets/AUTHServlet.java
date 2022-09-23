@@ -33,10 +33,11 @@ public class AUTHServlet extends HttpServlet {
                 HttpSession sesh = req.getSession(true);
                 sesh.setAttribute("currentSessionUser", email);
                 out.println("JSESSIONID = "+sesh.getId());
-                sql = "UPDATE reg SET session_id = ? WHERE email = ?";
-                PreparedStatement prs = c.prepareStatement(sql);
+                String upd = "UPDATE reg SET session_id = ? WHERE email = ?";
+                PreparedStatement prs = c.prepareStatement(upd);
                 prs.setString(1, sesh.getId());
                 prs.setString(2, email);
+                prs.executeUpdate();
                 out.println(1);
             }
 

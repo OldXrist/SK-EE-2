@@ -22,7 +22,6 @@ function Validate_login(){
         $.post("http://localhost:8080/Sobr/AUTHServ", creds, function (data) {
             console.log(creds);
             console.log(data);
-            console.log(document.cookie)
             if (data !== "") {
                // window.location.assign("http://localhost:8080/Sobr/index2.html");
             } else {
