@@ -1,0 +1,307 @@
+
+
+.zagal {position: absolute;
+    width: 529px;
+    height: 38px;
+    margin-left: 80px;
+    top: 188px;
+
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    /* or 38px */
+
+
+    color: #104781;}
+
+.table_bol {position: absolute;
+    width: 1160px;
+    height: 1775px;
+    margin-left: 80px;
+    top: 276px;
+
+    background: #BAF3FC;
+    border-radius: 15px;}
+
+.org_sobr {position: absolute;
+    width: 199px;
+    height: 18px;
+    left: 60px;
+    top: 50px;
+
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    /* identical to box height, or 18px */
+
+
+    color: #104781;}
+
+.naim {position: absolute;
+    width: 1040px;
+    height: 50px;
+    left: 60px;
+    top: 136px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.arbitr {position: absolute;
+    width: 400px;
+    height: 50px;
+    left: 60px;
+    top: 254px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.reg_nomera {position: absolute;
+    width: 590px;
+    height: 50px;
+    left: 510px;
+    top: 254px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.naim_sro {position: absolute;
+    width: 1040px;
+    height: 50px;
+    left: 60px;
+    top: 372px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.telefon2 {position: absolute;
+    width: 400px;
+    height: 50px;
+    left: 60px;
+    top: 490px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.email_2 {position: absolute;
+    width: 590px;
+    height: 50px;
+    left: 510px;
+    top: 490px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.efrsb_txt {position: absolute;
+    width: 58px;
+    height: 18px;
+    left: 60px;
+    top: 590px;
+
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    /* identical to box height, or 18px */
+
+
+    color: #104781;}
+
+.efrsb {position: absolute;
+    width: 1040px;
+    height: 50px;
+    left: 60px;
+    top: 676px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.email {position: absolute;
+    width: 1040px;
+    height: 50px;
+    left: 510px;
+    top: 490px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.sved_o_dolzh {position: absolute;
+    width: 189px;
+    height: 18px;
+    left: 60px;
+    top: 776px;
+
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    /* identical to box height, or 18px */
+
+
+    color: #104781;}
+
+.naim1 {position: absolute;
+    width: 1040px;
+    height: 50px;
+    left: 60px;
+    top: 862px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.kratko_naim {position: absolute;
+    width: 1040px;
+    height: 50px;
+    left: 60px;
+    top: 980px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.unn {position: absolute;
+    width: 400px;
+    height: 50px;
+    left: 60px;
+    top: 1098px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.ogrn {position: absolute;
+    width: 590px;
+    height: 50px;
+    left: 510px;
+    top: 1098px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.sved_o_proc {position: absolute;
+    width: 310px;
+    height: 18px;
+    left: 60px;
+    top: 1198px;
+
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    /* identical to box height, or 18px */
+
+
+    color: #104781;}
+
+.naim_abr_sud {position: absolute;
+    width: 650px;
+    height: 50px;
+    left: 60px;
+    top: 1279px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.nomer_dela {position: absolute;
+    width: 340px;
+    height: 50px;
+    left: 760px;
+    top: 1279px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.osn_dli {position: absolute;
+    width: 1040px;
+    height: 100px;
+    left: 60px;
+    top: 1397px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.doks {position: absolute;
+    width: 613px;
+    height: 18px;
+    left: 60px;
+    top: 1547px;
+
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    /* identical to box height, or 18px */
+
+
+    color: #104781;}
+
+.doks2 {position: absolute;
+    width: 1040px;
+    height: 50px;
+    left: 60px;
+    top: 1595px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.doks3 {position: absolute;
+    width: 1040px;
+    height: 50px;
+    left: 60px;
+    top: 1675px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.forms {  padding:12px;
+    width: 400px;
+    border-radius:10px;
+    border: none;
+}
+
+.forms:focus{
+    outline: none;
+}
+
+
+.forms2 {  padding:12px;
+    width: 1040px;
+    border-radius:10px;
+    border: none;
+}
+
+.forms2:focus{
+    outline: none;
+}
+
+
+.forms3 {  padding:12px;
+    width: 590px;
+    border-radius:10px;
+    border: none;
+}
+
+.forms3:focus{
+    outline: none;
+}
+
+.forms5 {  padding:12px;
+    width: 1040px;
+    height: 100px;
+    border-radius:10px;
+    border: none;
+    padding-bottom: 65px;
+}
+
+.forms5:focus{
+    outline: none;
+}
+
+
+
+

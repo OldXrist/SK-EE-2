@@ -1,0 +1,258 @@
+.bc{
+    position: absolute;
+    top: 127px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #406C9A;
+    margin-left: 80px;
+}
+
+.bc a{
+    text-decoration: none;
+    color: #406C9A;
+}
+
+.heading{
+    position: absolute;
+    width: 131px;
+    height: 38px;
+    top: 188px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    color: #104781;
+    margin-left: 80px;
+}
+
+.help_menu{
+    position: absolute;
+    width: 434px;
+    height: 217px;
+    top: 276px;
+    background: #BAF3FC;
+    border-radius: 15px;
+    padding-left: 60px;
+    padding-top: 50px;
+    margin-left: 80px;
+}
+
+.help_menu ul{
+    padding: 0;
+}
+
+.help_menu ul li{
+    list-style: none;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    color: #406C9A;
+    padding-bottom: 15px;
+}
+
+.ep{
+    position: absolute;
+    width: 1160px;
+    height: 988px;
+    top: 543px;
+    background: #BAF3FC;
+    border-radius: 15px;
+    margin-left: 80px;
+    padding-left: 60px;
+    padding-top: 36px;
+}
+
+.ep p{
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    color: #104781;
+    margin: 0;
+    padding-bottom: 30px;
+}
+
+.ep ul{
+    padding: 0;
+}
+
+.ep ul li{
+    list-style: none;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    color: #406C9A;
+    padding-bottom: 15px;
+}
+
+.ep ul li a{
+    font-size: 16px;
+}
+
+.ep ul li img{
+    margin-left: 680px;
+    margin-bottom: 5px;
+}
+
+.ep ul li input::placeholder{
+    color: #406C9A;
+}
+
+.oneline{
+    width: 1040px;
+    height: 50px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 30px;
+    padding: 17px;
+    color: #406C9A;
+    font-size: 16px;
+}
+
+.oneline:focus{
+    outline: none;
+}
+
+.multline{
+    width: 1040px;
+    height: 100px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    border: none;
+    padding-bottom: 67px;
+    padding-left: 17px;
+    color: #406C9A;
+    font-size: 16px;
+}
+
+.multline:focus{
+    outline: none;
+}
+
+.inline{
+    display: inline-block;
+}
+
+.inline li input{
+    width: 500px;
+    height: 50px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    border: none;
+}
+
+.inline li input:focus{
+    outline: none;
+}
+
+.inline li input::placeholder{
+    color: #406C9A;
+    font-size: 16px;
+}
+
+.second{
+    margin-left: 80px;
+}
+
+.phone{
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #406C9A;
+}
+
+h6{
+    width: 500px;
+    height: 42px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: #406C9A;
+}
+
+.upload{
+    position: absolute;
+    top: 600px;
+    width: 500px;
+    height: 90px;
+    margin-left: 545px;
+}
+
+.upload input{
+    display: none;
+}
+
+label{
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    color: #104781;
+    cursor: pointer;
+    padding-left: 16px;
+}
+
+.capcha{
+    position: absolute;
+    width: 300px;
+    height: 79px;
+    margin-left: 455px;
+    top: 1270px;
+    background: #FFFFFF;
+    padding: 30px;
+    text-align: center;
+}
+
+.capcha p{
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    color: #104781;
+}
+
+.send_btn{
+    position: absolute;
+    width: 360px;
+    height: 55px;
+    margin-left: 430px;
+    top: 1426px;
+    background: #37DCF5;
+    border-radius: 10px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    color: #00345F;
+    border: none;
+}
+
+input{
+    padding-left: 17px;
+}
+
+.base_bg {
+    margin-top: 1621px;
+}
+
+.base{
+    margin-top: 1621px;
+}
