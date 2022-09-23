@@ -1,0 +1,259 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../../../style/shared.css">
+    <link rel="stylesheet" type="text/css" href="../../../style/lk_org_zaiav.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>Заочное собрание</title>
+</head>
+<body>
+<div class="menu">
+    <ul>
+        <li class="logo"><a href="../../../help/contacts"><img src="../../../img/Logo.svg" /></a></li>
+        <li class="nav_item"><a href="../../../index">Главная</a></li>
+        <li class="nav_item"><a href="../../../reestr">Реестр собраний</a></li>
+        <li class="nav_item"><a href="../../../help/help_1">Помощь</a></li>
+        <li class="nav_item"><a href="../../../help/contacts">Контакты</a></li>
+        <li class="nav_item"><a href="../../../lichnui_kobinetu/lk_uch/lk_uch_ip2/lk_uch_ip2"><p class="nav_login">Зинаида И.</p></a></li>
+        <li class="nav_item"><a href="../../../signin"><span id="clock" style="color:#ffffff;"></span></a></li>
+        <li class="nav_item"><a href="../../../help/contacts"><img src="../../../img/logout%201%20(Traced).png" /></a></li>
+    </ul>
+</div>
+
+<div class="container">
+    <div class="ogl">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a class="anti_tekst"  href="#">Главная</a></li>
+                <li class="breadcrumb-item"><a class="anti_tekst"  href="#">Личный кабинет организатора</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Заявка на проведение очного собрания</li>
+            </ol>
+        </nav>
+    </div>
+
+    <p class="zaiavka">Заявка на проведение очного собрания</p>
+
+
+    <form class="table_org">
+        <p class="obshie_dan">Общие данные о собрании</p>
+        <div class="data_vrem">
+            <label for="data_vrem" class="txt_obsh">Дата и время собрания</label>
+            <input type="email" class="forms5" id="data_vrem" placeholder="01.01.0000">
+        </div>
+        <div class="time">
+            <label for="time" class="txt_obsh"></label>
+            <input type="email" class="forms6" id="time" placeholder="00:00">
+        </div>
+        <div class="povestka_dnia">
+            <label for="povestka_dnia" class="txt_obsh">Повестка дня</label>
+            <input type="email" class="forms4" id="povestka_dnia" placeholder="Повестка дня">
+        </div>
+
+        <p class="inf_ob_sobr">Информация о собрании кредиторов</p>
+
+        <div class="data_vrem2">
+            <label for="data_vrem2" class="txt_obsh">Начало предоставления заявок на участие*</label>
+            <input type="email" class="forms5" id="data_vrem2" placeholder="01.01.0000">
+        </div>
+        <div class="time2">
+            <label for="time2" class="txt_obsh"></label>
+            <input type="email" class="forms6" id="time2" placeholder="00:00">
+        </div>
+        <div class="data_vrem3">
+            <label for="data_vrem3" class="txt_obsh">Окончание предоставления заявок на участие*</label>
+            <input type="email" class="forms5" id="data_vrem3" placeholder="01.01.0000">
+        </div>
+        <div class="time3">
+            <label for="time3" class="txt_obsh"></label>
+            <input type="email" class="forms6" id="time3" placeholder="00:00">
+        </div>
+        <div class="data_vrem4">
+            <label for="data_vrem4" class="txt_obsh">Начало приема бюллетеней*</label>
+            <input type="email" class="forms5" id="data_vrem4" placeholder="01.01.0000">
+        </div>
+        <div class="time4">
+            <label for="time4" class="txt_obsh"></label>
+            <input type="email" class="forms6" id="time4" placeholder="00:00">
+        </div>
+        <div class="data_vrem5">
+            <label for="data_vrem5" class="txt_obsh">Окончание приема бюллетеней*</label>
+            <input type="email" class="forms5" id="data_vrem5" placeholder="01.01.0000">
+        </div>
+        <div class="time5">
+            <label for="time5" class="txt_obsh"></label>
+            <input type="email" class="forms6" id="time5" placeholder="00:00">
+        </div>
+        <div class="data_vrem6">
+            <label for="data_vrem6" class="txt_obsh">Дата подписания протокола собрания*</label>
+            <input type="email" class="forms5" id="data_vrem6" placeholder="01.01.0000">
+        </div>
+        <div class="time6">
+            <label for="time6" class="txt_obsh"></label>
+            <input type="email" class="forms6" id="time6" placeholder="00:00">
+        </div>
+        <div class="obem_sobr">
+            <label for="obem_sobr" class="txt_obsh">Объем собрания</label>
+            <input type="email" class="forms4" id="obem_sobr" placeholder="Выбрать количество">
+        </div>
+
+        <p class="dan_org_sobr">Данные организатора собрания</p>
+
+        <div class="unn">
+            <label for="unn" class="txt_obsh">ИНН*</label>
+            <input type="email" class="forms" id="unn" placeholder="11111111">
+        </div>
+        <div class="ogrn">
+            <label for="ogrn" class="txt_obsh">ОГРН*</label>
+            <input type="email" class="forms" id="ogrn" placeholder="000 000 000 00">
+        </div>
+        <div class="naim_org">
+            <label for="naim_org" class="txt_obsh">Наименование организации*</label>
+            <input type="email" class="forms2" id="naim_org" placeholder="Полное наименование">
+        </div>
+        <div class="qr_adres">
+            <label for="qr_adres" class="txt_obsh">Юридический адрес*</label>
+            <input type="email" class="forms2" id="qr_adres" placeholder="Юридический адрес">
+        </div>
+        <div class="pocht_adres">
+            <label for="pocht_adres" class="txt_obsh">Почтовый адрес*</label>
+            <input type="email" class="forms2" id="pocht_adres" placeholder="Почтовый адрес">
+        </div>
+        <p class="efrsb_txt">Информация для интеграции с ЕФРСБ</p>
+        <div class="efrsb">
+            <label for="efrsb" class="txt_obsh">Идентификационный номер сообщения о публикации торгов на сайте ЕФРСБ*</label>
+            <input type="email" class="forms2" id="efrsb" placeholder="Идентификационный номер">
+        </div>
+        <div class="data_razm">
+            <label for="data_razm" class="txt_obsh">Дата размещения сообщения о публикации торгов на сайте ЕФРСБ*</label>
+            <input type="email" class="forms2" id="data_razm" placeholder="01.01.0000">
+        </div>
+        <div class="telefon">
+            <label for="telefon" class="txt_obsh">Телефон*</label>
+            <input type="email" class="forms4" id="telefon" placeholder="+7 (900) 000-12-34">
+        </div>
+        <div class="email">
+            <label for="email" class="txt_obsh">Электронная почта*</label>
+            <input type="email" class="forms4" id="email" placeholder="ivanova12@mail.ru">
+        </div>
+        <div class="naim_abr_sud">
+            <label for="naim_abr_sud" class="txt_obsh">Наименование арбитражного суда*</label>
+            <input type="email" class="forms4" id="naim_abr_sud" placeholder="Наименование арбитражного суда">
+        </div>
+        <div class="nomer_dela">
+            <label for="nomer_dela" class="txt_obsh">Номер дела о банкротстве*</label>
+            <input type="email" class="forms4" id="nomer_dela" placeholder="Номер дела о банкротстве">
+        </div>
+        <div class="osn_dlia_sobr">
+            <label for="osn_dlia_sobr" class="txt_obsh">Основание для собрания кредиторов</label>
+            <input type="email" class="forms4" id="osn_dlia_sobr" placeholder="Основание для собрания кредиторов">
+        </div>
+        <div class="tip_dolzh">
+            <label for="tip_dolzh" class="txt_obsh">Тип должника</label>
+            <input type="email" class="forms4" id="tip_dolzh" placeholder="Юридическое лицо">
+        </div>
+        <div class="unn2">
+            <label for="unn2" class="txt_obsh">ИНН</label>
+            <input type="email" class="forms4" id="unn2" placeholder="11111111">
+        </div>
+        <div class="ogrn2">
+            <label for="ogrn2" class="txt_obsh">ОГРН</label>
+            <input type="email" class="forms4" id="ogrn2" placeholder="000 000 000 00">
+        </div>
+        <div class="naim_dolzh">
+            <label for="naim_dolzh" class="txt_obsh">Наименование должника</label>
+            <input type="email" class="forms2" id="naim_dolzh" placeholder="Полное наименование">
+        </div>
+        <div class="ud_lich">
+            <label for="ud_lich" class="txt_obsh"></label>
+            <input type="email" class="forms2" id="ud_lich" placeholder="Документ, удостоверяющий личность">
+        </div>
+        <div class="ud_ruk">
+            <label for="ud_ruk" class="txt_obsh"></label>
+            <input type="email" class="forms2" id="ud_ruk" placeholder="Документы, подтверждающие полномочия руководителя или иного лица на осуществление действий от имени заявителя">
+        </div>
+        <p class="kontaktu">Контактная информация для участников собрания</p>
+        <p class="sved_o_proc">Сведения о процедуре банкротства</p>
+        <p class="dolzhnik">Должник</p>
+        <p class="doks">Документы, которые необходимо предоставить участникам собрания</p>
+        <a class="knopka txtr" href="#"><p class="topik3">Добавить документ</p></a>
+        <p class="dop_doks">Дополнительные документы по собранию</p>
+        <div class="dop_doks_txt">Перечень документов, которые необходимо приложить к заявке, указан в Регламенте работы сервиса
+            <p></p>
+            Максимальный объём загружаемого файла 15 Мб. Документ должен быть в формате pdf или jpg </div>
+        <img class="doks_img" src="../../../img/add%201%20(Traced).svg">
+        <p class="prek_dok">Прикрепить документ</p>
+        <table class="docs_tbl">
+            <tr>
+                <td>Загруженные файлы</td>
+            </tr>
+        </table>
+        <div class="move">
+            <p class="voprosu">Вопросы повестки дня</p>
+            <a class="knopka2 txtr" href="#"><p class="topik3">Добавить вопрос</p></a>
+            <div class="nim_cod">
+                <label for="nim_cod" class="txt_obsh">Введите наименование юрид. лица или ФИО ИП/физ. лица</label>
+                <input type="email" class="forms7" id="nim_cod" placeholder="Наименование юрид. лица или ФИО ИП/физ. лица">
+            </div>
+            <a class="knopka3 txtr" href="#"><p class="topik3">Добавить</p></a>
+
+            <table class="table_fio">
+                <tr>
+                    <th class="shirina">Наименование юрид. лица или ФИО ИП/физ. лица</th>
+                    <th class="uzko">Email</th>
+                </tr>
+                <tr>
+                    <th class="shirina"></th>
+                    <th class="uzko"></th>
+                </tr>
+            </table>
+            <a class="knopka4 txtr" href="o_sobr_org_2.html" ><p class="topik">Подписать заявку электронной подписью</p></a>
+            <a class="knopka5 txtr" href="#" ><p class="topik2">Сохранить заявку как черновик</p></a>
+        </div>
+
+    </form>
+    <div class="add_docs">
+        <p>Документы участников</p>
+        <label for="doc">
+            <img src="../../../img/add%201%20(Traced).svg"/><a>Прикрепить документ</a>
+            <input type="file" id="doc"/>
+        </label><br>
+        <input type="submit" value="Загрузить документ" class="upl"/><br>
+        <h6>Отменить</h6>
+    </div>
+
+
+    <div class="container">
+        <div class="content">
+            <div class="base_bg"></div>
+            <div class="base">
+                <ul>
+                    <li class="base_logo"><a href="#"><img src="../../../img/Logo.svg" /></a></li>
+                    <li class="base_item1"><a>Выйти</a></li>
+                </ul>
+                <ul class="base_links">
+                    <li class="base_item2"><a class="footer_txt" href="../../../index" >Главная</a></li>
+                    <li class="base_item2"><a class="footer_txt" href="../../../reestr">Реестр собраний</a></li>
+                    <li class="base_item2"><a class="footer_txt" href="../../../help/help_1">Помощь</a></li>
+                    <li class="base_item2"><a class="footer_txt" href="../../../help/contacts">Контакты</a></li>
+                </ul>
+                <p class="copyright">© 2011-2022 Оператор торговой площадки - ООО «ТендерСтандарт». Все права защищены.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    setInterval(function () {
+        var now = new Date();
+        var clock = document.getElementById("clock");
+        clock.innerHTML = now.toLocaleTimeString();
+    }, 1000);
+</script>
+<script src="../../../jquery/jquery-3.6.0.js"></script>
+<script src="../../../scripts/lk_docs.js"></script>
+<script href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
