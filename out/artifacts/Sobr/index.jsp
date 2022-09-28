@@ -21,7 +21,7 @@
     <li class="nav_item"><a href="reestr">Реестр собраний</a></li>
     <li class="nav_item"><a href="help/help_1">Помощь</a></li>
     <li class="nav_item"><a href="help/contacts">Контакты</a></li>
-    <li class="nav_item"><a href="login"> <button class="nav_btn">Войти</button></a></li>
+    <li class="nav_item"><a href="login"><button class="nav_btn">Войти</button></a></li>
     <li class="nav_item"><a href="signin">Зарегистрироваться</a></li>
   </ul>
 </div>
