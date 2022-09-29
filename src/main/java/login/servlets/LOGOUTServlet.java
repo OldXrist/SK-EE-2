@@ -1,4 +1,4 @@
-package id.check.servlets;
+package login.servlets;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -9,35 +9,29 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
-@WebServlet("/MAINServlet")
-public class MAINServlet extends HttpServlet {
+@WebServlet("/LOGOUTServlet")
+public class LOGOUTServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         PrintWriter out = res.getWriter();
-        HttpSession sesh = req.getSession();
-        String id = sesh.getId();
+        HttpSession sesh = req.getSession(true);
         String email = String.valueOf(sesh.getAttribute("sessionUser"));
+        sesh.invalidate();
 
         try {
             Class.forName("org.postgresql.Driver");
             Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres", "postgres", "postgresql");
 
-            String sql = "SELECT name, poln_naim FROM reg WHERE session_id = ? AND email = ?";
+            String sql = "UPDATE reg SET session_id = NULL WHERE email = ?";
             PreparedStatement ps = c.prepareStatement(sql);
 
-            ps.setString(1, id);
-            ps.setString(2, email);
-            ResultSet rs = ps.executeQuery();
+            ps.setString(1, email);
 
-            if (rs.next()) {
-                String naim = rs.getString("poln_naim");
-                String name = rs.getString("name");
-                out.println(naim);
-            }
+            ps.executeUpdate();
 
-            rs.close();
+            res.sendRedirect("http://localhost:8080/Sobr/index2.html");
+
             ps.close();
             out.close();
 

@@ -23,7 +23,7 @@ function Validate_login(){
             console.log(creds);
             console.log(data);
             if (data !== "") {
-               // window.location.assign("http://localhost:8080/Sobr/index2.html");
+                window.location.assign("http://localhost:8080/Sobr/index2.html");
             } else {
                 $(".err").show()
                 document.getElementById("email").style.borderColor = 'red'
