@@ -17,6 +17,9 @@ public class LOGOUTServlet extends HttpServlet {
         PrintWriter out = res.getWriter();
         HttpSession sesh = req.getSession(true);
         String email = String.valueOf(sesh.getAttribute("sessionUser"));
+        sesh.removeAttribute("email");
+        sesh.removeAttribute("role");
+        sesh.removeAttribute("type");
         sesh.invalidate();
 
         try {

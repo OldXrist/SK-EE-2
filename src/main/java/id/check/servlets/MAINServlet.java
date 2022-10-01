@@ -19,6 +19,8 @@ public class MAINServlet extends HttpServlet {
         HttpSession sesh = req.getSession();
         String id = sesh.getId();
         String email = String.valueOf(sesh.getAttribute("sessionUser"));
+        String role = String.valueOf(sesh.getAttribute("role"));
+        String type = String.valueOf(sesh.getAttribute("type"));
 
         try {
             Class.forName("org.postgresql.Driver");
@@ -31,10 +33,14 @@ public class MAINServlet extends HttpServlet {
             ps.setString(2, email);
             ResultSet rs = ps.executeQuery();
 
-            if (rs.next()) {
-                String naim = rs.getString("poln_naim");
-                String name = rs.getString("name");
-                out.println(naim);
+            while (rs.next()){
+                if (role.equals("ЮЛ")) {
+                    String naim = rs.getString("poln_naim");
+                    out.println(naim);
+                } else {
+                    String name = rs.getString("name");
+                    out.println(name);
+                }
             }
 
             rs.close();

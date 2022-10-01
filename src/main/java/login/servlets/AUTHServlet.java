@@ -29,14 +29,11 @@ public class AUTHServlet extends HttpServlet {
 
             ResultSet rs = ps.executeQuery();
 
-            //String role = rs.getString("role_users");
-            //String type = rs.getString("type_users");
-
             if (rs.next()) {
                 HttpSession sesh = req.getSession(true);
                 sesh.setAttribute("sessionUser", email);
-                //sesh.setAttribute("role", role);
-                //sesh.setAttribute("type", type);
+                sesh.setAttribute("role", rs.getString("role_users"));
+                sesh.setAttribute("type", rs.getString("type_users"));
                 out.println("JSESSIONID = " + sesh.getId());
                 String upd = "UPDATE reg SET session_id = ? WHERE email = ?";
                 PreparedStatement prs = c.prepareStatement(upd);
