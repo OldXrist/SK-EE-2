@@ -21,27 +21,6 @@ public class LOGOUTServlet extends HttpServlet {
         sesh.removeAttribute("role");
         sesh.removeAttribute("type");
         sesh.invalidate();
-
-        try {
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres", "postgres", "postgresql");
-
-            String sql = "UPDATE reg SET session_id = NULL WHERE email = ?";
-            PreparedStatement ps = c.prepareStatement(sql);
-
-            ps.setString(1, email);
-
-            ps.executeUpdate();
-
-            res.sendRedirect("http://localhost:8080/Sobr/index2.html");
-
-            ps.close();
-            out.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.err.println(e.getClass().getName() + ": " + e.getMessage());
-            System.exit(0);
-        }
+        res.sendRedirect("http://localhost:8080/Sobr/index2.html");
     }
 }

@@ -58,43 +58,43 @@
             <p class="ld2">Личные данные</p>
 
             <div class="poln_naim">
-                <label for="fam" class="txt_obsh">Полное наименование*</label>
-                <input type="text" class="forms4" id="fam" placeholder="Полное наименование">
+                <label for="poln_naim" class="txt_obsh">Полное наименование*</label>
+                <input type="text" class="forms4" id="poln_naim" placeholder="Полное наименование">
             </div>
             <div class="qr_adres">
-                <label for="fam1" class="txt_obsh">Юридический адрес*</label>
-                <input type="text" class="forms4" id="fam1" placeholder="Юридический адрес">
+                <label for="qr_adrs" class="txt_obsh">Юридический адрес*</label>
+                <input type="text" class="forms4" id="qr_adrs" placeholder="Юридический адрес">
             </div>
             <div class="pocht_adres2">
-                <label for="fam2" class="txt_obsh">Почтовый адрес*</label>
-                <input type="text" class="forms4" id="fam2" placeholder="111116. г. Москва, а/я №87">
+                <label for="pocht_adres" class="txt_obsh">Почтовый адрес*</label>
+                <input type="text" class="forms4" id="pocht_adres" placeholder="111116. г. Москва, а/я №87">
             </div>
             <div class="unn3">
-                <label for="fam3" class="txt_obsh">ИНН*</label>
-                <input type="text" class="forms4" id="fam3" placeholder="00000000">
+                <label for="unn" class="txt_obsh">ИНН*</label>
+                <input type="text" class="forms4" id="unn" placeholder="00000000">
             </div>
             <div class="ogrn3">
-                <label for="fam4" class="txt_obsh">Код ОГРН*</label>
-                <input type="text" class="forms4" id="fam4" placeholder="000 000 000 00">
+                <label for="ogrn" class="txt_obsh">Код ОГРН*</label>
+                <input type="text" class="forms4" id="ogrn" placeholder="000 000 000 00">
             </div>
             <div class="telefon2">
-                <label for="fam41" class="txt_obsh">Телефон*</label>
-                <input type="text" class="forms4" id="fam41" placeholder="+7 (900) 000-12-34">
+                <label for="phone" class="txt_obsh">Телефон*</label>
+                <input type="text" class="forms4" id="phone" placeholder="+7 (900) 000-12-34">
             </div>
             <div class="email2">
-                <label for="fam5" class="txt_obsh">Электронная почта*</label>
-                <input type="text" class="forms4" id="fam5" placeholder="ivanova12@mail.ru">
+                <label for="email" class="txt_obsh">Электронная почта*</label>
+                <input type="text" class="forms4" id="email" placeholder="ivanova12@mail.ru">
             </div>
 
             <p class="izm_pas2">Изменить пароль</p>
 
             <div class="new_pas_2">
-                <label for="fam62" class="txt_obsh">Новый пароль</label>
-                <input type="text" class="forms4" id="fam62" placeholder="********">
+                <label for="new_pas" class="txt_obsh">Новый пароль</label>
+                <input type="text" class="forms4" id="new_pas" placeholder="********">
             </div>
             <div class="new_pas_22">
-                <label for="fam6" class="txt_obsh">Повторите новый пароль</label>
-                <input type="text" class="forms4" id="fam6" placeholder="********">
+                <label for="new_pas2" class="txt_obsh">Повторите новый пароль</label>
+                <input type="text" class="forms4" id="new_pas2" placeholder="********">
             </div>
 
 
@@ -109,7 +109,7 @@
 
             <img src="../../../img/add%201%20(Traced).svg" class="doks_img2"/>
             <p class="doks_img_txt">Прикрепить документ</p>
-            <button type="button" class="knopka">Сохранить и подписать изменения ЭП</button>
+            <button type="button" class="knopka" onclick="Update_data()">Сохранить и подписать изменения ЭП</button>
 
 
         </form>
@@ -139,6 +139,7 @@
         <div class="table_item"></div>
     </div>
     <script src="../../../jquery/jquery-3.6.0.js"></script>
+    <script src="../../../scripts/lk_uch_ql.js"></script>
     <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 </html>

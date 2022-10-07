@@ -134,8 +134,8 @@
                         <input type="text" class="forms4" id="num" placeholder="000 000">
                     </div>
                     <div class="data_vidochi">
-                        <label for="vidacha" class="txt_obsh">Дата выдачи*</label>
-                        <input type="text" class="forms5" id="vidacha" placeholder="01.01.0000">
+                        <label for="data" class="txt_obsh">Дата выдачи*</label>
+                        <input type="text" class="forms5" id="data" placeholder="01.01.0000">
                     </div>
 
 
@@ -240,7 +240,7 @@
 
     $(document).ready(function() {
         $.mask.definitions['0'] = "[0-9]";
-        $("#vidacha").mask("00.00.0000");
+        $("#data").mask("00.00.0000");
     });
 
     $(document).ready(function() {

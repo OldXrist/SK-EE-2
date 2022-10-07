@@ -5,13 +5,11 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet("/FILTERServlet")
 public class FILTERServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        PrintWriter out = res.getWriter();
         HttpSession sesh = req.getSession();
         String role = String.valueOf(sesh.getAttribute("role"));
         String type = String.valueOf(sesh.getAttribute("type"));

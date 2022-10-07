@@ -57,12 +57,12 @@
             <p class="ld2">Личные данные</p>
 
             <div class="famil">
-                <label for="fam" class="txt_obsh">Фамилия*</label>
-                <input type="text" class="forms4" id="fam" placeholder="Иванова">
+                <label for="famil" class="txt_obsh">Фамилия*</label>
+                <input type="text" class="forms4" id="famil" placeholder="Иванова">
             </div>
             <div class="name">
-                <label for="nam" class="txt_obsh">Имя*</label>
-                <input type="text" class="forms4" id="nam" placeholder="Светлана">
+                <label for="name" class="txt_obsh">Имя*</label>
+                <input type="text" class="forms4" id="name" placeholder="Светлана">
             </div>
             <div class="otch">
                 <label for="otch" class="txt_obsh">Отчество*</label>
@@ -128,7 +128,7 @@
 
             <img src="../../../img/add%201%20(Traced).svg" class="dor"/>
             <p class="prek_dok">Прикрепить документ</p>
-            <button type="button" class="knopka">Сохранить и подписать изменения ЭП</button>
+            <button type="button" class="knopka" onclick="Update_data()">Сохранить и подписать изменения ЭП</button>
 
 
         </form>
@@ -158,6 +158,7 @@
         <div class="table_item"></div>
     </div>
     <script src="../../../jquery/jquery-3.6.0.js"></script>
+    <script src="../../../scripts/lk_uch_fl.js"></script>
     <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 </html>

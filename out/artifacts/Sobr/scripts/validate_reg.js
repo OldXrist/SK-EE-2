@@ -97,6 +97,11 @@ function Validate_reg () {
         document.getElementById("reg_nomer_au").style.borderColor = 'red';
         k += 1;
     }
+    if (document.getElementById("data") === null) {
+    } else if (document.getElementById("data").value.length === 0) {
+        document.getElementById("data").style.borderColor = 'red';
+        k += 1;
+    }
     if (document.getElementById("email_2").value.length === 0 ||
         document.getElementById("email_2").value !== document.getElementById("email").value) {
         document.getElementById("email_2").style.borderColor = 'red';
@@ -131,7 +136,7 @@ function Validate_reg () {
                 reg_date: Date
             };
 
-            $.post("http://localhost:8080/Sobr/ULServ", user, function () {
+            $.post("http://localhost:8080/Sobr/ULServlet", user, function () {
                 console.log(user);
             });
 
@@ -161,14 +166,16 @@ function Validate_reg () {
                 name: document.getElementById("name").value,
                 otch: document.getElementById("otch").value,
                 snils: document.getElementById("snils").value,
+                data: document.getElementById("data").value,
                 pocht_adres: document.getElementById("pocht_adres").value,
                 seria: document.getElementById("ser").value,
                 nomer: document.getElementById("num").value,
                 kem_vidan: document.getElementById("kem_vudan").value,
                 reg_date: Date
             };
+            console.log(user)
 
-            $.post("http://localhost:8080/Sobr/ULServ", user, function () {
+            $.post("http://localhost:8080/Sobr/IPServlet", user, function () {
                 console.log(user);
             });
 
@@ -184,10 +191,11 @@ function Validate_reg () {
             document.getElementById("name").disabled = true
             document.getElementById("otch").disabled = true
             document.getElementById("snils").disabled = true
+            document.getElementById("data").disabled = true
             document.getElementById("pocht_adres").disabled = true
             document.getElementById("ser").disabled = true
-            document.getElementById("nomer").disabled = true
-            document.getElementById("kem_vudan").disabled = true
+            document.getElementById("num").disabled = true
+            document.getElementById("vidacha").disabled = true
             document.getElementById("email_2").disabled = true
             document.getElementsByClassName("knopka2").disabled = true
 
@@ -203,13 +211,14 @@ function Validate_reg () {
                 name: document.getElementById("name").value,
                 otch: document.getElementById("otch").value,
                 snils: document.getElementById("snils").value,
+                data: document.getElementById("data").value,
                 seria: document.getElementById("ser").value,
                 nomer: document.getElementById("num").value,
                 kem_vidan: document.getElementById("kem_vudan").value,
                 reg_date: Date
             };
 
-            $.post("http://localhost:8080/Sobr/ULServ", user, function () {
+            $.post("http://localhost:8080/Sobr/FLServlet", user, function () {
                 console.log(user);
             });
 
@@ -227,6 +236,7 @@ function Validate_reg () {
             document.getElementById("pocht_adres").disabled = true
             document.getElementById("ser").disabled = true
             document.getElementById("nomer").disabled = true
+            document.getElementById("data").disbled = true
             document.getElementById("kem_vudan").disabled = true
             document.getElementById("email_2").disabled = true
             document.getElementsByClassName("knopka2").disabled = true
@@ -245,15 +255,36 @@ function Validate_reg () {
                 snils: document.getElementById("snils").value,
                 seria: document.getElementById("ser").value,
                 nomer: document.getElementById("num").value,
+                data: document.getElementById("data").value,
                 naim_org: document.getElementById("naim_org").value,
                 kem_vidan: document.getElementById("kem_vudan").value,
                 reg_nomer_au: document.getElementById("reg_nomer_au").value,
                 reg_date: Date
             };
 
-            $.post("http://localhost:8080/Sobr/ULServ", user, function () {
+            $.post("http://localhost:8080/Sobr/AUServlet", user, function () {
                 console.log(user);
             });
+
+            $(".wait").fadeIn()
+            $(".table2").animate({
+                opacity: "0.3"
+            });
+
+            document.getElementById("inn").disabled = true
+            document.getElementById("phone").disabled = true
+            document.getElementById("email").disabled = true
+            document.getElementById("famil").disabled = true
+            document.getElementById("name").disabled = true
+            document.getElementById("otch").disabled = true
+            document.getElementById("snils").disabled = true
+            document.getElementById("pocht_adres").disabled = true
+            document.getElementById("ser").disabled = true
+            document.getElementById("num").disabled = true
+            document.getElementById("data").disbled = true
+            document.getElementById("kem_vudan").disabled = true
+            document.getElementById("email_2").disabled = true
+            document.getElementsByClassName("knopka2").disabled = true
         }
     }
 }

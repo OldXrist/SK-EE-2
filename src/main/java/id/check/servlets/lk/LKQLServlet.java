@@ -1,4 +1,4 @@
-package id.check.servlets;
+package id.check.servlets.lk;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -11,53 +11,52 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-@WebServlet("/MAINServlet")
-public class MAINServlet extends HttpServlet {
+@WebServlet(name = "LKQLServlet", value = "/LKQLServlet")
+public class LKQLServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         PrintWriter out = res.getWriter();
         HttpSession sesh = req.getSession();
-        String id = sesh.getId();
         String email = String.valueOf(sesh.getAttribute("sessionUser"));
-        String role = String.valueOf(sesh.getAttribute("role"));
 
         try {
             Class.forName("org.postgresql.Driver");
             Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres", "postgres", "postgresql");
-            // TODO: 03.10.2022
 
-            String sql = "";
-            switch (role) {
+            String sql = "SELECT * FROM ql WHERE email = ?";
+
+           /*
+           switch (role) {
                 case "ЮЛ":
-                    sql = "SELECT poln_naim FROM ql WHERE email = ?";
+                    sql = "SELECT * FROM ql WHERE email = ?";
                     break;
                 case "ИП":
-                    sql = "SELECT name FROM ip WHERE email = ?";
+                    sql = "SELECT * FROM ip WHERE email = ?";
                     break;
                 case "ФЛ":
-                    sql = "SELECT name FROM fl WHERE email = ?";
+                    sql = "SELECT * FROM fl WHERE email = ?";
                     break;
                 case "АУ":
-                    sql = "SELECT name FROM au WHERE email = ?";
+                    sql = "SELECT * FROM au WHERE email = ?";
                     break;
-                default:
-                    sql = "SELECT poln_naim FROM ql WHERE email = ?";
-                    break;
+                // TODO: 04.10.2022 default redirect to 404
             }
+
+            */
 
             PreparedStatement ps = c.prepareStatement(sql);
 
             ps.setString(1, email);
             ResultSet rs = ps.executeQuery();
 
-            while (rs.next()) {
-                if (role.equals("ЮЛ")) {
-                    String naim = rs.getString("poln_naim");
-                    out.println(naim);
-                } else {
-                    String name = rs.getString("name");
-                    out.println(name);
-                }
+            while (rs.next()){
+                out.println(rs.getLong(3));
+                out.println(rs.getLong(4));
+                out.println(rs.getString(5));
+                out.println(rs.getString(6));
+                out.println(rs.getString(7));
+                out.println(rs.getString(8));
+                out.println(rs.getString(9));
             }
 
             rs.close();

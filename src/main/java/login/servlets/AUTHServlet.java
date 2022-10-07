@@ -21,7 +21,7 @@ public class AUTHServlet extends HttpServlet {
             Class.forName("org.postgresql.Driver");
             Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres", "postgres", "postgresql");
 
-            String sql = "SELECT email, type_users, role_users, pass FROM reg WHERE email = ? AND pass = ?";
+            String sql = "SELECT email, type_users, role_users, pass FROM main WHERE email = ? AND pass = ?";
             PreparedStatement ps = c.prepareStatement(sql);
 
             ps.setString(1, email);
@@ -35,11 +35,6 @@ public class AUTHServlet extends HttpServlet {
                 sesh.setAttribute("role", rs.getString("role_users"));
                 sesh.setAttribute("type", rs.getString("type_users"));
                 out.println("JSESSIONID = " + sesh.getId());
-                String upd = "UPDATE reg SET session_id = ? WHERE email = ?";
-                PreparedStatement prs = c.prepareStatement(upd);
-                prs.setString(1, sesh.getId());
-                prs.setString(2, email);
-                prs.executeUpdate();
                 out.println(1);
             }
 
