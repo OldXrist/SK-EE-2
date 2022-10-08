@@ -195,7 +195,7 @@ function Validate_reg () {
             document.getElementById("pocht_adres").disabled = true
             document.getElementById("ser").disabled = true
             document.getElementById("num").disabled = true
-            document.getElementById("vidacha").disabled = true
+            document.getElementById("data").disabled = true
             document.getElementById("email_2").disabled = true
             document.getElementsByClassName("knopka2").disabled = true
 
