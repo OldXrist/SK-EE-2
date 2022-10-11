@@ -109,6 +109,9 @@ $(".upl").click(function (){
     $(".knopka5").animate({
         top: "+=50px"
     });
+    $(".povestka_drop").animate({
+        top: "+=50px"
+    });
     $(".table_org").animate({
         height: "+=50px"
     });

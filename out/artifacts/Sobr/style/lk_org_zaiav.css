@@ -764,6 +764,7 @@ input::placeholder{
     border-radius: 10px;
     margin-bottom: 50px;
     padding-bottom: 67px;
+    padding-left: 17px;
     border: none;
 }
 
@@ -773,11 +774,12 @@ input::placeholder{
 
 .q_tbl{
     height: auto;
+    margin-bottom: 30px;
 }
 
 .q_tbl tr td{
     width: 1040px;
-    height: auto;
+    height: 50px;
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 400;
@@ -787,6 +789,36 @@ input::placeholder{
     border: 1px solid #104781;
     border-collapse: collapse;
     padding: 18px;
+}
+
+.save_btn{
+    width: 250px;
+    height: 50px;
+    border: 1px solid #00345F;
+    border-radius: 10px;
+    background-color: #BAF3FC;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #00345F;
+    margin-left: 490px;
+}
+
+.next_btn{
+    width: 250px;
+    height: 50px;
+    border: 1px solid #00345F;
+    border-radius: 10px;
+    background-color: #BAF3FC;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #00345F;
+    margin-left: 50px;
 }
 
 .voprosu {position: absolute;
