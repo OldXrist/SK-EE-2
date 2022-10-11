@@ -36,7 +36,7 @@
 
 .table_org {position: absolute;
     width: 1160px;
-    height: 3432px;
+    height: 3314px;
     margin-left: 80px;
     top: 276px;
 
@@ -340,9 +340,6 @@ input::placeholder{
     font-weight: 600;
     font-size: 18px;
     line-height: 100%;
-    /* identical to box height, or 18px */
-
-
     color: #104781;}
 
 .telefon{position: absolute;
@@ -378,6 +375,13 @@ input::placeholder{
 
 
     color: #104781;}
+
+.under{
+    position: absolute;
+    width: 1160px;
+    height: 1050px;
+    margin-top: -100px;
+}
 
 .naim_abr_sud {position: absolute;
     width: 650px;
@@ -592,8 +596,7 @@ input::placeholder{
 
     background: #BAF3FC;
     border-radius: 10px;
-    border-style: solid;
-    border-color: #00345F;
+    border: 1px solid #00345F;
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 500;
@@ -749,21 +752,55 @@ input::placeholder{
     cursor: pointer;
 }
 
+.povestka_drop{
+    position: absolute;
+    left: 60px;
+    top: 2940px;
+}
+
+.povestka_drop input{
+    width: 1040px;
+    height: 100px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    padding-bottom: 67px;
+    border: none;
+}
+
+.enter_q:focus{
+    outline: none;
+}
+
+.q_tbl{
+    height: auto;
+}
+
+.q_tbl tr td{
+    width: 1040px;
+    height: auto;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: #406C9A;
+    border: 1px solid #104781;
+    border-collapse: collapse;
+    padding: 18px;
+}
+
 .voprosu {position: absolute;
     width: 196px;
     height: 18px;
     left: 60px;
     top: 2852px;
-
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 100%;
-    /* identical to box height, or 18px */
-
-
-    color: #104781;}
+    color: #104781;
+}
 
 .knopka2 {position: absolute;
     width: 250px;
@@ -773,15 +810,13 @@ input::placeholder{
 
     background: #BAF3FC;
     border-radius: 10px;
-    border-style: solid;
-
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
     line-height: 100%;
     text-align: center;
-    border-color: #00345F;
+    border: 1px solid #00345F;
 
     color: #00345F;
 }
@@ -819,7 +854,6 @@ input::placeholder{
 
     background: #BAF3FC;
     border-radius: 10px;
-    border-style: solid;
 
     font-family: 'Exo 2';
     font-style: normal;
@@ -827,7 +861,7 @@ input::placeholder{
     font-size: 18px;
     line-height: 100%;
     text-align: center;
-    border-color: #00345F;
+    border: 1px solid #00345F;
     color: #00345F;
 }
 
@@ -892,13 +926,12 @@ input::placeholder{
 
     background: #BAF3FC;
     border-radius: 10px;
-    border-style: solid;
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
     line-height: 100%;
-    border-color: #00345F;
+    border: 1px solid #00345F;
 
     text-align: center;
 

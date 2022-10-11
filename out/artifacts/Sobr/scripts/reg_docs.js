@@ -46,7 +46,7 @@ $(".upl").click(function (){
     let tr = document.getElementById("doc").value
     let f = tr.split("\\")
     let file = f[2]
-    let markup = "<tr><td>" + file + "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src='../img/cross.png'/> </td></tr>"
+    let markup = "<tr><td>" + file + "<img src='../img/cross.png' style='position: absolute; left: 1000px;'/> </td></tr>"
 
     $(".docs_tbl tbody").append(markup)
 }).click(function (){
