@@ -514,6 +514,7 @@ input::placeholder{
 
 .forms {  padding:12px;
     width: 400px;
+    height: 50px;
     border-radius:10px;
     border: none;
 }
@@ -526,6 +527,8 @@ input::placeholder{
 .forms2 {
     padding:12px;
     width: 1040px;
+    height: 50px;
+
     border-radius:10px;
     border: none;
     margin-bottom: 15px;
@@ -538,6 +541,8 @@ input::placeholder{
 
 .forms3 {  padding:12px;
     width: 590px;
+    height: 50px;
+
     border-radius:10px;
     border: none;
 }
@@ -550,6 +555,8 @@ input::placeholder{
 .forms4 {
     padding:12px;
     width: 300px;
+    height: 50px;
+
     border-radius:10px;
     border: none;
 
@@ -561,6 +568,8 @@ input::placeholder{
 
 .forms5 {  padding:12px;
     width: 250px;
+    height: 50px;
+
     border-radius:10px;
     border: none;
 }
@@ -571,6 +580,8 @@ input::placeholder{
 
 .forms6 {  padding:12px;
     width: 125px;
+    height: 50px;
+
     border-radius:10px;
     border: none;
 }
@@ -581,11 +592,46 @@ input::placeholder{
 
 .forms7 {  padding:12px;
     width: 700px;
+    height: 50px;
+
     border-radius:10px;
     border: none;
 }
 
 .forms7:focus{
+    outline: none;
+}
+
+.forms8 {  padding:12px;
+    width: 650px;
+    height: 50px;
+
+    border-radius:10px;
+    border: none;}
+
+.forms8:focus{
+    outline: none;
+}
+
+.forms9 {  padding:12px;
+    width: 340px;
+    height: 50px;
+
+    border-radius:10px;
+    border: none;
+}
+
+.forms9:focus{
+    outline: none;
+}
+
+.forms10 {  padding:12px;
+    width: 1040px;
+    border-radius:10px;
+    border: none;
+}
+
+.forms10:focus{
     outline: none;
 }
 
