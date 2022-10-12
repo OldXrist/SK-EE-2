@@ -1,5 +1,35 @@
 let btn = document.querySelector('.upl')
 btn.disabled = true
+$(".voprosu").animate({
+    top: "+=50px"
+});
+$(".knopka2").animate({
+    top: "+=50px"
+});
+$(".nim_cod").animate({
+    top: "+=50px"
+});
+$(".knopka3").animate({
+    top: "+=50px"
+});
+$(".table_fio").animate({
+    top: "+=50px"
+});
+$(".knopka4").animate({
+    top: "+=50px"
+});
+$(".knopka5").animate({
+    top: "+=50px"
+});
+$(".table_org").animate({
+    height: "+=50px"
+});
+$(".base").animate({
+    top: "+=50px"
+});
+$(".base_bg").animate({
+    top: "+=50px"
+});
 
 $(document).ready(function(){
     $(".add_docs").hide()
@@ -47,7 +77,7 @@ $(".upl").click(function (){
     let f = tr.split("\\")
     let file = f[2]
     console.log(f,file)
-    let markup = "<tr><td>" + file + "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img src='../../../img/cross.png'/> </td></tr>"
+    let markup = "<tr><td>" + file + "<img src='../../../img/cross.png' style='position: absolute; left: 1000px;'/> </td></tr>"
 
     $(".docs_tbl tbody").append(markup)
 }).click(function (){
@@ -59,34 +89,37 @@ $(".upl").click(function (){
 }).click(function (){
     $(".docs_tbl").fadeIn("fast")
     $(".voprosu").animate({
-        top: "+=100px"
+        top: "+=50px"
     });
     $(".knopka2").animate({
-        top: "+=100px"
+        top: "+=50px"
     });
     $(".nim_cod").animate({
-        top: "+=100px"
+        top: "+=50px"
     });
     $(".knopka3").animate({
-        top: "+=100px"
+        top: "+=50px"
     });
     $(".table_fio").animate({
-        top: "+=100px"
+        top: "+=50px"
     });
     $(".knopka4").animate({
-        top: "+=100px"
+        top: "+=50px"
     });
     $(".knopka5").animate({
-        top: "+=100px"
+        top: "+=50px"
+    });
+    $(".povestka_drop").animate({
+        top: "+=50px"
     });
     $(".table_org").animate({
-        height: "+=100px"
+        height: "+=50px"
     });
     $(".base").animate({
-        top: "+=100px"
+        top: "+=50px"
     });
     $(".base_bg").animate({
-        top: "+=100px"
+        top: "+=50px"
     });
     $(".add_docs img").show()
     $("#doc").hide()
