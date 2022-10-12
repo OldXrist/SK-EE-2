@@ -24,7 +24,7 @@ public class MAINServlet extends HttpServlet {
         try {
             Class.forName("org.postgresql.Driver");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres", "postgres", "postgresql");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "111");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
             // TODO: 03.10.2022
 
             String sql = "";
@@ -41,6 +41,12 @@ public class MAINServlet extends HttpServlet {
                 case "АУ":
                     sql = "SELECT name FROM au WHERE email = ?";
                     break;
+                case "admin":
+                    sql = "SELECT firstname FROM adminaccounts WHERE email = ?";
+                    break;
+                case "operator":
+                    sql = "SELECT firstname FROM adminaccounts WHERE email = ?";
+                    break;
                 default:
                     sql = "SELECT poln_naim FROM ql WHERE email = ?";
                     break;
@@ -55,7 +61,11 @@ public class MAINServlet extends HttpServlet {
                 if (role.equals("ЮЛ")) {
                     String naim = rs.getString("poln_naim");
                     out.println(naim);
-                } else {
+                } else if (role.equals("admin") || role.equals("operator")) {
+                    String name = rs.getString("firstname");
+                    out.println(name);
+                }
+                else {
                     String name = rs.getString("name");
                     out.println(name);
                 }
