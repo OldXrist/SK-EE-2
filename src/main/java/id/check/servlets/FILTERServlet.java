@@ -42,5 +42,19 @@ public class FILTERServlet extends HttpServlet {
                     break;
             }
         }
+        else if (type.equals("admin")){
+            switch (role) {
+                case "admin":
+                    res.sendRedirect("http://localhost:8080/Sobr/lichnui_kobinetu/lk_admin/lk_admina.html");
+                    break;
+            }
+        }
+        else if (type.equals("operator")){
+            switch (role) {
+                case "operator":
+                    res.sendRedirect("http://localhost:8080/Sobr/lichnui_kobinetu/lk_oper/lk_oper.html");
+                    break;
+            }
+        }
     }
 }
