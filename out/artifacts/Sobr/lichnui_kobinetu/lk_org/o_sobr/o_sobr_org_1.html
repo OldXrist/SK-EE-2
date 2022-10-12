@@ -160,15 +160,10 @@
     <p class="dolzhnik">Должник</p>
     <div class="under">
         <div class="ud_lich">
-            <label for="ud_lich" class="txt_obsh"></label>
-            <input type="text" class="forms2" id="ud_lich" placeholder="Документ, удостоверяющий личность">
-        </div>
-        <div class="ud_ruk">
-            <label for="ud_ruk" class="txt_obsh"></label>
-            <input type="text" class="forms2" id="ud_ruk" placeholder="Документы, подтверждающие полномочия руководителя или иного лица на осуществление действий от имени заявителя">
+            <input type="text" class="forms2" id="ud_lich">
         </div>
     <p class="doks">Документы, которые необходимо предоставить участникам собрания</p>
-    <a class="knopka txtr" href="#"><p class="topik3">Добавить документ</p></a>
+    <a class="knopka txtr"><p class="topik3">Добавить документ</p></a>
 <p class="dop_doks">Дополнительные документы по собранию</p>
 <div class="dop_doks_txt">Перечень документов, которые необходимо приложить к заявке, указан в Регламенте работы сервиса
     <p></p>
@@ -184,17 +179,13 @@
     <p class="voprosu">Вопросы повестки дня</p>
         <a class="knopka2 txtr"><p class="topik3">Добавить вопрос</p></a>
         <div class="povestka_drop">
-            <input type="text" placeholder="Введите вопрос" class="enter_q"/>
+            <input type="text" placeholder="Введите вопрос" id="enter_q"/>
             <table class="q_tbl">
                 <tr>
                     <td>Вопросы повестки дня</td>
                 </tr>
-                <tr>
-                    <td></td>
-                </tr>
             </table>
-            <button class="save_btn">Сохранить вопрос</button>
-            <button class="next_btn">Следующий вопрос</button>
+            <button type="button" class="save_btn">Сохранить вопрос</button>
         </div>
     <div class="nim_cod">
         <label for="nim_cod" class="txt_obsh">Введите наименование юрид. лица или ФИО ИП/физ. лица</label>

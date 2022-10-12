@@ -523,10 +523,12 @@ input::placeholder{
 }
 
 
-.forms2 {  padding:12px;
+.forms2 {
+    padding:12px;
     width: 1040px;
     border-radius:10px;
     border: none;
+    margin-bottom: 15px;
 }
 
 .forms2:focus{
@@ -587,13 +589,12 @@ input::placeholder{
     outline: none;
 }
 
-.knopka {position: absolute;
+.knopka {
+    position: absolute;
     width: 250px;
     height: 50px;
-    left: 850px;
-    top: 2549px;
-
-
+    left: 60px;
+    top: 2470px;
     background: #BAF3FC;
     border-radius: 10px;
     border: 1px solid #00345F;
@@ -768,7 +769,7 @@ input::placeholder{
     border: none;
 }
 
-.enter_q:focus{
+#enter_q:focus{
     outline: none;
 }
 
@@ -791,7 +792,7 @@ input::placeholder{
     padding: 18px;
 }
 
-.save_btn{
+.save_btn {
     width: 250px;
     height: 50px;
     border: 1px solid #00345F;
@@ -803,22 +804,7 @@ input::placeholder{
     font-size: 16px;
     line-height: 100%;
     color: #00345F;
-    margin-left: 490px;
-}
-
-.next_btn{
-    width: 250px;
-    height: 50px;
-    border: 1px solid #00345F;
-    border-radius: 10px;
-    background-color: #BAF3FC;
-    font-family: 'Exo 2';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 100%;
-    color: #00345F;
-    margin-left: 50px;
+    margin-left: 790px;
 }
 
 .voprosu {position: absolute;
@@ -834,12 +820,12 @@ input::placeholder{
     color: #104781;
 }
 
-.knopka2 {position: absolute;
+.knopka2 {
+    position: absolute;
     width: 250px;
     height: 50px;
     left: 60px;
     top: 2890px;
-
     background: #BAF3FC;
     border-radius: 10px;
     font-family: 'Exo 2';
@@ -849,25 +835,22 @@ input::placeholder{
     line-height: 100%;
     text-align: center;
     border: 1px solid #00345F;
-
     color: #00345F;
 }
 
-.uved {position: absolute;
+.uved {
+    position: absolute;
     width: 219px;
     height: 18px;
     left: 60px;
     top: 2990px;
-
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 100%;
-    /* identical to box height, or 18px */
-
-
-    color: #104781;}
+    color: #104781;
+}
 
 .nim_cod {position: absolute;
     width: 700px;
@@ -878,15 +861,14 @@ input::placeholder{
     background: #FFFFFF;
     border-radius: 10px;}
 
-.knopka3 {position: absolute;
+.knopka3 {
+    position: absolute;
     width: 250px;
     height: 50px;
     left: 850px;
     top: 3076px;
-
     background: #BAF3FC;
     border-radius: 10px;
-
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 500;
