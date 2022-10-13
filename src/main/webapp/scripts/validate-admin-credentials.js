@@ -60,7 +60,7 @@ function ValidateAdminCredentials() {
     }
 
     if (!isValidate) {
-        console.log('error');
+        console.log('error validation');
     }
     else {
         let adminData = {
@@ -69,10 +69,8 @@ function ValidateAdminCredentials() {
             middleName: middleName.value,
             phone: phone.value,
             email: email.value,
-            repeatEmail: repeatEmail.value,
             login: login.value,
-            password: password.value,
-            repeatPassword: repeatPassword.value
+            password: password.value
         }
 
         $.post("http://localhost:8080/Sobr/ChangeAdminCredentialsServlet", adminData, function (data) {
