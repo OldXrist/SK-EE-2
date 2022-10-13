@@ -378,8 +378,6 @@ input::placeholder{
 
 .under{
     position: absolute;
-    width: 1160px;
-    height: 1050px;
     margin-top: -100px;
 }
 
@@ -838,6 +836,20 @@ input::placeholder{
     padding: 18px;
 }
 
+.table_fio tr td{
+    width: 1040px;
+    height: 50px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: #406C9A;
+    border: 1px solid #104781;
+    border-collapse: collapse;
+    padding: 18px;
+}
+
 .save_btn {
     width: 250px;
     height: 50px;
@@ -927,32 +939,15 @@ input::placeholder{
 
 .table_fio {position: absolute;
     width: 1040px;
-    height: 100.5px;
     left: 60px;
     top: 3176.5px;
     background: #BAF3FC;
-
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 100%;
-    /* identical to box height, or 14px */
-
-
     color: #406C9A;
-}
-
-.table_fio tr th{
-    border: 1px solid #104781;
-    height: 50px;
-    padding: 18px;
-}
-
-.shirina {    width: 790px;
-}
-
-.uzko {    width: 250px;
 }
 
 .knopka4 {position: absolute;

@@ -402,8 +402,12 @@ input::placeholder{
 
 .forms {
     padding:12px;
+    height: 50px;
+
     width: 400px;
     border-radius:10px;
+    border: none;
+
 }
 
 .forms:focus{
@@ -412,6 +416,9 @@ input::placeholder{
 
 .forms2 {
     padding:12px;
+    height: 50px;
+    border: none;
+
     width: 1040px;
     border-radius:10px;
 
@@ -423,6 +430,9 @@ input::placeholder{
 
 
 .forms3 {  padding:12px;
+    height: 50px;
+    border: none;
+
     width: 590px;
     border-radius:10px;
 
@@ -435,6 +445,8 @@ input::placeholder{
 
 .forms4 {
     padding:12px;
+    height: 50px;
+    border: none;
     width: 300px;
     border-radius:10px;
 
@@ -446,12 +458,14 @@ input::placeholder{
 
 .forms5 {
     padding:12px;
+    height: 50px;
+    border: none;
     width: 340px;
     border-radius:10px;
 
 
 }
-.forms5:focus{
+.forms5:focus {
     outline: none;
 }
 
