@@ -323,6 +323,8 @@
 .forms {
     padding:12px;
     width: 400px;
+    height: 50px;
+    border: none;
     border-radius:10px;
     border: white;
 
@@ -335,6 +337,8 @@
 .forms2 {
     padding:12px;
     width: 1040px;
+    height: 50px;
+    border: none;
     border-radius:10px;
     border: white;
 
@@ -347,6 +351,8 @@
 
 .forms3 {  padding:12px;
     width: 590px;
+    height: 50px;
+    border: none;
     border-radius:10px;
     border: white;
 
@@ -360,6 +366,8 @@
 .forms4 {
     padding:12px;
     width: 300px;
+    height: 50px;
+    border: none;
     border-radius:10px;
     border: none;
 
@@ -371,10 +379,10 @@
 .forms5 {
     padding:12px;
     width: 340px;
+    height: 50px;
+    border: none;
     border-radius:10px;
     border: white;
-
-
 }
 .forms5:focus{
     outline: none;

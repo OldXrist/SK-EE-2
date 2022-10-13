@@ -378,8 +378,6 @@ input::placeholder{
 
 .under{
     position: absolute;
-    width: 1160px;
-    height: 1050px;
     margin-top: -100px;
 }
 
@@ -514,6 +512,7 @@ input::placeholder{
 
 .forms {  padding:12px;
     width: 400px;
+    height: 50px;
     border-radius:10px;
     border: none;
 }
@@ -526,6 +525,8 @@ input::placeholder{
 .forms2 {
     padding:12px;
     width: 1040px;
+    height: 50px;
+
     border-radius:10px;
     border: none;
     margin-bottom: 15px;
@@ -538,6 +539,8 @@ input::placeholder{
 
 .forms3 {  padding:12px;
     width: 590px;
+    height: 50px;
+
     border-radius:10px;
     border: none;
 }
@@ -550,6 +553,8 @@ input::placeholder{
 .forms4 {
     padding:12px;
     width: 300px;
+    height: 50px;
+
     border-radius:10px;
     border: none;
 
@@ -561,6 +566,8 @@ input::placeholder{
 
 .forms5 {  padding:12px;
     width: 250px;
+    height: 50px;
+
     border-radius:10px;
     border: none;
 }
@@ -571,6 +578,8 @@ input::placeholder{
 
 .forms6 {  padding:12px;
     width: 125px;
+    height: 50px;
+
     border-radius:10px;
     border: none;
 }
@@ -581,11 +590,46 @@ input::placeholder{
 
 .forms7 {  padding:12px;
     width: 700px;
+    height: 50px;
+
     border-radius:10px;
     border: none;
 }
 
 .forms7:focus{
+    outline: none;
+}
+
+.forms8 {  padding:12px;
+    width: 650px;
+    height: 50px;
+
+    border-radius:10px;
+    border: none;}
+
+.forms8:focus{
+    outline: none;
+}
+
+.forms9 {  padding:12px;
+    width: 340px;
+    height: 50px;
+
+    border-radius:10px;
+    border: none;
+}
+
+.forms9:focus{
+    outline: none;
+}
+
+.forms10 {  padding:12px;
+    width: 1040px;
+    border-radius:10px;
+    border: none;
+}
+
+.forms10:focus{
     outline: none;
 }
 
@@ -792,6 +836,20 @@ input::placeholder{
     padding: 18px;
 }
 
+.table_fio tr td{
+    width: 1040px;
+    height: 50px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: #406C9A;
+    border: 1px solid #104781;
+    border-collapse: collapse;
+    padding: 18px;
+}
+
 .save_btn {
     width: 250px;
     height: 50px;
@@ -881,32 +939,15 @@ input::placeholder{
 
 .table_fio {position: absolute;
     width: 1040px;
-    height: 100.5px;
     left: 60px;
     top: 3176.5px;
     background: #BAF3FC;
-
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 100%;
-    /* identical to box height, or 14px */
-
-
     color: #406C9A;
-}
-
-.table_fio tr th{
-    border: 1px solid #104781;
-    height: 50px;
-    padding: 18px;
-}
-
-.shirina {    width: 790px;
-}
-
-.uzko {    width: 250px;
 }
 
 .knopka4 {position: absolute;
