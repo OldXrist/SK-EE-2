@@ -14,7 +14,7 @@
 
     color: #406C9A;
     text-decoration: none;
-    border: none;
+
 
 }
 
@@ -599,7 +599,6 @@ input::placeholder{
     width: 400px;
     height: 50px;
     border-radius:10px;
-    border: none;
 }
 
 .forms:focus{
@@ -613,7 +612,6 @@ input::placeholder{
     height: 50px;
 
     border-radius:10px;
-    border: none;
     margin-bottom: 15px;
 }
 
@@ -627,7 +625,6 @@ input::placeholder{
     height: 50px;
 
     border-radius:10px;
-    border: none;
 }
 
 .forms3:focus{
@@ -641,7 +638,7 @@ input::placeholder{
     height: 50px;
 
     border-radius:10px;
-    border: none;
+
 
 }
 .forms4:focus{
@@ -654,7 +651,7 @@ input::placeholder{
     height: 50px;
 
     border-radius:10px;
-    border: none;
+
 }
 
 .forms5:focus{
@@ -666,7 +663,7 @@ input::placeholder{
     height: 50px;
 
     border-radius:10px;
-    border: none;
+
 }
 
 .forms6:focus{
@@ -678,7 +675,7 @@ input::placeholder{
     height: 50px;
 
     border-radius:10px;
-    border: none;
+
 }
 
 .forms7:focus{
@@ -690,7 +687,7 @@ input::placeholder{
     height: 50px;
 
     border-radius:10px;
-    border: none;}
+    ;}
 
 .forms8:focus{
     outline: none;
@@ -701,7 +698,7 @@ input::placeholder{
     height: 50px;
 
     border-radius:10px;
-    border: none;
+
 }
 
 .forms9:focus{
@@ -711,7 +708,7 @@ input::placeholder{
 .forms10 {  padding:12px;
     width: 1040px;
     border-radius:10px;
-    border: none;
+
 }
 
 .forms10:focus{
@@ -1180,7 +1177,7 @@ input::placeholder{
     background: #37DCF5;
     border-radius: 10px;
 
-    border: none;
+
 
     font-family: 'Exo 2';
     font-style: normal;
