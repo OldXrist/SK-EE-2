@@ -13,20 +13,23 @@
     line-height: 120%;
     color: #104781;}
 
-.table_oper {position: absolute;
+.table_oper {
+    position: absolute;
     width: 375px;
     height: 298px;
     margin-left: 80px;
     top: 276px;
 
     background: #BAF3FC;
-    border-radius: 15px;}
+    border-radius: 15px;
+}
 
-.oper {position: absolute;
-    width: 122px;
-    height: 18px;
-    left: 60px;
-    top: 50px;
+.oper {
+    /*position: absolute;*/
+    /*width: 122px;*/
+    /*height: 18px;*/
+    /*left: 60px;*/
+    /*top: 50px;*/
 
     font-family: 'Exo 2';
     font-style: normal;
@@ -34,9 +37,8 @@
     font-size: 18px;
     line-height: 100%;
     /* identical to box height, or 18px */
-
-
-    color: #104781;}
+    color: #104781;
+}
 
 .linia {position: absolute;
     width: 265px;
@@ -342,8 +344,8 @@
     padding:12px;
     width: 300px;
     border-radius:10px;
-
-
+    border-style:solid;
+    border-color: #E6F5F7;
 }
 .forms4:focus{
     outline: none;
@@ -358,4 +360,16 @@
 }
 .forms5:focus{
     outline: none;
+}
+
+.logout-div {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+
+    position: absolute;
+    width: 380px;
+    height: 18px;
+    left: 0px;
+    top: 50px;
 }

@@ -1,4 +1,4 @@
-function ValidateAdminCredentials() {
+function ValidateOperatorCredentials() {
     let isValidate = true;
     let lastName = document.getElementById("last-name");
     let firstName = document.getElementById("first-name");
@@ -73,7 +73,7 @@ function ValidateAdminCredentials() {
             password: password.value
         }
 
-        $.post("http://localhost:8080/Sobr/ChangeAdminCredentialsServlet", adminData, function (data) {
+        $.post("http://localhost:8080/Sobr/ChangeOperatorCredentialsServlet", adminData, function (data) {
             if (data == "") {
                 alert("Данные успешно сохранены!");
                 lastName.style.borderColor = '#E6F5F7';

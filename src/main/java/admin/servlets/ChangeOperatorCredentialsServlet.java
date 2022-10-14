@@ -4,13 +4,12 @@ import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
-@WebServlet("/ChangeAdminCredentialsServlet")
-public class ChangeAdminCredentialsServlet extends HttpServlet {
+@WebServlet("/ChangeOperatorCredentialsServlet")
+public class ChangeOperatorCredentialsServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
@@ -27,35 +26,35 @@ public class ChangeAdminCredentialsServlet extends HttpServlet {
             Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres", "postgres", "postgresql");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
 
-            String sql1 = "UPDATE adminaccounts SET firstname = '" + firstName + "' WHERE id = 1";
+            String sql1 = "UPDATE adminaccounts SET firstname = '" + firstName + "' WHERE id = 2";
             PreparedStatement ps1 = c.prepareStatement(sql1);
             ps1.executeUpdate();
 
-            String sql2 = "UPDATE adminaccounts SET middlename = '" + middleName + "' WHERE id = 1";
+            String sql2 = "UPDATE adminaccounts SET middlename = '" + middleName + "' WHERE id = 2";
             PreparedStatement ps2 = c.prepareStatement(sql2);
             ps2.executeUpdate();
 
-            String sql3 = "UPDATE adminaccounts SET lastname = '" + lastName + "' WHERE id = 1";
+            String sql3 = "UPDATE adminaccounts SET lastname = '" + lastName + "' WHERE id = 2";
             PreparedStatement ps3 = c.prepareStatement(sql3);
             ps3.executeUpdate();
 
-            String sql4 = "UPDATE adminaccounts SET phonenumber = '" + phone + "' WHERE id = 1";
+            String sql4 = "UPDATE adminaccounts SET phonenumber = '" + phone + "' WHERE id = 2";
             PreparedStatement ps4 = c.prepareStatement(sql4);
             ps4.executeUpdate();
 
-            String sql5 = "UPDATE adminaccounts SET email = '" + email + "' WHERE id = 1";
+            String sql5 = "UPDATE adminaccounts SET email = '" + email + "' WHERE id = 2";
             PreparedStatement ps5 = c.prepareStatement(sql5);
             ps5.executeUpdate();
 
-            String sql6 = "UPDATE adminaccounts SET username = '" + login + "' WHERE id = 1";
+            String sql6 = "UPDATE adminaccounts SET username = '" + login + "' WHERE id = 2";
             PreparedStatement ps6 = c.prepareStatement(sql6);
             ps6.executeUpdate();
 
-            String sql7 = "UPDATE main SET pass = '" + password + "' WHERE role_users = 'admin'";
+            String sql7 = "UPDATE main SET pass = '" + password + "' WHERE role_users = 'operator'";
             PreparedStatement ps7 = c.prepareStatement(sql7);
             ps7.executeUpdate();
 
-            String sql8 = "UPDATE main SET email = '" + email + "' WHERE role_users = 'admin'";
+            String sql8 = "UPDATE main SET email = '" + email + "' WHERE role_users = 'operator'";
             PreparedStatement ps8 = c.prepareStatement(sql8);
             ps8.executeUpdate();
 
@@ -75,3 +74,5 @@ public class ChangeAdminCredentialsServlet extends HttpServlet {
         }
     }
 }
+
+
