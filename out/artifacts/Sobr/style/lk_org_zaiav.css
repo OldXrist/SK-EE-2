@@ -295,6 +295,51 @@ input::placeholder{
     background: #FFFFFF;
     border-radius: 10px;}
 
+.poln_naim {position: absolute;
+    width: 1040px;
+    height: 50px;
+    left: 60px;
+    top: 2253px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.qr_adres2 {position: absolute;
+    width: 1040px;
+    height: 50px;
+    left: 60px;
+    top: 2371px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.pocht_adres3 {position: absolute;
+    width: 1040px;
+    height: 50px;
+    left: 60px;
+    top: 2489px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.unn4 {position: absolute;
+    width: 400px;
+    height: 50px;
+    left: 60px;
+    top: 2607px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.ogrn3 {position: absolute;
+    width: 590px;
+    height: 50px;
+    left: 510px;
+    top: 2607px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
 .efrsb_txt {position: absolute;
     width: 330px;
     height: 18px;
@@ -424,8 +469,42 @@ input::placeholder{
 
     color: #104781;}
 
+.obem_drop{
+    position: absolute;
+    width: 400px;
+    height: 126px;
+    margin-left: 590px;
+    top: 898px;
+    background: #FFFFFF;
+    box-shadow: 0px 6px 12px rgba(16, 71, 129, 0.1);
+    border-radius: 10px;
+    padding-top: 18px;
+}
+
+.obem_drop ul{
+    padding: 0;
+}
+
+.obem_drop ul li{
+    list-style: none;
+    width: 100%;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #406C9A;
+    padding-bottom: 7px;
+    padding-top: 7px;
+    padding-left: 25px;
+}
+
+.obem_drop ul li:hover{
+    background: #BAF3FC;
+}
+
 .tip_dolzh {position: absolute;
-    width: 300px;
+    width: 1040px;
     height: 50px;
     left: 60px;
     top: 2123px;
@@ -460,7 +539,13 @@ input::placeholder{
     background: #FFFFFF;
     border-radius: 10px;}
 
-.doks {position: absolute;
+.obem_sobr img{
+    position: absolute;
+    left: 365px;
+    top: 20px;
+}
+
+#doks {position: absolute;
     width: 613px;
     height: 18px;
     left: 60px;
@@ -631,6 +716,96 @@ input::placeholder{
 
 .forms10:focus{
     outline: none;
+}
+
+.famil {
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    left: 60px;
+    top: 2253px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.name {
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    left: 410px;
+    top: 2253px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.otch {
+    position: absolute;
+    width: 340px;
+    height: 50px;
+    left: 760px;
+    top: 2253px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.pcht_adres2 {
+    position: absolute;
+    width: 1040px;
+    height: 50px;
+    left: 60px;
+    top: 2371px;
+
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.codorg {
+    position: absolute;
+    width: 590px;
+    height: 50px;
+    left: 510px;
+    top: 2489px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.unn2 {
+    position: absolute;
+    width: 400px;
+    height: 50px;
+    left: 60px;
+    top: 2489px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+.codorg2 {
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    left: 410px;
+    top: 2489px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.unn3 {
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    left: 60px;
+    top: 2489px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.ogrnip {
+    position: absolute;
+    width: 340px;
+    height: 50px;
+    left: 760px;
+    top: 2489px;
+    background: #FFFFFF;
+    border-radius: 10px;
 }
 
 .knopka {
@@ -948,6 +1123,50 @@ input::placeholder{
     font-size: 14px;
     line-height: 100%;
     color: #406C9A;
+}
+
+.tip_dolzh img{
+    position: absolute;
+    left: 1008px;
+    margin-top: 20px;
+}
+
+#tip_dolzh{
+    width: 1040px;
+}
+
+.dolg_drop{
+    position: absolute;
+    width: 1040px;
+    height: 126px;
+    margin-left: 140px;
+    top: 2469px;
+    background: #FFFFFF;
+    box-shadow: 0 6px 12px rgba(16, 71, 129, 0.1);
+    border-radius: 10px;
+    padding-top: 18px;
+}
+
+.dolg_drop ul{
+    padding: 0;
+}
+
+.dolg_drop ul li{
+    list-style: none;
+    width: 100%;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #406C9A;
+    padding-bottom: 7px;
+    padding-top: 7px;
+    padding-left: 25px;
+}
+
+.dolg_drop ul li:hover{
+    background: #BAF3FC;
 }
 
 .knopka4 {position: absolute;

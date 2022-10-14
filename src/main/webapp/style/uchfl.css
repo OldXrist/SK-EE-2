@@ -552,14 +552,16 @@ input::placeholder{
     background: #FFFFFF;
     border-radius: 10px;}
 
-.pcht_adres2 {position: absolute;
+.pcht_adres2 {
+    position: absolute;
     width: 1040px;
     height: 50px;
     left: 60px;
     top: 372px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
 .telefon {position: absolute;
     width: 400px;

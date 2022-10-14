@@ -98,6 +98,7 @@
         <div class="obem_sobr">
             <label for="obem_sobr" class="txt_obsh">Объем собрания</label>
             <input type="text" class="forms4" id="obem_sobr" placeholder="Выбрать количество">
+            <img src="../../../img/down_arrow.svg"/>
         </div>
 
     <p class="dan_org_sobr">Данные организатора собрания</p>
@@ -153,7 +154,93 @@
     </div>
     <div class="tip_dolzh">
         <label for="tip_dolzh" class="txt_obsh">Тип должника</label>
-        <input type="text" class="forms4" id="tip_dolzh" placeholder="Юридическое лицо">
+        <input type="text" class="forms" id="tip_dolzh" placeholder="Не выбрано"/>
+        <img src="../../../img/down_arrow.svg"/>
+    </div>
+    <div id="fl_form">
+        <div class="famil">
+            <label for="famil" class="txt_obsh">Фамилия*</label>
+            <input type="text" class="forms4" id="famil" placeholder="Фамилия">
+        </div>
+
+        <div class="name">
+            <label for="name" class="txt_obsh">Имя*</label>
+            <input type="text" class="forms4" id="name" placeholder="Имя">
+        </div>
+
+        <div class="otch">
+            <label for="otch" class="txt_obsh">Отчество*</label>
+            <input type="text" class="forms5" id="otch" placeholder="Отчество">
+        </div>
+        <div class="pcht_adres2">
+            <label for="pocht" class="txt_obsh">Почтовый адрес*</label>
+            <input type="text" class="forms2" id="pocht" placeholder="Почтовый адрес">
+        </div>
+        <div class="unn2">
+            <label for="inn" class="txt_obsh">ИНН*</label>
+            <input type="text" class="forms" id="inn" placeholder="000000000000">
+        </div>
+
+        <div class="codorg">
+            <label for="snils" class="txt_obsh">СНИЛС*</label>
+            <input type="text" class="forms3" id="snils" placeholder="000 000 000 00">
+        </div>
+    </div>
+    <div id="ip_form">
+        <div class="famil">
+            <label for="famil2" class="txt_obsh">Фамилия*</label>
+            <input type="text" class="forms4" id="famil2" placeholder="Фамилия">
+        </div>
+
+        <div class="name">
+            <label for="name2" class="txt_obsh">Имя*</label>
+            <input type="text" class="forms4" id="name2" placeholder="Имя">
+        </div>
+
+        <div class="otch">
+            <label for="otch2" class="txt_obsh">Отчество*</label>
+            <input type="text" class="forms5" id="otch2" placeholder="Отчество">
+        </div>
+        <div class="pcht_adres2">
+            <label for="pocht2" class="txt_obsh">Почтовый адрес*</label>
+            <input type="text" class="forms2" id="pocht2" placeholder="Почтовый адрес">
+        </div>
+        <div class="unn3">
+            <label for="inn2" class="txt_obsh">ИНН*</label>
+            <input type="text" class="forms4" id="inn2" placeholder="000000000000">
+        </div>
+
+        <div class="codorg2">
+            <label for="snils2" class="txt_obsh">СНИЛС*</label>
+            <input type="text" class="forms4" id="snils2" placeholder="000 000 000 00">
+        </div>
+
+        <div class="ogrnip">
+            <label for="ogrnip" class="txt_obsh">Код ОГРНИП*</label>
+            <input type="text" class="forms4" id="ogrnip" placeholder="000000000000000">
+        </div>
+    </div>
+    <div id="ql_form">
+        <div class="poln_naim">
+            <label for="poln_naim" class="txt_obsh">Полное наименование*</label>
+            <input type="text" class="forms4" id="poln_naim" placeholder="Полное наименование">
+        </div>
+        <div class="qr_adres2">
+            <label for="qr_adrs" class="txt_obsh">Юридический адрес*</label>
+            <input type="text" class="forms4" id="qr_adrs" placeholder="Юридический адрес">
+        </div>
+        <div class="pocht_adres3">
+            <label for="pocht3" class="txt_obsh">Почтовый адрес*</label>
+            <input type="text" class="forms4" id="pocht3" placeholder="111116. г. Москва, а/я №87">
+        </div>
+        <div class="unn4">
+            <label for="unn4" class="txt_obsh">ИНН*</label>
+            <input type="text" class="forms4" id="unn4" placeholder="00000000">
+        </div>
+        <div class="ogrn3">
+            <label for="ogrn" class="txt_obsh">Код ОГРН*</label>
+            <input type="text" class="forms4" id="ogrn3" placeholder="0000000000000">
+        </div>
     </div>
     <p class="kontaktu">Контактная информация для участников собрания</p>
     <p class="sved_o_proc">Сведения о процедуре банкротства</p>
@@ -162,7 +249,7 @@
         <div class="ud_lich">
             <input type="text" class="forms2" id="ud_lich">
         </div>
-    <p class="doks">Документы, которые необходимо предоставить участникам собрания</p>
+    <p id="doks">Документы, которые необходимо предоставить участникам собрания</p>
     <a class="knopka txtr"><p class="topik3">Добавить документ</p></a>
 <p class="dop_doks">Дополнительные документы по собранию</p>
 <div class="dop_doks_txt">Перечень документов, которые необходимо приложить к заявке, указан в Регламенте работы сервиса
@@ -191,7 +278,7 @@
         <label for="nim_cod" class="txt_obsh">Введите Email</label>
         <input type="text" class="forms7" id="nim_cod" placeholder="Email">
     </div>
-    <a class="knopka3 txtr" href="#"><p class="topik3">Добавить</p></a>
+    <a class="knopka3 txtr"><p class="topik3">Добавить</p></a>
 
     <table class="table_fio">
         <tr>
@@ -212,6 +299,20 @@
             </label><br>
             <input type="submit" value="Загрузить документ" class="upl"/><br>
             <h6>Отменить</h6>
+        </div>
+        <div class="dolg_drop">
+            <ul>
+                <li id="fl">Физическое лицо</li>
+                <li id="ip">Индивидуальный предприниматель</li>
+                <li id="ql">Юридическое лицо</li>
+            </ul>
+        </div>
+        <div class="obem_drop">
+            <ul>
+                <li id="10">До 10 человек</li>
+                <li id="20">До 20 человек</li>
+                <li id="40">До 40 человек</li>
+            </ul>
         </div>
 
 
@@ -246,6 +347,7 @@
     <script src="../../../scripts/sobr_org_1.js"></script>
     <script src="../../../scripts/lk_docs.js"></script>
     <script src="../../../scripts/lk_q.js"></script>
+    <script src="../../../scripts/org_choice.js"></script>
     <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function (){
@@ -263,6 +365,13 @@
             $("#date_p").mask("00.00.0000")
             $("#time_p").mask("00:00")
             $("#date_razm").mask("00.00.0000")
+            $("#unn4").mask("0000000000")
+            $("#ogrn3").mask("0000000000000")
+            $("#inn").mask("0000000000")
+            $("#snils").mask("000 000 000 00")
+            $("#inn2").mask("0000000000")
+            $("#snils2").mask("000 000 000 00")
+            $("#ogrnip").mask("000000000000000")
         })
     </script>
 </body>

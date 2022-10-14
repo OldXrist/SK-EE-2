@@ -75,4 +75,77 @@ $(".knopka").click(function (){
     $(".knopka").animate({
         top: "+=65px"
     })
+    $(".dop_doks").animate({
+        top: "+=65px"
+    })
+    $(".dop_doks_txt").animate({
+        top: "+=65px"
+    })
+    $(".doks_img").animate({
+        top: "+=65px"
+    })
+    $(".docs_tbl").animate({
+        top: "+=65px"
+    })
+    $(".prek_dok").animate({
+        top: "+=65px"
+    })
+    $(".voprosu").animate({
+        top: "+=65px"
+    })
+    $(".knopka2").animate({
+        top: "+=65px"
+    })
+    $(".povestka_drop").animate({
+        top: "+=65px"
+    })
+    $(".nim_cod").animate({
+        top: "+=65px"
+    });
+    $(".knopka4").animate({
+        top: "+=65px"
+    });
+    $(".knopka5").animate({
+        top: "+=65px"
+    });
+    $(".knopka3").animate({
+        top: "+=65px"
+    });
+    $(".table_fio").animate({
+        top: "+=65px"
+    });
+    $(".base").animate({
+        top: "+=65px"
+    });
+    $(".base_bg").animate({
+        top: "+=65px"
+    });
+    $(".table_org").animate({
+        height: "+=65px"
+    })
 })
+
+$(".knopka3").click(function (){
+    if (document.getElementById("nim_cod").value !== ""){
+        let mail = document.getElementById("nim_cod").value
+        let newrow = "<tr><td>"+ mail +"</td></tr>"
+        $(".table_fio tbody").append(newrow)
+        document.getElementById("nim_cod").value = null
+        $(".knopka4").animate({
+            top: "+=50px"
+        });
+        $(".knopka5").animate({
+            top: "+=50px"
+        });
+        $(".base").animate({
+            top: "+=50px"
+        });
+        $(".base_bg").animate({
+            top: "+=50px"
+        });
+        $(".table_org").animate({
+            height: "+=50px"
+        })
+    }
+})
+
