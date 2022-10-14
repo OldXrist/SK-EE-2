@@ -295,8 +295,8 @@
     padding:12px;
     width: 300px;
     border-radius:10px;
-    border: none;
-
+    border-style:solid;
+    border-color: #E6F5F7;
 }
 .forms4:focus{
     outline: none;
