@@ -32,6 +32,6 @@ public class FileServlet extends HttpServlet {
             }
         }
 
-        resp.sendRedirect("/Sobr/cool-servlet");
+        resp.sendRedirect("http://localhost:8080/Sobr/email.html");
     }
 }

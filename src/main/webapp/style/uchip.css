@@ -331,7 +331,7 @@ input:focus{
     box-sizing: border-box;
     position: absolute;
     width: 1160px;
-    height: 1320px;
+    height: 1438px;
     margin-left: 80px;
     top: 707px;
     display: block;
@@ -684,6 +684,24 @@ input::placeholder{
     border-radius: 10px;
 }
 
+.pass1 {position: absolute;
+    width: 400px;
+    height: 50px;
+    left: 60px;
+    top: 1041px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.pass2 {position: absolute;
+    width: 590px;
+    height: 50px;
+    left: 510px;
+    top: 1041px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
 .doks {position: absolute;
     width: 101px;
     height: 18px;
@@ -702,7 +720,7 @@ input::placeholder{
     width: 101px;
     height: 18px;
     left: 60px;
-    top: 1012px;
+    top: 1141px;
 
     font-family: 'Exo 2';
     font-style: normal;
@@ -720,7 +738,7 @@ input::placeholder{
     width: 425px;
     height: 105px;
     left: 60px;
-    top: 1060px;
+    top: 1189px;
 
     font-family: 'Exo 2';
     font-style: normal;
@@ -785,7 +803,7 @@ input::placeholder{
     width: 340px;
     height: 55px;
     left: 410px;
-    top: 1215px;
+    top: 1344px;
 
     background: #37DCF5;
     border-radius: 10px;
@@ -816,7 +834,7 @@ input::placeholder{
     width: 94px;
     height: 94px;
     left: 600px;
-    top: 1066px;
+    top: 1195px;
 }
 
 .prikrepit-dokument {
@@ -851,7 +869,7 @@ input::placeholder{
     width: 194px;
     height: 18px;
     left: 709px;
-    top: 1082px;
+    top: 1211px;
 
     font-family: 'Exo 2';
     font-style: normal;
