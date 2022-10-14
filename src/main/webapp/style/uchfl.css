@@ -332,7 +332,7 @@ input:focus{
     box-sizing: border-box;
     position: absolute;
     width: 1160px;
-    height: 1320px;
+    height: 1438px;
     margin-left: 80px;
     top: 707px;
     display: block;
@@ -710,7 +710,7 @@ input::placeholder{
     width: 101px;
     height: 18px;
     left: 60px;
-    top: 1012px;
+    top: 1130px;
 
     font-family: 'Exo 2';
     font-style: normal;
@@ -723,12 +723,30 @@ input::placeholder{
     color: #104781;
 }
 
+.pass11 {position: absolute;
+    width: 400px;
+    height: 50px;
+    left: 60px;
+    top: 1030px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.pass22 {position: absolute;
+    width: 590px;
+    height: 50px;
+    left: 510px;
+    top: 1030px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
 .txt_2 {
     position: absolute;
     width: 425px;
     height: 105px;
     left: 60px;
-    top: 1060px;
+    top: 1178px;
 
     font-family: 'Exo 2';
     font-style: normal;
@@ -793,7 +811,7 @@ input::placeholder{
     width: 340px;
     height: 55px;
     left: 410px;
-    top: 1215px;
+    top: 1333px;
 
     background: #37DCF5;
     border-radius: 10px;
@@ -824,7 +842,7 @@ input::placeholder{
     width: 94px;
     height: 94px;
     left: 600px;
-    top: 1066px;
+    top: 1184px;
 }
 
 .prikrepit-dokument {
@@ -859,7 +877,7 @@ input::placeholder{
     width: 194px;
     height: 18px;
     left: 709px;
-    top: 1082px;
+    top: 1200px;
 
     font-family: 'Exo 2';
     font-style: normal;
