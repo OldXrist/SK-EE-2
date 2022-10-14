@@ -36,7 +36,7 @@
 
 .table_org {position: absolute;
     width: 1160px;
-    height: 3314px;
+    height: 3100px;
     margin-left: 80px;
     top: 276px;
 
@@ -830,7 +830,7 @@ input::placeholder{
     width: 368px;
     height: 18px;
     left: 60px;
-    top: 2649px;
+    top: 2550px;
 
     font-family: 'Exo 2';
     font-style: normal;
@@ -843,7 +843,7 @@ input::placeholder{
     width: 425px;
     height: 105px;
     left: 60px;
-    top: 2697px;
+    top: 2597px;
 
     font-family: 'Exo 2';
     font-style: normal;
@@ -856,14 +856,14 @@ input::placeholder{
     width: 94px;
     height: 94px;
     left: 600px;
-    top: 2703px;}
+    top: 2600px;}
 
 .prek_dok {
     position: absolute;
     width: 194px;
     height: 18px;
     left: 709px;
-    top: 2719px;
+    top: 2615px;
     cursor: pointer;
     font-family: 'Exo 2';
     font-style: normal;
@@ -975,7 +975,7 @@ input::placeholder{
 .povestka_drop{
     position: absolute;
     left: 60px;
-    top: 2940px;
+    top: 2800px;
 }
 
 .povestka_drop input{
@@ -1044,7 +1044,7 @@ input::placeholder{
     width: 196px;
     height: 18px;
     left: 60px;
-    top: 2852px;
+    top: 2700px;
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 600;
@@ -1058,7 +1058,7 @@ input::placeholder{
     width: 250px;
     height: 50px;
     left: 60px;
-    top: 2890px;
+    top: 2740px;
     background: #BAF3FC;
     border-radius: 10px;
     font-family: 'Exo 2';
@@ -1089,7 +1089,7 @@ input::placeholder{
     width: 700px;
     height: 50px;
     left: 60px;
-    top: 3076px;
+    top: 2900px;
 
     background: #FFFFFF;
     border-radius: 10px;}
@@ -1099,7 +1099,7 @@ input::placeholder{
     width: 250px;
     height: 50px;
     left: 850px;
-    top: 3076px;
+    top: 2900px;
     background: #BAF3FC;
     border-radius: 10px;
     font-family: 'Exo 2';
@@ -1115,7 +1115,7 @@ input::placeholder{
 .table_fio {position: absolute;
     width: 1040px;
     left: 60px;
-    top: 3176.5px;
+    top: 2990px;
     background: #BAF3FC;
     font-family: 'Exo 2';
     font-style: normal;
@@ -1173,7 +1173,7 @@ input::placeholder{
     width: 439px;
     height: 55px;
     left: 116px;
-    top: 3327px;
+    top: 3090px;
 
     background: #37DCF5;
     border-radius: 10px;
@@ -1196,7 +1196,7 @@ input::placeholder{
     width: 439px;
     height: 55px;
     left: 605px;
-    top: 3327px;
+    top: 3090px;
 
     background: #BAF3FC;
     border-radius: 10px;
@@ -1213,10 +1213,10 @@ input::placeholder{
 }
 
 .base{
-    margin-top: 3734px;
+    margin-top: 3500px;
 }
 
 .base_bg{
-    margin-top: 3734px;
+    margin-top: 3500px;
 }
 
