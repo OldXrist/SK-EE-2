@@ -1,5 +1,4 @@
 document.getElementById("tip_dolzh").disabled = true
-document.getElementById("obem_sobr").disabled = true
 
 $(document).ready(function (){
     $(".dolg_drop").hide()
@@ -14,6 +13,7 @@ $(".tip_dolzh img").click(function (){
     $(".table_org").animate({
         opacity: "0.3"
     })
+    document.getElementById("tip_dolzh").style.borderColor = "white"
 })
 
 $(".obem_sobr img").click(function (){
@@ -21,6 +21,7 @@ $(".obem_sobr img").click(function (){
     $(".table_org").animate({
         opacity: "0.3"
     })
+    document.getElementById("obem_sobr").style.borderColor = "white"
 })
 
 $("#10").click(function (){

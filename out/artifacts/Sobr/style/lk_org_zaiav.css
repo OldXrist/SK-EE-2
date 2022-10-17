@@ -712,8 +712,9 @@ input{
 
 .forms10 {  padding:12px;
     width: 1040px;
+    height: 100px;
     border-radius:10px;
-
+padding-bottom: 67px;
 }
 
 .forms10:focus{
