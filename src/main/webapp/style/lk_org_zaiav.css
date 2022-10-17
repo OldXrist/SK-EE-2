@@ -250,21 +250,30 @@ input::placeholder{
     color: #406C9A;
 }
 
-.unn {position: absolute;
+.grey{
+    border: none;
+}
+
+input{
+    border-color: #FFFFFF;
+    border-style: solid;
+}
+
+.unn {
+    position: absolute;
     width: 400px;
     height: 50px;
     left: 60px;
     top: 744px;
-
     background: #FFFFFF;
     border-radius: 10px;}
 
-.ogrn {position: absolute;
+.ogrn {
+    position: absolute;
     width: 590px;
     height: 50px;
     left: 510px;
     top: 744px;
-
     background: #FFFFFF;
     border-radius: 10px;}
 
@@ -273,7 +282,6 @@ input::placeholder{
     height: 50px;
     left: 60px;
     top: 862px;
-
     background: #FFFFFF;
     border-radius: 10px;}
 
@@ -282,7 +290,6 @@ input::placeholder{
     height: 50px;
     left: 60px;
     top: 980px;
-
     background: #FFFFFF;
     border-radius: 10px;}
 
@@ -291,7 +298,6 @@ input::placeholder{
     height: 50px;
     left: 60px;
     top: 1098px;
-
     background: #FFFFFF;
     border-radius: 10px;}
 
@@ -300,7 +306,6 @@ input::placeholder{
     height: 50px;
     left: 60px;
     top: 2253px;
-
     background: #FFFFFF;
     border-radius: 10px;}
 
