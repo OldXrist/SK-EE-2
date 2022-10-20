@@ -26,9 +26,11 @@ public class ZServlet extends HttpServlet {
         String date3 = req.getParameter("dateB");
         String date4 = req.getParameter("dateB2");
         String date5 = req.getParameter("dateP");
-        String efrsb = req.getParameter("efrsb");
+        String ob = req.getParameter("vol");
 
+        String efrsb = req.getParameter("efrsb");
         long regEfrsb  = Long.parseLong(efrsb);
+
         String efrsbDate = req.getParameter("efrsbDate");
 
         String court = req.getParameter("court");
@@ -65,7 +67,7 @@ public class ZServlet extends HttpServlet {
             Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres", "postgres", "postgresql");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
 
-            String sql1 = "INSERT INTO sobr_z Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql1 = "INSERT INTO sobr_org Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement ps = c.prepareStatement(sql1);
 
             ps.setObject(1, dateS);
@@ -111,6 +113,13 @@ public class ZServlet extends HttpServlet {
                 long ogrn = Long.parseLong(og);
                 ps.setLong(25, ogrn);
             } else ps.setNull(25, Types.BIGINT);
+
+            ps.setString(26, "Z");
+
+            if (!ob.equals("")){
+                long obem = Long.parseLong(ob);
+                ps.setLong(27, obem);
+            } else ps.setNull(27, Types.BIGINT);
 
             ps.executeUpdate();
 

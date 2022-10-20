@@ -1225,3 +1225,148 @@ padding-bottom: 67px;
     margin-top: 3500px;
 }
 
+.familOrg {
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    left: 60px;
+    top: 756px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.nameOrg {
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    left: 410px;
+    top: 756px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.otchOrg {
+    position: absolute;
+    width: 340px;
+    height: 50px;
+    left: 760px;
+    top: 756px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.postOrg {
+    position: absolute;
+    width: 1040px;
+    height: 50px;
+    left: 60px;
+    top: 874px;
+
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.codorgOrg {
+    position: absolute;
+    width: 590px;
+    height: 50px;
+    left: 510px;
+    top: 992px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.unnOrg {
+    position: absolute;
+    width: 400px;
+    height: 50px;
+    left: 60px;
+    top: 992px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.familOrg2 {
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    left: 60px;
+    top: 756px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.nameOrg2 {
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    left: 410px;
+    top: 756px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.otchOrg2 {
+    position: absolute;
+    width: 340px;
+    height: 50px;
+    left: 760px;
+    top: 756px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.postOrg2 {
+    position: absolute;
+    width: 1040px;
+    height: 50px;
+    left: 60px;
+    top: 874px;
+
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.codorgOrg2 {
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    left: 410px;
+    top: 992px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.innOrg2 {
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    left: 60px;
+    top: 992px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.ogrnipOrg{
+    position: absolute;
+    width: 340px;
+    height: 50px;
+    left: 760px;
+    top: 992px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.auOrg{
+    position: absolute;
+    width: 340px;
+    height: 50px;
+    left: 760px;
+    top: 992px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.under_org{
+    position: absolute;
+}

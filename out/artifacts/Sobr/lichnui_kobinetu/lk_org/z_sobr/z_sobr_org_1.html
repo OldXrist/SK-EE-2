@@ -100,26 +100,9 @@
 
         <p class="dan_org_sobr">Данные организатора собрания</p>
 
-        <div class="unn">
-            <label for="unn" class="txt_obsh">ИНН*</label>
-            <input type="text" class="forms" id="unn" placeholder="11111111">
+        <div id="org">
         </div>
-        <div class="ogrn">
-            <label for="ogrn" class="txt_obsh">ОГРН*</label>
-            <input type="text" class="forms3" id="ogrn" placeholder="000 000 000 00">
-        </div>
-        <div class="naim_org">
-            <label for="naim_org" class="txt_obsh">Наименование организации*</label>
-            <input type="text" class="forms2" id="naim_org" placeholder="Полное наименование">
-        </div>
-        <div class="qr_adres">
-            <label for="qr_adres" class="txt_obsh">Юридический адрес*</label>
-            <input type="text" class="forms2" id="qr_adres" placeholder="Юридический адрес">
-        </div>
-        <div class="pocht_adres">
-            <label for="pocht_adres" class="txt_obsh">Почтовый адрес*</label>
-            <input type="text" class="forms2" id="pocht_adres" placeholder="Почтовый адрес">
-        </div>
+        <div class="under_org">
         <p class="efrsb_txt">Информация для интеграции с ЕФРСБ</p>
         <div class="efrsb">
             <label for="efrsb" class="txt_obsh">Идентификационный номер сообщения о публикации торгов на сайте ЕФРСБ*</label>
@@ -131,11 +114,11 @@
         </div>
         <div class="telefon">
             <label for="phone" class="txt_obsh">Телефон*</label>
-            <input type="text" class="forms" id="phone" placeholder="+7 (900) 000-12-34">
+            <input type="text" class="forms" id="phone" placeholder="+7 (900) 000-12-34" disabled>
         </div>
         <div class="email">
             <label for="email" class="txt_obsh">Электронная почта*</label>
-            <input type="email" class="forms3" id="email" placeholder="ivanova12@mail.ru">
+            <input type="email" class="forms3" id="email" placeholder="ivanova12@mail.ru" disabled>
         </div>
         <div class="naim_abr_sud">
             <label for="naim_abr_sud" class="txt_obsh">Наименование арбитражного суда*</label>
@@ -236,7 +219,7 @@
                     <input type="text" class="forms" id="unn4" placeholder="00000000" onfocus="White(this.id)">
                 </div>
                 <div class="ogrn3">
-                    <label for="ogrn" class="txt_obsh">Код ОГРН*</label>
+                    <label for="ogrn3" class="txt_obsh">Код ОГРН*</label>
                     <input type="text" class="forms3" id="ogrn3" placeholder="0000000000000" onfocus="White(this.id)">
                 </div>
             </div>
@@ -287,7 +270,7 @@
                 <a class="knopka5 txtr"><p class="topik2">Сохранить заявку как черновик</p></a>
             </div>
         </div>
-
+        </div>
     </form>
     <div class="add_docs">
         <p>Документы участников</p>
@@ -305,6 +288,7 @@
             <li id="ql">Юридическое лицо</li>
         </ul>
     </div>
+
 
 
 

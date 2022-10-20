@@ -33,11 +33,16 @@ public class ORGCARDServlet extends HttpServlet {
                     ps.setString(1, email);
                     ResultSet rs = ps.executeQuery();
                     while (rs.next()) {
-                        out.println(rs.getString(3));
-                        out.println(rs.getLong(4));
+                        out.println(rs.getString(7));
+                        out.println(rs.getString(8));
+                        out.println(rs.getString(9));
+                        out.println(rs.getString(4));
+                        out.println(rs.getLong(3));
+                        out.println(rs.getLong(10));
+                        out.println(rs.getLong(15));
                         out.println(rs.getString(5));
                         out.println(rs.getString(6));
-                        out.println(rs.getString(7));
+                        out.println(role);
                     }
                     rs.close();
                     ps.close();
@@ -49,9 +54,16 @@ public class ORGCARDServlet extends HttpServlet {
                     ps.setString(1, email);
                     ResultSet rs = ps.executeQuery();
                     while (rs.next()) {
-                        out.println(rs.getString(14));
-                        out.println(rs.getLong(15));
-                        out.println(rs.getString(18));
+                        out.println(rs.getString(7));
+                        out.println(rs.getString(8));
+                        out.println(rs.getString(9));
+                        out.println(rs.getString(11));
+                        out.println(rs.getLong(3));
+                        out.println(rs.getLong(10));
+                        out.println(rs.getLong(6));
+                        out.println(rs.getString(4));
+                        out.println(rs.getString(5));
+                        out.println(role);
                     }
                     rs.close();
                     ps.close();
@@ -63,9 +75,15 @@ public class ORGCARDServlet extends HttpServlet {
                     ps.setString(1, email);
                     ResultSet rs = ps.executeQuery();
                     while (rs.next()) {
-                        out.println(rs.getString(14));
-                        out.println(rs.getLong(15));
-                        out.println(rs.getString(18));
+                        out.println(rs.getString(7));
+                        out.println(rs.getString(8));
+                        out.println(rs.getString(9));
+                        out.println(rs.getString(4));
+                        out.println(rs.getLong(3));
+                        out.println(rs.getLong(10));
+                        out.println(rs.getString(5));
+                        out.println(rs.getString(6));
+                        out.println(role);
                     }
                     rs.close();
                     ps.close();
@@ -84,6 +102,7 @@ public class ORGCARDServlet extends HttpServlet {
                         out.println(rs.getString(7));
                         out.println(rs.getString(8));
                         out.println(rs.getString(9));
+                        out.println(role);
                     }
                     rs.close();
                     ps.close();

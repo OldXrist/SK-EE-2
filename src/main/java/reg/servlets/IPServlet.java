@@ -40,8 +40,18 @@ public class IPServlet extends HttpServlet {
             Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres", "postgres", "postgresql");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
 
-            String sql = "INSERT INTO ip Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO main Values (?, ?, ?, ?)";
             PreparedStatement ps = c.prepareStatement(sql);
+
+            ps.setString(1, role_users);
+            ps.setString(2, "pass");
+            ps.setString(3, email);
+            ps.setString(4, type_users);
+
+            ps.executeUpdate();
+
+            String sql1 = "INSERT INTO ip Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            ps = c.prepareStatement(sql1);
 
 
             ps.setString(1, type_users);
@@ -80,7 +90,7 @@ public class IPServlet extends HttpServlet {
             ps.setObject(16, ldt);
             ps.setString(17, date);
 
-            ULServlet.Main_insert(type_users, role_users, email, c, ps);
+            ps.executeUpdate();
 
         } catch (Exception e) {
             e.printStackTrace();

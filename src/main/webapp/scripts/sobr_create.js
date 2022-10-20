@@ -20,10 +20,7 @@ function Create(){
     let sobrDb = dateFormat(document.getElementById("date_b").value, document.getElementById("time_b").value)
     let sobrDb2 = dateFormat(document.getElementById("date_b2").value, document.getElementById("time_b2").value)
     let sobrDp = dateFormat(document.getElementById("date_p").value, document.getElementById("time_p").value)
-    let obem = ""
-    if (document.getElementById("obem_sobr")!==null){
-        obem = document.getElementById("obem_sobr")
-    } else obem = null
+    let obem = null
 
     let e = document.getElementById("date_razm").value.split('.')
     let efrsbDate = ""

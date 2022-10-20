@@ -34,8 +34,18 @@ public class ULServlet extends HttpServlet {
             Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres", "postgres", "postgresql");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
 
-            String sql = "INSERT INTO ql Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO main Values (?, ?, ?, ?)";
             PreparedStatement ps = c.prepareStatement(sql);
+
+            ps.setString(1, role_users);
+            ps.setString(2, "pass");
+            ps.setString(3, email);
+            ps.setString(4, type_users);
+
+            ps.executeUpdate();
+
+            String sql1 = "INSERT INTO ql Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            ps = c.prepareStatement(sql1);
 
             ps.setString(1, type_users);
             ps.setString(2, role_users);
@@ -49,27 +59,12 @@ public class ULServlet extends HttpServlet {
             ps.setObject(10, ldt);
             ps.setObject(11, ldt);
 
-            Main_insert(type_users, role_users, email, c, ps);
+            ps.executeUpdate();
 
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName()+": "+e.getMessage());
             System.exit(0);
         }
-    }
-
-    public static void Main_insert(String type_users, String role_users, String email, Connection c, PreparedStatement ps) throws SQLException {
-        String sql;
-        ps.executeUpdate();
-
-        sql = "INSERT INTO main Values (?, ?, ?, ?)";
-        ps = c.prepareStatement(sql);
-
-        ps.setString(1, role_users);
-        ps.setString(2, "pass");
-        ps.setString(3, email);
-        ps.setString(4, type_users);
-
-        ps.executeUpdate();
     }
 }
