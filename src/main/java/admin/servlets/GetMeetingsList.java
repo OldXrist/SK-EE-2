@@ -8,6 +8,8 @@ import java.io.PrintWriter;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import com.google.gson.Gson;
 
@@ -19,7 +21,7 @@ public class GetMeetingsList extends HttpServlet {
                         "nomer_dela, sobr_org.famil, sobr_org.name, sobr_org.otch, \n" +
                         "au.famil, au.\"name\", au.otch\n" +
                         "FROM sobr_org, au\n" +
-                        "WHERE sobr_org.organizer_id = '" + id + "' and au.au_id ='" + id + "';";
+                        "WHERE sobr_org.organizer_id = " + id + " and au.au_id = " + id + " and sobr_org.user_role = 'АУ';";
         return auSql;
     }
 
@@ -29,7 +31,7 @@ public class GetMeetingsList extends HttpServlet {
                         "nomer_dela, sobr_org.famil, sobr_org.name, sobr_org.otch, \n" +
                         "fl.famil, fl.\"name\", fl.otch\n" +
                         "FROM sobr_org, fl\n" +
-                        "WHERE sobr_org.organizer_id = '" + id + "' and fl.fl_id='" + id + "';";
+                        "WHERE sobr_org.organizer_id = " + id + " and fl.fl_id= " + id + " and sobr_org.user_role = 'ФЛ';";
         return flSql;
     }
 
@@ -39,7 +41,7 @@ public class GetMeetingsList extends HttpServlet {
                         "nomer_dela, sobr_org.famil, sobr_org.name, sobr_org.otch, \n" +
                         "ip.famil, ip.\"name\", ip.otch\n" +
                         "FROM sobr_org, ip\n" +
-                        "WHERE sobr_org.organizer_id = '" + id + "' and ip.ip_id ='" + id + "';";
+                        "WHERE sobr_org.organizer_id = " + id + " and ip.ip_id = " + id + " and sobr_org.user_role = 'ИП';";
         return ipSql;
     }
 
@@ -49,8 +51,33 @@ public class GetMeetingsList extends HttpServlet {
                         "nomer_dela, sobr_org.famil, sobr_org.name, sobr_org.otch, \n" +
                         "ql.poln_naim\n" +
                         "FROM sobr_org, ql\n" +
-                        "WHERE sobr_org.organizer_id = '" + id + "' and ql.ql_id ='" + id + "';";
+                        "WHERE sobr_org.organizer_id =  " + id + "  and ql.ql_id = " + id + " and sobr_org.user_role = 'ЮЛ';";
         return qlSql;
+    }
+
+    public void GetRolesAndOrganizerIds(Connection _c, ArrayList<ArrayList<String>> _userRoles) {
+        try {
+            String sql = "SELECT user_role, organizer_id FROM sobr_org";
+            PreparedStatement ps = _c.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            ResultSetMetaData meta = rs.getMetaData();
+            int columnCount = meta.getColumnCount();
+            while (rs.next()) {
+                ArrayList<String> row = new ArrayList<String>();
+                for (int i = 1; i <= columnCount; ++i)
+                {
+                    Object value = rs.getObject(i);
+                    row.add(String.valueOf(value));
+                }
+                _userRoles.add(row);
+            }
+            rs.close();
+            ps.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
     }
 
     public void SetMeetingsInfo(Connection _c, String _sql, ArrayList<ArrayList<String>> _meetingsList)
@@ -86,25 +113,20 @@ public class GetMeetingsList extends HttpServlet {
             //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres", "postgres", "postgresql");
 
             //сначала собираем роли и id организаторов
-            HashMap<String, String> userRoles = new HashMap <String, String>();
-            String sql = "SELECT user_role, organizer_id FROM sobr_org";
-            PreparedStatement ps = c.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                userRoles.put(rs.getString(1), rs.getString(2));
-            }
+            ArrayList<ArrayList<String>> userRoles = new ArrayList<ArrayList<String>>();
+            GetRolesAndOrganizerIds(c, userRoles);
 
-            //заполняем двумерный массив данными
+            //заполняем массив данными
             ArrayList<ArrayList<String>> meetingsList = new ArrayList<ArrayList<String>>();
-            for (HashMap.Entry<String, String> item : userRoles.entrySet()) {
-                switch (item.getKey()) {
-                    case "АУ": SetMeetingsInfo(c, AuSql(item.getValue()), meetingsList);
+            for (ArrayList<String> item : userRoles) {
+                switch (item.get(0)) {
+                    case "АУ": SetMeetingsInfo(c, AuSql(item.get(1)), meetingsList);
                         break;
-                    case "ФЛ": SetMeetingsInfo(c, FlSql(item.getValue()), meetingsList);
+                    case "ФЛ": SetMeetingsInfo(c, FlSql(item.get(1)), meetingsList);
                         break;
-                    case "ИП": SetMeetingsInfo(c, IpSql(item.getValue()), meetingsList);
+                    case "ИП": SetMeetingsInfo(c, IpSql(item.get(1)), meetingsList);
                         break;
-                    case "ЮЛ": SetMeetingsInfo(c, QlSql(item.getValue()), meetingsList);
+                    case "ЮЛ": SetMeetingsInfo(c, QlSql(item.get(1)), meetingsList);
                         break;
                 }
             }
@@ -114,9 +136,6 @@ public class GetMeetingsList extends HttpServlet {
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
             response.getWriter().write(json);
-
-            rs.close();
-            ps.close();
         }
         catch (Exception e) {
             e.printStackTrace();

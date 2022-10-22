@@ -1,18 +1,60 @@
-let id1 = document.getElementById("id1");
-let id2 = document.getElementById("id2");
-let id3 = document.getElementById("id3");
-
 $(document).ready(function () {
     $(".nav_login").hide();
     $("#clock").hide();
     $("#logout_btn").hide();
     $(".logout").hide();
     $(".sort_drop").hide();
-    alert('15');
 
-    $.post("http://localhost:8080/Sobr/GetMeetingsList", function (data) {
-        if (data) {
-            console.log(data);
+    $.post("http://localhost:8080/Sobr/GetMeetingsList", function (result) {
+        if (result) {
+            console.log(result);
+            for (var i = 0; i < result.length; i++){
+                var meetingNumber = result[i][3];
+                var organizerName = (typeof result[i][8] !== 'undefined') ? result[i][7] + " " + result[i][8] + " " + result[i][9] : result[i][7];
+                var debtorName = result[i][4] + " " + result[i][5] + " " + result[i][6];
+                var startMeetingDate = new Date(result[i][0]).toLocaleString();
+                var invoiceDates = new Date(result[i][1]).toLocaleDateString() + " - " + new Date(result[i][2]).toLocaleDateString();
+                var meetingsContainer = document.getElementById("m-container");
+                meetingsContainer.innerHTML +=
+                    `<div class="meeting">
+                        <div class="meeting-left-side">
+                            <div class="top-side">
+                                <div class="m-name">
+                                    <a href="${meetingNumber}" class="heading-name"><span>${meetingNumber}</span></a>
+                                </div>
+                            </div>
+                            <div class="bottom-side">
+                                <div class="m-organizer">
+                                    <span class="heading">Организатор</span>
+                                    <span class="info">${organizerName}</span>
+                                </div>
+                                <div class="m-debtor">
+                                    <span class="heading">Должник</span>
+                                    <span class="info">${debtorName}</span>
+                                </div>
+                                <div class="m-status">
+                                    <span class="heading">Статус</span>
+                                    <span class="info">Не заполнено</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vertical-line"></div>
+                        <div class="meeting-right-side">
+                            <div class="top-side">
+                                <div class="m-event-date">
+                                    <span class="heading">Дата проведения собрания</span>
+                                    <span class="info">${startMeetingDate}</span>
+                                </div>
+                            </div>
+                            <div class="bottom-side">
+                                <div class="m-app-accept-date">
+                                    <span class="heading">Даты приема заявок</span>
+                                    <span class="info">${invoiceDates}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+            }
         } else {
             alert('error data');
         }
