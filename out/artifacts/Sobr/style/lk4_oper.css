@@ -533,14 +533,6 @@
     color: #104781;
 }
 
-.base_bg {
-    margin-top: 1542px;
-}
-
-.base {
-    margin-top: 1542px;
-}
-
 /*-----------------meetings list------------------*/
 .meetings-text {
     font-family: "Exo 2";
@@ -585,14 +577,12 @@
     height: 75px;
     padding-top: 25px;
     display: flex;
-    /* align-items: center; */
 }
 
 .bottom-side {
     height: 75px;
     padding-top: 15px;
     display: flex;
-    /* align-items: baseline; */
 }
 
 .m-name {
@@ -601,13 +591,13 @@
 
 .m-organizer {
     padding-left: 60px;
-    width: 320px;
+    width: 340px;
     display: flex;
     flex-direction: column;
 }
 
 .m-debtor {
-    width: 330px;
+    width: 340px;
     display: flex;
     flex-direction: column;
 }
@@ -665,4 +655,51 @@
     color: #104781;
     opacity: 0.4;
     border: 1px solid #104781;
+}
+
+/*-----------------footer------------------*/
+footer {
+    margin-top: 150px;
+    height: 298px;
+    background-color: #104781;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    color: #FFFFFF;
+}
+
+footer>.f-top {
+    padding: 60px 120px 0px 120px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+footer>.f-top>a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+footer>.f-middle {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer>.f-middle>a {
+    text-decoration: none;
+    color: #FFFFFF;
+    margin: 0px 5px 0px 5px;
+}
+
+footer>.f-bottom {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    opacity: 0.7;
 }

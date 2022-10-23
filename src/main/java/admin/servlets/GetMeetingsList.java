@@ -4,60 +4,55 @@ import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-
+import java.util.*;
 import com.google.gson.Gson;
 
 @WebServlet("/GetMeetingsList")
 public class GetMeetingsList extends HttpServlet {
-    public String AuSql(String id)
+    public String AuSql(String email)
     {
         String auSql =  "SELECT data_u_vrem_sobr, nachal_podach_zaiv, okonch_podach_zaiv, \n" +
                         "nomer_dela, sobr_org.famil, sobr_org.name, sobr_org.otch, \n" +
-                        "au.famil, au.\"name\", au.otch\n" +
+                        "au.famil, au.\"name\", au.otch, type_sobr\n" +
                         "FROM sobr_org, au\n" +
-                        "WHERE sobr_org.organizer_id = " + id + " and au.au_id = " + id + " and sobr_org.user_role = 'АУ';";
+                        "WHERE sobr_org.email_org = '" + email + "' and au.email = '" + email + "' and sobr_org.type_org = 'АУ';";
         return auSql;
     }
 
-    public String FlSql(String id)
+    public String FlSql(String email)
     {
         String flSql =  "SELECT data_u_vrem_sobr, nachal_podach_zaiv, okonch_podach_zaiv, \n" +
                         "nomer_dela, sobr_org.famil, sobr_org.name, sobr_org.otch, \n" +
-                        "fl.famil, fl.\"name\", fl.otch\n" +
+                        "fl.famil, fl.\"name\", fl.otch, type_sobr\n" +
                         "FROM sobr_org, fl\n" +
-                        "WHERE sobr_org.organizer_id = " + id + " and fl.fl_id= " + id + " and sobr_org.user_role = 'ФЛ';";
+                        "WHERE sobr_org.email_org = '" + email + "' and fl.email= '" + email + "' and sobr_org.type_org = 'ФЛ';";
         return flSql;
     }
 
-    public String IpSql(String id)
+    public String IpSql(String email)
     {
         String ipSql =  "SELECT data_u_vrem_sobr, nachal_podach_zaiv, okonch_podach_zaiv, \n" +
                         "nomer_dela, sobr_org.famil, sobr_org.name, sobr_org.otch, \n" +
-                        "ip.famil, ip.\"name\", ip.otch\n" +
+                        "ip.famil, ip.\"name\", ip.otch, type_sobr\n" +
                         "FROM sobr_org, ip\n" +
-                        "WHERE sobr_org.organizer_id = " + id + " and ip.ip_id = " + id + " and sobr_org.user_role = 'ИП';";
+                        "WHERE sobr_org.email_org = '" + email + "' and ip.email = '" + email + "' and sobr_org.type_org = 'ИП';";
         return ipSql;
     }
 
-    public String QlSql(String id)
+    public String QlSql(String email)
     {
         String qlSql =  "SELECT data_u_vrem_sobr, nachal_podach_zaiv, okonch_podach_zaiv, \n" +
                         "nomer_dela, sobr_org.famil, sobr_org.name, sobr_org.otch, \n" +
-                        "ql.poln_naim\n" +
+                        "ql.poln_naim, type_sobr\n" +
                         "FROM sobr_org, ql\n" +
-                        "WHERE sobr_org.organizer_id =  " + id + "  and ql.ql_id = " + id + " and sobr_org.user_role = 'ЮЛ';";
+                        "WHERE sobr_org.email_org =  '" + email + "'  and ql.email = '" + email + "' and sobr_org.type_org = 'ЮЛ';";
         return qlSql;
     }
 
-    public void GetRolesAndOrganizerIds(Connection _c, ArrayList<ArrayList<String>> _userRoles) {
+    public void GetRolesAndOrganizerIds(Connection _c, HashSet _userRoles) {
         try {
-            String sql = "SELECT user_role, organizer_id FROM sobr_org";
+            String sql = "SELECT type_org, email_org FROM sobr_org";
             PreparedStatement ps = _c.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             ResultSetMetaData meta = rs.getMetaData();
@@ -109,11 +104,12 @@ public class GetMeetingsList extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK2", "postgres", "111");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres", "postgres", "postgresql");
 
             //сначала собираем роли и id организаторов
-            ArrayList<ArrayList<String>> userRoles = new ArrayList<ArrayList<String>>();
+            //ArrayList<ArrayList<String>> userRoles = new ArrayList<ArrayList<String>>();
+            HashSet<ArrayList<String>> userRoles = new HashSet<ArrayList<String>>();
             GetRolesAndOrganizerIds(c, userRoles);
 
             //заполняем массив данными

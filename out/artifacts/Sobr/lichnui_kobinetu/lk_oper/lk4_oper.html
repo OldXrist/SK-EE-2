@@ -63,7 +63,7 @@
             <a href="#">
                 <p class="spisok_sobr"><b>Список собраний</b></p>
             </a>
-            <a href="lk5_oper.html">
+            <a href="meeting-info.html">
                 <p class="logs">Журнал изменений</p>
             </a>
         </form>
@@ -77,36 +77,37 @@
             <li class="sort2">дате добавления</li>
             <li class="sort3">статусу</li>
         </ul>
+        <div class="meetings-container" id="m-container"></div>
+    </div>
 
-        <div class="meetings-container" id="m-container" ></div>
-
-        <div class="container">
-            <div class="content">
-<!--                <div class="base_bg"></div>-->
-<!--                <div class="base">-->
-                    <ul>
-                        <li class="base_logo"><a href="#"><img src="../../img/Logo.svg" /></a></li>
-                        <li class="base_item1"><a>Выйти</a></li>
-                    </ul>
-                    <ul class="base_links">
-                        <li class="base_item2">Главная</li>
-                        <li class="base_item2">Реестр собраний</li>
-                        <li class="base_item2">Помощь</li>
-                        <li class="base_item2">Контакты</li>
-                    </ul>
-                    <p class="copyright">© 2011-2022 Оператор торговой площадки - ООО «ТендерСтандарт». Все права
-                        защищены.</p>
-                </div>
-            </div>
+    <footer>
+        <div class="f-top">
+            <a href="../../index.html"><img src="../../img/Logo.svg" /></a>
+            <a href="../../LOGOUTServlet">Выйти</a>
         </div>
+        <div class="f-middle">
+            <a href="../../index.html">Главная</a>
+            <a href="../../reestr.html">Реестр собраний</a>
+            <a href="../../help/help_1.html">Помощь</a>
+            <a href="../../help/contacts.html">Контакты</a>
+        </div>
+        <div class="f-bottom">
+            <span>
+                © 2011-2022 Оператор торговой площадки - ООО «ТендерСтандарт»
+            </span>
+            <span>
+                Все права защищены
+            </span>
+        </div>
+    </footer>
 
-        <script src="../../jquery/jquery-3.6.0.js"></script>
-        <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-            crossorigin="anonymous"></script>
-        <script src="../../scripts/index2.js"></script>
-        <script src="../../scripts/logout.js"></script>
-        <script src="../../scripts/get-meetings-list.js"></script>
+    <script src="../../jquery/jquery-3.6.0.js"></script>
+    <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <script src="../../scripts/index2.js"></script>
+    <script src="../../scripts/logout.js"></script>
+    <script src="../../scripts/get-meetings-list.js"></script>
 </body>
 
 </html>

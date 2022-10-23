@@ -10,17 +10,19 @@ $(document).ready(function () {
             console.log(result);
             for (var i = 0; i < result.length; i++){
                 var meetingNumber = result[i][3];
-                var organizerName = (typeof result[i][8] !== 'undefined') ? result[i][7] + " " + result[i][8] + " " + result[i][9] : result[i][7];
+                var organizerName = result[i].length > 9 ? result[i][7] + " " + result[i][8] + " " + result[i][9] : result[i][7];
                 var debtorName = result[i][4] + " " + result[i][5] + " " + result[i][6];
                 var startMeetingDate = new Date(result[i][0]).toLocaleString();
                 var invoiceDates = new Date(result[i][1]).toLocaleDateString() + " - " + new Date(result[i][2]).toLocaleDateString();
+                var type = result[i].length > 9 ? result[i][10] : result[i][8];
+                var meetingType = type == 'Z' ? 'Заочное' : 'Очное';
                 var meetingsContainer = document.getElementById("m-container");
                 meetingsContainer.innerHTML +=
                     `<div class="meeting">
                         <div class="meeting-left-side">
                             <div class="top-side">
                                 <div class="m-name">
-                                    <a href="${meetingNumber}" class="heading-name"><span>${meetingNumber}</span></a>
+                                    <a href="meeting-info.html" class="heading-name"><span>${meetingNumber} ${meetingType}</span></a>
                                 </div>
                             </div>
                             <div class="bottom-side">
@@ -34,7 +36,7 @@ $(document).ready(function () {
                                 </div>
                                 <div class="m-status">
                                     <span class="heading">Статус</span>
-                                    <span class="info">Не заполнено</span>
+                                    <span class="info"></span>
                                 </div>
                             </div>
                         </div>
