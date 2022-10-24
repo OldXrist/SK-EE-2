@@ -122,4 +122,5 @@ function Create(){
             console.log(sobr)
         })
     }
+    $.get("http://localhost:8080/Sobr/CRServlet")
 }

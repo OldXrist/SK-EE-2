@@ -4,6 +4,7 @@ import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -64,7 +65,7 @@ public class ZServlet extends HttpServlet {
 
         try{
             Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres", "postgres", "postgresql");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
 
             String sql1 = "INSERT INTO sobr_org Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -114,7 +115,7 @@ public class ZServlet extends HttpServlet {
                 ps.setLong(25, ogrn);
             } else ps.setNull(25, Types.BIGINT);
 
-            ps.setString(26, "Z");
+            ps.setString(26, "Заочное");
 
             if (!ob.equals("")){
                 long obem = Long.parseLong(ob);

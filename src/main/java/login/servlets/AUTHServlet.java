@@ -19,7 +19,7 @@ public class AUTHServlet extends HttpServlet {
 
         try {
             Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres", "postgres", "postgresql");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
 
             String sql = "SELECT email, type_users, role_users, pass FROM main WHERE email = ? AND pass = ?";
             PreparedStatement ps = c.prepareStatement(sql);
