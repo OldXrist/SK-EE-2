@@ -26,7 +26,7 @@ public class IPServlet extends HttpServlet {
         String seria = req.getParameter("seria");
         String date = req.getParameter("data");
         String nomer = req.getParameter("nomer");
-        String pass = req.getParameter("pass1");
+        String pass = req.getParameter("pass");
 
         String kem_vudan = req.getParameter("kem_vidan");
         LocalDateTime ldt = LocalDateTime.now();
