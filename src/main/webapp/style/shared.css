@@ -92,6 +92,11 @@ body{
   color: #FFFFFF;
 }
 
+.base_item1 a{
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
 .base_item2 {
   display: inline-block;
   list-style: none;

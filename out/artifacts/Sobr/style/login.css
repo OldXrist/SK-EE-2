@@ -152,6 +152,7 @@ h2{
     line-height: 100%;
     color: #104781;
     display: inline-block;
+    text-decoration: none;
 }
 
 .link2{
@@ -165,4 +166,10 @@ h2{
     color: #104781;
     display: inline-block;
     padding-left: 87px;
+    text-decoration: none;
+}
+
+.pwd_block ul li a{
+    text-decoration: none;
+    color: #104781;
 }

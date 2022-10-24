@@ -44,9 +44,6 @@
     line-height: 100%;
     color: #406C9A;
 }
-input:focus{
-    border-color: #FFFFFF;
-}
 
 .wait{
     position: absolute;
@@ -404,7 +401,6 @@ input::placeholder{
     width: 400px;
     border-radius:10px;
     height: 50px;
-    border: none;
 }
 
 .forms:focus{
@@ -416,8 +412,6 @@ input::placeholder{
     width: 1040px;
     border-radius:10px;
     height: 50px;
-    border: none;
-
 }
 
 .forms2:focus{
@@ -429,7 +423,6 @@ input::placeholder{
     width: 590px;
     border-radius:10px;
     height: 50px;
-    border: none;
 }
 
 .forms3:focus{
@@ -442,8 +435,6 @@ input::placeholder{
     width: 300px;
     border-radius:10px;
     height: 50px;
-    border: none;
-
 }
 .forms4:focus{
     outline: none;
@@ -454,8 +445,6 @@ input::placeholder{
     width: 340px;
     border-radius:10px;
     height: 50px;
-    border: none;
-
 }
 .forms5:focus{
     outline: none;
