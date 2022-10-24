@@ -21,6 +21,8 @@ public class ULServlet extends HttpServlet {
         String pocht_adres = req.getParameter("pocht_adres");
         String telephon = req.getParameter("telephon");
         String email = req.getParameter("email");
+        String pass = req.getParameter("pass1");
+
         LocalDateTime ldt = LocalDateTime.now();
 
         String unn = req.getParameter("unn");
@@ -38,7 +40,7 @@ public class ULServlet extends HttpServlet {
             PreparedStatement ps = c.prepareStatement(sql);
 
             ps.setString(1, role_users);
-            ps.setString(2, "pass");
+            ps.setString(2, pass);
             ps.setString(3, email);
             ps.setString(4, type_users);
 

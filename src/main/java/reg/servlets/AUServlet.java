@@ -28,6 +28,8 @@ public class AUServlet extends HttpServlet {
         String kem_vudan = req.getParameter("kem_vidan");
         String naim_org = req.getParameter("naim_org");
         String reg_nomer_ay = req.getParameter("reg_nomer_au");
+        String pass = req.getParameter("pass1");
+
         String date = req.getParameter("data");
         LocalDateTime ldt = LocalDateTime.now();
 
@@ -43,7 +45,7 @@ public class AUServlet extends HttpServlet {
             PreparedStatement ps = c.prepareStatement(sql);
 
             ps.setString(1, role_users);
-            ps.setString(2, "pass");
+            ps.setString(2, pass);
             ps.setString(3, email);
             ps.setString(4, type_users);
 

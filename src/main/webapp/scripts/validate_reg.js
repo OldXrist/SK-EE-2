@@ -38,6 +38,10 @@ function Validate_reg () {
         document.getElementById("phone").style.borderColor = 'red';
         k += 1;
     }
+    if (document.getElementById("pass").value.length === 0) {
+        document.getElementById("pass").style.borderColor = 'red';
+        k += 1;
+    }
     if (document.getElementById("email").value.length === 0 ||
         !document.getElementById("email").value.includes("@") ||
         document.getElementById("email").value.includes("..")) {
@@ -102,6 +106,11 @@ function Validate_reg () {
         document.getElementById("data").style.borderColor = 'red';
         k += 1;
     }
+    if (document.getElementById("pass2").value.length === 0 ||
+        document.getElementById("pass2").value !== document.getElementById("pass").value) {
+        document.getElementById("pass2").style.borderColor = 'red';
+        k += 1;
+    }
     if (document.getElementById("email_2").value.length === 0 ||
         document.getElementById("email_2").value !== document.getElementById("email").value) {
         document.getElementById("email_2").style.borderColor = 'red';
@@ -133,6 +142,7 @@ function Validate_reg () {
                 pocht_adres: document.getElementById("pocht_adres").value,
                 telephon: document.getElementById("phone").value,
                 email: document.getElementById("email").value,
+                pass: document.getElementById("pass").value,
                 reg_date: Date
             };
 
@@ -152,6 +162,9 @@ function Validate_reg () {
             document.getElementById("phone").disabled = true
             document.getElementById("email").disabled = true
             document.getElementById("email_2").disabled = true
+            document.getElementById("pass").disabled = true
+            document.getElementById("pass2").disabled = true
+
             document.getElementsByClassName("knopka").disabled = true
 
         } else if (role === 'ИП'){
@@ -171,6 +184,8 @@ function Validate_reg () {
                 seria: document.getElementById("ser").value,
                 nomer: document.getElementById("num").value,
                 kem_vidan: document.getElementById("kem_vudan").value,
+                pass: document.getElementById("pass").value,
+
                 reg_date: Date
             };
             console.log(user)
@@ -197,6 +212,10 @@ function Validate_reg () {
             document.getElementById("num").disabled = true
             document.getElementById("data").disabled = true
             document.getElementById("email_2").disabled = true
+            document.getElementById("pass").disabled = true
+            document.getElementById("pass2").disabled = true
+
+
             document.getElementsByClassName("knopka2").disabled = true
 
         } else if (role === 'ФЛ') {
@@ -214,6 +233,8 @@ function Validate_reg () {
                 data: document.getElementById("data").value,
                 seria: document.getElementById("ser").value,
                 nomer: document.getElementById("num").value,
+                pass: document.getElementById("pass").value,
+
                 kem_vidan: document.getElementById("kem_vudan").value,
                 reg_date: Date
             };
@@ -239,6 +260,9 @@ function Validate_reg () {
             document.getElementById("data").disbled = true
             document.getElementById("kem_vudan").disabled = true
             document.getElementById("email_2").disabled = true
+            document.getElementById("pass").disabled = true
+            document.getElementById("pass2").disabled = true
+
             document.getElementsByClassName("knopka2").disabled = true
 
         } else {
@@ -259,6 +283,8 @@ function Validate_reg () {
                 naim_org: document.getElementById("naim_org").value,
                 kem_vidan: document.getElementById("kem_vudan").value,
                 reg_nomer_au: document.getElementById("reg_nomer_au").value,
+                pass: document.getElementById("pass").value,
+
                 reg_date: Date
             };
 
@@ -284,6 +310,9 @@ function Validate_reg () {
             document.getElementById("data").disbled = true
             document.getElementById("kem_vudan").disabled = true
             document.getElementById("email_2").disabled = true
+            document.getElementById("pass").disabled = true
+            document.getElementById("pass2").disabled = true
+
             document.getElementsByClassName("knopka2").disabled = true
         }
     }
