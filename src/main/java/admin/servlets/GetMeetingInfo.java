@@ -5,11 +5,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-
 import java.io.IOException;
 import java.sql.*;
 import java.util.*;
-
 import com.google.gson.Gson;
 
 @WebServlet("/GetMeetingInfo")
