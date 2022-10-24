@@ -15,7 +15,8 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 @WebServlet(urlPatterns = {"/file-servlet"})
-@MultipartConfig(location = "C:\\data")
+@MultipartConfig(location = "C:\\data", fileSizeThreshold=1024*1024,
+        maxFileSize=1024*1024*5, maxRequestSize=1024*1024*5*5)
 public class FileServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
