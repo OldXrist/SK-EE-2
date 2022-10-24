@@ -51,12 +51,12 @@
     color: #406C9A;
 }
 
-.sort_drop li:hover{
+.sort_drop li:hover {
     background: #BAF3FC;
 }
 
 
-.decline{
+.decline {
     position: absolute;
     width: 520px;
     height: 401px;
@@ -68,7 +68,7 @@
     z-index: 1000;
 }
 
-.decline p{
+.decline p {
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 400;
@@ -77,7 +77,7 @@
     color: #104781;
 }
 
-.decline input{
+.decline input {
     width: 400px;
     height: 150px;
     background: #E6F5F7;
@@ -87,11 +87,11 @@
     padding-left: 17px;
 }
 
-.decline input:focus{
+.decline input:focus {
     outline: none;
 }
 
-.decline input::placeholder{
+.decline input::placeholder {
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 400;
@@ -100,7 +100,7 @@
     color: #406C9A;
 }
 
-.decline button{
+.decline button {
     width: 400px;
     height: 55px;
     background: #37DCF5;
@@ -116,14 +116,20 @@
     color: #00345F;
 }
 
-.table1 {position: absolute;
+.table1 {
+    position: absolute;
     width: 1160px;
     height: 90px;
     margin-left: 80px;
     top: 624px;
 
     background: #BAF3FC;
-    border-radius: 15px;}
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
 
 .table_min {
     position: absolute;
@@ -147,7 +153,8 @@
     margin-bottom: 20px;
 }
 
-.spisok_zaivok {position: absolute;
+.spisok_zaivok {
+    position: absolute;
     width: 261px;
     height: 18px;
     left: 60px;
@@ -158,9 +165,11 @@
     font-weight: 600;
     font-size: 18px;
     line-height: 100%;
-    color: #104781;}
+    color: #104781;
+}
 
-.sort_po {position: absolute;
+.sort_po {
+    position: absolute;
     width: 134px;
     height: 18px;
     left: 180px;
@@ -174,7 +183,8 @@
     color: #104781;
 }
 
-.nomer_z {position: absolute;
+.nomer_z {
+    position: absolute;
     width: 200px;
     height: 18px;
     left: 60px;
@@ -185,9 +195,11 @@
     font-weight: 600;
     font-size: 18px;
     line-height: 100%;
-    color: #104781;}
+    color: #104781;
+}
 
-.kreditor {position: absolute;
+.kreditor {
+    position: absolute;
     width: 64px;
     height: 14px;
     left: 60px;
@@ -198,9 +210,11 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 100%;
-    color: #406C9A;}
+    color: #406C9A;
+}
 
-.nik {position: absolute;
+.nik {
+    position: absolute;
     width: 230px;
     height: 16px;
     left: 60px;
@@ -214,9 +228,11 @@
     /* identical to box height, or 16px */
 
 
-    color: #104781;}
+    color: #104781;
+}
 
-.data_and_time {position: absolute;
+.data_and_time {
+    position: absolute;
     width: 89px;
     height: 14px;
     left: 400px;
@@ -230,9 +246,11 @@
     /* identical to box height, or 14px */
 
 
-    color: #406C9A;}
+    color: #406C9A;
+}
 
-.data {position: absolute;
+.data {
+    position: absolute;
     width: 125px;
     height: 16px;
     left: 400px;
@@ -246,9 +264,11 @@
     /* identical to box height, or 16px */
 
 
-    color: #104781;}
+    color: #104781;
+}
 
-.status {position: absolute;
+.status {
+    position: absolute;
     width: 44px;
     height: 14px;
     left: 700px;
@@ -262,9 +282,11 @@
     /* identical to box height, or 14px */
 
 
-    color: #406C9A;}
+    color: #406C9A;
+}
 
-.na_rasmotr {position: absolute;
+.na_rasmotr {
+    position: absolute;
     width: 132px;
     height: 16px;
     left: 700px;
@@ -278,9 +300,11 @@
     /* identical to box height, or 16px */
 
 
-    color: #104781;}
+    color: #104781;
+}
 
-.knopka_prin {position: absolute;
+.knopka_prin {
+    position: absolute;
     width: 140px;
     height: 40px;
     left: 960px;
@@ -303,7 +327,8 @@
     color: #00345F;
 }
 
-.knopka_otklon {position: absolute;
+.knopka_otklon {
+    position: absolute;
     width: 140px;
     height: 40px;
     left: 960px;
@@ -324,7 +349,8 @@
     color: #00345F;
 }
 
-.vupodashka {position: absolute;
+.vupodashka {
+    position: absolute;
     width: 318px;
     height: 18px;
     margin-left: 180px;
@@ -338,7 +364,8 @@
     /* identical to box height, or 18px */
 
 
-    color: #104781;}
+    color: #104781;
+}
 
 
 .vspluvashka_itme {
@@ -350,9 +377,11 @@
 
     background: #FFFFFF;
     box-shadow: 0px 6px 12px rgba(16, 71, 129, 0.1);
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.palka1 {position: absolute;
+.palka1 {
+    position: absolute;
     width: 110px;
     height: 0px;
     left: 800px;
@@ -361,9 +390,11 @@
     color: #104781;
     opacity: 0.4;
     border: 1px solid #104781;
-    transform: rotate(-90deg);}
+    transform: rotate(-90deg);
+}
 
-.data_provid {position: absolute;
+.data_provid {
+    position: absolute;
     width: 181px;
     height: 14px;
     left: 900px;
@@ -377,9 +408,11 @@
     /* identical to box height, or 14px */
 
 
-    color: #406C9A;}
+    color: #406C9A;
+}
 
-.sama_data {position: absolute;
+.sama_data {
+    position: absolute;
     width: 125px;
     height: 16px;
     left: 900px;
@@ -393,9 +426,11 @@
     /* identical to box height, or 16px */
 
 
-    color: #104781;}
+    color: #104781;
+}
 
-.data_priema {position: absolute;
+.data_priema {
+    position: absolute;
     width: 137px;
     height: 14px;
     left: 900px;
@@ -412,7 +447,8 @@
     color: #406C9A;
 }
 
-.sama_data2 {position: absolute;
+.sama_data2 {
+    position: absolute;
     width: 177px;
     height: 16px;
     left: 900px;
@@ -426,9 +462,11 @@
     /* identical to box height, or 16px */
 
 
-    color: #104781;}
+    color: #104781;
+}
 
-.dolzhnik {position: absolute;
+.dolzhnik {
+    position: absolute;
     width: 61px;
     height: 14px;
     left: 278px;
@@ -442,9 +480,11 @@
     /* identical to box height, or 14px */
 
 
-    color: #406C9A;}
+    color: #406C9A;
+}
 
-.nik2 {position: absolute;
+.nik2 {
+    position: absolute;
     width: 246px;
     height: 16px;
     left: 278px;
@@ -461,7 +501,8 @@
     color: #104781;
 }
 
-.status2 {position: absolute;
+.status2 {
+    position: absolute;
     width: 44px;
     height: 14px;
     left: 604px;
@@ -475,9 +516,11 @@
     /* identical to box height, or 14px */
 
 
-    color: #406C9A;}
+    color: #406C9A;
+}
 
-.status_ob {position: absolute;
+.status_ob {
+    position: absolute;
     width: 197px;
     height: 16px;
     left: 604px;
@@ -490,11 +533,173 @@
     color: #104781;
 }
 
-.base_bg{
-    margin-top: 1542px;
+/*-----------------meetings list------------------*/
+.meetings-text {
+    font-family: "Exo 2";
+    font-size: 18px;
+    font-weight: 600;
+    color: rgba(16, 71, 129, 1);
+    margin-left: 60px;
+    margin-bottom: 0px;
 }
 
-.base{
-    margin-top: 1542px;
+.meetings-container {
+    margin-top: 740px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+.meeting {
+    margin-top: 25px;
+    margin-left: 20px;
+    width: 1160px;
+    display: flex;
+    background-color: rgba(186, 243, 252, 0.3);
+    border: 1px solid rgba(186, 243, 252, 0.5);
+    box-shadow: 0px 6px 12px rgba(16, 71, 129, 0.1);
+    border-radius: 15px;
+}
+
+.meeting-left-side {
+    width: 860px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.meeting-right-side {
+    width: 300px;
+}
+
+.top-side {
+    height: 75px;
+    padding-top: 25px;
+    display: flex;
+}
+
+.bottom-side {
+    height: 75px;
+    padding-top: 15px;
+    display: flex;
+}
+
+.m-name {
+    padding-left: 60px;
+}
+
+.m-organizer {
+    padding-left: 60px;
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+}
+
+.m-debtor {
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+}
+
+.m-status {
+    display: flex;
+    flex-direction: column;
+}
+
+.m-event-date {
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.m-app-accept-date {
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.heading-name {
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    color: #104781;
+    text-decoration: none;
+}
+
+.heading {
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: #406C9A;
+}
+
+.info {
+    padding-top: 7px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #406C9A;
+}
+
+.vertical-line {
+    margin-top: 20px;
+    height: 110px;
+    left: 50%;
+    color: #104781;
+    opacity: 0.4;
+    border: 1px solid #104781;
+}
+
+/*-----------------footer------------------*/
+footer {
+    margin-top: 150px;
+    height: 298px;
+    background-color: #104781;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    color: #FFFFFF;
+}
+
+footer>.f-top {
+    padding: 60px 120px 0px 120px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+footer>.f-top>a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+footer>.f-middle {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer>.f-middle>a {
+    text-decoration: none;
+    color: #FFFFFF;
+    margin: 0px 5px 0px 5px;
+}
+
+footer>.f-bottom {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    opacity: 0.7;
+}

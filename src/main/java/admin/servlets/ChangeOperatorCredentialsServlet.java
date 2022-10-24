@@ -23,7 +23,7 @@ public class ChangeOperatorCredentialsServlet extends HttpServlet {
 
         try{
             Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres", "postgres", "postgresql");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
 
             String sql1 = "UPDATE adminaccounts SET firstname = '" + firstName + "' WHERE id = 2";
