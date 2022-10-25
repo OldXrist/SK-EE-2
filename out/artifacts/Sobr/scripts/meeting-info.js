@@ -69,10 +69,31 @@ setInterval(function () {
 
 //
 function ChangeMeetingInfo() {
-    // $.post("http://localhost:8080/Sobr/ChangeMeetingInfo", inputData2, function (result) {
-    //     if (result) {
-    //
-    //     }
-    // });
+    var orgFullName = document.getElementById("org-fullname");
+    var orgStatus = document.getElementById("org-status");
+    var frsNumber = document.getElementById("frs-number");
+    var sroName = document.getElementById("sro-name");
+    var orgPhone = document.getElementById("org-phone");
+    var orgEmail = document.getElementById("org-email");
+    var efrsbNumber = document.getElementById("efrsb-number");
+    var debtorFullname = document.getElementById("debtor-fullname");
+    var debtorShortname = document.getElementById("debtor-shortname");
+    var debtorInn = document.getElementById("debtor-inn");
+    var debtorOgrn = document.getElementById("debtor-ogrn");
+    var courtName = document.getElementById("court-name");
+    var caseNumber = document.getElementById("case-number");
+    var basis = document.getElementById("basis");
+    var identityDocs = document.getElementById("identity-docs");
+    var credentialsDocs = document.getElementById("credentials-docs");
+
+    let inputData2 = { _orgFullName: orgFullName,
+    _orgStatus: orgStatus,
+    }
+
+    $.post("http://localhost:8080/Sobr/ChangeMeetingInfo", inputData2, function (result) {
+        if (result) {
+
+        }
+    });
     alert(111);
 }

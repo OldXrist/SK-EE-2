@@ -1,4 +1,42 @@
-function ValidateOperatorCredentials() {
+$(document).ready(function () {
+    $(".nav_login").hide();
+    $("#clock").hide();
+    $("#logout_btn").hide();
+    $(".logout").hide();
+
+    $.post("http://localhost:8080/Sobr/GetAdminInfo", function (result) {
+        console.log(result);
+        let lastName = document.getElementById("last-name");
+        let firstName = document.getElementById("first-name");
+        let middleName = document.getElementById("middle-name");
+        let phone = document.getElementById("phone");
+        let email = document.getElementById("email");
+        let repeatEmail = document.getElementById("repeat-email");
+        let login = document.getElementById("login");
+        let password = document.getElementById("password");
+        let repeatPassword = document.getElementById("repeat-password")
+
+        lastName.value = result[3];
+        firstName.value = result[1];
+        middleName.value = result[2];
+        phone.value = result[4];
+        email.value = result[5];
+        repeatEmail.value = result[5];
+        login.value = result[6];
+        password.value = result[7];
+        repeatPassword.value = result[7];
+    });
+});
+
+//clock
+setInterval(function () {
+    var now = new Date();
+    var clock = document.getElementById("clock");
+    clock.innerHTML = now.toLocaleTimeString();
+}, 1000);
+
+//validation
+function ValidateAdminCredentials() {
     let isValidate = true;
     let lastName = document.getElementById("last-name");
     let firstName = document.getElementById("first-name");
@@ -73,7 +111,7 @@ function ValidateOperatorCredentials() {
             password: password.value
         }
 
-        $.post("http://localhost:8080/Sobr/ChangeOperatorCredentialsServlet", adminData, function (data) {
+        $.post("http://localhost:8080/Sobr/ChangeAdminCredentialsServlet", adminData, function (data) {
             if (data == "") {
                 alert("Данные успешно сохранены!");
                 lastName.style.borderColor = '#E6F5F7';
