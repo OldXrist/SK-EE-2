@@ -1,4 +1,5 @@
-.lk {position: absolute;
+.lk {
+    position: absolute;
     width: 259px;
     height: 38px;
     margin-left: 80px;
@@ -12,18 +13,22 @@
     /* or 38px */
 
 
-    color: #104781;}
+    color: #104781;
+}
 
-.table_min {position: absolute;
+.table_min {
+    position: absolute;
     width: 375px;
     height: 232px;
     margin-left: 80px;
     top: 276px;
 
     background: #BAF3FC;
-    border-radius: 15px;}
+    border-radius: 15px;
+}
 
-.admin {position: absolute;
+.admin {
+    position: absolute;
     width: 138px;
     height: 18px;
     left: 60px;
@@ -34,18 +39,22 @@
     font-weight: 600;
     font-size: 18px;
     line-height: 100%;
-    color: #104781;}
+    color: #104781;
+}
 
-.palka2 {position: absolute;
+.palka2 {
+    position: absolute;
     width: 265px;
     height: 0px;
     left: 60px;
     top: 83px;
 
     opacity: 0.4;
-    border: 1px solid #406C9A;}
+    border: 1px solid #406C9A;
+}
 
-.licd {position: absolute;
+.licd {
+    position: absolute;
     width: 188px;
     height: 18px;
     left: 60px;
@@ -59,9 +68,11 @@
     /* identical to box height, or 18px */
 
 
-    color: #406C9A;}
+    color: #406C9A;
+}
 
-.shabl {position: absolute;
+.shabl {
+    position: absolute;
     width: 188px;
     height: 18px;
     left: 60px;
@@ -75,9 +86,11 @@
     /* identical to box height, or 18px */
 
 
-    color: #406C9A;}
+    color: #406C9A;
+}
 
-.sistem_obsh {position: absolute;
+.sistem_obsh {
+    position: absolute;
     width: 200px;
     height: 18px;
     left: 60px;
@@ -91,25 +104,30 @@
     /* identical to box height, or 18px */
 
 
-    color: #406C9A;}
+    color: #406C9A;
+}
 
-.logout-1-traced {position: absolute;
+.logout-1-traced {
+    position: absolute;
     width: 18px;
     height: 20px;
     left: 307px;
     top: 49px;
 }
 
-.table_osn {position: absolute;
+.table_osn {
+    position: absolute;
     width: 1160px;
     height: 645px;
     margin-left: 80px;
     top: 558px;
 
     background: #BAF3FC;
-    border-radius: 15px;}
+    border-radius: 15px;
+}
 
-.ld {position: absolute;
+.ld {
+    position: absolute;
     width: 138px;
     height: 18px;
     left: 60px;
@@ -120,9 +138,11 @@
     font-weight: 600;
     font-size: 18px;
     line-height: 100%;
-    color: #104781;}
+    color: #104781;
+}
 
-.txt_ld {position: absolute;
+.txt_ld {
+    position: absolute;
     width: 138px;
     height: 18px;
     left: 60px;
@@ -134,63 +154,77 @@
     font-size: 18px;
     line-height: 100%;
 
-    color: #104781;}
+    color: #104781;
+}
 
-.famil {position: absolute;
+.famil {
+    position: absolute;
     width: 300px;
     height: 50px;
     left: 60px;
     top: 136px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.name {position: absolute;
+.name {
+    position: absolute;
     width: 300px;
     height: 50px;
     left: 410px;
     top: 136px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.otch {position: absolute;
+.otch {
+    position: absolute;
     width: 300px;
     height: 50px;
     left: 760px;
     top: 136px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.telefon {position: absolute;
+.telefon {
+    position: absolute;
     width: 300px;
     height: 50px;
     left: 60px;
     top: 254px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.email {position: absolute;
+.email {
+    position: absolute;
     width: 300px;
     height: 50px;
     left: 410px;
     top: 254px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.email2 {position: absolute;
+.email2 {
+    position: absolute;
     width: 300px;
     height: 50px;
     left: 760px;
     top: 254px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.txt_log {position: absolute;
+.txt_log {
+    position: absolute;
     width: 191px;
     height: 18px;
     left: 60px;
@@ -204,34 +238,41 @@
     /* identical to box height, or 18px */
 
 
-    color: #104781;}
+    color: #104781;
+}
 
-.login {position: absolute;
+.login {
+    position: absolute;
     width: 300px;
     height: 50px;
     left: 60px;
     top: 440px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.new_pas {position: absolute;
+.new_pas {
+    position: absolute;
     width: 300px;
     height: 50px;
     left: 410px;
     top: 440px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.new_pas2 {position: absolute;
+.new_pas2 {
+    position: absolute;
     width: 300px;
     height: 50px;
     left: 760px;
     top: 440px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
 .txt_obsh {
     position: absolute;
@@ -245,9 +286,11 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 100%;
-    color: #406C9A;}
+    color: #406C9A;
+}
 
-.knopka {position: absolute;
+.knopka {
+    position: absolute;
     width: 360px;
     height: 55px;
     left: 285px;
@@ -270,7 +313,8 @@
     color: #00345F;
 }
 
-.knopka2 {position: absolute;
+.knopka2 {
+    position: absolute;
     width: 180px;
     height: 55px;
     left: 695px;
@@ -292,26 +336,30 @@
 }
 
 .forms4 {
-    padding:12px;
+    padding: 12px;
     width: 300px;
-    border-radius:10px;
-    border-style:solid;
+    border-radius: 10px;
+    border-style: solid;
     border-color: #E6F5F7;
 }
-.forms4:focus{
+
+.forms4:focus {
     outline: none;
 }
 
-.table_mal {position: absolute;
+.table_mal {
+    position: absolute;
     width: 1160px;
     height: 236px;
     margin-left: 80px;
     top: 558px;
 
     background: #BAF3FC;
-    border-radius: 15px;}
+    border-radius: 15px;
+}
 
-.shabl_doks {position: absolute;
+.shabl_doks {
+    position: absolute;
     width: 193px;
     height: 18px;
     left: 60px;
@@ -322,25 +370,75 @@
     font-weight: 600;
     font-size: 18px;
     line-height: 100%;
-    color: #104781;}
+    color: #104781;
+}
 
-.vubr_shabl {position: absolute;
+.vubr_shabl {
+    position: absolute;
     width: 1040px;
     height: 50px;
     left: 60px;
     top: 136px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.forms2 {  padding:12px;
+.forms2 {
+    padding: 12px;
     width: 1040px;
-    border-radius:10px;
+    border-radius: 10px;
     border: none;
 }
 
-.forms2:focus{
+.forms2:focus {
     outline: none;
 }
 
+/*-----------------footer------------------*/
+footer {
+    margin-top: 1300px;
+    height: 298px;
+    background-color: #104781;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    color: #FFFFFF;
+    width: 100%;
+}
 
+footer>.f-top {
+    padding: 60px 120px 0px 120px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+footer>.f-top>a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+footer>.f-middle {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer>.f-middle>a {
+    text-decoration: none;
+    color: #FFFFFF;
+    margin: 0px 5px 0px 5px;
+}
+
+footer>.f-bottom {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    opacity: 0.7;
+}

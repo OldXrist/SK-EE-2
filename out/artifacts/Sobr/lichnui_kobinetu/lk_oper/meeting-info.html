@@ -42,79 +42,83 @@
             </nav>
         </div>
 
-        <p class="lk" id = "meeting-number"></p>
+        <p class="lk" id="meeting-number"></p>
 
         <form class="table_bol">
 
             <p class="org_sobr">Организатор собрания</p>
             <div class="naim">
-                <label for="naim" class="txt_obsh">Наименование</label>
-                <input type="email" class="forms2" id="naim" placeholder="Иванов Иван Иванович">
+                <label for="org-fullname" class="txt_obsh">Наименование</label>
+                <input type="email" class="forms2" id="org-fullname" placeholder="Иванов Иван Иванович">
             </div>
             <div class="arbitr">
-                <label for="arbitr" class="txt_obsh">Статус</label>
-                <input type="email" class="forms" id="arbitr" placeholder="Арбитражный управляющий">
+                <label for="org-status" class="txt_obsh">Статус</label>
+                <input type="email" class="forms" id="org-status" placeholder="Арбитражный управляющий">
             </div>
             <div class="reg_nomera">
-                <label for="reg_nomera" class="txt_obsh">Регистрационный номер ФРС</label>
-                <input type="email" class="forms3" id="reg_nomera" placeholder="000 000 000 00">
+                <label for="frs-number" class="txt_obsh">Регистрационный номер ФРС</label>
+                <input type="email" class="forms3" id="frs-number">
             </div>
             <div class="naim_sro">
-                <label for="naim_sro" class="txt_obsh">Наименование СРО АУ</label>
-                <input type="email" class="forms2" id="naim_sro" placeholder="Ассоциация «Гильдия управляющих»">
+                <label for="sro-name" class="txt_obsh">Наименование СРО АУ</label>
+                <input type="email" class="forms2" id="sro-name">
             </div>
             <div class="telefon2">
-                <label for="telefon2" class="txt_obsh">Телефон</label>
-                <input type="email" class="forms" id="telefon2" placeholder="+7 (900) 000-12-34">
+                <label for="org-phone" class="txt_obsh">Телефон</label>
+                <input type="email" class="forms" id="org-phone" placeholder="+7 (900) 000-12-34">
             </div>
             <div class="email_2">
-                <label for="email_2" class=txt_obsh>Электронная почта</label>
-                <input type="email" class="forms3" id="email_2" placeholder="ivanov12@mail.ru">
+                <label for="sro-name" class=txt_obsh>Электронная почта</label>
+                <input type="email" class="forms3" id="org-email" placeholder="ivanov12@mail.ru">
             </div>
             <p class="efrsb_txt">ЕФРСБ</p>
             <div class="efrsb">
-                <label for="efrsb" class="txt_obsh">ЕФРСБ</label>
-                <input type="email" class="forms2" id="efrsb" placeholder="Индетификационный номер собрания ЕФРСБ">
+                <label for="efrsb-number" class="txt_obsh">ЕФРСБ</label>
+                <input type="email" class="forms2" id="efrsb-number" placeholder="Индетификационный номер собрания ЕФРСБ">
             </div>
             <p class="sved_o_dolzh">Сведения о должнике</p>
             <div class="naim1">
-                <label for="naim1" class="txt_obsh">Наименование</label>
-                <input type="email" class="forms2" id="naim1" placeholder="Наименование">
+                <label for="debtor-fullname" class="txt_obsh">Наименование</label>
+                <input type="email" class="forms2" id="debtor-fullname" placeholder="Наименование">
             </div>
             <div class="kratko_naim">
-                <label for="kratko_naim" class="txt_obsh">Краткое наименование</label>
-                <input type="email" class="forms2" id="kratko_naim" placeholder="Краткое наименование">
+                <label for="debtor-shortname" class="txt_obsh">Краткое наименование</label>
+                <input type="email" class="forms2" id="debtor-shortname" placeholder="Краткое наименование">
             </div>
             <div class="unn">
-                <label for="unn" class="txt_obsh">ИНН</label>
-                <input type="email" class="forms" id="unn" placeholder="11111111">
+                <label for="debtor-inn" class="txt_obsh">ИНН</label>
+                <input type="email" class="forms" id="debtor-inn" placeholder="11111111">
             </div>
             <div class="ogrn">
-                <label for="ogrn" class="txt_obsh">ОГРН</label>
-                <input type="email" class="forms3" id="ogrn" placeholder="000 000 000 00">
+                <label for="debtor-ogrn" class="txt_obsh">ОГРН</label>
+                <input type="email" class="forms3" id="debtor-ogrn" placeholder="000 000 000 00">
             </div>
             <p class="sved_o_proc">Сведения о процедуре банкротства</p>
             <div class="naim_abr_sud">
-                <label for="naim_abr_sud" class="txt_obsh">Наименование арбитражного суда</label>
-                <input type="email" class="forms3" id="naim_abr_sud" placeholder="Наименование арбитражного суда">
+                <label for="court-name" class="txt_obsh">Наименование арбитражного суда</label>
+                <input type="email" class="forms3" id="court-name" placeholder="Наименование арбитражного суда">
             </div>
             <div class="nomer_dela">
-                <label for="nomer_dela" class="txt_obsh">Номер дела о банкротстве</label>
-                <input type="email" class="forms4" id="nomer_dela" placeholder="Номер дела о банкротстве">
+                <label for="case-number" class="txt_obsh">Номер дела о банкротстве</label>
+                <input type="email" class="forms4" id="case-number" placeholder="Номер дела о банкротстве">
             </div>
             <div class="osn_dli">
-                <label for="osn_dli" class="txt_obsh">Основание для собрания кредиторов</label>
-                <input type="email" class="forms5" id="osn_dli" placeholder="Основание для собрания кредиторов">
+                <label for="basis" class="txt_obsh">Основание для собрания кредиторов</label>
+                <input type="email" class="forms5" id="basis" placeholder="Основание для собрания кредиторов">
             </div>
             <p class="doks">Документы, которые необходимо предоставить участникам собрания</p>
             <div class="doks2">
-                <label for="doks2" class="txt_obsh"></label>
-                <input type="email" class="forms2" id="doks2" placeholder="Документ, удостоверяющий личность">
+                <label for="identity-docs" class="txt_obsh"></label>
+                <input type="email" class="forms2" id="identity-docs" placeholder="Документ, удостоверяющий личность">
             </div>
             <div class="doks3">
-                <label for="doks3" class="txt_obsh"></label>
-                <input type="email" class="forms2" id="doks3"
+                <label for="credentials-docs" class="txt_obsh"></label>
+                <input type="email" class="forms2" id="credentials-docs"
                     placeholder="Документы, подтверждающие полномочия руководителя или иного лица на осуществление действий от имени заявителя">
+            </div>
+            <div class="buttons">
+                <button type="button" class="knopka_prin" onclick="ChangeMeetingInfo()">Сохранить изменения</button>
+                <button type="button" class="knopka_otklon">Отменить</button>
             </div>
 
         </form>

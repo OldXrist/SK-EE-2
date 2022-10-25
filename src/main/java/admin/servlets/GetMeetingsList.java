@@ -50,7 +50,7 @@ public class GetMeetingsList extends HttpServlet {
         return qlSql;
     }
 
-    public void GetRolesAndOrganizerIds(Connection _c, HashSet _userRoles) {
+    public void GetRolesAndOrganizerEmails(Connection _c, HashSet _userRoles) {
         try {
             String sql = "SELECT type_org, email_org FROM sobr_org";
             PreparedStatement ps = _c.prepareStatement(sql);
@@ -108,9 +108,8 @@ public class GetMeetingsList extends HttpServlet {
             //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres", "postgres", "postgresql");
 
             //сначала собираем роли и id организаторов
-            //ArrayList<ArrayList<String>> userRoles = new ArrayList<ArrayList<String>>();
             HashSet<ArrayList<String>> userRoles = new HashSet<ArrayList<String>>();
-            GetRolesAndOrganizerIds(c, userRoles);
+            GetRolesAndOrganizerEmails(c, userRoles);
 
             //заполняем массив данными
             ArrayList<ArrayList<String>> meetingsList = new ArrayList<ArrayList<String>>();

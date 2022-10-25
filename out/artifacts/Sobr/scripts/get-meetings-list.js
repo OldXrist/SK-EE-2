@@ -10,10 +10,10 @@ $(document).ready(function () {
             console.log(result);
             for (var i = 0; i < result.length; i++){
                 var meetingNumber = result[i][3];
-                var organizerName = result[i].length > 9 ? result[i][7] + " " + result[i][8] + " " + result[i][9] : result[i][7];
-                var debtorName = result[i][4] + " " + result[i][5] + " " + result[i][6];
+                var organizerName = result[i].length > 9 ? result[i][7] + ' ' + result[i][8] + ' ' + result[i][9] : result[i][7];
+                var debtorName = result[i][4] + ' ' + result[i][5] + ' ' + result[i][6];
                 var startMeetingDate = new Date(result[i][0]).toLocaleString();
-                var invoiceDates = new Date(result[i][1]).toLocaleDateString() + " - " + new Date(result[i][2]).toLocaleDateString();
+                var invoiceDates = new Date(result[i][1]).toLocaleDateString() + ' - ' + new Date(result[i][2]).toLocaleDateString();
                 var type = result[i].length > 9 ? result[i][10] : result[i][8];
                 var meetingType = type == 'Z' ? 'Заочное' : 'Очное';
                 var meetingsContainer = document.getElementById("m-container");
@@ -22,7 +22,7 @@ $(document).ready(function () {
                         <div class="meeting-left-side">
                             <div class="top-side">
                                 <div class="m-name">
-                                    <a href="meeting-info.html" class="heading-name"><span>${meetingNumber} ${meetingType}</span></a>
+                                    <a href="meeting-info.html" class="heading-name"><span id="number${i}" onclick="CopyNumberToLocalStorage(${i})">${meetingNumber} ${meetingType}</span></a>
                                 </div>
                             </div>
                             <div class="bottom-side">
@@ -111,3 +111,11 @@ setInterval(function () {
     var clock = document.getElementById("clock");
     clock.innerHTML = now.toLocaleTimeString();
 }, 1000);
+
+//сохранение номера дела в localStorage для получения его на странице собрания
+function CopyNumberToLocalStorage(i) {
+    if (typeof (localStorage) != "undefined") {
+        var text = document.getElementById("number" + i).innerText
+        window.localStorage.number = text;
+    }
+}

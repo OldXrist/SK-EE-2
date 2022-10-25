@@ -19,12 +19,63 @@
 .table_bol {
     position: absolute;
     width: 1160px;
-    height: 1775px;
+    height: 1880px;
     margin-left: 80px;
     top: 276px;
-
     background: #BAF3FC;
     border-radius: 15px;
+}
+
+.buttons {
+    position: absolute;
+    margin-top: 1770px;
+    margin-left: 130px;
+    padding: 0px 100px 0px 100px;
+    width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.knopka_prin {
+    width: 300px;
+    height: 55px;
+    background: #37DCF5;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    color: #00345F;
+}
+
+.knopka_prin:hover {
+    opacity: 0.8;
+}
+
+.knopka_prin > a {
+    text-decoration: none;
+}
+
+.knopka_otklon {
+    width: 300px;
+    height: 55px;
+    background: #E6FBFE;
+    border-radius: 10px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    color: #00345F;
+}
+
+.knopka_otklon:hover {
+    opacity: 0.8;
 }
 
 .org_sobr {
@@ -363,9 +414,11 @@
     outline: none;
 }
 
+
+
 /*-----------------footer------------------*/
 footer {
-    margin-top: 2100px;
+    margin-top: 2250px;
     height: 298px;
     background-color: #104781;
     font-family: 'Exo 2';
