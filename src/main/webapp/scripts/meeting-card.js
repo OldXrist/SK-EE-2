@@ -67,8 +67,8 @@ setInterval(function () {
     clock.innerHTML = now.toLocaleTimeString();
 }, 1000);
 
-//
-function ChangeMeetingInfo() {
+//сохранить изменения в карточке
+function SaveChangesToMeetingInfo() {
     var text2 = window.localStorage.number;
     var number2 = text2.substring(text.length - 7, text.length) === 'Заочное' ? text.slice(0, text.length - 8) : text.slice(0, text.length - 6);
     var orgFullName = document.getElementById("org-fullname");

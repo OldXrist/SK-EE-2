@@ -69,6 +69,8 @@ setInterval(function () {
 
 //
 function ChangeMeetingInfo() {
+    var text2 = window.localStorage.number;
+    var number2 = text2.substring(text.length - 7, text.length) === 'Заочное' ? text.slice(0, text.length - 8) : text.slice(0, text.length - 6);
     var orgFullName = document.getElementById("org-fullname");
     var orgStatus = document.getElementById("org-status");
     var frsNumber = document.getElementById("frs-number");
@@ -86,8 +88,23 @@ function ChangeMeetingInfo() {
     var identityDocs = document.getElementById("identity-docs");
     var credentialsDocs = document.getElementById("credentials-docs");
 
-    let inputData2 = { _orgFullName: orgFullName,
-    _orgStatus: orgStatus,
+    let inputData2 = {
+        _meetingNumber: number2,
+        _orgFullName: orgFullName,
+        _orgStatus: orgStatus,
+        _frsNumber: frsNumber,
+        _sroName: sroName,
+        _orgPhone: orgPhone,
+        _orgEmail: orgEmail,
+
+        _efrsbNumber: efrsbNumber,
+        _debtorFullname: debtorFullname,
+        _debtorShortname: debtorShortname,
+        _debtorInn: debtorInn,
+        _debtorOgrn: debtorOgrn,
+        _courtName: courtName,
+        _caseNumber: caseNumber,
+        _basis: basis
     }
 
     $.post("http://localhost:8080/Sobr/ChangeMeetingInfo", inputData2, function (result) {
