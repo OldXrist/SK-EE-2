@@ -9,13 +9,12 @@ $(document).ready(function () {
         if (result) {
             console.log(result);
             for (var i = 0; i < result.length; i++){
-                var meetingNumber = result[i][3];
-                var organizerName = result[i].length > 9 ? result[i][7] + ' ' + result[i][8] + ' ' + result[i][9] : result[i][7];
-                var debtorName = result[i][4] + ' ' + result[i][5] + ' ' + result[i][6];
-                var startMeetingDate = new Date(result[i][0]).toLocaleString();
-                var invoiceDates = new Date(result[i][1]).toLocaleDateString() + ' - ' + new Date(result[i][2]).toLocaleDateString();
-                var type = result[i].length > 9 ? result[i][10] : result[i][8];
-                var meetingType = type == 'Z' ? 'Заочное' : 'Очное';
+                var meetingNumber = result[i][1];
+                var organizerName = result[i].length > 11 ? result[i][10] + ' ' + result[i][11] + ' ' + result[i][12] : result[i][10];
+                var debtorName = result[i][5] === 'Юридическое лицо' ? result[i][9] : result[i][6] + ' ' + result[i][7] + ' ' + result[i][8];
+                var startMeetingDate = new Date(result[i][2]).toLocaleString();
+                var invoiceDates = new Date(result[i][3]).toLocaleDateString() + ' - ' + new Date(result[i][4]).toLocaleDateString();
+                var meetingType = result[i][0] == 'Z' ? 'Заочное' : 'Очное';
                 var meetingsContainer = document.getElementById("m-container");
                 meetingsContainer.innerHTML +=
                     `<div class="meeting">

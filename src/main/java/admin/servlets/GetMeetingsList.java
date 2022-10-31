@@ -12,9 +12,9 @@ import com.google.gson.Gson;
 public class GetMeetingsList extends HttpServlet {
     public String AuSql(String email)
     {
-        String auSql =  "SELECT data_u_vrem_sobr, nachal_podach_zaiv, okonch_podach_zaiv, \n" +
-                        "nomer_dela, sobr_org.famil, sobr_org.name, sobr_org.otch, \n" +
-                        "au.famil, au.\"name\", au.otch, type_sobr\n" +
+        String auSql =  "SELECT sobr_org.type_sobr, nomer_dela, data_u_vrem_sobr, nachal_podach_zaiv, okonch_podach_zaiv, \n" +
+                        "sobr_org.type_dolzh, sobr_org.famil, sobr_org.name, sobr_org.otch, sobr_org.poln_naum,\n" +
+                        "au.famil, au.\"name\", au.otch\n" +
                         "FROM sobr_org, au\n" +
                         "WHERE sobr_org.email_org = '" + email + "' and au.email = '" + email + "' and sobr_org.type_org = 'АУ';";
         return auSql;
@@ -22,9 +22,9 @@ public class GetMeetingsList extends HttpServlet {
 
     public String FlSql(String email)
     {
-        String flSql =  "SELECT data_u_vrem_sobr, nachal_podach_zaiv, okonch_podach_zaiv, \n" +
-                        "nomer_dela, sobr_org.famil, sobr_org.name, sobr_org.otch, \n" +
-                        "fl.famil, fl.\"name\", fl.otch, type_sobr\n" +
+        String flSql =  "SELECT sobr_org.type_sobr, nomer_dela, data_u_vrem_sobr, nachal_podach_zaiv, okonch_podach_zaiv, \n" +
+                        "sobr_org.type_dolzh, sobr_org.famil, sobr_org.name, sobr_org.otch, sobr_org.poln_naum,\n" +
+                        "fl.famil, fl.\"name\", fl.otch\n" +
                         "FROM sobr_org, fl\n" +
                         "WHERE sobr_org.email_org = '" + email + "' and fl.email= '" + email + "' and sobr_org.type_org = 'ФЛ';";
         return flSql;
@@ -32,9 +32,9 @@ public class GetMeetingsList extends HttpServlet {
 
     public String IpSql(String email)
     {
-        String ipSql =  "SELECT data_u_vrem_sobr, nachal_podach_zaiv, okonch_podach_zaiv, \n" +
-                        "nomer_dela, sobr_org.famil, sobr_org.name, sobr_org.otch, \n" +
-                        "ip.famil, ip.\"name\", ip.otch, type_sobr\n" +
+        String ipSql =  "SELECT sobr_org.type_sobr, nomer_dela, data_u_vrem_sobr, nachal_podach_zaiv, okonch_podach_zaiv, \n" +
+                        "sobr_org.type_dolzh, sobr_org.famil, sobr_org.name, sobr_org.otch, sobr_org.poln_naum,\n" +
+                        "ip.famil, ip.\"name\", ip.otch\n" +
                         "FROM sobr_org, ip\n" +
                         "WHERE sobr_org.email_org = '" + email + "' and ip.email = '" + email + "' and sobr_org.type_org = 'ИП';";
         return ipSql;
@@ -42,9 +42,9 @@ public class GetMeetingsList extends HttpServlet {
 
     public String QlSql(String email)
     {
-        String qlSql =  "SELECT data_u_vrem_sobr, nachal_podach_zaiv, okonch_podach_zaiv, \n" +
-                        "nomer_dela, sobr_org.famil, sobr_org.name, sobr_org.otch, \n" +
-                        "ql.poln_naim, type_sobr\n" +
+        String qlSql =  "SELECT sobr_org.type_sobr, nomer_dela, data_u_vrem_sobr, nachal_podach_zaiv, okonch_podach_zaiv, \n" +
+                        "sobr_org.type_dolzh, sobr_org.famil, sobr_org.name, sobr_org.otch, sobr_org.poln_naum,\n" +
+                        "ql.poln_naim\n" +
                         "FROM sobr_org, ql\n" +
                         "WHERE sobr_org.email_org =  '" + email + "'  and ql.email = '" + email + "' and sobr_org.type_org = 'ЮЛ';";
         return qlSql;

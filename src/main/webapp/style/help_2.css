@@ -88,6 +88,8 @@
     margin-left: 80px;
 }
 
+
+
 .check ul li{
     list-style: none;
     font-family: 'Exo 2';
@@ -133,3 +135,102 @@
 .base{
     margin-top: 951px;
 }
+
+
+@media (min-width: 375px) and (max-width: 720px) {
+
+    .base_bg {
+        margin-top: 554px;
+    }
+
+    .base{
+        margin-top: 554px;
+    }
+
+    .heading{
+        position: absolute;
+        width: 90px;
+        height: 26px;
+        top: 161px;
+        font-family: 'Exo 2';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 120%;
+        color: #104781;
+        margin-left: 30px;
+    }
+
+    .help_menu{
+        position: absolute;
+        width: 80%;
+        min-width: 355px;
+        height: 117px;
+        top: 217px;
+        background: #BAF3FC;
+        border-radius: 15px;
+        padding-left: 20px;
+        padding-top: 20px;
+        margin-left: 10px;
+    }
+
+    .help_menu ul li{
+        list-style: none;
+        font-family: 'Exo 2';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 100%;
+        color: #406C9A;
+        padding-bottom: 7px;
+    }
+
+    .ep{
+        position: absolute;
+        width: 80%;
+        min-width: 355px;
+        height: 74px;
+        top: 364px;
+        background: #BAF3FC;
+        border-radius: 15px;
+        margin-left: 10px;
+    }
+
+    .ep p{
+        font-family: 'Exo 2';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 100%;
+        color: #104781;
+        margin: 0;
+        padding-left: 20px;
+        padding-top: 30px;
+        padding-bottom: 50px;
+    }
+
+    .check {
+        display: none;
+    }
+
+    .txth {
+        position: absolute;
+        width: 80%;
+        min-width: 292px;
+        height: 51px;
+        margin-left: 30px;
+        top: 458px;
+
+        font-family: 'Exo 2';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 120%;
+        /* or 17px */
+
+
+        color: #406C9A;
+    }
+
+}
+
