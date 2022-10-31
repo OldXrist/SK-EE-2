@@ -32,12 +32,13 @@
 .ep{
     position: absolute;
     width: 1160px;
-    height: 1880px;
+    height: auto;
     top: 416px;
     background: #BAF3FC;
     border-radius: 15px;
     margin-left: 80px;
     padding-left: 60px;
+    padding-bottom: 50px;
 }
 
 .ep p{
@@ -155,6 +156,24 @@
     width: 340px;
 }
 
+.three  {
+    width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    margin-right: 50px;
+    height: 50px;
+    border: none;
+}
+
+.third{
+    width: 330px;
+}
+
+#org{
+    margin-top: -20px;
+    margin-bottom: 50px;
+}
+
 input{
     padding-left: 17px;
     font-family: 'Exo 2';
@@ -163,6 +182,18 @@ input{
     font-size: 16px;
     line-height: 100%;
     color: #406C9A;
+}
+
+.txt_obsh {
+    display: block;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    color: #406C9A;
+    margin-bottom: 20px;
+    margin-top: 30px;
 }
 
 .stats {
@@ -244,55 +275,59 @@ input{
     color: #406C9A;
 }
 
+.fInput{
+    width: 400px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+.sInput{
+    width: 590px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
 .base_bg {
-    margin-top: 2386px;
+    margin-top: 2086px;
 }
 
 .base{
-    margin-top: 2386px;
+    margin-top: 2086px;
 }
 
-.knopka4 {position: absolute;
+.knopka4 {
     width: 439px;
     height: 55px;
-    left: 116px;
-    top: 1775px;
-
+    margin-top: 20px;
+    margin-left: 50px;
     background: #37DCF5;
     border-radius: 10px;
-
     border: none;
-
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
     line-height: 100%;
-    /* or 18px */
-
     text-align: center;
-
     color: #00345F;
 }
 
-.knopka5 {position: absolute;
+.knopka5 {
     width: 439px;
     height: 55px;
-    left: 605px;
-    top: 1775px;
-
+    margin-left: 55px;
     background: #BAF3FC;
     border-radius: 10px;
-
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
     line-height: 100%;
-    /* or 18px */
-
     text-align: center;
-
     color: #00345F;
 }
 
@@ -301,7 +336,6 @@ input{
     height: 55px;
     left: 60px;
     top: 1775px;
-
     background: #BAF3FC;
     border-radius: 10px;
 

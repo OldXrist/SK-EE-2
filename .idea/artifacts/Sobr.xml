@@ -6,7 +6,7 @@
         <element id="directory" name="classes">
           <element id="module-output" name="SK-EE-2" />
           <element id="jpa-descriptors" facet="SK-EE-2/jpa/JPA" />
-          <element id="module-output" name="Sobr" />
+          <element id="module-output" name="SK-EE-2" />
           <element id="jpa-descriptors" facet="Sobr/jpa/JPA" />
         </element>
         <element id="directory" name="lib">

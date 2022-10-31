@@ -118,9 +118,4 @@ public class ORGCARDServlet extends HttpServlet {
             System.exit(0);
         }
     }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
 }

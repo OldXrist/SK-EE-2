@@ -14,19 +14,18 @@ function timeParse (x){
     return tA[0] + ':' + tA[1]
 }
 
-function Cards(dt, i){
+function Cards(dt, i, m){
     let lim = i+14;
     let arr = [];
     for (i; i < lim; i++){
         arr.push(dt[i])
     }
 
-
     let date1 = dateParse(arr[1]) + " " + timeParse(arr[1])
     let date2 = dateParse(arr[2]) + ' - ' + dateParse(arr[3])
     console.log(arr[4], arr[10])
     if (arr[4].includes("Юридическое") && arr[10].includes("ЮЛ")){
-        document.getElementById("table").innerHTML += "<div class=\"table_item\">\n" +
+        document.getElementById("table").innerHTML += "<div id = "+m+" class=\"table_item\">\n" +
             "                <h3 class=\"table_h\">"+ arr[0]+ arr[9]+"</h3>\n" +
             "                <ul class=\"table_data\">\n" +
             "                    <li class=\"thin_text\">Организатор</li>\n" +
@@ -53,7 +52,7 @@ function Cards(dt, i){
             "                </div>\n" +
             "            </div>"
     } else if (arr[4].includes("Юридическое") && !arr[10].includes("ЮЛ")){
-        document.getElementById("table").innerHTML += "<div class=\"table_item\">\n" +
+        document.getElementById("table").innerHTML += "<div id = "+m+" class=\"table_item\">\n" +
             "                <h3 class=\"table_h\">"+ arr[0]+ arr[9]+"</h3>\n" +
             "                <ul class=\"table_data\">\n" +
             "                    <li class=\"thin_text\">Организатор</li>\n" +
@@ -80,7 +79,7 @@ function Cards(dt, i){
             "                </div>\n" +
             "            </div>"
     } else if (!arr[4].includes("Юридическое") && arr[10].includes("ЮЛ")){
-        document.getElementById("table").innerHTML += "<div class=\"table_item\">\n" +
+        document.getElementById("table").innerHTML += "<div id = "+m+" class=\"table_item\">\n" +
             "                <h3 class=\"table_h\">"+ arr[0]+ arr[9]+"</h3>\n" +
             "                <ul class=\"table_data\">\n" +
             "                    <li class=\"thin_text\">Организатор</li>\n" +
@@ -107,7 +106,7 @@ function Cards(dt, i){
             "                </div>\n" +
             "            </div>"
     } else {
-        document.getElementById("table").innerHTML += "<div class=\"table_item\">\n" +
+        document.getElementById("table").innerHTML += "<div id = "+m+" class=\"table_item\" onclick='Redirect(this.id)'>\n" +
             "                <h3 class=\"table_h\">" + arr[0] + arr[9] + "</h3>\n" +
             "                <ul class=\"table_data\">\n" +
             "                    <li class=\"thin_text\">Организатор</li>\n" +
@@ -138,13 +137,16 @@ function Cards(dt, i){
 
 $.get("http://localhost:8080/Sobr/MREEServlet", function (data){
     let d = data.split("\n")
-
+    let m = 1;
     let k = 0;
-    Cards(d, k)
+    Cards(d, k, m)
+    m += 1
     k+=14
-    Cards(d, k)
+    Cards(d, k, m)
+    m += 1
     k+=14
-    Cards(d, k)
+    Cards(d, k, m)
+    m += 1
     k+=14
-    Cards(d, k)
+    Cards(d, k, m)
 })

@@ -1,11 +1,3 @@
-function sleep(milliseconds) {
-    const date = Date.now();
-    let currentDate = null;
-    do {
-        currentDate = Date.now();
-    } while (currentDate - date < milliseconds);
-}
-
 function dateFormat(date, time){
     let n = date.split('.')
     let newd = ""
@@ -130,8 +122,4 @@ function Create(){
             console.log(sobr)
         })
     }
-
-    sleep(5000)
-
-    $.get("http://localhost:8080/Sobr/CRServlet")
 }

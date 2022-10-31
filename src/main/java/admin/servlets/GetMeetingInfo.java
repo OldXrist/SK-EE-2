@@ -82,8 +82,8 @@ public class GetMeetingInfo extends HttpServlet {
         String meetingNumber = request.getParameter("num");
         try {
             Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK2", "postgres", "111");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres", "postgres", "postgresql");
+            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK2", "postgres", "111");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
 
             //сбор данных о собрании
             ArrayList<String> meetingInfo = new ArrayList<String>();
