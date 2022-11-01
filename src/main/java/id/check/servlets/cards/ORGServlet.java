@@ -17,99 +17,101 @@ public class ORGServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         PrintWriter out = res.getWriter();
 
-        String email = req.getParameter("email");
-        String role = req.getParameter("type").trim();
+        String s = req.getParameter("sk");
+        long sk = Long.parseLong(s);
 
         try {
             Class.forName("org.postgresql.Driver");
             Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
 
-            switch (role) {
-                case "АУ": {
-                    String sql = "SELECT * FROM au WHERE email = ?";
-                    PreparedStatement ps = c.prepareStatement(sql);
-                    ps.setString(1, email);
-                    ResultSet rs = ps.executeQuery();
-                    while (rs.next()) {
-                        out.println(rs.getString(7));
-                        out.println(rs.getString(8));
-                        out.println(rs.getString(9));
-                        out.println(rs.getString(4));
-                        out.println(rs.getLong(3));
-                        out.println(rs.getLong(10));
-                        out.println(rs.getLong(15));
-                        out.println(rs.getString(5));
-                        out.println(rs.getString(6));
-                        out.println(role);
+            String sql = "SELECT email_org, type_org FROM sobr_org WHERE id = ?";
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setLong(1, sk);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()){
+                String role = rs.getString(2);
+                String email = rs.getString(1);
+                switch (role) {
+                    case "АУ": {
+                        sql = "SELECT * FROM au WHERE email = ?";
+                        ps = c.prepareStatement(sql);
+                        ps.setString(1, email);
+                        ResultSet rs2 = ps.executeQuery();
+                        while (rs2.next()) {
+                            out.println(role);
+                            out.println(rs2.getString(7));
+                            out.println(rs2.getString(8));
+                            out.println(rs2.getString(9));
+                            out.println(rs2.getString(4));
+                            out.println(rs2.getLong(3));
+                            out.println(rs2.getLong(10));
+                            out.println(rs2.getLong(15));
+                        }
+                        rs2.close();
+                        ps.close();
+                        break;
                     }
-                    rs.close();
-                    ps.close();
-                    break;
-                }
-                case "ИП": {
-                    String sql = "SELECT * FROM ip WHERE email = ?";
-                    PreparedStatement ps = c.prepareStatement(sql);
-                    ps.setString(1, email);
-                    ResultSet rs = ps.executeQuery();
-                    while (rs.next()) {
-                        out.println(rs.getString(7));
-                        out.println(rs.getString(8));
-                        out.println(rs.getString(9));
-                        out.println(rs.getString(11));
-                        out.println(rs.getLong(3));
-                        out.println(rs.getLong(10));
-                        out.println(rs.getLong(6));
-                        out.println(rs.getString(4));
-                        out.println(rs.getString(5));
-                        out.println(role);
+                    case "ИП": {
+                        sql = "SELECT * FROM ip WHERE email = ?";
+                        ps = c.prepareStatement(sql);
+                        ps.setString(1, email);
+                        ResultSet rs3 = ps.executeQuery();
+                        while (rs3.next()) {
+                            out.println(role);
+                            out.println(rs3.getString(7));
+                            out.println(rs3.getString(8));
+                            out.println(rs3.getString(9));
+                            out.println(rs3.getString(11));
+                            out.println(rs3.getLong(3));
+                            out.println(rs3.getLong(10));
+                            out.println(rs3.getLong(6));
+                        }
+                        rs3.close();
+                        ps.close();
+                        break;
                     }
-                    rs.close();
-                    ps.close();
-                    break;
-                }
-                case "ФЛ": {
-                    String sql = "SELECT * FROM fl WHERE email = ?";
-                    PreparedStatement ps = c.prepareStatement(sql);
-                    ps.setString(1, email);
-                    ResultSet rs = ps.executeQuery();
-                    while (rs.next()) {
-                        out.println(rs.getString(7));
-                        out.println(rs.getString(8));
-                        out.println(rs.getString(9));
-                        out.println(rs.getString(4));
-                        out.println(rs.getLong(3));
-                        out.println(rs.getLong(10));
-                        out.println(rs.getString(5));
-                        out.println(rs.getString(6));
-                        out.println(role);
+                    case "ФЛ": {
+                        sql = "SELECT * FROM fl WHERE email = ?";
+                        ps = c.prepareStatement(sql);
+                        ps.setString(1, email);
+                        ResultSet rs4 = ps.executeQuery();
+                        while (rs4.next()) {
+                            out.println(role);
+                            out.println(rs4.getString(7));
+                            out.println(rs4.getString(8));
+                            out.println(rs4.getString(9));
+                            out.println(rs4.getString(4));
+                            out.println(rs4.getLong(3));
+                            out.println(rs4.getLong(10));
+                        }
+                        rs4.close();
+                        ps.close();
+                        break;
                     }
-                    rs.close();
-                    ps.close();
-                    break;
-                }
-                case "ЮЛ": {
-                    String sql = "SELECT * FROM ql WHERE email = ?";
-                    PreparedStatement ps = c.prepareStatement(sql);
-                    ps.setString(1, email);
-                    ResultSet rs = ps.executeQuery();
-                    while (rs.next()) {
-                        out.println(rs.getLong(3));
-                        out.println(rs.getLong(4));
-                        out.println(rs.getString(5));
-                        out.println(rs.getString(6));
-                        out.println(rs.getString(7));
-                        out.println(rs.getString(8));
-                        out.println(rs.getString(9));
-                        out.println(role);
+                    case "ЮЛ": {
+                        sql = "SELECT * FROM ql WHERE email = ?";
+                        ps = c.prepareStatement(sql);
+                        ps.setString(1, email);
+                        ResultSet rs5 = ps.executeQuery();
+                        while (rs5.next()) {
+                            out.println(role);
+                            out.println(rs5.getLong(3));
+                            out.println(rs5.getLong(4));
+                            out.println(rs5.getString(5));
+                            out.println(rs5.getString(6));
+                            out.println(rs5.getString(7));
+                        }
+                        rs5.close();
+                        ps.close();
+                        break;
                     }
-                    rs.close();
-                    ps.close();
-                    break;
                 }
             }
 
             out.close();
+            rs.close();
 
         } catch (Exception e) {
             e.printStackTrace();
