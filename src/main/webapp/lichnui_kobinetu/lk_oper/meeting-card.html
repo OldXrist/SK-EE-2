@@ -4,9 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="../../style/lk_oper.css">
-    <link rel="stylesheet" type="text/css" href="../../style/lk5_oper.css">
-    <link rel="stylesheet" type="text/css" href="../../style/shared.css">
+    <link rel="stylesheet" type="text/css" href="../../style/meeting-card.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -14,138 +12,525 @@
 </head>
 
 <body>
-    <div class="menu">
-        <ul>
-            <li class="logo"><a href="help/contacts.html"><img src="../../img/Logo.svg" /></a></li>
-            <li class="nav_item"><a href="../../index2.html">Главная</a></li>
-            <li class="nav_item"><a href="../../reestr.html">Реестр собраний</a></li>
-            <li class="nav_item"><a href="../../help/help_1.html">Помощь</a></li>
-            <li class="nav_item"><a href="../../help/contacts.html">Контакты</a></li>
-            <li class="nav_item nouser"><a href="../../login.html"> <button class="nav_btn">Войти</button></a></li>
-            <li class="nav_item nouser"><a href="../../signin.html">Зарегистрироваться</a></li>
-            <li class="nav_item"><a href="../../FILTERServlet">
-                    <p class="nav_login" id="lk"></p>
-                </a></li>
-            <li class="nav_item"><a href="../../signin.html"><span id="clock" style="color:#ffffff;"></span></a></li>
-            <li class="nav_item logout"><a href="../../LOGOUTServlet"><img id="logout_btn"
-                        src="../../img/logout%201%20(Traced).png" /></a></li>
-        </ul>
-    </div>
-
-    <div class="container">
-        <div class="ogl_l">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a class="anti_tekst" href="#">Главная</a></li>
-                    <li class="breadcrumb-item">Личный кабинет участника </li>
-                </ol>
-            </nav>
+    <header>
+        <div>
+            <a href="help/contacts.html" class="a"><img src="../../img/Logo.svg" /></a>
         </div>
+        <div class="menu">
+            <a href="../../index.html" class="a">Главная</a>
+            <a href="../../reestr.html" class="a">Реестр собраний</a>
+            <a href="../../help/help_1.html" class="a">Помощь</a>
+            <a href="../../help/contacts.html" class="a">Контакты</a>
+        </div>
+        <div class="signin">
+            <a href="../../FILTERServlet" class="a"><span id="lk"></span></a>
+            <span id="clock" class="clock"></span>
+            <a href="../../LOGOUTServlet" class="a"><img id="logout_btn"
+                    src="../../img/logout%201%20(Traced).png" /></a>
+        </div>
+    </header>
 
-        <p class="lk" id="meeting-number"></p>
+    <main>
+        <div class="main-container">
+            <div class="h-row-1"><span id="meeting-number">Карточка:</span></div>
+            <div class="card-container">
+                <div id="m-general-info">
+                    <div class="h-row-2"><span>Общие данные о собрании</span></div>
+                    <div class="h-row-3">
+                        <div class="span-colmn-1"><span>Дата и время собрания</span></div>
+                        <div><span>Повестка дня</span></div>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-1">
+                            <input type="text" class="in-type-1" id="m-start-date" placeholder="01.01.0000">
+                        </div>
+                        <div class="col-type-2">
+                            <input type="text" class="in-type-2" id="m-start-time" placeholder="00:00">
+                        </div>
+                        <div class="col-type-3">
+                            <input type="text" class="in-type-3" id="agenda" placeholder="Повестка дня">
+                        </div>
+                    </div>
+                </div>
 
-        <form class="table_bol">
+                <div id="m-info">
+                    <div class="h-row-2"><span>Информация о собрании кредиторов</span></div>
+                    <div class="h-row-3">
+                        <div class="span-colmn-1"><span>Начало предоставления заявок на участие*</span></div>
+                        <div><span>Окончание предоставления заявок на участие*</span></div>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-1">
+                            <input type="text" class="in-type-1" id="invoice-start-date" placeholder="01.01.0000">
+                        </div>
+                        <div class="col-type-2">
+                            <input type="text" class="in-type-2" id="invoice-start-time" placeholder="00:00">
+                        </div>
+                        <div class="col-type-4">
+                            <input type="text" class="in-type-1" id="invoice-end-date" placeholder="01.01.0000">
+                        </div>
+                        <div class="col-type-2">
+                            <input type="text" class="in-type-2" id="invoice-end-time" placeholder="00:00">
+                        </div>
+                    </div>
+                    <div class="h-row-3">
+                        <div class="span-colmn-1"><span>Начало приема бюллетеней*</span></div>
+                        <div><span>Окончание приема бюллетеней*</span></div>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-1">
+                            <input type="text" class="in-type-1" id="bulletin-start-date" placeholder="01.01.0000">
+                        </div>
+                        <div class="col-type-2">
+                            <input type="text" class="in-type-2" id="bulletin-start-time" placeholder="00:00">
+                        </div>
+                        <div class="col-type-4">
+                            <input type="text" class="in-type-1" id="bulletin-end-date" placeholder="01.01.0000">
+                        </div>
+                        <div class="col-type-2">
+                            <input type="text" class="in-type-2" id="bulletin-end-time" placeholder="00:00">
+                        </div>
+                    </div>
+                    <div class="h-row-3">
+                        <div class="span-colmn-1"><span>Дата подписания протокола собрания*</span></div>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-1">
+                            <input type="text" class="in-type-1" id="protocol-sign-date" placeholder="01.01.0000"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-2">
+                            <input type="text" class="in-type-2" id="protocol-sign-time" placeholder="00:00"
+                                disabled="true">
+                        </div>
+                    </div>
+                </div>
 
-            <p class="org_sobr">Организатор собрания</p>
-            <div class="naim">
-                <label for="org-fullname" class="txt_obsh">Наименование</label>
-                <input type="email" class="forms2" id="org-fullname" placeholder="Иванов Иван Иванович">
-            </div>
-            <div class="arbitr">
-                <label for="org-status" class="txt_obsh">Статус</label>
-                <input type="email" class="forms" id="org-status" placeholder="Арбитражный управляющий">
-            </div>
-            <div class="reg_nomera">
-                <label for="frs-number" class="txt_obsh">Регистрационный номер ФРС</label>
-                <input type="email" class="forms3" id="frs-number">
-            </div>
-            <div class="naim_sro">
-                <label for="sro-name" class="txt_obsh">Наименование СРО АУ</label>
-                <input type="email" class="forms2" id="sro-name">
-            </div>
-            <div class="telefon2">
-                <label for="org-phone" class="txt_obsh">Телефон</label>
-                <input type="email" class="forms" id="org-phone" placeholder="+7 (900) 000-12-34">
-            </div>
-            <div class="email_2">
-                <label for="sro-name" class=txt_obsh>Электронная почта</label>
-                <input type="email" class="forms3" id="org-email" placeholder="ivanov12@mail.ru">
-            </div>
-            <p class="efrsb_txt">ЕФРСБ</p>
-            <div class="efrsb">
-                <label for="efrsb-number" class="txt_obsh">ЕФРСБ</label>
-                <input type="email" class="forms2" id="efrsb-number" placeholder="Индетификационный номер собрания ЕФРСБ">
-            </div>
-            <p class="sved_o_dolzh">Сведения о должнике</p>
-            <div class="naim1">
-                <label for="debtor-fullname" class="txt_obsh">Наименование</label>
-                <input type="email" class="forms2" id="debtor-fullname" placeholder="Наименование">
-            </div>
-            <div class="kratko_naim">
-                <label for="debtor-shortname" class="txt_obsh">Краткое наименование</label>
-                <input type="email" class="forms2" id="debtor-shortname" placeholder="Краткое наименование">
-            </div>
-            <div class="unn">
-                <label for="debtor-inn" class="txt_obsh">ИНН</label>
-                <input type="email" class="forms" id="debtor-inn" placeholder="11111111">
-            </div>
-            <div class="ogrn">
-                <label for="debtor-ogrn" class="txt_obsh">ОГРН</label>
-                <input type="email" class="forms3" id="debtor-ogrn" placeholder="000 000 000 00">
-            </div>
-            <p class="sved_o_proc">Сведения о процедуре банкротства</p>
-            <div class="naim_abr_sud">
-                <label for="court-name" class="txt_obsh">Наименование арбитражного суда</label>
-                <input type="email" class="forms3" id="court-name" placeholder="Наименование арбитражного суда">
-            </div>
-            <div class="nomer_dela">
-                <label for="case-number" class="txt_obsh">Номер дела о банкротстве</label>
-                <input type="email" class="forms4" id="case-number" placeholder="Номер дела о банкротстве">
-            </div>
-            <div class="osn_dli">
-                <label for="basis" class="txt_obsh">Основание для собрания кредиторов</label>
-                <input type="email" class="forms5" id="basis" placeholder="Основание для собрания кредиторов">
-            </div>
-            <p class="doks">Документы, которые необходимо предоставить участникам собрания</p>
-            <div class="doks2">
-                <label for="identity-docs" class="txt_obsh"></label>
-                <input type="email" class="forms2" id="identity-docs" placeholder="Документ, удостоверяющий личность">
-            </div>
-            <div class="doks3">
-                <label for="credentials-docs" class="txt_obsh"></label>
-                <input type="email" class="forms2" id="credentials-docs"
-                    placeholder="Документы, подтверждающие полномочия руководителя или иного лица на осуществление действий от имени заявителя">
-            </div>
-            <div class="buttons">
-                <button type="button" class="knopka_prin" onclick="SaveChangesToMeetingInfo()">Сохранить изменения</button>
-                <button type="button" class="knopka_otklon">Отменить</button>
-            </div>
+                <!-- Организатор Юр. лицо -->
+                <div id="org-ul-info" hidden>
+                    <div class="h-row-2"><span>Данные организатора собрания</span></div>
+                    <div class="h-row-3">
+                        <div class="span-colmn-1"><span>ИНН*</span></div>
+                        <div><span>ОГРН*</span></div>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-5">
+                            <input type="text" class="in-type-5" id="org-ul-inn" placeholder="11111111" disabled="true">
+                        </div>
+                        <div class="col-type-3">
+                            <input type="text" class="in-type-3" id="org-ul-ogrn" placeholder="000 000 000 00"
+                                disabled="true">
+                        </div>
+                    </div>
+                    <div class="h-row-3"><span>Наименование организации*</span></div>
+                    <div class="h-row-4">
+                        <div class="col-type-6">
+                            <input type="text" class="in-type-6" id="org-ul-company-name"
+                                placeholder="Полное наименование" disabled="true">
+                        </div>
+                    </div>
+                    <div class="h-row-3"><span>Юридический адрес*</span></div>
+                    <div class="h-row-4">
+                        <div class="col-type-6">
+                            <input type="text" class="in-type-6" id="org-ul-ur-adress" placeholder="Юридический адрес"
+                                disabled="true">
+                        </div>
+                    </div>
+                    <div class="h-row-3"><span>Почтовый адрес*</span></div>
+                    <div class="h-row-4">
+                        <div class="col-type-6">
+                            <input type="text" class="in-type-6" id="org-ul-post-adress" placeholder="Почтовый адрес"
+                                disabled="true">
+                        </div>
+                    </div>
+                </div>
 
-        </form>
+                <!-- Организатор Физ. лицо -->
+                <div id="org-fl-info" hidden>
+                    <div class="h-row-2"><span>Данные организатора собрания</span></div>
+                    <div class="h-row-3">
+                        <div class="span-colmn-3"><span>Фамилия*</span></div>
+                        <div class="span-colmn-3"><span>Имя*</span></div>
+                        <span>Отчество*</span>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-10">
+                            <input type="text" class="in-type-9" id="org-fl-second-name" placeholder="Иванова"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-11">
+                            <input type="text" class="in-type-9" id="org-fl-first-name" placeholder="Светлана"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-12">
+                            <input type="text" class="in-type-10" id="org-fl-middle-name" placeholder="Андреевна"
+                                disabled="true">
+                        </div>
+                    </div>
+                    <div class="h-row-3"><span>Почтовый адрес*</span></div>
+                    <div class="h-row-4">
+                        <div class="col-type-6">
+                            <input type="text" class="in-type-6" id="org-fl-post-adress"
+                                placeholder="111116. г. Москва, а/я №87" disabled="true">
+                        </div>
+                    </div>
+                    <div class="h-row-3">
+                        <div class="span-colmn-1"><span>ИНН*</span></div>
+                        <div><span>СНИЛС*</span></div>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-5">
+                            <input type="text" class="in-type-5" id="org-fl-inn" placeholder=" 11111111"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-3">
+                            <input type="text" class="in-type-3" id="org-fl-snils" placeholder="123 456 789 00"
+                                disabled="true">
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Организатор Арбитражный управляющий -->
+                <div id="org-au-info" hidden>
+                    <div class="h-row-2"><span>Данные организатора собрания</span></div>
+                    <div class="h-row-3">
+                        <div class="span-colmn-3"><span>Фамилия*</span></div>
+                        <div class="span-colmn-3"><span>Имя*</span></div>
+                        <span>Отчество*</span>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-10">
+                            <input type="text" class="in-type-9" id="org-au-second-name" placeholder="Иванова"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-11">
+                            <input type="text" class="in-type-9" id="org-au-first-name" placeholder="Светлана"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-12">
+                            <input type="text" class="in-type-10" id="org-au-middle-name" placeholder="Андреевна"
+                                disabled="true">
+                        </div>
+                    </div>
+                    <div class="h-row-3"><span>Почтовый адрес*</span></div>
+                    <div class="h-row-4">
+                        <div class="col-type-6">
+                            <input type="text" class="in-type-6" id="org-au-post-adress"
+                                placeholder="111116. г. Москва, а/я №87" disabled="true">
+                        </div>
+                    </div>
+                    <div class="h-row-3">
+                        <div class="span-colmn-3"><span>ИНН*</span></div>
+                        <div class="span-colmn-3"><span>СНИЛС*</span></div>
+                        <span>Регистрационный номер АУ*</span>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-10">
+                            <input type="text" class="in-type-9" id="org-au-inn" placeholder=" 11111111"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-11">
+                            <input type="text" class="in-type-9" id="org-au-snils" placeholder="123 456 789 00"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-12">
+                            <input type="text" class="in-type-10" id="org-au-reg-number" placeholder="000 000 "
+                                disabled="true">
+                        </div>
+                    </div>
+                </div>
 
-        <div class="table1"></div>
+                <!-- Орзанизатор ИП -->
+                <div id="org-ip-info" hidden>
+                    <div class="h-row-2"><span>Данные организатора собрания</span></div>
+                    <div class="h-row-3">
+                        <div class="span-colmn-3"><span>Фамилия*</span></div>
+                        <div class="span-colmn-3"><span>Имя*</span></div>
+                        <span>Отчество*</span>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-10">
+                            <input type="text" class="in-type-9" id="org-ip-second-name" placeholder="Иванова"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-11">
+                            <input type="text" class="in-type-9" id="org-ip-first-name" placeholder="Светлана"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-12">
+                            <input type="text" class="in-type-10" id="org-ip-middle-name" placeholder="Андреевна"
+                                disabled="true">
+                        </div>
+                    </div>
+                    <div class="h-row-3"><span>Почтовый адрес*</span></div>
+                    <div class="h-row-4">
+                        <div class="col-type-6">
+                            <input type="text" class="in-type-6" id="org-ip-post-adress"
+                                placeholder="111116. г. Москва, а/я №87" disabled="true">
+                        </div>
+                    </div>
+                    <div class="h-row-3">
+                        <div class="span-colmn-3"><span>ИНН*</span></div>
+                        <div class="span-colmn-3"><span>СНИЛС*</span></div>
+                        <span>Код ОГРНИП*</span>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-10">
+                            <input type="text" class="in-type-9" id="org-ip-inn" placeholder=" 11111111"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-11">
+                            <input type="text" class="in-type-9" id="org-ip-snils" placeholder="123 456 789 00"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-12">
+                            <input type="text" class="in-type-10" id="org-ip-ogrnip" placeholder="000 000 000 00"
+                                disabled="true">
+                        </div>
+                    </div>
+                </div>
 
-    </div>
+                <div id="efsrb-info">
+                    <div class="h-row-2"><span>Информация для интеграции с ЕФРСБ</span></div>
+                    <div class="h-row-3"><span>Идентификационный номер сообщения о публикации торгов на сайте
+                            ЕФРСБ*</span></div>
+                    <div class="h-row-4">
+                        <div class="col-type-6">
+                            <input type="text" class="in-type-6" id="efsrb-inn" placeholder="Идентификационный номер"
+                                disabled="true">
+                        </div>
+                    </div>
+                    <div class="h-row-3"><span>Дата размещения сообщения о публикации торгов на сайте ЕФРСБ*</span>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-6">
+                            <input type="text" class="in-type-6" id="efsrb-date" placeholder="01.01.0000"
+                                disabled="true">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="contacts">
+                    <div class="h-row-2"><span>Контактная информация для участников собрания</span></div>
+                    <div class="h-row-3">
+                        <div class="span-colmn-1"><span>Телефон*</span></div>
+                        <div><span>Электронная почта*</span></div>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-5">
+                            <input type="text" class="in-type-5" id="org-phone" placeholder=" +7 (900) 000-12-34"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-3">
+                            <input type="text" class="in-type-3" id="org-email" placeholder="ivanova12@mail.ru"
+                                disabled="true">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="bancruptcy-info">
+                    <div class="h-row-2"><span>Сведения о процедуре банкротства</span></div>
+                    <div class="h-row-3">
+                        <div class="span-colmn-2"><span>Наименование арбитражного суда*</span></div>
+                        <div><span>Номер дела о банкротстве*</span></div>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-7">
+                            <input type="text" class="in-type-7" id="court-name"
+                                placeholder="Наименование арбитражного суда" disabled="true">
+                        </div>
+                        <div class="col-type-8">
+                            <input type="text" class="in-type-8" id="case-number" placeholder="Номер дела о банкротстве"
+                                disabled="true">
+                        </div>
+                    </div>
+                    <div class="h-row-3"><span>Основание для собрания кредиторов</span></div>
+                    <div class="h-row-4">
+                        <div class="col-type-9">
+                            <textarea class="area" id="basis" placeholder="Основание для собрания кредиторов"
+                                disabled="true"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="h-row-2"><span>Должник</span></div>
+                <div class="h-row-3"><span>Тип должника</span></div>
+
+                <!-- Должник Физ. лицо -->
+                <div id="debtor-fl-info" hidden>
+                    <div class="h-row-4">
+                        <div class="col-type-6">
+                            <input type="text" class="in-type-6" id="debtor-type" placeholder="Тип должника"
+                                disabled="true">
+                        </div>
+                    </div>
+                    <div class="h-row-3">
+                        <div class="span-colmn-3"><span>Фамилия*</span></div>
+                        <div class="span-colmn-3"><span>Имя*</span></div>
+                        <span>Отчество*</span>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-10">
+                            <input type="text" class="in-type-9" id="debtor-fl-second-name" placeholder="Иванова"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-11">
+                            <input type="text" class="in-type-9" id="debtor-fl-first-name" placeholder="Светлана"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-12">
+                            <input type="text" class="in-type-10" id="debtor-fl-middle-name" placeholder="Андреевна"
+                                disabled="true">
+                        </div>
+                    </div>
+                    <div class="h-row-3"><span>Почтовый адрес*</span></div>
+                    <div class="h-row-4">
+                        <div class="col-type-6">
+                            <input type="text" class="in-type-6" id="debtor-fl-post-adress"
+                                placeholder="111116. г. Москва, а/я №87" disabled="true">
+                        </div>
+                    </div>
+                    <div class="h-row-3">
+                        <div class="span-colmn-1"><span>ИНН*</span></div>
+                        <div><span>СНИЛС*</span></div>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-5">
+                            <input type="text" class="in-type-5" id="debtor-fl-inn" placeholder=" 11111111"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-3">
+                            <input type="text" class="in-type-3" id="debtor-fl-snils" placeholder="123 456 789 00"
+                                disabled="true">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Должник ИП -->
+                <div id="debtor-ip-info" hidden>
+                    <div class="h-row-3">
+                        <div class="span-colmn-3"><span>Фамилия*</span></div>
+                        <div class="span-colmn-3"><span>Имя*</span></div>
+                        <span>Отчество*</span>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-10">
+                            <input type="text" class="in-type-9" id="debtor-ip-second-name" placeholder="Иванова"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-11">
+                            <input type="text" class="in-type-9" id="debtor-ip-first-name" placeholder="Светлана"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-12">
+                            <input type="text" class="in-type-10" id="debtor-ip-middle-name" placeholder="Андреевна"
+                                disabled="true">
+                        </div>
+                    </div>
+                    <div class="h-row-3"><span>Почтовый адрес*</span></div>
+                    <div class="h-row-4">
+                        <div class="col-type-6">
+                            <input type="text" class="in-type-6" id="debtor-ip-post-adress"
+                                placeholder="111116. г. Москва, а/я №87" disabled="true">
+                        </div>
+                    </div>
+                    <div class="h-row-3">
+                        <div class="span-colmn-3"><span>ИНН*</span></div>
+                        <div class="span-colmn-3"><span>СНИЛС*</span></div>
+                        <span>Код ОГРНИП*</span>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-10">
+                            <input type="text" class="in-type-9" id="debtor-ip-inn" placeholder=" 11111111"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-11">
+                            <input type="text" class="in-type-9" id="debtor-ip-snils" placeholder="123 456 789 00"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-12">
+                            <input type="text" class="in-type-10" id="debtor-ip-ogrnip" placeholder="000 000 000 00"
+                                disabled="true">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Должник Юр. лицо -->
+                <div id="debtor-ul-info" hidden>
+                    <div class="h-row-3"><span>Наименование</span></div>
+                    <div class="h-row-4">
+                        <div class="col-type-6">
+                            <input type="text" class="in-type-6" id="debtor-ul-company-fullname"
+                                placeholder="Наименование" disabled="true">
+                        </div>
+                    </div>
+                    <div class="h-row-3"><span>Краткое наименование</span></div>
+                    <div class="h-row-4">
+                        <div class="col-type-6">
+                            <input type="text" class="in-type-6" id="debtor-ul-company-shortname"
+                                placeholder="Краткое наименование" disabled="true">
+                        </div>
+                    </div>
+                    <div class="h-row-3">
+                        <div class="span-colmn-1"><span>ИНН</span></div>
+                        <div><span>ОГРН</span></div>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-5">
+                            <input type="text" class="in-type-5" id="debtor-ul-inn" placeholder="11111111"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-3">
+                            <input type="text" class="in-type-3" id="debtor-ul-ogrn" placeholder="000 000 000 00"
+                                disabled="true">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="documents-1">
+                    <div class="h-row-2"><span>Документы, которые необходимо предоставить участникам собрания</span>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-6">
+                            <input type="text" class="in-type-6" id="" placeholder="Документ, удостоверяющий личность"
+                                disabled="true">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="documents-2">
+                    <div class="h-row-2"><span>Дополнительные документы по собранию</span></div>
+                    <div class="h-row-5"><span>Документы</span></div>
+
+                </div>
+
+                <div id="questions">
+                    <div class="h-row-2"><span>Вопросы повестки дня</span></div>
+                    <div class="h-row-5"><span>Вопросы</span></div>
+                </div>
+
+                <div class="buttons" id="buttons">
+                    <div class="accept-btn" onclick="SaveChangesToMeetingInfo()"><span>Сохранить изменения</span></div>
+                    <div class="decline-btn"><span>Отменить</span></div>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <footer>
         <div class="f-top">
-            <a href="../../index.html"><img src="../../img/Logo.svg" /></a>
-            <a href="../../LOGOUTServlet">Выйти</a>
+            <a href="../../index.html" class="a"><img src="../../img/Logo.svg" /></a>
+            <a href="../../LOGOUTServlet" class="a">Выйти</a>
         </div>
         <div class="f-middle">
-            <a href="../../index.html">Главная</a>
-            <a href="../../reestr.html">Реестр собраний</a>
-            <a href="../../help/help_1.html">Помощь</a>
-            <a href="../../help/contacts.html">Контакты</a>
+            <a href="../../index.html" class="a">Главная</a>
+            <a href="../../reestr.html" class="a">Реестр собраний</a>
+            <a href="../../help/help_1.html" class="a">Помощь</a>
+            <a href="../../help/contacts.html" class="a">Контакты</a>
         </div>
         <div class="f-bottom">
-            <span>
-                © 2011-2022 Оператор торговой площадки - ООО «ТендерСтандарт»
-            </span>
-            <span>
-                Все права защищены
-            </span>
+            <span>© 2011-2022 Оператор торговой площадки - ООО «ТендерСтандарт»</span>
+            <span>Все права защищены</span>
         </div>
     </footer>
 
@@ -153,8 +538,6 @@
     <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
-    <script src="../../scripts/index2.js"></script>
-    <script src="../../scripts/logout.js"></script>
     <script src="../../scripts/meeting-card.js"></script>
 </body>
 

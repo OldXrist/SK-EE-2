@@ -1,10 +1,10 @@
-$(document).ready(function (){
+$(document).ready(function () {
     $(".nav_login").hide()
 }).ready(function () {
     $("#clock").hide()
 }).ready(function () {
     $("#logout_btn").hide()
-}).ready(function (){
+}).ready(function () {
     $(".logout").hide()
 });
 

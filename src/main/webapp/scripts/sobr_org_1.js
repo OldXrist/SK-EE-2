@@ -1,13 +1,13 @@
-$.get("http://localhost:8080/Sobr/ORGCARDServlet", function (data){
+$.get("http://localhost:8080/Sobr/ORGCARDServlet", function (data) {
     console.log(data)
 
     let d = data.split("\n")
-    let role = d[d.length-2]
+    let role = d[d.length - 2]
     //let orgContainer = document.getElementById("org").innerHTML
     console.log(role)
     console.log(typeof role)
 
-    if (role.includes("ЮЛ")){
+    if (role.includes("ЮЛ")) {
         document.getElementById("org").innerHTML += "<div class=\"unn\">\n" +
             "                <label for=\"unn\" class=\"txt_obsh\">ИНН*</label>\n" +
             "                <input type=\"text\" class=\"forms\" id=\"unn\" placeholder=\"11111111\" disabled>\n" +
@@ -36,7 +36,7 @@ $.get("http://localhost:8080/Sobr/ORGCARDServlet", function (data){
         document.getElementById("phone").value = d[5]
         document.getElementById("email").value = d[6]
 
-    } else if (role.includes("ФЛ")){
+    } else if (role.includes("ФЛ")) {
         document.getElementById("org").innerHTML += "<div class=\"familOrg\">\n" +
             "                    <label for=\"familOrg\" class=\"txt_obsh\">Фамилия*</label>\n" +
             "                    <input type=\"text\" class=\"forms4\" id=\"familOrg\" placeholder=\"Фамилия\" onfocus=\"White(this.id)\" disabled>\n" +
@@ -82,7 +82,7 @@ $.get("http://localhost:8080/Sobr/ORGCARDServlet", function (data){
         document.getElementById("phone").value = d[6]
         document.getElementById("email").value = d[7]
 
-    } else if (role.includes("ИП")){
+    } else if (role.includes("ИП")) {
         document.getElementById("org").innerHTML += "<div class=\"familOrg2\">\n" +
             "                    <label for=\"familOrg2\" class=\"txt_obsh\">Фамилия*</label>\n" +
             "                    <input type=\"text\" class=\"forms4\" id=\"familOrg2\" placeholder=\"Фамилия\" onfocus=\"White(this.id)\" disabled>\n" +
@@ -134,7 +134,7 @@ $.get("http://localhost:8080/Sobr/ORGCARDServlet", function (data){
         document.getElementById("phone").value = d[7]
         document.getElementById("email").value = d[8]
 
-    } else if (role.includes("АУ")){
+    } else if (role.includes("АУ")) {
         document.getElementById("org").innerHTML += "<div class=\"familOrg2\">\n" +
             "                    <label for=\"familOrg3\" class=\"txt_obsh\">Фамилия*</label>\n" +
             "                    <input type=\"text\" class=\"forms4\" id=\"familOrg3\" placeholder=\"Фамилия\" onfocus=\"White(this.id)\" disabled>\n" +

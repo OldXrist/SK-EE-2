@@ -4,7 +4,7 @@ $(document).ready(function () {
     $("#logout_btn").hide();
     $(".logout").hide();
 
-    $.post("http://localhost:8080/Sobr/GetOperatorInfo", function (result) {
+    $.post("http://localhost:8080/Sobr/GetOperatorCredentials", function (result) {
         console.log(result);
         let lastName = document.getElementById("last-name");
         let firstName = document.getElementById("first-name");
