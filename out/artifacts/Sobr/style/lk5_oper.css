@@ -56,7 +56,7 @@
     opacity: 0.8;
 }
 
-.knopka_prin > a {
+.knopka_prin>a {
     text-decoration: none;
 }
 
@@ -415,10 +415,9 @@
 }
 
 
-
 /*-----------------footer------------------*/
 footer {
-    margin-top: 2250px;
+    margin-top: 200px;
     height: 298px;
     background-color: #104781;
     font-family: 'Exo 2';

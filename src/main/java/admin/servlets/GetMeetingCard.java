@@ -4,18 +4,22 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+
 import java.io.IOException;
 import java.sql.*;
 import java.util.*;
 import com.google.gson.Gson;
 
-@WebServlet("/GetMeetingInfo")
-public class GetMeetingInfo extends HttpServlet {
+@WebServlet("/GetMeetingCard")
+public class GetMeetingCard extends HttpServlet {
     public String SobrOrgSql(String _meetingNumber)
     {
-        String sql =  "SELECT type_org, email_org, iden_nomer, famil, name, otch, inn, ogrnip, \n" +
-                      "naim_orb_suda, nomer_dela, osn_dlia_sobr\n" +
+        String sql =  "SELECT type_org, email_org, \n" +
+                      "data_u_vrem_sobr, povestk_dnia, \n" +
+                      "nachal_podach_zaiv, okonch_podach_zaiv, nachal_priem_bul, okonch_priem_bul, data_podpic_protakol,\n" +
+                      "iden_nomer, data_razm_efrsb,\n" +
+                      "naim_orb_suda, nomer_dela, osn_dlia_sobr,\n" +
+                      "type_dolzh, famil, name, otch, pocht_adres, inn, snils, ogrnip, poln_naum, qr_adres, ogrn\n" +
                       "FROM public.sobr_org\n" +
                       "WHERE nomer_dela = '" + _meetingNumber + "';";
         return sql;
@@ -23,7 +27,7 @@ public class GetMeetingInfo extends HttpServlet {
 
     public String AuSql(String email)
     {
-        String sql =  "SELECT famil, name, otch, phone, email, reg_nomer_au, naim_org\n" +
+        String sql =  "SELECT famil, name, otch, pocht_adres, inn, snils, reg_nomer_au, phone\n" +
                       "FROM au\n" +
                       "WHERE email = '" + email + "';";
         return sql;
@@ -31,7 +35,7 @@ public class GetMeetingInfo extends HttpServlet {
 
     public String FlSql(String email)
     {
-        String sql =  "SELECT famil, name, otch, phone, email\n" +
+        String sql =  "SELECT famil, name, otch, pocht_adres, inn, snils, phone\n" +
                       "FROM fl\n" +
                       "WHERE email = '" + email + "';";
         return sql;
@@ -39,7 +43,7 @@ public class GetMeetingInfo extends HttpServlet {
 
     public String IpSql(String email)
     {
-        String sql =  "SELECT famil, name, otch, phone, email\n" +
+        String sql =  "SELECT famil, name, otch, pocht_adres, inn, snils, ogrnip, phone\n" +
                       "FROM ip\n" +
                       "WHERE email = '" + email + "';";
         return sql;
@@ -47,7 +51,7 @@ public class GetMeetingInfo extends HttpServlet {
 
     public String QlSql(String email)
     {
-        String sql =  "SELECT poln_naim, phone, email\n" +
+        String sql =  "SELECT inn, ogrn, poln_naim, ur_addr, pocht_adres, phone\n" +
                       "FROM ql\n" +
                       "WHERE email = '" + email + "';";
         return sql;
@@ -80,10 +84,11 @@ public class GetMeetingInfo extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String meetingNumber = request.getParameter("num");
+
         try {
             Class.forName("org.postgresql.Driver");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK2", "postgres", "111");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK2", "postgres", "111");
+            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres", "postgres", "postgresql");
 
             //сбор данных о собрании
             ArrayList<String> meetingInfo = new ArrayList<String>();

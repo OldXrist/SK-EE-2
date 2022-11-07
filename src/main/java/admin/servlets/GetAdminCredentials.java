@@ -11,15 +11,15 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 
-@WebServlet("/GetOperatorInfo")
-public class GetOperatorInfo extends HttpServlet {
+@WebServlet("/GetAdminCredentials")
+public class GetAdminCredentials extends HttpServlet {
 
-    public String OperatorSql() {
-        return "SELECT * FROM public.adminaccounts WHERE id = 2;";
+    public String AdminSql() {
+        return "SELECT * FROM public.adminaccounts WHERE id = 1;";
     }
 
     public String PasswordSql() {
-        return "SELECT pass FROM public.main WHERE role_users = 'operator';";
+        return "SELECT pass FROM public.main WHERE role_users = 'admin';";
     }
 
     public void GetDataFromDb(Connection _c, String _sql, ArrayList<String> array) {
@@ -48,19 +48,19 @@ public class GetOperatorInfo extends HttpServlet {
         String meetingNumber = request.getParameter("num");
         try {
             Class.forName("org.postgresql.Driver");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK2", "postgres", "111");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK2", "postgres", "111");
+            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres", "postgres", "postgresql");
 
             //сбор данных об операторе
-            ArrayList<String> operatorInfo = new ArrayList<String>();
-            GetDataFromDb(c, OperatorSql(), operatorInfo);
+            ArrayList<String> adminInfo = new ArrayList<String>();
+            GetDataFromDb(c, AdminSql(), adminInfo);
             ArrayList<String> operatorPassword = new ArrayList<String>();
             GetDataFromDb(c, PasswordSql(), operatorPassword);
 
-            operatorInfo.addAll(operatorPassword);
+            adminInfo.addAll(operatorPassword);
 
             //возвращаем данные на фронтенд в формате json
-            String json = new Gson().toJson(operatorInfo);
+            String json = new Gson().toJson(adminInfo);
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
             response.getWriter().write(json);

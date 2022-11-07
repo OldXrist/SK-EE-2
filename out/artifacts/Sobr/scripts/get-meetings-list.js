@@ -20,8 +20,8 @@ $(document).ready(function () {
                     `<div class="meeting">
                         <div class="meeting-left-side">
                             <div class="top-side">
-                                <div class="m-name">
-                                    <a href="meeting-info.html" class="heading-name"><span id="number${i}" onclick="CopyNumberToLocalStorage(${i})">${meetingNumber} ${meetingType}</span></a>
+                                <div class="m-name" id = "m-name">
+                                    <a href=\"meeting-card.html\" class=\"heading-name\"><span id=\"number${i}\" onclick=\"CopyNumberToLocalStorage(${i})\">${meetingNumber} ${meetingType}</span></a>
                                 </div>
                             </div>
                             <div class="bottom-side">

@@ -1,6 +1,5 @@
-
-
-.ogl {position: absolute;
+.ogl {
+    position: absolute;
     width: 800px;
     height: 16px;
     margin-left: 80px;
@@ -18,7 +17,8 @@
 
 }
 
-.zaiavka {position: absolute;
+.zaiavka {
+    position: absolute;
     width: 657px;
     height: 38px;
     margin-left: 80px;
@@ -32,18 +32,22 @@
     /* or 38px */
 
 
-    color: #104781;}
+    color: #104781;
+}
 
-.table_org {position: absolute;
+.table_org {
+    position: absolute;
     width: 1160px;
     height: 3100px;
     margin-left: 80px;
     top: 276px;
 
     background: #BAF3FC;
-    border-radius: 15px;}
+    border-radius: 15px;
+}
 
-.obshie_dan {position: absolute;
+.obshie_dan {
+    position: absolute;
     width: 231px;
     height: 18px;
     left: 60px;
@@ -57,82 +61,100 @@
     /* identical to box height, or 18px */
 
 
-    color: #104781;}
+    color: #104781;
+}
 
-.data_vrem {position: absolute;
+.data_vrem {
+    position: absolute;
     width: 250px;
     height: 50px;
     left: 60px;
     top: 136px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.time {position: absolute;
+.time {
+    position: absolute;
     width: 125px;
     height: 50px;
     left: 335px;
     top: 136px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.time2 {position: absolute;
+.time2 {
+    position: absolute;
     width: 125px;
     height: 50px;
     left: 335px;
     top: 322px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.time3 {position: absolute;
+.time3 {
+    position: absolute;
     width: 125px;
     height: 50px;
     left: 785px;
     top: 322px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.time4 {position: absolute;
+.time4 {
+    position: absolute;
     width: 125px;
     height: 50px;
     left: 335px;
     top: 440px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.time5 {position: absolute;
+.time5 {
+    position: absolute;
     width: 125px;
     height: 50px;
     left: 785px;
     top: 440px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.time6 {position: absolute;
+.time6 {
+    position: absolute;
     width: 125px;
     height: 50px;
     left: 335px;
     top: 558px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
 
-.povestka_dnia {position: absolute;
+.povestka_dnia {
+    position: absolute;
     width: 590px;
     height: 50px;
     left: 510px;
     top: 136px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.inf_ob_sobr {position: absolute;
+.inf_ob_sobr {
+    position: absolute;
     width: 323px;
     height: 18px;
     left: 60px;
@@ -146,9 +168,11 @@
     /* identical to box height, or 18px */
 
 
-    color: #104781;}
+    color: #104781;
+}
 
-.vnimanie {position: absolute;
+.vnimanie {
+    position: absolute;
     width: 227px;
     height: 16px;
     left: 410px;
@@ -162,63 +186,77 @@
     /* identical to box height, or 16px */
 
 
-    color: #406C9A;}
+    color: #406C9A;
+}
 
-.data_vrem2 {position: absolute;
+.data_vrem2 {
+    position: absolute;
     width: 250px;
     height: 50px;
     left: 60px;
     top: 322px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.data_vrem3 {position: absolute;
+.data_vrem3 {
+    position: absolute;
     width: 250px;
     height: 50px;
     left: 510px;
     top: 322px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.data_vrem4 {position: absolute;
+.data_vrem4 {
+    position: absolute;
     width: 250px;
     height: 50px;
     left: 60px;
     top: 440px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.data_vrem5 {position: absolute;
+.data_vrem5 {
+    position: absolute;
     width: 250px;
     height: 50px;
     left: 510px;
     top: 440px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.data_vrem6 {position: absolute;
+.data_vrem6 {
+    position: absolute;
     width: 250px;
     height: 50px;
     left: 60px;
     top: 558px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.obem_sobr {position: absolute;
+.obem_sobr {
+    position: absolute;
     width: 400px;
     height: 50px;
     left: 510px;
     top: 558px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.dan_org_sobr {position: absolute;
+.dan_org_sobr {
+    position: absolute;
     width: 280px;
     height: 18px;
     left: 60px;
@@ -230,9 +268,10 @@
     font-size: 18px;
     line-height: 100%;
     /* identical to box height, or 18px */
-    color: #104781}
+    color: #104781
+}
 
-input{
+input {
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 400;
@@ -241,7 +280,7 @@ input{
     color: #406C9A;
 }
 
-input::placeholder{
+input::placeholder {
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 400;
@@ -250,11 +289,11 @@ input::placeholder{
     color: #406C9A;
 }
 
-.grey{
+.grey {
     border: none;
 }
 
-input{
+input {
     border-color: #FFFFFF;
     border-style: solid;
 }
@@ -266,7 +305,8 @@ input{
     left: 60px;
     top: 744px;
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
 .ogrn {
     position: absolute;
@@ -275,77 +315,95 @@ input{
     left: 510px;
     top: 744px;
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.naim_org {position: absolute;
+.naim_org {
+    position: absolute;
     width: 1040px;
     height: 50px;
     left: 60px;
     top: 862px;
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.qr_adres {position: absolute;
+.qr_adres {
+    position: absolute;
     width: 1040px;
     height: 50px;
     left: 60px;
     top: 980px;
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.pocht_adres {position: absolute;
+.pocht_adres {
+    position: absolute;
     width: 1040px;
     height: 50px;
     left: 60px;
     top: 1098px;
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.poln_naim {position: absolute;
+.poln_naim {
+    position: absolute;
     width: 1040px;
     height: 50px;
     left: 60px;
     top: 2253px;
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.qr_adres2 {position: absolute;
+.qr_adres2 {
+    position: absolute;
     width: 1040px;
     height: 50px;
     left: 60px;
     top: 2371px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.pocht_adres3 {position: absolute;
+.pocht_adres3 {
+    position: absolute;
     width: 1040px;
     height: 50px;
     left: 60px;
     top: 2489px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.unn4 {position: absolute;
+.unn4 {
+    position: absolute;
     width: 400px;
     height: 50px;
     left: 60px;
     top: 2607px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.ogrn3 {position: absolute;
+.ogrn3 {
+    position: absolute;
     width: 590px;
     height: 50px;
     left: 510px;
     top: 2607px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.efrsb_txt {position: absolute;
+.efrsb_txt {
+    position: absolute;
     width: 330px;
     height: 18px;
     left: 60px;
@@ -359,27 +417,33 @@ input{
     /* identical to box height, or 18px */
 
 
-    color: #104781;}
+    color: #104781;
+}
 
-.efrsb {position: absolute;
+.efrsb {
+    position: absolute;
     width: 1040px;
     height: 50px;
     left: 60px;
     top: 1284px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.data_razm {position: absolute;
+.data_razm {
+    position: absolute;
     width: 1040px;
     height: 50px;
     left: 60px;
     top: 1402px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.kontaktu {position: absolute;
+.kontaktu {
+    position: absolute;
     width: 443px;
     height: 18px;
     left: 60px;
@@ -390,27 +454,33 @@ input{
     font-weight: 600;
     font-size: 18px;
     line-height: 100%;
-    color: #104781;}
+    color: #104781;
+}
 
-.telefon{position: absolute;
+.telefon {
+    position: absolute;
     width: 400px;
     height: 50px;
     left: 60px;
     top: 1588px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.email {position: absolute;
+.email {
+    position: absolute;
     width: 590px;
     height: 50px;
     left: 510px;
     top: 1588px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.sved_o_proc {position: absolute;
+.sved_o_proc {
+    position: absolute;
     width: 310px;
     height: 18px;
     left: 60px;
@@ -424,41 +494,49 @@ input{
     /* identical to box height, or 18px */
 
 
-    color: #104781;}
+    color: #104781;
+}
 
-.under{
+.under {
     position: absolute;
     margin-top: -100px;
 }
 
-.naim_abr_sud {position: absolute;
+.naim_abr_sud {
+    position: absolute;
     width: 650px;
     height: 50px;
     left: 60px;
     top: 1769px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.nomer_dela {position: absolute;
+.nomer_dela {
+    position: absolute;
     width: 340px;
     height: 50px;
     left: 760px;
     top: 1769px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.osn_dlia_sobr {position: absolute;
+.osn_dlia_sobr {
+    position: absolute;
     width: 1040px;
     height: 100px;
     left: 60px;
     top: 1887px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.dolzhnik {position: absolute;
+.dolzhnik {
+    position: absolute;
     width: 80px;
     height: 18px;
     left: 60px;
@@ -472,9 +550,10 @@ input{
     /* identical to box height, or 18px */
 
 
-    color: #104781;}
+    color: #104781;
+}
 
-.obem_drop{
+.obem_drop {
     position: absolute;
     width: 400px;
     height: 126px;
@@ -486,11 +565,11 @@ input{
     padding-top: 18px;
 }
 
-.obem_drop ul{
+.obem_drop ul {
     padding: 0;
 }
 
-.obem_drop ul li{
+.obem_drop ul li {
     list-style: none;
     width: 100%;
     font-family: 'Exo 2';
@@ -504,53 +583,62 @@ input{
     padding-left: 25px;
 }
 
-.obem_drop ul li:hover{
+.obem_drop ul li:hover {
     background: #BAF3FC;
 }
 
-.tip_dolzh {position: absolute;
+.tip_dolzh {
+    position: absolute;
     width: 1040px;
     height: 50px;
     left: 60px;
     top: 2123px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.unn2 {position: absolute;
+.unn2 {
+    position: absolute;
     width: 300px;
     height: 50px;
     left: 410px;
     top: 2123px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.ogrn2 {position: absolute;
+.ogrn2 {
+    position: absolute;
     width: 340px;
     height: 50px;
     left: 760px;
     top: 2123px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.naim_dolzh {position: absolute;
+.naim_dolzh {
+    position: absolute;
     width: 1040px;
     height: 50px;
     left: 60px;
     top: 2241px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
-.obem_sobr img{
+.obem_sobr img {
     position: absolute;
     left: 365px;
     top: 20px;
 }
 
-#doks {position: absolute;
+#doks {
+    position: absolute;
     width: 613px;
     height: 18px;
     left: 60px;
@@ -564,26 +652,31 @@ input{
     /* identical to box height, or 18px */
 
 
-    color: #104781;}
+    color: #104781;
+}
 
-.ud_lich {position: absolute;
+.ud_lich {
+    position: absolute;
     width: 1040px;
     height: 50px;
     left: 60px;
     top: 2389px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
 
-.ud_ruk {position: absolute;
+.ud_ruk {
+    position: absolute;
     width: 1040px;
     height: 50px;
     left: 60px;
     top: 2469px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
 .txt_obsh {
     position: absolute;
@@ -600,124 +693,134 @@ input{
     color: #406C9A;
 }
 
-.forms {  padding:12px;
+.forms {
+    padding: 12px;
     width: 400px;
     height: 50px;
-    border-radius:10px;
+    border-radius: 10px;
 }
 
-.forms:focus{
+.forms:focus {
     outline: none;
 }
 
 
 .forms2 {
-    padding:12px;
+    padding: 12px;
     width: 1040px;
     height: 50px;
 
-    border-radius:10px;
+    border-radius: 10px;
     margin-bottom: 15px;
 }
 
-.forms2:focus{
+.forms2:focus {
     outline: none;
 }
 
 
-.forms3 {  padding:12px;
+.forms3 {
+    padding: 12px;
     width: 590px;
     height: 50px;
 
-    border-radius:10px;
+    border-radius: 10px;
 }
 
-.forms3:focus{
+.forms3:focus {
     outline: none;
 }
 
 
 .forms4 {
-    padding:12px;
+    padding: 12px;
     width: 300px;
     height: 50px;
 
-    border-radius:10px;
+    border-radius: 10px;
 
 
 }
-.forms4:focus{
+
+.forms4:focus {
     outline: none;
 }
 
 
-.forms5 {  padding:12px;
+.forms5 {
+    padding: 12px;
     width: 250px;
     height: 50px;
 
-    border-radius:10px;
+    border-radius: 10px;
 
 }
 
-.forms5:focus{
+.forms5:focus {
     outline: none;
 }
 
-.forms6 {  padding:12px;
+.forms6 {
+    padding: 12px;
     width: 125px;
     height: 50px;
 
-    border-radius:10px;
+    border-radius: 10px;
 
 }
 
-.forms6:focus{
+.forms6:focus {
     outline: none;
 }
 
-.forms7 {  padding:12px;
+.forms7 {
+    padding: 12px;
     width: 700px;
     height: 50px;
 
-    border-radius:10px;
+    border-radius: 10px;
 
 }
 
-.forms7:focus{
+.forms7:focus {
     outline: none;
 }
 
-.forms8 {  padding:12px;
+.forms8 {
+    padding: 12px;
     width: 650px;
     height: 50px;
 
-    border-radius:10px;
-    ;}
+    border-radius: 10px;
+    ;
+}
 
-.forms8:focus{
+.forms8:focus {
     outline: none;
 }
 
-.forms9 {  padding:12px;
+.forms9 {
+    padding: 12px;
     width: 340px;
     height: 50px;
 
-    border-radius:10px;
+    border-radius: 10px;
 
 }
 
-.forms9:focus{
+.forms9:focus {
     outline: none;
 }
 
-.forms10 {  padding:12px;
+.forms10 {
+    padding: 12px;
     width: 1040px;
     height: 100px;
-    border-radius:10px;
-padding-bottom: 67px;
+    border-radius: 10px;
+    padding-bottom: 67px;
 }
 
-.forms10:focus{
+.forms10:focus {
     outline: none;
 }
 
@@ -783,6 +886,7 @@ padding-bottom: 67px;
     background: #FFFFFF;
     border-radius: 10px;
 }
+
 .codorg2 {
     position: absolute;
     width: 300px;
@@ -831,7 +935,8 @@ padding-bottom: 67px;
     color: #00345F
 }
 
-.dop_doks {position: absolute;
+.dop_doks {
+    position: absolute;
     width: 368px;
     height: 18px;
     left: 60px;
@@ -842,9 +947,11 @@ padding-bottom: 67px;
     font-weight: 600;
     font-size: 18px;
     line-height: 100%;
-    color: #104781;}
+    color: #104781;
+}
 
-.dop_doks_txt {position: absolute;
+.dop_doks_txt {
+    position: absolute;
     width: 425px;
     height: 105px;
     left: 60px;
@@ -855,13 +962,16 @@ padding-bottom: 67px;
     font-weight: 400;
     font-size: 16px;
     line-height: 130%;
-    color: #406C9A;}
+    color: #406C9A;
+}
 
-.doks_img {position: absolute;
+.doks_img {
+    position: absolute;
     width: 94px;
     height: 94px;
     left: 600px;
-    top: 2600px;}
+    top: 2600px;
+}
 
 .prek_dok {
     position: absolute;
@@ -882,7 +992,7 @@ padding-bottom: 67px;
     color: #104781;
 }
 
-.add_docs{
+.add_docs {
     font-family: 'Exo 2';
     position: absolute;
     width: 520px;
@@ -897,7 +1007,7 @@ padding-bottom: 67px;
     text-align: center;
 }
 
-.add_docs p{
+.add_docs p {
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
@@ -906,11 +1016,11 @@ padding-bottom: 67px;
     color: #104781;
 }
 
-.add_docs img{
+.add_docs img {
     margin-right: 15px;
 }
 
-.add_docs label{
+.add_docs label {
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
@@ -920,20 +1030,20 @@ padding-bottom: 67px;
     cursor: pointer;
 }
 
-.add_docs label input{
+.add_docs label input {
     margin-top: 35px;
     margin-bottom: 35px;
 }
 
-.add_docs input{
+.add_docs input {
     border: none;
 }
 
-#doc{
+#doc {
     text-align: center;
 }
 
-.docs_tbl{
+.docs_tbl {
     position: absolute;
     width: 1040px;
     height: auto;
@@ -941,7 +1051,7 @@ padding-bottom: 67px;
     margin-top: 2830px;
 }
 
-.docs_tbl tr td{
+.docs_tbl tr td {
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 400;
@@ -953,7 +1063,7 @@ padding-bottom: 67px;
     padding: 18px;
 }
 
-.upl{
+.upl {
     width: 400px;
     height: 55px;
     background: #37DCF5;
@@ -967,7 +1077,7 @@ padding-bottom: 67px;
     margin-bottom: 15px;
 }
 
-.add_docs h6{
+.add_docs h6 {
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -977,13 +1087,13 @@ padding-bottom: 67px;
     cursor: pointer;
 }
 
-.povestka_drop{
+.povestka_drop {
     position: absolute;
     left: 60px;
     top: 2800px;
 }
 
-.povestka_drop input{
+.povestka_drop input {
     width: 1040px;
     height: 100px;
     border-radius: 10px;
@@ -993,16 +1103,16 @@ padding-bottom: 67px;
     border: none;
 }
 
-#enter_q:focus{
+#enter_q:focus {
     outline: none;
 }
 
-.q_tbl{
+.q_tbl {
     height: auto;
     margin-bottom: 30px;
 }
 
-.q_tbl tr td{
+.q_tbl tr td {
     width: 1040px;
     height: 50px;
     font-family: 'Exo 2';
@@ -1016,7 +1126,7 @@ padding-bottom: 67px;
     padding: 18px;
 }
 
-.table_fio tr td{
+.table_fio tr td {
     width: 1040px;
     height: 50px;
     font-family: 'Exo 2';
@@ -1045,7 +1155,8 @@ padding-bottom: 67px;
     margin-left: 790px;
 }
 
-.voprosu {position: absolute;
+.voprosu {
+    position: absolute;
     width: 196px;
     height: 18px;
     left: 60px;
@@ -1090,14 +1201,16 @@ padding-bottom: 67px;
     color: #104781;
 }
 
-.nim_cod {position: absolute;
+.nim_cod {
+    position: absolute;
     width: 700px;
     height: 50px;
     left: 60px;
     top: 2900px;
 
     background: #FFFFFF;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
 
 .knopka3 {
     position: absolute;
@@ -1117,7 +1230,8 @@ padding-bottom: 67px;
     color: #00345F;
 }
 
-.table_fio {position: absolute;
+.table_fio {
+    position: absolute;
     width: 1040px;
     left: 60px;
     top: 2990px;
@@ -1130,17 +1244,17 @@ padding-bottom: 67px;
     color: #406C9A;
 }
 
-.tip_dolzh img{
+.tip_dolzh img {
     position: absolute;
     left: 1008px;
     margin-top: 20px;
 }
 
-#tip_dolzh{
+#tip_dolzh {
     width: 1040px;
 }
 
-.dolg_drop{
+.dolg_drop {
     position: absolute;
     width: 1040px;
     height: 126px;
@@ -1152,11 +1266,11 @@ padding-bottom: 67px;
     padding-top: 18px;
 }
 
-.dolg_drop ul{
+.dolg_drop ul {
     padding: 0;
 }
 
-.dolg_drop ul li{
+.dolg_drop ul li {
     list-style: none;
     width: 100%;
     font-family: 'Exo 2';
@@ -1170,7 +1284,7 @@ padding-bottom: 67px;
     padding-left: 25px;
 }
 
-.dolg_drop ul li:hover{
+.dolg_drop ul li:hover {
     background: #BAF3FC;
 }
 
@@ -1198,7 +1312,8 @@ padding-bottom: 67px;
     color: #00345F;
 }
 
-.knopka5 {position: absolute;
+.knopka5 {
+    position: absolute;
     width: 439px;
     height: 55px;
     left: 605px;
@@ -1218,11 +1333,11 @@ padding-bottom: 67px;
     color: #00345F;
 }
 
-.base{
+.base {
     margin-top: 3500px;
 }
 
-.base_bg{
+.base_bg {
     margin-top: 3500px;
 }
 
@@ -1348,7 +1463,7 @@ padding-bottom: 67px;
     border-radius: 10px;
 }
 
-.ogrnipOrg{
+.ogrnipOrg {
     position: absolute;
     width: 340px;
     height: 50px;
@@ -1358,7 +1473,7 @@ padding-bottom: 67px;
     border-radius: 10px;
 }
 
-.auOrg{
+.auOrg {
     position: absolute;
     width: 340px;
     height: 50px;
@@ -1368,6 +1483,6 @@ padding-bottom: 67px;
     border-radius: 10px;
 }
 
-.under_org{
+.under_org {
     position: absolute;
 }
