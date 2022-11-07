@@ -25,7 +25,7 @@ function Cards(dt, i, m){
     let date2 = dateParse(arr[2]) + ' - ' + dateParse(arr[3])
     console.log(arr[4], arr[10])
     if (arr[4].includes("Юридическое") && arr[10].includes("ЮЛ")){
-        document.getElementById("table").innerHTML += "<div id = "+m+" class=\"table_item\">\n" +
+        document.getElementById("table").innerHTML += "<div id = "+m+" class=\"table_item\" onclick='Redirect(this.id)'/>\n" +
             "                <h3 class=\"table_h\">"+ arr[0]+ arr[9]+"</h3>\n" +
             "                <ul class=\"table_data\">\n" +
             "                    <li class=\"thin_text\">Организатор</li>\n" +
@@ -52,7 +52,7 @@ function Cards(dt, i, m){
             "                </div>\n" +
             "            </div>"
     } else if (arr[4].includes("Юридическое") && !arr[10].includes("ЮЛ")){
-        document.getElementById("table").innerHTML += "<div id = "+m+" class=\"table_item\">\n" +
+        document.getElementById("table").innerHTML += "<div id = "+m+" class=\"table_item\" onclick='Redirect(this.id)'/>\n" +
             "                <h3 class=\"table_h\">"+ arr[0]+ arr[9]+"</h3>\n" +
             "                <ul class=\"table_data\">\n" +
             "                    <li class=\"thin_text\">Организатор</li>\n" +
@@ -79,7 +79,7 @@ function Cards(dt, i, m){
             "                </div>\n" +
             "            </div>"
     } else if (!arr[4].includes("Юридическое") && arr[10].includes("ЮЛ")){
-        document.getElementById("table").innerHTML += "<div id = "+m+" class=\"table_item\">\n" +
+        document.getElementById("table").innerHTML += "<div id = "+m+" class=\"table_item\" onclick='Redirect(this.id)'/>\n" +
             "                <h3 class=\"table_h\">"+ arr[0]+ arr[9]+"</h3>\n" +
             "                <ul class=\"table_data\">\n" +
             "                    <li class=\"thin_text\">Организатор</li>\n" +

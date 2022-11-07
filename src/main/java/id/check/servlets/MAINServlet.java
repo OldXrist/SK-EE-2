@@ -17,7 +17,6 @@ public class MAINServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         PrintWriter out = res.getWriter();
         HttpSession sesh = req.getSession();
-        String id = sesh.getId();
         String email = String.valueOf(sesh.getAttribute("sessionUser"));
         String role = String.valueOf(sesh.getAttribute("role"));
 

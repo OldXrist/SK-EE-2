@@ -25,9 +25,10 @@
     </ul>
 </div>
 
-<div id="player"></div>
+<video id="player" autoplay playsinline></video>
 
 <script>
+    /*
     var tag = document.createElement('script');
 
     tag.src = "https://www.youtube.com/iframe_api";
@@ -60,30 +61,10 @@
     }
     function stopVideo() {
         player.stopVideo();
+
     }
-</script>
 
-<div class="chat">
-    <div id="wrapper">
-        <div id="menu">
-
-            <div style="clear:both"></div>
-        </div>
-
-        <div id="chatbox"></div>
-
-        <form name="message" action="">
-            <input name="usermsg" class="grim" type="text" id="usermsg" size="63" />
-            <input name="submitmsg"  type="submit"  id="submitmsg" value="Send" />
-        </form>
-    </div>
-</div>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
-<script type="text/javascript">
-    // jQuery Document
-    $(document).ready(function(){
-
-    });
+     */
 </script>
 
 <div class="container">
@@ -118,7 +99,7 @@
                 <li>01.01.2022 00:00</li>
                 <li>00:00:00</li>
             </ul>
-            <button class="open">Открыть карточку собрания</button>
+            <button class="open" id="showVideo">Открыть карточку собрания</button>
         </div>
 
         <ul class="add_q">
@@ -204,6 +185,7 @@
     }, 1000);
 </script>
 <script src="../../../jquery/jquery-3.6.0.js"></script>
+<script src="../../../scripts/video.js"></script>
 <script href="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
 <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>

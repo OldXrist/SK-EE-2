@@ -1,0 +1,32 @@
+{
+  "name": "crypto-pro-js",
+  "description": "Асинхронный JavaScript API для работы с КриптоПРО ЭЦП Browser Plug-In. Forked from https://github.com/vgoma/crypto-pro",
+  "main": "./lib/crypto-pro-js.js",
+  "authors": [
+    "kern.usr <kern.usr@gmail.com>",
+    "vgoma <vgoma@yandex.ru>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "crypto",
+    "cryptopro",
+    "crypto-pro",
+    "crypto-pro-js",
+    "cades",
+    "КриптоПро",
+    "Крипто ПРО"
+  ],
+  "homepage": "https://github.com/webmasterskaya/crypto-pro-js",
+  "ignore": [
+    "**/.*",
+    "/*.js",
+    "/*.gif",
+    "/tsconfig*",
+    "node_modules",
+    "bower_components",
+    "examples",
+    "src",
+    "types",
+    "package"
+  ]
+}

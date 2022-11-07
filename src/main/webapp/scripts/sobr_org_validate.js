@@ -1,5 +1,4 @@
 function Validate () {
-
     let k = 0;
 
     if (document.getElementById("date_sobr").value.length === 0 ||
@@ -183,7 +182,5 @@ function Validate () {
             k += 1;
         }
     }
-    if (k > 0) {
-        console.log('error')
-    }
+    return k
 }
