@@ -18,6 +18,8 @@
           <element id="library" level="project" name="Maven: org.postgresql:postgresql:42.5.0" />
           <element id="library" level="project" name="Maven: org.checkerframework:checker-qual:3.5.0" />
           <element id="library" level="project" name="Maven: org.apache.bcel:bcel:6.6.0" />
+          <element id="library" level="project" name="Maven: jakarta.websocket:jakarta.websocket-api:2.1.0" />
+          <element id="library" level="project" name="Maven: org.glassfish.tyrus.bundles:tyrus-standalone-client:2.0.0-M3" />
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.6" />
           <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.8.1" />
           <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.9" />
