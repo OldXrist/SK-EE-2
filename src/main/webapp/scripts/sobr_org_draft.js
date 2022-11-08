@@ -1,4 +1,3 @@
-/*
 function dateParse (x){
     let dateTime = x.split(" ");
     let date = dateTime[0]
@@ -43,16 +42,6 @@ function Cards(dt, i, m){
             "                    <li>Отменено Органзатором</li>\n" +
             "                </ul>\n" +
             "                <div class=\"vl\"></div>\n" +
-            "                <div class=\"date\">\n" +
-            "                    <ul class=\"datetime\">\n" +
-            "                        <li class=\"thin_text\">Дата проведения собрания</li>\n" +
-            "                        <li>"+date1+"</li>\n" +
-            "                    </ul>\n" +
-            "                    <ul class=\"datetime\">\n" +
-            "                        <li class=\"thin_text\">Даты приема заявок</li>\n" +
-            "                        <li>"+date2+"</li>\n" +
-            "                    </ul>\n" +
-            "                </div>\n" +
             "            </div>"
     } else if (arr[4].includes("Юридическое") && !arr[10].includes("ЮЛ")){
         document.getElementById("table").innerHTML += "<div id = "+m+" class=\"table_item\" onclick='Redirect(this.id)'/>\n" +
@@ -70,16 +59,6 @@ function Cards(dt, i, m){
             "                    <li>Отменено Органзатором</li>\n" +
             "                </ul>\n" +
             "                <div class=\"vl\"></div>\n" +
-            "                <div class=\"date\">\n" +
-            "                    <ul class=\"datetime\">\n" +
-            "                        <li class=\"thin_text\">Дата проведения собрания</li>\n" +
-            "                        <li>"+date1+"</li>\n" +
-            "                    </ul>\n" +
-            "                    <ul class=\"datetime\">\n" +
-            "                        <li class=\"thin_text\">Даты приема заявок</li>\n" +
-            "                        <li>"+date2+"</li>\n" +
-            "                    </ul>\n" +
-            "                </div>\n" +
             "            </div>"
     } else if (!arr[4].includes("Юридическое") && arr[10].includes("ЮЛ")){
         document.getElementById("table").innerHTML += "<div id = "+m+" class=\"table_item\" onclick='Redirect(this.id)'/>\n" +
@@ -97,16 +76,6 @@ function Cards(dt, i, m){
             "                    <li>Отменено Органзатором</li>\n" +
             "                </ul>\n" +
             "                <div class=\"vl\"></div>\n" +
-            "                <div class=\"date\">\n" +
-            "                    <ul class=\"datetime\">\n" +
-            "                        <li class=\"thin_text\">Дата проведения собрания</li>\n" +
-            "                        <li>"+date1+"</li>\n" +
-            "                    </ul>\n" +
-            "                    <ul class=\"datetime\">\n" +
-            "                        <li class=\"thin_text\">Даты приема заявок</li>\n" +
-            "                        <li>"+date2+"</li>\n" +
-            "                    </ul>\n" +
-            "                </div>\n" +
             "            </div>"
     } else {
         document.getElementById("table").innerHTML += "<div id = "+m+" class=\"table_item\" onclick='Redirect(this.id)'>\n" +
@@ -124,21 +93,9 @@ function Cards(dt, i, m){
             "                    <li>Отменено Органзатором</li>\n" +
             "                </ul>\n" +
             "                <div class=\"vl\"></div>\n" +
-            "                <div class=\"date\">\n" +
-            "                    <ul class=\"datetime\">\n" +
-            "                        <li class=\"thin_text\">Дата проведения собрания</li>\n" +
-            "                        <li>" + date1 + "</li>\n" +
-            "                    </ul>\n" +
-            "                    <ul class=\"datetime\">\n" +
-            "                        <li class=\"thin_text\">Даты приема заявок</li>\n" +
-            "                        <li>" + date2 + "</li>\n" +
-            "                    </ul>\n" +
-            "                </div>\n" +
             "            </div>"
     }
 }
-
- */
 
 
 
@@ -147,14 +104,14 @@ $.get("http://localhost:8080/Sobr/DRAFTSevlet", function (data){
     let d = data.split("\n")
     let m = 1;
     let k = 0;
-    //Cards(d, k, m)
+    Cards(d, k, m)
     m += 1
     k+=14
-    //Cards(d, k, m)
+    Cards(d, k, m)
     m += 1
     k+=14
-    //Cards(d, k, m)
+    Cards(d, k, m)
     m += 1
     k+=14
-    //Cards(d, k, m)
+    Cards(d, k, m)
 })

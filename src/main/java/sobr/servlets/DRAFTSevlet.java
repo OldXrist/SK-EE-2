@@ -34,25 +34,6 @@ public class DRAFTSevlet extends HttpServlet {
             while (rs.next()){
                 String role = rs.getString(1);
                 switch (role) {
-                    case "АУ": {
-                        sql = "SELECT * FROM au WHERE email = ?";
-                        ps = c.prepareStatement(sql);
-                        ps.setString(1, email);
-                        ResultSet rs2 = ps.executeQuery();
-                        while (rs2.next()) {
-                            out.println(role);
-                            out.println(rs2.getString(7));
-                            out.println(rs2.getString(8));
-                            out.println(rs2.getString(9));
-                            out.println(rs2.getString(4));
-                            out.println(rs2.getLong(3));
-                            out.println(rs2.getLong(10));
-                            out.println(rs2.getLong(15));
-                        }
-                        rs2.close();
-                        ps.close();
-                        break;
-                    }
                     case "ИП": {
                         sql = "SELECT * FROM ip WHERE email = ?";
                         ps = c.prepareStatement(sql);
@@ -60,13 +41,9 @@ public class DRAFTSevlet extends HttpServlet {
                         ResultSet rs3 = ps.executeQuery();
                         while (rs3.next()) {
                             out.println(role);
-                            out.println(rs3.getString(7));
-                            out.println(rs3.getString(8));
-                            out.println(rs3.getString(9));
-                            out.println(rs3.getString(11));
-                            out.println(rs3.getLong(3));
-                            out.println(rs3.getLong(10));
-                            out.println(rs3.getLong(6));
+                            out.println(rs3.getLong(16));
+                            out.println(rs3.getLong(17));
+                            out.println(rs3.getLong(18));
                         }
                         rs3.close();
                         ps.close();
@@ -79,12 +56,9 @@ public class DRAFTSevlet extends HttpServlet {
                         ResultSet rs4 = ps.executeQuery();
                         while (rs4.next()) {
                             out.println(role);
-                            out.println(rs4.getString(7));
-                            out.println(rs4.getString(8));
-                            out.println(rs4.getString(9));
-                            out.println(rs4.getString(4));
-                            out.println(rs4.getLong(3));
-                            out.println(rs4.getLong(10));
+                            out.println(rs4.getLong(16));
+                            out.println(rs4.getLong(17));
+                            out.println(rs4.getLong(18));
                         }
                         rs4.close();
                         ps.close();
@@ -97,11 +71,7 @@ public class DRAFTSevlet extends HttpServlet {
                         ResultSet rs5 = ps.executeQuery();
                         while (rs5.next()) {
                             out.println(role);
-                            out.println(rs5.getLong(3));
-                            out.println(rs5.getLong(4));
-                            out.println(rs5.getString(5));
-                            out.println(rs5.getString(6));
-                            out.println(rs5.getString(7));
+                            out.println(rs5.getString(23));
                         }
                         rs5.close();
                         ps.close();

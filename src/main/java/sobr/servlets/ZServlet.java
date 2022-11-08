@@ -54,6 +54,8 @@ public class ZServlet extends HttpServlet {
         String ogip = req.getParameter("ogrnip");
         String polnNaim = req.getParameter("polnNaim");
         String urAdr = req.getParameter("urAdr");
+        String status = req.getParameter("status");
+
 
         LocalDateTime dateS = LocalDateTime.parse(dateSobr);
         LocalDateTime dateZ = LocalDateTime.parse(date1);
@@ -68,7 +70,7 @@ public class ZServlet extends HttpServlet {
             Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
 
-            String sql1 = "INSERT INTO sobr_org Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql1 = "INSERT INTO sobr_org Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement ps = c.prepareStatement(sql1);
 
             ps.setObject(1, dateS);
@@ -121,6 +123,9 @@ public class ZServlet extends HttpServlet {
                 long obem = Long.parseLong(ob);
                 ps.setLong(27, obem);
             } else ps.setNull(27, Types.BIGINT);
+
+            ps.setString(28, status);
+
 
             ps.executeUpdate();
 
