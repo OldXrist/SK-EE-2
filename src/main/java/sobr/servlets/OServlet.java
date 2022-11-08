@@ -1,10 +1,13 @@
 package sobr.servlets;
 
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -12,8 +15,8 @@ import java.sql.Types;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-@WebServlet("/ZServlet")
-public class ZServlet extends HttpServlet {
+@WebServlet("/OServlet")
+public class OServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         HttpSession sesh = req.getSession();
@@ -27,7 +30,9 @@ public class ZServlet extends HttpServlet {
         String date3 = req.getParameter("dateB");
         String date4 = req.getParameter("dateB2");
         String date5 = req.getParameter("dateP");
+
         String ob = req.getParameter("vol");
+        long vol = Long.parseLong(ob);
 
         String efrsb = req.getParameter("efrsb");
         long regEfrsb  = Long.parseLong(efrsb);
@@ -117,12 +122,10 @@ public class ZServlet extends HttpServlet {
                 ps.setLong(25, ogrn);
             } else ps.setNull(25, Types.BIGINT);
 
-            ps.setString(26, "Заочное");
+            ps.setString(26, "Очное");
 
-            if (!ob.equals("")){
-                long obem = Long.parseLong(ob);
-                ps.setLong(27, obem);
-            } else ps.setNull(27, Types.BIGINT);
+            ps.setLong(27, vol);
+
 
             ps.setString(28, status);
 

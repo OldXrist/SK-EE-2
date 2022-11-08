@@ -33,6 +33,8 @@
           <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
           <element id="library" level="project" name="Maven: javax.mail:mailapi:1.4.3" />
           <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.9" />
+          <element id="library" level="project" name="Maven: jakarta.websocket:jakarta.websocket-api:2.1.0" />
+          <element id="library" level="project" name="Maven: org.glassfish.tyrus.bundles:tyrus-standalone-client:2.0.0-M3" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="Sobr/web/Web" />
