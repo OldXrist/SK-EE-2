@@ -6,7 +6,9 @@ let send = {
     sk: snum[1]
 }
 
-document.getElementById('number')
+for (let i = 1; i < 6; i++){
+    document.getElementById("sobrP"+i).href += "?sk=" + snum[1]
+}
 
 $.get("http://localhost:8080/Sobr/ORGServlet", send, function (data){
     console.log(data)
