@@ -103,191 +103,180 @@
 
     <p class="dan_org_sobr">Данные организатора собрания</p>
 
-        <div class="unn">
-            <label for="unn" class="txt_obsh">ИНН*</label>
-            <input type="text" class="forms grey" id="unn" placeholder="11111111">
+    <div id="org">
+    </div>
+    <div class="under_org">
+        <p class="efrsb_txt">Информация для интеграции с ЕФРСБ</p>
+        <div class="efrsb">
+            <label for="efrsb" class="txt_obsh">Идентификационный номер сообщения о публикации торгов на сайте ЕФРСБ*</label>
+            <input type="text" class="forms2" id="efrsb" placeholder="Идентификационный номер" onfocus="White(this.id)">
         </div>
-        <div class="ogrn">
-            <label for="ogrn" class="txt_obsh">ОГРН*</label>
-            <input type="text" class="forms3 grey" id="ogrn" placeholder="000 000 000 00">
+        <div class="data_razm">
+            <label for="date_razm" class="txt_obsh">Дата размещения сообщения о публикации торгов на сайте ЕФРСБ*</label>
+            <input type="text" class="forms2" id="date_razm" placeholder="01.01.0000" onfocus="White(this.id)">
         </div>
-        <div class="naim_org">
-            <label for="naim_org" class="txt_obsh">Наименование организации*</label>
-            <input type="text" class="forms2 grey" id="naim_org" placeholder="Полное наименование">
+        <div class="telefon">
+            <label for="phone" class="txt_obsh">Телефон*</label>
+            <input type="text" class="forms" id="phone" placeholder="+7 (900) 000-12-34" disabled>
         </div>
-        <div class="qr_adres">
-            <label for="qr_adres" class="txt_obsh">Юридический адрес*</label>
-            <input type="text" class="forms2 grey" id="qr_adres" placeholder="Юридический адрес">
+        <div class="email">
+            <label for="email" class="txt_obsh">Электронная почта*</label>
+            <input type="email" class="forms3" id="email" placeholder="ivanova12@mail.ru" disabled>
         </div>
-        <div class="pocht_adres">
-            <label for="pocht_adres" class="txt_obsh">Почтовый адрес*</label>
-            <input type="text" class="forms2 grey" id="pocht_adres" placeholder="Почтовый адрес">
+        <div class="naim_abr_sud">
+            <label for="naim_abr_sud" class="txt_obsh">Наименование арбитражного суда*</label>
+            <input type="text" class="forms8" id="naim_abr_sud" placeholder="Наименование арбитражного суда" onfocus="White(this.id)">
         </div>
-    <p class="efrsb_txt">Информация для интеграции с ЕФРСБ</p>
-    <div class="efrsb">
-        <label for="efrsb" class="txt_obsh">Идентификационный номер сообщения о публикации торгов на сайте ЕФРСБ*</label>
-        <input type="text" class="forms2" id="efrsb" placeholder="Идентификационный номер" onfocus="White(this.id)">
-    </div>
-    <div class="data_razm">
-        <label for="date_razm" class="txt_obsh">Дата размещения сообщения о публикации торгов на сайте ЕФРСБ*</label>
-        <input type="text" class="forms2" id="date_razm" placeholder="01.01.0000" onfocus="White(this.id)">
-    </div>
-    <div class="telefon">
-        <label for="phone" class="txt_obsh">Телефон*</label>
-        <input type="text" class="forms grey" id="phone" placeholder="+7 (900) 000-12-34">
-    </div>
-    <div class="email">
-        <label for="email" class="txt_obsh">Электронная почта*</label>
-        <input type="email" class="forms3 grey" id="email" placeholder="ivanova12@mail.ru">
-    </div>
-    <div class="naim_abr_sud">
-        <label for="naim_abr_sud" class="txt_obsh">Наименование арбитражного суда*</label>
-        <input type="text" class="forms8" id="naim_abr_sud" placeholder="Наименование арбитражного суда" onfocus="White(this.id)">
-    </div>
-    <div class="nomer_dela">
-        <label for="nomer_dela" class="txt_obsh">Номер дела о банкротстве*</label>
-        <input type="text" class="forms9" id="nomer_dela" placeholder="Номер дела о банкротстве" onfocus="White(this.id)">
-    </div>
-    <div class="osn_dlia_sobr">
-        <label for="osn_dlia_sobr" class="txt_obsh">Основание для собрания кредиторов</label>
-        <input type="text" class="forms10" id="osn_dlia_sobr" placeholder="Основание для собрания кредиторов" onfocus="White(this.id)">
-    </div>
-    <div class="tip_dolzh">
-        <label for="tip_dolzh" class="txt_obsh">Тип должника</label>
-        <input type="text" class="forms" id="tip_dolzh" placeholder="Не выбрано" onclick="White(this.id)"/>
-        <img src="../../../img/down_arrow.svg"/>
-    </div>
-    <div id="fl_form">
-        <div class="famil">
-            <label for="famil" class="txt_obsh">Фамилия*</label>
-            <input type="text" class="forms4" id="famil" placeholder="Фамилия" onfocus="White(this.id)">
+        <div class="nomer_dela">
+            <label for="nomer_dela" class="txt_obsh">Номер дела о банкротстве*</label>
+            <input type="text" class="forms9" id="nomer_dela" placeholder="Номер дела о банкротстве" onfocus="White(this.id)">
+        </div>
+        <div class="osn_dlia_sobr">
+            <label for="osn_dlia_sobr" class="txt_obsh">Основание для собрания кредиторов</label>
+            <input type="text" class="forms10" id="osn_dlia_sobr" placeholder="Основание для собрания кредиторов" onfocus="White(this.id)">
+        </div>
+        <div class="tip_dolzh">
+            <label for="tip_dolzh" class="txt_obsh">Тип должника</label>
+            <input type="text" class="forms" id="tip_dolzh" placeholder="Не выбрано"/>
+            <img src="../../../img/down_arrow.svg"/>
         </div>
 
-        <div class="name">
-            <label for="name" class="txt_obsh">Имя*</label>
-            <input type="text" class="forms4" id="name" placeholder="Имя" onfocus="White(this.id)">
-        </div>
+        <div id="fl_form">
+            <div class="famil">
+                <label for="famil" class="txt_obsh">Фамилия*</label>
+                <input type="text" class="forms4" id="famil" placeholder="Фамилия" onfocus="White(this.id)">
+            </div>
 
-        <div class="otch">
-            <label for="otch" class="txt_obsh">Отчество*</label>
-            <input type="text" class="forms9" id="otch" placeholder="Отчество" onfocus="White(this.id)">
-        </div>
-        <div class="pcht_adres2">
-            <label for="pocht" class="txt_obsh">Почтовый адрес*</label>
-            <input type="text" class="forms2" id="pocht" placeholder="Почтовый адрес" onfocus="White(this.id)">
-        </div>
-        <div class="unn2">
-            <label for="inn" class="txt_obsh">ИНН*</label>
-            <input type="text" class="forms" id="inn" placeholder="000000000000" onfocus="White(this.id)">
-        </div>
+            <div class="name">
+                <label for="name" class="txt_obsh">Имя*</label>
+                <input type="text" class="forms4" id="name" placeholder="Имя" onfocus="White(this.id)">
+            </div>
 
-        <div class="codorg">
-            <label for="snils" class="txt_obsh">СНИЛС*</label>
-            <input type="text" class="forms3" id="snils" placeholder="000 000 000 00" onfocus="White(this.id)">
-        </div>
-    </div>
-    <div id="ip_form">
-        <div class="famil">
-            <label for="famil2" class="txt_obsh">Фамилия*</label>
-            <input type="text" class="forms4" id="famil2" placeholder="Фамилия" onfocus="White(this.id)">
-        </div>
+            <div class="otch">
+                <label for="otch" class="txt_obsh">Отчество*</label>
+                <input type="text" class="forms9" id="otch" placeholder="Отчество" onfocus="White(this.id)">
+            </div>
+            <div class="pcht_adres2">
+                <label for="pocht" class="txt_obsh">Почтовый адрес*</label>
+                <input type="text" class="forms2" id="pocht" placeholder="Почтовый адрес" onfocus="White(this.id)">
+            </div>
+            <div class="unn2">
+                <label for="inn" class="txt_obsh">ИНН*</label>
+                <input type="text" class="forms" id="inn" placeholder="000000000000" onfocus="White(this.id)">
+            </div>
 
-        <div class="name">
-            <label for="name2" class="txt_obsh">Имя*</label>
-            <input type="text" class="forms4" id="name2" placeholder="Имя" onfocus="White(this.id)">
+            <div class="codorg">
+                <label for="snils" class="txt_obsh">СНИЛС*</label>
+                <input type="text" class="forms3" id="snils" placeholder="000 000 000 00" onfocus="White(this.id)">
+            </div>
         </div>
+        <div id="ip_form">
+            <div class="famil">
+                <label for="famil2" class="txt_obsh">Фамилия*</label>
+                <input type="text" class="forms4" id="famil2" placeholder="Фамилия" onfocus="White(this.id)">
+            </div>
 
-        <div class="otch">
-            <label for="otch2" class="txt_obsh">Отчество*</label>
-            <input type="text" class="forms9" id="otch2" placeholder="Отчество" onfocus="White(this.id)">
-        </div>
-        <div class="pcht_adres2">
-            <label for="pocht2" class="txt_obsh">Почтовый адрес*</label>
-            <input type="text" class="forms2" id="pocht2" placeholder="Почтовый адрес" onfocus="White(this.id)">
-        </div>
-        <div class="unn3">
-            <label for="inn2" class="txt_obsh">ИНН*</label>
-            <input type="text" class="forms4" id="inn2" placeholder="000000000000" onfocus="White(this.id)">
-        </div>
+            <div class="name">
+                <label for="name2" class="txt_obsh">Имя*</label>
+                <input type="text" class="forms4" id="name2" placeholder="Имя" onfocus="White(this.id)">
+            </div>
 
-        <div class="codorg2">
-            <label for="snils2" class="txt_obsh">СНИЛС*</label>
-            <input type="text" class="forms4" id="snils2" placeholder="000 000 000 00" onfocus="White(this.id)">
-        </div>
+            <div class="otch">
+                <label for="otch2" class="txt_obsh">Отчество*</label>
+                <input type="text" class="forms9" id="otch2" placeholder="Отчество" onfocus="White(this.id)">
+            </div>
+            <div class="pcht_adres2">
+                <label for="pocht2" class="txt_obsh">Почтовый адрес*</label>
+                <input type="text" class="forms2" id="pocht2" placeholder="Почтовый адрес" onfocus="White(this.id)">
+            </div>
+            <div class="unn3">
+                <label for="inn2" class="txt_obsh">ИНН*</label>
+                <input type="text" class="forms4" id="inn2" placeholder="000000000000" onfocus="White(this.id)">
+            </div>
 
-        <div class="ogrnip">
-            <label for="ogrnip" class="txt_obsh">Код ОГРНИП*</label>
-            <input type="text" class="forms9" id="ogrnip" placeholder="000000000000000" onfocus="White(this.id)">
+            <div class="codorg2">
+                <label for="snils2" class="txt_obsh">СНИЛС*</label>
+                <input type="text" class="forms4" id="snils2" placeholder="000 000 000 00" onfocus="White(this.id)">
+            </div>
+
+            <div class="ogrnip">
+                <label for="ogrnip" class="txt_obsh">Код ОГРНИП*</label>
+                <input type="text" class="forms9" id="ogrnip" placeholder="000000000000000" onfocus="White(this.id)">
+            </div>
         </div>
-    </div>
-    <div id="ql_form">
-        <div class="poln_naim">
-            <label for="poln_naim" class="txt_obsh">Полное наименование*</label>
-            <input type="text" class="forms2" id="poln_naim" placeholder="Полное наименование" onfocus="White(this.id)">
+        <div id="ql_form">
+            <div class="poln_naim">
+                <label for="poln_naim" class="txt_obsh">Полное наименование*</label>
+                <input type="text" class="forms2" id="poln_naim" placeholder="Полное наименование" onfocus="White(this.id)">
+            </div>
+            <div class="qr_adres2">
+                <label for="qr_adrs" class="txt_obsh">Юридический адрес*</label>
+                <input type="text" class="forms2" id="qr_adrs" placeholder="Юридический адрес" onfocus="White(this.id)">
+            </div>
+            <div class="pocht_adres3">
+                <label for="pocht3" class="txt_obsh">Почтовый адрес*</label>
+                <input type="text" class="forms2" id="pocht3" placeholder="111116. г. Москва, а/я №87" onfocus="White(this.id)">
+            </div>
+            <div class="unn4">
+                <label for="unn4" class="txt_obsh">ИНН*</label>
+                <input type="text" class="forms" id="unn4" placeholder="00000000" onfocus="White(this.id)">
+            </div>
+            <div class="ogrn3">
+                <label for="ogrn3" class="txt_obsh">Код ОГРН*</label>
+                <input type="text" class="forms3" id="ogrn3" placeholder="0000000000000" onfocus="White(this.id)">
+            </div>
         </div>
-        <div class="qr_adres2">
-            <label for="qr_adrs" class="txt_obsh">Юридический адрес*</label>
-            <input type="text" class="forms2" id="qr_adrs" placeholder="Юридический адрес" onfocus="White(this.id)">
-        </div>
-        <div class="pocht_adres3">
-            <label for="pocht3" class="txt_obsh">Почтовый адрес*</label>
-            <input type="text" class="forms2" id="pocht3" placeholder="111116. г. Москва, а/я №87" onfocus="White(this.id)">
-        </div>
-        <div class="unn4">
-            <label for="unn4" class="txt_obsh">ИНН*</label>
-            <input type="text" class="forms" id="unn4" placeholder="00000000" onfocus="White(this.id)">
-        </div>
-        <div class="ogrn3">
-            <label for="ogrn" class="txt_obsh">Код ОГРН*</label>
-            <input type="text" class="forms3" id="ogrn3" placeholder="0000000000000" onfocus="White(this.id)">
-        </div>
-    </div>
-    <p class="kontaktu">Контактная информация для участников собрания</p>
-    <p class="sved_o_proc">Сведения о процедуре банкротства</p>
-    <p class="dolzhnik">Должник</p>
-    <div class="under">
-        <div class="ud_lich">
-            <input type="text" class="forms2 grey" id="ud_lich">
-        </div>
-    <p id="doks">Документы, которые необходимо предоставить участникам собрания</p>
-    <a class="knopka txtr"><p class="topik3">Добавить документ</p></a>
-<p class="dop_doks">Дополнительные документы по собранию</p>
-<div class="dop_doks_txt">Перечень документов, которые необходимо приложить к заявке, указан в Регламенте работы сервиса
-    <p></p>
-    Максимальный объём загружаемого файла 15 Мб. Документ должен быть в формате pdf или jpg </div>
-<img class="doks_img" src="../../../img/add%201%20(Traced).svg">
-<p class="prek_dok">Прикрепить документ</p>
-    <table class="docs_tbl">
-        <tr>
-            <td>Загруженные файлы</td>
-        </tr>
-    </table>
-    <div class="move">
-    <p class="voprosu">Вопросы повестки дня</p>
-        <a class="knopka2 txtr"><p class="topik3">Добавить вопрос</p></a>
-        <div class="povestka_drop">
-            <input type="text" placeholder="Введите вопрос" id="enter_q"/>
-            <table class="q_tbl">
+        <p class="kontaktu">Контактная информация для участников собрания</p>
+        <p class="sved_o_proc">Сведения о процедуре банкротства</p>
+        <p class="dolzhnik">Должник</p>
+        <div class="under">
+            <div class="ud_lich">
+                <input type="text" class="forms2" id="ud_lich">
+            </div>
+            <p id="doks">Документы, которые необходимо предоставить участникам собрания</p>
+            <a class="knopka txtr"><p class="topik3">Добавить документ</p></a>
+            <p class="dop_doks">Дополнительные документы по собранию</p>
+            <div class="dop_doks_txt">Перечень документов, которые необходимо приложить к заявке, указан в Регламенте работы сервиса
+                <p></p>
+                Максимальный объём загружаемого файла 15 Мб. Документ должен быть в формате pdf или jpg </div>
+            <img class="doks_img" src="../../../img/add%201%20(Traced).svg">
+            <p class="prek_dok">Прикрепить документ</p>
+            <table class="docs_tbl">
                 <tr>
-                    <td>Вопросы повестки дня</td>
+                    <td>Загруженные файлы</td>
                 </tr>
             </table>
-            <button type="button" class="save_btn">Сохранить вопрос</button>
-        </div>
-    <div class="nim_cod">
-        <label for="nim_cod" class="txt_obsh">Введите Email</label>
-        <input type="text" class="forms7 grey" id="nim_cod" placeholder="Email">
-    </div>
-    <a class="knopka3 txtr"><p class="topik3">Добавить</p></a>
+            <div class="move">
+                <p class="voprosu">Вопросы повестки дня</p>
+                <a class="knopka2 txtr"><p class="topik3">Добавить вопрос</p></a>
+                <div class="povestka_drop">
+                    <input type="text" placeholder="Введите вопрос" id="enter_q"/>
+                    <table class="q_tbl">
+                        <tr>
+                            <td>Вопросы повестки дня</td>
+                        </tr>
+                    </table>
+                    <button type="button" class="save_btn">Сохранить вопрос</button>
+                </div>
+                <div class="nim_cod">
+                    <label for="nim_cod" class="txt_obsh">Введите Email</label>
+                    <input type="text" class="forms7" id="nim_cod" placeholder="Email">
+                </div>
+                <a class="knopka3 txtr"><p class="topik3">Добавить</p></a>
 
-    <table class="table_fio">
-        <tr>
-            <td>Email</td>
-        </tr>
-    </table>
-        <a class="knopka4 txtr" onclick="Validate()"><p class="topik">Подписать заявку электронной подписью</p></a>
-    <a class="knopka5 txtr" href="#" ><p class="topik2">Сохранить заявку как черновик</p></a>
-    </div>
+                <table class="table_fio">
+                    <tr>
+                        <td>Email</td>
+                    </tr>
+                </table>
+                <a class="knopka4 txtr" onclick="
+                let x = Validate()
+                if (x === 0){
+                    Signature1()
+                }"><p class="topik">Подписать заявку ЭЦП и отправить</p></a>
+                <a class="knopka5 txtr"><p class="topik2" onclick="Validate(); CreateDraft1()">Сохранить заявку как черновик</p></a>
+            </div>
+        </div>
     </div>
 
 </form>
@@ -348,10 +337,13 @@
     <script src="../../../scripts/lk_docs.js"></script>
     <script src="../../../scripts/lk_q.js"></script>
     <script src="../../../scripts/org_choice.js"></script>
-    <script src="../../../scripts/sobr_org_validate.js"></script>
     <script src="../../../scripts/white.js"></script>
+    <script src="../../../scripts/sobr_org_validate.js"></script>
+    <script src="../../../scripts/sobr_create.js"></script>
+    <script src="../../../crypto-pro-js-master/dist/crypto-pro-js.min.js"></script>
+    <script src="../../../scripts/signature.js"></script>
     <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-    <script>
+<script>
         $(document).ready(function (){
             $.mask.definitions['0'] = "[0-9]"
             $("#date_sobr").mask("00.00.0000")
