@@ -20,4 +20,8 @@ $.get("http://localhost:8080/Sobr/MAINServlet", function (data) {
         $(".logout").show()
         document.getElementById("lk").innerHTML = data
     }
+
+    if (document.getElementById("menu_name") !== null){
+        document.getElementById("menu_name").innerHTML += data
+    }
 })

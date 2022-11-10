@@ -66,7 +66,7 @@
 .ep{
     position: absolute;
     width: 1160px;
-    height: 1466px;
+    height: auto;
     top: 276px;
     background: #BAF3FC;
     border-radius: 15px;
@@ -88,6 +88,7 @@
 
 .ep ul{
     padding: 0;
+
 }
 
 .ep ul li{
@@ -111,6 +112,7 @@
 
 .ep ul li input::placeholder{
     color: #406C9A;
+    font-size: 16px;
 }
 
 .arrw1{
@@ -136,8 +138,9 @@
     height: 50px;
     background: #FFFFFF;
     border-radius: 10px;
-    border: none;
-    padding: 17px;
+    border: 2px solid #FFFFFF;
+    padding-left: 17px;
+    padding-top: 15px;
     color: #406C9A;
     font-size: 16px;
 }
@@ -185,6 +188,26 @@
     display: inline-block;
 }
 
+.inline{
+    display: inline-block;
+}
+
+.inline li input{
+    width: 400px;
+    height: 50px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    border: none;
+}
+
+.second{
+    margin-left: 50px;
+}
+
+.second li input{
+    width: 590px;
+}
+
 .inline_4 li input{
     width: 300px;
     height: 50px;
@@ -228,6 +251,7 @@ input{
 
 .check{
     margin-top: 50px;
+    margin-bottom: 34px;
 }
 
 .check li input{
@@ -285,11 +309,21 @@ input{
     color: #406C9A;
 }
 
+#error{
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    color: #FF0000;
+    margin-top: 50px;
+    margin-bottom: 0;
+}
+
 label{
     width: 250px;
     height: 50px;
-    margin-left: 790px;
-    margin-top: 47px;
+    margin-top: 15px;
     border: 1px solid #00345F;
     border-radius: 10px;
     text-align: center;
@@ -343,7 +377,7 @@ label{
     position: absolute;
     width: 1040px;
     height: 126px;
-    top: 610px;
+    top: 644px;
     margin-left: 139px;
     padding: 0;
     z-index: 1100;
@@ -380,7 +414,7 @@ label{
     position: absolute;
     width: 1040px;
     height: 307px;
-    top: 735px;
+    top: 769px;
     margin-left: 139px;
     padding: 0;
     z-index: 1100;
@@ -414,9 +448,9 @@ label{
 }
 
 .base_bg {
-    margin-top: 1832px;
+    margin-top: 1988px;
 }
 
 .base{
-    margin-top: 1832px;
+    margin-top: 1988px;
 }

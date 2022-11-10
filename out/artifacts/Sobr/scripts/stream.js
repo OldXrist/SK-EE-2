@@ -65,7 +65,7 @@ startButton.onclick = async () => {
 };
 
 hangupButton.onclick = async () => {
-    hangup();
+    await hangup();
     signaling.postMessage({type: 'bye'});
 };
 

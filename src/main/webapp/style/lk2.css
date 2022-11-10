@@ -45,7 +45,7 @@
     top: 37px;
 }
 
-.table {
+#table {
     position: absolute;
     margin-left: 80px;
     height: 678px;
@@ -66,6 +66,7 @@
     box-shadow: 0px 6px 12px rgba(16, 71, 129, 0.1);
     border-radius: 15px;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .table_item_uch {
@@ -79,7 +80,7 @@
     box-shadow: 0px 6px 12px rgba(16, 71, 129, 0.1);
     border-radius: 15px;
     margin-bottom: 20px;
-
+    cursor: pointer;
 }
 
 .org_sobr_big {position: absolute;
@@ -204,6 +205,7 @@
     line-height: 100%;
     /* identical to box height, or 16px */
     color: #104781;
+    padding-bottom: 30px;
 }
 
 .sort_drop {

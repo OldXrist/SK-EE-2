@@ -32,13 +32,13 @@ public class MAINServlet extends HttpServlet {
                     sql = "SELECT poln_naim FROM ql WHERE email = ?";
                     break;
                 case "ИП":
-                    sql = "SELECT name FROM ip WHERE email = ?";
+                    sql = "SELECT name, famil FROM ip WHERE email = ?";
                     break;
                 case "ФЛ":
-                    sql = "SELECT name FROM fl WHERE email = ?";
+                    sql = "SELECT name, famil FROM fl WHERE email = ?";
                     break;
                 case "АУ":
-                    sql = "SELECT name FROM au WHERE email = ?";
+                    sql = "SELECT name, famil FROM au WHERE email = ?";
                     break;
                 case "admin":
                     sql = "SELECT firstname FROM adminaccounts WHERE email = ?";

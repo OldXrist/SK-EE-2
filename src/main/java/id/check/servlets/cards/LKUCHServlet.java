@@ -1,18 +1,20 @@
-package sobr.servlets;
+package id.check.servlets.cards;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 
-@WebServlet("/MREEServlet")
-public class MREEServlet extends HttpServlet {
+@WebServlet(name = "LKUCHServlet", value = "/LKUCHServlet")
+public class LKUCHServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         PrintWriter out = res.getWriter();
+
+        HttpSession sesh = req.getSession();
+        String email1 = String.valueOf(sesh.getAttribute("sessionUser"));
 
         try{
             Class.forName("org.postgresql.Driver");
@@ -20,11 +22,14 @@ public class MREEServlet extends HttpServlet {
             //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
 
             String sql = "SELECT id, data_u_vrem_sobr,nachal_podach_zaiv, okonch_podach_zaiv, type_dolzh, famil, name, otch, poln_naum, email_org, type_org, type_sobr\n" +
-                            "FROM sobr_org\n" +
-                            "ORDER BY data_u_vrem_sobr desc\n" +
-                            "LIMIT 4;";
-            Statement st = c.createStatement();
-            ResultSet rs = st.executeQuery(sql);
+                    "FROM sobr_org\n" +
+                    "WHERE id in (SELECT id FROM uch WHERE email = ?)" +
+                    "ORDER BY data_u_vrem_sobr desc\n" +
+                    "LIMIT 5;";
+            PreparedStatement ps = c.prepareStatement(sql);
+
+            ps.setString(1, email1);
+            ResultSet rs = ps.executeQuery();
 
             while (rs.next()){
                 out.println(rs.getInt(1));
