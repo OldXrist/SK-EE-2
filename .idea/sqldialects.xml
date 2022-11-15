@@ -4,7 +4,6 @@
     <file url="file://$PROJECT_DIR$/src/main/java/admin/servlets/ChangeAdminCredentialsServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/MAINServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/cards/DEBTServlet.java" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/cards/MREEServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/cards/ORGCARDServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/cards/ORGServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/lk/LKAUServlet.java" dialect="GenericSQL" />
@@ -18,6 +17,7 @@
     <file url="file://$PROJECT_DIR$/src/main/java/reg/servlets/ULServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/DRAFTSevlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/OServlet.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/QServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/ZServlet.java" dialect="GenericSQL" />
   </component>
 </project>
