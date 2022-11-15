@@ -20,6 +20,35 @@ body{
   top: 0;
 }
 
+#pages{
+  float: right;
+  margin-right: 120px;
+  margin-top: 674px;
+}
+
+#pages li{
+  list-style: none;
+  display: inline-block;
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  color: #104781;
+  margin-left: 15px;
+  cursor: pointer;
+  width: 24px;
+  height: 30px;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 5px;
+}
+
+#pages li:hover{
+  color: #ffffff;
+  background: #104781;
+}
+
 .dropdown{
   display: none;
 }

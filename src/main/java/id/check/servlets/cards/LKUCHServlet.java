@@ -3,6 +3,8 @@ package id.check.servlets.cards;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+
+import javax.xml.transform.Result;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
@@ -21,18 +23,18 @@ public class LKUCHServlet extends HttpServlet {
             Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
 
-            String sql = "SELECT id, data_u_vrem_sobr,nachal_podach_zaiv, okonch_podach_zaiv, type_dolzh, famil, name, otch, poln_naum, email_org, type_org, type_sobr\n" +
+            String sql = "SELECT id, data_u_vrem_sobr,nachal_podach_zaiv, okonch_podach_zaiv, type_dolzh, famil, name, otch, poln_naum, email_org, type_org, type_sobr, status\n" +
                     "FROM sobr_org\n" +
-                    "WHERE id in (SELECT id FROM uch WHERE email = ?)" +
-                    "ORDER BY data_u_vrem_sobr desc\n" +
-                    "LIMIT 5;";
+                    "WHERE email_org = ?" +
+                    "ORDER BY id";
             PreparedStatement ps = c.prepareStatement(sql);
 
             ps.setString(1, email1);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()){
-                out.println(rs.getInt(1));
+                int id = rs.getInt(1);
+                out.println(id);
                 out.println(rs.getObject(2));
                 out.println(rs.getObject(3));
                 out.println(rs.getObject(4));
@@ -89,6 +91,20 @@ public class LKUCHServlet extends HttpServlet {
                         };
                         break;
                 }
+                String sql5 = "SELECT status FROM uch WHERE email = ? AND id = ?";
+                PreparedStatement ps5 = c.prepareStatement(sql5);
+                
+                ps5.setString(1, email1);
+                ps5.setInt(2, id);
+
+                ResultSet rs5 = ps5.executeQuery();
+                while (rs5.next()){
+                    out.println(rs5.getString(1));
+                }
+                rs5.close();
+                ps5.close();
+
+                out.println(rs.getString(13));
             }
 
         } catch (Exception e) {

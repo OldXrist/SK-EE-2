@@ -15,7 +15,7 @@ function timeParse (x){
 }
 
 function Cards(dt, i, m){
-    let lim = i+14;
+    let lim = i+15;
     let arr = [];
     for (i; i < lim; i++){
         arr.push(dt[i])
@@ -37,7 +37,7 @@ function Cards(dt, i, m){
             "                </ul>\n" +
             "                <ul class=\"table_data\">\n" +
             "                    <li class=\"thin_text\">Статус</li>\n" +
-            "                    <li>Отменено Органзатором</li>\n" +
+            "                    <li>"+ arr[14] +"</li>\n" +
             "                </ul>\n" +
             "                <div class=\"vl\"></div>\n" +
             "                <div class=\"date\">\n" +
@@ -64,7 +64,7 @@ function Cards(dt, i, m){
             "                </ul>\n" +
             "                <ul class=\"table_data\">\n" +
             "                    <li class=\"thin_text\">Статус</li>\n" +
-            "                    <li>Отменено Органзатором</li>\n" +
+            "                    <li>"+ arr[14] +"</li>\n" +
             "                </ul>\n" +
             "                <div class=\"vl\"></div>\n" +
             "                <div class=\"date\">\n" +
@@ -91,7 +91,7 @@ function Cards(dt, i, m){
             "                </ul>\n" +
             "                <ul class=\"table_data\">\n" +
             "                    <li class=\"thin_text\">Статус</li>\n" +
-            "                    <li>Отменено Органзатором</li>\n" +
+            "                    <li>"+ arr[14] +"</li>\n" +
             "                </ul>\n" +
             "                <div class=\"vl\"></div>\n" +
             "                <div class=\"date\">\n" +
@@ -118,7 +118,7 @@ function Cards(dt, i, m){
             "                </ul>\n" +
             "                <ul class=\"table_data\">\n" +
             "                    <li class=\"thin_text\">Статус</li>\n" +
-            "                    <li>Отменено Органзатором</li>\n" +
+            "                    <li>"+ arr[14] +"</li>\n" +
             "                </ul>\n" +
             "                <div class=\"vl\"></div>\n" +
             "                <div class=\"date\">\n" +
@@ -136,17 +136,12 @@ function Cards(dt, i, m){
 }
 
 $.get("http://localhost:8080/Sobr/MREEServlet", function (data){
+
+    console.log(data)
     let d = data.split("\n")
-    let m = 1;
     let k = 0;
-    Cards(d, k, m)
-    m += 1
-    k+=14
-    Cards(d, k, m)
-    m += 1
-    k+=14
-    Cards(d, k, m)
-    m += 1
-    k+=14
-    Cards(d, k, m)
+    for (let i = 1; i < 5; i++) {
+        Cards(d, k, i)
+        k += 15
+    }
 })

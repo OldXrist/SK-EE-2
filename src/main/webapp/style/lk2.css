@@ -131,7 +131,7 @@
     font-size: 18px;
     line-height: 100%;
     color: #104781;
-    width: 101px;
+    width: auto;
     height: 18px;
     left: 60px;
     top: 25px;
@@ -348,10 +348,20 @@
     background: #BAF3FC;
 }
 
+.debtor{
+    position: absolute;
+    left: 370px;
+}
+
+.status{
+    position: absolute;
+    left: 550px;
+}
+
 .base_bg{
-    margin-top: 1476px;
+    margin-top: 2022px;
 }
 
 .base{
-    margin-top: 1476px;
+    margin-top: 2022px;
 }

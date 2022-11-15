@@ -15,7 +15,7 @@ function timeParse (x){
 }
 
 function Cards(dt, i, m) {
-    let lim = i + 14;
+    let lim = i + 16;
     let arr = [];
     for (i; i < lim; i++) {
         arr.push(dt[i])
@@ -27,18 +27,18 @@ function Cards(dt, i, m) {
     if (arr[9].includes('Заочное')) {
         if (arr[4].includes("Юридическое") && arr[10].includes("ЮЛ")) {
             document.getElementById("table").innerHTML += "<div id = " + m + " class=\"table_item\" onclick='Redirect(this.id)'/>\n" +
-                "                <h3 class=\"table_h\">" + arr[0] + arr[9] + "</h3>\n" +
+                "                <h3 class=\"table_h\"><b>" + arr[0] + arr[9] + "</b>&emsp;"+ arr[14] + "</h3>\n" +
                 "                <ul class=\"table_data\">\n" +
                 "                    <li class=\"thin_text\">Организатор</li>\n" +
                 "                    <li>" + arr[11] + "</li>\n" +
                 "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
+                "                <ul class=\"table_data debtor\">\n" +
                 "                    <li class=\"thin_text\">Должник</li>\n" +
                 "                    <li>" + arr[8] + "</li>\n" +
                 "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
+                "                <ul class=\"table_data status\">\n" +
                 "                    <li class=\"thin_text\">Статус</li>\n" +
-                "                    <li>Отменено Органзатором</li>\n" +
+                "                    <li>"+ arr[15] +"</li>\n" +
                 "                </ul>\n" +
                 "                <div class=\"vl\"></div>\n" +
                 "                <div class=\"date\">\n" +
@@ -55,18 +55,18 @@ function Cards(dt, i, m) {
 
         } else if (arr[4].includes("Юридическое") && !arr[10].includes("ЮЛ")) {
             document.getElementById("table").innerHTML += "<div id = " + m + " class=\"table_item\" onclick='Redirect(this.id)'/>\n" +
-                "                <h3 class=\"table_h\">" + arr[0] + arr[9] + "</h3>\n" +
+                "                <h3 class=\"table_h\"><b>" + arr[0] + arr[9] + "</b>&emsp;"+ arr[14] + "</h3>\n" +
                 "                <ul class=\"table_data\">\n" +
                 "                    <li class=\"thin_text\">Организатор</li>\n" +
                 "                    <li>" + arr[11] + arr[12] + arr[13] + "</li>\n" +
                 "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
+                "                <ul class=\"table_data debtor\">\n" +
                 "                    <li class=\"thin_text\">Должник</li>\n" +
                 "                    <li>" + arr[8] + "</li>\n" +
                 "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
+                "                <ul class=\"table_data status\">\n" +
                 "                    <li class=\"thin_text\">Статус</li>\n" +
-                "                    <li>Отменено Органзатором</li>\n" +
+                "                    <li>"+ arr[15] +"</li>\n" +
                 "                </ul>\n" +
                 "                <div class=\"vl\"></div>\n" +
                 "                <div class=\"date\">\n" +
@@ -83,18 +83,18 @@ function Cards(dt, i, m) {
 
         } else if (!arr[4].includes("Юридическое") && arr[10].includes("ЮЛ")) {
             document.getElementById("table").innerHTML += "<div id = " + m + " class=\"table_item\" onclick='Redirect(this.id)'/>\n" +
-                "                <h3 class=\"table_h\">" + arr[0] + arr[9] + "</h3>\n" +
+                "                <h3 class=\"table_h\"><b>" + arr[0] + arr[9] + "</b>&emsp;"+ arr[14] + "</h3>\n" +
                 "                <ul class=\"table_data\">\n" +
                 "                    <li class=\"thin_text\">Организатор</li>\n" +
                 "                    <li>" + arr[11] + "</li>\n" +
                 "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
+                "                <ul class=\"table_data debtor\">\n" +
                 "                    <li class=\"thin_text\">Должник</li>\n" +
                 "                    <li>" + arr[5] + arr[6] + arr[7] + "</li>\n" +
                 "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
+                "                <ul class=\"table_data status\">\n" +
                 "                    <li class=\"thin_text\">Статус</li>\n" +
-                "                    <li>Отменено Органзатором</li>\n" +
+                "                    <li>"+ arr[15] +"</li>\n" +
                 "                </ul>\n" +
                 "                <div class=\"vl\"></div>\n" +
                 "                <div class=\"date\">\n" +
@@ -111,18 +111,18 @@ function Cards(dt, i, m) {
 
         } else {
             document.getElementById("table").innerHTML += "<div id = " + m + " class=\"table_item\" onclick='Redirect(this.id)'>\n" +
-                "                <h3 class=\"table_h\">" + arr[0] + arr[9] + "</h3>\n" +
+                "                <h3 class=\"table_h\"><b>" + arr[0] + arr[9] +"</b>&emsp;"+ arr[14] + "</h3>\n" +
                 "                <ul class=\"table_data\">\n" +
                 "                    <li class=\"thin_text\">Организатор</li>\n" +
                 "                    <li>" + arr[11] + arr[12] + arr[13] + "</li>\n" +
                 "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
+                "                <ul class=\"table_data debtor\">\n" +
                 "                    <li class=\"thin_text\">Должник</li>\n" +
                 "                    <li>" + arr[5] + arr[6] + arr[7] + "</li>\n" +
                 "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
+                "                <ul class=\"table_data status\">\n" +
                 "                    <li class=\"thin_text\">Статус</li>\n" +
-                "                    <li>Отменено Органзатором</li>\n" +
+                "                    <li>"+ arr[15] +"</li>\n" +
                 "                </ul>\n" +
                 "                <div class=\"vl\"></div>\n" +
                 "                <div class=\"date\">\n" +
@@ -140,18 +140,18 @@ function Cards(dt, i, m) {
     } else {
         if (arr[4].includes("Юридическое") && arr[10].includes("ЮЛ")) {
             document.getElementById("table").innerHTML += "<div id = " + m + " class=\"table_item_uch\" onclick='Redirect(this.id)'/>\n" +
-                "                <h3 class=\"table_h\">" + arr[0] + arr[9] + "</h3>\n" +
+                "                <h3 class=\"table_h\"><b>" + arr[0] + arr[9] + "</b>&emsp;"+ arr[14] + "</h3>\n" +
                 "                <ul class=\"table_data\">\n" +
                 "                    <li class=\"thin_text\">Организатор</li>\n" +
                 "                    <li>" + arr[11] + "</li>\n" +
                 "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
+                "                <ul class=\"table_data debtor\">\n" +
                 "                    <li class=\"thin_text\">Должник</li>\n" +
                 "                    <li>" + arr[8] + "</li>\n" +
                 "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
+                "                <ul class=\"table_data status\">\n" +
                 "                    <li class=\"thin_text\">Статус</li>\n" +
-                "                    <li>Отменено Органзатором</li>\n" +
+                "                    <li>"+ arr[15] +"</li>\n" +
                 "                </ul>\n" +
                 "                <div class=\"vl\"></div>\n" +
                 "                <div class=\"date\">\n" +
@@ -169,18 +169,18 @@ function Cards(dt, i, m) {
 
         } else if (arr[4].includes("Юридическое") && !arr[10].includes("ЮЛ")) {
             document.getElementById("table").innerHTML += "<div id = " + m + " class=\"table_item_uch\" onclick='Redirect(this.id)'/>\n" +
-                "                <h3 class=\"table_h\">" + arr[0] + arr[9] + "</h3>\n" +
+                "                <h3 class=\"table_h\"><b>" + arr[0] + arr[9] + "</b>&emsp;"+ arr[14] + "</h3>\n" +
                 "                <ul class=\"table_data\">\n" +
                 "                    <li class=\"thin_text\">Организатор</li>\n" +
                 "                    <li>" + arr[11] + arr[12] + arr[13] + "</li>\n" +
                 "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
+                "                <ul class=\"table_data debtor\">\n" +
                 "                    <li class=\"thin_text\">Должник</li>\n" +
                 "                    <li>" + arr[8] + "</li>\n" +
                 "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
+                "                <ul class=\"table_data status\">\n" +
                 "                    <li class=\"thin_text\">Статус</li>\n" +
-                "                    <li>Отменено Органзатором</li>\n" +
+                "                    <li>"+ arr[15] +"</li>\n" +
                 "                </ul>\n" +
                 "                <div class=\"vl\"></div>\n" +
                 "                <div class=\"date\">\n" +
@@ -198,18 +198,18 @@ function Cards(dt, i, m) {
 
         } else if (!arr[4].includes("Юридическое") && arr[10].includes("ЮЛ")) {
             document.getElementById("table").innerHTML += "<div id = " + m + " class=\"table_item_uch\" onclick='Redirect(this.id)'/>\n" +
-                "                <h3 class=\"table_h\">" + arr[0] + arr[9] + "</h3>\n" +
+                "                <h3 class=\"table_h\"><b>" + arr[0] + arr[9] + "</b>&emsp;"+ arr[14] + "</h3>\n" +
                 "                <ul class=\"table_data\">\n" +
                 "                    <li class=\"thin_text\">Организатор</li>\n" +
                 "                    <li>" + arr[11] + "</li>\n" +
                 "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
+                "                <ul class=\"table_data debtor\">\n" +
                 "                    <li class=\"thin_text\">Должник</li>\n" +
                 "                    <li>" + arr[5] + arr[6] + arr[7] + "</li>\n" +
                 "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
+                "                <ul class=\"table_data status\">\n" +
                 "                    <li class=\"thin_text\">Статус</li>\n" +
-                "                    <li>Отменено Органзатором</li>\n" +
+                "                    <li>"+ arr[15] +"</li>\n" +
                 "                </ul>\n" +
                 "                <div class=\"vl\"></div>\n" +
                 "                <div class=\"date\">\n" +
@@ -227,18 +227,18 @@ function Cards(dt, i, m) {
 
         } else {
             document.getElementById("table").innerHTML += "<div id = " + m + " class=\"table_item_uch\" onclick='Redirect(this.id)'>\n" +
-                "                <h3 class=\"table_h\">" + arr[0] + arr[9] + "</h3>\n" +
+                "                <h3 class=\"table_h\"><b>" + arr[0] + arr[9] + "</b>&emsp;"+ arr[14] + "</h3>\n" +
                 "                <ul class=\"table_data\">\n" +
                 "                    <li class=\"thin_text\">Организатор</li>\n" +
                 "                    <li>" + arr[11] + arr[12] + arr[13] + "</li>\n" +
                 "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
+                "                <ul class=\"table_data debtor\">\n" +
                 "                    <li class=\"thin_text\">Должник</li>\n" +
                 "                    <li>" + arr[5] + arr[6] + arr[7] + "</li>\n" +
                 "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
+                "                <ul class=\"table_data status\">\n" +
                 "                    <li class=\"thin_text\">Статус</li>\n" +
-                "                    <li>Отменено Органзатором</li>\n" +
+                "                    <li>"+ arr[15] +"</li>\n" +
                 "                </ul>\n" +
                 "                <div class=\"vl\"></div>\n" +
                 "                <div class=\"date\">\n" +
@@ -262,18 +262,9 @@ $.get("http://localhost:8080/Sobr/LKUCHServlet", function (data){
 
     console.log(data)
     let d = data.split("\n")
-    let m = 1;
     let k = 0;
-    Cards(d, k, m)
-    m += 1
-    k+=14
-
-    Cards(d, k, m)
-    m += 1
-    k+=14
-
-    Cards(d, k, m)
-    m += 1
-    k+=14
-
+    for (let i = 1; i < 6; i++) {
+        Cards(d, k, i)
+        k += 16
+    }
 })

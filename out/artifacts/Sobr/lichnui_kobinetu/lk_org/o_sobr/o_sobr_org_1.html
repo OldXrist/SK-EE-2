@@ -13,13 +13,15 @@
 <div class="menu">
     <ul>
         <li class="logo"><a href="../../../help/contacts.html"><img src="../../../img/Logo.svg" /></a></li>
-        <li class="nav_item"><a href="../../../index2.html">Главная</a></li>
+        <li class="nav_item"><a href="../../../index.html">Главная</a></li>
         <li class="nav_item"><a href="../../../reestr.html">Реестр собраний</a></li>
         <li class="nav_item"><a href="../../../help/help_1.html">Помощь</a></li>
         <li class="nav_item"><a href="../../../help/contacts.html">Контакты</a></li>
-        <li class="nav_item"><a href="../../../lichnui_kobinetu/lk_uch/lk_uch_ip2/lk_uch.html"><p class="nav_login">Зинаида И.</p></a></li>
+        <li class="nav_item nouser"><a href="../../../login.html"> <button class="nav_btn">Войти</button></a></li>
+        <li class="nav_item nouser"><a href="../../../signin.html">Зарегистрироваться</a></li>
+        <li class="nav_item" ><a href="FILTERServlet"><p class="nav_login" id="lk"></p></a></li>
         <li class="nav_item"><a href="../../../signin.html"><span id="clock" style="color:#ffffff;"></span></a></li>
-        <li class="nav_item"><a href="../../../help/contacts.html"><img src="../../../img/logout%201%20(Traced).png" /></a></li>
+        <li class="nav_item logout"><a href="LOGOUTServlet"><img id="logout_btn" src="../../../img/logout%201%20(Traced).png" /></a></li>
     </ul>
 </div>
 
@@ -331,18 +333,20 @@
         clock.innerHTML = now.toLocaleTimeString();
     }, 1000);
 </script>
-    <script src="../../../jquery/jquery-3.6.0.js"></script>
-    <script src="../../../jquery/jquery.maskedinput.min.js"></script>
-    <script src="../../../scripts/sobr_org_1.js"></script>
-    <script src="../../../scripts/lk_docs.js"></script>
-    <script src="../../../scripts/lk_q.js"></script>
-    <script src="../../../scripts/org_choice.js"></script>
-    <script src="../../../scripts/white.js"></script>
-    <script src="../../../scripts/sobr_org_validate.js"></script>
-    <script src="../../../scripts/sobr_create.js"></script>
-    <script src="../../../crypto-pro-js-master/dist/crypto-pro-js.min.js"></script>
-    <script src="../../../scripts/signature.js"></script>
-    <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<script src="../../../jquery/jquery-3.6.0.js"></script>
+<script src="../../../jquery/jquery.maskedinput.min.js"></script>
+<script src="../../../scripts/sobr_org_1.js"></script>
+<script src="../../../scripts/lk_docs.js"></script>
+<script src="../../../scripts/lk_q.js"></script>
+<script src="../../../scripts/org_choice.js"></script>
+<script src="../../../scripts/white.js"></script>
+<script src="../../../scripts/sobr_org_validate.js"></script>
+<script src="../../../scripts/sobr_create.js"></script>
+<script src="../../../crypto-pro-js-master/dist/crypto-pro-js.min.js"></script>
+<script src="../../../scripts/signature.js"></script>
+<script src="../../../scripts/public_pages_header.js"></script>
+<script src="../../../scripts/org_restraint.js"></script>
+<script href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 <script>
         $(document).ready(function (){
             $.mask.definitions['0'] = "[0-9]"

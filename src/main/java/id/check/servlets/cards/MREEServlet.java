@@ -19,7 +19,7 @@ public class MREEServlet extends HttpServlet {
             Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
 
-            String sql = "SELECT id, data_u_vrem_sobr,nachal_podach_zaiv, okonch_podach_zaiv, type_dolzh, famil, name, otch, poln_naum, email_org, type_org, type_sobr\n" +
+            String sql = "SELECT id, data_u_vrem_sobr,nachal_podach_zaiv, okonch_podach_zaiv, type_dolzh, famil, name, otch, poln_naum, email_org, type_org, type_sobr, status\n" +
                             "FROM sobr_org\n" +
                             "ORDER BY data_u_vrem_sobr desc\n" +
                             "LIMIT 4;";
@@ -84,6 +84,7 @@ public class MREEServlet extends HttpServlet {
                         };
                         break;
                 }
+                out.println(rs.getString(13));
             }
 
         } catch (Exception e) {
