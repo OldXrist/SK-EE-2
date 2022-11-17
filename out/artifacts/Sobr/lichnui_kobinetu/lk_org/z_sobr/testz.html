@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+  <h3>Собр</h3>
+  <label>
+    <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Кря</label>
+  <label>
+    <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Хрю</label>
+  <label>
+    <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Я юрист ГЫыы</label>
+</div>
+<div>
+  <h3>Собр зр</h3>
+  <label>
+    <input type="checkbox" class="radio" value="1" name="fooby[2][]" />Утка</label>
+  <label>
+    <input type="checkbox" class="radio" value="1" name="fooby[2][]" />Свин</label>
+  <label>
+    <input type="checkbox" class="radio" value="1" name="fooby[2][]" />Ха я не юрист Гыыы</label>
+</div>
+</body>
+<script>$("input:checkbox").on('click', function() {
+  var $box = $(this);
+  if ($box.is(":checked")) {
+    var group = "input:checkbox[name='" + $box.attr("name") + "']";
+    $(group).prop("checked", false);
+    $box.prop("checked", true);
+  } else {
+    $box.prop("checked", false);
+  }
+});</script>
+</html>
