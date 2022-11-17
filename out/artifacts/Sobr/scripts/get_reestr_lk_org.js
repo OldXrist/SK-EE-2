@@ -139,7 +139,6 @@ function page(id){
     } else {
         goTO(pageNum - 1)
         let n = pageNum - 1
-        console.log(n)
         document.getElementById('page_' + n).style.color = '#ffffff'
         document.getElementById('page_' + n).style.background = '#104781'
     }

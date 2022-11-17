@@ -29,9 +29,10 @@ function Sign(id){
                     console.log(signature)
                     Create()
                     $(".signature").hide()
-                    //$(".wait").fadeIn()
-                    //document.getElementById('wait').scrollIntoView()
-                    // TODO custom wait
+                    $(".wait").fadeIn()
+                    document.getElementById('wait').scrollIntoView()
+                    document.getElementById('save').disabled = true
+                    document.getElementById('sign').disabled = true
                 })
                 .catch(function (error){
                     alert(error)
