@@ -52,8 +52,7 @@ public class email extends HttpServlet {
             message.setFrom(new InternetAddress("mackcik228225@gmail.com"));
             message.setRecipients(Message.RecipientType.TO,InternetAddress.parse("max260902@mail.ru"));
             message.setSubject("Agro Test");
-            message.setContent("xyi\n"
-                    , "text/html");
+            message.setContent("xyi\n", "text/html");
             Transport.send(message);
             System.out.println("message sent....");
         } catch(Exception ex)
