@@ -237,14 +237,30 @@ function Validate_reg () {
                 kem_vidan: document.getElementById("kem_vudan").value,
                 reg_date: Date
             };
+
             alert("111");
             $.post("http://localhost:8080/Sobr/FLServlet", user, function () {
                 console.log(user);
             });
+
+            let inputData = {
+                email: document.getElementById("email").value,
+                subject: 'Регистрация'
+            }
+
+            $.post("http://localhost:8080/Sobr/EmailSender", inputData, function (data) {
+                if (data == "") {
+                    alert("Данные успешно сохранены!");
+                } else {
+                    alert(data);
+                }
+            });
+
             $(".wait").fadeIn()
             $(".table2").animate({
                 opacity: "0.3"
             });
+
             document.getElementById("inn").disabled = true
             document.getElementById("phone").disabled = true
             document.getElementById("email").disabled = true
@@ -261,9 +277,6 @@ function Validate_reg () {
             document.getElementById("pass").disabled = true
             document.getElementById("pass2").disabled = true
             document.getElementsByClassName("knopka2").disabled = true
-
-            $.post("http://localhost:8080/Sobr/EmailSender");
-            alert("Вы успешно зарегестрированы!");
         } else {
             let user = {
                 type_users: type,

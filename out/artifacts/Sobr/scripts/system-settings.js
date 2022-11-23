@@ -132,7 +132,6 @@ function ValidateSystemSettings() {
     }
 
     $.post("http://localhost:8080/Sobr/ChangeSystemSettings", settings, function (data) {
-        console.log(data);
         if (data == "") {
             alert("Данные успешно сохранены!");
         } else {

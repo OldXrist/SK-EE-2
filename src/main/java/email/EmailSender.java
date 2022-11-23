@@ -17,25 +17,25 @@ import javax.mail.PasswordAuthentication;
 @WebServlet("/EmailSender")
 public class EmailSender extends HttpServlet {
     public String SmtpHostSql() {
-        return "SELECT smtp_host FROM systemsettings";
+        return "SELECT smtp_host FROM public.systemsettings";
     }
     public String SmtpPortSql() {
-        return "SELECT smtp_port FROM systemsettings";
+        return "SELECT smtp_port FROM public.systemsettings";
     }
     public String SmtpLoginSql() {
-        return "SELECT smtp_user_name FROM systemsettings";
+        return "SELECT smtp_user_name FROM public.systemsettings";
     }
     public String SmtpPasswordSql() {
-        return "SELECT smtp_password FROM systemsettings";
+        return "SELECT smtp_password FROM public.systemsettings";
     }
 
-    public String GetData(Connection _c, String _sql) {
+    public String GetData(Connection _c, String _sql, String _columnName) {
         String result = "";
         try {
             PreparedStatement ps = _c.prepareStatement(_sql);
             ResultSet rs = ps.executeQuery();
             if (rs.next())
-                result = rs.getString("smtp_host");
+                result = rs.getString(_columnName);
 
             rs.close();
             ps.close();
@@ -54,21 +54,27 @@ public class EmailSender extends HttpServlet {
             Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres", "postgres", "postgresql");
 
-            String smtpHost = GetData(c, SmtpHostSql());
-            String smtpPort = GetData(c, SmtpPortSql());
-            String fromEmail = GetData(c, SmtpLoginSql());
-            String password = GetData(c, SmtpPasswordSql());
+            String smtpHost = GetData(c, SmtpHostSql(), "smtp_host");
+            String smtpPort = GetData(c, SmtpPortSql(), "smtp_port");
+            String fromEmail = GetData(c, SmtpLoginSql(), "smtp_user_name");
+            String password = GetData(c, SmtpPasswordSql(), "smtp_password");
 
-            String toEmail = request.getParameter("toEmail");
-            String subject = request.getParameter("subject");
-            String body = request.getParameter("body");
+            String toEmail = request.getParameter("email");
+            String subject = "";
+            String body = "";
 
-//            String fromEmail = "AlexMitra93@yandex.ru";
-//            String password = "pzbdqheouzwxocgz";
-//            String toEmail = "alexmitradev5@gmail.com";
-//            String subject = "";
-//            String body = "";
+            switch (request.getParameter("subject")) {
+                case "Регистрация":
+                    subject = "Регистрация";
+                    body = "Поздравляем, вы успешно зарегестрированы!";
+                    break;
+            }
 
+            /*String fromEmail = "AlexMitra93@yandex.ru";
+            String password = "pzbdqheouzwxocgz";
+            String toEmail = "alexmitradev5@gmail.com";
+            String subject = "";
+            String body = "";*/
 
             Properties props = new Properties();
             props.put("mail.smtp.host", smtpHost); //SMTP Host
