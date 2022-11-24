@@ -1,52 +1,48 @@
 package admin.servlets;
 
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+import com.google.gson.Gson;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
 import java.io.IOException;
 import java.sql.*;
-import java.util.*;
-import com.google.gson.Gson;
+import java.util.ArrayList;
+import java.util.HashSet;
 
-@WebServlet("/GetMeetingsList")
-public class GetMeetingsList extends HttpServlet {
+@WebServlet("/GetInvoiceListOrganizers")
+public class GetInvoiceListOrganizers extends HttpServlet {
     public String AuSql(String email)
     {
-        String auSql =  "SELECT sobr_org.type_sobr, nomer_dela, data_u_vrem_sobr, nachal_podach_zaiv, okonch_podach_zaiv, \n" +
-                        "sobr_org.type_dolzh, sobr_org.famil, sobr_org.name, sobr_org.otch, sobr_org.poln_naum,\n" +
-                        "au.famil, au.\"name\", au.otch, status\n" +
+        String auSql =  "SELECT sobr_org.type_sobr, sobr_org.email_org, nomer_dela, data_u_vrem_sobr, status, au.famil, au.\"name\", au.otch \n" +
                         "FROM sobr_org, au\n" +
-                        "WHERE sobr_org.email_org = '" + email + "' and au.email = '" + email + "' and sobr_org.type_org = 'АУ';";
+                        "WHERE sobr_org.email_org = '" + email + "' and au.email = '" + email + "' and sobr_org.type_org = 'АУ' and au.type_users = 'организатор';";
         return auSql;
     }
 
     public String FlSql(String email)
     {
-        String flSql =  "SELECT sobr_org.type_sobr, nomer_dela, data_u_vrem_sobr, nachal_podach_zaiv, okonch_podach_zaiv, \n" +
-                        "sobr_org.type_dolzh, sobr_org.famil, sobr_org.name, sobr_org.otch, sobr_org.poln_naum,\n" +
-                        "fl.famil, fl.\"name\", fl.otch, status\n" +
+        String flSql =  "SELECT sobr_org.type_sobr, sobr_org.email_org, nomer_dela, data_u_vrem_sobr, status, fl.famil, fl.\"name\", fl.otch \n" +
                         "FROM sobr_org, fl\n" +
-                        "WHERE sobr_org.email_org = '" + email + "' and fl.email= '" + email + "' and sobr_org.type_org = 'ФЛ';";
+                        "WHERE sobr_org.email_org = '" + email + "' and fl.email= '" + email + "' and sobr_org.type_org = 'ФЛ' and fl.type_users = 'организатор';";
         return flSql;
     }
 
     public String IpSql(String email)
     {
-        String ipSql =  "SELECT sobr_org.type_sobr, nomer_dela, data_u_vrem_sobr, nachal_podach_zaiv, okonch_podach_zaiv, \n" +
-                        "sobr_org.type_dolzh, sobr_org.famil, sobr_org.name, sobr_org.otch, sobr_org.poln_naum,\n" +
-                        "ip.famil, ip.\"name\", ip.otch, status\n" +
+        String ipSql =  "SELECT sobr_org.type_sobr, sobr_org.email_org, nomer_dela, data_u_vrem_sobr, status, ip.famil, ip.\"name\", ip.otch \n" +
                         "FROM sobr_org, ip\n" +
-                        "WHERE sobr_org.email_org = '" + email + "' and ip.email = '" + email + "' and sobr_org.type_org = 'ИП';";
+                        "WHERE sobr_org.email_org = '" + email + "' and ip.email = '" + email + "' and sobr_org.type_org = 'ИП' and ip.type_users = 'организатор';";
         return ipSql;
     }
 
     public String QlSql(String email)
     {
-        String qlSql =  "SELECT sobr_org.type_sobr, nomer_dela, data_u_vrem_sobr, nachal_podach_zaiv, okonch_podach_zaiv, \n" +
-                        "sobr_org.type_dolzh, sobr_org.famil, sobr_org.name, sobr_org.otch, sobr_org.poln_naum,\n" +
-                        "ql.poln_naim, status\n" +
+        String qlSql =  "SELECT sobr_org.type_sobr, sobr_org.email_org, nomer_dela, data_u_vrem_sobr, status, ql.poln_naim \n" +
                         "FROM sobr_org, ql\n" +
-                        "WHERE sobr_org.email_org =  '" + email + "'  and ql.email = '" + email + "' and sobr_org.type_org = 'ЮЛ';";
+                        "WHERE sobr_org.email_org =  '" + email + "'  and ql.email = '" + email + "' and sobr_org.type_org = 'ЮЛ' and ql.type_users = 'организатор';";
         return qlSql;
     }
 
@@ -75,7 +71,7 @@ public class GetMeetingsList extends HttpServlet {
         }
     }
 
-    public void SetMeetingsInfo(Connection _c, String _sql, ArrayList<ArrayList<String>> _meetingsList)
+    public void SetInvoicesInfo(Connection _c, String _sql, ArrayList<ArrayList<String>> _meetingsList)
     {
         try {
             PreparedStatement ps = _c.prepareStatement(_sql);
@@ -112,22 +108,22 @@ public class GetMeetingsList extends HttpServlet {
             GetRolesAndOrganizerEmails(c, userRoles);
 
             //заполняем массив данными
-            ArrayList<ArrayList<String>> meetingsList = new ArrayList<ArrayList<String>>();
+            ArrayList<ArrayList<String>> invoicesListOrganizers = new ArrayList<ArrayList<String>>();
             for (ArrayList<String> item : userRoles) {
                 switch (item.get(0)) {
-                    case "АУ": SetMeetingsInfo(c, AuSql(item.get(1)), meetingsList);
+                    case "АУ": SetInvoicesInfo(c, AuSql(item.get(1)), invoicesListOrganizers);
                         break;
-                    case "ФЛ": SetMeetingsInfo(c, FlSql(item.get(1)), meetingsList);
+                    case "ФЛ": SetInvoicesInfo(c, FlSql(item.get(1)), invoicesListOrganizers);
                         break;
-                    case "ИП": SetMeetingsInfo(c, IpSql(item.get(1)), meetingsList);
+                    case "ИП": SetInvoicesInfo(c, IpSql(item.get(1)), invoicesListOrganizers);
                         break;
-                    case "ЮЛ": SetMeetingsInfo(c, QlSql(item.get(1)), meetingsList);
+                    case "ЮЛ": SetInvoicesInfo(c, QlSql(item.get(1)), invoicesListOrganizers);
                         break;
                 }
             }
 
             //возвращаем данные на фронтенд в формате json
-            String json = new Gson().toJson(meetingsList);
+            String json = new Gson().toJson(invoicesListOrganizers);
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
             response.getWriter().write(json);
@@ -139,4 +135,3 @@ public class GetMeetingsList extends HttpServlet {
         }
     }
 }
-

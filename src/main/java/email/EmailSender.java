@@ -68,6 +68,18 @@ public class EmailSender extends HttpServlet {
                     subject = "Регистрация";
                     body = "Поздравляем, вы успешно зарегестрированы!";
                     break;
+                case "Тест":
+                    subject = "Тестовое сообщение";
+                    body = "Поздравляем, тестовое сообщение успешно получено!";
+                    break;
+                case "Заявка допущена":
+                    subject = "Заявка допущена";
+                    body = "Ваша заявка на проведение собрания допущена!";
+                    break;
+                case "Заявка отклонена":
+                    subject = "Заявка отклонена";
+                    body = "Ваша заявка на проведение собрания отклонена!";
+                    break;
             }
 
             /*String fromEmail = "AlexMitra93@yandex.ru";

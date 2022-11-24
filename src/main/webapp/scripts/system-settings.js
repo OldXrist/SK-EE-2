@@ -141,5 +141,16 @@ function ValidateSystemSettings() {
 }
 
 function SendTestMessage() {
+    let inputData = {
+        email: document.getElementById("test-email").value,
+        subject: 'Тест'
+    }
 
+    $.post("http://localhost:8080/Sobr/EmailSender", inputData, function (data) {
+        if (data == "") {
+            alert("Тестовое сообщение отправлено!");
+        } else {
+            alert(data);
+        }
+    });
 }
