@@ -21,8 +21,8 @@ public class DRAFTSevlet extends HttpServlet {
 
         try {
             Class.forName("org.postgresql.Driver");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/SK", "postgres", "111");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
+            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/SK", "postgres", "111");
 
             String sql = "SELECT type_org FROM sobr_org WHERE email_org = ? AND status LIKE 'Чер*'";
             PreparedStatement ps = c.prepareStatement(sql);

@@ -29,6 +29,8 @@
           <element id="library" level="project" name="Maven: jakarta.json:jakarta.json-api:2.1.0" />
           <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:10.0.23" />
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-annotations-api:10.0.23" />
+          <element id="library" level="project" name="Maven: com.sun.mail:javax.mail:1.5.5" />
+          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">
