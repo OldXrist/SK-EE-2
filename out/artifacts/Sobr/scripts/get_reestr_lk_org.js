@@ -7,26 +7,18 @@ function goTO(page){
     }
     for (let i = 1; i < 6; i++){
         let first = 1+5*(page - 1)
-        console.log('first = '+first)
         if (next < first + 4) {
             next = first + i
         }
-        console.log('next = '+next)
-        //let prev = first - i
-        //console.log('prev = '+prev)
         if (document.getElementById('c' + next) !== null) {
             document.getElementById('c' + next).style.display = ''
         }
-        //if (document.getElementById('c' + prev) !== null) {
-        //    document.getElementById('c' + prev).style.display = 'none'
-        //}
         document.getElementById('c' + first).style.display = ''
     }
 }
 
 function page(id){
-    //let k = 75 * (parseInt(id.split('_')[1]) - 1)
-    //document.getElementById('table').innerHTML = ''
+
     let i = 1
 
     while (document.getElementById('page_'+i) !== null){
@@ -100,33 +92,8 @@ function page(id){
             document.getElementById('prev_' + newPrev).style.display = ''
         }
         document.getElementById('page_'+x).style.display = 'none'
-        /*
-        let x = parseInt(id.split('_')[1])
-        document.getElementById(id).style.display = 'none'
-        document.getElementById('next_'+x).style.display = ''
-        document.getElementById('page_'+x).style.display = 'none'
-        for (let i = 1; i < 4; i++){
-            let prev = x-i
-            let next = x+i
-            document.getElementById("page_" + prev).style.display = ''
-            if (document.getElementById("page_" + next) !== null) {
-                document.getElementById("page_" + next).style.display = 'none'
-            }
-        }
-
-         */
     }
-/*
-    $.get("http://localhost:8080/Sobr/LKUCHServlet", function (data){
-        let d = data.split("\n")
-        if (document.getElementById('table').innerHTML === '') {
-            for (let i = 1; i < 6; i++) {
-                Cards(d, k, i)
-                k += 15
-            }
-        }
-    })
- */
+
     let pageNum = parseInt(id.split('_')[1])
     let prefix = id.split('_')[0]
 
@@ -289,7 +256,7 @@ $.get("http://localhost:8080/Sobr/LKUCHServlet", function (data){
 
     console.log(data)
     let d = data.split("\n")
-    let pageNum = 20//Math.ceil(d.length / 15 / 5)
+    let pageNum = Math.ceil(d.length / 15 / 5)
     console.log(pageNum)
     let k = 0
     for (let i = 1; i < Math.ceil(d.length / 15); i++) {
@@ -320,7 +287,6 @@ $.get("http://localhost:8080/Sobr/LKUCHServlet", function (data){
                     document.getElementById('pages').innerHTML += `<li class="pages" id=\"next_${i}\" onclick=\"page(this.id)\">...</li>`
                     document.getElementById('pages').innerHTML += `<li class="pages" id=\"page_${i}\" onclick=\"page(this.id)\">${i}</li>`
                     x += 3
-                    console.log(x)
                 } else document.getElementById('pages').innerHTML += `<li class="pages" id=\"page_${i}\" onclick=\"page(this.id)\">${i}</li>`
             }
             x = 1
@@ -334,24 +300,10 @@ $.get("http://localhost:8080/Sobr/LKUCHServlet", function (data){
             }
             document.getElementById('next_4').style.display = ''
             break;
-            /*
-            let i
-            for (i = 1; i < pageLim; i++){
-                document.getElementById('pages').innerHTML += `<li class="pages" id=\"page_${i}\" onclick=\"page(this.id)\">${i}</li>`
-            }
-            console.log(i)
-            document.getElementById('pages').innerHTML += `<li class="pages" id=\"page_${i+1}\" onclick=\"page(this.id)\">...</li>`
-            $(`#page_${i+1}`).click(function (){
-                document.getElementById('pages').innerHTML = ''
-                for (i; i < pageNum + 1; i++){
-                    document.getElementById('pages').innerHTML += `<li class="pages" id=\"page_${i}\" onclick=\"page(this.id)\">${i}</li>`
-                }
-                document.getElementById('pages').innerHTML += `<li class="pages" id=\"page_${i+1}\" onclick=\"page(this.id)\">...</li>`
-                console.log(i)
-            })
-             */
     }
 
-    document.getElementById('page_1').style.color = '#ffffff'
-    document.getElementById('page_1').style.backgroundColor = '#104781'
+    if (document.getElementById('page_1') !== null) {
+        document.getElementById('page_1').style.color = '#ffffff'
+        document.getElementById('page_1').style.backgroundColor = '#104781'
+    }
 })

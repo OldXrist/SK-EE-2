@@ -21,27 +21,11 @@ public class CHECKTYPEServlet extends HttpServlet {
         String email = String.valueOf(sesh.getAttribute("sessionUser"));
         String s = req.getParameter("sk");
         long sk = Long.parseLong(s);
-        out.println(type);
 
         try {
             Class.forName("org.postgresql.Driver");
             Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "111");
-
-            String sql = "SELECT * FROM uch WHERE email = ? and id = ?";
-            PreparedStatement ps = c.prepareStatement(sql);
-
-            ps.setString(1, email);
-            ps.setLong(2, sk);
-
-            ResultSet rs = ps.executeQuery();
-
-            while (rs.next()){
-                out.println(1);
-            }
-
-            rs.close();
-            ps.close();
 
             String sql1 = "SELECT * FROM sobr_org WHERE email_org = ? and id = ?";
             PreparedStatement ps1 = c.prepareStatement(sql1);

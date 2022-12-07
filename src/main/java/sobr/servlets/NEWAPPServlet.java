@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDateTime;
 
 @WebServlet(name = "NEWAPPServlet", value = "/NEWAPPServlet")
 public class NEWAPPServlet extends HttpServlet {
@@ -22,13 +23,14 @@ public class NEWAPPServlet extends HttpServlet {
         long sk = Long.parseLong(s);
         String uchStatus = req.getParameter("status");
         String behalf = req.getParameter("beh");
+        LocalDateTime ldt = LocalDateTime.now();
 
         try {
             Class.forName("org.postgresql.Driver");
             Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
 
-            String sql = "INSERT INTO uch VALUES (?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO uch VALUES (?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement ps = c.prepareStatement(sql);
 
             ps.setLong(1, sk);
@@ -37,6 +39,7 @@ public class NEWAPPServlet extends HttpServlet {
             ps.setString(4, "На рассмотрении");
             ps.setString(5, behalf);
             ps.setString(6, uchStatus);
+            ps.setObject(7, ldt);
 
             ps.executeUpdate();
 

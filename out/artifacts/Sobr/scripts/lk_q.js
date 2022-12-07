@@ -1,3 +1,12 @@
+/*
+function qSend(obj){
+    $.get('http://localhost:8080/Sobr/QuestionsServlet', obj, function (){
+        console.log("questions added!")
+    })
+}
+
+ */
+
 $(document).ready(function (){
     $(".povestka_drop").hide()
 })
@@ -35,9 +44,15 @@ $(".knopka2").click(function (){
 
 })
 
-$(".save_btn").click(function (){
+let n = 0
+let qObj = {}
+/*
+function qAdd (){
     if (document.getElementById("enter_q").value !== ""){
         let quest = document.getElementById("enter_q").value
+        qObj['key' + n] = quest
+        n++
+        qObj.num = n
         let markup = "<tr><td>" + quest + "<img src='../../../img/cross.png' style='position: absolute; left: 1000px;'/> </td></tr>"
         $(".q_tbl tbody").append(markup)
         document.getElementById("enter_q").value = null
@@ -67,7 +82,11 @@ $(".save_btn").click(function (){
             height: "+=50px"
         })
     }
-})
+    return qObj
+}
+
+
+ */
 
 $(".knopka").click(function (){
     let newdoc = "<input type='text' class='forms2'>"

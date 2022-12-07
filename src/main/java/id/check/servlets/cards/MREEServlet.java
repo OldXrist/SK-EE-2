@@ -21,6 +21,7 @@ public class MREEServlet extends HttpServlet {
 
             String sql = "SELECT id, data_u_vrem_sobr,nachal_podach_zaiv, okonch_podach_zaiv, type_dolzh, famil, name, otch, poln_naum, email_org, type_org, type_sobr, status\n" +
                             "FROM sobr_org\n" +
+                            "WHERE status NOT IN ('Черновик', 'Отменено организатором')" +
                             "ORDER BY data_u_vrem_sobr desc\n" +
                             "LIMIT 4;";
             Statement st = c.createStatement();

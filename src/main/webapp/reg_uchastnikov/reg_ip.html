@@ -75,51 +75,51 @@
 
                     <div class="unn2">
                         <label for="inn" class="txt_obsh">ИНН*</label>
-                        <input type="text" class="forms4" id="inn" placeholder="000000000000">
+                        <input type="text" class="forms4" id="inn" placeholder="000000000000" onfocus="White(this.id)">
                     </div>
 
                     <div class="snils">
                         <label for="snils" class="txt_obsh">СНИЛС*</label>
-                        <input type="text" class="forms4" id="snils" placeholder="000 000 000 00">
+                        <input type="text" class="forms4" id="snils" placeholder="000 000 000 00" onfocus="White(this.id)">
                     </div>
 
                     <div class="codorg2">
                         <label for="ogrnip" class="txt_obsh">Код ОГРНИП*</label>
-                        <input type="text" class="forms5" id="ogrnip" placeholder="000000000000000">
+                        <input type="text" class="forms5" id="ogrnip" placeholder="000000000000000" onfocus="White(this.id)">
                     </div>
 
                     <div class="famil">
                         <label for="famil" class="txt_obsh">Фамилия*</label>
-                        <input type="text" class="forms4" id="famil" placeholder="Фамилия">
+                        <input type="text" class="forms4" id="famil" placeholder="Фамилия" onfocus="White(this.id)">
                     </div>
 
                     <div class="name">
                         <label for="name" class="txt_obsh">Имя*</label>
-                        <input type="text" class="forms4" id="name" placeholder="Имя">
+                        <input type="text" class="forms4" id="name" placeholder="Имя" onfocus="White(this.id)">
                     </div>
 
                     <div class="otch">
                         <label for="otch" class="txt_obsh">Отчество*</label>
-                        <input type="text" class="forms5" id="otch" placeholder="Отчество">
+                        <input type="text" class="forms5" id="otch" placeholder="Отчество" onfocus="White(this.id)">
                     </div>
 
                     <div class="pcht_adres2">
                         <label for="pocht_adres" class="txt_obsh">Почтовый адрес*</label>
-                        <input type="text" class="forms2" id="pocht_adres" placeholder="Почтовый адрес">
+                        <input type="text" class="forms2" id="pocht_adres" placeholder="Почтовый адрес" onfocus="White(this.id)">
                     </div>
                     <div class="telefon2">
                         <label for="phone" class="txt_obsh">Телефон*</label>
-                        <input type="text" class="forms" id="phone" placeholder="+7 (900) 000-12-34">
+                        <input type="text" class="forms" id="phone" placeholder="+7 (900) 000-12-34" onfocus="White(this.id)">
                     </div>
 
                     <div class="email2">
                         <label for="email" class="txt_obsh">Электронная почта*</label>
-                        <input type="text" class="forms" id="email" placeholder="Электронная почта">
+                        <input type="text" class="forms" id="email" placeholder="Электронная почта" onfocus="White(this.id)">
                     </div>
 
                     <div class="email2_2">
-                        <label for="email_2" class="txt_obsh">Повторите адрес электронной почты*</label>
-                        <input type="email" class="forms3" id="email_2" placeholder="Повторите адрес электронной почты">
+                        <label for="email_2" class="txt_obsh">Повторите адрес электронной почты*<p id="error"></p></label>
+                        <input type="email" class="forms3" id="email_2" placeholder="Повторите адрес электронной почты" onfocus="White(this.id)">
                     </div>
 
                     <p class="pass">Паспортные данные </p>
@@ -127,21 +127,21 @@
 
                     <div class="seria">
                         <label for="ser" class="txt_obsh">Серия*</label>
-                        <input type="text" class="forms4" id="ser" placeholder="00 00">
+                        <input type="text" class="forms4" id="ser" placeholder="00 00" onfocus="White(this.id)">
                     </div>
                     <div class="nomer">
                         <label for="num" class="txt_obsh">Номер*</label>
-                        <input type="text" class="forms4" id="num" placeholder="000 000">
+                        <input type="text" class="forms4" id="num" placeholder="000 000" onfocus="White(this.id)">
                     </div>
                     <div class="data_vidochi">
                         <label for="data" class="txt_obsh">Дата выдачи*</label>
-                        <input type="text" class="forms5" id="data" placeholder="01.01.0000">
+                        <input type="text" class="forms5" id="data" placeholder="01.01.0000" onfocus="White(this.id)">
                     </div>
 
 
                     <div class="vidan">
                         <label for="kem_vudan" class="txt_obsh">Кем выдан*</label>
-                        <input type="text" class="forms2" id="kem_vudan" placeholder="Кем выдан">
+                        <input type="text" class="forms2" id="kem_vudan" placeholder="Кем выдан" onfocus="White(this.id)">
                     </div>
                     <div class="pass11">
                         <label for="pass" class="txt_obsh">Придумайте пароль*</label>
@@ -163,7 +163,7 @@
                             </tr>
                         </table>
 
-                        <button type="button" class="knopka2" onclick="Validate_reg()">Сохранить и подтвердить e-mail</button>
+                        <button type="button" class="knopka2" onclick="emailCheck()">Сохранить и подтвердить e-mail</button>
 
                     </div>
                     <p class="doks_2">Документы</p>
@@ -217,8 +217,10 @@
 </div>
 <script src="../jquery/jquery-3.6.0.js"></script>
 <script src="../scripts/validate_reg.js"></script>
+<script src="../scripts/unique_email_check.js"></script>
 <script src="../jquery/jquery.maskedinput.min.js"></script>
 <script src="../scripts/reg_docs_ip.js"></script>
+<script src="../scripts/white.js"></script>
 <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 <script>
     $(document).ready(function() {

@@ -112,8 +112,10 @@ function Validate_reg () {
         k += 1;
     }
     if (document.getElementById("email_2").value.length === 0 ||
-        document.getElementById("email_2").value !== document.getElementById("email").value) {
+        document.getElementById("email_2").value !== document.getElementById("email").value ||
+        document.getElementById("error").innerText.includes("существует")) {
         document.getElementById("email_2").style.borderColor = 'red';
+        document.getElementById('error').innerText = 'Почты не совпадают'
         k += 1;
     } else if (
         document.getElementById("check1").checked === false ||

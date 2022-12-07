@@ -209,6 +209,12 @@
     line-height: 130%;
     color: #406C9A;}
 
+#error{
+    color: #FF0000;
+    float: right;
+    margin-left: 60px;
+}
+
 .zaiav {
     position: absolute;
     width: 93px;
@@ -369,7 +375,7 @@
 
 .txt_obsh {
     position: absolute;
-    width: 400px;
+    width: auto;
     height: 18px;
     left: 0;
     top: -40px;
@@ -593,7 +599,7 @@ input::placeholder{
 
 .email2_2 {
     position: absolute;
-    width: 590px;
+    width: auto;
     height: 50px;
     left: 510px;
     top: 608px;

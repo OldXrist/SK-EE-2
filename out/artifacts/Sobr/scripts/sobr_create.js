@@ -12,6 +12,44 @@ function dateFormat(date, time){
     return newd + "T" + time
 }
 
+function qAdd (){
+    if (document.getElementById("enter_q").value !== ""){
+        let quest = document.getElementById("enter_q").value
+        qObj['key' + n] = quest
+        n++
+        qObj.num = n
+        let markup = "<tr><td>" + quest + "<img src='../../../img/cross.png' style='position: absolute; left: 1000px;'/> </td></tr>"
+        $(".q_tbl tbody").append(markup)
+        document.getElementById("enter_q").value = null
+
+        $(".nim_cod").animate({
+            top: "+=50px"
+        });
+        $(".knopka4").animate({
+            top: "+=50px"
+        });
+        $(".knopka5").animate({
+            top: "+=50px"
+        });
+        $(".knopka3").animate({
+            top: "+=50px"
+        });
+        $(".table_fio").animate({
+            top: "+=50px"
+        });
+        $(".base").animate({
+            top: "+=50px"
+        });
+        $(".base_bg").animate({
+            top: "+=50px"
+        });
+        $(".table_org").animate({
+            height: "+=50px"
+        })
+    }
+    return qObj
+}
+
 function Create(){
     let status = "На рассмотрении"
     let dolzh = document.getElementById("tip_dolzh").placeholder
@@ -61,6 +99,13 @@ function Create(){
 
         $.post("http://localhost:8080/Sobr/ZServlet", sobr, function (){
             console.log(sobr)
+
+            let send = qAdd()
+            console.log(send)
+
+            $.get('http://localhost:8080/Sobr/QuestionsServlet', send, function (){
+                console.log("questions added!")
+            })
         })
     } else if (dolzh === "Физическое лицо"){
         let sobr = {
@@ -93,6 +138,13 @@ function Create(){
 
         $.post("http://localhost:8080/Sobr/ZServlet", sobr, function (){
             console.log(sobr)
+
+            let send = qAdd()
+            console.log(send)
+
+            $.get('http://localhost:8080/Sobr/QuestionsServlet', send, function (){
+                console.log("questions added!")
+            })
         })
     } else if (dolzh === "Индивидуальный предприниматель"){
         let sobr = {
@@ -126,6 +178,13 @@ function Create(){
 
         $.post("http://localhost:8080/Sobr/ZServlet", sobr, function (){
             console.log(sobr)
+
+            let send = qAdd()
+            console.log(send)
+
+            $.get('http://localhost:8080/Sobr/QuestionsServlet', send, function (){
+                console.log("questions added!")
+            })
         })
     }
 }

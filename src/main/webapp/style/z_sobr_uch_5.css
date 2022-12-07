@@ -10,6 +10,10 @@
     margin-left: 80px;
 }
 
+#pages{
+    margin-top: 536px;
+}
+
 .bc a{
     text-decoration: none;
     color: #406C9A;
@@ -298,6 +302,10 @@ input{
     margin-bottom: 20px;
 }
 
+.table_item a{
+    cursor: pointer;
+}
+
 .table_h {
     position: absolute;
     padding: 0;
@@ -446,11 +454,11 @@ input{
 }
 
 .base_bg{
-    margin-top: 1164px;
+    margin-top: 1464px;
 }
 
 .base{
-    margin-top: 1164px;
+    margin-top: 1464px;
 }
 
 .dob_zaiv {position: absolute;

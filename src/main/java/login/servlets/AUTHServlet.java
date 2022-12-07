@@ -31,6 +31,9 @@ public class AUTHServlet extends HttpServlet {
 
             if (rs.next()) {
                 HttpSession sesh = req.getSession(true);
+                sesh.removeAttribute("email");
+                sesh.removeAttribute("role");
+                sesh.removeAttribute("type");
                 sesh.setAttribute("sessionUser", email);
                 sesh.setAttribute("role", rs.getString("role_users"));
                 sesh.setAttribute("type", rs.getString("type_users"));
