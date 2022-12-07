@@ -14,7 +14,7 @@ public class GetMeetingsList extends HttpServlet {
     {
         String auSql =  "SELECT sobr_org.type_sobr, nomer_dela, data_u_vrem_sobr, nachal_podach_zaiv, okonch_podach_zaiv, \n" +
                         "sobr_org.type_dolzh, sobr_org.famil, sobr_org.name, sobr_org.otch, sobr_org.poln_naum,\n" +
-                        "au.famil, au.\"name\", au.otch\n" +
+                        "au.famil, au.\"name\", au.otch, status\n" +
                         "FROM sobr_org, au\n" +
                         "WHERE sobr_org.email_org = '" + email + "' and au.email = '" + email + "' and sobr_org.type_org = 'АУ';";
         return auSql;
@@ -24,7 +24,7 @@ public class GetMeetingsList extends HttpServlet {
     {
         String flSql =  "SELECT sobr_org.type_sobr, nomer_dela, data_u_vrem_sobr, nachal_podach_zaiv, okonch_podach_zaiv, \n" +
                         "sobr_org.type_dolzh, sobr_org.famil, sobr_org.name, sobr_org.otch, sobr_org.poln_naum,\n" +
-                        "fl.famil, fl.\"name\", fl.otch\n" +
+                        "fl.famil, fl.\"name\", fl.otch, status\n" +
                         "FROM sobr_org, fl\n" +
                         "WHERE sobr_org.email_org = '" + email + "' and fl.email= '" + email + "' and sobr_org.type_org = 'ФЛ';";
         return flSql;
@@ -34,7 +34,7 @@ public class GetMeetingsList extends HttpServlet {
     {
         String ipSql =  "SELECT sobr_org.type_sobr, nomer_dela, data_u_vrem_sobr, nachal_podach_zaiv, okonch_podach_zaiv, \n" +
                         "sobr_org.type_dolzh, sobr_org.famil, sobr_org.name, sobr_org.otch, sobr_org.poln_naum,\n" +
-                        "ip.famil, ip.\"name\", ip.otch\n" +
+                        "ip.famil, ip.\"name\", ip.otch, status\n" +
                         "FROM sobr_org, ip\n" +
                         "WHERE sobr_org.email_org = '" + email + "' and ip.email = '" + email + "' and sobr_org.type_org = 'ИП';";
         return ipSql;
@@ -44,7 +44,7 @@ public class GetMeetingsList extends HttpServlet {
     {
         String qlSql =  "SELECT sobr_org.type_sobr, nomer_dela, data_u_vrem_sobr, nachal_podach_zaiv, okonch_podach_zaiv, \n" +
                         "sobr_org.type_dolzh, sobr_org.famil, sobr_org.name, sobr_org.otch, sobr_org.poln_naum,\n" +
-                        "ql.poln_naim\n" +
+                        "ql.poln_naim, status\n" +
                         "FROM sobr_org, ql\n" +
                         "WHERE sobr_org.email_org =  '" + email + "'  and ql.email = '" + email + "' and sobr_org.type_org = 'ЮЛ';";
         return qlSql;
@@ -104,8 +104,8 @@ public class GetMeetingsList extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             Class.forName("org.postgresql.Driver");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK2", "postgres", "111");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
+            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres", "postgres", "postgresql");
 
             //сначала собираем роли и id организаторов
             HashSet<ArrayList<String>> userRoles = new HashSet<ArrayList<String>>();

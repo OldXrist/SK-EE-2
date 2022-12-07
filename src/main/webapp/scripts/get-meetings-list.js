@@ -15,6 +15,7 @@ $(document).ready(function () {
                 var startMeetingDate = new Date(result[i][2]).toLocaleString();
                 var invoiceDates = new Date(result[i][3]).toLocaleDateString() + ' - ' + new Date(result[i][4]).toLocaleDateString();
                 var meetingType = result[i][0] == 'Z' ? 'Заочное' : 'Очное';
+                var status = result[i].length > 12 ? result[i][13] : result[i][11];
                 var meetingsContainer = document.getElementById("m-container");
                 meetingsContainer.innerHTML +=
                     `<div class="meeting">
@@ -35,7 +36,7 @@ $(document).ready(function () {
                                 </div>
                                 <div class="m-status">
                                     <span class="heading">Статус</span>
-                                    <span class="info"></span>
+                                    <span class="info">${status}</span>
                                 </div>
                             </div>
                         </div>
