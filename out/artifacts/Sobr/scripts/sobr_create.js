@@ -12,13 +12,42 @@ function dateFormat(date, time){
     return newd + "T" + time
 }
 
+function qDelete(id){
+    document.getElementById(id).parentElement.parentElement.remove()
+
+    $(".nim_cod").animate({
+        top: "-=50px"
+    });
+    $(".knopka4").animate({
+        top: "-=50px"
+    });
+    $(".knopka5").animate({
+        top: "-=50px"
+    });
+    $(".knopka3").animate({
+        top: "-=50px"
+    });
+    $(".table_fio").animate({
+        top: "-=50px"
+    });
+    $(".base").animate({
+        top: "-=50px"
+    });
+    $(".base_bg").animate({
+        top: "-=50px"
+    });
+    $(".table_org").animate({
+        height: "-=50px"
+    })
+}
+
 function qAdd (){
     if (document.getElementById("enter_q").value !== ""){
         let quest = document.getElementById("enter_q").value
         qObj['key' + n] = quest
         n++
         qObj.num = n
-        let markup = "<tr><td>" + quest + "<img src='../../../img/cross.png' style='position: absolute; left: 1000px;'/> </td></tr>"
+        let markup = "<tr><td>" + quest + "<img id='cross' onclick='qDelete(this.id)' src='../../../img/cross.png' style='position: absolute; left: 1000px;'/> </td></tr>"
         $(".q_tbl tbody").append(markup)
         document.getElementById("enter_q").value = null
 
