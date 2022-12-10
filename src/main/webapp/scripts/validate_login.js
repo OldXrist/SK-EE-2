@@ -19,11 +19,11 @@ function Validate_login(){
         }
 
 
-        $.post("http://localhost:8080/Sobr/AUTHServ", creds, function (data) {
+        $.post("/Sobr/AUTHServ", creds, function (data) {
             console.log(creds);
             console.log(data);
             if (data !== "") {
-                window.location.assign("http://localhost:8080/Sobr/index2.html");
+                window.location.assign("/Sobr/");
             } else {
                 $(".err").show()
                 document.getElementById("email").style.borderColor = 'red'

@@ -121,18 +121,19 @@ function Create(){
             post: document.getElementById("pocht3").value,
             inn: document.getElementById("unn4").value,
             ogrn: document.getElementById("ogrn3").value,
-            status: status
+            status: status,
+            participants: document.getElementById("participants").value
         }
 
         console.log(sobr)
 
-        $.post("http://localhost:8080/Sobr/ZServlet", sobr, function (){
+        $.post("/Sobr/ZServlet", sobr, function (){
             console.log(sobr)
 
             let send = qAdd()
             console.log(send)
 
-            $.get('http://localhost:8080/Sobr/QuestionsServlet', send, function (){
+            $.get('/Sobr/QuestionsServlet', send, function (){
                 console.log("questions added!")
             })
         })
@@ -159,19 +160,20 @@ function Create(){
             post: document.getElementById("pocht").value,
             inn: document.getElementById("inn").value,
             snils: document.getElementById("snils").value,
-            status: status
+            status: status,
+            participants: document.getElementById("participants").value
 
         }
 
         console.log(sobr)
 
-        $.post("http://localhost:8080/Sobr/ZServlet", sobr, function (){
+        $.post("/Sobr/ZServlet", sobr, function (){
             console.log(sobr)
 
             let send = qAdd()
             console.log(send)
 
-            $.get('http://localhost:8080/Sobr/QuestionsServlet', send, function (){
+            $.get('/Sobr/QuestionsServlet', send, function (){
                 console.log("questions added!")
             })
         })
@@ -199,19 +201,19 @@ function Create(){
             inn: document.getElementById("inn2").value,
             snils: document.getElementById("snils2").value,
             ogrnip: document.getElementById("ogrnip").value,
-            status: status
-
+            status: status,
+            participants: document.getElementById("participants").value
         }
 
         console.log(sobr)
 
-        $.post("http://localhost:8080/Sobr/ZServlet", sobr, function (){
+        $.post("/Sobr/ZServlet", sobr, function (){
             console.log(sobr)
 
             let send = qAdd()
             console.log(send)
 
-            $.get('http://localhost:8080/Sobr/QuestionsServlet', send, function (){
+            $.get('/Sobr/QuestionsServlet', send, function (){
                 console.log("questions added!")
             })
         })

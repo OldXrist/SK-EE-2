@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Sobr archive">
+    <output-path>$PROJECT_DIR$/../</output-path>
+    <root id="archive" name="Sobr archive.war">
+      <element id="artifact" artifact-name="Sobr" />
+    </root>
+  </artifact>
+</component>
