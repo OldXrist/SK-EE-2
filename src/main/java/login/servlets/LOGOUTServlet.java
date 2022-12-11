@@ -19,6 +19,6 @@ public class LOGOUTServlet extends HttpServlet {
         sesh.removeAttribute("role");
         sesh.removeAttribute("type");
         sesh.invalidate();
-        res.sendRedirect("http://localhost:8080/Sobr/index2.html");
+        res.sendRedirect("http://localhost:8080/Sobr/");
     }
 }

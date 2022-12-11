@@ -43,6 +43,7 @@
     border-radius: 15px;
     margin-left: 80px;
     padding-left: 60px;
+    padding-bottom: 40px;
 }
 
 .ep p{
@@ -157,6 +158,10 @@ input{
     padding-left: 17px;
 }
 
+input[type=radio] {
+    background-color: #BAF3FC;
+}
+
 .stats {
     position: absolute;
     width: 1160px;
@@ -229,6 +234,36 @@ input{
     border: none;
 }
 
+#finalVote{
+    width: 439px;
+    height: 55px;
+    background: #37DCF5;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    color: #00345F;
+    margin-left: 270px;
+}
+
+.attention{
+    text-align: center;
+}
+
+h6{
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    text-align: center;
+    color: #406C9A;
+}
+
 .vote_btn{
     width: 200px;
     height: 50px;
@@ -246,9 +281,9 @@ input{
 }
 
 .base_bg{
-    margin-top: 1300px;
+    margin-top: 650px;
 }
 
 .base{
-    margin-top: 1300px;
+    margin-top: 650px;
 }
