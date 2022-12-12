@@ -27,7 +27,7 @@ public class LKUCHServlet extends HttpServlet {
 
             String sql = "SELECT id, data_u_vrem_sobr,nachal_podach_zaiv, okonch_podach_zaiv, type_dolzh, famil, name, otch, poln_naum, email_org, type_org, type_sobr, status\n" +
                     "FROM sobr_org\n" +
-                    "WHERE id = (SELECT id FROM uch WHERE email = ?)" +
+                    "WHERE id IN (SELECT id FROM uch WHERE email = ?)" +
                     "ORDER BY id";
             PreparedStatement ps = c.prepareStatement(sql);
 
