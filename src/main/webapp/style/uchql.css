@@ -19,6 +19,12 @@
     border: none;
 }
 
+#error{
+    color: #FF0000;
+    float: right;
+    margin-left: 60px;
+}
+
 .gl {
     position: absolute;
     width: 59px;

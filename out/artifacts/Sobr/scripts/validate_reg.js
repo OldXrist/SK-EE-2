@@ -200,7 +200,6 @@ function Validate_reg () {
                 nomer: document.getElementById("num").value,
                 kem_vidan: document.getElementById("kem_vudan").value,
                 pass: document.getElementById("pass").value,
-
                 reg_date: Date
             };
             console.log(user)
@@ -215,7 +214,7 @@ function Validate_reg () {
             }
 
             $.post("http://localhost:8080/Sobr/EmailSender", inputData, function (data) {
-                if (data == "") {
+                if (data === "") {
                     alert("Вы успешно зарегестрированы!");
                 } else {
                     alert(data);
@@ -321,7 +320,6 @@ function Validate_reg () {
                 kem_vidan: document.getElementById("kem_vudan").value,
                 reg_nomer_au: document.getElementById("reg_nomer_au").value,
                 pass: document.getElementById("pass").value,
-
                 reg_date: Date
             };
 

@@ -6,13 +6,10 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 
-@WebServlet(name = "LKUCHServlet", value = "/LKUCHServlet")
-public class LKUCHServlet extends HttpServlet {
+@WebServlet(name = "LKORGServlet", value = "/LKORGServlet")
+public class LKORGServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         PrintWriter out = res.getWriter();
@@ -27,7 +24,7 @@ public class LKUCHServlet extends HttpServlet {
 
             String sql = "SELECT id, data_u_vrem_sobr,nachal_podach_zaiv, okonch_podach_zaiv, type_dolzh, famil, name, otch, poln_naum, email_org, type_org, type_sobr, status\n" +
                     "FROM sobr_org\n" +
-                    "WHERE id = (SELECT id FROM uch WHERE email = ?)" +
+                    "WHERE email_org = ?" +
                     "ORDER BY id";
             PreparedStatement ps = c.prepareStatement(sql);
 
@@ -95,7 +92,7 @@ public class LKUCHServlet extends HttpServlet {
                 }
                 String sql5 = "SELECT status FROM uch WHERE email = ? AND id = ?";
                 PreparedStatement ps5 = c.prepareStatement(sql5);
-
+                
                 ps5.setString(1, email1);
                 ps5.setInt(2, id);
 

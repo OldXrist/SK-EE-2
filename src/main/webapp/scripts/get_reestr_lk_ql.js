@@ -129,7 +129,7 @@ function timeParse (x){
 
 function Cards(dt, i, m) {
     m = "c" + m
-    let lim = i + 15;
+    let lim = i + 13;
     let arr = [];
     for (i; i < lim; i++) {
         arr.push(dt[i])
@@ -252,16 +252,16 @@ function Cards(dt, i, m) {
     }
 }
 
-$.get("http://localhost:8080/Sobr/LKUCHServlet", function (data){
+$.get("http://localhost:8080/Sobr/LKORGServlet", function (data){
 
     console.log(data)
     let d = data.split("\n")
-    let pageNum = Math.ceil(d.length / 15 / 5)
+    let pageNum = Math.ceil(d.length / 13 / 5)
     console.log(pageNum)
     let k = 0
-    for (let i = 1; i < Math.ceil(d.length / 15); i++) {
+    for (let i = 1; i < Math.ceil(d.length / 13); i++) {
         Cards(d, k, i)
-        k += 15
+        k += 13
     }
 
     let pageLim = 4

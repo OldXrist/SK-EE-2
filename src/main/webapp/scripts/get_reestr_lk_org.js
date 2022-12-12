@@ -252,7 +252,7 @@ function Cards(dt, i, m) {
         }
 }
 
-$.get("http://localhost:8080/Sobr/LKUCHServlet", function (data){
+$.get("http://localhost:8080/Sobr/LKORGServlet", function (data){
 
     console.log(data)
     let d = data.split("\n")

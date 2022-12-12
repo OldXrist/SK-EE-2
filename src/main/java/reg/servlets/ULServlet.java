@@ -21,7 +21,7 @@ public class ULServlet extends HttpServlet {
         String pocht_adres = req.getParameter("pocht_adres");
         String telephon = req.getParameter("telephon");
         String email = req.getParameter("email");
-        String pass = req.getParameter("pass1");
+        String pass = req.getParameter("pass");
 
         LocalDateTime ldt = LocalDateTime.now();
 

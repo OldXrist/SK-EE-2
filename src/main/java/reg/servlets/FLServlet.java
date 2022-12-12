@@ -26,7 +26,7 @@ public class FLServlet extends HttpServlet {
         String seria = req.getParameter("seria");
         String nomer = req.getParameter("nomer");
         String kem_vudan = req.getParameter("kem_vidan");
-        String pass = req.getParameter("pass1");
+        String pass = req.getParameter("pass");
 
         String date = req.getParameter("data");
         LocalDateTime ldt = LocalDateTime.now();
