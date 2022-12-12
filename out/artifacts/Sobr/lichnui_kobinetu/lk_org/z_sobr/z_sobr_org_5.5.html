@@ -1,99 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="../../../style/shared.css">
-    <link rel="stylesheet" type="text/css" href="../../../style/z_sobr_org_5.5.css">
-    <link rel="stylesheet" type="text/css" href="../../../style/zaivka.css">
-
+    <link rel="stylesheet" type="text/css" href="../../../style/meeting-card.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <title>SK_JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>Редактирование заявки</title>
 </head>
+
 <body>
-<div class="menu">
-    <ul>
-        <li class="logo"><a href="../../../help/contacts.html"><img src="../../../img/Logo.svg" /></a></li>
-        <li class="nav_item"><a href="../../../index.html">Главная</a></li>
-        <li class="nav_item"><a href="../../../reestr.html">Реестр собраний</a></li>
-        <li class="nav_item"><a href="../../../help/help_1.html">Помощь</a></li>
-        <li class="nav_item"><a href="../../../help/contacts.html">Контакты</a></li>
-        <li class="nav_item"><a href="../../../lichnui_kobinetu/lk_uch/lk_uch_ip2/lk_uch.html"><p class="nav_login" id="lk"></p></a></li>
-        <li class="nav_item"><a href="../../../signin.html"><span id="clock" style="color:#ffffff;"></span></a></li>
-        <li class="nav_item"><a href="/Sobr/LOGOUTServlet"><img src="../../../img/logout%201%20(Traced).png" /></a></li>
-    </ul>
-</div>
-<div class="container">
-    <div class="content">
-
-        <div class="ogl">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a class="anti_tekst"  href="/index.html">Главная</a></li>
-                    <li class="breadcrumb-item"><a class="anti_tekst"  href="#">Личный кабинет участника</a></li>
-                    <li class="breadcrumb-item"><a class="anti_tekst"  href="#">Организация собраний</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Карточка собрания</li>
-                </ol>
-            </nav>
+    <header>
+        <div>
+            <a href="help/contacts.html" class="a"><img src="../../../img/Logo.svg" /></a>
         </div>
+        <div class="menu">
+            <a href="../../../index.html" class="a">Главная</a>
+            <a href="../../../reestr.html" class="a">Реестр собраний</a>
+            <a href="../../../help/help_1.html" class="a">Помощь</a>
+            <a href="../../../help/contacts.html" class="a">Контакты</a>
+        </div>
+        <div class="signin">
+            <a href="../../../FILTERServlet" class="a"><span id="lk"></span></a>
+            <span id="clock" class="clock"></span>
+            <a href="../../../LOGOUTServlet" class="a"><img id="logout_btn"
+                    src="../../../img/logout%201%20(Traced).png" /></a>
+        </div>
+    </header>
 
-        <p class="heading" id="number">Заявка №</p>
-
-        <form class="zaiavra">
-            <p class="inf_od_zaiav">Информация об участнике собрания</p>
-            <div id="table"></div>
-            <p class="doks_zaiv">Прикрепленные документы участника</p>
-
-            <div class="doks_txt_zaiv">
-                <label for="passport" class="txt_obsh"></label>
-                <input type="text" class="forms2" id="passport" placeholder="Документ, удостоверяющий личность">
+    <main>
+        <div class="main-container">
+            <div class="h-row-0">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a class="anti_tekst" href="/index.html">Главная</a></li>
+                        <li class="breadcrumb-item"><a class="anti_tekst" href="#">Личный кабинет участника</a></li>
+                        <li class="breadcrumb-item"><a class="anti_tekst" href="#">Организация собраний</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Карточка собрания</li>
+                    </ol>
+                </nav>
             </div>
-            <div class="doks_txt2_zaiv">
-                <label for="proxy" class="txt_obsh"></label>
-                <input type="text" class="forms2" id="proxy" placeholder="Документы, подтверждающие полномочия руководителя или иного лица на осуществление действий от имени заявителя">
+
+            <div class="h-row-1"><span id="number">Заявка №</span></div>
+            <div class="card-container">
+                <div id="m-general-info">
+                    <div class="h-row-2"><span>Информация об участнике собрания</span></div>
+                </div>
+
+                <!-- Участник Физ. лицо -->
+                <div id="member-fl-info" hidden>
+                    <div class="h-row-3">
+                        <div class="span-colmn-1"><span>ИНН</span></div>
+                        <div><span>СНИЛС</span></div>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-5">
+                            <input type="text" class="in-type-5" id="member-fl-inn" placeholder=" 11111111"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-3">
+                            <input type="text" class="in-type-3" id="member-fl-snils" placeholder="123 456 789 00"
+                                disabled="true">
+                        </div>
+                    </div>
+                    <div class="h-row-3">
+                        <div class="span-colmn-3"><span>Фамилия</span></div>
+                        <div class="span-colmn-3"><span>Имя</span></div>
+                        <span>Отчество</span>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-10">
+                            <input type="text" class="in-type-9" id="member-fl-second-name" placeholder="Иванова"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-11">
+                            <input type="text" class="in-type-9" id="member-fl-first-name" placeholder="Светлана"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-12">
+                            <input type="text" class="in-type-10" id="member-fl-middle-name" placeholder="Андреевна"
+                                disabled="true">
+                        </div>
+                    </div>
+                    <div class="h-row-3"><span>Почтовый адрес</span></div>
+                    <div class="h-row-4">
+                        <div class="col-type-6">
+                            <input type="text" class="in-type-6" id="member-fl-post-adress"
+                                placeholder="111116. г. Москва, а/я №87" disabled="true">
+                        </div>
+                    </div>
+                    <div id="fl-contacts">
+                        <div class="h-row-3">
+                            <div class="span-colmn-1"><span>Телефон</span></div>
+                            <div><span>Электронная почта</span></div>
+                        </div>
+                        <div class="h-row-4">
+                            <div class="col-type-5">
+                                <input type="text" class="in-type-5" id="member-fl-phone"
+                                    placeholder=" +7 (900) 000-12-34" disabled="true">
+                            </div>
+                            <div class="col-type-3">
+                                <input type="text" class="in-type-3" id="member-fl-email"
+                                    placeholder="ivanova12@mail.ru" disabled="true">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Участник ИП -->
+                <div id="member-ip-info" hidden>
+                    <div class="h-row-3">
+                        <div class="span-colmn-3"><span>ИНН</span></div>
+                        <div class="span-colmn-3"><span>СНИЛС</span></div>
+                        <span>ОГРНИП</span>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-10">
+                            <input type="text" class="in-type-9" id="member-ip-inn" placeholder=" 11111111"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-11">
+                            <input type="text" class="in-type-9" id="member-ip-snils" placeholder="123 456 789 00"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-12">
+                            <input type="text" class="in-type-10" id="member-ip-ogrnip" placeholder="000 000 000 00"
+                                disabled="true">
+                        </div>
+                    </div>
+                    <div class="h-row-3">
+                        <div class="span-colmn-3"><span>Фамилия</span></div>
+                        <div class="span-colmn-3"><span>Имя</span></div>
+                        <span>Отчество</span>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-10">
+                            <input type="text" class="in-type-9" id="member-ip-second-name" placeholder="Иванова"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-11">
+                            <input type="text" class="in-type-9" id="member-ip-first-name" placeholder="Светлана"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-12">
+                            <input type="text" class="in-type-10" id="member-ip-middle-name" placeholder="Андреевна"
+                                disabled="true">
+                        </div>
+                    </div>
+                    <div class="h-row-3"><span>Почтовый адрес</span></div>
+                    <div class="h-row-4">
+                        <div class="col-type-6">
+                            <input type="text" class="in-type-6" id="member-ip-post-adress"
+                                placeholder="111116. г. Москва, а/я №87" disabled="true">
+                        </div>
+                    </div>
+                    <div id="ip-contacts">
+                        <div class="h-row-3">
+                            <div class="span-colmn-1"><span>Телефон</span></div>
+                            <div><span>Электронная почта</span></div>
+                        </div>
+                        <div class="h-row-4">
+                            <div class="col-type-5">
+                                <input type="text" class="in-type-5" id="member-ip-phone"
+                                    placeholder=" +7 (900) 000-12-34" disabled="true">
+                            </div>
+                            <div class="col-type-3">
+                                <input type="text" class="in-type-3" id="member-ip-email"
+                                    placeholder="ivanova12@mail.ru" disabled="true">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Участник Юр. лицо -->
+                <div id="member-ul-info" hidden>
+                    <div class="h-row-3">
+                        <div class="span-colmn-1"><span>ИНН</span></div>
+                        <div><span>ОГРН</span></div>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-5">
+                            <input type="text" class="in-type-5" id="member-ul-inn" placeholder="11111111"
+                                disabled="true">
+                        </div>
+                        <div class="col-type-3">
+                            <input type="text" class="in-type-3" id="member-ul-ogrn" placeholder="000 000 000 00"
+                                disabled="true">
+                        </div>
+                    </div>
+                    <div class="h-row-3"><span>Наименование</span></div>
+                    <div class="h-row-4">
+                        <div class="col-type-6">
+                            <input type="text" class="in-type-6" id="member-ul-company-fullname"
+                                placeholder="Наименование" disabled="true">
+                        </div>
+                    </div>
+                    <div class="h-row-3"><span>Почтовый адрес</span></div>
+                    <div class="h-row-4">
+                        <div class="col-type-6">
+                            <input type="text" class="in-type-6" id="member-ul-post-adress"
+                                placeholder="111116. г. Москва, а/я №87" disabled="true">
+                        </div>
+                    </div>
+                    <div class="h-row-3"><span>Юридический адрес</span></div>
+                    <div class="h-row-4">
+                        <div class="col-type-6">
+                            <input type="text" class="in-type-6" id="member-ul-ur-adress"
+                                placeholder="111116. г. Москва, а/я №87" disabled="true">
+                        </div>
+                    </div>
+                    <div id="ul-contacts">
+                        <div class="h-row-3">
+                            <div class="span-colmn-1"><span>Телефон</span></div>
+                            <div><span>Электронная почта</span></div>
+                        </div>
+                        <div class="h-row-4">
+                            <div class="col-type-5">
+                                <input type="text" class="in-type-5" id="member-ul-phone"
+                                    placeholder=" +7 (900) 000-12-34" disabled="true">
+                            </div>
+                            <div class="col-type-3">
+                                <input type="text" class="in-type-3" id="member-ul-email"
+                                    placeholder="ivanova12@mail.ru" disabled="true">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="h-row-2"><span>Прикрепленные документы участника</span></div>
+                <div class="h-row-4">
+                    <div class="col-type-6">
+                        <input type="text" class="in-type-6" id="docs1" placeholder="Документ, удостоверяющий личность
+                        " disabled="true">
+                    </div>
+                </div>
+                <div class="h-row-4">
+                    <div class="col-type-6">
+                        <input type="text" class="in-type-6" id="docs2"
+                            placeholder="Документы, подтверждающие полномочия руководителя или иного лица на осуществление действий от имени заявителя"
+                            disabled="true">
+                    </div>
+                </div>
+
+                <div class="h-row-2"><span>Статус заявки и полномочия</span></div>
+                <div id="contacts">
+                    <div class="h-row-3">
+                        <div class="span-colmn-1"><span>Статус</span></div>
+                        <div><span>Полномочия участника</span></div>
+                    </div>
+                    <div class="h-row-4">
+                        <div class="col-type-5">
+                            <input type="text" class="in-type-5" id="status" placeholder="" disabled="true">
+                        </div>
+                        <div class="col-type-3">
+                            <select name="sources-1" id="sources-1" class="custom-select-1 sources-1"
+                                placeholder="Не выбрано">
+                                <option>Не выбрано</option>
+                                <option>С правом голоса</option>
+                                <option>Без права голоса</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="buttons" id="buttons">
+                    <div class="accept-btn" onclick="Accept()"><span>Принять заявку</span></div>
+                    <div class="decline-btn" onclick="Decline()"><span>Отклонить заявку</span></div>
+                </div>
             </div>
+        </div>
+    </main>
 
-            <p class="status_zaiv">Статус заявки участника</p>
+    <footer>
+        <div class="f-top">
+            <a href="../../../index.html" class="a"><img src="../../../img/Logo.svg" /></a>
+            <a href="../../../LOGOUTServlet" class="a">Выйти</a>
+        </div>
+        <div class="f-middle">
+            <a href="../../../index.html" class="a">Главная</a>
+            <a href="../../../reestr.html" class="a">Реестр собраний</a>
+            <a href="../../../help/help_1.html" class="a">Помощь</a>
+            <a href="../../../help/contacts.html" class="a">Контакты</a>
+        </div>
+        <div class="f-bottom">
+            <span>© 2011-2022 Оператор торговой площадки - ООО «ТендерСтандарт»</span>
+            <span>Все права защищены</span>
+        </div>
+    </footer>
 
-            <div class="na_rasmotr_zaiv">
-                <label for="status" class="txt_obsh"></label>
-                <input type="text" class="forms4" id="status" placeholder="на рассмотрении">
-            </div>
-
-            <button type="button" class="prin_zaiv" onclick="Accept()">Принять заявку</button>
-            <button type="button" class="otklon_zaiv" onclick="Decline()">Отклонить заявку</button>
-
-        </form>
-
-        <div class="base_bg"></div>
-            <div class="base">
-                <ul>
-                    <li class="base_logo"><a href="#"><img src="../../../img/Logo.svg" /></a></li>
-                    <li class="base_item1"><a>Выйти</a></li>
-                </ul>
-                <ul class="base_links">
-                    <li class="base_item2"><a class="footer_txt" href="../../../index.html" >Главная</a></li>
-                    <li class="base_item2"><a class="footer_txt" href="../../../reestr.html">Реестр собраний</a></li>
-                    <li class="base_item2"><a class="footer_txt" href="../../../help/help_1.html">Помощь</a></li>
-                    <li class="base_item2"><a class="footer_txt" href="../../../help/contacts.html">Контакты</a></li>
-                </ul>
-                <p class="copyright">© 2011-2022 Оператор торговой площадки - ООО «ТендерСтандарт». Все права защищены.</p>
-            </div>
-    </div>
-</div>
-<script>
-    setInterval(function () {
-        var now = new Date();
-        var clock = document.getElementById("clock");
-        clock.innerHTML = now.toLocaleTimeString();
-    }, 1000);
-</script>
-<script src="../../../jquery/jquery-3.6.0.js"></script>
-<script src="../../../scripts/ApplicationEdit.js"></script>
-<script src="../../../scripts/public_pages_header.js"></script>
-<script src="../../../scripts/org_constraint.js"></script>
-<script href="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
-<script href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="../../../jquery/jquery-3.6.0.js"></script>
+    <script src="../../../scripts/ApplicationEdit.js"></script>
+    <script src="../../../scripts/public_pages_header.js"></script>
+    <script src="../../../scripts/org_constraint.js"></script>
+    <script href="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js"
+        type="text/javascript"></script>
+    <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
