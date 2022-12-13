@@ -1,4 +1,4 @@
-$.get("http://localhost:8080/Sobr/ZAPPServlet", function (data){
+$.get("/Sobr/ZAPPServlet", function (data){
     console.log(data)
 
     let d = data.split('\n')

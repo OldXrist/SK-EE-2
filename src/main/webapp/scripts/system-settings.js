@@ -4,7 +4,7 @@ $(document).ready(function () {
     $("#logout_btn").hide();
     $(".logout").hide();
 
-    $.post("http://localhost:8080/Sobr/GetSystemSettings", function (result) {
+    $.post("/Sobr/GetSystemSettings", function (result) {
         console.log(result);
         let issuer = document.getElementById("issuer");
         let senderEmail = document.getElementById("sender-email");

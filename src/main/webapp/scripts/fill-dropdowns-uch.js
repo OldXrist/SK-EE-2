@@ -29,7 +29,7 @@ $(document).ready(function () {
     let meetingNumber = url.slice(url.lastIndexOf('=') + 1, url.length)
     let inputData = {number: meetingNumber}
 
-    $.post("http://localhost:8080/Sobr/GetQuestionsServlet", inputData, function (result) {
+    $.post("/Sobr/GetQuestionsServlet", inputData, function (result) {
         console.log(result);
 
         //сначала заполняет options
@@ -89,7 +89,7 @@ $(document).ready(function () {
     });
 
 
-    $.post("http://localhost:8080/Sobr/GetMembersServlet", inputData, function (result) {
+    $.post("/Sobr/GetMembersServlet", inputData, function (result) {
         console.log(result);
 
         //сначала заполняет options

@@ -16,6 +16,7 @@ public class ApplicationUpdServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String status = req.getParameter("status");
         String id = req.getParameter("appId");
+        String canvote = req.getParameter("canVote");
         int appId = Integer.parseInt(id);
 
         try{
@@ -23,11 +24,12 @@ public class ApplicationUpdServlet extends HttpServlet {
             Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
 
-            String sql = "UPDATE uch SET status = ? WHERE id_uch = ?";
+            String sql = "UPDATE uch SET status = ?, canvote = ? WHERE id_uch = ?";
             PreparedStatement ps = c.prepareStatement(sql);
 
             ps.setString(1, status);
-            ps.setInt(2, appId);
+            ps.setString(2, canvote);
+            ps.setInt(3, appId);
 
             ps.executeUpdate();
 

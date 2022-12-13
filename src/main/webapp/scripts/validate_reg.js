@@ -148,7 +148,7 @@ function Validate_reg () {
                 reg_date: Date
             };
 
-            $.post("http://localhost:8080/Sobr/ULServlet", user, function () {
+            $.post("/Sobr/ULServlet", user, function () {
                 console.log(user);
             });
 
@@ -157,8 +157,8 @@ function Validate_reg () {
                 subject: 'Регистрация'
             }
 
-            $.post("http://localhost:8080/Sobr/EmailSender", inputData, function (data) {
-                if (data == "") {
+            $.post("/Sobr/EmailSender", inputData, function (data) {
+                if (data === "") {
                     alert("Вы успешно зарегестрированы!");
                 } else {
                     alert(data);
@@ -204,7 +204,7 @@ function Validate_reg () {
             };
             console.log(user)
 
-            $.post("http://localhost:8080/Sobr/IPServlet", user, function () {
+            $.post("/Sobr/IPServlet", user, function () {
                 console.log(user);
             });
 
@@ -213,7 +213,7 @@ function Validate_reg () {
                 subject: 'Регистрация'
             }
 
-            $.post("http://localhost:8080/Sobr/EmailSender", inputData, function (data) {
+            $.post("/Sobr/EmailSender", inputData, function (data) {
                 if (data === "") {
                     alert("Вы успешно зарегестрированы!");
                 } else {
@@ -263,7 +263,7 @@ function Validate_reg () {
                 reg_date: Date
             };
 
-            $.post("http://localhost:8080/Sobr/FLServlet", user, function () {
+            $.post("/Sobr/FLServlet", user, function () {
                 console.log(user);
             });
 
@@ -272,8 +272,8 @@ function Validate_reg () {
                 subject: 'Регистрация'
             }
 
-            $.post("http://localhost:8080/Sobr/EmailSender", inputData, function (data) {
-                if (data == "") {
+            $.post("/Sobr/EmailSender", inputData, function (data) {
+                if (data === "") {
                     alert("Вы успешно зарегестрированы!");
                 } else {
                     alert(data);
@@ -323,7 +323,7 @@ function Validate_reg () {
                 reg_date: Date
             };
 
-            $.post("http://localhost:8080/Sobr/AUServlet", user, function () {
+            $.post("/Sobr/AUServlet", user, function () {
                 console.log(user);
             });
 
@@ -332,8 +332,8 @@ function Validate_reg () {
                 subject: 'Регистрация'
             }
 
-            $.post("http://localhost:8080/Sobr/EmailSender", inputData, function (data) {
-                if (data == "") {
+            $.post("/Sobr/EmailSender", inputData, function (data) {
+                if (data === "") {
                     alert("Вы успешно зарегестрированы!");
                 } else {
                     alert(data);

@@ -98,33 +98,41 @@ $(document).ready(function () {
     })
 });
 
-
 function Accept() {
-    let sknum = window.location.href.split('?')[1].split('=')[1].split('&')[0]
-    let url = new URL('http://localhost:8080/Sobr/lichnui_kobinetu/lk_org/z_sobr/z_sobr_org_5.html')
+    if (document.getElementById('option').innerText !== 'Не выбрано') {
+        let sknum = window.location.href.split('?')[1].split('=')[1].split('&')[0]
+        let url = new URL('http://localhost:8080/Sobr/lichnui_kobinetu/lk_org/z_sobr/z_sobr_org_5.html') //TODO: Поменять на sk.tenderstandart
 
-    let status = {
-        appId: window.location.href.split('&')[1].split('=')[1],
-        status: "Допущена"
+        let status = {
+            appId: window.location.href.split('&')[1].split('=')[1],
+            status: "Допущена",
+            canVote: document.getElementById('option').innerText
+        }
+        console.log(document.getElementById('option').innerText)
+        $.get('/Sobr/ApplicationUpdServlet', status)
+
+        url.searchParams.append('sk', sknum)
+        window.location.href = url.href
+    } else {
+        document.getElementById('error').style.border = '2px solid red'
+        document.getElementById('error').style.borderRadius = '10px'
     }
-
-    $.get('http://localhost:8080/Sobr/ApplicationUpdServlet', status)
-
-    url.searchParams.append('sk', sknum)
-    window.location.href = url.href
 }
 
+function White(id){
+    document.getElementById(id).style.border = 'none'
+}
 
 function Decline() {
     let sknum = window.location.href.split('?')[1].split('=')[1].split('&')[0]
-    let url = new URL('http://localhost:8080/Sobr/lichnui_kobinetu/lk_org/z_sobr/z_sobr_org_5.html')
+    let url = new URL('/Sobr/lichnui_kobinetu/lk_org/z_sobr/z_sobr_org_5.html')
 
     let status = {
         appId: window.location.href.split('&')[1].split('=')[1],
         status: "Отклонена"
     }
 
-    $.get('http://localhost:8080/Sobr/ApplicationUpdServlet', status)
+    $.get('/Sobr/ApplicationUpdServlet', status)
 
     url.searchParams.append('sk', sknum)
     window.location.href = url.href
@@ -144,8 +152,8 @@ $(".custom-select-1").each(function () {
     var classes = $(this).attr("class"),
         id = $(this).attr("id"),
         name = $(this).attr("name");
-    var template = '<div class="' + classes + '">';
-    template += '<span class="custom-select-trigger-1">' + $(this).attr("placeholder") + '</span>';
+    var template = '<div class="' + classes + '" id="error" onclick="White(this.id)">';
+    template += '<span class="custom-select-trigger-1" id="option">' + $(this).attr("placeholder") + '</span>';
     template += '<div class="custom-options-1">';
     $(this).find("option").each(function () {
         template += '<span class="custom-option-1 ' + $(this).attr("class") + '" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';

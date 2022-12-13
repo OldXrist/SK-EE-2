@@ -4,7 +4,7 @@ $(document).ready(function () {
     $("#logout_btn").hide();
     $(".logout").hide();
 
-    $.post("http://localhost:8080/Sobr/GetAdminCredentials", function (result) {
+    $.post("/Sobr/GetAdminCredentials", function (result) {
         console.log(result);
         let lastName = document.getElementById("last-name");
         let firstName = document.getElementById("first-name");
@@ -111,7 +111,7 @@ function ValidateAdminCredentials() {
             password: password.value
         }
 
-        $.post("http://localhost:8080/Sobr/ChangeAdminCredentialsServlet", adminData, function (data) {
+        $.post("/Sobr/ChangeAdminCredentialsServlet", adminData, function (data) {
             if (data == "") {
                 alert("Данные успешно сохранены!");
                 lastName.style.borderColor = '#E6F5F7';

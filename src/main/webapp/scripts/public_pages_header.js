@@ -1,4 +1,4 @@
-$.get("http://localhost:8080/Sobr/MAINServlet", function (data) {
+$.get("/Sobr/MAINServlet", function (data) {
     console.log(data)
     console.log(typeof data)
 

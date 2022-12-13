@@ -1,4 +1,4 @@
-$.get("http://localhost:8080/Sobr/ORGCARDServlet", function (data) {
+$.get("/Sobr/ORGCARDServlet", function (data) {
     console.log(data)
 
     let d = data.split("\n")
