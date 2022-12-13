@@ -1,4 +1,4 @@
-$.get("http://localhost:8080/Sobr/CHECKTYPEServlet", send, function (data){
+$.get("/Sobr/CHECKTYPEServlet", send, function (data){
     console.log(data)
 
     if (!data.includes('y')){

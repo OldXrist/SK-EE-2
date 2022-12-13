@@ -1,3 +1,7 @@
+let send = {
+    sk: snum[1]
+}
+
 $(document).ready(function () {
     $(".tbl").hide();
 
@@ -9,7 +13,6 @@ $(document).ready(function () {
         $(".base_bg").animate({
             marginTop: "1287px"
         });
-    }).click(function () {
         $(".base").animate({
             marginTop: "1287px"
         });
@@ -21,6 +24,9 @@ $(document).ready(function () {
         $(".show").fadeIn()
     }).click(function () {
         $(".base_bg").animate({
+            marginTop: "960px"
+        });
+        $(".base").animate({
             marginTop: "960px"
         });
     });

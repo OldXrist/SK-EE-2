@@ -19,7 +19,7 @@
         <li class="nav_item"><a href="../../../help/contacts.html">Контакты</a></li>
         <li class="nav_item nouser"><a href="../../../login.html"> <button class="nav_btn">Войти</button></a></li>
         <li class="nav_item nouser"><a href="../../../signin.html">Зарегистрироваться</a></li>
-        <li class="nav_item" ><a href="FILTERServlet"><p class="nav_login" id="lk"></p></a></li>
+        <li class="nav_item" ><a href="/Sobr/FILTERServlet"><p class="nav_login" id="lk"></p></a></li>
         <li class="nav_item"><a href="../../../signin.html"><span id="clock" style="color:#ffffff;"></span></a></li>
         <li class="nav_item logout"><a href="/Sobr/LOGOUTServlet"><img id="logout_btn" src="../../../img/logout%201%20(Traced).png" /></a></li>
     </ul>
@@ -49,9 +49,13 @@
                 <li class="stats_item"><a id="sobrP5" href="z_sobr_uch_7.html">Бюллетени</a></li>
             </ul>
         </div>
-
         <div class="ep" id="ep">
             <p>Перечень вопросов</p>
+        </div>
+        <div class="signature">
+            <img class="cross" src="../../../img/cross.svg">
+            <h2>Выбор сертификата</h2>
+            <div class="cert_container" id="certs"></div>
         </div>
 
         <div class="base_bg"></div>
@@ -83,6 +87,8 @@
 <script src="../../../scripts/z_uch_questions.js"></script>
 <script src="../../../scripts/check_for_org.js"></script>
 <script src="../../../scripts/AnswersCheck.js"></script>
+<script src="../../../crypto-pro-js-master/dist/crypto-pro-js.min.js"></script>
+<script src="../../../scripts/signature_povestka.js"></script>
 <script src="../../../jquery/jquery.maskedinput.min.js"></script>
 <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>

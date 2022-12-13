@@ -1,4 +1,4 @@
-$.get("http://localhost:8080/Sobr/ApplicationBtnServlet", send, function (data){
+$.get("/Sobr/ApplicationBtnServlet", send, function (data){
     console.log(data)
 
     if (data.includes('организатор')){

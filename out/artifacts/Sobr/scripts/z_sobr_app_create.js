@@ -12,7 +12,7 @@ function Create(){
         beh: behalf
     }
 
-    $.post("http://localhost:8080/Sobr/NEWAPPServlet", application, function (){
+    $.post("/Sobr/NEWAPPServlet", application, function (){
         console.log(application)
     })
 }

@@ -1,4 +1,4 @@
-$.get('http://localhost:8080/Sobr/CheckApplicationServlet', send, function (data){
+$.get('/Sobr/CheckApplicationServlet', send, function (data){
     console.log(data)
 
     if (data !== ''){

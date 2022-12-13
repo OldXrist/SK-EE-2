@@ -5,7 +5,7 @@ $(document).ready(function () {
     $(".logout").hide();
     $(".sort_drop").hide();
 
-    $.post("http://localhost:8080/Sobr/GetMeetingsList", function (result) {
+    $.post("/Sobr/GetMeetingsList", function (result) {
         if (result) {
             console.log(result);
             for (var i = 0; i < result.length; i++){

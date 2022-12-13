@@ -1,3 +1,7 @@
+let send = {
+    sk: snum[1]
+}
+
 $(document).ready(function () {
     $(".tbl").hide();
 
@@ -9,7 +13,6 @@ $(document).ready(function () {
         $(".base_bg").animate({
             marginTop: "1287px"
         });
-    }).click(function () {
         $(".base").animate({
             marginTop: "1287px"
         });
@@ -23,13 +26,16 @@ $(document).ready(function () {
         $(".base_bg").animate({
             marginTop: "960px"
         });
+        $(".base").animate({
+            marginTop: "960px"
+        });
     });
 
     let url = location.href;
     let meetingNumber = url.slice(url.lastIndexOf('=') + 1, url.length)
     let inputData = {number: meetingNumber}
 
-    $.post("http://localhost:8080/Sobr/GetQuestionsServlet", inputData, function (result) {
+    $.post("/Sobr/GetQuestionsServlet", inputData, function (result) {
         console.log(result);
 
         //сначала заполняет options
@@ -89,7 +95,7 @@ $(document).ready(function () {
     });
 
 
-    $.post("http://localhost:8080/Sobr/GetMembersServlet", inputData, function (result) {
+    $.post("/Sobr/GetMembersServlet", inputData, function (result) {
         console.log(result);
 
         //сначала заполняет options

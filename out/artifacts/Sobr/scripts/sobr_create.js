@@ -267,7 +267,7 @@ function CreateDraft(){
 
         console.log(sobr)
 
-        $.post("http://localhost:8080/Sobr/ZServlet", sobr, function (){
+        $.post("/Sobr/ZServlet", sobr, function (){
             console.log(sobr)
         })
     } else if (dolzh === "Физическое лицо"){
@@ -299,7 +299,7 @@ function CreateDraft(){
 
         console.log(sobr)
 
-        $.post("http://localhost:8080/Sobr/ZServlet", sobr, function (){
+        $.post("/Sobr/ZServlet", sobr, function (){
             console.log(sobr)
         })
     } else if (dolzh === "Индивидуальный предприниматель"){
@@ -332,7 +332,7 @@ function CreateDraft(){
 
         console.log(sobr)
 
-        $.post("http://localhost:8080/Sobr/ZServlet", sobr, function (){
+        $.post("/Sobr/ZServlet", sobr, function (){
             console.log(sobr)
         })
     }
@@ -385,7 +385,7 @@ function Create1(){
 
         console.log(sobr)
 
-        $.post("http://localhost:8080/Sobr/OServlet", sobr, function (){
+        $.post("/Sobr/OServlet", sobr, function (){
             console.log(sobr)
         })
     } else if (dolzh === "Физическое лицо"){
@@ -417,7 +417,7 @@ function Create1(){
 
         console.log(sobr)
 
-        $.post("http://localhost:8080/Sobr/OServlet", sobr, function (){
+        $.post("/Sobr/OServlet", sobr, function (){
             console.log(sobr)
         })
     } else if (dolzh === "Индивидуальный предприниматель"){
@@ -450,7 +450,7 @@ function Create1(){
 
         console.log(sobr)
 
-        $.post("http://localhost:8080/Sobr/OServlet", sobr, function (){
+        $.post("/Sobr/OServlet", sobr, function (){
             console.log(sobr)
         })
     }
@@ -503,7 +503,7 @@ function CreateDraft1(){
 
         console.log(sobr)
 
-        $.post("http://localhost:8080/Sobr/OServlet", sobr, function (){
+        $.post("/Sobr/OServlet", sobr, function (){
             console.log(sobr)
         })
     } else if (dolzh === "Физическое лицо"){
@@ -535,7 +535,7 @@ function CreateDraft1(){
 
         console.log(sobr)
 
-        $.post("http://localhost:8080/Sobr/OServlet", sobr, function (){
+        $.post("/Sobr/OServlet", sobr, function (){
             console.log(sobr)
         })
     } else if (dolzh === "Индивидуальный предприниматель"){
@@ -568,7 +568,7 @@ function CreateDraft1(){
 
         console.log(sobr)
 
-        $.post("http://localhost:8080/Sobr/OServlet", sobr, function (){
+        $.post("/Sobr/OServlet", sobr, function (){
             console.log(sobr)
         })
     }

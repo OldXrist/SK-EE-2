@@ -28,7 +28,7 @@ function confirm(){
             sk: snum[1]
         }
 
-        $.get('http://localhost:8080/Sobr/CancelServlet', obj, function (){
+        $.get('/Sobr/CancelServlet', obj, function (){
             console.log('success!')
             window.location.reload()
         })
