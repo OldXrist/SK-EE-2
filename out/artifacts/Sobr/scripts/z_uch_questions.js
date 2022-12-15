@@ -36,16 +36,7 @@ function Vote(id, obj){
     console.log(obj)
 }
 
-function FinalVote(obj, sknum, n){
-    let k = 0
-    for (let i = 0; i < n - 1; i++){
-        if (document.getElementById(i.toString()).disabled !== true){
-            k++
-        }
-    }
-    if (k !== 0){
-        console.log('Error')
-    } else {
+function FinalVote(obj, sknum){
         obj.sk = sknum
 
         $.get('/Sobr/SendAnswersServlet', obj, function (){
@@ -53,7 +44,6 @@ function FinalVote(obj, sknum, n){
         })
 
         console.log(obj)
-    }
 }
 
 $.get('/Sobr/QServlet', send, function (data){
@@ -87,12 +77,24 @@ $.get('/Sobr/QServlet', send, function (data){
             marginTop: '+=180px'
         }, 0);
     }
-    document.getElementById('ep').innerHTML += "<button id=\"finalVote\" type=\"button\" onclick='FinalVote(bull, snum[1], 4)'>Подписать и отправить</button>"
+
+    document.getElementById('ep').innerHTML += "<button id=\"finalVote\" type=\"button\" onclick=\"let k = 0\n" +
+        "    let i = 0\n" +
+        "    while(document.getElementById(i.toString())){\n" +
+        "        if (document.getElementById(i.toString()).disabled !== true){\n" +
+        "            k++\n" +
+        "        }\n" +
+        "        i++\n" +
+        "    }\n" +
+        "    if (k !== 0){\n" +
+        "    } else {\n" +
+        "    Signature()" +
+        "    }\">Подписать и отправить</button>"
 
     $.get('/Sobr/AnswersCheckServlet', send, function (data) {
         console.log(data)
 
-        if (data !== null) {
+        if (!data.includes('null')) {
             for (let i = 0; i < 10; i++) {
                 if (document.getElementById("tbl_" + i) !== null) {
                     document.getElementById("tbl_" + i).remove()

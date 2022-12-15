@@ -6,7 +6,7 @@ $(document).ready(function () {
     $(".sort_drop").hide();
     $(".decline").hide();
 
-    $.post("http://localhost:8080/Sobr/GetInvoiceListMembers", function (result) {
+    $.post("/Sobr/GetInvoiceListMembers", function (result) {
         if (result) {
             console.log(result);
             for (var i = 0; i < result.length; i++) {
@@ -165,14 +165,14 @@ function AcceptInvoice(number, email) {
         meetingNumber: number,
         meetingStatus: 'допущена',
     }
-    $.post("http://localhost:8080/Sobr/ChangeInvoiceStatus", info);
+    $.post("/Sobr/ChangeInvoiceStatus", info);
 
     //отправить письмо
     let inputData = {
         email: email,
         subject: 'Заявка допущена'
     }
-    $.post("http://localhost:8080/Sobr/EmailSender", inputData, function (data) {
+    $.post("/Sobr/EmailSender", inputData, function (data) {
         if (data == "") {
             alert("Ваша заявка принята!");
         } else {
@@ -188,14 +188,14 @@ function DeclineInvoice(number, email) {
         meetingNumber: number,
         meetingStatus: 'отклонена',
     }
-    $.post("http://localhost:8080/Sobr/ChangeInvoiceStatus", info);
+    $.post("/Sobr/ChangeInvoiceStatus", info);
 
     //отправить письмо
     let inputData = {
         email: email,
         subject: 'Заявка отклонена'
     }
-    $.post("http://localhost:8080/Sobr/EmailSender", inputData, function (data) {
+    $.post("/Sobr/EmailSender", inputData, function (data) {
         if (data == "") {
             alert("Ваша заявка отклонена!");
         } else {

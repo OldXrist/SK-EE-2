@@ -1,4 +1,4 @@
-$.get("http://localhost:8080/Sobr/LKIPServlet", function (data) {
+$.get("/Sobr/LKIPServlet", function (data) {
     console.log(data)
 
     let d = data.split("\n")

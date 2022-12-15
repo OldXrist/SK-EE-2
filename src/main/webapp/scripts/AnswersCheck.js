@@ -1,6 +1,3 @@
-
-
-
 $.get('/Sobr/AnswersCheckServlet', send, function (data) {
     console.log(data)
 

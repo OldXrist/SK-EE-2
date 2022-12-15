@@ -5,7 +5,7 @@ $(document).ready(function () {
     let number = text.substring(text.length - 7, text.length) === 'Заочное' ? text.slice(0, text.length - 8) : text.slice(0, text.length - 6);
     let inputData = { num: number }
 
-    $.post("http://localhost:8080/Sobr/GetMeetingCard", inputData, function (result) {
+    $.post("/Sobr/GetMeetingCard", inputData, function (result) {
         if (result) {
             console.log(result);
 
@@ -185,7 +185,7 @@ setInterval(function () {
 }, 1000);
 
 //отобразить имя пользователя
-$.get("http://localhost:8080/Sobr/MAINServlet", function (data) {
+$.get("/Sobr/MAINServlet", function (data) {
     if (data !== "") {
         document.getElementById("lk").innerHTML = data
     }
@@ -259,8 +259,8 @@ function SaveChangesToMeetingInfo() {
 
         console.log(inputDataForSave);
 
-        $.post("http://localhost:8080/Sobr/ChangeMeetingCard", inputDataForSave, function (result) {
-            if (result == '') {
+        $.post("/Sobr/ChangeMeetingCard", inputDataForSave, function (result) {
+            if (result === '') {
                 alert("Данные изменены успешно!");
                 console.log('success write');
             }

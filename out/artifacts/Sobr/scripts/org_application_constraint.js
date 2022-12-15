@@ -1,4 +1,4 @@
-$.get("http://localhost:8080/Sobr/CheckOrgServlet", function (data){
+$.get("/Sobr/CheckOrgServlet", function (data){
     console.log(data)
 
     if (!data.includes('организатор')){

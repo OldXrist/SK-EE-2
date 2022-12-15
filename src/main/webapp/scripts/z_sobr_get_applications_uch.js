@@ -170,84 +170,45 @@ function Cards(dt, i, m) {
 
     let date = dateParse(arr[2]) + " " + timeParse(arr[2])
 
-    if (arr[1].includes('На рассмотрении')) {
-        if (arr[0].includes("ЮЛ")) {
-            document.getElementById("table").innerHTML +=
-                "           <div class=\"table_item\" id=" + m + ">\n" +
-                "                <h3 class=\"table_h\">№ " + arr[6] + "</h3>\n" +
-                "                <a id=" + "app_" + arr[6] + " class=\"txtr\" onclick='applicationRedirect(this.id)'>Редактировать</a>\n" +
-                "                <ul class=\"table_data\">\n" +
-                "                    <li class=\"thin_text\">Кредитор</li>\n" +
-                "                    <li>" + arr[3] + "</li>\n" +
-                "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
-                "                    <li class=\"thin_text\">Дата и время</li>\n" +
-                "                    <li>" + date + "</li>\n" +
-                "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
-                "                    <li class=\"thin_text\">Статус</li>\n" +
-                "                    <li>" + arr[1] + "</li>\n" +
-                "                </ul>\n" +
-                "            </div>"
+    if (arr[0].includes("ЮЛ")) {
+        document.getElementById("table").innerHTML +=
+            "           <div class=\"table_item\" id=" + m + ">\n" +
+            "                <h3 class=\"table_h\">№ " + arr[6] + "</h3>\n" +
+            "                <ul class=\"table_data\">\n" +
+            "                    <li class=\"thin_text\">Кредитор</li>\n" +
+            "                    <li>" + arr[3] + "</li>\n" +
+            "                </ul>\n" +
+            "                <ul class=\"table_data\">\n" +
+            "                    <li class=\"thin_text\">Дата и время</li>\n" +
+            "                    <li>" + date + "</li>\n" +
+            "                </ul>\n" +
+            "                <ul class=\"table_data\">\n" +
+            "                    <li class=\"thin_text\">Статус</li>\n" +
+            "                    <li>" + arr[1] + "</li>\n" +
+            "                </ul>\n" +
+            "            </div>"
 
-        } else {
-            document.getElementById("table").innerHTML +=
-                "           <div class=\"table_item\" id=" + m + ">\n" +
-                "                <h3 class=\"table_h\">№ " + arr[6] + "</h3>\n" +
-                "                <a id=" + "app_" + arr[6] + " class=\"txtr\" onclick='applicationRedirect(this.id)'>Редактировать</a>\n" +
-                "                <ul class=\"table_data\">\n" +
-                "                    <li class=\"thin_text\">Кредитор</li>\n" +
-                "                    <li>" + arr[3] + arr[4] + arr[5] + "</li>\n" +
-                "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
-                "                    <li class=\"thin_text\">Дата и время</li>\n" +
-                "                    <li>" + date + "</li>\n" +
-                "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
-                "                    <li class=\"thin_text\">Статус</li>\n" +
-                "                    <li>" + arr[1] + "</li>\n" +
-                "                </ul>\n" +
-                "            </div>"
-        }
     } else {
-        if (arr[0].includes("ЮЛ")) {
-            document.getElementById("table").innerHTML +=
-                "           <div class=\"table_item\" id=" + m + ">\n" +
-                "                <h3 class=\"table_h\">№ " + arr[6] + "</h3>\n" +
-                "                <ul class=\"table_data\">\n" +
-                "                    <li class=\"thin_text\">Кредитор</li>\n" +
-                "                    <li>" + arr[3] + "</li>\n" +
-                "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
-                "                    <li class=\"thin_text\">Дата и время</li>\n" +
-                "                    <li>" + date + "</li>\n" +
-                "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
-                "                    <li class=\"thin_text\">Статус</li>\n" +
-                "                    <li>" + arr[1] + "</li>\n" +
-                "                </ul>\n" +
-                "            </div>"
-
-        } else {
-            document.getElementById("table").innerHTML +=
-                "           <div class=\"table_item\" id=" + m + ">\n" +
-                "                <h3 class=\"table_h\">№ " + arr[6] + "</h3>\n" +
-                "                <ul class=\"table_data\">\n" +
-                "                    <li class=\"thin_text\">Кредитор</li>\n" +
-                "                    <li>" + arr[3] + arr[4] + arr[5] + "</li>\n" +
-                "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
-                "                    <li class=\"thin_text\">Дата и время</li>\n" +
-                "                    <li>" + date + "</li>\n" +
-                "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
-                "                    <li class=\"thin_text\">Статус</li>\n" +
-                "                    <li>" + arr[1] + "</li>\n" +
-                "                </ul>\n" +
-                "            </div>"
-        }
+        document.getElementById("table").innerHTML +=
+            "           <div class=\"table_item\" id=" + m + ">\n" +
+            "                <h3 class=\"table_h\">№ " + arr[6] + "</h3>\n" +
+            "                <ul class=\"table_data\">\n" +
+            "                    <li class=\"thin_text\">Кредитор</li>\n" +
+            "                    <li>" + arr[3] + arr[4] + arr[5] + "</li>\n" +
+            "                </ul>\n" +
+            "                <ul class=\"table_data\">\n" +
+            "                    <li class=\"thin_text\">Дата и время</li>\n" +
+            "                    <li>" + date + "</li>\n" +
+            "                </ul>\n" +
+            "                <ul class=\"table_data\">\n" +
+            "                    <li class=\"thin_text\">Статус</li>\n" +
+            "                    <li>" + arr[1] + "</li>\n" +
+            "                </ul>\n" +
+            "            </div>"
     }
 }
+
+
 
 let loc1 = window.location.href
 let snum1 = loc1.split('=')

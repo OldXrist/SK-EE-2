@@ -1,4 +1,4 @@
-$.get("http://localhost:8080/Sobr/DEBTServlet", send, function (data) {
+$.get("/Sobr/DEBTServlet", send, function (data) {
     console.log(data)
 
     let d = data.split("\n")

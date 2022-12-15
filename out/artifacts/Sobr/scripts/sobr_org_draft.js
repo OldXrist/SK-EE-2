@@ -99,7 +99,7 @@ function Cards(dt, i, m){
 
 
 
-$.get("http://localhost:8080/Sobr/DRAFTSevlet", function (data){
+$.get("/Sobr/DRAFTSevlet", function (data){
     console.log(data)
     let d = data.split("\n")
     let m = 1;
