@@ -17,7 +17,7 @@ import java.util.HashSet;
 public class GetMembersServlet extends HttpServlet {
     public String FlSql(String meetingNumber)
     {
-        String flSql =  "SELECT DISTINCT fl.famil, fl.name, fl.otch\n" +
+        String flSql =  "SELECT DISTINCT uch.type_uch, fl.famil, fl.name, fl.otch, uch.answer1, uch.answer2, uch.answer3\n" +
                         "FROM public.uch\n" +
                         "INNER JOIN public.fl ON uch.email = fl.email and fl.type_users = 'участник' and uch.id = '" + meetingNumber + "';";
         return flSql;
@@ -25,7 +25,7 @@ public class GetMembersServlet extends HttpServlet {
 
     public String IpSql(String meetingNumber)
     {
-        String ipSql =  "SELECT DISTINCT ip.famil, ip.name, ip.otch\n" +
+        String ipSql =  "SELECT DISTINCT uch.type_uch, ip.famil, ip.name, ip.otch, uch.answer1, uch.answer2, uch.answer3\n" +
                         "FROM public.uch\n" +
                         "INNER JOIN public.ip ON uch.email = ip.email and ip.type_users = 'участник' and uch.id = '" + meetingNumber + "';";
         return ipSql;
@@ -33,7 +33,7 @@ public class GetMembersServlet extends HttpServlet {
 
     public String QlSql(String meetingNumber)
     {
-        String qlSql =  "SELECT DISTINCT ql.poln_naim\n" +
+        String qlSql =  "SELECT DISTINCT uch.type_uch, ql.poln_naim, uch.answer1, uch.answer2, uch.answer3\n" +
                         "FROM public.uch\n" +
                         "INNER JOIN public.ql ON uch.email = ql.email and ql.type_users = 'участник' and uch.id = '" + meetingNumber + "';";
         return qlSql;
