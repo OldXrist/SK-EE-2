@@ -143,10 +143,20 @@ $(".knopka").click(function (){
         height: "+=65px"
     })
 })
+i = 1
 
+let email = {}
 $(".knopka3").click(function (){
+
     if (document.getElementById("nim_cod").value !== ""){
         let mail = document.getElementById("nim_cod").value
+
+        email['mail'+ i]=mail
+
+        i++
+
+        console.log(email)
+
         let newrow = "<tr><td>"+ mail +"</td></tr>"
         $(".table_fio tbody").append(newrow)
         document.getElementById("nim_cod").value = null
@@ -164,6 +174,9 @@ $(".knopka3").click(function (){
         });
         $(".table_org").animate({
             height: "+=50px"
+        });
+        $.post("/Sobr/", email, function (){
+            console.log(email)
         })
     }
 })

@@ -39,7 +39,6 @@
           <element id="library" level="project" name="postgresql-42.5.0" />
         </element>
       </element>
-      <element id="javaee-facet-resources" facet="SK-EE-2/web/Web" />
       <element id="artifact" artifact-name="Sobr:war" />
     </root>
   </artifact>
