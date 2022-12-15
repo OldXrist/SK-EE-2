@@ -22,10 +22,14 @@ public class TimeUpdateServlet extends HttpServlet {
             Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/SK", "postgres", "111");
 
-            String sql = "SELECT data_u_vrem_sobr, nachal_podach_zaiv, okonch_podach_zaiv, nachal_priem_bul, okonch_priem_bul, data_podpic_protakol FROM sobr_org WHERE id = ?";
+            String sql = "SELECT data_u_vrem_sobr, nachal_podach_zaiv, okonch_podach_zaiv, nachal_priem_bul, okonch_priem_bul, data_podpic_protakol FROM sobr_org WHERE id = ? AND status NOT IN (?, ?, ?)";
+
             PreparedStatement ps = c.prepareStatement(sql);
 
             ps.setLong(1, sk);
+            ps.setString(2, "Отменено организатором");
+            ps.setString(3, "Завершено");
+            ps.setString(4, "Не состоялось");
 
             ResultSet rs = ps.executeQuery();
 
@@ -35,7 +39,7 @@ public class TimeUpdateServlet extends HttpServlet {
             String bulStart = null;
             String bulEnd = null;
             String protocolDate = null;
-            
+
             while (rs.next()) {
                 mainTime = rs.getString(1);
                 appStart = rs.getString(2);
@@ -47,6 +51,8 @@ public class TimeUpdateServlet extends HttpServlet {
 
             LocalDateTime now = LocalDateTime.now();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+            String status = null;
+
 
             assert mainTime != null;
             LocalDateTime main = LocalDateTime.parse(mainTime, formatter);
@@ -66,12 +72,35 @@ public class TimeUpdateServlet extends HttpServlet {
             assert protocolDate != null;
             LocalDateTime protocol = LocalDateTime.parse(protocolDate, formatter);
 
-            out.println(now);
-            out.println(main);
-            out.println(now.isAfter(main));
+            if (now.isBefore(applicationsStart)) {
+                status = "На рассмотрении";
+            } else if (now.isAfter(applicationsStart) && now.isBefore(applicationsEnd)) {
+                status = "Приём заявок";
+            } else if (now.isAfter(applicationsEnd) && now.isBefore(bulletinsStart)) {
+                status = "Обработка заявок";
+            } else if (now.isAfter(bulletinsStart) && now.isBefore(bulletinsEnd)) {
+                status = "В стадии проведения";
+            } else if (now.isAfter(bulletinsEnd) && now.isBefore(protocol)) {
+                status = "Подведение итогов";
+                // TODO Не состоялось если нет проголосовавших
+            } else if (now.isAfter(protocol)){
+                status = "Завершено";
+            }
+
+            out.println("Status = "+ status);
 
             rs.close();
             ps.close();
+
+            String sqlUpd = "UPDATE sobr_org SET status = ? WHERE id = ?";
+            PreparedStatement psUpd = c.prepareStatement(sqlUpd);
+
+            psUpd.setString(1, status);
+            psUpd.setLong(2, sk);
+
+            psUpd.executeUpdate();
+
+            psUpd.close();
 
         } catch (Exception e) {
             e.printStackTrace();
