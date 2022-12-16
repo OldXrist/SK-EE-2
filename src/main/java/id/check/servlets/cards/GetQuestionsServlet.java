@@ -22,7 +22,7 @@ public class GetQuestionsServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String meetingNumber = request.getParameter("number");
+        String meetingNumber = request.getParameter("meetingNumber");
 
         try {
             Class.forName("org.postgresql.Driver");
