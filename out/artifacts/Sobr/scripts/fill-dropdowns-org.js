@@ -1,3 +1,7 @@
+let send = {
+    sk: snum[1]
+}
+
 var membersResult;
 
 $(document).ready(function () {

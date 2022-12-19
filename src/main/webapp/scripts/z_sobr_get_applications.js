@@ -175,7 +175,7 @@ function Cards(dt, i, m) {
             document.getElementById("table").innerHTML +=
                 "           <div class=\"table_item\" id=" + m + ">\n" +
                 "                <h3 class=\"table_h\">№ " + arr[6] + "</h3>\n" +
-                "                <a id=" + "app_" + arr[6] + " class=\"txtr\" onclick='applicationRedirect(this.id)'>Редактировать</a>\n" +
+                "                <a id=" + "app_" + arr[6] + " class=\"txtr edit\" onclick='applicationRedirect(this.id)'>Редактировать</a>\n" +
                 "                <ul class=\"table_data\">\n" +
                 "                    <li class=\"thin_text\">Кредитор</li>\n" +
                 "                    <li>" + arr[3] + "</li>\n" +
@@ -194,7 +194,7 @@ function Cards(dt, i, m) {
             document.getElementById("table").innerHTML +=
                 "           <div class=\"table_item\" id=" + m + ">\n" +
                 "                <h3 class=\"table_h\">№ " + arr[6] + "</h3>\n" +
-                "                <a id=" + "app_" + arr[6] + " class=\"txtr\" onclick='applicationRedirect(this.id)'>Редактировать</a>\n" +
+                "                <a id=" + "app_" + arr[6] + " class=\"txtr edit\" onclick='applicationRedirect(this.id)'>Редактировать</a>\n" +
                 "                <ul class=\"table_data\">\n" +
                 "                    <li class=\"thin_text\">Кредитор</li>\n" +
                 "                    <li>" + arr[3] + arr[4] + arr[5] + "</li>\n" +

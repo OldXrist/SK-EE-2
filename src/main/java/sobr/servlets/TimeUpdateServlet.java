@@ -33,74 +33,63 @@ public class TimeUpdateServlet extends HttpServlet {
 
             ResultSet rs = ps.executeQuery();
 
-            String mainTime = null;
-            String appStart = null;
-            String appEnd = null;
-            String bulStart = null;
-            String bulEnd = null;
-            String protocolDate = null;
-
             while (rs.next()) {
-                mainTime = rs.getString(1);
-                appStart = rs.getString(2);
-                appEnd = rs.getString(3);
-                bulStart = rs.getString(4);
-                bulEnd = rs.getString(5);
-                protocolDate = rs.getString(6);
+                String mainTime = rs.getString(1);
+                String appStart = rs.getString(2);
+                String appEnd = rs.getString(3);
+                String bulStart = rs.getString(4);
+                String bulEnd = rs.getString(5);
+                String protocolDate = rs.getString(6);
+
+                LocalDateTime now = LocalDateTime.now();
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+                String status = null;
+
+
+                assert mainTime != null;
+                LocalDateTime main = LocalDateTime.parse(mainTime, formatter);
+
+                LocalDateTime applicationsStart = LocalDateTime.parse(appStart, formatter);
+
+                LocalDateTime applicationsEnd = LocalDateTime.parse(appEnd, formatter);
+
+                LocalDateTime bulletinsStart = LocalDateTime.parse(bulStart, formatter);
+
+                LocalDateTime bulletinsEnd = LocalDateTime.parse(bulEnd, formatter);
+
+                LocalDateTime protocol = LocalDateTime.parse(protocolDate, formatter);
+
+                if (now.isBefore(applicationsStart)) {
+                    status = "На рассмотрении";
+                } else if (now.isAfter(applicationsStart) && now.isBefore(applicationsEnd)) {
+                    status = "Приём заявок";
+                } else if (now.isAfter(applicationsEnd) && now.isBefore(bulletinsStart)) {
+                    status = "Обработка заявок";
+                } else if (now.isAfter(bulletinsStart) && now.isBefore(bulletinsEnd)) {
+                    status = "В стадии проведения";
+                } else if (now.isAfter(bulletinsEnd) && now.isBefore(protocol)) {
+                    status = "Подведение итогов";
+                    // TODO Не состоялось если нет проголосовавших
+                } else if (now.isAfter(protocol)){
+                    status = "Завершено";
+                }
+
+                out.println("Status = "+ status);
+
+                String sqlUpd = "UPDATE sobr_org SET status = ? WHERE id = ?";
+                PreparedStatement psUpd = c.prepareStatement(sqlUpd);
+
+                psUpd.setString(1, status);
+                psUpd.setLong(2, sk);
+
+                psUpd.executeUpdate();
+
+                psUpd.close();
             }
-
-            LocalDateTime now = LocalDateTime.now();
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-            String status = null;
-
-
-            assert mainTime != null;
-            LocalDateTime main = LocalDateTime.parse(mainTime, formatter);
-
-            assert appStart != null;
-            LocalDateTime applicationsStart = LocalDateTime.parse(appStart, formatter);
-
-            assert appEnd != null;
-            LocalDateTime applicationsEnd = LocalDateTime.parse(appEnd, formatter);
-
-            assert bulStart != null;
-            LocalDateTime bulletinsStart = LocalDateTime.parse(bulStart, formatter);
-
-            assert bulEnd != null;
-            LocalDateTime bulletinsEnd = LocalDateTime.parse(bulEnd, formatter);
-
-            assert protocolDate != null;
-            LocalDateTime protocol = LocalDateTime.parse(protocolDate, formatter);
-
-            if (now.isBefore(applicationsStart)) {
-                status = "На рассмотрении";
-            } else if (now.isAfter(applicationsStart) && now.isBefore(applicationsEnd)) {
-                status = "Приём заявок";
-            } else if (now.isAfter(applicationsEnd) && now.isBefore(bulletinsStart)) {
-                status = "Обработка заявок";
-            } else if (now.isAfter(bulletinsStart) && now.isBefore(bulletinsEnd)) {
-                status = "В стадии проведения";
-            } else if (now.isAfter(bulletinsEnd) && now.isBefore(protocol)) {
-                status = "Подведение итогов";
-                // TODO Не состоялось если нет проголосовавших
-            } else if (now.isAfter(protocol)){
-                status = "Завершено";
-            }
-
-            out.println("Status = "+ status);
 
             rs.close();
             ps.close();
-
-            String sqlUpd = "UPDATE sobr_org SET status = ? WHERE id = ?";
-            PreparedStatement psUpd = c.prepareStatement(sqlUpd);
-
-            psUpd.setString(1, status);
-            psUpd.setLong(2, sk);
-
-            psUpd.executeUpdate();
-
-            psUpd.close();
+            out.close();
 
         } catch (Exception e) {
             e.printStackTrace();
