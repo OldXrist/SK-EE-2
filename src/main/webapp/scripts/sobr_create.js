@@ -1,8 +1,8 @@
-function dateFormat(date, time){
+function dateFormat(date, time) {
     let n = date.split('.')
     let newd = ""
 
-    for (let i = 2; i > -1; i--){
+    for (let i = 2; i > -1; i--) {
         newd += n[i]
         if (i !== 0) {
             newd += '-'
@@ -12,7 +12,7 @@ function dateFormat(date, time){
     return newd + "T" + time
 }
 
-function qDelete(id){
+function qDelete(id) {
     document.getElementById(id).parentElement.parentElement.remove()
 
     $(".nim_cod").animate({
@@ -41,8 +41,8 @@ function qDelete(id){
     })
 }
 
-function qAdd (){
-    if (document.getElementById("enter_q").value !== ""){
+function qAdd() {
+    if (document.getElementById("enter_q").value !== "") {
         let quest = document.getElementById("enter_q").value
         qObj['key' + n] = quest
         n++
@@ -79,17 +79,17 @@ function qAdd (){
     return qObj
 }
 
-function zmail (){
+function zmail() {
 
-    if (document.getElementById("nim_cod").value !== ""){
+    if (document.getElementById("nim_cod").value !== "") {
         let mail = document.getElementById("nim_cod").value
         console.log(i)
-        email['zmail'+ i]=mail
+        email['zmail' + i] = mail
         i++
         email.num = i
         console.log(email)
 
-        let newrow = "<tr><td>"+ mail +"</td></tr>"
+        let newrow = `<tr><td id="zmail${i}">${mail}</td></tr>`
         $(".table_fio tbody").append(newrow)
         document.getElementById("nim_cod").value = null
         $(".knopka4").animate({
@@ -111,13 +111,13 @@ function zmail (){
     return email
 }
 
-/*t = 0;
+function Mailing() {
+    var table = document.getElementById("emails-table");
+    var rowsCount = table.rows.length;
 
-while (t <= i) {
-    t++;
-    function uwu() {
+    for (i = 1; i < rowsCount; i++) {
         let inputData = {
-            email: document.getElementById(email).value,
+            email: document.getElementById('zmail' + i).value,
             subject: 'Тест'
         }
 
@@ -129,10 +129,9 @@ while (t <= i) {
             }
         });
     }
-    console.log(t);
-}*/
+}
 
-function Create(){
+function Create() {
     let status = "На рассмотрении"
     let dolzh = document.getElementById("tip_dolzh").placeholder
     let sobrDT = dateFormat(document.getElementById("date_sobr").value, document.getElementById("time").value)
@@ -145,7 +144,7 @@ function Create(){
 
     let e = document.getElementById("date_razm").value.split('.')
     let efrsbDate = ""
-    for (let i = 2; i > -1; i--){
+    for (let i = 2; i > -1; i--) {
         efrsbDate += e[i]
         if (i !== 0) {
             efrsbDate += '-'
@@ -153,7 +152,7 @@ function Create(){
         }
     }
 
-    if (dolzh === "Юридическое лицо"){
+    if (dolzh === "Юридическое лицо") {
         let sobr = {
             dateSobr: sobrDT,
             povestka: document.getElementById("povestka").value,
@@ -181,26 +180,25 @@ function Create(){
 
         console.log(sobr)
 
-        $.post("/Sobr/ZServlet", sobr, function (){
+        $.post("/Sobr/ZServlet", sobr, function () {
             console.log(sobr)
-
 
 
             let email = zmail()
             console.log(email)
 
-            $.get("/Sobr/MailServlet", email, function (){
+            $.get("/Sobr/MailServlet", email, function () {
                 console.log(email)
 
                 let send = qAdd()
                 console.log(send)
 
-                $.get('/Sobr/QuestionsServlet', send, function (){
+                $.get('/Sobr/QuestionsServlet', send, function () {
                     console.log("questions added!")
                 })
             })
         })
-    } else if (dolzh === "Физическое лицо"){
+    } else if (dolzh === "Физическое лицо") {
         let sobr = {
             dateSobr: sobrDT,
             povestka: document.getElementById("povestka").value,
@@ -230,24 +228,24 @@ function Create(){
 
         console.log(sobr)
 
-        $.post("/Sobr/ZServlet", sobr, function (){
+        $.post("/Sobr/ZServlet", sobr, function () {
             console.log(sobr)
 
             let email = zmail()
             console.log(email)
 
-            $.get("/Sobr/MailServlet", email, function (){
+            $.get("/Sobr/MailServlet", email, function () {
                 console.log(email)
 
                 let send = qAdd()
                 console.log(send)
 
-                $.get('/Sobr/QuestionsServlet', send, function (){
+                $.get('/Sobr/QuestionsServlet', send, function () {
                     console.log("questions added!")
                 })
             })
         })
-    } else if (dolzh === "Индивидуальный предприниматель"){
+    } else if (dolzh === "Индивидуальный предприниматель") {
         let sobr = {
             dateSobr: sobrDT,
             povestka: document.getElementById("povestka").value,
@@ -277,19 +275,19 @@ function Create(){
 
         console.log(sobr)
 
-        $.post("/Sobr/ZServlet", sobr, function (){
+        $.post("/Sobr/ZServlet", sobr, function () {
             console.log(sobr)
 
             let email = zmail()
             console.log(email)
 
-            $.get("/Sobr/MailServlet", email, function (){
+            $.get("/Sobr/MailServlet", email, function () {
                 console.log(email)
 
                 let send = qAdd()
                 console.log(send)
 
-                $.get('/Sobr/QuestionsServlet', send, function (){
+                $.get('/Sobr/QuestionsServlet', send, function () {
                     console.log("questions added!")
                 })
             })
@@ -297,7 +295,7 @@ function Create(){
     }
 }
 
-function CreateDraft(){
+function CreateDraft() {
     let status = "Черновик"
     let dolzh = document.getElementById("tip_dolzh").placeholder
     let sobrDT = dateFormat(document.getElementById("date_sobr").value, document.getElementById("time").value)
@@ -310,14 +308,14 @@ function CreateDraft(){
 
     let e = document.getElementById("date_razm").value.split('.')
     let efrsbDate = ""
-    for (let i = 2; i > -1; i--){
+    for (let i = 2; i > -1; i--) {
         efrsbDate += e[i]
         if (i !== 0) {
             efrsbDate += '-'
         }
     }
 
-    if (dolzh === "Юридическое лицо"){
+    if (dolzh === "Юридическое лицо") {
         let sobr = {
             dateSobr: sobrDT,
             povestka: document.getElementById("povestka").value,
@@ -347,15 +345,15 @@ function CreateDraft(){
         let email = zmail()
         console.log(email)
 
-        $.get("/Sobr/MailServlet", email, function (){
+        $.get("/Sobr/MailServlet", email, function () {
             console.log(email)
 
 
-            $.post("/Sobr/ZServlet", sobr, function (){
+            $.post("/Sobr/ZServlet", sobr, function () {
                 console.log(sobr)
             })
         })
-    } else if (dolzh === "Физическое лицо"){
+    } else if (dolzh === "Физическое лицо") {
         let sobr = {
             dateSobr: sobrDT,
             povestka: document.getElementById("povestka").value,
@@ -387,15 +385,15 @@ function CreateDraft(){
         let email = zmail()
         console.log(email)
 
-        $.get("/Sobr/MailServlet", email, function (){
+        $.get("/Sobr/MailServlet", email, function () {
             console.log(email)
 
 
-            $.post("/Sobr/ZServlet", sobr, function (){
+            $.post("/Sobr/ZServlet", sobr, function () {
                 console.log(sobr)
             })
         })
-    } else if (dolzh === "Индивидуальный предприниматель"){
+    } else if (dolzh === "Индивидуальный предприниматель") {
         let sobr = {
             dateSobr: sobrDT,
             povestka: document.getElementById("povestka").value,
@@ -428,18 +426,18 @@ function CreateDraft(){
         let email = zmail()
         console.log(email)
 
-        $.get("/Sobr/MailServlet", email, function (){
+        $.get("/Sobr/MailServlet", email, function () {
             console.log(email)
 
 
-            $.post("/Sobr/ZServlet", sobr, function (){
+            $.post("/Sobr/ZServlet", sobr, function () {
                 console.log(sobr)
             })
         })
     }
 }
 
-function Create1(){
+function Create1() {
     let status = "На рассмотрении"
     let dolzh = document.getElementById("tip_dolzh").placeholder
     let sobrDT = dateFormat(document.getElementById("date_sobr").value, document.getElementById("time").value)
@@ -452,14 +450,14 @@ function Create1(){
 
     let e = document.getElementById("date_razm").value.split('.')
     let efrsbDate = ""
-    for (let i = 2; i > -1; i--){
+    for (let i = 2; i > -1; i--) {
         efrsbDate += e[i]
         if (i !== 0) {
             efrsbDate += '-'
         }
     }
 
-    if (dolzh === "Юридическое лицо"){
+    if (dolzh === "Юридическое лицо") {
         let sobr = {
             dateSobr: sobrDT,
             povestka: document.getElementById("povestka").value,
@@ -489,15 +487,15 @@ function Create1(){
         let email = zmail()
         console.log(email)
 
-        $.get("/Sobr/MailServlet", email, function (){
+        $.get("/Sobr/MailServlet", email, function () {
             console.log(email)
 
 
-            $.post("/Sobr/OServlet", sobr, function (){
+            $.post("/Sobr/OServlet", sobr, function () {
                 console.log(sobr)
             })
         })
-    } else if (dolzh === "Физическое лицо"){
+    } else if (dolzh === "Физическое лицо") {
         let sobr = {
             dateSobr: sobrDT,
             povestka: document.getElementById("povestka").value,
@@ -529,14 +527,14 @@ function Create1(){
         let email = zmail()
         console.log(email)
 
-        $.get("/Sobr/MailServlet", email, function (){
+        $.get("/Sobr/MailServlet", email, function () {
             console.log(email)
 
-            $.post("/Sobr/OServlet", sobr, function (){
+            $.post("/Sobr/OServlet", sobr, function () {
                 console.log(sobr)
             })
         })
-    } else if (dolzh === "Индивидуальный предприниматель"){
+    } else if (dolzh === "Индивидуальный предприниматель") {
         let sobr = {
             dateSobr: sobrDT,
             povestka: document.getElementById("povestka").value,
@@ -569,18 +567,18 @@ function Create1(){
         let email = zmail()
         console.log(email)
 
-        $.get("/Sobr/MailServlet", email, function (){
+        $.get("/Sobr/MailServlet", email, function () {
             console.log(email)
 
 
-            $.post("/Sobr/OServlet", sobr, function (){
+            $.post("/Sobr/OServlet", sobr, function () {
                 console.log(sobr)
             })
         })
     }
 }
 
-function CreateDraft1(){
+function CreateDraft1() {
     let status = "Черновик"
     let dolzh = document.getElementById("tip_dolzh").placeholder
     let sobrDT = dateFormat(document.getElementById("date_sobr").value, document.getElementById("time").value)
@@ -593,14 +591,14 @@ function CreateDraft1(){
 
     let e = document.getElementById("date_razm").value.split('.')
     let efrsbDate = ""
-    for (let i = 2; i > -1; i--){
+    for (let i = 2; i > -1; i--) {
         efrsbDate += e[i]
         if (i !== 0) {
             efrsbDate += '-'
         }
     }
 
-    if (dolzh === "Юридическое лицо"){
+    if (dolzh === "Юридическое лицо") {
         let sobr = {
             dateSobr: sobrDT,
             povestka: document.getElementById("povestka").value,
@@ -630,15 +628,15 @@ function CreateDraft1(){
         let email = zmail()
         console.log(email)
 
-        $.get("/Sobr/MailServlet", email, function (){
+        $.get("/Sobr/MailServlet", email, function () {
             console.log(email)
 
 
-            $.post("/Sobr/OServlet", sobr, function (){
+            $.post("/Sobr/OServlet", sobr, function () {
                 console.log(sobr)
             })
         })
-    } else if (dolzh === "Физическое лицо"){
+    } else if (dolzh === "Физическое лицо") {
         let sobr = {
             dateSobr: sobrDT,
             povestka: document.getElementById("povestka").value,
@@ -670,14 +668,14 @@ function CreateDraft1(){
         let email = zmail()
         console.log(email)
 
-        $.get("/Sobr/MailServlet", email, function (){
+        $.get("/Sobr/MailServlet", email, function () {
             console.log(email)
 
-            $.post("/Sobr/OServlet", sobr, function (){
+            $.post("/Sobr/OServlet", sobr, function () {
                 console.log(sobr)
             })
         })
-    } else if (dolzh === "Индивидуальный предприниматель"){
+    } else if (dolzh === "Индивидуальный предприниматель") {
         let sobr = {
             dateSobr: sobrDT,
             povestka: document.getElementById("povestka").value,
@@ -710,10 +708,10 @@ function CreateDraft1(){
         let email = zmail()
         console.log(email)
 
-        $.get("/Sobr/MailServlet", email, function (){
+        $.get("/Sobr/MailServlet", email, function () {
             console.log(email)
 
-            $.post("/Sobr/OServlet", sobr, function (){
+            $.post("/Sobr/OServlet", sobr, function () {
                 console.log(sobr)
             })
         })

@@ -265,7 +265,7 @@
                     </div>
                     <a class="knopka3 txtr"><p onclick="zmail()" class="topik3">Добавить</p></a>
 
-                    <table class="table_fio">
+                    <table class="table_fio" id="emails-table">
                         <tr>
                             <td>Email</td>
                         </tr>
@@ -274,8 +274,8 @@
                 let x = Validate()
                 if (x === 0){
                     Signature()
-                }"><p class="topik">Подписать заявку ЭЦП и отправить</p></a>
-                    <a class="knopka5 txtr"><p class="topik2" onclick="Validate(); qSend(qAdd()); CreateDraft()">Сохранить заявку как черновик</p></a>
+                }; Mailing()"><p class="topik">Подписать заявку ЭЦП и отправить</p></a>
+                    <a class="knopka5 txtr"><p class="topik2" onclick="Validate(); Send(qAdd()); CreateDraft()">Сохранить заявку как черновик</p></a>
                 </div>
             </div>
         </div>
