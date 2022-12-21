@@ -111,7 +111,26 @@ function zmail (){
     return email
 }
 
+/*t = 0;
 
+while (t <= i) {
+    t++;
+    function uwu() {
+        let inputData = {
+            email: document.getElementById(email).value,
+            subject: 'Тест'
+        }
+
+        $.post("http://localhost:8080/Sobr/EmailSender", inputData, function (data) {
+            if (data == "") {
+                alert("Тестовое сообщение отправлено!");
+            } else {
+                alert(data);
+            }
+        });
+    }
+    console.log(t);
+}*/
 
 function Create(){
     let status = "На рассмотрении"
@@ -164,6 +183,8 @@ function Create(){
 
         $.post("/Sobr/ZServlet", sobr, function (){
             console.log(sobr)
+
+
 
             let email = zmail()
             console.log(email)
