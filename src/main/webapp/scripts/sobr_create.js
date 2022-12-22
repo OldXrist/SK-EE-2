@@ -117,7 +117,7 @@ function Mailing() {
 
     for (i = 1; i < rowsCount; i++) {
         let inputData = {
-            email: document.getElementById('zmail' + i).value,
+            email: document.getElementById(`zmail${i}`).textContent,
             subject: 'Тест'
         }
 
