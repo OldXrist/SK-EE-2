@@ -10,51 +10,50 @@ $(document).ready(function () {
         if (result) {
             console.log(result);
             for (var i = 0; i < result.length; i++) {
-                var meetingType = result[i][0] == 'Z' ? 'Заочное' : 'Очное';
-                var organizerEmail = result[i][1];
-                var meetingNumber = result[i][2];
-                var organizerName = result[i].length > 7 ? result[i][5] + ' ' + result[i][6] + ' ' + result[i][7] : result[i][5];
-                var startMeetingDate = new Date(result[i][3]).toLocaleString();
-                var status = result[i][4];
-                var meetingsContainer = document.getElementById("m-container");
-                if(status == 'На рассмотрении')
+                var invoiceNumber = i+1;
+                var organizerEmail = result[i][0].toString();
+                var organizerName = result[i].length > 4 ? result[i][3] + ' ' + result[i][4] + ' ' + result[i][5] : result[i][3];
+                var regDate = new Date(result[i][2]).toLocaleString();
+
+                var invoiceContainer = document.getElementById("invoice-container");
+                if(result[i][1] == 'null')
                 {
-                    meetingsContainer.innerHTML +=
+                    invoiceContainer.innerHTML +=
                         `<div class="meeting">
                         <div class="meeting-left-side">
                             <div class="top-side">
                                 <div class="m-name" id = "m-name">
-                                    <span class=\"heading-name\">${meetingNumber} ${meetingType}</span>
+                                    <span class=\"heading-name\">Заявка № ${invoiceNumber}</span>
                                 </div>
                             </div>
                             <div class="bottom-side">
                                 <div class="m-organizer">
-                                    <span class="heading">Организатор</span>
+                                    <span class="heading">Кредитор</span>
                                     <span class="info">${organizerName}</span>
                                 </div>
                                 <div class="m-debtor">
                                     <span class="heading">Дата и время</span>
-                                    <span class="info">${startMeetingDate}</span>
+                                    <span class="info">${regDate}</span>
                                 </div>
                                 <div class="m-status">
                                     <span class="heading">Статус</span>
-                                    <span class="info">${status}</span>
+                                    <span class="info">На рассмотрении</span>
                                 </div>
                             </div>
                         </div>
                         <div class="meeting-right-side-v2">
-                            <button type="button" class="accept_button" onclick="AcceptInvoice(${meetingNumber}, '${organizerEmail}')">Принять</button>
-                            <button type="button" class="decline_button" onclick="DeclineInvoice(${meetingNumber}, '${organizerEmail}')">Отклонить</button>
+                            <button type="button" class="accept_button" onclick="AcceptInvoice('${organizerEmail}')">Принять</button>
+                            <button type="button" class="decline_button" onclick="DeclineInvoice('${organizerEmail}')">Отклонить</button>
                         </div>
                     </div>`;
                 }
-                else{
-                    meetingsContainer.innerHTML +=
+                else if (result[i][1] == 'true'){
+                    invoiceContainer.innerHTML +=
                         `<div class="meeting">
                         <div class="meeting-left-side">
                             <div class="top-side">
                                 <div class="m-name" id = "m-name">
-                                    <span class=\"heading-name\">${meetingNumber} ${meetingType}</span>
+                                    <span class=\"heading-name\">Заявка № ${invoiceNumber}</span>
                                 </div>
                             </div>
                             <div class="bottom-side">
@@ -64,11 +63,37 @@ $(document).ready(function () {
                                 </div>
                                 <div class="m-debtor">
                                     <span class="heading">Дата и время</span>
-                                    <span class="info">${startMeetingDate}</span>
+                                    <span class="info">${regDate}</span>
                                 </div>
                                 <div class="m-status">
                                     <span class="heading">Статус</span>
-                                    <span class="info">${status}</span>
+                                    <span class="info">Допущена</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+                }
+                else if (result[i][1] == 'false'){
+                    invoiceContainer.innerHTML +=
+                        `<div class="meeting">
+                        <div class="meeting-left-side">
+                            <div class="top-side">
+                                <div class="m-name" id = "m-name">
+                                    <span class=\"heading-name\">Заявка № ${invoiceNumber}</span>
+                                </div>
+                            </div>
+                            <div class="bottom-side">
+                                <div class="m-organizer">
+                                    <span class="heading">Организатор</span>
+                                    <span class="info">${organizerName}</span>
+                                </div>
+                                <div class="m-debtor">
+                                    <span class="heading">Дата и время</span>
+                                    <span class="info">${regDate}</span>
+                                </div>
+                                <div class="m-status">
+                                    <span class="heading">Статус</span>
+                                    <span class="info">Отклонена</span>
                                 </div>
                             </div>
                         </div>
@@ -80,6 +105,53 @@ $(document).ready(function () {
         }
     });
 });
+
+function AcceptInvoice(email) {
+    //поменять статус заявки
+    let info = {
+        email: email,
+        meetingStatus: 'true',
+    }
+    $.post("/Sobr/ChangeInvoiceStatus", info);
+
+    //отправить письмо
+    let inputData = {
+        email: email,
+        subject: 'Заявка допущена'
+    }
+    $.post("/Sobr/EmailSender", inputData, function (data) {
+        if (data == "") {
+            alert("Заявка принята!");
+        } else {
+            alert(data);
+        }
+    });
+    location.reload();
+}
+
+
+function DeclineInvoice(email) {
+    //поменять статус заявки
+    let info = {
+        email: email,
+        meetingStatus: 'false',
+    }
+    $.post("/Sobr/ChangeInvoiceStatus", info);
+
+    //отправить письмо
+    let inputData = {
+        email: email,
+        subject: 'Заявка отклонена'
+    }
+    $.post("/Sobr/EmailSender", inputData, function (data) {
+        if (data == "") {
+            alert("Заявка отклонена!");
+        } else {
+            alert(data);
+        }
+    });
+    location.reload();
+}
 
 $(".arrw").click(function () {
     $(".sort_drop").slideDown()
@@ -159,47 +231,3 @@ setInterval(function () {
 }, 1000);
 
 
-function AcceptInvoice(number, email) {
-    //поменять статус заявки
-    let info = {
-        meetingNumber: number,
-        meetingStatus: 'допущена',
-    }
-    $.post("/Sobr/ChangeInvoiceStatus", info);
-
-    //отправить письмо
-    let inputData = {
-        email: email,
-        subject: 'Заявка допущена'
-    }
-    $.post("/Sobr/EmailSender", inputData, function (data) {
-        if (data == "") {
-            alert("Ваша заявка принята!");
-        } else {
-            alert(data);
-        }
-    });
-}
-
-
-function DeclineInvoice(number, email) {
-    //поменять статус заявки
-    let info = {
-        meetingNumber: number,
-        meetingStatus: 'отклонена',
-    }
-    $.post("/Sobr/ChangeInvoiceStatus", info);
-
-    //отправить письмо
-    let inputData = {
-        email: email,
-        subject: 'Заявка отклонена'
-    }
-    $.post("/Sobr/EmailSender", inputData, function (data) {
-        if (data == "") {
-            alert("Ваша заявка отклонена!");
-        } else {
-            alert(data);
-        }
-    });
-}

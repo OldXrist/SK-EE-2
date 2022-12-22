@@ -167,8 +167,10 @@ table {
 }
 
 .fio {
-    width: 440px;
+    width: 400px;
     text-align: left;
+    display: flex;
+    justify-content: space-between;
 }
 
 table tr th {

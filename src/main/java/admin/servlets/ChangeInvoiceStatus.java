@@ -15,7 +15,7 @@ import java.sql.PreparedStatement;
 public class ChangeInvoiceStatus  extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String meetingNumber = request.getParameter("meetingNumber");
+        String email = request.getParameter("email");
         String meetingStatus = request.getParameter("meetingStatus");
 
         try {
@@ -23,7 +23,7 @@ public class ChangeInvoiceStatus  extends HttpServlet {
             Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
 
-            String sql = "UPDATE sobr_org SET status = '" + meetingStatus + "' WHERE nomer_dela = '" + meetingNumber + "';";
+            String sql = "UPDATE main SET auth = '" + meetingStatus + "' WHERE email = '" + email + "';";
             PreparedStatement ps = c.prepareStatement(sql);
             ps.executeUpdate();
             ps.close();
