@@ -14,45 +14,41 @@ import java.util.HashSet;
 
 @WebServlet("/GetInvoiceListMembers")
 public class GetInvoiceListMembers extends HttpServlet {
-    public String FlSql(String email)
+
+    public String FlSql()
     {
-        String flSql =  "SELECT sobr_org.type_sobr, sobr_org.email_org, nomer_dela, data_u_vrem_sobr, status, fl.famil, fl.\"name\", fl.otch \n" +
-                "FROM sobr_org, fl\n" +
-                "WHERE sobr_org.email_org = '" + email + "' and fl.email= '" + email + "' and sobr_org.type_org = 'ФЛ' and fl.type_users = 'участник';";
-        return flSql;
+        return  "SELECT DISTINCT main.email, main.auth, fl.reg_date, fl.famil, fl.name, fl.otch\n" +
+                "FROM public.main\n" +
+                "INNER JOIN public.fl ON main.email = fl.email and main.role_users = 'ФЛ' and main.type_users = 'участник';";
     }
 
-    public String IpSql(String email)
+    public String IpSql()
     {
-        String ipSql =  "SELECT sobr_org.type_sobr, sobr_org.email_org, nomer_dela, data_u_vrem_sobr, status, ip.famil, ip.\"name\", ip.otch \n" +
-                "FROM sobr_org, ip\n" +
-                "WHERE sobr_org.email_org = '" + email + "' and ip.email = '" + email + "' and sobr_org.type_org = 'ИП' and ip.type_users = 'участник';";
-        return ipSql;
+        return "SELECT DISTINCT main.email, main.auth, ip.reg_date, ip.famil, ip.name, ip.otch\n" +
+                "FROM public.main\n" +
+                "INNER JOIN public.ip ON main.email = ip.email and main.role_users = 'ИП' and main.type_users = 'участник';";
     }
 
-    public String QlSql(String email)
+    public String QlSql()
     {
-        String qlSql =  "SELECT sobr_org.type_sobr, sobr_org.email_org, nomer_dela, data_u_vrem_sobr, status, ql.poln_naim \n" +
-                "FROM sobr_org, ql\n" +
-                "WHERE sobr_org.email_org =  '" + email + "'  and ql.email = '" + email + "' and sobr_org.type_org = 'ЮЛ' and ql.type_users = 'участник';";
-        return qlSql;
+        return  "SELECT DISTINCT main.email, main.auth, ql.reg_date, ql.poln_naim\n" +
+                "FROM public.main\n" +
+                "INNER JOIN public.ql ON main.email = ql.email and main.role_users = 'ЮЛ' and main.type_users = 'участник';";
     }
 
-    public void GetRolesAndOrganizerEmails(Connection _c, HashSet _userRoles) {
+    public void GetRoles(Connection _c, ArrayList<String> _userRoles) {
         try {
-            String sql = "SELECT type_org, email_org FROM sobr_org";
+            String sql = "SELECT DISTINCT role_users FROM main WHERE role_users != 'admin' and role_users != 'operator'";
             PreparedStatement ps = _c.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             ResultSetMetaData meta = rs.getMetaData();
             int columnCount = meta.getColumnCount();
             while (rs.next()) {
-                ArrayList<String> row = new ArrayList<String>();
                 for (int i = 1; i <= columnCount; ++i)
                 {
                     Object value = rs.getObject(i);
-                    row.add(String.valueOf(value));
+                    _userRoles.add(String.valueOf(value));
                 }
-                _userRoles.add(row);
             }
             rs.close();
             ps.close();
@@ -63,7 +59,7 @@ public class GetInvoiceListMembers extends HttpServlet {
         }
     }
 
-    public void SetInvoicesInfo(Connection _c, String _sql, ArrayList<ArrayList<String>> _meetingsList)
+    public void SetInvoiceInfo(Connection _c, String _sql, ArrayList<ArrayList<String>> _invoiceList)
     {
         try {
             PreparedStatement ps = _c.prepareStatement(_sql);
@@ -71,13 +67,13 @@ public class GetInvoiceListMembers extends HttpServlet {
             ResultSetMetaData meta = rs.getMetaData();
             int columnCount = meta.getColumnCount();
             while (rs.next()) {
-                ArrayList<String> bankruptcyProcedureInfo = new ArrayList<String>();
+                ArrayList<String> invoiceInfo = new ArrayList<String>();
                 for (int i = 1; i <= columnCount; ++i)
                 {
                     Object value = rs.getObject(i);
-                    bankruptcyProcedureInfo.add(String.valueOf(value));
+                    invoiceInfo.add(String.valueOf(value));
                 }
-                _meetingsList.add(bankruptcyProcedureInfo);
+                _invoiceList.add(invoiceInfo);
             }
             rs.close();
             ps.close();
@@ -96,24 +92,24 @@ public class GetInvoiceListMembers extends HttpServlet {
             Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres", "postgres", "postgresql");
 
             //сначала собираем роли и id организаторов
-            HashSet<ArrayList<String>> userRoles = new HashSet<ArrayList<String>>();
-            GetRolesAndOrganizerEmails(c, userRoles);
+            ArrayList<String> userRoles = new ArrayList<String>();
+            GetRoles(c, userRoles);
 
             //заполняем массив данными
-            ArrayList<ArrayList<String>> invoicesListMembers = new ArrayList<ArrayList<String>>();
-            for (ArrayList<String> item : userRoles) {
-                switch (item.get(0)) {
-                    case "ФЛ": SetInvoicesInfo(c, FlSql(item.get(1)), invoicesListMembers);
+            ArrayList<ArrayList<String>> invoiceListMembers = new ArrayList<ArrayList<String>>();
+            for (String item : userRoles) {
+                switch (item) {
+                    case "ФЛ": SetInvoiceInfo(c, FlSql(), invoiceListMembers);
                         break;
-                    case "ИП": SetInvoicesInfo(c, IpSql(item.get(1)), invoicesListMembers);
+                    case "ИП": SetInvoiceInfo(c, IpSql(), invoiceListMembers);
                         break;
-                    case "ЮЛ": SetInvoicesInfo(c, QlSql(item.get(1)), invoicesListMembers);
+                    case "ЮЛ": SetInvoiceInfo(c, QlSql(), invoiceListMembers);
                         break;
                 }
             }
 
             //возвращаем данные на фронтенд в формате json
-            String json = new Gson().toJson(invoicesListMembers);
+            String json = new Gson().toJson(invoiceListMembers);
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
             response.getWriter().write(json);
