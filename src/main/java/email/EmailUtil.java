@@ -16,7 +16,7 @@ import javax.activation.FileDataSource;
 
 public class EmailUtil {
 
-    public static void sendEmail(Session session, String toEmail, String subject, String body){
+    public static void sendEmail(Session session, String fromEmail, String toEmail, String subject, String body){
         try
         {
             //Отправка текстового сообщения
@@ -24,7 +24,7 @@ public class EmailUtil {
             msg.addHeader("Content-type", "text/HTML; charset=UTF-8");
             msg.addHeader("format", "flowed");
             msg.addHeader("Content-Transfer-Encoding", "8bit");
-            msg.setFrom(new InternetAddress("admin_kreditors@tenderstandart.ru", "ТендерСтандарт"));
+            msg.setFrom(new InternetAddress(fromEmail, "ТендерСтандарт"));
             //msg.setReplyTo(InternetAddress.parse("AlexMitra93@yandex.ru", false));
             msg.setSubject(subject, "UTF-8");
             msg.setText(body, "UTF-8");

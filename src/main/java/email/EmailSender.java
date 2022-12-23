@@ -80,13 +80,11 @@ public class EmailSender extends HttpServlet {
                     subject = "Заявка отклонена";
                     body = "Ваша заявка на проведение собрания отклонена!";
                     break;
+                case "Рассылка":
+                    subject = "Заявка отклонена";
+                    body = "Ваша заявка на проведение собрания отклонена!";
+                    break;
             }
-
-            /*String fromEmail = "AlexMitra93@yandex.ru";
-            String password = "pzbdqheouzwxocgz";
-            String toEmail = "alexmitradev5@gmail.com";
-            String subject = "";
-            String body = "";*/
 
             Properties props = new Properties();
             props.put("mail.smtp.host", smtpHost); //SMTP Host
@@ -101,7 +99,7 @@ public class EmailSender extends HttpServlet {
                 }
             };
             Session session = Session.getDefaultInstance(props, auth);
-            EmailUtil.sendEmail(session, toEmail, subject, body);
+            EmailUtil.sendEmail(session, fromEmail, toEmail, subject, body);
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ": " + e.getMessage());

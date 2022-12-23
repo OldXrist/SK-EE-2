@@ -143,10 +143,10 @@ $(".knopka").click(function (){
         height: "+=65px"
     })
 })
-i = 1
+i = 0
 
 let email = {}
-$(".knopka3").click(function (){
+/*$(".knopka3").click(function (){
 
     if (document.getElementById("nim_cod").value !== ""){
         let mail = document.getElementById("nim_cod").value
@@ -179,5 +179,5 @@ $(".knopka3").click(function (){
             console.log(email)
         })
     }
-})
+})*/
 

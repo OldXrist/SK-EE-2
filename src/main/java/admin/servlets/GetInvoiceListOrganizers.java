@@ -14,53 +14,47 @@ import java.util.HashSet;
 
 @WebServlet("/GetInvoiceListOrganizers")
 public class GetInvoiceListOrganizers extends HttpServlet {
-    public String AuSql(String email)
+    public String AuSql()
     {
-        String auSql =  "SELECT sobr_org.type_sobr, sobr_org.email_org, nomer_dela, data_u_vrem_sobr, status, au.famil, au.\"name\", au.otch \n" +
-                        "FROM sobr_org, au\n" +
-                        "WHERE sobr_org.email_org = '" + email + "' and au.email = '" + email + "' and sobr_org.type_org = 'АУ' and au.type_users = 'организатор';";
-        return auSql;
+        return "SELECT DISTINCT main.email, main.auth, au.reg_date, au.famil, au.name, au.otch\n" +
+                "FROM public.main\n" +
+                "INNER JOIN public.au ON main.email = au.email and main.role_users = 'АУ' and main.type_users = 'организатор';";
     }
 
-    public String FlSql(String email)
+    public String FlSql()
     {
-        String flSql =  "SELECT sobr_org.type_sobr, sobr_org.email_org, nomer_dela, data_u_vrem_sobr, status, fl.famil, fl.\"name\", fl.otch \n" +
-                        "FROM sobr_org, fl\n" +
-                        "WHERE sobr_org.email_org = '" + email + "' and fl.email= '" + email + "' and sobr_org.type_org = 'ФЛ' and fl.type_users = 'организатор';";
-        return flSql;
+       return  "SELECT DISTINCT main.email, main.auth, fl.reg_date, fl.famil, fl.name, fl.otch\n" +
+               "FROM public.main\n" +
+               "INNER JOIN public.fl ON main.email = fl.email and main.role_users = 'ФЛ' and main.type_users = 'организатор';";
     }
 
-    public String IpSql(String email)
+    public String IpSql()
     {
-        String ipSql =  "SELECT sobr_org.type_sobr, sobr_org.email_org, nomer_dela, data_u_vrem_sobr, status, ip.famil, ip.\"name\", ip.otch \n" +
-                        "FROM sobr_org, ip\n" +
-                        "WHERE sobr_org.email_org = '" + email + "' and ip.email = '" + email + "' and sobr_org.type_org = 'ИП' and ip.type_users = 'организатор';";
-        return ipSql;
+        return "SELECT DISTINCT main.email, main.auth, ip.reg_date, ip.famil, ip.name, ip.otch\n" +
+                "FROM public.main\n" +
+                "INNER JOIN public.ip ON main.email = ip.email and main.role_users = 'ИП' and main.type_users = 'организатор';";
     }
 
-    public String QlSql(String email)
+    public String QlSql()
     {
-        String qlSql =  "SELECT sobr_org.type_sobr, sobr_org.email_org, nomer_dela, data_u_vrem_sobr, status, ql.poln_naim \n" +
-                        "FROM sobr_org, ql\n" +
-                        "WHERE sobr_org.email_org =  '" + email + "'  and ql.email = '" + email + "' and sobr_org.type_org = 'ЮЛ' and ql.type_users = 'организатор';";
-        return qlSql;
+        return  "SELECT DISTINCT main.email, main.auth, ql.reg_date, ql.poln_naim\n" +
+                "FROM public.main\n" +
+                "INNER JOIN public.ql ON main.email = ql.email and main.role_users = 'ЮЛ' and main.type_users = 'организатор';";
     }
 
-    public void GetRolesAndOrganizerEmails(Connection _c, HashSet _userRoles) {
+    public void GetRoles(Connection _c, ArrayList<String> _userRoles) {
         try {
-            String sql = "SELECT type_org, email_org FROM sobr_org";
+            String sql = "SELECT DISTINCT role_users FROM main WHERE role_users != 'admin' and role_users != 'operator'";
             PreparedStatement ps = _c.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             ResultSetMetaData meta = rs.getMetaData();
             int columnCount = meta.getColumnCount();
             while (rs.next()) {
-                ArrayList<String> row = new ArrayList<String>();
                 for (int i = 1; i <= columnCount; ++i)
                 {
                     Object value = rs.getObject(i);
-                    row.add(String.valueOf(value));
+                    _userRoles.add(String.valueOf(value));
                 }
-                _userRoles.add(row);
             }
             rs.close();
             ps.close();
@@ -71,7 +65,7 @@ public class GetInvoiceListOrganizers extends HttpServlet {
         }
     }
 
-    public void SetInvoicesInfo(Connection _c, String _sql, ArrayList<ArrayList<String>> _meetingsList)
+    public void SetInvoiceInfo(Connection _c, String _sql, ArrayList<ArrayList<String>> _invoiceList)
     {
         try {
             PreparedStatement ps = _c.prepareStatement(_sql);
@@ -79,13 +73,13 @@ public class GetInvoiceListOrganizers extends HttpServlet {
             ResultSetMetaData meta = rs.getMetaData();
             int columnCount = meta.getColumnCount();
             while (rs.next()) {
-                ArrayList<String> bankruptcyProcedureInfo = new ArrayList<String>();
+                ArrayList<String> invoiceInfo = new ArrayList<String>();
                 for (int i = 1; i <= columnCount; ++i)
                 {
                     Object value = rs.getObject(i);
-                    bankruptcyProcedureInfo.add(String.valueOf(value));
+                    invoiceInfo.add(String.valueOf(value));
                 }
-                _meetingsList.add(bankruptcyProcedureInfo);
+                _invoiceList.add(invoiceInfo);
             }
             rs.close();
             ps.close();
@@ -104,26 +98,26 @@ public class GetInvoiceListOrganizers extends HttpServlet {
             Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres", "postgres", "postgresql");
 
             //сначала собираем роли и id организаторов
-            HashSet<ArrayList<String>> userRoles = new HashSet<ArrayList<String>>();
-            GetRolesAndOrganizerEmails(c, userRoles);
+            ArrayList<String> userRoles = new ArrayList<String>();
+            GetRoles(c, userRoles);
 
             //заполняем массив данными
-            ArrayList<ArrayList<String>> invoicesListOrganizers = new ArrayList<ArrayList<String>>();
-            for (ArrayList<String> item : userRoles) {
-                switch (item.get(0)) {
-                    case "АУ": SetInvoicesInfo(c, AuSql(item.get(1)), invoicesListOrganizers);
+            ArrayList<ArrayList<String>> invoiceListOrganizers = new ArrayList<ArrayList<String>>();
+            for (String item : userRoles) {
+                switch (item) {
+                    case "АУ": SetInvoiceInfo(c, AuSql(), invoiceListOrganizers);
                         break;
-                    case "ФЛ": SetInvoicesInfo(c, FlSql(item.get(1)), invoicesListOrganizers);
+                    case "ФЛ": SetInvoiceInfo(c, FlSql(), invoiceListOrganizers);
                         break;
-                    case "ИП": SetInvoicesInfo(c, IpSql(item.get(1)), invoicesListOrganizers);
+                    case "ИП": SetInvoiceInfo(c, IpSql(), invoiceListOrganizers);
                         break;
-                    case "ЮЛ": SetInvoicesInfo(c, QlSql(item.get(1)), invoicesListOrganizers);
+                    case "ЮЛ": SetInvoiceInfo(c, QlSql(), invoiceListOrganizers);
                         break;
                 }
             }
 
             //возвращаем данные на фронтенд в формате json
-            String json = new Gson().toJson(invoicesListOrganizers);
+            String json = new Gson().toJson(invoiceListOrganizers);
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
             response.getWriter().write(json);

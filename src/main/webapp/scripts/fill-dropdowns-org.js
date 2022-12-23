@@ -91,7 +91,7 @@ $(document).ready(function () {
             select.innerHTML += `<option id="opt-${i}">${memberName}</option>`;
             table.innerHTML +=
                 `<tr id="tr-${i}">
-                    <td class="fio">${memberName}<a href="#"><img src="../../../img/download.svg"/></a></td>
+                    <td><div class="fio">${memberName}<a href="#"><img src="../../../img/download.svg"/></a></div></td>
                     <td><input type="checkbox" id="${i}0" /></td>
                     <td><input type="checkbox" id="${i}1"/></td>
                     <td><input type="checkbox" id="${i}2"/></td>
