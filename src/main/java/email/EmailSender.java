@@ -80,6 +80,10 @@ public class EmailSender extends HttpServlet {
                     subject = "Заявка отклонена";
                     body = "Ваша заявка на проведение собрания отклонена!";
                     break;
+                case "Рассылка":
+                    subject = "Заявка отклонена";
+                    body = "Ваша заявка на проведение собрания отклонена!";
+                    break;
             }
 
             Properties props = new Properties();

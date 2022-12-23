@@ -1,15 +1,15 @@
-package sobr.servlets;
+        package sobr.servlets;
 
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+        import jakarta.servlet.*;
+        import jakarta.servlet.http.*;
+        import jakarta.servlet.annotation.*;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+        import java.io.IOException;
+        import java.io.PrintWriter;
+        import java.sql.Connection;
+        import java.sql.DriverManager;
+        import java.sql.PreparedStatement;
+        import java.sql.ResultSet;
 
 @WebServlet(name = "MailServlet", value = "/MailServlet")
 public class MailServlet extends HttpServlet {

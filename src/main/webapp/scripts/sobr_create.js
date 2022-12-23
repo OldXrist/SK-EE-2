@@ -122,11 +122,6 @@ function Mailing() {
         }
 
         $.post("http://localhost:8080/Sobr/EmailSender", inputData, function (data) {
-            if (data == "") {
-                alert("Тестовое сообщение отправлено!");
-            } else {
-                alert(data);
-            }
         });
     }
 }
