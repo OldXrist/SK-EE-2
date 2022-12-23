@@ -13,8 +13,8 @@ public class ProtocolUpdateServlet extends HttpServlet {
         long sk = Long.parseLong(req.getParameter("sk"));
 
         String protocolName = "Протокол собрания кредиторов №" + sk + ".doc";
-        String fName = "C:\\Users\\manager\\Desktop\\SK-EE-2\\src\\main\\webapp\\protocols\\" + protocolName;
-        File protocol = new File(fName);
+        String fName = "/opt/tomcat/webapps/Sobr/protocols/" + protocolName;
+        new File(fName);
         try {
             FileWriter w = new FileWriter(fName);
 

@@ -38,7 +38,7 @@ public class ZAPPServlet extends HttpServlet {
                         out.println(rs1.getString(3));
                         out.println(rs1.getString(4));
                         out.println(rs1.getLong(5));
-                        out.println(rs1.getLong(6));
+                        out.println(rs1.getString(6));
                         out.println(email);
                     };
                     break;

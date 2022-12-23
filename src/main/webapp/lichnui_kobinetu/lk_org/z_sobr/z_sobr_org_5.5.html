@@ -232,15 +232,12 @@
                 <div class="h-row-2"><span>Прикрепленные документы участника</span></div>
                 <div class="h-row-4">
                     <div class="col-type-6">
-                        <input type="text" class="in-type-6" id="docs1" placeholder="Документ, удостоверяющий личность
-                        " disabled="true">
+                        <input type="text" class="in-type-6" id="docs1" placeholder="Документ, удостоверяющий личность" disabled/>
                     </div>
                 </div>
                 <div class="h-row-4">
-                    <div class="col-type-6">
-                        <input type="text" class="in-type-6" id="docs2"
-                            placeholder="Документы, подтверждающие полномочия руководителя или иного лица на осуществление действий от имени заявителя"
-                            disabled="true">
+                    <div class="col-type-6" onclick="getDoc()">
+                        <input type="text" class="in-type-6" id="docs2" placeholder="Документы, подтверждающие полномочия руководителя или иного лица на осуществление действий от имени заявителя" disabled/>
                     </div>
                 </div>
 
@@ -268,6 +265,7 @@
                 <div class="buttons" id="buttons">
                     <div class="accept-btn" onclick="Accept()"><span>Принять заявку</span></div>
                     <div class="decline-btn" onclick="Decline()"><span>Отклонить заявку</span></div>
+                    <a id="dbtn" download hidden></a>
                 </div>
             </div>
         </div>
@@ -291,6 +289,7 @@
     </footer>
 
     <script src="../../../jquery/jquery-3.6.0.js"></script>
+    <script src="../../../scripts/getAppDoc.js"></script>
     <script src="../../../scripts/z_sobr_send_fix.js"></script>
     <script src="../../../scripts/ApplicationEdit.js"></script>
     <script src="../../../scripts/public_pages_header.js"></script>

@@ -1,6 +1,10 @@
 var questionsResult;
 var membersResult;
 
+let send = {
+    sk: snum[1]
+}
+
 $(document).ready(function () {
     $(".tbl").hide()
     $(".hide").hide();
@@ -143,10 +147,10 @@ setInterval(function () {
     clock.innerHTML = now.toLocaleTimeString();
 }, 1000);
 
+
 function Show() {
     //очищаем чекбоксы
     ClearCheckboxValues();
-
     //находим номер выбранного вопроса
     var questionNumber;
     for (var i = 0; i < questionsResult.length; i++) {
@@ -156,7 +160,6 @@ function Show() {
             questionNumber = i;
         }
     }
-
     //заполняем чекбоксы
     for (var i = 0; i < membersResult.length; i++) {
         switch (questionNumber) {
@@ -222,7 +225,6 @@ function Show() {
                 break;
         }
     }
-
     //скрываем ненужные строки таблицы в зависимости от выбора участника
     var selectedMember = document.getElementById("select-val-2").textContent;
     if (selectedMember === 'Всех участников') {

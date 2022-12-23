@@ -266,7 +266,7 @@ $.get("/Sobr/LKUCHServlet", function (data){
 
     let pageLim = 4
 
-    for (let i  =  6; i < Math.ceil(d.length / 15); i++){
+    for (let i  =  6; i < Math.ceil(d.length / 13); i++){
         document.getElementById('c'+i).style.display = 'none'
     }
 

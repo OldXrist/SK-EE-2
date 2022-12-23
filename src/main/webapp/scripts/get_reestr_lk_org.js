@@ -140,7 +140,7 @@ function Cards(dt, i, m) {
     console.log(arr[4], arr[10])
         if (arr[4].includes("Юридическое") && arr[10].includes("ЮЛ")) {
             document.getElementById("table").innerHTML += "<div id = " + m + " class=\"table_item\" onclick='Redirect(this.id)'/>\n" +
-                "                <h3 class=\"table_h\"><b>" + arr[0] + arr[9] + "</h3>\n" +
+                "                <h3 class=\"table_h\"><b>" + arr[0] + " " + arr[9] + "</h3>\n" +
                 "                <ul class=\"table_data\">\n" +
                 "                    <li class=\"thin_text\">Организатор</li>\n" +
                 "                    <li>" + arr[11] + "</li>\n" +
@@ -168,10 +168,10 @@ function Cards(dt, i, m) {
 
         } else if (arr[4].includes("Юридическое") && !arr[10].includes("ЮЛ")) {
             document.getElementById("table").innerHTML += "<div id = " + m + " class=\"table_item\" onclick='Redirect(this.id)'/>\n" +
-                "                <h3 class=\"table_h\"><b>" + arr[0] + arr[9] + "</h3>\n" +
+                "                <h3 class=\"table_h\"><b>" + arr[0] + " " + arr[9] + "</h3>\n" +
                 "                <ul class=\"table_data\">\n" +
                 "                    <li class=\"thin_text\">Организатор</li>\n" +
-                "                    <li>" + arr[11] + arr[12] + arr[13] + "</li>\n" +
+                "                    <li>" + arr[11] + " " + arr[12] + " " + arr[13] + "</li>\n" +
                 "                </ul>\n" +
                 "                <ul class=\"table_data debtor\">\n" +
                 "                    <li class=\"thin_text\">Должник</li>\n" +
@@ -196,14 +196,14 @@ function Cards(dt, i, m) {
 
         } else if (!arr[4].includes("Юридическое") && arr[10].includes("ЮЛ")) {
             document.getElementById("table").innerHTML += "<div id = " + m + " class=\"table_item\" onclick='Redirect(this.id)'/>\n" +
-                "                <h3 class=\"table_h\"><b>" + arr[0] + arr[9] + "</h3>\n" +
+                "                <h3 class=\"table_h\"><b>" + arr[0] + " " + arr[9] + "</h3>\n" +
                 "                <ul class=\"table_data\">\n" +
                 "                    <li class=\"thin_text\">Организатор</li>\n" +
                 "                    <li>" + arr[11] + "</li>\n" +
                 "                </ul>\n" +
                 "                <ul class=\"table_data debtor\">\n" +
                 "                    <li class=\"thin_text\">Должник</li>\n" +
-                "                    <li>" + arr[5] + arr[6] + arr[7] + "</li>\n" +
+                "                    <li>" + arr[5] + " " + arr[6] + " " + arr[7] + "</li>\n" +
                 "                </ul>\n" +
                 "                <ul class=\"table_data status\">\n" +
                 "                    <li class=\"thin_text\">Статус</li>\n" +
@@ -224,14 +224,14 @@ function Cards(dt, i, m) {
 
         } else {
             document.getElementById("table").innerHTML += "<div id = " + m + " class=\"table_item\" onclick='Redirect(this.id)'>\n" +
-                "                <h3 class=\"table_h\"><b>" + arr[0] + arr[9] + "</h3>\n" +
+                "                <h3 class=\"table_h\"><b>" + arr[0] + " " + arr[9] + "</h3>\n" +
                 "                <ul class=\"table_data\">\n" +
                 "                    <li class=\"thin_text\">Организатор</li>\n" +
-                "                    <li>" + arr[11] + arr[12] + arr[13] + "</li>\n" +
+                "                    <li>" + arr[11] + " " + arr[12] + " " + arr[13] + "</li>\n" +
                 "                </ul>\n" +
                 "                <ul class=\"table_data debtor\">\n" +
                 "                    <li class=\"thin_text\">Должник</li>\n" +
-                "                    <li>" + arr[5] + arr[6] + arr[7] + "</li>\n" +
+                "                    <li>" + arr[5] + " " + arr[6] + " " + arr[7] + "</li>\n" +
                 "                </ul>\n" +
                 "                <ul class=\"table_data status\">\n" +
                 "                    <li class=\"thin_text\">Статус</li>\n" +

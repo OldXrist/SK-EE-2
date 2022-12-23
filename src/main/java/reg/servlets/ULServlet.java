@@ -5,6 +5,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.sql.*;
 import java.time.LocalDateTime;
@@ -62,6 +64,9 @@ public class ULServlet extends HttpServlet {
             ps.setObject(11, ldt);
 
             ps.executeUpdate();
+
+            HttpSession sesh = req.getSession(true);
+            sesh.setAttribute("email", email);
 
         } catch (Exception e) {
             e.printStackTrace();

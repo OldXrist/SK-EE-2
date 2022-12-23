@@ -97,6 +97,9 @@ public class AUServlet extends HttpServlet {
 
             ps.executeUpdate();
 
+            HttpSession sesh = req.getSession(true);
+            sesh.setAttribute("email", email);
+
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName()+": "+e.getMessage());

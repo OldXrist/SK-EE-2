@@ -27,6 +27,7 @@ function Sign(id){
             window.cryptoPro.createDetachedSignature(print, messageHash)
                 .then(function (signature){
                     console.log(signature)
+                    addAttr()
                     Create()
                     $(".signature").hide()
                     $(".wait").fadeIn()

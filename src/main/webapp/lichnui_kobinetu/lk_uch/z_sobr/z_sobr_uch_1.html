@@ -66,11 +66,11 @@
       <ul class="fader">
         <label for="file">
           Добавить документ
-          <input type="file" id="file" />
+          <input type="file" id="file"/>
         </label>
       </ul>
       <ul class="btns fader">
-        <li><a class="txtr"><button id="sign" class="sign" onclick="let x = Validate(); if (x === 0){Signature()}">Подписать заявку электронной подписью</button></a></li>
+        <li><a class="txtr"><button id="sign" class="sign" onclick="let x = Validate(); if (x === 0){Signature(); addAttr()}">Подписать заявку электронной подписью</button></a></li>
         <li><a class="txtr"><button id="save" class="save">Сохранить заявку как черновик</button></a></li>
       </ul>
     </div>
@@ -135,6 +135,8 @@
 <script src="../../../scripts/z_sobr_application.js"></script>
 <script src="../../../scripts/z_sobr_app_validate.js"></script>
 <script src="../../../scripts/white.js"></script>
+<script src="../../../scripts/docsUpload.js"></script>
+<script src="../../../scripts/addAttribute.js"></script>
 <script src="../../../scripts/z_sobr_app_create.js"></script>
 <script src="../../../scripts/signature_application.js"></script>
 <script src="../../../scripts/z_sobr_application_check.js"></script>

@@ -44,12 +44,12 @@ public class ApplicationEditServlet extends HttpServlet {
                         ps1.setString(1, email);
                         ResultSet rs1 = ps1.executeQuery();
                         while (rs1.next()){
-                            out.println(rs.getString(1));
-                            out.println(rs.getString(2));
-                            out.println(rs.getString(3));
-                            out.println(rs.getLong(4));
-                            out.println(rs.getLong(5));
-                            out.println(rs.getString(6));
+                            out.println(rs1.getString(1));
+                            out.println(rs1.getString(2));
+                            out.println(rs1.getString(3));
+                            out.println(rs1.getLong(4));
+                            out.println(rs1.getLong(5));
+                            out.println(rs1.getString(6));
                             out.println(email);
                         };
                         break;

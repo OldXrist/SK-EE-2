@@ -91,6 +91,8 @@ $.get('/Sobr/QServlet', send, function (data){
         "    Signature()" +
         "    }\">Подписать и отправить</button>"
 
+    check()
+
     $.get('/Sobr/AnswersCheckServlet', send, function (data) {
         console.log(data)
 

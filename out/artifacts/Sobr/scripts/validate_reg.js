@@ -150,6 +150,7 @@ function Validate_reg () {
 
             $.post("/Sobr/ULServlet", user, function () {
                 console.log(user);
+                regDocsUpload()
             });
 
             let inputData = {
@@ -206,6 +207,7 @@ function Validate_reg () {
 
             $.post("/Sobr/IPServlet", user, function () {
                 console.log(user);
+                regDocsUpload()
             });
 
             let inputData = {
@@ -265,6 +267,7 @@ function Validate_reg () {
 
             $.post("/Sobr/FLServlet", user, function () {
                 console.log(user);
+                regDocsUpload()
             });
 
             let inputData = {
@@ -325,6 +328,7 @@ function Validate_reg () {
 
             $.post("/Sobr/AUServlet", user, function () {
                 console.log(user);
+                regDocsUpload()
             });
 
             let inputData = {

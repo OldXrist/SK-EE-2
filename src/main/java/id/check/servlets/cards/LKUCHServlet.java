@@ -57,6 +57,8 @@ public class LKUCHServlet extends HttpServlet {
                         ResultSet rs1 = ps1.executeQuery();
                         while (rs1.next()){
                             out.println(rs1.getString(1));
+                            out.println("null");
+                            out.println("null");
                         };
                         break;
                     case "ИП":

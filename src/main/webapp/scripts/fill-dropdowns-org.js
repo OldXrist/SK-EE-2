@@ -1,6 +1,10 @@
 var questionsResult;
 var membersResult;
 
+let send = {
+    sk: snum[1]
+}
+
 $(document).ready(function () {
     $(".tbl").hide()
     $(".hide").hide();
