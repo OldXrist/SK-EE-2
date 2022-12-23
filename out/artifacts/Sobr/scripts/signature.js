@@ -28,6 +28,7 @@ function Sign(id){
                 .then(function (signature){
                     console.log(signature)
                     Create()
+                    Mailing()
                     $(".signature").hide()
                     $(".wait").fadeIn()
                     document.getElementById('wait').scrollIntoView()

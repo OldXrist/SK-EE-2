@@ -6,6 +6,10 @@ import jakarta.servlet.annotation.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 @WebServlet(name = "RegDocsServlet", value = "/RegDocsServlet")
 @MultipartConfig
@@ -23,6 +27,27 @@ public class RegDocsServlet extends HttpServlet {
 
         sesh.removeAttribute("email");
         sesh.invalidate();
+
+        try {
+            Class.forName("org.postgresql.Driver");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
+            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/SK", "postgres", "111");
+
+            String sql = "UPDATE main SET docs = ? WHERE email = ?";
+            PreparedStatement ps = c.prepareStatement(sql);
+
+            ps.setString(1, path);
+            ps.setString(2, user);
+
+            ps.executeUpdate();
+
+            ps.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
     }
 
     private String extractFileName(Part part) {
