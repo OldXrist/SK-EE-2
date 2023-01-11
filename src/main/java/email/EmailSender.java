@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.*;
 import java.util.Properties;
 import javax.mail.Session;
@@ -48,6 +49,39 @@ public class EmailSender extends HttpServlet {
     }
 
     @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        PrintWriter out = res.getWriter();
+        HttpSession sesh = req.getSession();
+        String email = String.valueOf(sesh.getAttribute("sessionUser"));
+
+        try {
+            Class.forName("org.postgresql.Driver");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
+            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "111");
+
+            String sql = "SELECT id,data_u_vrem_sobr FROM sobr_org WHERE email_org = ? ORDER BY id DESC LIMIT 1;";
+
+            PreparedStatement ps = c.prepareStatement(sql);
+
+            ps.setString(1, email);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()){
+                String data_sobr = (rs.getString(2));
+            }
+
+            rs.close();
+            ps.close();
+            out.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            System.exit(0);
+        }
+    }
+
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             Class.forName("org.postgresql.Driver");
@@ -67,7 +101,7 @@ public class EmailSender extends HttpServlet {
             switch (request.getParameter("subject")) {
                 case "Регистрация":
                     subject = "Регистрация";
-                    body = "Поздравляем, вы успешно зарегестрированы!";
+                    body = "Поздравляем, вы успешно зарегестрированы на платформе Собрание Кредиторов!";
                     break;
                 case "Тест":
                     subject = "Тестовое сообщение";
@@ -82,8 +116,15 @@ public class EmailSender extends HttpServlet {
                     body = "Ваша заявка на проведение собрания отклонена!";
                     break;
                 case "Рассылка":
-                    subject = "Заявка отклонена";
-                    body = "Ваша заявка на проведение собрания отклонена!";
+                    subject = "Уведомление о собрании";
+                    body = "Уважаемый пользователь!" +
+                            "Уведомляем, что на платформе Собрание Кредиторов будет проведено собрание на тему" +
+                            "" +
+                            "" +
+                            "" +
+                            "" +
+                            "Уведомляем, что для участия в собрании пользователь должен быть зарегистрирован на платформе." +
+                            "Видео инструкции доступны по ссылки https://www.youtube.com/@tenderstandart";
                     break;
             }
 
