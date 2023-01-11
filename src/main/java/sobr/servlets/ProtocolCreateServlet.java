@@ -18,12 +18,12 @@ public class ProtocolCreateServlet extends HttpServlet {
         String s = req.getParameter("sk");
         long sk = Long.parseLong(s);
 
-        String protocolName = "Протокол собрания кредиторов №" + sk + ".doc";
+        String protocolName = "Protocol_" + sk + ".doc";
 
         try {
             Class.forName("org.postgresql.Driver");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
+            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/SK", "postgres", "111");
 
             String checkProt = "SELECT protocol FROM prot WHERE id = ?";
@@ -35,12 +35,12 @@ public class ProtocolCreateServlet extends HttpServlet {
 
             if (!rsCheck.next()) {
 
-                String fName = "C:\\Users\\manager\\Desktop\\SK-EE-2\\src\\main\\webapp\\protocols\\" + protocolName;
-                //String fName = "/opt/tomcat/webapps/Sobr/protocols/" + protocolName;
+                //String fName = "C:\\Users\\manager\\Desktop\\SK-EE-2\\src\\main\\webapp\\protocols\\" + protocolName;
+                String fName = "../../../protocols/" + protocolName;
                 File protocol = new File(fName);
                 //FileWriter w = new FileWriter(fName, true);
 
-                if (!protocol.exists()) {
+                if (!protocol.exists() && protocol.createNewFile()) {
 
                     String sql = "SELECT email_org, type_org, data_u_vrem_sobr, poln_naum, famil, name, otch, pocht_adres, naim_orb_suda, nomer_dela, osn_dlia_sobr  FROM sobr_org WHERE id = ?";
                     PreparedStatement ps = c.prepareStatement(sql);
@@ -48,6 +48,8 @@ public class ProtocolCreateServlet extends HttpServlet {
                     ps.setLong(1, sk);
 
                     ResultSet rs = ps.executeQuery();
+
+                    StringBuilder text = new StringBuilder();
 
                     while (rs.next()) {
                         String emailOrg = rs.getString(1);
@@ -59,12 +61,9 @@ public class ProtocolCreateServlet extends HttpServlet {
                                 ps1.setString(1, emailOrg);
                                 ResultSet rs1 = ps1.executeQuery();
                                 while (rs1.next()) {
-                                    FileWriter w = new FileWriter(fName, true);
-                                    w.write("                                   ПРОТОКОЛ\n" +
-                                            "                               собрания кредиторов \n" +
-                                            "\n" +
-                                            "Организатор " + rs1.getString(1) + "\n");
-                                    w.close();
+                                    text.append("                                   ПРОТОКОЛ\n" +
+                                            "                               собрания кредиторов \n" + "\n" +
+                                            "Организатор ").append(rs1.getString(1)).append("\n");
                                 }
                                 break;
                             case "ИП":
@@ -73,12 +72,9 @@ public class ProtocolCreateServlet extends HttpServlet {
                                 ps2.setString(1, emailOrg);
                                 ResultSet rs2 = ps2.executeQuery();
                                 while (rs2.next()) {
-                                    FileWriter w2 = new FileWriter(fName, true);
-                                    w2.write("                                   ПРОТОКОЛ\n" +
-                                            "                               собрания кредиторов \n" +
-                                            "\n" +
-                                            "Организатор " + rs2.getString(1) + " " + rs2.getString(2) + " " + rs2.getString(3) + "\n");
-                                    w2.close();
+                                    text.append("                                   ПРОТОКОЛ\n" +
+                                            "                               собрания кредиторов \n" + "\n" +
+                                            "Организатор ").append(rs2.getString(1)).append(" ").append(rs2.getString(2)).append(" ").append(rs2.getString(3)).append("\n");
                                 }
                                 break;
                             case "ФЛ":
@@ -87,12 +83,9 @@ public class ProtocolCreateServlet extends HttpServlet {
                                 ps3.setString(1, emailOrg);
                                 ResultSet rs3 = ps3.executeQuery();
                                 while (rs3.next()) {
-                                    FileWriter w3 = new FileWriter(fName, true);
-                                    w3.write("                                   ПРОТОКОЛ\n" +
-                                            "                               собрания кредиторов \n" +
-                                            "\n" +
-                                            "Организатор " + rs3.getString(1) + " " + rs3.getString(2) + " " + rs3.getString(3) + "\n");
-                                    w3.close();
+                                    text.append("                                   ПРОТОКОЛ\n" +
+                                            "                               собрания кредиторов \n" + "\n" +
+                                            "Организатор ").append(rs3.getString(1)).append(" ").append(rs3.getString(2)).append(" ").append(rs3.getString(3)).append("\n");
                                 }
                                 break;
                             case "АУ":
@@ -101,39 +94,18 @@ public class ProtocolCreateServlet extends HttpServlet {
                                 ps4.setString(1, emailOrg);
                                 ResultSet rs4 = ps4.executeQuery();
                                 while (rs4.next()) {
-                                    FileWriter w4 = new FileWriter(fName, true);
-                                    w4.write("                                   ПРОТОКОЛ\n" +
-                                            "                               собрания кредиторов \n" +
-                                            "\n" +
-                                            "Организатор " + rs4.getString(1) + " " + rs4.getString(2) + " " + rs4.getString(3) + "\n");
-                                    w4.close();
+                                    text.append("                                   ПРОТОКОЛ\n" +
+                                            "                               собрания кредиторов \n" + "\n" +
+                                            "Организатор ").append(rs4.getString(1)).append(" ").append(rs4.getString(2)).append(" ").append(rs4.getString(3)).append("\n");
                                 }
                                 break;
                         }
-                        FileWriter w = new FileWriter(fName, true);
 
                         if (rs.getString(4) == null) {
-                            w.write("Тип собрания: заочное.\n" +
-                                    "Начало собрания: " + rs.getString(3) + "\n" +
-                                    "Место проведения: https://sk.tenderstandart.ru\n" +
-                                    "Полное наименование должника: " + rs.getString(5) + " " + rs.getString(6) + " " + rs.getString(7) + "\n" +
-                                    "Место нахождения должника: " + rs.getString(8) + "\n" +
-                                    "Дело о несостоятельности(банкротстве): " + rs.getString(9) + " дело № " + rs.getString(10) + "\n" +
-                                    "Основание проведения: " + rs.getString(11) + "\n\n" +
-                                    "Присутствуют:\n");
+                            text.append("Тип собрания: заочное.\n" + "Начало собрания: ").append(rs.getString(3)).append("\n").append("Место проведения: https://sk.tenderstandart.ru\n").append("Полное наименование должника: ").append(rs.getString(5)).append(" ").append(rs.getString(6)).append(" ").append(rs.getString(7)).append("\n").append("Место нахождения должника: ").append(rs.getString(8)).append("\n").append("Дело о несостоятельности(банкротстве): ").append(rs.getString(9)).append(" дело № ").append(rs.getString(10)).append("\n").append("Основание проведения: ").append(rs.getString(11)).append("\n\n").append("Присутствуют:\n");
                         } else {
-                            w.write("Тип собрания: заочное.\n" +
-                                    "Начало собрания: " + rs.getString(3) + "\n" +
-                                    "Место проведения: https://sk.tenderstandart.ru\n" +
-                                    "Полное наименование должника: " + rs.getString(4) + "\n" +
-                                    "Место нахождения должника: " + rs.getString(8) + "\n" +
-                                    "Дело о несостоятельности(банкротстве): " + rs.getString(9) + " дело № " + rs.getString(10) + "\n" +
-                                    "Основание проведения: " + rs.getString(11) + "\n\n" +
-                                    "Присутствуют:\n");
+                            text.append("Тип собрания: заочное.\n" + "Начало собрания: ").append(rs.getString(3)).append("\n").append("Место проведения: https://sk.tenderstandart.ru\n").append("Полное наименование должника: ").append(rs.getString(4)).append("\n").append("Место нахождения должника: ").append(rs.getString(8)).append("\n").append("Дело о несостоятельности(банкротстве): ").append(rs.getString(9)).append(" дело № ").append(rs.getString(10)).append("\n").append("Основание проведения: ").append(rs.getString(11)).append("\n\n").append("Присутствуют:\n");
                         }
-
-
-                        w.close();
                     }
 
                     ps.close();
@@ -158,10 +130,8 @@ public class ProtocolCreateServlet extends HttpServlet {
                                 ps1.setString(1, emailUch);
                                 ResultSet rs1 = ps1.executeQuery();
                                 while (rs1.next()) {
-                                    FileWriter w = new FileWriter(fName, true);
-                                    w.write(i + ". " + rs1.getString(1) + "\n");
+                                    text.append(i).append(". ").append(rs1.getString(1)).append("\n");
                                     i++;
-                                    w.close();
                                 }
                                 break;
                             case "ИП":
@@ -170,10 +140,8 @@ public class ProtocolCreateServlet extends HttpServlet {
                                 ps2.setString(1, emailUch);
                                 ResultSet rs2 = ps2.executeQuery();
                                 while (rs2.next()) {
-                                    FileWriter w2 = new FileWriter(fName, true);
-                                    w2.write(i + ". " + rs2.getString(1) + " " + rs2.getString(2) + " " + rs2.getString(3) + "\n");
+                                    text.append(i).append(". ").append(rs2.getString(1)).append(" ").append(rs2.getString(2)).append(" ").append(rs2.getString(3)).append("\n");
                                     i++;
-                                    w2.close();
                                 }
                                 break;
                             case "ФЛ":
@@ -182,10 +150,8 @@ public class ProtocolCreateServlet extends HttpServlet {
                                 ps3.setString(1, emailUch);
                                 ResultSet rs3 = ps3.executeQuery();
                                 while (rs3.next()) {
-                                    FileWriter w3 = new FileWriter(fName, true);
-                                    w3.write(i + ". " + rs3.getString(1) + " " + rs3.getString(2) + " " + rs3.getString(3) + "\n");
+                                    text.append(i).append(". ").append(rs3.getString(1)).append(" ").append(rs3.getString(2)).append(" ").append(rs3.getString(3)).append("\n");
                                     i++;
-                                    w3.close();
                                 }
                                 break;
                             case "АУ":
@@ -194,19 +160,14 @@ public class ProtocolCreateServlet extends HttpServlet {
                                 ps4.setString(1, emailUch);
                                 ResultSet rs4 = ps4.executeQuery();
                                 while (rs4.next()) {
-                                    FileWriter w4 = new FileWriter(fName, true);
-                                    w4.write(i + ". " + rs4.getString(1) + " " + rs4.getString(2) + " " + rs4.getString(3) + "\n");
+                                    text.append(i).append(". ").append(rs4.getString(1)).append(" ").append(rs4.getString(2)).append(" ").append(rs4.getString(3)).append("\n");
                                     i++;
-                                    w4.close();
                                 }
                                 break;
                         }
                     }
 
-                    FileWriter w6 = new FileWriter(fName, true);
-
-                    w6.write("Всего: ____кредитора(ов), что составляет ____% от общего числа голосов конкурсных кредиторов и уполномоченных органов\n\n");
-                    w6.close();
+                    text.append("Всего: ____кредитора(ов), что составляет ____% от общего числа голосов конкурсных кредиторов и уполномоченных органов\n\n");
 
                     String sql6 = "SELECT email_org, type_org FROM sobr_org WHERE id = ?";
                     PreparedStatement ps6 = c.prepareStatement(sql6);
@@ -225,12 +186,7 @@ public class ProtocolCreateServlet extends HttpServlet {
                                 ps1.setString(1, emailOrg);
                                 ResultSet rs1 = ps1.executeQuery();
                                 while (rs1.next()) {
-                                    FileWriter w = new FileWriter(fName, true);
-                                    w.write("Кредиторы о времени и месте проведения собрания уведомлены надлежащим образом.\n" +
-                                            "Собрание кредиторов правомочно, на собрании присутствуют кредиторы с числом голосов, достаточным для принятия решений в соответствии со ст.12 ФЗ «О несостоятельности (банкротстве)» от 26.10.2002г. № 127-ФЗ.\n" +
-                                            "Собрание кредиторов ведет представитель " + rs1.getString(1) + " ___ФИО организатора собрания в именительном падеже_______.\n" +
-                                            "Повестка собрания кредиторов:\n\n");
-                                    w.close();
+                                    text.append("Кредиторы о времени и месте проведения собрания уведомлены надлежащим образом.\n" + "Собрание кредиторов правомочно, на собрании присутствуют кредиторы с числом голосов, достаточным для принятия решений в соответствии со ст.12 ФЗ «О несостоятельности (банкротстве)» от 26.10.2002г. № 127-ФЗ.\n" + "Собрание кредиторов ведет представитель ").append(rs1.getString(1)).append(" ___ФИО организатора собрания в именительном падеже_______.\n").append("Повестка собрания кредиторов:\n\n");
                                 }
                                 break;
                             case "ИП":
@@ -239,12 +195,7 @@ public class ProtocolCreateServlet extends HttpServlet {
                                 ps2.setString(1, emailOrg);
                                 ResultSet rs2 = ps2.executeQuery();
                                 while (rs2.next()) {
-                                    FileWriter w2 = new FileWriter(fName, true);
-                                    w2.write("Кредиторы о времени и месте проведения собрания уведомлены надлежащим образом.\n" +
-                                            "Собрание кредиторов правомочно, на собрании присутствуют кредиторы с числом голосов, достаточным для принятия решений в соответствии со ст.12 ФЗ «О несостоятельности (банкротстве)» от 26.10.2002г. № 127-ФЗ.\n" +
-                                            "Собрание кредиторов ведет представитель _____указывать организацию__ " + rs2.getString(1) + " " + rs2.getString(2) + " " + rs2.getString(3) + ".\n" +
-                                            "Повестка собрания кредиторов:\n\n");
-                                    w2.close();
+                                    text.append("Кредиторы о времени и месте проведения собрания уведомлены надлежащим образом.\n" + "Собрание кредиторов правомочно, на собрании присутствуют кредиторы с числом голосов, достаточным для принятия решений в соответствии со ст.12 ФЗ «О несостоятельности (банкротстве)» от 26.10.2002г. № 127-ФЗ.\n" + "Собрание кредиторов ведет представитель _____указывать организацию__ ").append(rs2.getString(1)).append(" ").append(rs2.getString(2)).append(" ").append(rs2.getString(3)).append(".\n").append("Повестка собрания кредиторов:\n\n");
                                 }
                                 break;
                             case "ФЛ":
@@ -253,12 +204,7 @@ public class ProtocolCreateServlet extends HttpServlet {
                                 ps3.setString(1, emailOrg);
                                 ResultSet rs3 = ps3.executeQuery();
                                 while (rs3.next()) {
-                                    FileWriter w3 = new FileWriter(fName, true);
-                                    w3.write("Кредиторы о времени и месте проведения собрания уведомлены надлежащим образом.\n" +
-                                            "Собрание кредиторов правомочно, на собрании присутствуют кредиторы с числом голосов, достаточным для принятия решений в соответствии со ст.12 ФЗ «О несостоятельности (банкротстве)» от 26.10.2002г. № 127-ФЗ.\n" +
-                                            "Собрание кредиторов ведет представитель _____указывать организацию__ " + rs3.getString(1) + " " + rs3.getString(2) + " " + rs3.getString(3) + ".\n" +
-                                            "Повестка собрания кредиторов:\n\n");
-                                    w3.close();
+                                    text.append("Кредиторы о времени и месте проведения собрания уведомлены надлежащим образом.\n" + "Собрание кредиторов правомочно, на собрании присутствуют кредиторы с числом голосов, достаточным для принятия решений в соответствии со ст.12 ФЗ «О несостоятельности (банкротстве)» от 26.10.2002г. № 127-ФЗ.\n" + "Собрание кредиторов ведет представитель _____указывать организацию__ ").append(rs3.getString(1)).append(" ").append(rs3.getString(2)).append(" ").append(rs3.getString(3)).append(".\n").append("Повестка собрания кредиторов:\n\n");
                                 }
                                 break;
                             case "АУ":
@@ -267,12 +213,7 @@ public class ProtocolCreateServlet extends HttpServlet {
                                 ps4.setString(1, emailOrg);
                                 ResultSet rs4 = ps4.executeQuery();
                                 while (rs4.next()) {
-                                    FileWriter w4 = new FileWriter(fName, true);
-                                    w4.write("Кредиторы о времени и месте проведения собрания уведомлены надлежащим образом.\n" +
-                                            "Собрание кредиторов правомочно, на собрании присутствуют кредиторы с числом голосов, достаточным для принятия решений в соответствии со ст.12 ФЗ «О несостоятельности (банкротстве)» от 26.10.2002г. № 127-ФЗ.\n" +
-                                            "Собрание кредиторов ведет представитель " + rs4.getString(4) + " " + rs4.getString(1) + " " + rs4.getString(2) + " " + rs4.getString(3) + ".\n" +
-                                            "Повестка собрания кредиторов:\n\n");
-                                    w4.close();
+                                    text.append("Кредиторы о времени и месте проведения собрания уведомлены надлежащим образом.\n" + "Собрание кредиторов правомочно, на собрании присутствуют кредиторы с числом голосов, достаточным для принятия решений в соответствии со ст.12 ФЗ «О несостоятельности (банкротстве)» от 26.10.2002г. № 127-ФЗ.\n" + "Собрание кредиторов ведет представитель ").append(rs4.getString(4)).append(" ").append(rs4.getString(1)).append(" ").append(rs4.getString(2)).append(" ").append(rs4.getString(3)).append(".\n").append("Повестка собрания кредиторов:\n\n");
                                 }
                                 break;
                         }
@@ -284,36 +225,40 @@ public class ProtocolCreateServlet extends HttpServlet {
 
                     ResultSet rs7 = ps7.executeQuery();
 
-                    FileWriter w = new FileWriter(fName, true);
                     i = 1;
                     while (rs7.next()) {
-                        w.write(i + "." + " " + rs7.getString(1) + "\n");
+                        text.append(i).append(".").append(" ").append(rs7.getString(1)).append("\n");
                         i++;
                     }
 
-                    w.write("\n");
+                    text.append("\n");
 
                     ResultSet rs8 = ps7.executeQuery();
 
                     i = 1;
                     while (rs8.next()) {
-                        w.write(i + " вопрос:" + rs8.getString(1) + "\n" +
-                                "Результат голосования:\n" +
-                                "- «ЗА»- ___голосов, что составляет ____% голосов кредиторов, присутствующих на собрании кредиторов.\n" +
-                                "-«ПРОТИВ» - ___голосов, что составляет ____% голосов кредиторов, присутствующих на собрании кредиторов. \n" +
-                                "Решение:________________________________________________\n" +
-                                "-«ВОЗДЕРЖАЛСЯ» -  ___голосов, что составляет ____% голосов кредиторов, присутствующих на собрании кредиторов.\n\n");
+                        text.append(i).append(" вопрос:").append(rs8.getString(1)).append("\n").append("Результат голосования:\n").append("- «ЗА»- ___голосов, что составляет ____% голосов кредиторов, присутствующих на собрании кредиторов.\n").append("-«ПРОТИВ» - ___голосов, что составляет ____% голосов кредиторов, присутствующих на собрании кредиторов. \n").append("Решение:________________________________________________\n").append("-«ВОЗДЕРЖАЛСЯ» -  ___голосов, что составляет ____% голосов кредиторов, присутствующих на собрании кредиторов.\n\n");
                         i++;
                     }
 
-                    w.write("Окончание собрания кредиторов:___________\n" +
+                    text.append("Окончание собрания кредиторов:___________\n" +
                             "\n" +
                             "\n" +
                             "Организатор собрания\n" +
                             "____Организация_____" +
                             "\t\t\t\t\t\t\tФ.И.О.\n");
 
-                    w.close();
+                    try {
+                        new File(fName);
+                        FileWriter w = new FileWriter(fName);
+                        w.write(text.toString());
+                        w.flush();
+                        w.close();
+
+                    } catch (IOException e) {
+                        out.println("An error occurred.");
+                        e.printStackTrace();
+                    }
                 }
 
                 String sqlPath = "INSERT INTO prot VALUES (?, ?)";
@@ -329,10 +274,7 @@ public class ProtocolCreateServlet extends HttpServlet {
             rsCheck.close();
             psCheck.close();
 
-        } catch (IOException e) {
-            out.println("An error occurred.");
-            e.printStackTrace();
-        } catch (SQLException | ClassNotFoundException e) {
+        }  catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }

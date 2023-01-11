@@ -17,14 +17,16 @@ public class DocsUploadServlet extends HttpServlet {
         String user = String.valueOf(sesh.getAttribute("sessionUser"));
         long sk = Long.parseLong(String.valueOf(sesh.getAttribute("sk")));
 
-        String path = "C:\\Users\\manager\\Desktop\\SK-EE-2\\src\\main\\webapp\\meetings\\meeting"+sk+"\\" + user;
+        String path = "../../../meetings/meeting"+sk+"/" + user;
 
         Part p = req.getPart("file");
         String ext = p.getSubmittedFileName().split("\\.")[1];
 
-        new File(path).mkdirs();
-        for (Part part : req.getParts()){
-            part.write(path + File.separator + "Доверенность." + ext);
+        File nFile = new File(path);
+        if (nFile.mkdirs()) {
+            for (Part part : req.getParts()) {
+                part.write(path + File.separator + "Доверенность." + ext);
+            }
         }
     }
 }

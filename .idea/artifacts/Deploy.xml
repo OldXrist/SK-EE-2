@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="WAR4deploy">
+  <artifact type="war" name="Deploy">
     <output-path>$PROJECT_DIR$/../</output-path>
-    <root id="archive" name="WAR4deploy.war">
+    <root id="archive" name="Deploy.war">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="SK-EE-2" />
@@ -23,8 +23,8 @@
           <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-annotations-api:10.0.23" />
           <element id="library" level="project" name="Maven: org.checkerframework:checker-qual:3.5.0" />
           <element id="library" level="project" name="Maven: org.glassfish.tyrus.bundles:tyrus-standalone-client:2.0.0-M3" />
-          <element id="library" level="project" name="Maven: org.postgresql:pgjdbc-osgi-test:42.3.7" />
           <element id="library" level="project" name="Maven: org.postgresql:postgresql:42.5.0" />
+          <element id="library" level="project" name="Maven: org.postgresql:pgjdbc-osgi-test:42.3.7" />
           <element id="library" level="project" name="postgresql-42.5.0" />
         </element>
       </element>

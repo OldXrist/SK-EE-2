@@ -18,7 +18,7 @@ $(document).ready(function () {
     }
 
 
-    $.get('http://localhost:8080/Sobr/ApplicationEditServlet', appID, function (data) {
+    $.get('/Sobr/ApplicationEditServlet', appID, function (data) {
         console.log(data)
 
         let d = data.split('\n')
@@ -101,7 +101,7 @@ $(document).ready(function () {
 function Accept() {
     if (document.getElementById('option').innerText !== 'Не выбрано') {
         let sknum = window.location.href.split('?')[1].split('=')[1].split('&')[0]
-        let url = new URL('http://localhost:8080/Sobr/lichnui_kobinetu/lk_org/z_sobr/z_sobr_org_5.html') //TODO: Поменять на sk.tenderstandart
+        let url = new URL('http://www.sk.tenderstandart.ru:8080/Sobr/lichnui_kobinetu/lk_org/z_sobr/z_sobr_org_5.html') //TODO: Поменять на sk.tenderstandart
 
         let status = {
             appId: window.location.href.split('&')[1].split('=')[1],

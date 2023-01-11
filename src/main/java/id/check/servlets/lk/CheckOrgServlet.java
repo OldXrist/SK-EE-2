@@ -18,7 +18,6 @@ public class CheckOrgServlet extends HttpServlet {
         PrintWriter out = res.getWriter();
         HttpSession sesh = req.getSession();
         String type = String.valueOf(sesh.getAttribute("type"));
-        String email = String.valueOf(sesh.getAttribute("sessionUser"));
 
         out.println(type);
     }

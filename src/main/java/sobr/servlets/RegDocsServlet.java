@@ -18,7 +18,7 @@ public class RegDocsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         HttpSession sesh = req.getSession();
         String user = String.valueOf(sesh.getAttribute("email"));
-        String path = "C:\\Users\\manager\\Desktop\\SK-EE-2\\src\\main\\webapp\\docs\\" + user;
+        String path = "/opt/tomcat/webapps/Sobr/docs/" + user;
 
         new File(path).mkdirs();
         for (Part part : req.getParts()){
@@ -30,7 +30,8 @@ public class RegDocsServlet extends HttpServlet {
 
         try {
             Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
+            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/SK", "postgres", "111");
 
             String sql = "UPDATE main SET docs = ? WHERE email = ?";

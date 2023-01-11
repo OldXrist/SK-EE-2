@@ -3,7 +3,7 @@ function performAjaxSubmit() {
     var formdata = new FormData();
     formdata.append("sampleFile", sampleFile);
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "http://localhost:8080/Sobr/AUTHServ", true);
+    xhr.open("POST", "/Sobr/AUTHServ", true);
     xhr.send(formdata);
     xhr.onload = function(e) {
         if (this.status === 200) {

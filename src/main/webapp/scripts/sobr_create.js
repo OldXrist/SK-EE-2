@@ -121,7 +121,7 @@ function Mailing() {
             subject: 'Тест'
         }
 
-        $.post("http://localhost:8080/Sobr/EmailSender", inputData, function (data) {
+        $.post("/Sobr/EmailSender", inputData, function (data) {
         });
     }
 }

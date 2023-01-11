@@ -8,7 +8,7 @@ function CreateProtocol(){
 
         let link = document.getElementById('link')
         link.style.display = 'none'
-        link.href = '../../../protocols/Протокол собрания кредиторов №' + snum[1] + '.doc'
+        link.href = '../../../protocols/Protocol_' + snum[1] + '.doc'
         link.click();
     })
 }
