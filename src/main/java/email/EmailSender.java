@@ -30,6 +30,7 @@ public class EmailSender extends HttpServlet {
         return "SELECT smtp_password FROM public.systemsettings";
     }
 
+    public String meetingNum = "";
     public String GetData(Connection _c, String _sql, String _columnName) {
         String result = "";
         try {
@@ -67,7 +68,7 @@ public class EmailSender extends HttpServlet {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()){
-                String data_sobr = (rs.getString(2));
+                meetingNum = (rs.getString(2));
             }
 
             rs.close();
@@ -86,8 +87,8 @@ public class EmailSender extends HttpServlet {
         try {
             Class.forName("org.postgresql.Driver");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
+            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
 
             String smtpHost = GetData(c, SmtpHostSql(), "smtp_host");
             String smtpPort = GetData(c, SmtpPortSql(), "smtp_port");
@@ -120,7 +121,7 @@ public class EmailSender extends HttpServlet {
                     body = "Уважаемый пользователь!" +
                             "Уведомляем, что на платформе Собрание Кредиторов будет проведено собрание на тему" +
                             "" +
-                            "" +
+                            "" + meetingNum +
                             "" +
                             "" +
                             "Уведомляем, что для участия в собрании пользователь должен быть зарегистрирован на платформе." +

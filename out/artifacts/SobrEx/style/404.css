@@ -1,0 +1,296 @@
+html {
+    overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.base {
+    margin-top: 645px;
+    height: 310px;
+}
+
+.base_bg {
+    margin-top: 645px;
+    height: 310px;
+
+}
+
+.viewport {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 650px;
+    top: -5px;
+    background: linear-gradient(105.79deg, rgba(103, 200, 212, 0.3) 4.43%, rgba(0, 71, 129, 0.3) 47.8%), url(../img/back.png);
+    background-size:100%;
+    background-attachment: fixed;
+}
+
+.login_container {
+    position: absolute;
+    margin-left: 80px;
+    top: 165px;
+    height: 378px;
+}
+
+.login_block {
+    border: none;
+    border-radius: 15px;
+    position: absolute;
+    width: 660px;
+    height: 314px;
+    background: #FFFFFF;
+    box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0531481), 0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0425185), 0px 20px 13px rgba(0, 0, 0, 0.035), 0px 8.14815px 6.51852px rgba(0, 0, 0, 0.0274815), 0px 1.85185px 3.14815px rgba(0, 0, 0, 0.0168519);
+}
+
+.login_block a{
+    text-decoration: none;
+}
+
+h2 {
+    position: absolute;
+    width: 532px;
+    height: 76px;
+    left: 60px;
+    top: 48px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    color: #104781;
+}
+.login_text {
+    position: absolute;
+    width: auto;
+    height: 75px;
+    left: 64px;
+    top: 116px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    color: #104781;
+}
+
+.toMain {
+    position: absolute;
+    width: 160px;
+    height: 55px;
+    left: 60px;
+    top: 206px;
+    border: none;
+    border-radius: 10px;
+    background: #37DCF5;
+    color: #00345F;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+}
+
+.toMain a{
+    text-decoration: none;
+    color: #00345F;
+}
+
+
+@media (min-width: 375px) and (max-width: 720px) {
+
+    .viewport {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        height: 1065px;
+        top: -5px;
+        background: linear-gradient(105.79deg, rgba(103, 200, 212, 0.3) 4.43%, rgba(0, 71, 129, 0.3) 47.8%), url(../img/back.png);
+        background-size:100%;
+        background-attachment: fixed;
+    }
+
+    .login_container {
+        position: absolute;
+        margin-left: 10px;
+        top: 165px;
+        height: 378px;
+    }
+
+    .login_block {
+        border: none;
+        border-radius: 10px;
+        position: absolute;
+        width: 80%;
+        min-width: 355px;
+        height: 352px;
+        background: #FFFFFF;
+        box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0531481), 0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0425185), 0px 20px 13px rgba(0, 0, 0, 0.035), 0px 8.14815px 6.51852px rgba(0, 0, 0, 0.0274815), 0px 1.85185px 3.14815px rgba(0, 0, 0, 0.0168519);
+    }
+
+    h2 {
+        position: absolute;
+        width: 80%;
+        min-width: 307px;
+        height: 78px;
+        margin-left: -32px;
+        top: 30px;
+        font-family: 'Exo 2';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 120%;
+        text-align: center;
+        color: #104781;
+
+    }
+
+    .login_text {
+        position: absolute;
+        width: 295px;
+        height: 88px;
+        left: 30px;
+        top: 140px;
+        font-family: 'Exo 2';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        text-align: center;
+        color: #104781;
+    }
+
+    .toMain {
+        position: absolute;
+        width: 120px;
+        height: 45px;
+        left: 117px;
+        top: 206px;
+        border: none;
+        border-radius: 10px;
+        background: #37DCF5;
+        color: #00345F;
+        font-family: 'Exo 2';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 100%;
+        text-align: center;
+    }
+
+    .signup {
+        text-decoration: none;
+        position: absolute;
+        width: 156px;
+        height: 16px;
+        left: 89px;
+        top: 306px;
+        font-family: 'Exo 2';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 100%;
+        /* identical to box height, or 18px */
+
+
+        color: #104781;
+    }
+
+    .info_block {
+        position: absolute;
+        height: 378px;
+        width: 500px;
+        left: 20px;
+        top: 354px;
+        padding: 0;
+        padding-left: 0px;
+    }
+
+    .info_item_1 {
+        position: absolute;
+        width: 315px;
+        height: 105px;
+    }
+
+    .info_item_2 {
+        position: absolute;
+        width: 315px;
+        height: 105px;
+        left: 0px;
+        padding-left: 0px;
+        top: 107px;
+
+    }
+
+    .info_item_3 {
+        position: absolute;
+        width: 315px;
+        height: 105px;
+        left: 0px;
+        top: 237px;
+    }
+
+    .info_item_4 {
+        position: absolute;
+        width: 315px;
+        height: 105px;
+        left: 0px;
+        top: 367px;
+        padding-left: 0px;
+    }
+
+    .color_text {
+        width: 36px;
+        font-family: 'Exo 2';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 100%;
+        color: #37DCF5;
+    }
+
+    .p_heading {
+        position: absolute;
+        top: 35px;
+        font-family: 'Exo 2';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 100%;
+        /* identical to box height, or 18px */
+
+
+        color: #FFFFFF;
+    }
+
+    .main_text {
+        position: absolute;
+        width: 315px;
+        height: 72px;
+        font-family: 'Exo 2';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+
+        color: #FFFFFF;
+
+        opacity: 0.8;
+    }
+
+
+}

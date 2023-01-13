@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="../../../style/shared.css">
+  <link rel="stylesheet" type="text/css" href="../../../style/z_sobr_uch_2.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <title>Собрание Кредиторов</title>
+</head>
+<body>
+<div class="menu">
+  <ul>
+    <li class="logo"><a href="../../../help/contacts.html"><img src="../../../img/Logo.svg" /></a></li>
+    <li class="nav_item"><a href="../../../index.html">Главная</a></li>
+    <li class="nav_item"><a href="../../../reestr.html">Реестр собраний</a></li>
+    <li class="nav_item"><a href="../../../help/help_1.html">Помощь</a></li>
+    <li class="nav_item"><a href="../../../help/contacts.html">Контакты</a></li>
+    <li class="nav_item nouser"><a href="../../../login.html"> <button class="nav_btn">Войти</button></a></li>
+    <li class="nav_item nouser"><a href="../../../signin.html">Зарегистрироваться</a></li>
+    <li class="nav_item" ><a href="FILTERServlet"><p class="nav_login" id="lk"></p></a></li>
+    <li class="nav_item"><a href="../../../signin.html"><span id="clock" style="color:#ffffff;"></span></a></li>
+    <li class="nav_item logout"><a href="/Sobr/LOGOUTServlet"><img id="logout_btn" src="../../../img/logout%201%20(Traced).png" /></a></li>
+  </ul>
+</div>
+<div class="container">
+  <div class="content">
+
+    <div class="ogl">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a class="anti_tekst"  href="/index.html">Главная</a></li>
+          <li class="breadcrumb-item"><a class="anti_tekst"  href="#">Личный кабинет участника</a></li>
+          <li class="breadcrumb-item"><a class="anti_tekst"  href="#">Участие в собраниях</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Карточка собрания</li>
+        </ol>
+      </nav>
+    </div>
+
+    <p class="heading" id="number">Карточка собрания: </p>
+
+    <div class="ep">
+      <h6 id="error">Подпишите заявления</h6>
+      <ul class="check fader">
+        <li><input type="checkbox" id="check1"><a class="check_text">Обязуюсь соблюдать требования, указанные в<br>&emsp;&ensp; сообщении о проведении собрания кредиторов*</a></li>
+        <li><input type="checkbox" id="check2"><a class="check_text">Согласен, что в ходе участия в собрании, в случае отсутствия голоса<br>&emsp;&ensp; в бюллетене/ях по истечении установленного времени, такой<br>&emsp;&ensp; бюллетень/и считается/ются недействительным/и*</a></li>
+        <li><input type="checkbox" id="check3"><a class="check_text">Согласен на обработку персональных данных, необходимых<br>&emsp;&ensp; для участия и проведения собрания*</a></li>
+      </ul>
+      <ul class="nofade1">
+        <li>Чьи интересы представляете?</li>
+        <li class="oneline" id="behalf" onclick="White(this.id)"><a>Выберите из списка</a></li>
+        <img src="../../../img/down_arrow.svg" class="arrw1">
+      </ul>
+      <ul class="nofade2">
+        <li>Статус участника</li>
+        <li class="oneline" id="status" onclick="White(this.id)"><a>Выберите из списка</a></li>
+        <img src="../../../img/down_arrow.svg" class="arrw2">
+      </ul>
+      <p class="fader">Личные данные</p>
+      <div id="uData"></div>
+      <p class="fader">Прикрепленные документы участника</p>
+      <ul class="fader">
+        <li class="oneline"><a>Документ, удостоверяющий личность</a><img src="../../../img/cross.svg" class="cross1"></li>
+      </ul>
+      <ul class="fader">
+        <label for="file">
+          Добавить документ
+          <input type="file" id="file"/>
+        </label>
+      </ul>
+      <ul class="btns fader">
+        <li><a class="txtr"><button id="sign" class="sign" onclick="let x = Validate(); if (x === 0){Signature(); addAttr()}">Подписать заявку электронной подписью</button></a></li>
+        <li><a class="txtr"><button id="save" class="save">Сохранить заявку как черновик</button></a></li>
+      </ul>
+    </div>
+
+    <ul class="int_drop">
+      <li class="int1">Не выбрано</li>
+      <li class="int2">Представляю свои интересы</li>
+      <li class="int3">Участие по доверенности</li>
+    </ul>
+
+    <ul class="stat_drop">
+      <li class="stat1">Не выбрано</li>
+      <li class="stat2">Конкурсный кредитор</li>
+      <li class="stat3">Уполномоченные органы, требования которых включены в реестр</li>
+      <li class="stat4">Представитель работников должника</li>
+      <li class="stat5">Представитель учредителей (участников) должника</li>
+      <li class="stat6">Представитель собственника имущества должника - унитарного предприятия</li>
+      <li class="stat7">Представитель СРО</li>
+      <li class="stat8">Представитель контролирующего органа </li>
+      <li class="stat9">Другое</li>
+    </ul>
+
+    <div class="signature">
+      <img class="cross" src="../../../img/cross.svg">
+      <h2>Выбор сертификата</h2>
+      <div class="cert_container" id="certs"></div>
+    </div>
+
+    <div class="wait" id="wait">
+      <h2>Заявка отправлена</h2>
+      <p>Ваша заявка успешно<br>отправлена на рассмотрение</p>
+    </div>
+
+    <div class="base_bg"></div>
+    <div class="base">
+      <ul>
+        <li class="base_logo"><a href="#"><img src="../../../img/Logo.svg" /></a></li>
+        <li class="base_item1"><a>Выйти</a></li>
+      </ul>
+      <ul class="base_links">
+        <li class="base_item2"><a class="footer_txt" href="/index.html" >Главная</a></li>
+        <li class="base_item2"><a class="footer_txt" href="/reestr.html">Реестр собраний</a></li>
+        <li class="base_item2"><a class="footer_txt" href="/help/help_1.html">Помощь</a></li>
+        <li class="base_item2"><a class="footer_txt" href="/help/contacts.html">Контакты</a></li>
+      </ul>
+      <p class="copyright">© 2011-2022 Оператор торговой площадки - ООО «ТендерСтандарт». Все права защищены.</p>
+    </div>
+  </div>
+</div>
+<script>
+  setInterval(function () {
+    var now = new Date();
+    var clock = document.getElementById("clock");
+    clock.innerHTML = now.toLocaleTimeString();
+  }, 1000);
+</script>
+<script src="../../../jquery/jquery-3.6.0.js"></script>
+<script src="../../../jquery/jquery.maskedinput.min.js"></script>
+<script src="../../../scripts/z_sobr_send_fix.js"></script>
+<script src="../../../scripts/public_pages_header.js"></script>
+<script src="../../../scripts/check_for_org.js"></script>
+<script src="../../../scripts/z_sobr_application.js"></script>
+<script src="../../../scripts/z_sobr_app_validate.js"></script>
+<script src="../../../scripts/white.js"></script>
+<script src="../../../scripts/docsUpload.js"></script>
+<script src="../../../scripts/addAttribute.js"></script>
+<script src="../../../scripts/z_sobr_app_create.js"></script>
+<script src="../../../scripts/signature_application.js"></script>
+<script src="../../../scripts/z_sobr_application_check.js"></script>
+<script src="../../../crypto-pro-js-master/dist/crypto-pro-js.min.js"></script>
+<script href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function(){
+    $.mask.definitions['0'] = "[0-9]";
+    $(".phone").mask("+7(000)000-00-00");
+    $(".wait").hide()
+  });
+  $(document).ready(function(){
+    $.mask.definitions['0'] = "[0-9]";
+    $(".ser").mask("00 00");
+  });
+  $(document).ready(function(){
+    $.mask.definitions['0'] = "[0-9]";
+    $(".num").mask("000 000");
+  });
+  $(document).ready(function(){
+    $.mask.definitions['0'] = "[0-3]";
+    $.mask.definitions['1'] = "[0-9]";
+    $.mask.definitions['2'] = "[0-9]";
+    $(".date").mask("01.01.2222");
+  });
+  $(document).ready(function(){
+    $(".int_drop").hide()
+  });
+  $(document).ready(function(){
+    $("#behalf").click(function(){
+      $(".int_drop").slideDown()
+    }).click(function(){
+      $(".fader").animate({
+        opacity: "0.3"
+      });
+    });
+  });
+  $(document).ready(function(){
+    $("#behalf").click(function(){
+      $(".int_drop").slideDown()
+    }).click(function(){
+      $(".ep").animate({
+        backgroundColor: "#cff7fd"
+      });
+    });
+  });
+  $(document).ready(function(){
+    $(".int_drop").mouseleave(function(){
+      $(".fader").animate({
+        opacity: "1"
+      });
+    }).click(function(){
+      $(".fader").animate({
+        opacity: "1"
+      });
+    }).mouseleave(function(){
+      $(".int_drop").slideUp()
+    }).click(function(){
+      $(".int_drop").slideUp()
+    });
+  });
+  $(document).ready(function() {
+    $(".int_drop").mouseleave(function () {
+      $(".ep").animate({
+        backgroundColor: "#BAF3FC"
+      });
+    }).click(function () {
+      $(".ep").animate({
+        backgroundColor: "#BAF3FC"
+      });
+    });
+  });
+  $(document).ready(function (){
+    $(".int1").click(function(){
+      $(".nofade1 li a").text("Не выбрано")
+    });
+  });
+  $(document).ready(function (){
+    $(".int2").click(function(){
+      $(".nofade1 li a").text("Представляю свои интересы")
+    });
+  });
+  $(document).ready(function (){
+    $(".int3").click(function(){
+      $(".nofade1 li a").text("Участие по доверенности")
+    });
+  });
+  $(document).ready(function(){
+    $(".stat_drop").hide()
+  });
+  $(document).ready(function(){
+    $("#status").click(function(){
+      $(".stat_drop").slideDown()
+    }).click(function(){
+      $(".fader").animate({
+        opacity: "0.3"
+      });
+    });
+  });
+  $(document).ready(function(){
+    $("#status").click(function(){
+      $(".stat_drop").slideDown()
+    }).click(function(){
+      $(".ep").animate({
+        backgroundColor: "#cff7fd"
+      });
+    });
+  });
+  $(document).ready(function(){
+    $(".stat_drop").mouseleave(function(){
+      $(".fader").animate({
+        opacity: "1"
+      });
+    }).click(function(){
+      $(".fader").animate({
+        opacity: "1"
+      });
+    }).mouseleave(function(){
+      $(".stat_drop").slideUp()
+    }).click(function(){
+      $(".stat_drop").slideUp()
+    });
+  });
+  $(document).ready(function() {
+    $(".stat_drop").mouseleave(function () {
+      $(".ep").animate({
+        backgroundColor: "#BAF3FC"
+      });
+    }).click(function () {
+      $(".ep").animate({
+        backgroundColor: "#BAF3FC"
+      });
+    });
+  });
+  $(document).ready(function (){
+    $(".stat1").click(function(){
+      $(".nofade2 li a").text("Не выбрано")
+    });
+  });
+  $(document).ready(function (){
+    $(".stat2").click(function(){
+      $(".nofade2 li a").text("Конкурсный кредитор")
+    });
+  });
+  $(document).ready(function (){
+    $(".stat3").click(function(){
+      $(".nofade2 li a").text("Уполномоченные органы, требования которых включены в реестр")
+    });
+  });
+  $(document).ready(function (){
+    $(".stat4").click(function(){
+      $(".nofade2 li a").text("Представитель работников должника")
+    });
+  });
+  $(document).ready(function (){
+    $(".stat5").click(function(){
+      $(".nofade2 li a").text("Представитель учредителей (участников) должника")
+    });
+  });
+  $(document).ready(function (){
+    $(".stat6").click(function(){
+      $(".nofade2 li a").text("Представитель собственника имущества должника - унитарного предприятия")
+    });
+  });
+  $(document).ready(function (){
+    $(".stat7").click(function(){
+      $(".nofade2 li a").text("Представитель СРО")
+    });
+  });
+  $(document).ready(function (){
+    $(".stat8").click(function(){
+      $(".nofade2 li a").text("Представитель контролирующего органа ")
+    });
+  });
+  $(document).ready(function (){
+    $(".stat9").click(function(){
+      $(".nofade2 li a").text("Другое")
+    });
+  });
+</script>
+</body>
+</html>

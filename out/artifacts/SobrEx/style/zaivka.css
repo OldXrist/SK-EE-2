@@ -1,0 +1,279 @@
+.zaiavra {position: absolute;
+    width: 1160px;
+    height: 966px;
+    margin-left: 80px;
+    top: 276px;
+
+    background: #BAF3FC;
+    border-radius: 15px;}
+
+.inf_od_zaiav {position: absolute;
+    width: 319px;
+    height: 18px;
+    left: 60px;
+    top: 50px;
+
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    /* identical to box height, or 18px */
+
+
+    color: #104781;}
+
+.unn_zaiv {position: absolute;
+    width: 300px;
+    height: 50px;
+    left: 60px;
+    top: 136px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.snils_zaiv {position: absolute;
+    width: 300px;
+    height: 50px;
+    left: 410px;
+    top: 136px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.ogrnip_ziav {position: absolute;
+    width: 340px;
+    height: 50px;
+    left: 760px;
+    top: 136px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.famil_ziav {position: absolute;
+    width: 300px;
+    height: 50px;
+    left: 60px;
+    top: 254px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.naim_ziav {position: absolute;
+    width: 300px;
+    height: 50px;
+    left: 410px;
+    top: 254px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.otch_ziav {position: absolute;
+    width: 340px;
+    height: 50px;
+    left: 760px;
+    top: 254px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.pocht_adres_zaiv {position: absolute;
+    width: 1040px;
+    height: 50px;
+    left: 60px;
+    top: 372px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.telefon_zaiv {position: absolute;
+    width: 400px;
+    height: 50px;
+    left: 60px;
+    top: 490px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.email_zaiv {position: absolute;
+    width: 590px;
+    height: 50px;
+    left: 510px;
+    top: 490px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.doks_zaiv {position: absolute;
+    width: 337px;
+    height: 18px;
+    left: 60px;
+    top: 590px;
+
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    /* identical to box height, or 18px */
+
+
+    color: #104781;}
+
+.doks_txt_zaiv {position: absolute;
+    width: 1040px;
+    height: 50px;
+    left: 60px;
+    top: 638px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.doks_txt2_zaiv {position: absolute;
+    width: 1040px;
+    height: 50px;
+    left: 60px;
+    top: 718px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.status_zaiv {position: absolute;
+    width: 216px;
+    height: 18px;
+    left: 60px;
+    top: 818px;
+
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    /* identical to box height, or 18px */
+
+
+    color: #104781;
+}
+
+.na_rasmotr_zaiv {position: absolute;
+    width: 300px;
+    height: 50px;
+    left: 60px;
+    top: 866px;
+
+    background: #FFFFFF;
+    border-radius: 10px;}
+
+.prin_zaiv {
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    left: 410px;
+    top: 866px;
+    background: #37DCF5;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: center;
+    color: #00345F;
+}
+
+.otklon_zaiv {box-sizing: border-box;
+
+    position: absolute;
+    width: 340px;
+    height: 50px;
+    left: 760px;
+    top: 866px;
+
+    border: 1px solid #104781;
+    border-radius: 10px;
+
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    /* identical to box height, or 16px */
+
+    text-align: center;
+    background: #BAF3FC;
+
+    color: #00345F;}
+
+.txt_obsh {
+    position: absolute;
+    width: 400px;
+    height: 18px;
+    left: 0;
+    top: -40px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    color: #406C9A;
+}
+
+.forms {
+    padding:12px;
+    width: 400px;
+    border-radius:10px;
+    border: white;
+}
+
+.forms:focus{
+    outline: none;
+}
+
+.forms2 {
+    padding:12px;
+    width: 1040px;
+    border-radius:10px;
+    border: white;
+
+}
+
+.forms2:focus{
+    outline: none;
+}
+
+
+.forms3 {  padding:12px;
+    width: 590px;
+    border-radius:10px;
+    border: white;
+
+}
+
+.forms3:focus{
+    outline: none;
+}
+
+
+.forms4 {
+    padding:12px;
+    width: 300px;
+    border-radius:10px;
+    border: white;
+
+
+}
+.forms4:focus{
+    outline: none;
+}
+
+.forms5 {
+    padding:12px;
+    width: 340px;
+    border-radius:10px;
+    border: white;
+
+}
+.forms5:focus{
+    outline: none;
+}

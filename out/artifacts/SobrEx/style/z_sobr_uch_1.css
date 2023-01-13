@@ -1,0 +1,496 @@
+.bc{
+    position: absolute;
+    top: 127px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #406C9A;
+    margin-left: 80px;
+}
+
+.bc a{
+    text-decoration: none;
+    color: #406C9A;
+}
+
+.heading{
+    position: absolute;
+    width: 600px;
+    height: 38px;
+    top: 188px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    color: #104781;
+    margin-left: 80px;
+}
+
+.ep{
+    position: absolute;
+    width: 1160px;
+    height: auto;
+    top: 416px;
+    background: #BAF3FC;
+    border-radius: 15px;
+    margin-left: 80px;
+    padding-left: 60px;
+    padding-bottom: 50px;
+}
+
+.ep p{
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    color: #104781;
+    margin: 0;
+    margin-top: 30px;
+    padding-bottom: 30px;
+}
+
+.ep ul{
+    padding: 0;
+}
+
+.ep ul li{
+    list-style: none;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    color: #406C9A;
+    padding-bottom: 15px;
+}
+
+.ep ul li a{
+    font-size: 16px;
+}
+
+.ep ul li img{
+    margin-left: 680px;
+    margin-bottom: 5px;
+}
+
+.ep ul li input::placeholder{
+    color: #406C9A;
+}
+
+.oneline{
+    width: 1040px;
+    height: 50px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    border: none;
+    padding: 17px;
+    color: #406C9A;
+    font-size: 16px;
+}
+
+.oneline:focus{
+    outline: none;
+}
+
+.multline{
+    width: 1040px;
+    height: 100px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    border: none;
+    padding-bottom: 67px;
+    padding-left: 17px;
+    color: #406C9A;
+    font-size: 16px;
+}
+
+.multline:focus{
+    outline: none;
+}
+
+.inline{
+    display: inline-block;
+}
+
+.inline li input{
+    height: 50px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    border: none;
+}
+
+.inline li input:focus{
+    outline: none;
+}
+
+.inline li input::placeholder{
+    color: #406C9A;
+    font-size: 16px;
+}
+
+.first li input{
+    width: 400px
+}
+
+.second{
+    margin-left: 46px;
+}
+
+.second li input{
+    width: 590px;
+}
+
+.first_2 li input{
+    width: 650px
+}
+
+.second_2{
+    margin-left: 46px;
+}
+
+.second_2 li input{
+    width: 340px;
+}
+
+.three  {
+    width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    margin-right: 50px;
+    height: 50px;
+    border: none;
+}
+
+.third{
+    width: 330px;
+}
+
+#org{
+    margin-top: -20px;
+    margin-bottom: 50px;
+}
+
+#cancel{
+    position: fixed;
+    width: 520px;
+    height: 401px;
+    margin-left: 400px;
+    margin-top: 200px;
+    background: #FFFFFF;
+    box-shadow: 0 100px 80px rgba(0, 0, 0, 0.07), 0 64.8148px 46.8519px rgba(0, 0, 0, 0.0531481), 0 38.5185px 25.4815px rgba(0, 0, 0, 0.0425185), 0 20px 13px rgba(0, 0, 0, 0.035), 0 8.14815px 6.51852px rgba(0, 0, 0, 0.0274815), 0 1.85185px 3.14815px rgba(0, 0, 0, 0.0168519);
+    border-radius: 15px;
+    padding: 50px 60px;
+}
+
+#cancel img{
+    float: right;
+    margin-top: -20px;
+    margin-right: -30px;
+}
+
+#cancel label{
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+    color: #104781;
+    margin-bottom: 20px;
+}
+
+#cancel textarea{
+    width: 400px;
+    height: 150px;
+    background: #E6F5F7;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    padding: 17px;
+    border: 1px solid #E6F5F7;
+    resize: none;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #406C9A;
+}
+
+#cancel textarea::placeholder{
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #406C9A;
+}
+
+#cancel textarea:focus{
+    outline: none;
+}
+
+.confirm_cancel{
+    width: 400px;
+    height: 55px;
+    background: #37DCF5;
+    border-radius: 10px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    color: #00345F;
+    border: none;
+}
+
+input{
+    padding-left: 17px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #406C9A;
+}
+
+.txt_obsh {
+    display: block;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    color: #406C9A;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.stats {
+    position: absolute;
+    width: 1160px;
+    height: 90px;
+    top: 276px;
+    margin-left: 80px;
+    background: #BAF3FC;
+    border-radius: 15px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    color: #406C9A;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.stats_item {
+    display: inline-block;
+    list-style: none;
+    margin-top: 36px;
+    margin-right: 67px;
+}
+
+.stats_item a{
+    text-decoration: none;
+    color: #406C9A;
+}
+
+.sub_btn a{
+    text-decoration: none;
+    color: #406C9A;
+}
+
+.sub_btn{
+    width: 439px;
+    height: 55px;
+    margin-left: 285px;
+    background: #37DCF5;
+    border-radius: 10px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    color: #00345F;
+    border: none;
+    margin-top: 70px;
+}
+
+.phone{
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #406C9A;
+}
+
+.frs{
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #406C9A;
+}
+
+.ogrn{
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: #406C9A;
+}
+
+.fInput{
+    width: 400px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+.sInput{
+    width: 590px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+#osn{
+    resize: none;
+}
+
+.base_bg {
+    margin-top: 2176px;
+}
+
+.base{
+    margin-top: 2176px;
+}
+
+.knopka4 {
+    width: 439px;
+    height: 55px;
+    margin-top: 20px;
+    margin-left: 50px;
+    background: #37DCF5;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    color: #00345F;
+}
+
+.knopka5 {
+    width: 439px;
+    height: 55px;
+    margin-left: 55px;
+    background: #BAF3FC;
+    border-radius: 10px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    color: #00345F;
+    border: 1px solid #00345F;
+}
+
+.knopka6 {position: absolute;
+    width: 250px;
+    height: 55px;
+    left: 60px;
+    top: 1775px;
+    background: #BAF3FC;
+    border-radius: 10px;
+
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    /* or 18px */
+
+    text-align: center;
+
+    color: #00345F;
+}
+
+.knopka7 {position: absolute;
+    width: 250px;
+    height: 55px;
+    left: 360px;
+    top: 1775px;
+
+    background: #BAF3FC;
+    border-radius: 10px;
+
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    /* or 18px */
+
+    text-align: center;
+
+    color: #00345F;
+}
+
+.knopka8 {position: absolute;
+    width: 440px;
+    height: 55px;
+    left: 660px;
+    top: 1775px;
+
+    background: #37DCF5;
+    border-radius: 10px;
+
+    border: none;
+
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    /* or 18px */
+
+    text-align: center;
+
+    color: #00345F;
+}
+
+.knopka9 {
+    position: absolute;
+    width: 439px;
+    height: 55px;
+    left: 361px;
+    top: 1775px;
+    background: #37DCF5;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    color: #00345F;
+}
+
+.knopka10 { left: 60px;
+    top: 18px;
+}

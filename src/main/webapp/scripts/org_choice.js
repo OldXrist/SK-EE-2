@@ -89,7 +89,7 @@ $("#fl").click(function (){
         $("#ql_form").hide()
         $(".dolg_drop").slideUp()
 
-        l = 0
+        l += 0
 
     } else {
         $(".table_org").animate({
@@ -142,7 +142,7 @@ $("#ip").click(function (){
         $("#fl_form").hide()
         $(".dolg_drop").slideUp()
 
-        l = 0
+        l += 1
 
     } else {
         $(".table_org").animate({
@@ -157,7 +157,7 @@ $("#ip").click(function (){
 })
 
 $("#ql").click(function (){
-    if (k === 0) {
+    if (k === 0 && l === 0) {
         $("#ql_form").slideDown()
         $(".table_org").animate({
             opacity: "1",
@@ -174,21 +174,21 @@ $("#ql").click(function (){
         })
         $(".dolg_drop").slideUp()
 
-        l += 1
+        k += 1
 
-    } else {
+    } else if (l !== 0){
         $(".table_org").animate({
             opacity: "1",
-            height: "+=118px"
+            height: "-=118px"
         })
         $(".under").animate({
-            top: "+=118px"
+            top: "-=118px"
         })
         $(".base").animate({
-            top: "+=118px"
+            top: "-=118px"
         })
         $(".base_bg").animate({
-            top: "+=118px"
+            top: "-=118px"
         })
         $("#ql_form").slideDown()
         $("#ip_form").hide()
@@ -196,6 +196,14 @@ $("#ql").click(function (){
         $(".dolg_drop").slideUp()
 
         l += 1
+    } else {
+        $(".table_org").animate({
+            opacity: "1"
+        })
+        $("#ql_form").slideDown()
+        $("#ip_form").hide()
+        $("#fl_form").hide()
+        $(".dolg_drop").slideUp()
     }
     document.getElementById("tip_dolzh").placeholder = document.getElementById("ql").innerHTML
 })
