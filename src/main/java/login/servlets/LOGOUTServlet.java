@@ -14,7 +14,7 @@ import java.sql.PreparedStatement;
 public class LOGOUTServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        HttpSession sesh = req.getSession(true);
+        HttpSession sesh = req.getSession();
         sesh.removeAttribute("email");
         sesh.removeAttribute("role");
         sesh.removeAttribute("type");

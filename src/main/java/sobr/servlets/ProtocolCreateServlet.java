@@ -18,12 +18,12 @@ public class ProtocolCreateServlet extends HttpServlet {
         String s = req.getParameter("sk");
         long sk = Long.parseLong(s);
 
-        String protocolName = "Protocol_" + sk + ".doc";
+        String protocolName = "Протокол собрания кредиторов №" + sk + ".doc";
 
         try {
             Class.forName("org.postgresql.Driver");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
+            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/SK", "postgres", "111");
 
             String checkProt = "SELECT protocol FROM prot WHERE id = ?";
@@ -36,8 +36,10 @@ public class ProtocolCreateServlet extends HttpServlet {
             if (!rsCheck.next()) {
 
                 //String fName = "C:\\Users\\manager\\Desktop\\SK-EE-2\\src\\main\\webapp\\protocols\\" + protocolName;
-                String fName = "../../../protocols/" + protocolName;
+                String fName = "/opt/tomcat/webapps/Sobr/protocols/" + protocolName;
+
                 File protocol = new File(fName);
+                out.println(protocol.getAbsolutePath());
                 //FileWriter w = new FileWriter(fName, true);
 
                 if (!protocol.exists() && protocol.createNewFile()) {

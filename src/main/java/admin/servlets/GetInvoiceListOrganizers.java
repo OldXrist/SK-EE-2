@@ -94,9 +94,9 @@ public class GetInvoiceListOrganizers extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             Class.forName("org.postgresql.Driver");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres", "postgres", "postgresql");
+            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres", "postgres", "postgresql");
 
             //сначала собираем роли и id организаторов
             ArrayList<String> userRoles = new ArrayList<String>();

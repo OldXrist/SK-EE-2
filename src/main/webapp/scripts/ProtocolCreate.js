@@ -3,12 +3,13 @@ let send = {
 }
 
 function CreateProtocol(){
-    $.get("/Sobr/ProtocolCreateServlet", send, function () {
+    $.get("/Sobr/ProtocolCreateServlet", send, function (data) {
         console.log('protocol created')
+        console.log(data)
 
         let link = document.getElementById('link')
         link.style.display = 'none'
-        link.href = '../../../protocols/Protocol_' + snum[1] + '.doc'
+        link.href = "../../../protocols/Протокол собрания кредиторов №" + snum[1] + '.doc'
         link.click();
     })
 }

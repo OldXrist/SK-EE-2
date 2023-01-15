@@ -57,8 +57,8 @@ public class EmailSender extends HttpServlet {
 
         try {
             Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "111");
+            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "111");
 
             String sql = "SELECT id,data_u_vrem_sobr FROM sobr_org WHERE email_org = ? ORDER BY id DESC LIMIT 1;";
 
