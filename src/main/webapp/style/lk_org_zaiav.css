@@ -1048,7 +1048,7 @@ input {
     width: 1040px;
     height: auto;
     margin-left: 60px;
-    margin-top: 2830px;
+    margin-top: 2750px;
 }
 
 .docs_tbl tr td {
@@ -1090,7 +1090,7 @@ input {
 .povestka_drop {
     position: absolute;
     left: 60px;
-    top: 2800px;
+    top: 2850px;
 }
 
 .povestka_drop input {

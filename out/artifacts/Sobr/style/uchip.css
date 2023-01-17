@@ -18,6 +18,21 @@
     border: none;
 }
 
+#gotIt{
+    width: 240px;
+    height: 55px;
+    background: #37DCF5;
+    border-radius: 10px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    color: #00345F;
+    border: none;
+}
+
 .gl {
     position: absolute;
     width: 59px;
@@ -48,7 +63,7 @@
 .wait{
     position: absolute;
     width: 520px;
-    height: 225px;
+    height: auto;
     margin-left: 380px;
     top: 1151px;
     background: #FFFFFF;
@@ -59,6 +74,7 @@
     font-family: 'Exo 2';
     font-style: normal;
     color: #104781;
+    padding-bottom: 50px;
 }
 
 .wait h2{
@@ -72,6 +88,7 @@
     font-weight: 600;
     font-size: 18px;
     line-height: 100%;
+    margin-bottom: 33px;
 }
 
 .add_docs{
@@ -130,7 +147,11 @@
     width: 1040px;
     height: auto;
     margin-left: 60px;
+<<<<<<< HEAD
     margin-top: 1300px;
+=======
+    margin-top: 1310px;
+>>>>>>> e519b4e8debd19a59ca996b07f47da45a543464d
 }
 
 .docs_tbl tr td{

@@ -26,8 +26,8 @@
 <div class="ogl">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a class="anti_tekst"  href="#">Главная</a></li>
-            <li class="breadcrumb-item"><a class="anti_tekst"  href="#">Регистрация нового пользователя</a></li>
+            <li class="breadcrumb-item"><a class="anti_tekst" href="../index.html">Главная</a></li>
+            <li class="breadcrumb-item"><a class="anti_tekst" href="../signin.html">Регистрация нового пользователя</a></li>
             <li class="breadcrumb-item active" aria-current="page">Oрганизатора собрания (Арбитражный управляющий)</li>
         </ol>
     </nav>
@@ -190,6 +190,10 @@
                 <div class="wait">
                     <h2>Проверка документов</h2>
                     <p>Ваши документы отправлены на проверку.<br>Информация о результатах проверки<br>придет Вам на электронную почту</p>
+<<<<<<< HEAD
+=======
+                    <button id="gotIt" type="button" href="../index.html">Понятно</button>
+>>>>>>> e519b4e8debd19a59ca996b07f47da45a543464d
                 </div>
             </div>
 
@@ -266,6 +270,10 @@
         $.mask.definitions['0'] = "[0-9]";
         $("#reg_nomer_au").mask("000 000");
     });
+
+    $('#gotIt').click(function (){
+        window.location.href = '/Sobr/'
+    })
 </script>
 </body>
 </html>

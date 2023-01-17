@@ -58,7 +58,7 @@ input:focus{
 .wait{
     position: absolute;
     width: 520px;
-    height: 225px;
+    height: auto;
     margin-left: 380px;
     top: 1151px;
     background: #FFFFFF;
@@ -69,6 +69,22 @@ input:focus{
     font-family: 'Exo 2';
     font-style: normal;
     color: #104781;
+    padding-bottom: 50px;
+}
+
+#gotIt{
+    width: 240px;
+    height: 55px;
+    background: #37DCF5;
+    border-radius: 10px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    color: #00345F;
+    border: none;
 }
 
 .wait h2{
@@ -82,6 +98,7 @@ input:focus{
     font-weight: 600;
     font-size: 18px;
     line-height: 100%;
+    margin-bottom: 33px;
 }
 
 .add_docs{

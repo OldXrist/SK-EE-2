@@ -24,6 +24,6 @@ $.get("/Sobr/MAINServlet", function (data) {
             height: "282px",
             marginTop: "45px"
         }, 1);
-        document.getElementById("lk").innerHTML = data
+        document.getElementById("lk").innerHTML = data.split('\n')[0]
     }
 })
