@@ -87,8 +87,8 @@ public class EmailSender extends HttpServlet {
         try {
             Class.forName("org.postgresql.Driver");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
+            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
+            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
 
             String smtpHost = GetData(c, SmtpHostSql(), "smtp_host");
             String smtpPort = GetData(c, SmtpPortSql(), "smtp_port");
@@ -121,7 +121,7 @@ public class EmailSender extends HttpServlet {
                     body = "Уважаемый пользователь!" +
                             "Уведомляем, что на платформе Собрание Кредиторов будет проведено собрание на тему" +
                             "" +
-                            "" + meetingNum +
+                            "http://sk.tenderstandart.ru:8080/Sobr/lichnui_kobinetu/lk_uch/z_sobr/z_sobr_uch_2.html?sk=1" +
                             "" +
                             "" +
                             "Уведомляем, что для участия в собрании пользователь должен быть зарегистрирован на платформе." +

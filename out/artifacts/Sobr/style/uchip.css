@@ -147,7 +147,11 @@
     width: 1040px;
     height: auto;
     margin-left: 60px;
+<<<<<<< HEAD
+    margin-top: 1300px;
+=======
     margin-top: 1310px;
+>>>>>>> e519b4e8debd19a59ca996b07f47da45a543464d
 }
 
 .docs_tbl tr td{
