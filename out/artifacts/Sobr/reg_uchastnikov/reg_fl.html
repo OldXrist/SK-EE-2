@@ -28,7 +28,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a class="anti_tekst" href="../index.html">Главная</a></li>
-            <li class="breadcrumb-item"><a class="anti_tekst" href="#">Регистрация нового пользователя</a></li>
+            <li class="breadcrumb-item"><a class="anti_tekst" href="../signin.html">Регистрация нового пользователя</a></li>
             <li class="breadcrumb-item active" aria-current="page">Участник собрания (Индивидуальный предприниматель)</li>
         </ol>
     </nav>
@@ -180,6 +180,7 @@
                 <div class="wait">
                     <h2>Проверка документов</h2>
                     <p>Ваши документы отправлены на проверку.<br>Информация о результатах проверки<br>придет Вам на электронную почту</p>
+                    <button id="gotIt" type="button" href="../index.html">Понятно</button>
                 </div>
             </div>
 
@@ -250,6 +251,10 @@
         $.mask.definitions['0'] = "[0-9]";
         $("#snils").mask("000 000 000 00");
     });
+
+    $('#gotIt').click(function (){
+        window.location.href = '/Sobr/'
+    })
 </script>
 </body>
 </html>

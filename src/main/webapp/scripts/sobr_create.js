@@ -135,9 +135,10 @@ function Create() {
     let sobrDb = dateFormat(document.getElementById("date_b").value, document.getElementById("time_b").value)
     let sobrDb2 = dateFormat(document.getElementById("date_b2").value, document.getElementById("time_b2").value)
     let sobrDp = dateFormat(document.getElementById("date_p").value, document.getElementById("time_p").value)
-    let obem = null
+    let obem = document.getElementById()
 
-    let e = document.getElementById("date_razm").value.split('.')
+    // TODO EFRSB
+    let e = document.getElementById("date_razm").placeholder.split('.')
     let efrsbDate = ""
     for (let i = 2; i > -1; i--) {
         efrsbDate += e[i]

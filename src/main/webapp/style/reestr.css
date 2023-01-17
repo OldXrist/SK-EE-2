@@ -85,7 +85,7 @@ body {
     padding-bottom: 51px;
 }
 
-.table {
+#table {
     position: absolute;
     margin-left: 80px;
     height: 678px;
@@ -102,9 +102,10 @@ body {
     height: 150px;
     background-color: rgba(186, 243, 252, 0.3);
     border: 1px solid rgba(186, 243, 252, 0.5);
-    box-shadow: 0px 6px 12px rgba(16, 71, 129, 0.1);
+    box-shadow: 0 6px 12px rgba(16, 71, 129, 0.1);
     border-radius: 15px;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .sort {
@@ -203,7 +204,7 @@ body {
 .datetime {
     position: relative;
     width: fit-content;
-    margin-bottom: 0;
+    margin-bottom: 20px;
     left: 896px;
     list-style: none;
     font-family: 'Exo 2';

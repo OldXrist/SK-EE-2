@@ -72,6 +72,7 @@ function Validate () {
             k += 1;
         }
     }
+    /*
     if (document.getElementById("efrsb").value.length === 0) {
         document.getElementById("efrsb").style.borderColor = 'red';
         k += 1;
@@ -81,6 +82,8 @@ function Validate () {
         document.getElementById("date_razm").style.borderColor = 'red';
         k += 1;
     }
+
+     */
     if (document.getElementById("naim_abr_sud").value.length === 0) {
         document.getElementById("naim_abr_sud").style.borderColor = 'red';
         k += 1;

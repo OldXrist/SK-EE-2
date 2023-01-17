@@ -29,15 +29,14 @@ public class ZServlet extends HttpServlet {
         String date5 = req.getParameter("dateP");
         String ob = req.getParameter("vol");
 
-        String efrsb = req.getParameter("efrsb");
-        long regEfrsb  = Long.parseLong(efrsb);
+        //String efrsb = req.getParameter("efrsb");
+        //long regEfrsb  = Long.parseLong(efrsb);
 
         String efrsbDate = req.getParameter("efrsbDate");
 
         String court = req.getParameter("court");
 
-        String caseN = req.getParameter("caseNum");
-        long caseNum = Long.parseLong(caseN);
+        String caseNum = req.getParameter("caseNum");
 
         String baseForSobr = req.getParameter("baseForSobr");
         String typeDol = req.getParameter("typeDol");
@@ -83,10 +82,13 @@ public class ZServlet extends HttpServlet {
             ps.setObject(5, dateB);
             ps.setObject(6, dateB2);
             ps.setObject(7, dateP);
-            ps.setLong(8, regEfrsb);
+            // TODO EFRSB
+            //ps.setLong(8, regEfrsb);
+            //ps.setObject(9, dateEfrsb);
+            ps.setLong(8, 123);
             ps.setObject(9, dateEfrsb);
             ps.setString(10, court);
-            ps.setLong(11, caseNum);
+            ps.setString(11, caseNum);
             ps.setString(12, baseForSobr);
             ps.setString(13, typeDol);
             ps.setString(14, emailOrg);

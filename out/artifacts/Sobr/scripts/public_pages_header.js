@@ -8,10 +8,10 @@ $.get("/Sobr/MAINServlet", function (data) {
         $("#clock").show()
         $("#logout_btn").show()
         $(".logout").show()
-        document.getElementById("lk").innerHTML = data
+        document.getElementById("lk").innerHTML = data.split('\n')[0]
     }
 
     if (document.getElementById("menu_name") !== null) {
-        document.getElementById("menu_name").innerHTML += data
+        document.getElementById("menu_name").innerHTML += data.split('\n')[0]
     }
 })

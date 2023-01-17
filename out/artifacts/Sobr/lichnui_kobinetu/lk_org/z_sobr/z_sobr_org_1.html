@@ -110,11 +110,11 @@
             <p class="efrsb_txt">Информация для интеграции с ЕФРСБ</p>
             <div class="efrsb">
                 <label for="efrsb" class="txt_obsh">Идентификационный номер сообщения о публикации торгов на сайте ЕФРСБ*</label>
-                <input type="text" class="forms2" id="efrsb" placeholder="Идентификационный номер" onfocus="White(this.id)">
+                <input type="text" class="forms2" id="efrsb" placeholder="Идентификационный номер" onfocus="White(this.id)" disabled>
             </div>
             <div class="data_razm">
                 <label for="date_razm" class="txt_obsh">Дата размещения сообщения о публикации торгов на сайте ЕФРСБ*</label>
-                <input type="text" class="forms2" id="date_razm" placeholder="01.01.0000" onfocus="White(this.id)">
+                <input type="text" class="forms2" id="date_razm" placeholder="01.01.0000" onfocus="White(this.id)" disabled>
             </div>
             <div class="telefon">
                 <label for="phone" class="txt_obsh">Телефон*</label>
@@ -275,7 +275,7 @@
                 if (x === 0){
                     Signature()
                 }"><p class="topik">Подписать заявку ЭЦП и отправить</p></a>
-                    <a class="knopka5 txtr"><p class="topik2" onclick="Validate(); qSend(qAdd()); CreateDraft()">Сохранить заявку как черновик</p></a>
+                    <a class="knopka5 txtr"><p class="topik2" onclick="Validate(); Create()">Сохранить заявку как черновик</p></a>
                 </div>
             </div>
         </div>

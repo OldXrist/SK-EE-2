@@ -1,34 +1,34 @@
 let btn = document.querySelector('.upl')
 btn.disabled = true
 $(".voprosu").animate({
-    top: "+=50px"
+    top: "+=150px"
 });
 $(".knopka2").animate({
-    top: "+=50px"
+    top: "+=150px"
 });
 $(".nim_cod").animate({
-    top: "+=50px"
+    top: "+=150px"
 });
 $(".knopka3").animate({
-    top: "+=50px"
+    top: "+=150px"
 });
 $(".table_fio").animate({
-    top: "+=50px"
+    top: "+=150px"
 });
 $(".knopka4").animate({
-    top: "+=50px"
+    top: "+=150px"
 });
 $(".knopka5").animate({
-    top: "+=50px"
+    top: "+=150px"
 });
 $(".table_org").animate({
-    height: "+=50px"
+    height: "+=150px"
 });
 $(".base").animate({
-    top: "+=50px"
+    top: "+=150px"
 });
 $(".base_bg").animate({
-    top: "+=50px"
+    top: "+=150px"
 });
 
 $(document).ready(function(){

@@ -137,7 +137,8 @@ function Create() {
     let sobrDp = dateFormat(document.getElementById("date_p").value, document.getElementById("time_p").value)
     let obem = null
 
-    let e = document.getElementById("date_razm").value.split('.')
+    // TODO EFRSB
+    let e = document.getElementById("date_razm").placeholder.split('.')
     let efrsbDate = ""
     for (let i = 2; i > -1; i--) {
         efrsbDate += e[i]
