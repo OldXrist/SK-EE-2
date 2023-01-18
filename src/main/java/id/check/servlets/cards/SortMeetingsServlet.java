@@ -8,25 +8,49 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 
-@WebServlet("/MREEServlet")
-public class MREEServlet extends HttpServlet {
+@WebServlet(name = "SortMeetingsServlet", value = "/SortMeetingsServlet")
+public class SortMeetingsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         PrintWriter out = res.getWriter();
+
+        String sort = req.getParameter("param");
+        String param = "";
+
+        String sqlTemp = "SELECT id, data_u_vrem_sobr,nachal_podach_zaiv, okonch_podach_zaiv, type_dolzh, famil, name, otch, poln_naum, email_org, type_org, type_sobr, status FROM sobr_org WHERE status NOT IN ('Черновик') ORDER BY ";
+        String sql = "";
+
+        switch (sort){
+            case "num":
+                param = "id LIMIT 4;";
+                sql = sqlTemp + param;
+                break;
+            case "date":
+                param = "data_u_vrem_sobr LIMIT 4;";
+                sql = sqlTemp + param;
+                break;
+            case "status":
+                param = "status LIMIT 4;";
+                sql = sqlTemp + param;
+                break;
+        }
 
         try{
             Class.forName("org.postgresql.Driver");
             Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
             //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
-
+/*
             String sql = "SELECT id, data_u_vrem_sobr,nachal_podach_zaiv, okonch_podach_zaiv, type_dolzh, famil, name, otch, poln_naum, email_org, type_org, type_sobr, status\n" +
-                            "FROM sobr_org\n" +
-                            "WHERE status NOT IN ('Черновик', 'Отменено организатором')" +
-                            "ORDER BY id\n" +
-                            "LIMIT 4;";
-            Statement st = c.createStatement();
-            ResultSet rs = st.executeQuery(sql);
+                    "FROM sobr_org\n" +
+                    "WHERE status NOT IN ('Черновик')" +
+                    "ORDER BY ?\n" +
+                    "LIMIT 4;";
+
+ */
+            PreparedStatement ps = c.prepareStatement(sql);
+
+            ResultSet rs = ps.executeQuery();
 
             while (rs.next()){
                 out.println(rs.getInt(1));
