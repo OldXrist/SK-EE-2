@@ -48,6 +48,7 @@
 
 
                 <p class="zaiav">Заявления</p>
+                <p id="checkError">Подпишите заявления</p>
 
                 <div class="gal">
                     <div class="form-check">
@@ -180,10 +181,7 @@
                 <div class="wait">
                     <h2>Проверка документов</h2>
                     <p>Ваши документы отправлены на проверку.<br>Информация о результатах проверки<br>придет Вам на электронную почту</p>
-<<<<<<< HEAD
-=======
                     <button id="gotIt" type="button" href="../index.html">Понятно</button>
->>>>>>> e519b4e8debd19a59ca996b07f47da45a543464d
                 </div>
             </div>
 
@@ -224,7 +222,13 @@
 <script>
     $(document).ready(function (){
         $(".wait").hide()
+        $("#checkError").hide()
     });
+
+    $(document).ready(function (){
+        $(".wait").hide()
+    });
+
     $(document).ready(function() {
         $.mask.definitions['0'] = "[0-9]";
         $("#inn").mask("000000000000");

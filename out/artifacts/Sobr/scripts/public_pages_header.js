@@ -1,3 +1,10 @@
+$(document).ready(function (){
+    $(".nav_login").hide()
+    $("#clock").hide()
+    $("#logout_btn").hide()
+    $(".logout").hide()
+})
+
 $.get("/Sobr/MAINServlet", function (data) {
     console.log(data)
     console.log(typeof data)

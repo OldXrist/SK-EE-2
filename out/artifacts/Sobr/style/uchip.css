@@ -18,6 +18,21 @@
     border: none;
 }
 
+#checkError{
+    position: absolute;
+    width: 195px;
+    height: 18px;
+    left: 243px;
+    top: 453px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: right;
+    color: #FF0000;
+}
+
 #gotIt{
     width: 240px;
     height: 55px;
@@ -147,11 +162,7 @@
     width: 1040px;
     height: auto;
     margin-left: 60px;
-<<<<<<< HEAD
-    margin-top: 1300px;
-=======
     margin-top: 1310px;
->>>>>>> e519b4e8debd19a59ca996b07f47da45a543464d
 }
 
 .docs_tbl tr td{

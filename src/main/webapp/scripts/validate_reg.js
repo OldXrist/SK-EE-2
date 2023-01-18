@@ -122,6 +122,9 @@ function Validate_reg () {
         document.getElementById("check2").checked === false ||
         document.getElementById("check3").checked === false
     ) {
+        // TODO scroll
+        document.getElementById('checkError').style.display = ''
+        document.getElementById('ogl').scrollIntoView()
         k += 1;
     }
     if (k > 0) {
