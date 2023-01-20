@@ -11,6 +11,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import static psql.connection.connect;
+
 @WebServlet(name = "GetEmailServlet", value = "/GetEmailServlet")
 public class GetEmailServlet extends HttpServlet {
     @Override
@@ -19,10 +21,7 @@ public class GetEmailServlet extends HttpServlet {
         long id = Long.parseLong(req.getParameter("appId"));
 
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
+            Connection c = connect();
 
             String sql = "SELECT email FROM uch WHERE id_uch = ?;";
             PreparedStatement ps = c.prepareStatement(sql);

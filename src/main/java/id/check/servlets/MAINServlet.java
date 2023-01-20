@@ -11,6 +11,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import static psql.connection.connect;
+
 @WebServlet("/MAINServlet")
 public class MAINServlet extends HttpServlet {
     @Override
@@ -21,11 +23,7 @@ public class MAINServlet extends HttpServlet {
         String role = String.valueOf(sesh.getAttribute("role"));
 
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
-            // TODO: 03.10.2022
+            Connection c = connect();
 
             String sql = "";
             switch (role) {

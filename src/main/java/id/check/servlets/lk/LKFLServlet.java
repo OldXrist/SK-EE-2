@@ -10,6 +10,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import static psql.connection.connect;
+
 @WebServlet(name = "LKFLServlet", value = "/LKFLServlet")
 public class LKFLServlet extends HttpServlet {
     @Override
@@ -19,10 +21,7 @@ public class LKFLServlet extends HttpServlet {
         String email = String.valueOf(sesh.getAttribute("sessionUser"));
 
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "111");
+            Connection c = connect();
 
             String sql = "SELECT * FROM fl WHERE email = ?";
 

@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 
+import static psql.connection.connect;
+
 @WebServlet("/LKAUServlet")
 public class LKAUServlet extends HttpServlet {
     @Override
@@ -17,10 +19,8 @@ public class LKAUServlet extends HttpServlet {
         String email = String.valueOf(sesh.getAttribute("sessionUser"));
 
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "111");
+            Connection c = connect();
+
             String sql = "SELECT * FROM au WHERE email = ?";
 
            /*

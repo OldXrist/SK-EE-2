@@ -9,6 +9,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
+import static psql.connection.connect;
+
 @WebServlet("/ChangeAdminCredentialsServlet")
 public class ChangeAdminCredentialsServlet extends HttpServlet {
     @Override
@@ -23,10 +25,7 @@ public class ChangeAdminCredentialsServlet extends HttpServlet {
         String password = req.getParameter("password");
 
         try{
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
+            Connection c = connect();
 
             String sql1 = "UPDATE adminaccounts SET firstname = '" + firstName + "' WHERE id = 1";
             PreparedStatement ps1 = c.prepareStatement(sql1);

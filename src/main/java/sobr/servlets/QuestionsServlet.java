@@ -10,6 +10,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import static psql.connection.connect;
+
 @WebServlet(name = "QuestionsServlet", value = "/QuestionsServlet")
 public class QuestionsServlet extends HttpServlet {
     @Override
@@ -22,10 +24,7 @@ public class QuestionsServlet extends HttpServlet {
         String num = req.getParameter("num");
 
         try{
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
+            Connection c = connect();
 
             String sql = "SELECT id FROM sobr_org WHERE email_org = ? ORDER BY id DESC LIMIT 1;";
             PreparedStatement ps = c.prepareStatement(sql);

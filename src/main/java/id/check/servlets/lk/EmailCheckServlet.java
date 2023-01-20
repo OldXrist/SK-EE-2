@@ -11,6 +11,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import static psql.connection.connect;
+
 @WebServlet(name = "EmailCheckServlet", value = "/EmailCheckServlet")
 public class EmailCheckServlet extends HttpServlet {
     @Override
@@ -20,9 +22,7 @@ public class EmailCheckServlet extends HttpServlet {
         String email = req.getParameter("email");
 
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
+            Connection c = connect();
 
             String sql = "SELECT email FROM main WHERE email = ?";
             PreparedStatement ps = c.prepareStatement(sql);

@@ -7,8 +7,7 @@ import java.sql.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import reg.servlets.GFG.*;
-
+import static psql.connection.connect;
 import static reg.servlets.GFG.*;
 
 @WebServlet("/AUTHServ")
@@ -22,10 +21,7 @@ public class AUTHServlet extends HttpServlet {
         String pass = req.getParameter("pwd");
 
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
+            Connection c = connect();
 
             String sql = "SELECT pass, salt, role_users, type_users FROM main WHERE email = ? AND auth = true";
             PreparedStatement ps = c.prepareStatement(sql);

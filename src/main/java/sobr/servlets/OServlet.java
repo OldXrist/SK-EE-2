@@ -15,6 +15,8 @@ import java.sql.Types;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import static psql.connection.connect;
+
 @WebServlet("/OServlet")
 public class OServlet extends HttpServlet {
     @Override
@@ -71,10 +73,7 @@ public class OServlet extends HttpServlet {
         LocalDate dateEfrsb = LocalDate.parse(efrsbDate);
 
         try{
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
+            Connection c = connect();
 
             String sql1 = "INSERT INTO sobr_org Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement ps = c.prepareStatement(sql1);

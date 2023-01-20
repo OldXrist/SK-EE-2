@@ -11,6 +11,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
+import static psql.connection.connect;
+
 @WebServlet("/ChangeMeetingCard")
 public class ChangeMeetingCard extends HttpServlet {
     @Override
@@ -26,10 +28,7 @@ public class ChangeMeetingCard extends HttpServlet {
         String bulletinEndDate = request.getParameter("_bulletinEndDate");
 
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK2", "postgres", "111");
+            Connection c = connect();
 
             String sql = "UPDATE sobr_org " +
                          "SET data_u_vrem_sobr = '" + meetingDate + "', povestk_dnia = '" + agenda + "', " +

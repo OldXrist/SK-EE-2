@@ -12,6 +12,7 @@ import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import java.time.LocalDateTime;
 
+import static psql.connection.connect;
 import static reg.servlets.GFG.*;
 
 @WebServlet("/ULServlet")
@@ -45,10 +46,7 @@ public class ULServlet extends HttpServlet {
         String encryptedPass = getSecurePassword(pass, salt);
 
         try{
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
+            Connection c = connect();
 
             String sql = "INSERT INTO main (role_users, pass, email, type_users, salt) Values (?, ?, ?, ?, ?)";
             PreparedStatement ps = c.prepareStatement(sql);

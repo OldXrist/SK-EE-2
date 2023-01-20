@@ -11,6 +11,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import static psql.connection.connect;
+
 @WebServlet(name = "RegDocsServlet", value = "/RegDocsServlet")
 @MultipartConfig
 public class RegDocsServlet extends HttpServlet {
@@ -29,10 +31,7 @@ public class RegDocsServlet extends HttpServlet {
         sesh.invalidate();
 
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/SK", "postgres", "111");
+            Connection c = connect();
 
             String sql = "UPDATE main SET docs = ? WHERE email = ?";
             PreparedStatement ps = c.prepareStatement(sql);

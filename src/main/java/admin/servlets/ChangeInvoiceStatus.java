@@ -11,6 +11,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
+import static psql.connection.connect;
+
 @WebServlet("/ChangeInvoiceStatus")
 public class ChangeInvoiceStatus  extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -19,10 +21,7 @@ public class ChangeInvoiceStatus  extends HttpServlet {
         String meetingStatus = request.getParameter("meetingStatus");
 
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
+            Connection c = connect();
 
             String sql = "UPDATE main SET auth = '" + meetingStatus + "' WHERE email = '" + email + "';";
             PreparedStatement ps = c.prepareStatement(sql);

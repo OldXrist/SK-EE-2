@@ -140,7 +140,7 @@ function Cards(dt, i, m){
 
 $.get("/Sobr/MREEServlet", function (data){
 
-    //console.log(data)
+    console.log(data)
     let d = data.split("\n")
     let k = 0;
     for (let i = 1; i < 5; i++) {

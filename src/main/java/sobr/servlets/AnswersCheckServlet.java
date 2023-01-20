@@ -11,6 +11,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import static psql.connection.connect;
+
 @WebServlet(name = "AnswersCheckServlet", value = "/AnswersCheckServlet")
 public class AnswersCheckServlet extends HttpServlet {
     @Override
@@ -23,10 +25,7 @@ public class AnswersCheckServlet extends HttpServlet {
         long sk = Long.parseLong(req.getParameter("sk"));
 
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/SK", "postgres", "111");
+            Connection c = connect();
 
             String sql = "SELECT answer1, answer2, answer3, answer4, answer5, answer6, answer7, answer8, answer9, answer10 FROM uch WHERE id = ? AND email = ?";
             PreparedStatement ps = c.prepareStatement(sql);

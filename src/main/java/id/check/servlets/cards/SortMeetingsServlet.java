@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 
+import static psql.connection.connect;
+
 @WebServlet(name = "SortMeetingsServlet", value = "/SortMeetingsServlet")
 public class SortMeetingsServlet extends HttpServlet {
     @Override
@@ -36,10 +38,7 @@ public class SortMeetingsServlet extends HttpServlet {
         }
 
         try{
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
+            Connection c = connect();
 /*
             String sql = "SELECT id, data_u_vrem_sobr,nachal_podach_zaiv, okonch_podach_zaiv, type_dolzh, famil, name, otch, poln_naum, email_org, type_org, type_sobr, status\n" +
                     "FROM sobr_org\n" +

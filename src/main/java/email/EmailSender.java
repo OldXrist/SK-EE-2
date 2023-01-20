@@ -15,6 +15,8 @@ import javax.mail.Session;
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
 
+import static psql.connection.connect;
+
 @WebServlet("/EmailSender")
 public class EmailSender extends HttpServlet {
     public String SmtpHostSql() {
@@ -56,9 +58,7 @@ public class EmailSender extends HttpServlet {
         String email = String.valueOf(sesh.getAttribute("sessionUser"));
 
         try {
-            Class.forName("org.postgresql.Driver");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
+            Connection c = connect();
 
             String sql = "SELECT id,data_u_vrem_sobr FROM sobr_org WHERE email_org = ? ORDER BY id DESC LIMIT 1;";
 
@@ -85,10 +85,7 @@ public class EmailSender extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            Class.forName("org.postgresql.Driver");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
+            Connection c = connect();
 
             String smtpHost = GetData(c, SmtpHostSql(), "smtp_host");
             String smtpPort = GetData(c, SmtpPortSql(), "smtp_port");

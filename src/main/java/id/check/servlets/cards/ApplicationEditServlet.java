@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 
+import static psql.connection.connect;
+
 @WebServlet(name = "ApplicationEditServlet", value = "/ApplicationEditServlet")
 public class ApplicationEditServlet extends HttpServlet {
     @Override
@@ -18,10 +20,7 @@ public class ApplicationEditServlet extends HttpServlet {
         int appId = Integer.parseInt(id);
 
         try{
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
+            Connection c = connect();
 
             String sql = "SELECT id, type_uch, email, status FROM uch WHERE id_uch = ?";
             PreparedStatement ps = c.prepareStatement(sql);
