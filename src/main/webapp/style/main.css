@@ -273,7 +273,7 @@ h2 {
   box-sizing: border-box;
   position: relative;
   display: inline-flex;
-  justify-content: space-around;
+  gap: 80px;
   width: 1160px;
   height: 150px;
   background-color: rgba(186, 243, 252, 0.3);

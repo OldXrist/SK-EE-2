@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 import static psql.connection.connect;
@@ -41,8 +43,10 @@ public class TimeUpdateServlet extends HttpServlet {
                 String bulEnd = rs.getString(5);
                 String protocolDate = rs.getString(6);
 
-                LocalDateTime now = LocalDateTime.now();
+                ZonedDateTime nowZone = ZonedDateTime.now(ZoneId.of("Europe/Moscow"));
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+                DateTimeFormatter ZDTformatter = DateTimeFormatter.ISO_ZONED_DATE_TIME;
+                LocalDateTime now = LocalDateTime.parse(nowZone.toString(), ZDTformatter);
                 String status = null;
 
 

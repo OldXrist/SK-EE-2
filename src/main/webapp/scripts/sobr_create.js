@@ -135,7 +135,6 @@ function Create() {
     let sobrDb = dateFormat(document.getElementById("date_b").value, document.getElementById("time_b").value)
     let sobrDb2 = dateFormat(document.getElementById("date_b2").value, document.getElementById("time_b2").value)
     let sobrDp = dateFormat(document.getElementById("date_p").value, document.getElementById("time_p").value)
-    let obem = document.getElementById()
 
     // TODO EFRSB
     let e = document.getElementById("date_razm").placeholder.split('.')
@@ -157,7 +156,7 @@ function Create() {
             dateB: sobrDb,
             dateB2: sobrDb2,
             dateP: sobrDp,
-            vol: obem,
+            vol: document.getElementById('participants').value,
             efrsb: document.getElementById("efrsb").value,
             efrsbDate: efrsbDate,
             court: document.getElementById("naim_abr_sud").value,
@@ -170,8 +169,7 @@ function Create() {
             post: document.getElementById("pocht3").value,
             inn: document.getElementById("unn4").value,
             ogrn: document.getElementById("ogrn3").value,
-            status: status,
-            participants: document.getElementById("participants").value
+            status: status
         }
 
         console.log(sobr)
@@ -203,7 +201,7 @@ function Create() {
             dateB: sobrDb,
             dateB2: sobrDb2,
             dateP: sobrDp,
-            vol: obem,
+            vol: document.getElementById('participants').value,
             efrsb: document.getElementById("efrsb").value,
             efrsbDate: efrsbDate,
             court: document.getElementById("naim_abr_sud").value,
@@ -217,9 +215,7 @@ function Create() {
             post: document.getElementById("pocht").value,
             inn: document.getElementById("inn").value,
             snils: document.getElementById("snils").value,
-            status: status,
-            participants: document.getElementById("participants").value
-
+            status: status
         }
 
         console.log(sobr)
@@ -250,7 +246,7 @@ function Create() {
             dateB: sobrDb,
             dateB2: sobrDb2,
             dateP: sobrDp,
-            vol: obem,
+            vol: document.getElementById('participants').value,
             efrsb: document.getElementById("efrsb").value,
             efrsbDate: efrsbDate,
             court: document.getElementById("naim_abr_sud").value,
@@ -265,8 +261,7 @@ function Create() {
             inn: document.getElementById("inn2").value,
             snils: document.getElementById("snils2").value,
             ogrnip: document.getElementById("ogrnip").value,
-            status: status,
-            participants: document.getElementById("participants").value
+            status: status
         }
 
         console.log(sobr)

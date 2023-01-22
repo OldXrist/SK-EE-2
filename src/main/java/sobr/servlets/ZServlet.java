@@ -29,7 +29,6 @@ public class ZServlet extends HttpServlet {
         String date3 = req.getParameter("dateB");
         String date4 = req.getParameter("dateB2");
         String date5 = req.getParameter("dateP");
-        String ob = req.getParameter("vol");
 
         //String efrsb = req.getParameter("efrsb");
         //long regEfrsb  = Long.parseLong(efrsb);
@@ -56,8 +55,7 @@ public class ZServlet extends HttpServlet {
         String polnNaim = req.getParameter("polnNaim");
         String urAdr = req.getParameter("urAdr");
         String status = req.getParameter("status");
-        String peeps = req.getParameter("participants");
-        int participants = Integer.parseInt(peeps);
+        long volume = Long.parseLong(req.getParameter("vol"));
 
 
         LocalDateTime dateS = LocalDateTime.parse(dateSobr);
@@ -71,7 +69,7 @@ public class ZServlet extends HttpServlet {
         try{
             Connection c = connect();
 
-            String sql1 = "INSERT INTO sobr_org Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql1 = "INSERT INTO sobr_org Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement ps = c.prepareStatement(sql1);
 
             ps.setObject(1, dateS);
@@ -123,14 +121,9 @@ public class ZServlet extends HttpServlet {
 
             ps.setString(26, "Заочное");
 
-            if (!ob.equals("")){
-                long obem = Long.parseLong(ob);
-                ps.setLong(27, obem);
-            } else ps.setNull(27, Types.BIGINT);
+            ps.setLong(27, volume);
 
             ps.setString(28, status);
-            ps.setInt(29, participants);
-
 
             ps.executeUpdate();
 

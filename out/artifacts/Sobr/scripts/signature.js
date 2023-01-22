@@ -34,7 +34,7 @@ function Sign(id){
                     document.getElementById('wait').scrollIntoView()
                 })
                 .catch(function (error){
-                    alert(error)
+                    console.log(error.message)
                 })
         })
 }

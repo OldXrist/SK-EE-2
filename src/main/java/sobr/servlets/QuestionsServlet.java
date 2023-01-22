@@ -36,15 +36,17 @@ public class QuestionsServlet extends HttpServlet {
                 int id = rs.getInt(1);
                 out.println(id);
 
-                for (int i = 0; i < Integer.parseInt(num); i++) {
-                    String sql1 = "INSERT INTO questions VALUES (?, ?)";
-                    PreparedStatement ps1 = c.prepareStatement(sql1);
+                if (req.getParameter("key0") != null) {
+                    for (int i = 0; i < Integer.parseInt(num); i++) {
+                        String sql1 = "INSERT INTO questions VALUES (?, ?)";
+                        PreparedStatement ps1 = c.prepareStatement(sql1);
 
-                    ps1.setInt(1, id);
-                    ps1.setString(2, req.getParameter("key" + i));
+                        ps1.setInt(1, id);
+                        ps1.setString(2, req.getParameter("key" + i));
 
-                    ps1.executeUpdate();
-                    ps1.close();
+                        ps1.executeUpdate();
+                        ps1.close();
+                    }
                 }
             }
 
