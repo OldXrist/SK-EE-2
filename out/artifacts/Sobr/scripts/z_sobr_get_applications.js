@@ -162,7 +162,10 @@ function timeParse (x){
 
 function Cards(dt, i, m) {
     m = "c" + m
-    let lim = i + 7;
+    let lim
+    if (dt[0].includes('ЮЛ')){
+        lim = i + 5;
+    } else lim = i + 7;
     let arr = [];
     for (i; i < lim; i++) {
         arr.push(dt[i])
@@ -172,10 +175,11 @@ function Cards(dt, i, m) {
 
     if (arr[1].includes('На рассмотрении')) {
         if (arr[0].includes("ЮЛ")) {
+            console.log(arr)
             document.getElementById("table").innerHTML +=
                 "           <div class=\"table_item\" id=" + m + ">\n" +
-                "                <h3 class=\"table_h\">№ " + arr[arr.length - 1] + "</h3>\n" +
-                "                <a id=" + "app_" + arr[arr.length - 1] + " class=\"txtr edit\" onclick='applicationRedirect(this.id)'>Редактировать</a>\n" +
+                "                <h3 class=\"table_h\">№ " + arr[4] + "</h3>\n" +
+                "                <a id=" + "app_" + arr[4] + " class=\"txtr edit\" onclick='applicationRedirect(this.id)'>Редактировать</a>\n" +
                 "                <ul class=\"table_data\">\n" +
                 "                    <li class=\"thin_text\">Кредитор</li>\n" +
                 "                    <li>" + arr[3] + "</li>\n" +
@@ -191,13 +195,14 @@ function Cards(dt, i, m) {
                 "            </div>"
 
         } else {
+            console.log(arr)
             document.getElementById("table").innerHTML +=
                 "           <div class=\"table_item\" id=" + m + ">\n" +
-                "                <h3 class=\"table_h\">№ " + arr[arr.length - 1] + "</h3>\n" +
-                "                <a id=" + "app_" + arr[arr.length - 1] + " class=\"txtr edit\" onclick='applicationRedirect(this.id)'>Редактировать</a>\n" +
+                "                <h3 class=\"table_h\">№ " + arr[6] + "</h3>\n" +
+                "                <a id=" + "app_" + arr[6] + " class=\"txtr edit\" onclick='applicationRedirect(this.id)'>Редактировать</a>\n" +
                 "                <ul class=\"table_data\">\n" +
                 "                    <li class=\"thin_text\">Кредитор</li>\n" +
-                "                    <li>" + arr[3] + arr[4] + arr[5] + "</li>\n" +
+                "                    <li>" + arr[3] + " " + arr[4] + " " + arr[5] + "</li>\n" +
                 "                </ul>\n" +
                 "                <ul class=\"table_data\">\n" +
                 "                    <li class=\"thin_text\">Дата и время</li>\n" +
@@ -211,9 +216,10 @@ function Cards(dt, i, m) {
         }
     } else {
         if (arr[0].includes("ЮЛ")) {
+            console.log(arr)
             document.getElementById("table").innerHTML +=
                 "           <div class=\"table_item\" id=" + m + ">\n" +
-                "                <h3 class=\"table_h\">№ " + arr[arr.length - 1] + "</h3>\n" +
+                "                <h3 class=\"table_h\">№ " + arr[4] + "</h3>\n" +
                 "                <ul class=\"table_data\">\n" +
                 "                    <li class=\"thin_text\">Кредитор</li>\n" +
                 "                    <li>" + arr[3] + "</li>\n" +
@@ -229,12 +235,13 @@ function Cards(dt, i, m) {
                 "            </div>"
 
         } else {
+            console.log(arr)
             document.getElementById("table").innerHTML +=
                 "           <div class=\"table_item\" id=" + m + ">\n" +
-                "                <h3 class=\"table_h\">№ " + arr[arr.length - 1] + "</h3>\n" +
+                "                <h3 class=\"table_h\">№ " + arr[6] + "</h3>\n" +
                 "                <ul class=\"table_data\">\n" +
                 "                    <li class=\"thin_text\">Кредитор</li>\n" +
-                "                    <li>" + arr[3] + arr[4] + arr[5] + "</li>\n" +
+                "                    <li>" + arr[3] + " " + arr[4] + " " + arr[5] + "</li>\n" +
                 "                </ul>\n" +
                 "                <ul class=\"table_data\">\n" +
                 "                    <li class=\"thin_text\">Дата и время</li>\n" +
@@ -260,23 +267,36 @@ $.get("/Sobr/ZAPPRServlet", send,  function (data){
 
     console.log(data)
     let d = data.split("\n")
-    let pageNum = Math.ceil(d.length / 7 / 5)
+
+    let countCards = null
+    for(let i = 0; i < d.length; ++i){
+        if (d[i].includes('ИП') || d[i].includes('ФЛ') || d[i].includes('АУ') || d[i].includes('ЮЛ')){
+            countCards++
+        }
+    }
+
+    console.log(countCards)
+
+    let pageNum = countCards/4
     console.log(pageNum)
     let k = 0
-    for (let i = 1; i < Math.ceil(d.length / 7); i++) {
+    for (let i = 1; i < countCards + 1; i++) {
         Cards(d, k, i)
-        k += 7
+        console.log(d[k])
+        if (d[k].includes('ЮЛ')){
+            k += 5
+        } else k += 7
     }
 
     let pageLim = 4
 
-    for (let i  =  6; i < Math.ceil(d.length / 7); i++){
+    for (let i  =  6; i < countCards; i++){
         document.getElementById('c'+i).style.display = 'none'
     }
 
 
     switch (true){
-        case pageNum === 1:
+        case pageNum <= 1:
             break;
         case pageNum < pageLim:
             for (let i = 1; i < pageNum + 1; i++){

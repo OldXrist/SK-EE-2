@@ -101,7 +101,6 @@ $(document).ready(function () {
 function Accept() {
     if (document.getElementById('option').innerText !== 'Не выбрано') {
         let sknum = window.location.href.split('?')[1].split('=')[1].split('&')[0]
-        let url = new URL('http://sk.tenderstandart.ru:8080/Sobr/lichnui_kobinetu/lk_org/z_sobr/z_sobr_org_5.html') //TODO: Поменять на sk.tenderstandart
 
         let status = {
             appId: window.location.href.split('&')[1].split('=')[1],
@@ -111,8 +110,7 @@ function Accept() {
         console.log(document.getElementById('option').innerText)
         $.get('/Sobr/ApplicationUpdServlet', status)
 
-        url.searchParams.append('sk', sknum)
-        window.location.href = url.href
+        window.location.href = '/Sobr/lichnui_kobinetu/lk_org/z_sobr/z_sobr_org_5.html?sk=' + sknum
     } else {
         document.getElementById('error').style.border = '2px solid red'
         document.getElementById('error').style.borderRadius = '10px'
@@ -125,7 +123,6 @@ function White(id){
 
 function Decline() {
     let sknum = window.location.href.split('?')[1].split('=')[1].split('&')[0]
-    let url = new URL('http://sk.tenderstandart.ru:8080/Sobr/lichnui_kobinetu/lk_org/z_sobr/z_sobr_org_5.html')
 
     let status = {
         appId: window.location.href.split('&')[1].split('=')[1],
@@ -134,8 +131,7 @@ function Decline() {
 
     $.get('/Sobr/ApplicationUpdServlet', status)
 
-    url.searchParams.append('sk', sknum)
-    window.location.href = url.href
+    window.location.href = '/Sobr/lichnui_kobinetu/lk_org/z_sobr/z_sobr_org_5.html?sk=' + sknum
 }
 
 //clock

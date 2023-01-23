@@ -58,7 +58,8 @@
 .table_item {
     box-sizing: border-box;
     position: relative;
-    display: block;
+    display: inline-flex;
+    gap: 80px;
     width: 1160px;
     height: 150px;
     background-color: rgba(186, 243, 252, 0.3);
@@ -346,16 +347,6 @@
 
 .add_drop li:hover{
     background: #BAF3FC;
-}
-
-.debtor{
-    position: absolute;
-    left: 370px;
-}
-
-.status{
-    position: absolute;
-    left: 550px;
 }
 
 .base_bg{
