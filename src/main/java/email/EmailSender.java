@@ -109,8 +109,10 @@ public class EmailSender extends HttpServlet {
                     body = "Поздравляем, тестовое сообщение успешно получено!";
                     break;
                 case "Заявка допущена":
-                    subject = "Заявка допущена";
-                    body = "Ваша заявка на проведение собрания допущена!";
+                    subject = "Регистрация в системе Собрания Кредиторов";
+                    body = "Уважаемый пользователь!" +
+                            "Ваш аккаунт прошёл проверку и вы зарегистрированы на платформе «Собрание кредиторов»." +
+                            "Для входа перейдите по ссылке - http://sk.tenderstandart.ru:8080/Sobr/login.html";
                     break;
                 case "Заявка отклонена":
                     subject = "Заявка отклонена";
@@ -121,7 +123,7 @@ public class EmailSender extends HttpServlet {
                     body = "Уважаемый пользователь!" +
                             "Уведомляем, что на платформе Собрание Кредиторов будет проведено собрание на тему" +
                             "" +
-                            "http://sk.tenderstandart.ru:8080/Sobr/lichnui_kobinetu/lk_uch/z_sobr/z_sobr_uch_2.html?sk=1" +
+                            "http://sk.tenderstandart.ru:8080/Sobr/lichnui_kobinetu/lk_uch/z_sobr/z_sobr_uch_2.html?sk=22" +
                             "" +
                             "" +
                             "Уведомляем, что для участия в собрании пользователь должен быть зарегистрирован на платформе." +

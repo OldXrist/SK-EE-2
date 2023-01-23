@@ -419,7 +419,9 @@ ul li input{
     top: 0;
   }
 
+
   .dropbtn {
+    z-index: -1;
     background-color: #004781;
     margin-top: -10px;
     margin-left: 334px;
