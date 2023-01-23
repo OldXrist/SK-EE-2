@@ -11,6 +11,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
+import static psql.connection.connect;
+
 @WebServlet("/ChangeSystemSettings")
 public class ChangeSystemSettings extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
@@ -44,10 +46,7 @@ public class ChangeSystemSettings extends HttpServlet {
         String efrsbPassword = req.getParameter("efrsbPassword");
 
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
+            Connection c = connect();
 
             String sql = "UPDATE systemsettings " +
                         "SET issuer = '" + issuer + "', " +

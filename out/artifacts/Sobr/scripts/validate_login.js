@@ -22,7 +22,7 @@ function Validate_login(){
         $.post("/Sobr/AUTHServ", creds, function (data) {
             console.log(creds);
             console.log(data);
-            if (data !== "") {
+            if (data.includes('true')) {
                 window.location.assign("/Sobr/");
             } else {
                 $(".err").show()

@@ -48,6 +48,7 @@
 
 
                 <p class="zaiav">Заявления</p>
+                <p id="checkError">Подпишите заявления</p>
 
                 <div class="gal">
                     <div class="form-check">
@@ -221,7 +222,13 @@
 <script>
     $(document).ready(function (){
         $(".wait").hide()
+        $("#checkError").hide()
     });
+
+    $(document).ready(function (){
+        $(".wait").hide()
+    });
+
     $(document).ready(function() {
         $.mask.definitions['0'] = "[0-9]";
         $("#inn").mask("000000000000");

@@ -71,6 +71,22 @@ input:focus{
     color: #104781;
     padding-bottom: 50px;
 }
+
+#checkError{
+    position: absolute;
+    width: 195px;
+    height: 18px;
+    left: 243px;
+    top: 453px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: right;
+    color: #FF0000;
+}
+
 #gotIt{
     width: 240px;
     height: 55px;

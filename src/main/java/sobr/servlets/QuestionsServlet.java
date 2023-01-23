@@ -10,6 +10,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import static psql.connection.connect;
+
 @WebServlet(name = "QuestionsServlet", value = "/QuestionsServlet")
 public class QuestionsServlet extends HttpServlet {
     @Override
@@ -22,10 +24,7 @@ public class QuestionsServlet extends HttpServlet {
         String num = req.getParameter("num");
 
         try{
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
+            Connection c = connect();
 
             String sql = "SELECT id FROM sobr_org WHERE email_org = ? ORDER BY id DESC LIMIT 1;";
             PreparedStatement ps = c.prepareStatement(sql);
@@ -37,15 +36,17 @@ public class QuestionsServlet extends HttpServlet {
                 int id = rs.getInt(1);
                 out.println(id);
 
-                for (int i = 0; i < Integer.parseInt(num); i++) {
-                    String sql1 = "INSERT INTO questions VALUES (?, ?)";
-                    PreparedStatement ps1 = c.prepareStatement(sql1);
+                if (req.getParameter("key0") != null) {
+                    for (int i = 0; i < Integer.parseInt(num); i++) {
+                        String sql1 = "INSERT INTO questions VALUES (?, ?)";
+                        PreparedStatement ps1 = c.prepareStatement(sql1);
 
-                    ps1.setInt(1, id);
-                    ps1.setString(2, req.getParameter("key" + i));
+                        ps1.setInt(1, id);
+                        ps1.setString(2, req.getParameter("key" + i));
 
-                    ps1.executeUpdate();
-                    ps1.close();
+                        ps1.executeUpdate();
+                        ps1.close();
+                    }
                 }
             }
 

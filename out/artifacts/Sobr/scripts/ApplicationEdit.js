@@ -101,7 +101,7 @@ $(document).ready(function () {
 function Accept() {
     if (document.getElementById('option').innerText !== 'Не выбрано') {
         let sknum = window.location.href.split('?')[1].split('=')[1].split('&')[0]
-        let url = new URL('http://www.sk.tenderstandart.ru:8080/Sobr/lichnui_kobinetu/lk_org/z_sobr/z_sobr_org_5.html') //TODO: Поменять на sk.tenderstandart
+        let url = new URL('http://sk.tenderstandart.ru:8080/Sobr/lichnui_kobinetu/lk_org/z_sobr/z_sobr_org_5.html') //TODO: Поменять на sk.tenderstandart
 
         let status = {
             appId: window.location.href.split('&')[1].split('=')[1],
@@ -125,7 +125,7 @@ function White(id){
 
 function Decline() {
     let sknum = window.location.href.split('?')[1].split('=')[1].split('&')[0]
-    let url = new URL('/Sobr/lichnui_kobinetu/lk_org/z_sobr/z_sobr_org_5.html')
+    let url = new URL('http://sk.tenderstandart.ru:8080/Sobr/lichnui_kobinetu/lk_org/z_sobr/z_sobr_org_5.html')
 
     let status = {
         appId: window.location.href.split('&')[1].split('=')[1],

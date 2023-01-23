@@ -162,7 +162,7 @@ function timeParse (x){
 
 function Cards(dt, i, m) {
     m = "c" + m
-    let lim = i + 5;
+    let lim = i + 7;
     let arr = [];
     for (i; i < lim; i++) {
         arr.push(dt[i])
@@ -193,8 +193,8 @@ function Cards(dt, i, m) {
         } else {
             document.getElementById("table").innerHTML +=
                 "           <div class=\"table_item\" id=" + m + ">\n" +
-                "                <h3 class=\"table_h\">№ " + arr[6] + "</h3>\n" +
-                "                <a id=" + "app_" + arr[6] + " class=\"txtr edit\" onclick='applicationRedirect(this.id)'>Редактировать</a>\n" +
+                "                <h3 class=\"table_h\">№ " + arr[arr.length - 1] + "</h3>\n" +
+                "                <a id=" + "app_" + arr[arr.length - 1] + " class=\"txtr edit\" onclick='applicationRedirect(this.id)'>Редактировать</a>\n" +
                 "                <ul class=\"table_data\">\n" +
                 "                    <li class=\"thin_text\">Кредитор</li>\n" +
                 "                    <li>" + arr[3] + arr[4] + arr[5] + "</li>\n" +
@@ -231,7 +231,7 @@ function Cards(dt, i, m) {
         } else {
             document.getElementById("table").innerHTML +=
                 "           <div class=\"table_item\" id=" + m + ">\n" +
-                "                <h3 class=\"table_h\">№ " + arr[6] + "</h3>\n" +
+                "                <h3 class=\"table_h\">№ " + arr[arr.length - 1] + "</h3>\n" +
                 "                <ul class=\"table_data\">\n" +
                 "                    <li class=\"thin_text\">Кредитор</li>\n" +
                 "                    <li>" + arr[3] + arr[4] + arr[5] + "</li>\n" +
@@ -260,17 +260,17 @@ $.get("/Sobr/ZAPPRServlet", send,  function (data){
 
     console.log(data)
     let d = data.split("\n")
-    let pageNum = Math.ceil(d.length / 5 / 5)
+    let pageNum = Math.ceil(d.length / 7 / 5)
     console.log(pageNum)
     let k = 0
-    for (let i = 1; i < Math.ceil(d.length / 5); i++) {
+    for (let i = 1; i < Math.ceil(d.length / 7); i++) {
         Cards(d, k, i)
         k += 7
     }
 
     let pageLim = 4
 
-    for (let i  =  6; i < Math.ceil(d.length / 5); i++){
+    for (let i  =  6; i < Math.ceil(d.length / 7); i++){
         document.getElementById('c'+i).style.display = 'none'
     }
 

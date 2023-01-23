@@ -10,6 +10,8 @@ import java.sql.*;
 import java.util.*;
 import com.google.gson.Gson;
 
+import static psql.connection.connect;
+
 @WebServlet("/GetMeetingCard")
 public class GetMeetingCard extends HttpServlet {
     public String SobrOrgSql(String _meetingNumber)
@@ -86,10 +88,7 @@ public class GetMeetingCard extends HttpServlet {
         String meetingNumber = request.getParameter("num");
 
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK2", "postgres", "111");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres", "postgres", "postgresql");
+            Connection c = connect();
 
             //сбор данных о собрании
             ArrayList<String> meetingInfo = new ArrayList<String>();

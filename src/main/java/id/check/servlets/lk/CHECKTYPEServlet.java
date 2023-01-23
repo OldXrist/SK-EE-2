@@ -11,6 +11,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import static psql.connection.connect;
+
 @WebServlet(name = "CHECKTYPEServlet", value = "/CHECKTYPEServlet")
 public class CHECKTYPEServlet extends HttpServlet {
     @Override
@@ -23,10 +25,7 @@ public class CHECKTYPEServlet extends HttpServlet {
         long sk = Long.parseLong(s);
 
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "111");
+            Connection c = connect();
 
             String sql1 = "SELECT * FROM sobr_org WHERE email_org = ? and id = ?";
             PreparedStatement ps1 = c.prepareStatement(sql1);

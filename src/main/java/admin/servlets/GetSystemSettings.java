@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 
+import static psql.connection.connect;
+
 @WebServlet("/GetSystemSettings")
 public class GetSystemSettings extends HttpServlet {
 
@@ -40,10 +42,7 @@ public class GetSystemSettings extends HttpServlet {
 
         String meetingNumber = request.getParameter("num");
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
+            Connection c = connect();
 
             //сбор данных
             ArrayList<String> systemSettings = new ArrayList<String>();

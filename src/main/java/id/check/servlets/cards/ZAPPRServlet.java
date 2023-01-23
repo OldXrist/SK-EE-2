@@ -11,6 +11,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import static psql.connection.connect;
+
 @WebServlet(name = "ZAPPRServlet", value = "/ZAPPRServlet")
 public class ZAPPRServlet extends HttpServlet {
     @Override
@@ -23,10 +25,7 @@ public class ZAPPRServlet extends HttpServlet {
         int num = Integer.parseInt(sk);
 
         try{
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
+            Connection c = connect();
 
             String sql = "SELECT email, type_uch, status, date, id_uch FROM uch WHERE id = ? ORDER BY id_uch;";
             PreparedStatement ps = c.prepareStatement(sql);

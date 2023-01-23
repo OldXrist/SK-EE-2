@@ -10,6 +10,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import static psql.connection.connect;
+
 @WebServlet(name = "ApplicationUpdServlet", value = "/ApplicationUpdServlet")
 public class ApplicationUpdServlet extends HttpServlet {
     @Override
@@ -20,10 +22,7 @@ public class ApplicationUpdServlet extends HttpServlet {
         int appId = Integer.parseInt(id);
 
         try{
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
+            Connection c = connect();
 
             String sql = "UPDATE uch SET status = ?, canvote = ? WHERE id_uch = ?";
             PreparedStatement ps = c.prepareStatement(sql);

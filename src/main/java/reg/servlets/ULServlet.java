@@ -8,8 +8,12 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import java.time.LocalDateTime;
+
+import static psql.connection.connect;
+import static reg.servlets.GFG.*;
 
 @WebServlet("/ULServlet")
 public class ULServlet extends HttpServlet {
@@ -33,19 +37,25 @@ public class ULServlet extends HttpServlet {
         String code_ogrn = req.getParameter("code_ogrn");
         long ogrn = Long.parseLong(code_ogrn);
 
-        try{
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
+        byte[] salt;
+        try {
+            salt = getSalt();
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+        String encryptedPass = getSecurePassword(pass, salt);
 
-            String sql = "INSERT INTO main Values (?, ?, ?, ?)";
+        try{
+            Connection c = connect();
+
+            String sql = "INSERT INTO main (role_users, pass, email, type_users, salt) Values (?, ?, ?, ?, ?)";
             PreparedStatement ps = c.prepareStatement(sql);
 
             ps.setString(1, role_users);
-            ps.setString(2, pass);
+            ps.setString(2, encryptedPass);
             ps.setString(3, email);
             ps.setString(4, type_users);
+            ps.setString(5, toHex(salt));
 
             ps.executeUpdate();
 

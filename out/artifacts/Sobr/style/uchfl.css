@@ -16,7 +16,6 @@
     line-height: 100%;
     color: #406C9A;
     text-decoration: none;
-    border: none;
 }
 
 #error{
@@ -396,7 +395,7 @@ input:focus{
 
 .txt_obsh {
     position: absolute;
-    width: 400px;
+    width: auto;
     height: 18px;
     left: 0;
     top: -40px;
@@ -429,7 +428,6 @@ input::placeholder{
 
     width: 400px;
     border-radius:10px;
-    border: none;
 
 }
 
@@ -440,8 +438,6 @@ input::placeholder{
 .forms2 {
     padding:12px;
     height: 50px;
-    border: none;
-
     width: 1040px;
     border-radius:10px;
 
@@ -454,8 +450,6 @@ input::placeholder{
 
 .forms3 {  padding:12px;
     height: 50px;
-    border: none;
-
     width: 590px;
     border-radius:10px;
 
@@ -469,7 +463,6 @@ input::placeholder{
 .forms4 {
     padding:12px;
     height: 50px;
-    border: none;
     width: 300px;
     border-radius:10px;
 
@@ -482,7 +475,6 @@ input::placeholder{
 .forms5 {
     padding:12px;
     height: 50px;
-    border: none;
     width: 340px;
     border-radius:10px;
 
@@ -626,7 +618,8 @@ input::placeholder{
     border-radius: 10px;
 }
 
-.email_2 {position: absolute;
+.email_2 {
+    position: absolute;
     width: 590px;
     height: 50px;
     left: 510px;
@@ -821,7 +814,6 @@ input::placeholder{
     top: 1029px;
     background: #37DCF5;
     border-radius: 10px;
-    border: none;
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 500;
@@ -831,31 +823,41 @@ input::placeholder{
     color: #00345F;
 }
 
-.knopka2 {
+#checkError{
+    position: absolute;
+    width: 195px;
+    height: 18px;
+    left: 243px;
+    top: 453px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: right;
+    color: #FF0000;
+}
+
+.knopka2{
     position: absolute;
     width: 340px;
     height: 55px;
     left: 410px;
     top: 1333px;
-
     background: #37DCF5;
     border-radius: 10px;
-
-    border: none;
-
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
     line-height: 100%;
-    /* or 18px */
-
     text-align: center;
-
     color: #00345F;
+    border: none;
 }
 
-.doks2 {position: absolute;
+.doks2 {
+    position: absolute;
     width: 94px;
     height: 94px;
     left: 600px;

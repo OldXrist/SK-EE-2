@@ -5,10 +5,15 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.time.LocalDateTime;
+import java.util.Arrays;
+
+import static psql.connection.connect;
+import static reg.servlets.GFG.*;
 
 @WebServlet(name = "AUServlet", value = "/AUServlet")
 public class AUServlet extends HttpServlet {
@@ -35,19 +40,25 @@ public class AUServlet extends HttpServlet {
         String unn = req.getParameter("unn");
         long inn = Long.parseLong(unn);
 
-        try{
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK", "postgres", "111");
+        byte[] salt;
+        try {
+            salt = getSalt();
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+        String encryptedPass = getSecurePassword(pass, salt);
 
-            String sql = "INSERT INTO main Values (?, ?, ?, ?)";
+        try{
+            Connection c = connect();
+
+            String sql = "INSERT INTO main (role_users, pass, email, type_users, salt) Values (?, ?, ?, ?, ?)";
             PreparedStatement ps = c.prepareStatement(sql);
 
             ps.setString(1, role_users);
-            ps.setString(2, pass);
+            ps.setString(2, encryptedPass);
             ps.setString(3, email);
             ps.setString(4, type_users);
+            ps.setString(5, toHex(salt));
 
             ps.executeUpdate();
 
@@ -108,3 +119,4 @@ public class AUServlet extends HttpServlet {
         }
     }
 }
+

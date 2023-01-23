@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 
+import static psql.connection.connect;
+
 @WebServlet(name = "ProtocolCreateServlet", value = "/ProtocolCreateServlet")
 public class ProtocolCreateServlet extends HttpServlet {
     @Override
@@ -21,10 +23,7 @@ public class ProtocolCreateServlet extends HttpServlet {
         String protocolName = "Протокол собрания кредиторов №" + sk + ".doc";
 
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/SK", "postgres", "111");
+            Connection c = connect();
 
             String checkProt = "SELECT protocol FROM prot WHERE id = ?";
             PreparedStatement psCheck = c.prepareStatement(checkProt);

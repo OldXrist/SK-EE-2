@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 
+import static psql.connection.connect;
+
 @WebServlet("/GetAdminCredentials")
 public class GetAdminCredentials extends HttpServlet {
 
@@ -47,10 +49,7 @@ public class GetAdminCredentials extends HttpServlet {
 
         String meetingNumber = request.getParameter("num");
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SK2", "postgres", "111");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres", "postgres", "postgresql");
+            Connection c = connect();
 
             //сбор данных об операторе
             ArrayList<String> adminInfo = new ArrayList<String>();

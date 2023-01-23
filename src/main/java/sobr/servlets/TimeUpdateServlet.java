@@ -7,7 +7,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+
+import static psql.connection.connect;
 
 @WebServlet(name = "TimeUpdateServlet", value = "/TimeUpdateServlet")
 public class TimeUpdateServlet extends HttpServlet {
@@ -18,10 +22,7 @@ public class TimeUpdateServlet extends HttpServlet {
         long sk = Long.parseLong(req.getParameter("sk"));
 
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.125/postgres2", "postgres", "postgresql");
-            //Connection c = DriverManager.getConnection("jdbc:postgresql://192.168.1.115/SK", "postgres", "111");
+            Connection c = connect();
 
             String sql = "SELECT data_u_vrem_sobr, nachal_podach_zaiv, okonch_podach_zaiv, nachal_priem_bul, okonch_priem_bul, data_podpic_protakol FROM sobr_org WHERE id = ? AND status NOT IN (?, ?, ?)";
 
@@ -42,8 +43,10 @@ public class TimeUpdateServlet extends HttpServlet {
                 String bulEnd = rs.getString(5);
                 String protocolDate = rs.getString(6);
 
-                LocalDateTime now = LocalDateTime.now();
+                ZonedDateTime nowZone = ZonedDateTime.now(ZoneId.of("Europe/Moscow"));
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+                DateTimeFormatter ZDTformatter = DateTimeFormatter.ISO_ZONED_DATE_TIME;
+                LocalDateTime now = LocalDateTime.parse(nowZone.toString(), ZDTformatter);
                 String status = null;
 
 
