@@ -16,7 +16,7 @@ public class HashServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         PrintWriter out = res.getWriter();
 
-        String pass = "MmFbm5h8";
+        String pass = "et2PZLxN";
         byte[] salt;
         try {
             salt = getSalt();
