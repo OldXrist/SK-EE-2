@@ -46,6 +46,10 @@ function Sign(id){
                     $(".crossLoad").show()
                     $("#loadingStatus").hide()
                     $("#errorStatus").show()
+                    document.getElementById('step_3').classList.add('filterRed')
+                    $("#step_3").animate({
+                        opacity: '1'
+                    })
                 })
         })
 }
@@ -107,5 +111,6 @@ function Signature() {
         errorStep.innerHTML = ""
         errorStep.innerHTML += "Локальная проверка<br> сертификата"
         errorStep.style.color = '#406C9A'
+        document.getElementById('step_3').classList.remove('filterRed')
     })
 }
