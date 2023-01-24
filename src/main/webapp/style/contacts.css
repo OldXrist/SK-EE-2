@@ -77,6 +77,10 @@
     margin-left: 80px;
 }
 
+.links a{
+    color: #104781;
+}
+
 .links_h{
     font-family: 'Exo 2';
     font-style: normal;
