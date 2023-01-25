@@ -140,7 +140,7 @@ $(document).ready(function(){
     $(".form_drop2").hide()
 });
 $(document).ready(function(){
-    $(".status li input").focus(function(){
+    $(".status li input").click(function(){
         $(".form_drop1").slideDown()
     }).focus(function(){
         $(".table").animate({
@@ -184,7 +184,7 @@ $(document).ready(function(){
     });
 });
 $(document).ready(function(){
-    $(".type li input").focus(function(){
+    $(".type li input").click(function(){
         $(".form_drop2").slideDown()
     }).focus(function(){
         $(".table").animate({

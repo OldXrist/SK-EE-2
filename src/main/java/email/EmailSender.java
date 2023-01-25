@@ -97,10 +97,6 @@ public class EmailSender extends HttpServlet {
             String body = "";
 
             switch (request.getParameter("subject")) {
-                case "Регистрация":
-                    subject = "Регистрация";
-                    body = "Поздравляем, вы успешно зарегестрированы на платформе Собрание Кредиторов!";
-                    break;
                 case "Тест":
                     subject = "Тестовое сообщение";
                     body = "Поздравляем, тестовое сообщение успешно получено!";

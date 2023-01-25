@@ -61,24 +61,24 @@
       </div>
       <ul class="form_gr1">
         <li class="form_text">Номер собрания</li>
-        <li><input type="text" placeholder="Номер собрания" class="placeh" /></li>
+        <li><input type="text" placeholder="Номер собрания" class="placeh" id="searchNum"/></li>
       </ul>
       <ul class="form_gr2">
         <li class="form_text">Должник</li>
-        <li><input type="text" placeholder="Должник" class="placeh"/></li>
+        <li><input type="text" placeholder="Должник" class="placeh" id="searchDebtor"/></li>
       </ul>
       <ul class="form_3">
         <li class="form_text">Организатор собрания (Арбитражный управляющий или кредитор)</li>
-        <li><input type="text" placeholder="Организатор собрания (Арбитражный управляющий или кредитор)" class="placeh" /></li>
+        <li><input type="text" placeholder="Организатор собрания (Арбитражный управляющий или кредитор)" class="placeh" id="searchOrg"/></li>
       </ul>
       <ul class="form_gr3">
         <li class="form_text">Даты приема заявок</li>
-        <li class="date_f"><a>с</a><input type="text" placeholder="00.00.0000" class="placeh" /></li>
-        <li class="date_f"><a>по</a><input type="text" placeholder="00.00.0000" class="placeh" /></li>
+        <li class="date_f"><a>с</a><input type="text" placeholder="00.00.0000" class="placeh" id="searchFrom"/></li>
+        <li class="date_f"><a>по</a><input type="text" placeholder="00.00.0000" class="placeh" id="searchUntil"/></li>
       </ul>
       <ul class="form_gr4 status">
         <li class="form_text">Статус</li>
-        <li><input type="text" placeholder="Не выбрано" class="placeh mask_none" /><img src="img/down_arrow.svg" class="drop_arrw1"/></li>
+        <li><input type="text" placeholder="Не выбрано" class="placeh mask_none" id="searchStatus" disabled/><img src="img/down_arrow.svg" class="drop_arrw1"/></li>
         <ul class="form_drop1">
           <li class="form1">Не выбрано</li>
           <li class="form2">Объявлено</li>
@@ -98,14 +98,14 @@
       </ul>
       <ul class="form_gr4 type">
         <li class="form_text">Тип собрания</li>
-        <li><input type="text" placeholder="Не выбрано" class="placeh" /><img src="img/down_arrow.svg" class="drop_arrw2"/></li>
+        <li><input type="text" placeholder="Не выбрано" class="placeh" id="searchType" disabled/><img src="img/down_arrow.svg" class="drop_arrw2"/></li>
         <ul class="form_drop2">
           <li class="form21">Не выбрано</li>
           <li class="form22">Очное</li>
           <li class="form23">Заочное</li>
         </ul>
       </ul>
-      <input type="submit" value="Поиск" class="srch_btn" />
+      <input type="button" value="Поиск" class="srch_btn" onclick="meetSearch()"/>
     </form>
 
     <p class="sort">Сортировать по <b class="sort_val">номеру</b><img src="img/down_arrow.svg" class="arrw"/></p>
@@ -113,6 +113,8 @@
       <li class="sort1" id="num" onclick="meetSort(this.id)">номеру</li>
       <li class="sort2" id="date" onclick="meetSort(this.id)">дате добавления</li>
       <li class="sort3" id="status" onclick="meetSort(this.id)">статусу</li>
+    </ul>
+    <ul id="pages">
     </ul>
     <div class="fade"></div>
     <div id="table">

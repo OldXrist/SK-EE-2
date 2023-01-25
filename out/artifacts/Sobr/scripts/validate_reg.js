@@ -213,19 +213,6 @@ function Validate_reg () {
                 regDocsUpload()
             });
 
-            let inputData = {
-                email: document.getElementById("email").value,
-                subject: 'Регистрация'
-            }
-
-            $.post("/Sobr/EmailSender", inputData, function (data) {
-                if (data === "") {
-                    alert("Вы успешно зарегестрированы!");
-                } else {
-                    alert(data);
-                }
-            });
-
             $(".wait").fadeIn()
             $(".table2").animate({
                 opacity: "0.3"
@@ -271,19 +258,6 @@ function Validate_reg () {
             $.post("/Sobr/FLServlet", user, function () {
                 console.log(user);
                 regDocsUpload()
-            });
-
-            let inputData = {
-                email: document.getElementById("email").value,
-                subject: 'Регистрация'
-            }
-
-            $.post("/Sobr/EmailSender", inputData, function (data) {
-                if (data === "") {
-                    alert("Вы успешно зарегестрированы!");
-                } else {
-                    alert(data);
-                }
             });
 
             $(".wait").fadeIn()
@@ -332,19 +306,6 @@ function Validate_reg () {
             $.post("/Sobr/AUServlet", user, function () {
                 console.log(user);
                 regDocsUpload()
-            });
-
-            let inputData = {
-                email: document.getElementById("email").value,
-                subject: 'Регистрация'
-            }
-
-            $.post("/Sobr/EmailSender", inputData, function (data) {
-                if (data === "") {
-                    alert("Вы успешно зарегестрированы!");
-                } else {
-                    alert(data);
-                }
             });
 
             $(".wait").fadeIn()

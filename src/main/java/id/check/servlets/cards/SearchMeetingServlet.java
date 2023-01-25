@@ -6,36 +6,59 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import static psql.connection.connect;
 
-@WebServlet(name = "SortMeetingsServlet", value = "/SortMeetingsServlet")
-public class SortMeetingsServlet extends HttpServlet {
+@WebServlet(name = "SearchMeetingServlet", value = "/SearchMeetingServlet")
+public class SearchMeetingServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         PrintWriter out = res.getWriter();
 
-        String sort = req.getParameter("param");
-        String param = "";
+        String num = req.getParameter("number");
+        String debtor = req.getParameter("debtor");
+        String org = req.getParameter("org");
+        String from = req.getParameter("from");
+        String until = req.getParameter("until");
+        String[] fromArr = req.getParameter("from").split("\\.");
+        String[] untilArr = req.getParameter("until").split("\\.");
+        String status = req.getParameter("status");
+        String typeS = req.getParameter("type");
 
-        String sqlTemp = "SELECT id, data_u_vrem_sobr,nachal_podach_zaiv, okonch_podach_zaiv, type_dolzh, famil, name, otch, poln_naum, email_org, type_org, type_sobr, status FROM sobr_org WHERE status NOT IN ('Черновик') ORDER BY ";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        String sqlTemp = "SELECT id, data_u_vrem_sobr,nachal_podach_zaiv, okonch_podach_zaiv, type_dolzh, famil, name, otch, poln_naum, email_org, type_org, type_sobr, status FROM sobr_org WHERE status NOT IN ('Черновик') ";
         String sql = "";
 
-        switch (sort){
-            case "num":
-                param = "id LIMIT 4;";
-                sql = sqlTemp + param;
-                break;
-            case "date":
-                param = "data_u_vrem_sobr LIMIT 4;";
-                sql = sqlTemp + param;
-                break;
-            case "status":
-                param = "status LIMIT 4;";
-                sql = sqlTemp + param;
-                break;
+        if (!num.equals("")){
+            sqlTemp += " AND id = " + "'" + num + "'";
         }
+        if (!debtor.equals("")){
+            sqlTemp += " AND famil LIKE " + "'%" + debtor + "%'" + "OR name LIKE " + "'%" + debtor + "%'" + "OR otch LIKE " + "'%" + debtor + "%'";
+        }
+        if (!org.equals("")){
+            sqlTemp += " AND email_org IN (SELECT email FROM main WHERE famil LIKE " + "'%" + org + "%'" + " OR name LIKE" + "'%" + org + "%'" + " OR otch LIKE" + "'%" + org + "%'" + ") ";
+        }
+        if (!from.equals("")){
+            sqlTemp += " AND EXTRACT(year FROM nachal_podach_zaiv) = " + fromArr[2] + " AND EXTRACT(month FROM nachal_podach_zaiv) = " + fromArr[1] + " AND EXTRACT(day FROM nachal_podach_zaiv) = " + fromArr[0];
+        }
+        if (!until.equals("")){
+            sqlTemp += " AND EXTRACT(year FROM okonch_podach_zaiv) = " + untilArr[2] + " AND EXTRACT(month FROM okonch_podach_zaiv) = " + untilArr[1] + " AND EXTRACT(day FROM okonch_podach_zaiv) = " + untilArr[0];
+        }
+        if (!status.equals("")){
+            sqlTemp += " AND status = " + "'" + status + "'";
+        }
+        if (!typeS.equals("")){
+            sqlTemp += " AND type_sobr = " + "'" + typeS + "'";
+        }
+
+        sql = sqlTemp + ";";
+        //out.println(sql);
 
         try{
             Connection c = connect();

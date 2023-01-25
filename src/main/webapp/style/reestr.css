@@ -83,6 +83,7 @@ body {
     margin-bottom: 30px;
     padding-left: 44px;
     padding-bottom: 51px;
+    z-index: 1000;
 }
 
 #table {
