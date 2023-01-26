@@ -827,7 +827,7 @@ input::placeholder{
     position: absolute;
     width: 195px;
     height: 18px;
-    left: 243px;
+    margin-left: 300px;
     top: 453px;
     font-family: 'Exo 2';
     font-style: normal;

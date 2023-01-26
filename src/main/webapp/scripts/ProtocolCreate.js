@@ -2,18 +2,6 @@ let send = {
     sk: snum[1]
 }
 
-function CreateProtocol(){
-    $.get("/Sobr/ProtocolCreateServlet", send, function (data) {
-        console.log('protocol created')
-        console.log(data)
-
-        let link = document.getElementById('link')
-        link.style.display = 'none'
-        link.href = "../../../protocols/Протокол собрания кредиторов №" + snum[1] + '.doc'
-        link.click();
-    })
-}
-
 function UpdateProtocol(){
         let file = document.getElementById('protUpd').files[0]
         document.getElementById('signProt').disabled = false
@@ -45,4 +33,24 @@ function UpdateProtocol(){
 $("#protUpd").click(function (){
     document.getElementById('signProt').disabled = false
     document.getElementById('signProt').style.opacity = '1'
+})
+
+$.get('/Sobr/CheckSobrStatusServlet', send, function (data){
+    console.log(data)
+
+    if (data.includes('Завершено')){
+        document.getElementById('createProtocol').onclick = function CreateProtocol(){
+            $.get("/Sobr/ProtocolCreateServlet", send, function (data) {
+                console.log('protocol created')
+                console.log(data)
+
+                let link = document.getElementById('link')
+                link.style.display = 'none'
+                link.href = "../../../protocols/Протокол собрания кредиторов №" + snum[1] + '.doc'
+                link.click();
+            })
+        }
+    } else {
+        document.getElementById('createProtocol').disabled = true
+    }
 })
