@@ -259,8 +259,11 @@ $.get("/Sobr/LKUCHServlet", function (data){
     console.log(data)
     let d = data.split("\n")
     let pageNum = Math.ceil(d.length / 16 / 5)
+    console.log(pageNum)
+    console.log(d.length / 16 / 5)
+    console.log(d.length)
     let k = 0
-    for (let i = 1; i < Math.ceil(d.length / 16); i++) {
+    for (let i = 1; i < Math.ceil(d.length / 16) - 1; i++) {
         Cards(d, k, i)
         k += 16
     }
@@ -268,7 +271,9 @@ $.get("/Sobr/LKUCHServlet", function (data){
     let pageLim = 4
 
     for (let i  =  6; i < Math.ceil(d.length / 16); i++){
-        document.getElementById('c'+i).style.display = 'none'
+        if (document.getElementById('c'+i) != null) {
+            document.getElementById('c' + i).style.display = 'none'
+        }
     }
 
 
@@ -276,7 +281,7 @@ $.get("/Sobr/LKUCHServlet", function (data){
         case pageNum === 1:
             break;
         case pageNum < pageLim:
-            for (let i = 1; i < pageLim; i++){
+            for (let i = 1; i < pageNum + 1; i++){
                 document.getElementById('pages').innerHTML += `<li class="pages" id=\"page_${i}\" onclick=\"page(this.id)\">${i}</li>`
             }
             break;

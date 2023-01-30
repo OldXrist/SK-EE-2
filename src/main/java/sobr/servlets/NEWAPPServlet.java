@@ -25,6 +25,7 @@ public class NEWAPPServlet extends HttpServlet {
         long sk = Long.parseLong(s);
         String uchStatus = req.getParameter("status");
         String behalf = req.getParameter("beh");
+        String appStatus = req.getParameter("appStatus");
         LocalDateTime ldt = LocalDateTime.now();
 
         try {
@@ -36,7 +37,7 @@ public class NEWAPPServlet extends HttpServlet {
             ps.setLong(1, sk);
             ps.setString(2, email);
             ps.setString(3, role);
-            ps.setString(4, "На рассмотрении");
+            ps.setString(4, appStatus);
             ps.setString(5, behalf);
             ps.setString(6, uchStatus);
             ps.setObject(7, ldt);

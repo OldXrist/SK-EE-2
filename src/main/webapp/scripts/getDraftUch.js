@@ -128,21 +128,26 @@ function timeParse (x){
 }
 
 function Cards(dt, i, m) {
-    m = "c" + m
     let lim = i + 16;
     let arr = [];
     for (i; i < lim; i++) {
         arr.push(dt[i])
     }
+    m = 'c' + m
+    let uch = 'u_' + arr[15]
 
-    console.log(arr)
 
     let date1 = dateParse(arr[1]) + " " + timeParse(arr[1])
     let date2 = dateParse(arr[2]) + ' - ' + dateParse(arr[3])
     console.log(arr[4], arr[10])
     if (arr[4].includes("Юридическое") && arr[10].includes("ЮЛ")) {
-        document.getElementById("table").innerHTML += "<div id = " + m + " class=\"table_item\" onclick='Redirect(this.id)'/>\n" +
-            "                <h3 class=\"table_h\"><b>" + arr[0] + " " + arr[9] + " - " + arr[14] + "</h3>\n" +
+        document.getElementById("table").innerHTML += "<div class=\"table_item\"/>\n" +
+            "                <h3 class=\"table_h\"><b>" + arr[0] + " " + arr[9] + "</h3>\n" +
+            "                <div class='buttons'>" +
+            "                   <a class='txtr' onclick='draftDelete(this.id)' id="+ uch +">Удалить</a>" +
+            "                   <a class='txtr edit' onclick='draftEdit(this.id)' id="+ uch +">Редактировать</a>" +
+            "                </div>" +
+            "                <div class='flex'>" +
             "                <ul class=\"table_data\">\n" +
             "                    <li class=\"thin_text\">Организатор</li>\n" +
             "                    <li>" + arr[11] + "</li>\n" +
@@ -152,9 +157,10 @@ function Cards(dt, i, m) {
             "                    <li>" + arr[8] + "</li>\n" +
             "                </ul>\n" +
             "                <ul class=\"table_data status\">\n" +
-            "                    <li class=\"thin_text\">Статус</li>\n" +
-            "                    <li>"+ arr[15] +"</li>\n" +
+            "                    <li class=\"thin_text\">Статус собрания</li>\n" +
+            "                    <li>"+ arr[14] +"</li>\n" +
             "                </ul>\n" +
+            "                </div>" +
             "                <div class=\"vl\"></div>\n" +
             "                <div class=\"date\">\n" +
             "                    <ul class=\"datetime\">\n" +
@@ -169,20 +175,26 @@ function Cards(dt, i, m) {
             "</div>"
 
     } else if (arr[4].includes("Юридическое") && !arr[10].includes("ЮЛ")) {
-        document.getElementById("table").innerHTML += "<div id = " + m + " class=\"table_item\" onclick='Redirect(this.id)'/>\n" +
-            "                <h3 class=\"table_h\"><b>" + arr[0] + " " + arr[9] + " - " + arr[14] + "</h3>\n" +
+        document.getElementById("table").innerHTML += "<div class=\"table_item\"/>\n" +
+            "                <h3 class=\"table_h\"><b>" + arr[0] + " " + arr[9] + "</h3>\n" +
+            "                <div class='buttons'>" +
+            "                   <a class='txtr' onclick='draftDelete(this.id)' id="+ uch +">Удалить</a>" +
+            "                   <a class='txtr edit' onclick='draftEdit(this.id)' id="+ uch +">Редактировать</a>" +
+            "                </div>" +
+            "                <div class='flex'>" +
             "                <ul class=\"table_data\">\n" +
             "                    <li class=\"thin_text\">Организатор</li>\n" +
-            "                    <li>" + arr[11] + arr[12] + arr[13] + "</li>\n" +
+            "                    <li>" + arr[11] + " " + arr[12] + " " + arr[13] + "</li>\n" +
             "                </ul>\n" +
             "                <ul class=\"table_data debtor\">\n" +
             "                    <li class=\"thin_text\">Должник</li>\n" +
             "                    <li>" + arr[8] + "</li>\n" +
             "                </ul>\n" +
             "                <ul class=\"table_data status\">\n" +
-            "                    <li class=\"thin_text\">Статус</li>\n" +
-            "                    <li>"+ arr[15] +"</li>\n" +
+            "                    <li class=\"thin_text\">Статус собрания</li>\n" +
+            "                    <li>"+ arr[14] +"</li>\n" +
             "                </ul>\n" +
+            "                </div>" +
             "                <div class=\"vl\"></div>\n" +
             "                <div class=\"date\">\n" +
             "                    <ul class=\"datetime\">\n" +
@@ -193,24 +205,30 @@ function Cards(dt, i, m) {
             "                        <li class=\"thin_text\">Даты приема заявок</li>\n" +
             "                        <li>" + date2 + "</li>\n" +
             "                    </ul>\n" +
-            "</div>\n" +
+            "                </div>\n" +
             "            </div>"
 
     } else if (!arr[4].includes("Юридическое") && arr[10].includes("ЮЛ")) {
-        document.getElementById("table").innerHTML += "<div id = " + m + " class=\"table_item\" onclick='Redirect(this.id)'/>\n" +
-            "                <h3 class=\"table_h\"><b>" + arr[0] + " " + arr[9] + " - " + arr[14] + "</h3>\n" +
+        document.getElementById("table").innerHTML += "<div class=\"table_item\"/>\n" +
+            "                <h3 class=\"table_h\"><b>" + arr[0] + " " + arr[9] + "</h3>\n" +
+            "                <div class='buttons'>" +
+            "                   <a class='txtr' onclick='draftDelete(this.id)' id="+ uch +">Удалить</a>" +
+            "                   <a class='txtr edit' onclick='draftEdit(this.id)' id="+ uch +">Редактировать</a>" +
+            "                </div>" +
+            "                <div class='flex'>" +
             "                <ul class=\"table_data\">\n" +
             "                    <li class=\"thin_text\">Организатор</li>\n" +
             "                    <li>" + arr[11] + "</li>\n" +
             "                </ul>\n" +
             "                <ul class=\"table_data debtor\">\n" +
             "                    <li class=\"thin_text\">Должник</li>\n" +
-            "                    <li>" + arr[5] + arr[6] + arr[7] + "</li>\n" +
+            "                    <li>" + arr[5] + " " + arr[6] + " " + arr[7] + "</li>\n" +
             "                </ul>\n" +
             "                <ul class=\"table_data status\">\n" +
-            "                    <li class=\"thin_text\">Статус</li>\n" +
-            "                    <li>"+ arr[15] +"</li>\n" +
+            "                    <li class=\"thin_text\">Статус собрания</li>\n" +
+            "                    <li>"+ arr[14] +"</li>\n" +
             "                </ul>\n" +
+            "                </div>" +
             "                <div class=\"vl\"></div>\n" +
             "                <div class=\"date\">\n" +
             "                    <ul class=\"datetime\">\n" +
@@ -225,20 +243,26 @@ function Cards(dt, i, m) {
             "               </div>"
 
     } else {
-        document.getElementById("table").innerHTML += "<div id = " + m + " class=\"table_item\" onclick='Redirect(this.id)'>\n" +
-            "                <h3 class=\"table_h\"><b>" + arr[0] + " " + arr[9] + " - " + arr[14] + "</h3>\n" +
+        document.getElementById("table").innerHTML += "<div class=\"table_item\">\n" +
+            "                <h3 class=\"table_h\"><b>" + arr[0] + " " + arr[9] + "</h3>\n" +
+            "                <div class='buttons'>" +
+            "                   <a class='txtr' onclick='draftDelete(this.id)' id="+ uch +">Удалить</a>" +
+            "                   <a class='txtr edit' onclick='draftEdit(this.id)' id="+ uch +">Редактировать</a>" +
+            "                </div>" +
+            "                <div class='flex'>" +
             "                <ul class=\"table_data\">\n" +
             "                    <li class=\"thin_text\">Организатор</li>\n" +
-            "                    <li>" + arr[11] + arr[12] + arr[13] + "</li>\n" +
+            "                    <li>" + arr[11] + " " + arr[12] + " " + arr[13] + "</li>\n" +
             "                </ul>\n" +
             "                <ul class=\"table_data debtor\">\n" +
             "                    <li class=\"thin_text\">Должник</li>\n" +
-            "                    <li>" + arr[5] + arr[6] + arr[7] + "</li>\n" +
+            "                    <li>" + arr[5] + " " + arr[6] + " " + arr[7] + "</li>\n" +
             "                </ul>\n" +
             "                <ul class=\"table_data status\">\n" +
-            "                    <li class=\"thin_text\">Статус</li>\n" +
-            "                    <li>"+ arr[15] +"</li>\n" +
+            "                    <li class=\"thin_text\">Статус собрания</li>\n" +
+            "                    <li>"+ arr[14] +"</li>\n" +
             "                </ul>\n" +
+            "                </div>" +
             "                <div class=\"vl\"></div>\n" +
             "                <div class=\"date\">\n" +
             "                    <ul class=\"datetime\">\n" +
@@ -249,21 +273,19 @@ function Cards(dt, i, m) {
             "                        <li class=\"thin_text\">Даты приема заявок</li>\n" +
             "                        <li>" + date2 + "</li>\n" +
             "                    </ul>\n" +
-            "</div>\n" +
+            "               </div>\n" +
             "            </div>"
     }
 }
 
-$.get("/Sobr/LKUCHServlet", function (data){
+$.get("/Sobr/LKDraftServlet", function (data){
 
     console.log(data)
     let d = data.split("\n")
     let pageNum = Math.ceil(d.length / 16 / 5)
     console.log(pageNum)
-    console.log(d.length / 16 / 5)
-    console.log(d.length)
     let k = 0
-    for (let i = 1; i < Math.ceil(d.length / 16) - 1; i++) {
+    for (let i = 1; i < Math.ceil(d.length / 16); i++) {
         Cards(d, k, i)
         k += 16
     }
@@ -271,9 +293,7 @@ $.get("/Sobr/LKUCHServlet", function (data){
     let pageLim = 4
 
     for (let i  =  6; i < Math.ceil(d.length / 16); i++){
-        if (document.getElementById('c'+i) != null) {
-            document.getElementById('c' + i).style.display = 'none'
-        }
+        document.getElementById('c'+i).style.display = 'none'
     }
 
 
@@ -281,7 +301,7 @@ $.get("/Sobr/LKUCHServlet", function (data){
         case pageNum === 1:
             break;
         case pageNum < pageLim:
-            for (let i = 1; i < pageNum + 1; i++){
+            for (let i = 1; i < pageLim; i++){
                 document.getElementById('pages').innerHTML += `<li class="pages" id=\"page_${i}\" onclick=\"page(this.id)\">${i}</li>`
             }
             break;
@@ -313,3 +333,18 @@ $.get("/Sobr/LKUCHServlet", function (data){
         document.getElementById('page_1').style.backgroundColor = '#104781'
     }
 })
+
+function draftDelete(id){
+    let send = {
+        id: id.split('_')[1]
+    }
+
+    $.post('/Sobr/DelDraftServlet', send)
+}
+
+function draftEdit(id){
+    let url = new URL('http://localhost:8080/Sobr/lichnui_kobinetu/lk_uch/z_sobr/z_sobr_uch_1.html')
+    let draftNum = id.split('_')[1]
+    url.searchParams.append('draft', draftNum)
+    window.location.href = url.href
+}

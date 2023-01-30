@@ -1,7 +1,4 @@
 function Create(){
-    let loc = window.location.href
-    let snum = loc.split('=')
-    console.log(snum[1])
 
     let uchStatus = document.getElementById("status").innerText
     let behalf = document.getElementById("behalf").innerText
@@ -9,10 +6,28 @@ function Create(){
     let application = {
         snum: snum[1],
         status: uchStatus,
-        beh: behalf
+        beh: behalf,
+        appStatus: "На рассмотрении"
     }
 
     $.post("/Sobr/NEWAPPServlet", application, function (){
         console.log(application)
+    })
+}
+
+function CreateDraft(){
+
+    let uchStatus = document.getElementById("status").innerText
+    let behalf = document.getElementById("behalf").innerText
+
+    let applicationDraft = {
+        snum: snum[1],
+        status: uchStatus,
+        beh: behalf,
+        appStatus: "Черновик"
+    }
+
+    $.post("/Sobr/NEWAPPServlet", applicationDraft, function (){
+        console.log(applicationDraft)
     })
 }

@@ -22,8 +22,10 @@ public class RegDocsServlet extends HttpServlet {
         String user = String.valueOf(sesh.getAttribute("email"));
         String path = "/opt/tomcat/webapps/Sobr/docs/" + user;
 
+        String fName = "";
         new File(path).mkdirs();
         for (Part part : req.getParts()){
+            fName = extractFileName(part);
             part.write(path + File.separator + extractFileName(part));
         }
 
@@ -36,7 +38,7 @@ public class RegDocsServlet extends HttpServlet {
             String sql = "UPDATE main SET docs = ? WHERE email = ?";
             PreparedStatement ps = c.prepareStatement(sql);
 
-            ps.setString(1, path);
+            ps.setString(1, path + File.separator + fName);
             ps.setString(2, user);
 
             ps.executeUpdate();

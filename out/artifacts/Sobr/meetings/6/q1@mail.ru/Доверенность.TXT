@@ -1,0 +1,2 @@
+ssh -i sk-tender-private-key-ssh1 debian1@178.154.246.83
+QaZwSx098

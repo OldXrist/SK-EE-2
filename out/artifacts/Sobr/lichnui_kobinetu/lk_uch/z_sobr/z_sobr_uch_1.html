@@ -71,7 +71,7 @@
       </ul>
       <ul class="btns fader">
         <li><a class="txtr"><button id="sign" class="sign" onclick="let x = Validate(); if (x === 0){Signature(); addAttr()}">Подписать заявку электронной подписью</button></a></li>
-        <li><a class="txtr"><button id="save" class="save">Сохранить заявку как черновик</button></a></li>
+        <li><a class="txtr"><button id="save" class="save" onclick="CreateDraft(); addAttr()">Сохранить заявку как черновик</button></a></li>
       </ul>
     </div>
 
@@ -141,6 +141,7 @@
 <script src="../../../scripts/signature_application.js"></script>
 <script src="../../../scripts/z_sobr_application_check.js"></script>
 <script src="../../../crypto-pro-js-master/dist/crypto-pro-js.min.js"></script>
+<script src="../../../scripts/draftLoad.js"></script>
 <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 <script>
   $(document).ready(function(){
