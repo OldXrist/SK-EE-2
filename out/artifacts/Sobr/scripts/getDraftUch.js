@@ -142,7 +142,7 @@ function Cards(dt, i, m) {
     console.log(arr[4], arr[10])
     if (arr[4].includes("Юридическое") && arr[10].includes("ЮЛ")) {
         document.getElementById("table").innerHTML += "<div class=\"table_item\"/>\n" +
-            "                <h3 class=\"table_h\"><b>" + arr[0] + " " + arr[9] + "</h3>\n" +
+            "                <h3 id='sk' class=\"table_h\"><b>" + arr[0] + " " + arr[9] + "</h3>\n" +
             "                <div class='buttons'>" +
             "                   <a class='txtr' onclick='draftDelete(this.id)' id="+ uch +">Удалить</a>" +
             "                   <a class='txtr edit' onclick='draftEdit(this.id)' id="+ uch +">Редактировать</a>" +
@@ -176,7 +176,7 @@ function Cards(dt, i, m) {
 
     } else if (arr[4].includes("Юридическое") && !arr[10].includes("ЮЛ")) {
         document.getElementById("table").innerHTML += "<div class=\"table_item\"/>\n" +
-            "                <h3 class=\"table_h\"><b>" + arr[0] + " " + arr[9] + "</h3>\n" +
+            "                <h3 id='sk' class=\"table_h\"><b>" + arr[0] + " " + arr[9] + "</h3>\n" +
             "                <div class='buttons'>" +
             "                   <a class='txtr' onclick='draftDelete(this.id)' id="+ uch +">Удалить</a>" +
             "                   <a class='txtr edit' onclick='draftEdit(this.id)' id="+ uch +">Редактировать</a>" +
@@ -210,7 +210,7 @@ function Cards(dt, i, m) {
 
     } else if (!arr[4].includes("Юридическое") && arr[10].includes("ЮЛ")) {
         document.getElementById("table").innerHTML += "<div class=\"table_item\"/>\n" +
-            "                <h3 class=\"table_h\"><b>" + arr[0] + " " + arr[9] + "</h3>\n" +
+            "                <h3 id='sk' class=\"table_h\"><b>" + arr[0] + " " + arr[9] + "</h3>\n" +
             "                <div class='buttons'>" +
             "                   <a class='txtr' onclick='draftDelete(this.id)' id="+ uch +">Удалить</a>" +
             "                   <a class='txtr edit' onclick='draftEdit(this.id)' id="+ uch +">Редактировать</a>" +
@@ -244,7 +244,7 @@ function Cards(dt, i, m) {
 
     } else {
         document.getElementById("table").innerHTML += "<div class=\"table_item\">\n" +
-            "                <h3 class=\"table_h\"><b>" + arr[0] + " " + arr[9] + "</h3>\n" +
+            "                <h3 id='sk' class=\"table_h\"><b>" + arr[0] + " " + arr[9] + "</h3>\n" +
             "                <div class='buttons'>" +
             "                   <a class='txtr' onclick='draftDelete(this.id)' id="+ uch +">Удалить</a>" +
             "                   <a class='txtr edit' onclick='draftEdit(this.id)' id="+ uch +">Редактировать</a>" +
@@ -345,6 +345,8 @@ function draftDelete(id){
 function draftEdit(id){
     let url = new URL('http://localhost:8080/Sobr/lichnui_kobinetu/lk_uch/z_sobr/z_sobr_uch_1.html')
     let draftNum = id.split('_')[1]
+    let sk = document.getElementById('sk').innerText.split(' ')[0]
+    url.searchParams.append('sk', sk)
     url.searchParams.append('draft', draftNum)
     window.location.href = url.href
 }

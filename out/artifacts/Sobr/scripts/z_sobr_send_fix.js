@@ -1,15 +1,9 @@
-let loc = window.location.href
-let snum = loc.split('=')
-console.log(snum[1])
+let params = (new URL(document.location)).searchParams
 
-let sk = snum[1]
-
-if (snum[1] !== '1'){
-    sk = snum[1].split('&')[0]
-}
+let sk = params.get('sk')
 
 let send = {
     sk: sk
 }
 
-document.getElementById('number').innerText += ' ' + snum[1]
+document.getElementById('number').innerText += ' ' + sk

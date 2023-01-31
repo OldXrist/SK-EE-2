@@ -320,7 +320,7 @@ input{
     margin-bottom: 0;
 }
 
-label{
+.prek_dok{
     width: 250px;
     height: 50px;
     margin-top: 15px;
@@ -333,6 +333,7 @@ label{
     font-size: 16px;
     line-height: 100%;
     color: #00345F;
+    background: #BAF3FC;
     padding: 17px;
 }
 
@@ -447,10 +448,103 @@ label{
     background: #BAF3FC;
 }
 
+.docs_tbl {
+     width: 1040px;
+     height: auto;
+     margin-top: 30px;
+ }
+
+.docs_tbl tr td {
+ font-family: 'Exo 2';
+ font-style: normal;
+ font-weight: 400;
+ font-size: 14px;
+ line-height: 100%;
+ color: #406C9A;
+ border: 1px solid #104781;
+ border-collapse: collapse;
+ padding: 18px;
+}
+
+.add_docs {
+ font-family: 'Exo 2';
+ position: absolute;
+ width: 520px;
+ height: 401px;
+ margin-top: 1300px;
+ margin-left: 370px;
+ background: #FFFFFF;
+ box-shadow: 0 100px 80px rgba(0, 0, 0, 0.07), 0 64.8148px 46.8519px rgba(0, 0, 0, 0.0531481), 0 38.5185px 25.4815px rgba(0, 0, 0, 0.0425185), 0 20px 13px rgba(0, 0, 0, 0.035), 0 8.14815px 6.51852px rgba(0, 0, 0, 0.0274815), 0 1.85185px 3.14815px rgba(0, 0, 0, 0.0168519);
+ border-radius: 15px;
+ z-index: 999;
+ padding-top: 50px;
+ text-align: center;
+}
+
+.add_docs p {
+ font-style: normal;
+ font-weight: 700;
+ font-size: 32px;
+ line-height: 120%;
+ text-align: center;
+ color: #104781;
+}
+
+.add_docs img {
+ margin-right: 15px;
+}
+
+.add_docs label {
+ font-style: normal;
+ font-weight: 600;
+ font-size: 18px;
+ line-height: 100%;
+ text-decoration-line: underline;
+ color: #104781;
+ cursor: pointer;
+}
+
+.add_docs label input {
+ margin-top: 35px;
+ margin-bottom: 35px;
+}
+
+.add_docs input {
+ border: none;
+}
+
+#doc {
+ text-align: center;
+}
+
+.upl {
+ width: 400px;
+ height: 55px;
+ background: #37DCF5;
+ border-radius: 10px;
+ font-style: normal;
+ font-weight: 500;
+ font-size: 18px;
+ line-height: 100%;
+ color: #00345F;
+ margin-top: 35px;
+ margin-bottom: 15px;
+}
+
+.add_docs h6 {
+ font-style: normal;
+ font-weight: 400;
+ font-size: 16px;
+ line-height: 130%;
+ color: #406C9A;
+ text-decoration: none;
+ cursor: pointer;
+}
+
 .base_bg {
-    margin-top: 1988px;
+    margin-top: 2053px;
 }
 
 .base{
-    margin-top: 1988px;
+    margin-top: 2053px;
 }

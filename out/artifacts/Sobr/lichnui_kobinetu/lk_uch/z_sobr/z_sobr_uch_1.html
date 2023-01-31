@@ -63,16 +63,26 @@
       <ul class="fader">
         <li class="oneline"><a>Документ, удостоверяющий личность</a><img src="../../../img/cross.svg" class="cross1"></li>
       </ul>
-      <ul class="fader">
-        <label for="file">
-          Добавить документ
-          <input type="file" id="file"/>
-        </label>
-      </ul>
+      <button type="button" class="fader prek_dok">Добавить документ</button>
+      <table class="docs_tbl">
+        <tr>
+          <td>Загруженные файлы</td>
+        </tr>
+      </table>
       <ul class="btns fader">
         <li><a class="txtr"><button id="sign" class="sign" onclick="let x = Validate(); if (x === 0){Signature(); addAttr()}">Подписать заявку электронной подписью</button></a></li>
         <li><a class="txtr"><button id="save" class="save" onclick="CreateDraft(); addAttr()">Сохранить заявку как черновик</button></a></li>
       </ul>
+    </div>
+
+    <div class="add_docs">
+      <p>Документы участников</p>
+      <label for="doc">
+        <img src="../../../img/add%201%20(Traced).svg"/><a>Прикрепить документ</a>
+        <input type="file" id="doc"/>
+      </label><br>
+      <input type="submit" value="Загрузить документ" class="upl"/><br>
+      <h6>Отменить</h6>
     </div>
 
     <ul class="int_drop">
@@ -129,6 +139,7 @@
 </script>
 <script src="../../../jquery/jquery-3.6.0.js"></script>
 <script src="../../../jquery/jquery.maskedinput.min.js"></script>
+<script src="../../../scripts/lk_docs_uch.js"></script>
 <script src="../../../scripts/z_sobr_send_fix.js"></script>
 <script src="../../../scripts/public_pages_header.js"></script>
 <script src="../../../scripts/check_for_org.js"></script>

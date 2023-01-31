@@ -9,11 +9,11 @@ function Validate(){
         document.getElementById("check2").checked === false ||
         document.getElementById("check3").checked === false){
         $(".base").animate({
-            marginTop: '2056px'
-        })
+            marginTop: "+=68px"
+        });
         $(".base_bg").animate({
-            marginTop: '2056px'
-        })
+            marginTop: "+=68px"
+        });
         $(".stat_drop").animate({
             top: '837px'
         })
@@ -22,6 +22,7 @@ function Validate(){
         })
         $("#error").show()
         window.scroll(0, 0)
+
 
         k += 1
     }
