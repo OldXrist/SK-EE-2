@@ -89,8 +89,6 @@ $("#fl").click(function (){
         $("#ql_form").hide()
         $(".dolg_drop").slideUp()
 
-        l += 0
-
     } else {
         $(".table_org").animate({
             opacity: "1"
@@ -142,8 +140,6 @@ $("#ip").click(function (){
         $("#fl_form").hide()
         $(".dolg_drop").slideUp()
 
-        l += 1
-
     } else {
         $(".table_org").animate({
             opacity: "1"
@@ -176,19 +172,19 @@ $("#ql").click(function (){
 
         k += 1
 
-    } else if (l !== 0){
+    } else if (k !== 0 && l === 0){
         $(".table_org").animate({
             opacity: "1",
-            height: "-=118px"
+            height: "+=118px"
         })
         $(".under").animate({
-            top: "-=118px"
+            top: "+=118px"
         })
         $(".base").animate({
-            top: "-=118px"
+            top: "+=118px"
         })
         $(".base_bg").animate({
-            top: "-=118px"
+            top: "+=118px"
         })
         $("#ql_form").slideDown()
         $("#ip_form").hide()

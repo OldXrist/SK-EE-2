@@ -263,7 +263,7 @@
                         <label for="nim_cod" class="txt_obsh">Введите Email</label>
                         <input type="text" class="forms7" id="nim_cod" placeholder="Email">
                     </div>
-                    <a class="knopka3 txtr"><p onclick="zmail()" class="topik3">Добавить</p></a>
+                    <a class="knopka3 txtr"><p onclick="zmail()" class="topik3 addEmail">Добавить</p></a>
 
                     <table class="table_fio" id="emails-table">
                         <tr>
@@ -275,7 +275,7 @@
                 if (x === 0){
                     Signature()
                 }"><p class="topik">Подписать заявку ЭЦП и отправить</p></a>
-                    <a class="knopka5 txtr"><p class="topik2" onclick="Validate(); Create()">Сохранить заявку как черновик</p></a>
+                    <a class="knopka5 txtr"><p class="topik2" onclick="CreateDraft()">Сохранить заявку как черновик</p></a>
                 </div>
             </div>
         </div>
@@ -348,6 +348,7 @@
 <script src="../../../scripts/signature.js"></script>
 <script src="../../../scripts/public_pages_header.js"></script>
 <script src="../../../scripts/org_application_constraint.js"></script>
+<script src="../../../scripts/draftLoadOrg.js"></script>
 <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 <script>
     $(document).ready(function (){

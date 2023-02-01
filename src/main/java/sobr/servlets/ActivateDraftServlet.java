@@ -3,10 +3,9 @@ package sobr.servlets;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.Types;
 import java.time.LocalDate;
@@ -14,13 +13,15 @@ import java.time.LocalDateTime;
 
 import static psql.connection.connect;
 
-@WebServlet("/ZServlet")
-public class ZServlet extends HttpServlet {
+@WebServlet(name = "ActivateDraftServlet", value = "/ActivateDraftServlet")
+public class ActivateDraftServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         HttpSession sesh = req.getSession();
         String emailOrg = String.valueOf(sesh.getAttribute("sessionUser"));
         String role = String.valueOf(sesh.getAttribute("role"));
+
+        int sk = Integer.parseInt(req.getParameter("draft"));
 
         String dateSobr = req.getParameter("dateSobr");
         String povestka = req.getParameter("povestka");
@@ -84,7 +85,7 @@ public class ZServlet extends HttpServlet {
         try{
             Connection c = connect();
 
-            String sql1 = "INSERT INTO sobr_org Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql1 = "UPDATE sobr_org SET (data_u_vrem_sobr, povestk_dnia, nachal_podach_zaiv, okonch_podach_zaiv, nachal_priem_bul, okonch_priem_bul, data_podpic_protakol, iden_nomer, data_razm_efrsb, naim_orb_suda, nomer_dela, osn_dlia_sobr, type_dolzh, email_org, type_org, famil, name, otch, pocht_adres, inn, snils, ogrnip, poln_naum, qr_adres, ogrn, type_sobr, obem_sobr, status) = (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) WHERE id = ?";
             PreparedStatement ps = c.prepareStatement(sql1);
 
             if (dateS != null) {
@@ -187,6 +188,8 @@ public class ZServlet extends HttpServlet {
             if (!status.equals("")) {
                 ps.setString(28, status);
             } else ps.setNull(28, Types.VARCHAR);
+
+            ps.setInt(29, sk);
 
             ps.executeUpdate();
 

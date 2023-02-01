@@ -16,7 +16,7 @@ if (draftLink.includes('draft')){
         if (!d[1].includes('null')){
             $(".nofade2 li a").text(d[1])
         } else console.log('2 -', d[1])
-        if (d[2].includes('null')){
+        if (!d[2].includes('null')){
 
             let file = d[2].split("\\")[2]
             console.log(file)

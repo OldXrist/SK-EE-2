@@ -128,24 +128,39 @@ function timeParse (x){
 }
 
 function Cards(dt, i, m) {
-    let lim = i + 16;
+    let lim = i + 15;
     let arr = [];
     for (i; i < lim; i++) {
         arr.push(dt[i])
     }
-    m = 'c' + m
-    let uch = 'u_' + arr[15]
 
+    let sk = 'sk_' + arr[0]
 
-    let date1 = dateParse(arr[1]) + " " + timeParse(arr[1])
-    let date2 = dateParse(arr[2]) + ' - ' + dateParse(arr[3])
+    let date1
+    let date2
+    let debtor
+    let debtorUl
+
+    if (!arr[1].includes('null')) {
+        date1 = dateParse(arr[1]) + " " + timeParse(arr[1])
+    } else  date1 = '-'
+    if (!arr[2].includes('null') || !arr[3].includes('null')) {
+        date2 = dateParse(arr[2]) + ' - ' + dateParse(arr[3])
+    } else date2 = '-'
+    if (!arr[8].includes('null')){
+        debtorUl = arr[8]
+    } else debtorUl = '-'
+    if (!arr[5].includes('null') && !arr[6].includes('null') && !arr[7].includes('null')){
+        debtor = arr[5] + " " + arr[6] + " " + arr[7]
+    } else debtor = '-'
+
     console.log(arr[4], arr[10])
     if (arr[4].includes("Юридическое") && arr[10].includes("ЮЛ")) {
         document.getElementById("table").innerHTML += "<div class=\"table_item\"/>\n" +
             "                <h3 id='sk' class=\"table_h\"><b>" + arr[0] + " " + arr[9] + "</h3>\n" +
             "                <div class='buttons'>" +
-            "                   <a class='txtr' onclick='draftDelete(this.id)' id="+ uch +">Удалить</a>" +
-            "                   <a class='txtr edit' onclick='draftEdit(this.id)' id="+ uch +">Редактировать</a>" +
+            "                   <a class='txtr' onclick='draftDelete(this.id)' id="+ sk +">Удалить</a>" +
+            "                   <a class='txtr edit' onclick='draftEdit(this.id)' id="+ sk +">Редактировать</a>" +
             "                </div>" +
             "                <div class='flex'>" +
             "                <ul class=\"table_data\">\n" +
@@ -154,7 +169,7 @@ function Cards(dt, i, m) {
             "                </ul>\n" +
             "                <ul class=\"table_data debtor\">\n" +
             "                    <li class=\"thin_text\">Должник</li>\n" +
-            "                    <li>" + arr[8] + "</li>\n" +
+            "                    <li>" + debtorUl + "</li>\n" +
             "                </ul>\n" +
             "                <ul class=\"table_data status\">\n" +
             "                    <li class=\"thin_text\">Статус собрания</li>\n" +
@@ -178,8 +193,8 @@ function Cards(dt, i, m) {
         document.getElementById("table").innerHTML += "<div class=\"table_item\"/>\n" +
             "                <h3 id='sk' class=\"table_h\"><b>" + arr[0] + " " + arr[9] + "</h3>\n" +
             "                <div class='buttons'>" +
-            "                   <a class='txtr' onclick='draftDelete(this.id)' id="+ uch +">Удалить</a>" +
-            "                   <a class='txtr edit' onclick='draftEdit(this.id)' id="+ uch +">Редактировать</a>" +
+            "                   <a class='txtr' onclick='draftDelete(this.id)' id="+ sk +">Удалить</a>" +
+            "                   <a class='txtr edit' onclick='draftEdit(this.id)' id="+ sk +">Редактировать</a>" +
             "                </div>" +
             "                <div class='flex'>" +
             "                <ul class=\"table_data\">\n" +
@@ -188,7 +203,7 @@ function Cards(dt, i, m) {
             "                </ul>\n" +
             "                <ul class=\"table_data debtor\">\n" +
             "                    <li class=\"thin_text\">Должник</li>\n" +
-            "                    <li>" + arr[8] + "</li>\n" +
+            "                    <li>" + debtorUl + "</li>\n" +
             "                </ul>\n" +
             "                <ul class=\"table_data status\">\n" +
             "                    <li class=\"thin_text\">Статус собрания</li>\n" +
@@ -212,8 +227,8 @@ function Cards(dt, i, m) {
         document.getElementById("table").innerHTML += "<div class=\"table_item\"/>\n" +
             "                <h3 id='sk' class=\"table_h\"><b>" + arr[0] + " " + arr[9] + "</h3>\n" +
             "                <div class='buttons'>" +
-            "                   <a class='txtr' onclick='draftDelete(this.id)' id="+ uch +">Удалить</a>" +
-            "                   <a class='txtr edit' onclick='draftEdit(this.id)' id="+ uch +">Редактировать</a>" +
+            "                   <a class='txtr' onclick='draftDelete(this.id)' id="+ sk +">Удалить</a>" +
+            "                   <a class='txtr edit' onclick='draftEdit(this.id)' id="+ sk +">Редактировать</a>" +
             "                </div>" +
             "                <div class='flex'>" +
             "                <ul class=\"table_data\">\n" +
@@ -222,7 +237,7 @@ function Cards(dt, i, m) {
             "                </ul>\n" +
             "                <ul class=\"table_data debtor\">\n" +
             "                    <li class=\"thin_text\">Должник</li>\n" +
-            "                    <li>" + arr[5] + " " + arr[6] + " " + arr[7] + "</li>\n" +
+            "                    <li>" + debtor + "</li>\n" +
             "                </ul>\n" +
             "                <ul class=\"table_data status\">\n" +
             "                    <li class=\"thin_text\">Статус собрания</li>\n" +
@@ -246,8 +261,8 @@ function Cards(dt, i, m) {
         document.getElementById("table").innerHTML += "<div class=\"table_item\">\n" +
             "                <h3 id='sk' class=\"table_h\"><b>" + arr[0] + " " + arr[9] + "</h3>\n" +
             "                <div class='buttons'>" +
-            "                   <a class='txtr' onclick='draftDelete(this.id)' id="+ uch +">Удалить</a>" +
-            "                   <a class='txtr edit' onclick='draftEdit(this.id)' id="+ uch +">Редактировать</a>" +
+            "                   <a class='txtr' onclick='draftDelete(this.id)' id="+ sk +">Удалить</a>" +
+            "                   <a class='txtr edit' onclick='draftEdit(this.id)' id="+ sk +">Редактировать</a>" +
             "                </div>" +
             "                <div class='flex'>" +
             "                <ul class=\"table_data\">\n" +
@@ -256,7 +271,7 @@ function Cards(dt, i, m) {
             "                </ul>\n" +
             "                <ul class=\"table_data debtor\">\n" +
             "                    <li class=\"thin_text\">Должник</li>\n" +
-            "                    <li>" + arr[5] + " " + arr[6] + " " + arr[7] + "</li>\n" +
+            "                    <li>" + debtor + "</li>\n" +
             "                </ul>\n" +
             "                <ul class=\"table_data status\">\n" +
             "                    <li class=\"thin_text\">Статус собрания</li>\n" +
@@ -278,21 +293,21 @@ function Cards(dt, i, m) {
     }
 }
 
-$.get("/Sobr/UchDraftServlet", function (data){
+$.get("/Sobr/OrgDraftServlet", function (data){
 
     console.log(data)
     let d = data.split("\n")
-    let pageNum = Math.ceil(d.length / 16 / 5)
+    let pageNum = Math.ceil(d.length / 15 / 5)
     console.log(pageNum)
     let k = 0
-    for (let i = 1; i < Math.ceil(d.length / 16); i++) {
+    for (let i = 1; i < Math.ceil(d.length / 15); i++) {
         Cards(d, k, i)
-        k += 16
+        k += 15
     }
 
     let pageLim = 4
 
-    for (let i  =  6; i < Math.ceil(d.length / 16); i++){
+    for (let i  =  6; i < Math.ceil(d.length / 15); i++){
         document.getElementById('c'+i).style.display = 'none'
     }
 
@@ -343,10 +358,8 @@ function draftDelete(id){
 }
 
 function draftEdit(id){
-    let url = new URL('http://localhost:8080/Sobr/lichnui_kobinetu/lk_uch/z_sobr/z_sobr_uch_1.html')
+    let url = new URL('http://localhost:8080/Sobr/lichnui_kobinetu/lk_org/z_sobr/z_sobr_org_1.html')
     let draftNum = id.split('_')[1]
-    let sk = document.getElementById('sk').innerText.split(' ')[0]
-    url.searchParams.append('sk', sk)
     url.searchParams.append('draft', draftNum)
     window.location.href = url.href
 }

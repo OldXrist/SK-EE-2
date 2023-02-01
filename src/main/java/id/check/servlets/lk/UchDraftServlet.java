@@ -12,8 +12,8 @@ import java.sql.ResultSet;
 
 import static psql.connection.connect;
 
-@WebServlet(name = "LKDraftServlet", value = "/LKDraftServlet")
-public class LKDraftServlet extends HttpServlet {
+@WebServlet(name = "UchDraftServlet", value = "/UchDraftServlet")
+public class UchDraftServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         PrintWriter out = res.getWriter();
@@ -26,7 +26,7 @@ public class LKDraftServlet extends HttpServlet {
 
             String sql = "SELECT id, data_u_vrem_sobr,nachal_podach_zaiv, okonch_podach_zaiv, type_dolzh, famil, name, otch, poln_naum, email_org, type_org, type_sobr, status\n" +
                     "FROM sobr_org\n" +
-                    "WHERE status = 'Завершено' AND id IN (SELECT id FROM uch WHERE email = ? AND status = 'Черновик')" +
+                    "WHERE status <> 'Завершено' AND id IN (SELECT id FROM uch WHERE email = ? AND status = 'Черновик')" +
                     "ORDER BY id";
             PreparedStatement ps = c.prepareStatement(sql);
 

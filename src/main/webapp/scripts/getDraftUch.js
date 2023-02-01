@@ -278,7 +278,7 @@ function Cards(dt, i, m) {
     }
 }
 
-$.get("/Sobr/LKDraftServlet", function (data){
+$.get("/Sobr/UchDraftServlet", function (data){
 
     console.log(data)
     let d = data.split("\n")
