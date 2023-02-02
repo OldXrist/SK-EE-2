@@ -85,7 +85,7 @@ public class ActivateDraftServlet extends HttpServlet {
         try{
             Connection c = connect();
 
-            String sql1 = "UPDATE sobr_org SET (data_u_vrem_sobr, povestk_dnia, nachal_podach_zaiv, okonch_podach_zaiv, nachal_priem_bul, okonch_priem_bul, data_podpic_protakol, iden_nomer, data_razm_efrsb, naim_orb_suda, nomer_dela, osn_dlia_sobr, type_dolzh, email_org, type_org, famil, name, otch, pocht_adres, inn, snils, ogrnip, poln_naum, qr_adres, ogrn, type_sobr, obem_sobr, status) = (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) WHERE id = ?";
+            String sql1 = "UPDATE sobr_org SET (data_u_vrem_sobr, povestk_dnia, nachal_podach_zaiv, okonch_podach_zaiv, nachal_priem_bul, okonch_priem_bul, data_podpic_protakol, iden_nomer, data_razm_efrsb, naim_orb_suda, nomer_dela, osn_dlia_sobr, type_dolzh, email_org, type_org, famil, name, otch, pocht_adres, inn, snils, ogrnip, poln_naum, qr_adres, ogrn, type_sobr, status, participants) = (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) WHERE id = ?";
             PreparedStatement ps = c.prepareStatement(sql1);
 
             if (dateS != null) {
@@ -132,30 +132,42 @@ public class ActivateDraftServlet extends HttpServlet {
             if (!role.equals("")) {
                 ps.setString(15, role);
             } else ps.setNull(15, Types.VARCHAR);
-            if (!famil.equals("")) {
-                ps.setString(16, famil);
+            if (famil != null) {
+                if (!famil.equals("")) {
+                    ps.setString(16, famil);
+                } else ps.setNull(16, Types.VARCHAR);
             } else ps.setNull(16, Types.VARCHAR);
-            if (!name.equals("")) {
-                ps.setString(17, name);
+
+            if (name != null) {
+                if (!name.equals("")) {
+                    ps.setString(17, name);
+                } else ps.setNull(17, Types.VARCHAR);
             } else ps.setNull(17, Types.VARCHAR);
-            if (!otch.equals("")) {
-                ps.setString(18, otch);
+
+            if (otch != null) {
+                if (!otch.equals("")) {
+                    ps.setString(18, otch);
+                } else ps.setNull(18, Types.VARCHAR);
             } else ps.setNull(18, Types.VARCHAR);
+
             if (!post.equals("")) {
                 ps.setString(19, post);
             } else ps.setNull(19, Types.VARCHAR);
+
             if (!inn.equals("")) {
                 ps.setLong(20, Long.parseLong(inn));
             } else ps.setNull(20, Types.BIGINT);
 
-            if (!snils.equals("")) {
-                String[] snl = snils.split(" ");
-                String snil = "";
-                for (int i = 0; i < 4; i++) {
-                    snil += snl[i];
-                }
-                long isnils = Long.parseLong(snil);
-                ps.setLong(21, isnils);
+            if (snils != null) {
+                if (!snils.equals("")) {
+                    String[] snl = snils.split(" ");
+                    String snil = "";
+                    for (int i = 0; i < 4; i++) {
+                        snil += snl[i];
+                    }
+                    long isnils = Long.parseLong(snil);
+                    ps.setLong(21, isnils);
+                } else ps.setNull(21, Types.BIGINT);
             } else ps.setNull(21, Types.BIGINT);
 
             if (ogip != null) {
@@ -181,13 +193,13 @@ public class ActivateDraftServlet extends HttpServlet {
 
             ps.setString(26, "Заочное");
 
-            if (!volume.equals("")) {
-                ps.setLong(27, Long.parseLong(volume));
-            } else ps.setNull(27, Types.BIGINT);
-
             if (!status.equals("")) {
-                ps.setString(28, status);
-            } else ps.setNull(28, Types.VARCHAR);
+                ps.setString(27, status);
+            } else ps.setNull(27, Types.VARCHAR);
+
+            if (!volume.equals("")) {
+                ps.setInt(28, Integer.parseInt(volume));
+            } else ps.setNull(28, Types.INTEGER);
 
             ps.setInt(29, sk);
 

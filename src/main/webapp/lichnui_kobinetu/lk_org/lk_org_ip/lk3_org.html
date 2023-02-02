@@ -18,7 +18,7 @@
         <li class="nav_item"><a href="../../../reestr.html">Реестр собраний</a></li>
         <li class="nav_item"><a href="../../../help/help_1.html">Помощь</a></li>
         <li class="nav_item"><a href="../../../help/contacts.html">Контакты</a></li>
-        <li class="nav_item" ><a href="FILTERServlet"><p class="nav_login" id="lk"></p></a></li>
+        <li class="nav_item" ><a href="/Sobr/FILTERServlet"><p class="nav_login" id="lk"></p></a></li>
         <li class="nav_item"><span id="clock" style="color:#ffffff;"></span></li>
         <li class="nav_item logout"><a href="/Sobr/LOGOUTServlet"><img id="logout_btn" src="../../../img/logout%201%20(Traced).png" /></a></li>
     </ul>
@@ -60,25 +60,9 @@
 
     </form>
 
-    <form class="table_blue1">
-        <p class="del">Удалить</p>
-        <p class="red">Редактировать</p>
-        <p class="org">Организатор</p>
-        <p class="prav">ООО «Право-Торг» </p>
-        <p class="dolzh">Должник</p>
-        <p class="kent">Бальдяева Юлия Александровна</p>
+    <ul id="pages"></ul>
+    <div id="table"></div>
 
-    </form>
-
-    <form class="table_blue2">
-        <p class="del">Удалить</p>
-        <p class="red">Редактировать</p>
-        <p class="org">Организатор</p>
-        <p class="prav">ООО «Право-Торг» </p>
-        <p class="dolzh">Должник</p>
-        <p class="kent">Бальдяева Юлия Александровна</p>
-
-    </form>
 </div>
 <div class="container">
     <div class="content">
@@ -104,9 +88,10 @@
     <div class="table_item"></div>
 </div>
 <script src="../../../jquery/jquery-3.6.0.js"></script>
-<script src="../../../scripts/sobr_org_draft.js"></script>
+<!--<script src="../../../scripts/sobr_org_draft.js"></script> TODO хз что это, мейби надо удалить-->
 <script src="../../../scripts/public_pages_header.js"></script>
 <script src="../../../scripts/clock.js"></script>
+<script src="../../../scripts/getDraftOrg.js"></script>
 <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 </html>

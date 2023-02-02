@@ -90,71 +90,98 @@ public class ZServlet extends HttpServlet {
             if (dateS != null) {
                 ps.setObject(1, dateS);
             } else ps.setNull(1, Types.DATE);
+
             if (!povestka.equals("")) {
                 ps.setString(2, povestka);
             } else ps.setNull(2, Types.VARCHAR);
+
             if (dateZ != null) {
                 ps.setObject(3, dateZ);
             } else ps.setNull(3, Types.DATE);
+
             if (dateZ2 != null) {
                 ps.setObject(4, dateZ2);
             } else ps.setNull(4, Types.DATE);
+
             if (dateB != null) {
                 ps.setObject(5, dateB);
             } else ps.setNull(5, Types.DATE);
+
             if (dateB2 != null) {
                 ps.setObject(6, dateB2);
             } else ps.setNull(6, Types.DATE);
+
             if (dateP != null) {
                 ps.setObject(7, dateP);
             } else ps.setNull(7, Types.DATE);
+
             // TODO EFRSB
             //ps.setLong(8, regEfrsb);
             //ps.setObject(9, dateEfrsb);
+
             ps.setLong(8, 123);
             ps.setObject(9, dateEfrsb);
+
             if (!court.equals("")) {
                 ps.setString(10, court);
             } else ps.setNull(10, Types.VARCHAR);
+
             if (!caseNum.equals("")) {
                 ps.setString(11, caseNum);
             } else ps.setNull(11, Types.VARCHAR);
+
             if (!baseForSobr.equals("")) {
                 ps.setString(12, baseForSobr);
             } else ps.setNull(12, Types.VARCHAR);
+
             if (!typeDol.equals("")) {
                 ps.setString(13, typeDol);
             } else ps.setNull(13, Types.VARCHAR);
+
             if (!emailOrg.equals("")) {
                 ps.setString(14, emailOrg);
             } else ps.setNull(14, Types.VARCHAR);
+
             if (!role.equals("")) {
                 ps.setString(15, role);
             } else ps.setNull(15, Types.VARCHAR);
-            if (!famil.equals("")) {
-                ps.setString(16, famil);
+
+            if (famil != null) {
+                if (!famil.equals("")) {
+                    ps.setString(16, famil);
+                } else ps.setNull(16, Types.VARCHAR);
             } else ps.setNull(16, Types.VARCHAR);
-            if (!name.equals("")) {
-                ps.setString(17, name);
+
+            if (name != null) {
+                if (!name.equals("")) {
+                    ps.setString(17, name);
+                } else ps.setNull(17, Types.VARCHAR);
             } else ps.setNull(17, Types.VARCHAR);
-            if (!otch.equals("")) {
-                ps.setString(18, otch);
+
+            if (otch != null) {
+                if (!otch.equals("")) {
+                    ps.setString(18, otch);
+                } else ps.setNull(18, Types.VARCHAR);
             } else ps.setNull(18, Types.VARCHAR);
+
             if (!post.equals("")) {
                 ps.setString(19, post);
             } else ps.setNull(19, Types.VARCHAR);
+
             if (!inn.equals("")) {
                 ps.setLong(20, Long.parseLong(inn));
             } else ps.setNull(20, Types.BIGINT);
 
-            if (!snils.equals("")) {
-                String[] snl = snils.split(" ");
-                String snil = "";
-                for (int i = 0; i < 4; i++) {
-                    snil += snl[i];
-                }
-                long isnils = Long.parseLong(snil);
-                ps.setLong(21, isnils);
+            if (snils != null) {
+                if (!snils.equals("")) {
+                    String[] snl = snils.split(" ");
+                    String snil = "";
+                    for (int i = 0; i < 4; i++) {
+                        snil += snl[i];
+                    }
+                    long isnils = Long.parseLong(snil);
+                    ps.setLong(21, isnils);
+                } else ps.setNull(21, Types.BIGINT);
             } else ps.setNull(21, Types.BIGINT);
 
             if (ogip != null) {
@@ -163,16 +190,19 @@ public class ZServlet extends HttpServlet {
                     ps.setLong(22, ogrnip);
                 } else ps.setNull(22, Types.BIGINT);
             } else ps.setNull(22, Types.BIGINT);
+
             if (polnNaim != null) {
                 if (!polnNaim.equals("")) {
                     ps.setString(23, polnNaim);
                 } else ps.setNull(23, Types.VARCHAR);
             } else ps.setNull(23, Types.VARCHAR);
+
             if (urAdr != null) {
                 if (!urAdr.equals("")) {
                     ps.setString(24, urAdr);
                 } else ps.setNull(24, Types.VARCHAR);
             } else ps.setNull(24, Types.VARCHAR);
+
             if (og != null) {
                 long ogrn = Long.parseLong(og);
                 ps.setLong(25, ogrn);
@@ -180,13 +210,13 @@ public class ZServlet extends HttpServlet {
 
             ps.setString(26, "Заочное");
 
-            if (!volume.equals("")) {
-                ps.setLong(27, Long.parseLong(volume));
-            } else ps.setNull(27, Types.BIGINT);
-
             if (!status.equals("")) {
-                ps.setString(28, status);
-            } else ps.setNull(28, Types.VARCHAR);
+                ps.setString(27, status);
+            } else ps.setNull(27, Types.VARCHAR);
+
+            if (!volume.equals("")) {
+                ps.setInt(28, Integer.parseInt(volume));
+            } else ps.setNull(28, Types.INTEGER);
 
             ps.executeUpdate();
 

@@ -47,7 +47,9 @@ if (draftLinkOrg.includes('draft')){
         fillDate(d[4], 'date_b', 'time_b')
         fillDate(d[5], 'date_b2', 'time_b2')
         fillDate(d[6], 'date_p', 'time_p')
-        fill(d[7], 'participants')
+        if (!d[7].includes('null')){
+            document.getElementById('participants').value = parseInt(d[7])
+        }
         fill(d[8], 'naim_abr_sud')
         fill(d[9], 'nomer_dela')
         fill(d[10], 'osn_dlia_sobr')

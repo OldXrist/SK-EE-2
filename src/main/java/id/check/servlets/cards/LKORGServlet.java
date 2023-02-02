@@ -24,7 +24,7 @@ public class LKORGServlet extends HttpServlet {
 
             String sql = "SELECT id, data_u_vrem_sobr,nachal_podach_zaiv, okonch_podach_zaiv, type_dolzh, famil, name, otch, poln_naum, email_org, type_org, type_sobr, status\n" +
                     "FROM sobr_org\n" +
-                    "WHERE email_org = ?" +
+                    "WHERE email_org = ? AND status <> 'Черновик'" +
                     "ORDER BY id";
             PreparedStatement ps = c.prepareStatement(sql);
 

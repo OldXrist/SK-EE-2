@@ -17,7 +17,7 @@
         <li class="nav_item"><a href="../../../reestr.html">Реестр собраний</a></li>
         <li class="nav_item"><a href="../../../help/help_1.html">Помощь</a></li>
         <li class="nav_item"><a href="../../../help/contacts.html">Контакты</a></li>
-        <li class="nav_item" ><a href="FILTERServlet"><p class="nav_login" id="lk"></p></a></li>
+        <li class="nav_item" ><a href="/Sobr/FILTERServlet"><p class="nav_login" id="lk"></p></a></li>
         <li class="nav_item"><a href="../../../signin.html"><span id="clock" style="color:#ffffff;"></span></a></li>
         <li class="nav_item logout"><a href="/Sobr/LOGOUTServlet"><img id="logout_btn" src="../../../img/logout%201%20(Traced).png" /></a></li>
     </ul>
@@ -273,7 +273,7 @@
                     <a class="knopka4 txtr" onclick="
                 let x = Validate()
                 if (x === 0){
-                    Signature()
+                    Signature();
                 }"><p class="topik">Подписать заявку ЭЦП и отправить</p></a>
                     <a class="knopka5 txtr"><p class="topik2" onclick="CreateDraft()">Сохранить заявку как черновик</p></a>
                 </div>
@@ -284,7 +284,7 @@
         <p>Документы участников</p>
         <label for="doc">
             <img src="../../../img/add%201%20(Traced).svg"/><a>Прикрепить документ</a>
-            <input type="file" id="doc"/>
+            <input type="file" id="doc" multiple/>
         </label><br>
         <input type="submit" value="Загрузить документ" class="upl"/><br>
         <h6>Отменить</h6>
@@ -340,6 +340,7 @@
 <script src="../../../scripts/sobr_org_1.js"></script>
 <script src="../../../scripts/lk_docs.js"></script>
 <script src="../../../scripts/lk_q.js"></script>
+<script src="../../../scripts/docsUploadSobr.js"></script>
 <script src="../../../scripts/org_choice.js"></script>
 <script src="../../../scripts/white.js"></script>
 <script src="../../../scripts/sobr_org_validate.js"></script>

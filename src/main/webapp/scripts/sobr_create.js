@@ -200,6 +200,8 @@ function Create() {
             $.post("/Sobr/ZServlet", sobr, function () {
                 console.log(sobr)
 
+                docsUpload()
+
                 let email = zmail()
                 console.log(email)
 
@@ -217,6 +219,8 @@ function Create() {
         } else {
             $.post("/Sobr/ActivateDraftServlet", sobr, function () {
                 console.log(sobr)
+
+                docsUpload()
 
                 let email = zmail()
                 console.log(email)
@@ -266,6 +270,8 @@ function Create() {
             $.post("/Sobr/ZServlet", sobr, function () {
                 console.log(sobr)
 
+                docsUpload()
+
                 let email = zmail()
                 console.log(email)
 
@@ -283,6 +289,8 @@ function Create() {
         } else {
             $.post("/Sobr/ActivateDraftServlet", sobr, function () {
                 console.log(sobr)
+
+                docsUpload()
 
                 let email = zmail()
                 console.log(email)
@@ -333,6 +341,8 @@ function Create() {
             $.post("/Sobr/ZServlet", sobr, function () {
                 console.log(sobr)
 
+                docsUpload()
+
                 let email = zmail()
                 console.log(email)
 
@@ -350,6 +360,8 @@ function Create() {
         } else {
             $.post("/Sobr/ActivateDraftServlet", sobr, function () {
                 console.log(sobr)
+
+                docsUpload()
 
                 let email = zmail()
                 console.log(email)
@@ -440,6 +452,8 @@ function CreateDraft() {
         $.post("/Sobr/ZServlet", sobr, function () {
             console.log(sobr)
 
+            docsUpload()
+
             let send = qAdd()
             console.log(send)
 
@@ -478,6 +492,8 @@ function CreateDraft() {
 
         $.post("/Sobr/ZServlet", sobr, function (data) {
             console.log(data)
+
+            docsUpload()
 
             let send = qAdd()
             console.log(send)
@@ -518,6 +534,8 @@ function CreateDraft() {
         $.post("/Sobr/ZServlet", sobr, function () {
             console.log(sobr)
 
+            docsUpload()
+
             let send = qAdd()
             console.log(send)
 
@@ -556,6 +574,8 @@ function CreateDraft() {
 
         $.post("/Sobr/ZServlet", sobr, function () {
             console.log(sobr)
+
+            docsUpload()
 
             let send = qAdd()
             console.log(send)
