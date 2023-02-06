@@ -81,11 +81,10 @@
 
 .check{
     position: absolute;
-    padding-left: 28px;
     width: 613px;
     height: 200px;
     top: 663px;
-    margin-left: 80px;
+    margin-left: 100px;
 }
 
 .check ul li{
