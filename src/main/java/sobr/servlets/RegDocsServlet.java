@@ -20,7 +20,7 @@ public class RegDocsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         HttpSession sesh = req.getSession();
         String user = String.valueOf(sesh.getAttribute("email"));
-        String path = "/opt/tomcat/webapps/Sobr/docs/" + user;
+        String path = "/opt/tomcat/webapps/ROOT/docs/" + user;
 
         String fName = "";
         new File(path).mkdirs();

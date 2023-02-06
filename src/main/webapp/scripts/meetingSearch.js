@@ -9,7 +9,7 @@ function meetSearch(){
         type: document.getElementById('searchType').value
     }
 
-    $.get('/Sobr/SearchMeetingServlet', search, function (data){
+    $.get('/SearchMeetingServlet', search, function (data){
 
         console.log(data)
 

@@ -1,3 +1,3 @@
-$.get('/Sobr/TimeUpdateServlet', send, function (data){
+$.get('/TimeUpdateServlet', send, function (data){
     console.log(data)
 })

@@ -3,7 +3,7 @@ function emailCheck(){
         email: document.getElementById('email').value
     }
 
-    $.get('/Sobr/EmailCheckServlet', send, function (data){
+    $.get('/EmailCheckServlet', send, function (data){
         if (data.includes('Почта уже существует')){
             console.log(data)
             document.getElementById('error').innerText = ''

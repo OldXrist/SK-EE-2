@@ -252,7 +252,7 @@ function Cards(dt, i, m) {
     }
 }
 
-$.get("/Sobr/LKUCHServlet", function (data){
+$.get("/LKUCHServlet", function (data){
 
     console.log(data)
     let d = data.split("\n")

@@ -1,4 +1,4 @@
-$.get('/Sobr/AnswersCheckServlet', send, function (data) {
+$.get('/AnswersCheckServlet', send, function (data) {
     console.log(data)
 
     if (data !== 'null') {

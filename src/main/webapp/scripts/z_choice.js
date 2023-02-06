@@ -2,7 +2,7 @@ let send = {
     sk: snum[1]
 }
 
-$.get('/Sobr/QServlet', send, function (data){
+$.get('/QServlet', send, function (data){
     console.log(data)
 
     let d = data.split("\n")

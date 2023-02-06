@@ -6,7 +6,7 @@ function meetSort(id){
         param: id
     }
 
-    $.get("/Sobr/SortMeetingsServlet", sortParam, function (data){
+    $.get("/SortMeetingsServlet", sortParam, function (data){
 
         console.log(data)
         let d = data.split("\n")

@@ -138,7 +138,7 @@ function Cards(dt, i, m){
     }
 }
 
-$.get("/Sobr/MREEServlet", function (data){
+$.get("/MREEServlet", function (data){
 
     console.log(data)
     let d = data.split("\n")

@@ -1,4 +1,4 @@
-$.get("/Sobr/LKIPServlet", function (data) {
+$.get("/LKIPServlet", function (data) {
     console.log(data)
 
     let d = data.split("\n")

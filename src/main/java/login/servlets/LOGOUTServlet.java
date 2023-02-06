@@ -19,6 +19,6 @@ public class LOGOUTServlet extends HttpServlet {
         sesh.removeAttribute("role");
         sesh.removeAttribute("type");
         sesh.invalidate();
-        res.sendRedirect("/Sobr/");
+        res.sendRedirect("/");
     }
 }

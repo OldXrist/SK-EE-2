@@ -35,7 +35,7 @@ public class ProtocolCreateServlet extends HttpServlet {
             if (!rsCheck.next()) {
 
                 //String fName = "C:\\Users\\manager\\Desktop\\SK-EE-2\\src\\main\\webapp\\protocols\\" + protocolName;
-                String fName = "/opt/tomcat/webapps/Sobr/protocols/" + protocolName;
+                String fName = "/opt/tomcat/webapps/ROOT/protocols/" + protocolName;
 
                 File protocol = new File(fName);
                 out.println(protocol.getAbsolutePath());

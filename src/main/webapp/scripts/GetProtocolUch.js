@@ -2,7 +2,7 @@ let send = {
     sk: snum[1]
 }
 
-$.get('/Sobr/ProtocolCheckServlet', send, function (data) {
+$.get('/ProtocolCheckServlet', send, function (data) {
     if (data !== '') {
         let link = document.getElementById('link')
         link.style.display = 'none'

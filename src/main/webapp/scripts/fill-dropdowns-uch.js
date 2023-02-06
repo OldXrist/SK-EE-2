@@ -35,7 +35,7 @@ $(document).ready(function () {
     let meetingNumber = url.slice(url.lastIndexOf('=') + 1, url.length)
     let inputData = {number: meetingNumber}
 
-    $.post("/Sobr/GetQuestionsServlet", inputData, function (result) {
+    $.post("/GetQuestionsServlet", inputData, function (result) {
         console.log(result);
 
         //сначала заполняет options
@@ -95,7 +95,7 @@ $(document).ready(function () {
     });
 
 
-    $.post("/Sobr/GetMembersServlet", inputData, function (result) {
+    $.post("/GetMembersServlet", inputData, function (result) {
         console.log(result);
 
         //сначала заполняет options

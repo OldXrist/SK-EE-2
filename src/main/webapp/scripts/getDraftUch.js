@@ -278,7 +278,7 @@ function Cards(dt, i, m) {
     }
 }
 
-$.get("/Sobr/UchDraftServlet", function (data){
+$.get("/UchDraftServlet", function (data){
 
     console.log(data)
     let d = data.split("\n")
@@ -343,7 +343,7 @@ function draftDelete(id){
 }
 
 function draftEdit(id){
-    let url = new URL('http://localhost:8080/Sobr/lichnui_kobinetu/lk_uch/z_sobr/z_sobr_uch_1.html')
+    let url = new URL('http://sk.tenderstandart.ru/lichnui_kobinetu/lk_uch/z_sobr/z_sobr_uch_1.html')
     let draftNum = id.split('_')[1]
     let sk = document.getElementById('sk').innerText.split(' ')[0]
     url.searchParams.append('sk', sk)

@@ -18,7 +18,7 @@ $(document).ready(function () {
     }
 
 
-    $.get('/Sobr/ApplicationEditServlet', appID, function (data) {
+    $.get('/ApplicationEditServlet', appID, function (data) {
         console.log(data)
 
         let d = data.split('\n')
@@ -108,9 +108,9 @@ function Accept() {
             canVote: document.getElementById('option').innerText
         }
         console.log(document.getElementById('option').innerText)
-        $.get('/Sobr/ApplicationUpdServlet', status)
+        $.get('/ApplicationUpdServlet', status)
 
-        window.location.href = '/Sobr/lichnui_kobinetu/lk_org/z_sobr/z_sobr_org_5.html?sk=' + sknum
+        window.location.href = '/lichnui_kobinetu/lk_org/z_sobr/z_sobr_org_5.html?sk=' + sknum
     } else {
         document.getElementById('error').style.border = '2px solid red'
         document.getElementById('error').style.borderRadius = '10px'
@@ -129,9 +129,9 @@ function Decline() {
         status: "Отклонена"
     }
 
-    $.get('/Sobr/ApplicationUpdServlet', status)
+    $.get('/ApplicationUpdServlet', status)
 
-    window.location.href = '/Sobr/lichnui_kobinetu/lk_org/z_sobr/z_sobr_org_5.html?sk=' + sknum
+    window.location.href = '/lichnui_kobinetu/lk_org/z_sobr/z_sobr_org_5.html?sk=' + sknum
 }
 
 //clock

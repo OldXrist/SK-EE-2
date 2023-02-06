@@ -4,5 +4,5 @@ function docsUpload(){
 
     formData.append('file', file)
 
-    fetch('/Sobr/DocsUploadServlet', {method: "POST", body: formData})
+    fetch('/DocsUploadServlet', {method: "POST", body: formData})
 }

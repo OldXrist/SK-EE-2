@@ -151,7 +151,7 @@ function Validate_reg () {
                 reg_date: Date
             };
 
-            $.post("/Sobr/ULServlet", user, function () {
+            $.post("/ULServlet", user, function () {
                 console.log(user);
                 regDocsUpload()
             });
@@ -161,7 +161,7 @@ function Validate_reg () {
                 subject: 'Регистрация'
             }
 
-            $.post("/Sobr/EmailSender", inputData, function (data) {
+            $.post("/EmailSender", inputData, function (data) {
                 if (data === "") {
                     alert("Вы успешно зарегестрированы!");
                 } else {
@@ -208,7 +208,7 @@ function Validate_reg () {
             };
             console.log(user)
 
-            $.post("/Sobr/IPServlet", user, function () {
+            $.post("/IPServlet", user, function () {
                 console.log(user);
                 regDocsUpload()
             });
@@ -255,7 +255,7 @@ function Validate_reg () {
                 reg_date: Date
             };
 
-            $.post("/Sobr/FLServlet", user, function () {
+            $.post("/FLServlet", user, function () {
                 console.log(user);
                 regDocsUpload()
             });
@@ -303,7 +303,7 @@ function Validate_reg () {
                 reg_date: Date
             };
 
-            $.post("/Sobr/AUServlet", user, function () {
+            $.post("/AUServlet", user, function () {
                 console.log(user);
                 regDocsUpload()
             });

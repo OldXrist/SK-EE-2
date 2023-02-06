@@ -15,7 +15,7 @@ $(document).ready(function () {
         meetingNumber: meetingNumber,
     }
 
-    $.post("/Sobr/GetQuestionsServlet", inputData, function (result) {
+    $.post("/GetQuestionsServlet", inputData, function (result) {
         console.log(result);
         questionsResult = result;
 
@@ -79,7 +79,7 @@ $(document).ready(function () {
     });
 
 
-    $.post("/Sobr/GetMembersServlet", inputData, function (result) {
+    $.post("/GetMembersServlet", inputData, function (result) {
         console.log(result);
         membersResult = result;
 

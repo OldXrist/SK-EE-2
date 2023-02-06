@@ -1,7 +1,7 @@
-$.get("/Sobr/CheckOrgServlet", function (data){
+$.get("/CheckOrgServlet", function (data){
     console.log(data)
 
     if (!data.includes('организатор')){
-        window.location.href = '/Sobr/404.html'
+        window.location.href = '/404.html'
     }
 })
