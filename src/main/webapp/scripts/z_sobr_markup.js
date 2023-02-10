@@ -1,13 +1,5 @@
-let loc = window.location.href
-let snum = loc.split('=')
-console.log(snum[1])
-
-let send = {
-    sk: snum[1]
-}
-
 for (let i = 1; i < 6; i++){
-    document.getElementById("sobrP"+i).href += "?sk=" + snum[1]
+    document.getElementById("sobrP"+i).href += "?sk=" + sk
 }
 
 $.get("/ORGServlet", send, function (data){

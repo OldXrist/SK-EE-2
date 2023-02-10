@@ -152,7 +152,7 @@ body {
     position: relative;
     display: inline-block;
     list-style: none;
-    width: fit-content;
+    width: 211px;
     padding-left: 0;
     height: 40px;
     left: 53px;
@@ -163,9 +163,6 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 100%;
-    /* identical to box height, or 16px */
-
-
     color: #104781;
     z-index: 999;
     overflow: visible;
@@ -551,10 +548,14 @@ content {
     background: #BAF3FC;
 }
 
+#pages{
+    margin-top: 395px;
+}
+
 .base_bg{
-    margin-top: 1199px;
+    margin-top: 1350px;
 }
 
 .base{
-    margin-top: 1199px;
+    margin-top: 1350px;
 }

@@ -152,13 +152,6 @@
     cursor: pointer;
 }
 
-.flex{
-    display: inline-flex;
-    width: 851px;
-    justify-content: space-between;
-    padding-right: 75px;
-}
-
 .buttons{
     position: absolute;
     margin-left: 200px;

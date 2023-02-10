@@ -5,7 +5,7 @@ $(document).ready(function (){
     $(".logout").hide()
 })
 
-$.get("/Sobr/MAINServlet", function (data) {
+$.get("/MAINServlet", function (data) {
     console.log(data)
     console.log(typeof data)
 

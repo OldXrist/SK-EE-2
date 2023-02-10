@@ -4,7 +4,7 @@ $(document).ready(function () {
     $("#logout_btn").hide();
     $(".logout").hide();
 
-    $.post("/Sobr/GetOperatorCredentials", function (result) {
+    $.post("/GetOperatorCredentials", function (result) {
         console.log(result);
         let lastName = document.getElementById("last-name");
         let firstName = document.getElementById("first-name");
@@ -111,7 +111,7 @@ function ValidateOperatorCredentials() {
             password: password.value
         }
 
-        $.post("/Sobr/ChangeOperatorCredentialsServlet", adminData, function (data) {
+        $.post("/ChangeOperatorCredentialsServlet", adminData, function (data) {
             if (data == "") {
                 alert("Данные успешно сохранены!");
                 lastName.style.borderColor = '#E6F5F7';

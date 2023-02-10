@@ -7,5 +7,5 @@ function regDocsUpload(){
         formData.append('file'+i, files[i])
     }
 
-    fetch('/Sobr/RegDocsServlet', {method: "POST", body: formData})
+    fetch('/RegDocsServlet', {method: "POST", body: formData})
 }

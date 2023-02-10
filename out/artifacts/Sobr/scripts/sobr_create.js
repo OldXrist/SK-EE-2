@@ -121,7 +121,7 @@ function Mailing() {
             subject: 'Рассылка'
         }
 
-        $.post("/Sobr/EmailSender", inputData, function (data) {
+        $.post("/EmailSender", inputData, function (data) {
         });
     }
 }
@@ -129,6 +129,10 @@ function Mailing() {
 function Create() {
     let isDraft = (new URL(document.location)).searchParams
     let status = "На рассмотрении"
+    let typeSobr
+    if (mType.get('o') !== null){
+        typeSobr = 'Очное'
+    } else typeSobr = 'Заочное'
 
     let sobrDT = ''
     let sobrDz = ''
@@ -191,13 +195,14 @@ function Create() {
             inn: document.getElementById("unn4").value,
             ogrn: document.getElementById("ogrn3").value,
             status: status,
-            draft: isDraft.get('draft')
+            draft: isDraft.get('draft'),
+            typeSobr: typeSobr
         }
 
         console.log(sobr)
 
         if (isDraft.get('draft') === null) {
-            $.post("/Sobr/ZServlet", sobr, function () {
+            $.post("/ZServlet", sobr, function () {
                 console.log(sobr)
 
                 docsUpload()
@@ -205,19 +210,19 @@ function Create() {
                 let email = zmail()
                 console.log(email)
 
-                $.get("/Sobr/MailServlet", email, function () {
+                $.get("/MailServlet", email, function () {
                     console.log(email)
 
                     let send = qAdd()
                     console.log(send)
 
-                    $.get('/Sobr/QuestionsServlet', send, function () {
+                    $.get('/QuestionsServlet', send, function () {
                         console.log("questions added!")
                     })
                 })
             })
         } else {
-            $.post("/Sobr/ActivateDraftServlet", sobr, function () {
+            $.post("/ActivateDraftServlet", sobr, function () {
                 console.log(sobr)
 
                 docsUpload()
@@ -225,13 +230,13 @@ function Create() {
                 let email = zmail()
                 console.log(email)
 
-                $.get("/Sobr/MailServlet", email, function () {
+                $.get("/MailServlet", email, function () {
                     console.log(email)
 
                     let send = qAdd()
                     console.log(send)
 
-                    $.get('/Sobr/QuestionsServlet', send, function () {
+                    $.get('/QuestionsServlet', send, function () {
                         console.log("questions added!")
                     })
                 })
@@ -261,13 +266,14 @@ function Create() {
             inn: document.getElementById("inn").value,
             snils: document.getElementById("snils").value,
             status: status,
-            draft: isDraft.get('draft')
+            draft: isDraft.get('draft'),
+            typeSobr: typeSobr
         }
 
         console.log(sobr)
 
         if (isDraft.get('draft') === null) {
-            $.post("/Sobr/ZServlet", sobr, function () {
+            $.post("/ZServlet", sobr, function () {
                 console.log(sobr)
 
                 docsUpload()
@@ -275,19 +281,19 @@ function Create() {
                 let email = zmail()
                 console.log(email)
 
-                $.get("/Sobr/MailServlet", email, function () {
+                $.get("/MailServlet", email, function () {
                     console.log(email)
 
                     let send = qAdd()
                     console.log(send)
 
-                    $.get('/Sobr/QuestionsServlet', send, function () {
+                    $.get('/QuestionsServlet', send, function () {
                         console.log("questions added!")
                     })
                 })
             })
         } else {
-            $.post("/Sobr/ActivateDraftServlet", sobr, function () {
+            $.post("/ActivateDraftServlet", sobr, function () {
                 console.log(sobr)
 
                 docsUpload()
@@ -295,13 +301,13 @@ function Create() {
                 let email = zmail()
                 console.log(email)
 
-                $.get("/Sobr/MailServlet", email, function () {
+                $.get("/MailServlet", email, function () {
                     console.log(email)
 
                     let send = qAdd()
                     console.log(send)
 
-                    $.get('/Sobr/QuestionsServlet', send, function () {
+                    $.get('/QuestionsServlet', send, function () {
                         console.log("questions added!")
                     })
                 })
@@ -332,13 +338,14 @@ function Create() {
             snils: document.getElementById("snils2").value,
             ogrnip: document.getElementById("ogrnip").value,
             status: status,
-            draft: isDraft.get('draft')
+            draft: isDraft.get('draft'),
+            typeSobr: typeSobr
         }
 
         console.log(sobr)
 
         if (isDraft.get('draft') === null) {
-            $.post("/Sobr/ZServlet", sobr, function () {
+            $.post("/ZServlet", sobr, function () {
                 console.log(sobr)
 
                 docsUpload()
@@ -346,19 +353,19 @@ function Create() {
                 let email = zmail()
                 console.log(email)
 
-                $.get("/Sobr/MailServlet", email, function () {
+                $.get("/MailServlet", email, function () {
                     console.log(email)
 
                     let send = qAdd()
                     console.log(send)
 
-                    $.get('/Sobr/QuestionsServlet', send, function () {
+                    $.get('/QuestionsServlet', send, function () {
                         console.log("questions added!")
                     })
                 })
             })
         } else {
-            $.post("/Sobr/ActivateDraftServlet", sobr, function () {
+            $.post("/ActivateDraftServlet", sobr, function () {
                 console.log(sobr)
 
                 docsUpload()
@@ -366,13 +373,13 @@ function Create() {
                 let email = zmail()
                 console.log(email)
 
-                $.get("/Sobr/MailServlet", email, function () {
+                $.get("/MailServlet", email, function () {
                     console.log(email)
 
                     let send = qAdd()
                     console.log(send)
 
-                    $.get('/Sobr/QuestionsServlet', send, function () {
+                    $.get('/QuestionsServlet', send, function () {
                         console.log("questions added!")
                     })
                 })
@@ -383,6 +390,10 @@ function Create() {
 
 function CreateDraft() {
     let status = "Черновик"
+    let typeSobr
+    if (mType.get('o') !== null){
+        typeSobr = 'Очное'
+    } else typeSobr = 'Заочное'
 
     let sobrDT = ''
     let sobrDz = ''
@@ -444,12 +455,13 @@ function CreateDraft() {
             post: document.getElementById("pocht3").value,
             inn: document.getElementById("unn4").value,
             ogrn: document.getElementById("ogrn3").value,
-            status: status
+            status: status,
+            typeSobr: typeSobr
         }
 
         console.log(sobr)
 
-        $.post("/Sobr/ZServlet", sobr, function () {
+        $.post("/ZServlet", sobr, function () {
             console.log(sobr)
 
             docsUpload()
@@ -457,7 +469,7 @@ function CreateDraft() {
             let send = qAdd()
             console.log(send)
 
-            $.get('/Sobr/QuestionsServlet', send, function () {
+            $.get('/QuestionsServlet', send, function () {
                 console.log("questions added!")
             })
 
@@ -485,12 +497,13 @@ function CreateDraft() {
             post: document.getElementById("pocht").value,
             inn: document.getElementById("inn").value,
             snils: document.getElementById("snils").value,
-            status: status
+            status: status,
+            typeSobr: typeSobr
         }
 
         console.log(sobr)
 
-        $.post("/Sobr/ZServlet", sobr, function (data) {
+        $.post("/ZServlet", sobr, function (data) {
             console.log(data)
 
             docsUpload()
@@ -498,7 +511,7 @@ function CreateDraft() {
             let send = qAdd()
             console.log(send)
 
-            $.get('/Sobr/QuestionsServlet', send, function () {
+            $.get('/QuestionsServlet', send, function () {
                 console.log("questions added!")
             })
         })
@@ -526,12 +539,13 @@ function CreateDraft() {
             inn: document.getElementById("inn2").value,
             snils: document.getElementById("snils2").value,
             ogrnip: document.getElementById("ogrnip").value,
-            status: status
+            status: status,
+            typeSobr: typeSobr
         }
 
         console.log(sobr)
 
-        $.post("/Sobr/ZServlet", sobr, function () {
+        $.post("/ZServlet", sobr, function () {
             console.log(sobr)
 
             docsUpload()
@@ -539,7 +553,7 @@ function CreateDraft() {
             let send = qAdd()
             console.log(send)
 
-            $.get('/Sobr/QuestionsServlet', send, function () {
+            $.get('/QuestionsServlet', send, function () {
                 console.log("questions added!")
             })
         })
@@ -567,12 +581,13 @@ function CreateDraft() {
             inn: '',
             snils: '',
             ogrnip: '',
-            status: status
+            status: status,
+            typeSobr: typeSobr
         }
 
         console.log(sobr)
 
-        $.post("/Sobr/ZServlet", sobr, function () {
+        $.post("/ZServlet", sobr, function () {
             console.log(sobr)
 
             docsUpload()
@@ -580,7 +595,7 @@ function CreateDraft() {
             let send = qAdd()
             console.log(send)
 
-            $.get('/Sobr/QuestionsServlet', send, function () {
+            $.get('/QuestionsServlet', send, function () {
                 console.log("questions added!")
             })
         })

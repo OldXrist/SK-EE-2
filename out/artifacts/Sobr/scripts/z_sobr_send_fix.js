@@ -5,5 +5,3 @@ let sk = params.get('sk')
 let send = {
     sk: sk
 }
-
-document.getElementById('number').innerText += ' ' + sk

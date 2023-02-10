@@ -1,7 +1,3 @@
-let send = {
-    sk: snum[1]
-}
-
 $(document).ready(function (){
     $('.base').animate({
         marginTop: '800px'
@@ -39,14 +35,14 @@ function Vote(id, obj){
 function FinalVote(obj, sknum){
         obj.sk = sknum
 
-        $.get('/Sobr/SendAnswersServlet', obj, function (){
+        $.get('/SendAnswersServlet', obj, function (){
             console.log('Success')
         })
 
         console.log(obj)
 }
 
-$.get('/Sobr/QServlet', send, function (data){
+$.get('/QServlet', send, function (data){
     console.log(data)
 
     let d = data.split("\n")
@@ -93,7 +89,7 @@ $.get('/Sobr/QServlet', send, function (data){
 
     check()
 
-    $.get('/Sobr/AnswersCheckServlet', send, function (data) {
+    $.get('/AnswersCheckServlet', send, function (data) {
         console.log(data)
 
         if (!data.includes('null')) {
@@ -101,15 +97,17 @@ $.get('/Sobr/QServlet', send, function (data){
                 if (document.getElementById("tbl_" + i) !== null) {
                     document.getElementById("tbl_" + i).remove()
                     $(".base").animate({
-                        marginTop: '-=170px'
+                        marginTop: '-=180px'
                     }, 0);
                     $(".base_bg").animate({
-                        marginTop: '-=170px'
+                        marginTop: '-=180px'
                     }, 0);
                     document.getElementsByClassName("qText")[i].style.width = '1040px'
                 }
             }
-            document.getElementById("finalVote").remove()
+            if (document.getElementById("finalVote") !== null) {
+                document.getElementById("finalVote").remove()
+            }
             document.getElementById('ep').innerHTML +=
                 "<p class=\"attention\">Внимание!</p>\n" +
                 "<h6>Для голосования необходимо войти в личный<br> кабинет участника с правом голоса </h6>"
@@ -119,6 +117,7 @@ $.get('/Sobr/QServlet', send, function (data){
             $(".base_bg").animate({
                 marginTop: '+=110px'
             }, 0);
+            checkMeetType()
         }
     })
 })

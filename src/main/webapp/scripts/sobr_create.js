@@ -129,6 +129,10 @@ function Mailing() {
 function Create() {
     let isDraft = (new URL(document.location)).searchParams
     let status = "На рассмотрении"
+    let typeSobr
+    if (mType.get('o') !== null){
+        typeSobr = 'Очное'
+    } else typeSobr = 'Заочное'
 
     let sobrDT = ''
     let sobrDz = ''
@@ -191,7 +195,8 @@ function Create() {
             inn: document.getElementById("unn4").value,
             ogrn: document.getElementById("ogrn3").value,
             status: status,
-            draft: isDraft.get('draft')
+            draft: isDraft.get('draft'),
+            typeSobr: typeSobr
         }
 
         console.log(sobr)
@@ -261,7 +266,8 @@ function Create() {
             inn: document.getElementById("inn").value,
             snils: document.getElementById("snils").value,
             status: status,
-            draft: isDraft.get('draft')
+            draft: isDraft.get('draft'),
+            typeSobr: typeSobr
         }
 
         console.log(sobr)
@@ -332,7 +338,8 @@ function Create() {
             snils: document.getElementById("snils2").value,
             ogrnip: document.getElementById("ogrnip").value,
             status: status,
-            draft: isDraft.get('draft')
+            draft: isDraft.get('draft'),
+            typeSobr: typeSobr
         }
 
         console.log(sobr)
@@ -383,6 +390,10 @@ function Create() {
 
 function CreateDraft() {
     let status = "Черновик"
+    let typeSobr
+    if (mType.get('o') !== null){
+        typeSobr = 'Очное'
+    } else typeSobr = 'Заочное'
 
     let sobrDT = ''
     let sobrDz = ''
@@ -444,7 +455,8 @@ function CreateDraft() {
             post: document.getElementById("pocht3").value,
             inn: document.getElementById("unn4").value,
             ogrn: document.getElementById("ogrn3").value,
-            status: status
+            status: status,
+            typeSobr: typeSobr
         }
 
         console.log(sobr)
@@ -485,7 +497,8 @@ function CreateDraft() {
             post: document.getElementById("pocht").value,
             inn: document.getElementById("inn").value,
             snils: document.getElementById("snils").value,
-            status: status
+            status: status,
+            typeSobr: typeSobr
         }
 
         console.log(sobr)
@@ -526,7 +539,8 @@ function CreateDraft() {
             inn: document.getElementById("inn2").value,
             snils: document.getElementById("snils2").value,
             ogrnip: document.getElementById("ogrnip").value,
-            status: status
+            status: status,
+            typeSobr: typeSobr
         }
 
         console.log(sobr)
@@ -567,7 +581,8 @@ function CreateDraft() {
             inn: '',
             snils: '',
             ogrnip: '',
-            status: status
+            status: status,
+            typeSobr: typeSobr
         }
 
         console.log(sobr)

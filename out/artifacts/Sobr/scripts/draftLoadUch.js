@@ -5,7 +5,7 @@ if (draftLink.includes('draft')){
         num: draftURL.get('draft')
     }
 
-    $.post('/Sobr/DraftDataServlet', send, function (data){
+    $.post('/DraftDataServlet', send, function (data){
         console.log(data)
 
         let d = data.split('\n')

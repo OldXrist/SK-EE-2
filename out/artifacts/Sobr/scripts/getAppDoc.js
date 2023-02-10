@@ -8,7 +8,7 @@ let snd = {
 }
 
 function getDoc(){
-    $.get('/Sobr/GetEmailServlet', snd, function (data){
+    $.get('/GetEmailServlet', snd, function (data){
         let btn = document.getElementById('dbtn')
         let email = data.trim()
         let meeting  = 'meeting' + meetingNum

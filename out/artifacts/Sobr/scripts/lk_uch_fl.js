@@ -1,4 +1,4 @@
-$.get("/Sobr/LKFLServlet", function (data) {
+$.get("/LKFLServlet", function (data) {
     console.log(data)
 
     let d = data.split("\n")

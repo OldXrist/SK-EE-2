@@ -1,5 +1,5 @@
 function Redirect(id) {
-    let url = new URL('http://sk.tenderstandart.ru:8080/Sobr/lichnui_kobinetu/lk_uch/z_sobr/z_sobr_uch_2.html')
+    let url = new URL('http://sk.tenderstandart.ru/lichnui_kobinetu/lk_uch/z_sobr/z_sobr_uch_2.html')
     let card = document.getElementById(id).querySelector('.table_h').innerText
     console.log(card)
     let num = card.split(' ')

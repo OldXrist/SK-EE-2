@@ -252,7 +252,7 @@ function Cards(dt, i, m) {
         }
 }
 
-$.get("/Sobr/LKORGServlet", function (data){
+$.get("/LKORGServlet", function (data){
 
     console.log(data)
     let d = data.split("\n")

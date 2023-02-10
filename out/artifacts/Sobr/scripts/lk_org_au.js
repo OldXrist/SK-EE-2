@@ -1,4 +1,4 @@
-$.get("/Sobr/LKAUServlet", function (data) {
+$.get("/LKAUServlet", function (data) {
     console.log(data)
 
     let d = data.split("\n")

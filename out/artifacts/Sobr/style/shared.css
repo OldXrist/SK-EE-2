@@ -6,6 +6,13 @@ body{
   padding-bottom: 50px;
 }
 
+.flex {
+  display: inline-flex;
+  width: 851px;
+  justify-content: space-between;
+  padding-right: 75px;
+}
+
 .menu {
   position: absolute;
   width: 100%;

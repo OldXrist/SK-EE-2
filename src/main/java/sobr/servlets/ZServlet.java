@@ -50,6 +50,7 @@ public class ZServlet extends HttpServlet {
         String urAdr = req.getParameter("urAdr");
         String status = req.getParameter("status");
         String volume = req.getParameter("vol");
+        String typeSobr = req.getParameter("typeSobr");
 
         LocalDateTime dateS = null;
         LocalDateTime dateZ = null;
@@ -208,7 +209,7 @@ public class ZServlet extends HttpServlet {
                 ps.setLong(25, ogrn);
             } else ps.setNull(25, Types.BIGINT);
 
-            ps.setString(26, "Заочное");
+            ps.setString(26, typeSobr);
 
             if (!status.equals("")) {
                 ps.setString(27, status);

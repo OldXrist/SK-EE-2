@@ -4,7 +4,6 @@ $.get("/DEBTServlet", send, function (data) {
     let d = data.split("\n")
     let roleDebt = d[3]
 
-    document.getElementById('number').innerHTML += snum[1] + " - заочное"
     document.getElementById('court').value = d[0]
     document.getElementById('caseNum').value = d[1]
     document.getElementById('osn').value = d[2]

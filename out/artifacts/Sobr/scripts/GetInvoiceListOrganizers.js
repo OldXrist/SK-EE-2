@@ -6,7 +6,7 @@ $(document).ready(function () {
     $(".sort_drop").hide();
     $(".decline").hide();
 
-    $.post("/Sobr/GetInvoiceListOrganizers", function (result) {
+    $.post("/GetInvoiceListOrganizers", function (result) {
         if (result) {
             console.log(result);
             for (var i = 0; i < result.length; i++) {
@@ -112,14 +112,14 @@ function AcceptInvoice(email) {
         email: email,
         meetingStatus: 'true',
     }
-    $.post("/Sobr/ChangeInvoiceStatus", info);
+    $.post("/ChangeInvoiceStatus", info);
 
     //отправить письмо
     let inputData = {
         email: email,
         subject: 'Заявка допущена'
     }
-    $.post("/Sobr/EmailSender", inputData, function (data) {
+    $.post("/EmailSender", inputData, function (data) {
         if (data == "") {
             alert("Заявка принята!");
         } else {
@@ -136,14 +136,14 @@ function DeclineInvoice(email) {
         email: email,
         meetingStatus: 'false',
     }
-    $.post("/Sobr/ChangeInvoiceStatus", info);
+    $.post("/ChangeInvoiceStatus", info);
 
     //отправить письмо
     let inputData = {
         email: email,
         subject: 'Заявка отклонена'
     }
-    $.post("/Sobr/EmailSender", inputData, function (data) {
+    $.post("/EmailSender", inputData, function (data) {
         if (data == "") {
             alert("Заявка отклонена!");
         } else {

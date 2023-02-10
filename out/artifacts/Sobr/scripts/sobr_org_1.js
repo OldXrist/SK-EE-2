@@ -1,4 +1,4 @@
-$.get("/Sobr/ORGCARDServlet", function (data) {
+$.get("/ORGCARDServlet", function (data) {
     console.log(data)
 
     let d = data.split("\n")

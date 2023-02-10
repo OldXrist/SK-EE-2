@@ -8,7 +8,7 @@ $(document).ready(function () {
     $(".logout").hide()
 });
 
-$.get('/Sobr/HashServlet', function (data){
+$.get('/HashServlet', function (data){
     console.log(data)
 })
 
@@ -321,7 +321,7 @@ $(document).ready(function(){
     })
 });
 
-$.get("/Sobr/MAINServlet", function (data) {
+$.get("/MAINServlet", function (data) {
     console.log(data)
     console.log(typeof data)
 

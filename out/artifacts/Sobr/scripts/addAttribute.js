@@ -1,5 +1,5 @@
 function addAttr(){
-    $.get('/Sobr/AddAttributeServlet', send, function (){
+    $.get('/AddAttributeServlet', send, function (){
         console.log('attribute added')
         docsUpload()
     })

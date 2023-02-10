@@ -143,6 +143,7 @@ function Cards(dt, i, m) {
     if (arr[4].includes("Юридическое") && arr[10].includes("ЮЛ")) {
         document.getElementById("table").innerHTML += "<div id = " + m + " class=\"table_item\" onclick='Redirect(this.id)'/>\n" +
             "                <h3 class=\"table_h\"><b>" + arr[0] + " " + arr[9] + " - " + arr[14] + "</h3>\n" +
+            "                <div class='flex'>" +
             "                <ul class=\"table_data\">\n" +
             "                    <li class=\"thin_text\">Организатор</li>\n" +
             "                    <li>" + arr[11] + "</li>\n" +
@@ -155,6 +156,7 @@ function Cards(dt, i, m) {
             "                    <li class=\"thin_text\">Статус</li>\n" +
             "                    <li>"+ arr[15] +"</li>\n" +
             "                </ul>\n" +
+            "                </div>" +
             "                <div class=\"vl\"></div>\n" +
             "                <div class=\"date\">\n" +
             "                    <ul class=\"datetime\">\n" +
@@ -171,6 +173,7 @@ function Cards(dt, i, m) {
     } else if (arr[4].includes("Юридическое") && !arr[10].includes("ЮЛ")) {
         document.getElementById("table").innerHTML += "<div id = " + m + " class=\"table_item\" onclick='Redirect(this.id)'/>\n" +
             "                <h3 class=\"table_h\"><b>" + arr[0] + " " + arr[9] + " - " + arr[14] + "</h3>\n" +
+            "                <div class='flex'>" +
             "                <ul class=\"table_data\">\n" +
             "                    <li class=\"thin_text\">Организатор</li>\n" +
             "                    <li>" + arr[11] + arr[12] + arr[13] + "</li>\n" +
@@ -183,6 +186,7 @@ function Cards(dt, i, m) {
             "                    <li class=\"thin_text\">Статус</li>\n" +
             "                    <li>"+ arr[15] +"</li>\n" +
             "                </ul>\n" +
+            "                </div>" +
             "                <div class=\"vl\"></div>\n" +
             "                <div class=\"date\">\n" +
             "                    <ul class=\"datetime\">\n" +
@@ -199,6 +203,7 @@ function Cards(dt, i, m) {
     } else if (!arr[4].includes("Юридическое") && arr[10].includes("ЮЛ")) {
         document.getElementById("table").innerHTML += "<div id = " + m + " class=\"table_item\" onclick='Redirect(this.id)'/>\n" +
             "                <h3 class=\"table_h\"><b>" + arr[0] + " " + arr[9] + " - " + arr[14] + "</h3>\n" +
+            "                <div class='flex'>" +
             "                <ul class=\"table_data\">\n" +
             "                    <li class=\"thin_text\">Организатор</li>\n" +
             "                    <li>" + arr[11] + "</li>\n" +
@@ -211,6 +216,7 @@ function Cards(dt, i, m) {
             "                    <li class=\"thin_text\">Статус</li>\n" +
             "                    <li>"+ arr[15] +"</li>\n" +
             "                </ul>\n" +
+            "                </div>" +
             "                <div class=\"vl\"></div>\n" +
             "                <div class=\"date\">\n" +
             "                    <ul class=\"datetime\">\n" +
@@ -227,6 +233,7 @@ function Cards(dt, i, m) {
     } else {
         document.getElementById("table").innerHTML += "<div id = " + m + " class=\"table_item\" onclick='Redirect(this.id)'>\n" +
             "                <h3 class=\"table_h\"><b>" + arr[0] + " " + arr[9] + " - " + arr[14] + "</h3>\n" +
+            "                <div class='flex'>" +
             "                <ul class=\"table_data\">\n" +
             "                    <li class=\"thin_text\">Организатор</li>\n" +
             "                    <li>" + arr[11] + arr[12] + arr[13] + "</li>\n" +
@@ -239,6 +246,7 @@ function Cards(dt, i, m) {
             "                    <li class=\"thin_text\">Статус</li>\n" +
             "                    <li>"+ arr[15] +"</li>\n" +
             "                </ul>\n" +
+            "                </div>" +
             "                <div class=\"vl\"></div>\n" +
             "                <div class=\"date\">\n" +
             "                    <ul class=\"datetime\">\n" +
@@ -254,7 +262,7 @@ function Cards(dt, i, m) {
     }
 }
 
-$.get("/Sobr/LKUCHServlet", function (data){
+$.get("/LKUCHServlet", function (data){
 
     console.log(data)
     let d = data.split("\n")
