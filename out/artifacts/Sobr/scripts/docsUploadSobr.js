@@ -6,7 +6,7 @@ function docsUpload(){
         formData.append(`file${i}`, files[i])
     }
 
-    fetch('/Sobr/SobrDocsUploadServlet', {method: "POST", body: formData}).then(r => {
+    fetch('/SobrDocsUploadServlet', {method: "POST", body: formData}).then(r => {
         console.log(r)
     }).catch(error => {
         console.log(error.message)

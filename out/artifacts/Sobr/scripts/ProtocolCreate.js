@@ -21,7 +21,7 @@ function UpdateProtocol(){
 
             console.log(newProt)
 
-            $.post('/Sobr/ProtocolUpdateServlet', newProt, function (data) {
+            $.post('/ProtocolUpdateServlet', newProt, function (data) {
                 console.log("Updated")
                 console.log(data)
             })
@@ -35,12 +35,12 @@ $("#protUpd").click(function (){
     document.getElementById('signProt').style.opacity = '1'
 })
 
-$.get('/Sobr/CheckSobrStatusServlet', send, function (data){
+$.get('/CheckSobrStatusServlet', send, function (data){
     console.log(data)
 
     if (data.includes('Завершено')){
         document.getElementById('createProtocol').onclick = function CreateProtocol(){
-            $.get("/Sobr/ProtocolCreateServlet", send, function (data) {
+            $.get("/ProtocolCreateServlet", send, function (data) {
                 console.log('protocol created')
                 console.log(data)
 

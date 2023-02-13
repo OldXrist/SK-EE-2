@@ -1,7 +1,7 @@
-$.get("/Sobr/CHECKTYPEServlet", send, function (data){
+$.get("/CHECKTYPEServlet", send, function (data){
     console.log(data)
 
     if (!data.includes('y')){
-        window.location.href = '/Sobr/404.html'
+        window.location.href = '/404.html'
     }
 })

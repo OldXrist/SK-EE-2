@@ -30,11 +30,11 @@
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.7" />
         </element>
       </element>
-      <element id="javaee-facet-resources" facet="SK-EE-2/web/Web" />
-      <element id="artifact" artifact-name="WAR4deploy" />
       <element id="javaee-facet-resources" facet="Sobr/web/Web" />
+      <element id="javaee-facet-resources" facet="SK-EE-2/web/Web" />
       <element id="artifact" artifact-name="Sobr:war exploded" />
       <element id="artifact" artifact-name="Sobr:war" />
+      <element id="artifact" artifact-name="WAR4deploy" />
     </root>
   </artifact>
 </component>

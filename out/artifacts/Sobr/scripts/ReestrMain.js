@@ -252,7 +252,7 @@ function Cards(dt, i, m) {
     }
 }
 
-$.get("/Sobr/ReestrServlet", function (data){
+$.get("/ReestrServlet", function (data){
 
     console.log(data)
     let d = data.split("\n")

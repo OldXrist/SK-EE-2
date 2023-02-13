@@ -5,7 +5,7 @@ $(document).ready(function () {
     $(".logout").hide();
     $(".sort_drop").hide();
 
-    $.post("/Sobr/GetMeetingsList", function (result) {
+    $.post("/GetMeetingsList", function (result) {
         if (result) {
             console.log(result);
             for (var i = 0; i < result.length; i++){

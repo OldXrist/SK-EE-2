@@ -10,7 +10,7 @@ function Create(){
         appStatus: "На рассмотрении"
     }
 
-    $.post("/Sobr/NEWAPPServlet", application, function (){
+    $.post("/NEWAPPServlet", application, function (){
         console.log(application)
     })
 }
@@ -27,7 +27,7 @@ function CreateDraft(){
         appStatus: "Черновик"
     }
 
-    $.post("/Sobr/NEWAPPServlet", applicationDraft, function (){
+    $.post("/NEWAPPServlet", applicationDraft, function (){
         console.log(applicationDraft)
     })
 }

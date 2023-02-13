@@ -1,4 +1,4 @@
-$.get('/Sobr/CheckApplicationServlet', send, function (data){
+$.get('/CheckApplicationServlet', send, function (data){
     console.log(data)
 
     if (data !== ''){

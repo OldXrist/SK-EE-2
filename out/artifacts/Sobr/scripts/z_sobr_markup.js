@@ -10,7 +10,7 @@ for (let i = 1; i < 6; i++){
     document.getElementById("sobrP"+i).href += "?sk=" + snum[1]
 }
 
-$.get("/Sobr/ORGServlet", send, function (data){
+$.get("/ORGServlet", send, function (data){
     console.log(data)
 
     let d = data.split("\n")

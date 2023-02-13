@@ -4,7 +4,7 @@ $(document).ready(function () {
     $("#logout_btn").hide();
     $(".logout").hide();
 
-    $.post("/Sobr/GetSystemSettings", function (result) {
+    $.post("/GetSystemSettings", function (result) {
         console.log(result);
         let issuer = document.getElementById("issuer");
         let senderEmail = document.getElementById("sender-email");
@@ -131,7 +131,7 @@ function ValidateSystemSettings() {
         efrsbPassword: efrsbPassword.value
     }
 
-    $.post("http://localhost:8080/Sobr/ChangeSystemSettings", settings, function (data) {
+    $.post("/ChangeSystemSettings", settings, function (data) {
         if (data == "") {
             alert("Данные успешно сохранены!");
         } else {
@@ -146,7 +146,7 @@ function SendTestMessage() {
         subject: 'Тест'
     }
 
-    $.post("http://localhost:8080/Sobr/EmailSender", inputData, function (data) {
+    $.post("/EmailSender", inputData, function (data) {
         if (data == "") {
             alert("Тестовое сообщение отправлено!");
         } else {

@@ -39,14 +39,14 @@ function Vote(id, obj){
 function FinalVote(obj, sknum){
         obj.sk = sknum
 
-        $.get('/Sobr/SendAnswersServlet', obj, function (){
+        $.get('/SendAnswersServlet', obj, function (){
             console.log('Success')
         })
 
         console.log(obj)
 }
 
-$.get('/Sobr/QServlet', send, function (data){
+$.get('/QServlet', send, function (data){
     console.log(data)
 
     let d = data.split("\n")
@@ -93,7 +93,7 @@ $.get('/Sobr/QServlet', send, function (data){
 
     check()
 
-    $.get('/Sobr/AnswersCheckServlet', send, function (data) {
+    $.get('/AnswersCheckServlet', send, function (data) {
         console.log(data)
 
         if (!data.includes('null')) {

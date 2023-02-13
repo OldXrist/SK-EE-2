@@ -35,7 +35,7 @@ if (draftLinkOrg.includes('draft')){
         num: draftURL.get('draft')
     }
 
-    $.post('/Sobr/DraftDataOrgServlet', send, function (data){
+    $.post('/DraftDataOrgServlet', send, function (data){
         console.log(data)
 
         let d = data.split('\n')

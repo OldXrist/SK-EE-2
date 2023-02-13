@@ -293,7 +293,7 @@ function Cards(dt, i, m) {
     }
 }
 
-$.get("/Sobr/OrgDraftServlet", function (data){
+$.get("/OrgDraftServlet", function (data){
 
     console.log(data)
     let d = data.split("\n")
@@ -354,11 +354,11 @@ function draftDelete(id){
         id: id.split('_')[1]
     }
 
-    $.post('/Sobr/DelDraftServlet', send)
+    $.post('/DelDraftServlet', send)
 }
 
 function draftEdit(id){
-    let url = new URL('http://localhost:8080/Sobr/lichnui_kobinetu/lk_org/z_sobr/z_sobr_org_1.html')
+    let url = new URL('http://sk.tenderstandart.ru/lichnui_kobinetu/lk_org/z_sobr/z_sobr_org_1.html')
     let draftNum = id.split('_')[1]
     url.searchParams.append('draft', draftNum)
     window.location.href = url.href

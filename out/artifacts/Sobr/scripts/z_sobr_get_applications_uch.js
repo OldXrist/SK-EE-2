@@ -217,7 +217,7 @@ let send = {
     sk: snum1[1]
 }
 
-$.get("/Sobr/ZAPPRServlet", send,  function (data){
+$.get("/ZAPPRServlet", send,  function (data){
 
     console.log(data)
     let d = data.split("\n")

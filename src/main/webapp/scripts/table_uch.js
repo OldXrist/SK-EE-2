@@ -12,21 +12,16 @@ function goTO(page){
             next = first + i
         }
         console.log('next = '+next)
-        //let prev = first - i
-        //console.log('prev = '+prev)
         if (document.getElementById('c' + next) !== null) {
             document.getElementById('c' + next).style.display = ''
         }
-        //if (document.getElementById('c' + prev) !== null) {
-        //    document.getElementById('c' + prev).style.display = 'none'
-        //}
+
         document.getElementById('c' + first).style.display = ''
     }
 }
 
 function page(id){
-    //let k = 75 * (parseInt(id.split('_')[1]) - 1)
-    //document.getElementById('table').innerHTML = ''
+
     let i = 1
 
     while (document.getElementById('page_'+i) !== null){
@@ -62,20 +57,7 @@ function page(id){
         document.getElementById('prev_'+x).style.display = ''
         document.getElementById('next_'+newNext).style.display = ''
         document.getElementById('page_'+x).style.display = ''
-        /*
-        let x = parseInt(id.split('_')[1])
-        document.getElementById(id).style.display = 'none'
-        document.getElementById('prev_'+x).style.display = ''
-        document.getElementById('page_'+x).style.display = ''
-        for (let i = 1; i < 4; i++){
-            let prev = x-i
-            let next = x+i
-            document.getElementById("page_" + prev).style.display = 'none'
-            if (document.getElementById("page_" + next) !== null) {
-                document.getElementById("page_" + next).style.display = ''
-            }
-        }
-         */
+
     } else if (id.split('_')[0] === 'prev'){
         let x = parseInt(id.split('_')[1])
         let n = 1
@@ -100,33 +82,7 @@ function page(id){
             document.getElementById('prev_' + newPrev).style.display = ''
         }
         document.getElementById('page_'+x).style.display = 'none'
-        /*
-        let x = parseInt(id.split('_')[1])
-        document.getElementById(id).style.display = 'none'
-        document.getElementById('next_'+x).style.display = ''
-        document.getElementById('page_'+x).style.display = 'none'
-        for (let i = 1; i < 4; i++){
-            let prev = x-i
-            let next = x+i
-            document.getElementById("page_" + prev).style.display = ''
-            if (document.getElementById("page_" + next) !== null) {
-                document.getElementById("page_" + next).style.display = 'none'
-            }
-        }
-
-         */
     }
-    /*
-        $.get("http://localhost:8080/Sobr/LKUCHServlet", function (data){
-            let d = data.split("\n")
-            if (document.getElementById('table').innerHTML === '') {
-                for (let i = 1; i < 6; i++) {
-                    Cards(d, k, i)
-                    k += 15
-                }
-            }
-        })
-     */
     let pageNum = parseInt(id.split('_')[1])
     let prefix = id.split('_')[0]
 
