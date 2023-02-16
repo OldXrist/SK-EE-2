@@ -39,12 +39,13 @@ public class ZAPPRServlet extends HttpServlet {
                 out.println(rs.getString(4));
                 switch (type){
                     case "ЮЛ":
-                        String sql1 = "SELECT poln_naim FROM ql WHERE email = ?";
+                        String sql1 = "SELECT poln_naim, ur_addr FROM ql WHERE email = ?";
                         PreparedStatement ps1 = c.prepareStatement(sql1);
                         ps1.setString(1, email);
                         ResultSet rs1 = ps1.executeQuery();
                         while (rs1.next()){
                             out.println(rs1.getString(1));
+                            out.println(rs1.getString(2));
                         };
                         break;
                     case "ИП":
