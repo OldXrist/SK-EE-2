@@ -1,7 +1,3 @@
-let send = {
-    sk: snum[1]
-}
-
 $(document).ready(function (){
     $('.base').animate({
         marginTop: '800px'
@@ -101,15 +97,17 @@ $.get('/QServlet', send, function (data){
                 if (document.getElementById("tbl_" + i) !== null) {
                     document.getElementById("tbl_" + i).remove()
                     $(".base").animate({
-                        marginTop: '-=170px'
+                        marginTop: '-=180px'
                     }, 0);
                     $(".base_bg").animate({
-                        marginTop: '-=170px'
+                        marginTop: '-=180px'
                     }, 0);
                     document.getElementsByClassName("qText")[i].style.width = '1040px'
                 }
             }
-            document.getElementById("finalVote").remove()
+            if (document.getElementById("finalVote") !== null) {
+                document.getElementById("finalVote").remove()
+            }
             document.getElementById('ep').innerHTML +=
                 "<p class=\"attention\">Внимание!</p>\n" +
                 "<h6>Для голосования необходимо войти в личный<br> кабинет участника с правом голоса </h6>"
@@ -119,6 +117,7 @@ $.get('/QServlet', send, function (data){
             $(".base_bg").animate({
                 marginTop: '+=110px'
             }, 0);
+            checkMeetType()
         }
     })
 })

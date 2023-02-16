@@ -84,6 +84,21 @@ function Signature() {
                             "            </div>"
                     }
                 })
+                .catch(function (error){
+                    console.log(error)
+                    $(".signature").fadeOut()
+                    $(".load").fadeIn()
+                    $(".crossLoad").show()
+                    $("#loadingStatus").hide()
+                    $("#doneStatus").hide()
+                    $("#errorStatus").show()
+                    let noPlugin = document.getElementById("noPlugin")
+                    noPlugin.style.color = '#FF0000'
+                    document.getElementById('step_1').classList.add('filterRed')
+                    $("#step_1").animate({
+                        opacity: '1'
+                    })
+                })
         }
     })
     $(".crossLoad").click(function () {
@@ -112,5 +127,12 @@ function Signature() {
         errorStep.innerHTML += "Локальная проверка<br> сертификата"
         errorStep.style.color = '#406C9A'
         document.getElementById('step_3').classList.remove('filterRed')
+    })
+
+    $(".cross").click(function () {
+        $(".signature").fadeOut()
+        $(".opaque").animate({
+            opacity: '1'
+        })
     })
 }

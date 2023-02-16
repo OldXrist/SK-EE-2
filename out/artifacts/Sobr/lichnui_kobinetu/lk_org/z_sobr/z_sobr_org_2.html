@@ -50,7 +50,7 @@
             </ul>
         </div>
 
-        <div class="ep">
+        <div class="ep" id="ep">
             <p>Организатор собрания</p>
             <div id="org">
             </div>
@@ -77,8 +77,9 @@
             <ul>
                 <li><input type="text" placeholder="Документы, подтверждающие полномочия руководителя или иного лица на осуществление действий от имени заявителя" class="oneline" disabled/></li>
             </ul>
-            <button class="knopka4">Редактировать собрание</button>
-            <button class="knopka5">Отменить собрание</button>
+            <button id="editMeetingBtn" class="knopka4" disabled>Редактировать собрание</button>
+            <button id="cancelMeetingBtn" class="knopka5" disabled>Отменить собрание</button>
+            <button id="startMeetingBtn" disabled style="display:none;">Начать собрание</button>
         </div>
 
         <div id="cancel">
@@ -119,6 +120,7 @@
 <script src="../../../scripts/sobr_cancel.js"></script>
 <script src="../../../scripts/check_sobr_status.js"></script>
 <script src="../../../scripts/timeUpdate.js"></script>
+<script src="../../../scripts/meetingType.js"></script>
 <script src="../../../jquery/jquery.maskedinput.min.js"></script>
 <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 <script>

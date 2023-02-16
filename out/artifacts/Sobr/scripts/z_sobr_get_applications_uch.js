@@ -208,15 +208,6 @@ function Cards(dt, i, m) {
     }
 }
 
-
-
-let loc1 = window.location.href
-let snum1 = loc1.split('=')
-
-let send = {
-    sk: snum1[1]
-}
-
 $.get("/ZAPPRServlet", send,  function (data){
 
     console.log(data)

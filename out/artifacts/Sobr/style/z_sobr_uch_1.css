@@ -391,6 +391,7 @@ input{
     line-height: 100%;
     text-align: center;
     color: #00345F;
+    opacity: 0.7;
 }
 
 .knopka5 {
@@ -407,6 +408,7 @@ input{
     text-align: center;
     color: #00345F;
     border: 1px solid #00345F;
+    opacity: 0.7;
 }
 
 .knopka6 {position: absolute;
@@ -493,4 +495,21 @@ input{
 
 .knopka10 { left: 60px;
     top: 18px;
+}
+
+#startMeetingBtn{
+    width: 440px;
+    height: 55px;
+    margin-left: 50px;
+    background: #37DCF5;
+    border-radius: 10px;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    text-align: center;
+    color: #00345F;
+    border: none;
+    opacity: 0.7;
 }
