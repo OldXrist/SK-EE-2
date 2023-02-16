@@ -19,8 +19,6 @@ public class ZAPPRServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         PrintWriter out = res.getWriter();
 
-        HttpSession sesh = req.getSession();
-        String email1 = String.valueOf(sesh.getAttribute("sessionUser"));
         String sk = req.getParameter("sk");
         int num = Integer.parseInt(sk);
 
