@@ -4,7 +4,7 @@ function Create(){
     let behalf = document.getElementById("behalf").innerText
 
     let application = {
-        snum: snum[1],
+        snum: sk,
         status: uchStatus,
         beh: behalf,
         appStatus: "На рассмотрении"
@@ -21,7 +21,7 @@ function CreateDraft(){
     let behalf = document.getElementById("behalf").innerText
 
     let applicationDraft = {
-        snum: snum[1],
+        snum: sk,
         status: uchStatus,
         beh: behalf,
         appStatus: "Черновик"
