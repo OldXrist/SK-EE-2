@@ -49,7 +49,7 @@ public class ZAPPRServlet extends HttpServlet {
                         };
                         break;
                     case "ИП":
-                        String sql2 = "SELECT famil, name, otch FROM ip WHERE email = ?";
+                        String sql2 = "SELECT famil, name, otch, ser, num, kem_vudan, date_pass FROM ip WHERE email = ?";
                         PreparedStatement ps2 = c.prepareStatement(sql2);
                         ps2.setString(1, email);
                         ResultSet rs2 = ps2.executeQuery();
@@ -57,10 +57,14 @@ public class ZAPPRServlet extends HttpServlet {
                             out.println(rs2.getString(1));
                             out.println(rs2.getString(2));
                             out.println(rs2.getString(3));
+                            out.println(rs2.getString(4));
+                            out.println(rs2.getString(5));
+                            out.println(rs2.getString(6));
+                            out.println(rs2.getString(7));
                         };
                         break;
                     case "ФЛ":
-                        String sql3 = "SELECT famil, name, otch FROM fl WHERE email = ?";
+                        String sql3 = "SELECT famil, name, otch, ser, num, kem_vudan, date_pass FROM fl WHERE email = ?";
                         PreparedStatement ps3 = c.prepareStatement(sql3);
                         ps3.setString(1, email);
                         ResultSet rs3 = ps3.executeQuery();
@@ -68,10 +72,14 @@ public class ZAPPRServlet extends HttpServlet {
                             out.println(rs3.getString(1));
                             out.println(rs3.getString(2));
                             out.println(rs3.getString(3));
+                            out.println(rs3.getString(4));
+                            out.println(rs3.getString(5));
+                            out.println(rs3.getString(6));
+                            out.println(rs3.getString(7));
                         };
                         break;
                     case "АУ":
-                        String sql4 = "SELECT famil, name, otch FROM au WHERE email = ?";
+                        String sql4 = "SELECT famil, name, otch, ser, num, kem_vudan, date_pass FROM au WHERE email = ?";
                         PreparedStatement ps4 = c.prepareStatement(sql4);
                         ps4.setString(1, email);
                         ResultSet rs4 = ps4.executeQuery();
@@ -79,10 +87,14 @@ public class ZAPPRServlet extends HttpServlet {
                             out.println(rs4.getString(1));
                             out.println(rs4.getString(2));
                             out.println(rs4.getString(3));
+                            out.println(rs4.getString(4));
+                            out.println(rs4.getString(5));
+                            out.println(rs4.getString(6));
+                            out.println(rs4.getString(7));
                         };
                         break;
                 }
-                out.println(rs.getString(5));
+                out.println(rs.getString(8));
             }
 
         } catch (Exception e) {

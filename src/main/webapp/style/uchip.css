@@ -20,9 +20,9 @@
 
 #checkError{
     position: absolute;
-    width: 195px;
+    width: 300px;
     height: 18px;
-    left: 243px;
+    padding-left: 245px;
     top: 453px;
     font-family: 'Exo 2';
     font-style: normal;
