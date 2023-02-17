@@ -4,7 +4,7 @@ btn.disabled = true
 $(document).ready(function(){
     $(".add_docs").hide()
 }).ready(function (){
-    $("#doc").hide()
+    $("#file").hide()
 }).ready(function (){
     $(".upl").animate({
         opacity: "0.3"
@@ -32,7 +32,7 @@ $(".add_docs h6").click(function (){
 $(".add_docs label").click(function (){
     $(".add_docs img").hide()
 }).click(function (){
-    $("#doc").show()
+    $("#file").show()
 }).click(function (){
     $(".add_docs a").hide()
 }).click(function (){
@@ -43,7 +43,7 @@ $(".add_docs label").click(function (){
 });
 
 $(".upl").click(function (){
-    let tr = document.getElementById("doc").value
+    let tr = document.getElementById("file").value
     let f = tr.split("\\")
     let file = f[2]
     console.log(f,file)
@@ -65,6 +65,6 @@ $(".upl").click(function (){
         marginTop: "+=65px"
     });
     $(".add_docs img").show()
-    $("#doc").hide()
+    $("#file").hide()
     $(".add_docs a").show()
 })
