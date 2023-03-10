@@ -1,4 +1,4 @@
-function goTO(page){
+function goTOo(page){
     let next = 0
     let i = 1
     while (document.getElementById('c'+i) !== null){
@@ -89,13 +89,13 @@ function page(id){
     let prefix = id.split('_')[0]
 
     if (prefix === 'page'){
-        goTO(pageNum)
+        goTOo(pageNum)
     } else if (prefix === 'next'){
-        goTO(pageNum)
+        goTOo(pageNum)
         document.getElementById('page_' + pageNum).style.color = '#ffffff'
         document.getElementById('page_' + pageNum).style.background = '#104781'
     } else {
-        goTO(pageNum - 1)
+        goTOo(pageNum - 1)
         let n = pageNum - 1
         document.getElementById('page_' + n).style.color = '#ffffff'
         document.getElementById('page_' + n).style.background = '#104781'
@@ -118,7 +118,7 @@ function timeParse (x){
     return tA[0] + ':' + tA[1]
 }
 
-function Cards(dt, i, m) {
+function Cards1(dt, i, m) {
     m = "c" + m
     let lim
     if (dt[0].includes('ЮЛ')){
@@ -136,40 +136,44 @@ function Cards(dt, i, m) {
             console.log(arr)
             document.getElementById("table").innerHTML +=
                 "           <div class=\"table_item\" id=" + m + ">\n" +
-                "                <h3 class=\"table_h\">№ " + arr[4] + "</h3>\n" +
-                "                <a id=" + "app_" + arr[4] + " class=\"txtr edit\" onclick='applicationRedirect(this.id)'>Редактировать</a>\n" +
-                "                <ul class=\"table_data\">\n" +
-                "                    <li class=\"thin_text\">Кредитор</li>\n" +
-                "                    <li>" + arr[3] + "</li>\n" +
-                "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
-                "                    <li class=\"thin_text\">Дата и время</li>\n" +
-                "                    <li>" + date + "</li>\n" +
-                "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
-                "                    <li class=\"thin_text\">Статус</li>\n" +
-                "                    <li>" + arr[1] + "</li>\n" +
-                "                </ul>\n" +
+                "                <th class=\"table_h\">№ " + arr[5] + "</th>\n" +
+                "                <a id=" + "app_" + arr[5] + " class=\"txtr edit\" onclick='applicationRedirect(this.id)'>Редактировать</a>\n" +
+                "                <div class=\"table_data\">\n" +
+                "                    <th class=\"thin_text\">Кредитор</th>\n" +
+                "                    <th>" + arr[3] + "</th>\n" +
+                "                </div>\n" +
+                "                <div class=\"table_data\">\n" +
+                "                    <th class=\"thin_text\">Дата и время</th>\n" +
+                "                    <th>" + date + "</th>\n" +
+                "                </div>\n" +
+                "                <div class=\"table_data\">\n" +
+                "                    <th class=\"thin_text\">Статус</th>\n" +
+                "                    <th>" + arr[1] + "</th>\n" +
+                "                </div>\n" +
+                "                <div class=\"table_data\">\n" +
+                "                    <th class=\"thin_text\">Адрес</th>\n" +
+                "                    <th>" + arr[4] + "</th>\n" +
+                "                </div>\n" +
                 "            </div>"
 
         } else {
             console.log(arr)
             document.getElementById("table").innerHTML +=
                 "           <div class=\"table_item\" id=" + m + ">\n" +
-                "                <h3 class=\"table_h\">№ " + arr[6] + "</h3>\n" +
+                "                <th class=\"table_h\">№ " + arr[6] + "</th>\n" +
                 "                <a id=" + "app_" + arr[6] + " class=\"txtr edit\" onclick='applicationRedirect(this.id)'>Редактировать</a>\n" +
-                "                <ul class=\"table_data\">\n" +
-                "                    <li class=\"thin_text\">Кредитор</li>\n" +
-                "                    <li>" + arr[3] + " " + arr[4] + " " + arr[5] + "</li>\n" +
-                "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
-                "                    <li class=\"thin_text\">Дата и время</li>\n" +
-                "                    <li>" + date + "</li>\n" +
-                "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
-                "                    <li class=\"thin_text\">Статус</li>\n" +
-                "                    <li>" + arr[1] + "</li>\n" +
-                "                </ul>\n" +
+                "                <div class=\"table_data\">\n" +
+                "                    <th class=\"thin_text\">Кредитор</th>\n" +
+                "                    <th>" + arr[3] + " " + arr[4] + " " + arr[5] + "</th>\n" +
+                "                </div>\n" +
+                "                <div class=\"table_data\">\n" +
+                "                    <th class=\"thin_text\">Дата и время</th>\n" +
+                "                    <th>" + date + "</th>\n" +
+                "                </div>\n" +
+                "                <div class=\"table_data\">\n" +
+                "                    <th class=\"thin_text\">Статус</th>\n" +
+                "                    <th>" + arr[1] + "</th>\n" +
+                "                </div>\n" +
                 "            </div>"
         }
     } else {
@@ -177,38 +181,38 @@ function Cards(dt, i, m) {
             console.log(arr)
             document.getElementById("table").innerHTML +=
                 "           <div class=\"table_item\" id=" + m + ">\n" +
-                "                <h3 class=\"table_h\">№ " + arr[4] + "</h3>\n" +
-                "                <ul class=\"table_data\">\n" +
-                "                    <li class=\"thin_text\">Кредитор</li>\n" +
-                "                    <li>" + arr[3] + "</li>\n" +
-                "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
-                "                    <li class=\"thin_text\">Дата и время</li>\n" +
-                "                    <li>" + date + "</li>\n" +
-                "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
-                "                    <li class=\"thin_text\">Статус</li>\n" +
-                "                    <li>" + arr[1] + "</li>\n" +
-                "                </ul>\n" +
+                "                <th class=\"table_h\">№ " + arr[4] + "</th>\n" +
+                "                <div class=\"table_data\">\n" +
+                "                    <th class=\"thin_text\">Кредитор</th>\n" +
+                "                    <th>" + arr[3] + "</th>\n" +
+                "                </div>\n" +
+                "                <div class=\"table_data\">\n" +
+                "                    <th class=\"thin_text\">Дата и время</th>\n" +
+                "                    <th>" + date + "</th>\n" +
+                "                </div>\n" +
+                "                <div class=\"table_data\">\n" +
+                "                    <th class=\"thin_text\">Статус</th>\n" +
+                "                    <th>" + arr[1] + "</th>\n" +
+                "                </div>\n" +
                 "            </div>"
 
         } else {
             console.log(arr)
             document.getElementById("table").innerHTML +=
                 "           <div class=\"table_item\" id=" + m + ">\n" +
-                "                <h3 class=\"table_h\">№ " + arr[6] + "</h3>\n" +
-                "                <ul class=\"table_data\">\n" +
-                "                    <li class=\"thin_text\">Кредитор</li>\n" +
-                "                    <li>" + arr[3] + " " + arr[4] + " " + arr[5] + "</li>\n" +
-                "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
-                "                    <li class=\"thin_text\">Дата и время</li>\n" +
-                "                    <li>" + date + "</li>\n" +
-                "                </ul>\n" +
-                "                <ul class=\"table_data\">\n" +
-                "                    <li class=\"thin_text\">Статус</li>\n" +
-                "                    <li>" + arr[1] + "</li>\n" +
-                "                </ul>\n" +
+                "                <th class=\"table_h\">№ " + arr[6] + "</th>\n" +
+                "                <div class=\"table_data\">\n" +
+                "                    <th class=\"thin_text\">Кредитор</th>\n" +
+                "                    <th>" + arr[3] + " " + arr[4] + " " + arr[5] + "</th>\n" +
+                "                </div>\n" +
+                "                <div class=\"table_data\">\n" +
+                "                    <th class=\"thin_text\">Дата и время</th>\n" +
+                "                    <th>" + date + "</th>\n" +
+                "                </div>\n" +
+                "                <div class=\"table_data\">\n" +
+                "                    <th class=\"thin_text\">Статус</th>\n" +
+                "                    <th>" + arr[1] + "</th>\n" +
+                "                </div>\n" +
                 "            </div>"
         }
     }
@@ -221,25 +225,25 @@ let send = {
     sk: snum1[1]
 }
 
-$.get("/ZAPPRServlet", send,  function (data){
+$.get("/XLSXServlet", send,  function (data){
 
     console.log(data)
     let d = data.split("\n")
 
-    let countCards = null
+    let countCards1 = null
     for(let i = 0; i < d.length; ++i){
         if (d[i].includes('ИП') || d[i].includes('ФЛ') || d[i].includes('АУ') || d[i].includes('ЮЛ')){
-            countCards++
+            countCards1++
         }
     }
 
-    console.log(countCards)
+    console.log(countCards1)
 
-    let pageNum = countCards/4
+    let pageNum = countCards1/4
     console.log(pageNum)
     let k = 0
-    for (let i = 1; i < countCards + 1; i++) {
-        Cards(d, k, i)
+    for (let i = 1; i < countCards1 + 1; i++) {
+        Cards1(d, k, i)
         console.log(d[k])
         if (d[k].includes('ЮЛ')){
             k += 5
@@ -248,7 +252,7 @@ $.get("/ZAPPRServlet", send,  function (data){
 
     let pageLim = 4
 
-    for (let i  =  6; i < countCards; i++){
+    for (let i  =  6; i < countCards1; i++){
         document.getElementById('c'+i).style.display = 'none'
     }
 

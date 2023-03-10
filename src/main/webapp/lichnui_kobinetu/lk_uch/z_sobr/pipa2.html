@@ -65,11 +65,15 @@
       <li class="sort4">отклонена</li>
     </ul>
 
-    <ul id="pages">
-    </ul>
+
+    <table id="tbl_exporttable_to_xls" border="1">
 
     <div class="table" id="table">
     </div>
+
+    </table>
+
+    <button class="pipa" onclick="ExportToExcel('xlsx')">Export table to excel</button>
 
     <div class="base_bg"></div>
     <div class="base">
@@ -78,7 +82,7 @@
         <li class="base_item1"><a>Выйти</a></li>
       </ul>
       <ul class="base_links">
-        <li class="base_item2"><a class="footer_txt" href="pipa2.html" >ТЕСТ ЁПТ</a></li>
+        <li class="base_item2"><a class="footer_txt" href="../../../index.html" >Главная</a></li>
         <li class="base_item2"><a class="footer_txt" href="../../../reestr.html">Реестр собраний</a></li>
         <li class="base_item2"><a class="footer_txt" href="../../../help/help_1.html">Помощь</a></li>
         <li class="base_item2"><a class="footer_txt" href="../../../help/contacts.html">Контакты</a></li>
@@ -94,6 +98,7 @@
     clock.innerHTML = now.toLocaleTimeString();
   }, 1000);
 </script>
+<script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
 <script src="../../../jquery/jquery-3.6.0.js"></script>
 <script src="../../../scripts/z_sobr_send_fix.js"></script>
 <script src="../../../scripts/z_sobr_get_applications_uch.js"></script>
