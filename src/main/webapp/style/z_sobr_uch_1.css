@@ -369,11 +369,11 @@ input{
 }
 
 .base_bg {
-    margin-top: 2276px;
+    margin-top: 2076px;
 }
 
 .base{
-    margin-top: 2276px;
+    margin-top: 2076px;
 }
 
 .knopka4 {
@@ -500,7 +500,6 @@ input{
 #startMeetingBtn{
     width: 440px;
     height: 55px;
-    margin-left: 50px;
     background: #37DCF5;
     border-radius: 10px;
     font-family: 'Exo 2';
@@ -512,4 +511,40 @@ input{
     color: #00345F;
     border: none;
     opacity: 0.7;
+}
+
+.loading{
+    position: fixed;
+    bottom: 40%;
+    width: 520px;
+    height: 243px;
+    text-align: center;
+    background: #FFFFFF;
+    box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0531481), 0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0425185), 0px 20px 13px rgba(0, 0, 0, 0.035), 0px 8.14815px 6.51852px rgba(0, 0, 0, 0.0274815), 0px 1.85185px 3.14815px rgba(0, 0, 0, 0.0168519);
+    border-radius: 15px;
+    padding-top: 50px;
+    margin-left: 400px;
+}
+
+.loading h1{
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 120%;
+    color: #104781;
+    margin-bottom: 30px;
+}
+
+.loading p{
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    color: #104781;
+}
+
+.loader{
+    margin-left: 0;
 }

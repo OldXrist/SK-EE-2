@@ -1,3 +1,7 @@
+body{
+    overflow: hidden;
+}
+
 .users{
     position: absolute;
     top: 126px;
@@ -265,16 +269,6 @@
     border-radius: 2px;
 }
 
-.videvo{
-    position: absolute;
-    width: 560px;
-    height: 587px;
-    left: 720px;
-    top: 126px;
-
-    background: #D9D9D9;
-}
-
 .org_btn{
     width: 300px;
     height: 50px;
@@ -289,6 +283,14 @@
     color: #00345F;
     margin-left: 70px;
     margin-top: 15px;
+}
+
+#video{
+    position: absolute;
+    top: 82px;
+    left: 0;
+    width: 100%;
+    height: 90%;
 }
 
 .add_q{
@@ -314,6 +316,10 @@
     border-radius: 10px;
     border: 1px solid #00345F;
     background-color: #FFFFFF;
+}
+
+.sc-llYSUQ{
+    display: none;
 }
 
 .base{

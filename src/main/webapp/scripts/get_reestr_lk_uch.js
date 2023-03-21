@@ -1,3 +1,23 @@
+function joinMeeting(id){
+    let meetingId = {
+        id: id.split('-')[1]
+    }
+
+    $.post('/JoinMeetingServlet', meetingId, function (data){
+        console.log(data)
+        let d = data.split('\n')
+        let viewerLink = new URL('https://sk.tenderstandart.ru/conference.html')
+
+        if (d[0].trim() === '1'){
+            window.location.href = d[1]
+        } else {
+            viewerLink.searchParams.set('meeting', d[1])
+            console.log(viewerLink)
+            window.location.href = viewerLink
+        }
+    })
+}
+
 function goTO(page){
     let next = 0
     let i = 1
@@ -135,6 +155,8 @@ function Cards(dt, i, m) {
         arr.push(dt[i])
     }
 
+    let j = 'j-' + arr[0]
+
     console.log(arr)
 
     let date1 = dateParse(arr[1]) + " " + timeParse(arr[1])
@@ -260,6 +282,16 @@ function Cards(dt, i, m) {
             "</div>\n" +
             "            </div>"
     }
+
+    if (arr[9].trim() === 'Очное'){
+        if (arr[15].trim() === 'В стадии проведения') {
+            document.getElementById(m).innerHTML += `<button id='${j}' class='joinMeeting' type='button' onclick="joinMeeting(this.id)">Присоединиться</button>`
+            document.getElementById(m).style.height = '225px'
+        } else {
+            document.getElementById(m).innerHTML += `<button class='joinMeeting' type='button' style='opacity: 0.7' disabled>Присоединиться</button>`
+            document.getElementById(m).style.height = '225px'
+        }
+    }
 }
 
 $.get("/LKUCHServlet", function (data){
@@ -271,7 +303,7 @@ $.get("/LKUCHServlet", function (data){
     console.log(d.length / 16 / 5)
     console.log(d.length)
     let k = 0
-    for (let i = 1; i < Math.ceil(d.length / 16) - 1; i++) {
+    for (let i = 1; i < Math.ceil(d.length / 16) + 1; i++) {
         Cards(d, k, i)
         k += 16
     }

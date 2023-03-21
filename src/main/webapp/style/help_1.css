@@ -163,7 +163,7 @@
     position: absolute;
     width: 1160px;
     height: 90px;
-    top: 1075px;
+    top: 776px;
     background: #BAF3FC;
     border-radius: 15px;
     margin-left: 80px;
@@ -220,11 +220,11 @@
 }
 
 .base_bg {
-    margin-top: 1513px;
+    margin-top: 1113px;
 }
 
 .base{
-    margin-top: 1513px;
+    margin-top: 1113px;
 }
 
 @media (min-width: 375px) and (max-width: 720px) {

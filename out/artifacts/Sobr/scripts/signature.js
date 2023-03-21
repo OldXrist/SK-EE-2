@@ -35,6 +35,7 @@ function Sign(id){
                 })
                 .catch(function (error){
                     console.log(error)
+                    alert(error)
                 })
         })
 }
@@ -65,6 +66,9 @@ function Signature() {
                                 "            </div>"
                         }
                     })
+                    .catch(function (error) {
+                        alert(error)
+                    })
             }
         })
         $(".cross").click(function () {
@@ -74,6 +78,7 @@ function Signature() {
             })
         })
 }
+
 
 function Sign1(id){
     let message = "Sign this"

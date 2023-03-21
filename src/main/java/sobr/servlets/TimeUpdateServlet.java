@@ -51,7 +51,7 @@ public class TimeUpdateServlet extends HttpServlet {
 
 
                 assert mainTime != null;
-                LocalDateTime main = LocalDateTime.parse(mainTime, formatter);
+                //LocalDateTime main = LocalDateTime.parse(mainTime, formatter);
 
                 LocalDateTime applicationsStart = LocalDateTime.parse(appStart, formatter);
 

@@ -891,6 +891,10 @@ input::placeholder{
     color: #104781;
 }
 
+a{
+    color: #406C9A;
+}
+
 #file{
     display: none;
 }
