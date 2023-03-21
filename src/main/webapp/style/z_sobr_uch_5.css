@@ -10,6 +10,22 @@
     margin-left: 80px;
 }
 
+.pipa{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 160px;
+    height: 150px;
+    left: 120px;
+    top: 1024px;
+
+    background: #E6FBFE;
+    opacity: 0.7;
+    border: 1px solid rgba(186, 243, 252, 0.5);
+    box-shadow: 0px 6px 12px rgba(16, 71, 129, 0.1);
+    border-radius: 15px;
+}
+
 #pages{
     margin-top: 536px;
 }
