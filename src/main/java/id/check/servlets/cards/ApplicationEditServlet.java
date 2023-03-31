@@ -22,7 +22,7 @@ public class ApplicationEditServlet extends HttpServlet {
         try{
             Connection c = connect();
 
-            String sql = "SELECT id, type_uch, email, status FROM uch WHERE id_uch = ?";
+            String sql = "SELECT id, type_uch, email, status FROM uch WHERE application_id = ?";
             PreparedStatement ps = c.prepareStatement(sql);
 
             ps.setInt(1, appId);

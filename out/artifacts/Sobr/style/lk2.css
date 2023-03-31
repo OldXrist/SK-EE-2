@@ -360,6 +360,10 @@
     border: none;
 }
 
+p{
+    width: auto;
+}
+
 .base_bg{
     margin-top: 2022px;
 }

@@ -25,7 +25,7 @@ public class ZAPPRServlet extends HttpServlet {
         try{
             Connection c = connect();
 
-            String sql = "SELECT email, type_uch, status, date, id_uch FROM uch WHERE id = ? ORDER BY id_uch;";
+            String sql = "SELECT email, type_uch, status, date, application_id FROM uch WHERE id = ? ORDER BY application_id;";
             PreparedStatement ps = c.prepareStatement(sql);
 
             ps.setInt(1, num);

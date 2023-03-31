@@ -23,7 +23,7 @@ public class ProtocolCheckServlet extends HttpServlet {
         try {
             Connection c = connect();
 
-            String sql = "SELECT id FROM prot WHERE id = ?;";
+            String sql = "SELECT protocol FROM prot WHERE id = ?;";
 
             PreparedStatement ps = c.prepareStatement(sql);
 

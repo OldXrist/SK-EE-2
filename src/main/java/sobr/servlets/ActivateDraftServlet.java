@@ -51,6 +51,7 @@ public class ActivateDraftServlet extends HttpServlet {
         String urAdr = req.getParameter("urAdr");
         String status = req.getParameter("status");
         String volume = req.getParameter("vol");
+        String demandSum = req.getParameter("demandSum");
 
         LocalDateTime dateS = null;
         LocalDateTime dateZ = null;
@@ -85,7 +86,7 @@ public class ActivateDraftServlet extends HttpServlet {
         try{
             Connection c = connect();
 
-            String sql1 = "UPDATE sobr_org SET (data_u_vrem_sobr, povestk_dnia, nachal_podach_zaiv, okonch_podach_zaiv, nachal_priem_bul, okonch_priem_bul, data_podpic_protakol, iden_nomer, data_razm_efrsb, naim_orb_suda, nomer_dela, osn_dlia_sobr, type_dolzh, email_org, type_org, famil, name, otch, pocht_adres, inn, snils, ogrnip, poln_naum, qr_adres, ogrn, type_sobr, status, participants) = (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) WHERE id = ?";
+            String sql1 = "UPDATE sobr_org SET (data_u_vrem_sobr, povestk_dnia, nachal_podach_zaiv, okonch_podach_zaiv, nachal_priem_bul, okonch_priem_bul, data_podpic_protakol, iden_nomer, data_razm_efrsb, naim_orb_suda, nomer_dela, osn_dlia_sobr, type_dolzh, email_org, type_org, famil, name, otch, pocht_adres, inn, snils, ogrnip, poln_naum, qr_adres, ogrn, type_sobr, status, participants, demand_amount) = (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) WHERE id = ?";
             PreparedStatement ps = c.prepareStatement(sql1);
 
             if (dateS != null) {
@@ -202,6 +203,10 @@ public class ActivateDraftServlet extends HttpServlet {
             } else ps.setNull(28, Types.INTEGER);
 
             ps.setInt(29, sk);
+
+            if (!demandSum.equals("")) {
+                ps.setInt(30, Integer.parseInt(demandSum));
+            } else ps.setNull(30, Types.INTEGER);
 
             ps.executeUpdate();
 

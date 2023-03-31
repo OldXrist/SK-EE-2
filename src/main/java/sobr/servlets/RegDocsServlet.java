@@ -26,7 +26,7 @@ public class RegDocsServlet extends HttpServlet {
         new File(path).mkdirs();
         for (Part part : req.getParts()){
             fName = extractFileName(part);
-            part.write(path + File.separator + extractFileName(part));
+            part.write(path + File.separator + fName);
         }
 
         sesh.removeAttribute("email");
@@ -52,7 +52,7 @@ public class RegDocsServlet extends HttpServlet {
         }
     }
 
-    private String extractFileName(Part part) {
+    public static String extractFileName(Part part) {
         String contentDisp = part.getHeader("content-disposition");
         String[] items = contentDisp.split(";");
         for (String s : items) {

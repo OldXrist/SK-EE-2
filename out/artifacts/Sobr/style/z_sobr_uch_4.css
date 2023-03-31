@@ -145,17 +145,17 @@
 }
 
 .base_bg{
-    margin-top: 816px;
+    margin-top: 1008px;
 }
 
 .base{
-    margin-top: 816px;
+    margin-top: 1008px;
 }
 
 .ep2{
     position: absolute;
     width: 1160px;
-    height: 375px;
+    height: 502px;
     top: 416px;
     background: #BAF3FC;
     border-radius: 15px;
@@ -238,5 +238,35 @@
     text-align: center;
     color: #00345F;
 
+}
+
+.journal{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.docPic{
+    display: inline-flex;
+    gap: 15px;
+}
+
+.docPic p{
+    text-decoration: underline;
+}
+
+.journalBtns{
+    display: inline-flex;
+    gap: 40px;
+}
+
+.journalBtns button{
+    width: 200px;
+    height: 50px;
+    border: 1px solid #00345F;
+    border-radius: 10px;
+    background: #baf3fc;
+    color: #00345F;
 }
 

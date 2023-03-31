@@ -14,6 +14,7 @@ import java.time.LocalDateTime;
 
 import static psql.connection.connect;
 import static reg.servlets.GFG.*;
+import static reg.servlets.getUserId.getID;
 
 @WebServlet("/ULServlet")
 public class ULServlet extends HttpServlet {
@@ -59,7 +60,7 @@ public class ULServlet extends HttpServlet {
 
             ps.executeUpdate();
 
-            String sql1 = "INSERT INTO ql Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql1 = "INSERT INTO ql Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             ps = c.prepareStatement(sql1);
 
             ps.setString(1, type_users);
@@ -73,6 +74,7 @@ public class ULServlet extends HttpServlet {
             ps.setString(9, email);
             ps.setObject(10, ldt);
             ps.setObject(11, ldt);
+            ps.setInt(12, getID(email));
 
             ps.executeUpdate();
 

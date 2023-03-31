@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 
 import static psql.connection.connect;
 import static reg.servlets.GFG.*;
+import static reg.servlets.getUserId.getID;
 
 @WebServlet("/IPServlet")
 public class IPServlet extends HttpServlet {
@@ -63,7 +64,7 @@ public class IPServlet extends HttpServlet {
 
             ps.executeUpdate();
 
-            String sql1 = "INSERT INTO ip Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql1 = "INSERT INTO ip Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             ps = c.prepareStatement(sql1);
 
 
@@ -102,6 +103,7 @@ public class IPServlet extends HttpServlet {
             ps.setObject(15, ldt);
             ps.setObject(16, ldt);
             ps.setString(17, date);
+            ps.setInt(18, getID(email));
 
             ps.executeUpdate();
 

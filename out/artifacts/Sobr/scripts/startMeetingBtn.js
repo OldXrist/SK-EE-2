@@ -16,9 +16,9 @@ $.get('/GetMeetingTypeServlet', send, function (data){
 })
 
 function startMeeting(){
-    $('.loading').show()
+    $('.loading').fadeIn()
     $('#ep').animate({
-        opacity: '0.7'
+        opacity: '0.3'
     })
 
     $.post('/CreateMeetingServlet', send, function (data){
@@ -27,14 +27,15 @@ function startMeeting(){
 
         let create = window.open(d[0])
 
-        create.close()
+        //window.open(d[0])
+        setTimeout(() => {create.close()}, 100)
         setTimeout(() => {
-            $('.loading').hide()
+            $('.loading').fadeOut()
             $('#ep').animate({
                 opacity: '1'
             })
             window.open(d[1])
-        }, 15000)
+        }, 10000)
 
     })
 }

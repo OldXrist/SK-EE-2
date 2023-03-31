@@ -1,33 +1,18 @@
-let send = {
-    sk: snum[1]
-}
-
 function UpdateProtocol(){
-        let file = document.getElementById('protUpd').files[0]
-        document.getElementById('signProt').disabled = false
-        document.getElementById('signProt').style.opacity = '1'
-        console.log(file)
+    let file = document.getElementById('protUpd').files[0]
+    document.getElementById('signProt').disabled = false
+    document.getElementById('signProt').style.opacity = '1'
+    console.log(file)
 
-        let reader = new FileReader();
+    let id = {
+        sk: sk
+    }
 
-        reader.onload = function (e) {
-
-            console.log(reader.result);
-
-            let newProt = {
-                text: reader.result,
-                sk: snum[1]
-            }
-
-            console.log(newProt)
-
-            $.post('/ProtocolUpdateServlet', newProt, function (data) {
-                console.log("Updated")
-                console.log(data)
-            })
-        }
-
-        reader.readAsText(file);
+    let formData = new FormData();
+    formData.append('file', file)
+    $.post('/AddMeetingNumServlet', id, function (){
+        fetch('/ProtocolUpdateServlet', {method: "POST", body: formData})
+    })
 }
 
 $("#protUpd").click(function (){
@@ -41,12 +26,12 @@ $.get('/CheckSobrStatusServlet', send, function (data){
     if (data.includes('Завершено')){
         document.getElementById('createProtocol').onclick = function CreateProtocol(){
             $.get("/ProtocolCreateServlet", send, function (data) {
-                console.log('protocol created')
                 console.log(data)
 
+                let downloadURL = '../../..' + data.split('ROOT')[1]
                 let link = document.getElementById('link')
                 link.style.display = 'none'
-                link.href = "../../../protocols/Протокол собрания кредиторов №" + snum[1] + '.doc'
+                link.href = downloadURL
                 link.click();
             })
         }

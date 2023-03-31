@@ -1,14 +1,11 @@
-$.get('/ProtocolCheckServlet', send, function (data) {
-    if (data !== '') {
+function Download() {
+    $.get('/ProtocolCheckServlet', send, function (data) {
+        console.log(data)
+
+        let downloadURL = '../../..' + data.split('ROOT')[1]
         let link = document.getElementById('link')
         link.style.display = 'none'
-        link.href = "../../../protocols/Протокол собрания кредиторов №" + sk + '.doc'
-    } else {
-        document.getElementById('downloadProtocol').disabled = true
-    }
-})
-
-function Download() {
-    let link = document.getElementById('link')
-    link.click();
+        link.href = downloadURL
+        link.click();
+    })
 }

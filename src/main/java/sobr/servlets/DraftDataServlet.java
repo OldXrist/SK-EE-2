@@ -22,7 +22,7 @@ public class DraftDataServlet extends HttpServlet {
         try{
             Connection c = connect();
 
-            String sql = "SELECT behalf, uch_status, doks FROM uch WHERE id_uch = ?;";
+            String sql = "SELECT behalf, uch_status, doks FROM uch WHERE application_id = ?;";
             PreparedStatement ps = c.prepareStatement(sql);
 
             ps.setInt(1, num);

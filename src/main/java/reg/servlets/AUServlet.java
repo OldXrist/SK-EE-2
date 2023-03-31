@@ -14,6 +14,7 @@ import java.util.Arrays;
 
 import static psql.connection.connect;
 import static reg.servlets.GFG.*;
+import static reg.servlets.getUserId.getID;
 
 @WebServlet(name = "AUServlet", value = "/AUServlet")
 public class AUServlet extends HttpServlet {
@@ -62,7 +63,7 @@ public class AUServlet extends HttpServlet {
 
             ps.executeUpdate();
 
-            String sql1 = "INSERT INTO au Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql1 = "INSERT INTO au Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             ps = c.prepareStatement(sql1);
 
 
@@ -106,6 +107,7 @@ public class AUServlet extends HttpServlet {
             ps.setObject(16, ldt);
             ps.setObject(17, ldt);
             ps.setString(18, date);
+            ps.setInt(19, getID(email));
 
             ps.executeUpdate();
 

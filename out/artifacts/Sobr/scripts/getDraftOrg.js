@@ -358,7 +358,7 @@ function draftDelete(id){
 }
 
 function draftEdit(id){
-    let url = new URL('http://sk.tenderstandart.ru/lichnui_kobinetu/lk_org/z_sobr/z_sobr_org_1.html')
+    let url = new URL('https://sk.tenderstandart.ru/lichnui_kobinetu/lk_org/z_sobr/z_sobr_org_1.html')
     let draftNum = id.split('_')[1]
     url.searchParams.append('draft', draftNum)
     window.location.href = url.href

@@ -32,7 +32,12 @@ public class ProtocolCreateServlet extends HttpServlet {
 
             ResultSet rsCheck = psCheck.executeQuery();
 
-            if (!rsCheck.next()) {
+            boolean protocolExists = false;
+            while (rsCheck.next()){
+                protocolExists = true;
+            }
+
+            if (!protocolExists) {
 
                 //String fName = "C:\\Users\\manager\\Desktop\\SK-EE-2\\src\\main\\webapp\\protocols\\" + protocolName;
                 String fName = "/opt/tomcat/webapps/ROOT/protocols/" + protocolName;
@@ -274,6 +279,21 @@ public class ProtocolCreateServlet extends HttpServlet {
 
             rsCheck.close();
             psCheck.close();
+
+            String protPathSQL = "SELECT protocol FROM prot WHERE id = ?";
+            PreparedStatement protPathPs = c.prepareStatement(protPathSQL);
+
+            protPathPs.setLong(1, sk);
+
+            ResultSet protPathRs = protPathPs.executeQuery();
+
+            while (protPathRs.next()){
+                out.println(protPathRs.getString(1));
+            }
+
+            protPathRs.close();
+            protPathPs.close();
+            c.close();
 
         }  catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);

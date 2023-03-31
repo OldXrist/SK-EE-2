@@ -22,7 +22,7 @@ public class DraftDataOrgServlet extends HttpServlet {
         try{
             Connection c = connect();
 
-            String sql = "SELECT data_u_vrem_sobr, povestk_dnia, nachal_podach_zaiv, okonch_podach_zaiv, nachal_priem_bul, okonch_priem_bul, data_podpic_protakol, participants, naim_orb_suda, nomer_dela, osn_dlia_sobr, type_dolzh, famil, name, otch, pocht_adres, inn, snils, ogrnip, ogrn, poln_naum, qr_adres FROM sobr_org WHERE id = ?;";
+            String sql = "SELECT data_u_vrem_sobr, povestk_dnia, nachal_podach_zaiv, okonch_podach_zaiv, nachal_priem_bul, okonch_priem_bul, data_podpic_protakol, participants, naim_orb_suda, nomer_dela, osn_dlia_sobr, type_dolzh, famil, name, otch, pocht_adres, inn, snils, ogrnip, ogrn, poln_naum, qr_adres, demand_amount FROM sobr_org WHERE id = ?;";
             PreparedStatement ps = c.prepareStatement(sql);
 
             ps.setInt(1, num);
@@ -51,6 +51,7 @@ public class DraftDataOrgServlet extends HttpServlet {
                 out.println(rs.getLong(20));
                 out.println(rs.getString(21));
                 out.println(rs.getString(22));
+                out.println(rs.getString(23));
             }
 
             rs.close();

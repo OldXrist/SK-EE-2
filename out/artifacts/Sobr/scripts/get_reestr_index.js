@@ -15,10 +15,7 @@ function timeParse (x){
 }
 
 function Cards(dt, i, m){
-    let lim;
-    if (dt[10].includes('ЮЛ')){
-        lim = i + 13
-    } else lim = i + 15
+    let lim = i + 15;
     let arr = [];
     for (i; i < lim; i++){
         arr.push(dt[i])
@@ -153,8 +150,6 @@ $.get("/MREEServlet", function (data){
     let k = 0;
     for (let i = 1; i < 5; i++) {
         Cards(d, k, i)
-        if (d[k + 10].includes('ЮЛ')){
-            k += 13
-        } else k += 15
+        k += 15
     }
 })

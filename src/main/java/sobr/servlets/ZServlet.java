@@ -13,6 +13,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import static psql.connection.connect;
+import static reg.servlets.getUserId.getID;
 
 @WebServlet("/ZServlet")
 public class ZServlet extends HttpServlet {
@@ -51,6 +52,7 @@ public class ZServlet extends HttpServlet {
         String status = req.getParameter("status");
         String volume = req.getParameter("vol");
         String typeSobr = req.getParameter("typeSobr");
+        int demandSum = Integer.parseInt(req.getParameter("demandSum"));
 
         LocalDateTime dateS = null;
         LocalDateTime dateZ = null;
@@ -85,7 +87,9 @@ public class ZServlet extends HttpServlet {
         try{
             Connection c = connect();
 
-            String sql1 = "INSERT INTO sobr_org Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql1 = "INSERT INTO sobr_org" +
+                    "(data_u_vrem_sobr, povestk_dnia, nachal_podach_zaiv, okonch_podach_zaiv, nachal_priem_bul, okonch_priem_bul, data_podpic_protakol, iden_nomer, data_razm_efrsb, naim_orb_suda, nomer_dela, osn_dlia_sobr, type_dolzh, email_org, type_org, famil, name, otch, pocht_adres, inn, snils, ogrnip, poln_naum, qr_adres, ogrn, type_sobr, status, participants, org_id, demand_amount) " +
+                    "Values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement ps = c.prepareStatement(sql1);
 
             if (dateS != null) {
@@ -218,6 +222,9 @@ public class ZServlet extends HttpServlet {
             if (!volume.equals("")) {
                 ps.setInt(28, Integer.parseInt(volume));
             } else ps.setNull(28, Types.INTEGER);
+
+            ps.setInt(29, getID(emailOrg));
+            ps.setInt(30, demandSum);
 
             ps.executeUpdate();
 

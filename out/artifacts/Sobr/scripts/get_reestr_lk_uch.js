@@ -6,7 +6,7 @@ function joinMeeting(id){
     $.post('/JoinMeetingServlet', meetingId, function (data){
         console.log(data)
         let d = data.split('\n')
-        let viewerLink = new URL('http://localhost:8080/conference.html')
+        let viewerLink = new URL('https://sk.tenderstandart.ru/conference.html')
 
         if (d[0].trim() === '1'){
             window.location.href = d[1]
@@ -148,13 +148,14 @@ function timeParse (x){
 }
 
 function Cards(dt, i, m) {
-    let j = 'j-' + m
     m = "c" + m
     let lim = i + 16;
     let arr = [];
     for (i; i < lim; i++) {
         arr.push(dt[i])
     }
+
+    let j = 'j-' + arr[0]
 
     console.log(arr)
 
@@ -302,7 +303,7 @@ $.get("/LKUCHServlet", function (data){
     console.log(d.length / 16 / 5)
     console.log(d.length)
     let k = 0
-    for (let i = 1; i < Math.ceil(d.length / 16) - 1; i++) {
+    for (let i = 1; i < Math.ceil(d.length / 16) + 1; i++) {
         Cards(d, k, i)
         k += 16
     }

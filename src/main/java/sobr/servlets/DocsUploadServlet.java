@@ -21,8 +21,8 @@ public class DocsUploadServlet extends HttpServlet {
         String user = String.valueOf(sesh.getAttribute("sessionUser"));
         long sk = Long.parseLong(String.valueOf(sesh.getAttribute("sk")));
 
-        String path = "C:\\Users\\manager\\Desktop\\SK-EE-2\\src\\main\\webapp\\meetings\\meeting" + sk + "\\" + user;
-        //String path = "../../../meetings/meeting"+sk+"/" + user;
+        //String path = "C:\\Users\\manager\\Desktop\\SK-EE-2\\src\\main\\webapp\\meetings\\meeting" + sk + "\\" + user;
+        String path = "../../../meetings/meeting"+sk+"/" + user;
 
         Part p = req.getPart("file");
         String ext = p.getSubmittedFileName().split("\\.")[1];

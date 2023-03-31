@@ -19,17 +19,19 @@ public class ApplicationUpdServlet extends HttpServlet {
         String status = req.getParameter("status");
         String id = req.getParameter("appId");
         String canvote = req.getParameter("canVote");
+        int demandSum = Integer.parseInt(req.getParameter("demandSum"));
         int appId = Integer.parseInt(id);
 
         try{
             Connection c = connect();
 
-            String sql = "UPDATE uch SET status = ?, canvote = ? WHERE id_uch = ?";
+            String sql = "UPDATE uch SET status = ?, canvote = ?, demand_amount = ? WHERE application_id = ?";
             PreparedStatement ps = c.prepareStatement(sql);
 
             ps.setString(1, status);
             ps.setString(2, canvote);
-            ps.setInt(3, appId);
+            ps.setInt(3, demandSum);
+            ps.setInt(4, appId);
 
             ps.executeUpdate();
 
