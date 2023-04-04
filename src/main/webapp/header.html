@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <title>Header</title>
+  <link rel="stylesheet" href="/style/header.css">
+</head>
+<body>
+
+<div class="menu">
+<div class="headerGroup-1">
+  <a href="/"><img src="/img/Logo.svg"/></a>
+  <a href="/">Главная</a>
+  <a href="/reestr.html">Реестр собраний</a>
+  <a href="/help/help_1.html">Помощь</a>
+  <a href="/help/contacts.html">Контакты</a>
+</div>
+<div class="headerButtons">
+  <button class="nouser" type="button" onclick="loginRedirect()">Войти</button>
+  <a class="nouser" href="/signin.html">Зарегистрироваться</a>
+  <a id="lk" href="/FILTERServlet"></a>
+  <span id="clock" style="color:#ffffff;"></span>
+  <a href="/LOGOUTServlet"><img id="logout_btn" src="/img/logout%201%20(Traced).png" /></a>
+</div>
+</div>
+
+<script>
+  function loginRedirect(){
+    window.location.href = '/login.html'
+  }
+</script>
+
+</body>
+</html>

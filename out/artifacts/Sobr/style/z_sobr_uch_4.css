@@ -37,7 +37,7 @@
 .ep{
     position: absolute;
     width: 1160px;
-    height: 310px;
+    height: 567px;
     top: 416px;
     background: #BAF3FC;
     border-radius: 15px;
@@ -145,17 +145,17 @@
 }
 
 .base_bg{
-    margin-top: 1008px;
+    margin-top: 1073px;
 }
 
 .base{
-    margin-top: 1008px;
+    margin-top: 1073px;
 }
 
 .ep2{
     position: absolute;
     width: 1160px;
-    height: 502px;
+    height: 567px;
     top: 416px;
     background: #BAF3FC;
     border-radius: 15px;
@@ -243,13 +243,14 @@
 .journal{
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 15px;
     margin-top: 30px;
 }
 
 .docPic{
     display: inline-flex;
     gap: 15px;
+    margin-bottom: 15px;
 }
 
 .docPic p{
@@ -267,6 +268,32 @@
     border: 1px solid #00345F;
     border-radius: 10px;
     background: #baf3fc;
+    color: #00345F;
+}
+
+.journalBtns label{
+    width: 200px;
+    height: 50px;
+    border: 1px solid #00345F;
+    border-radius: 10px;
+    background: #baf3fc;
+    color: #00345F;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.journalSend{
+    width: 440px;
+    height: 50px;
+    background: #37DCF5;
+    border-radius: 10px;
+    border: none;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: center;
     color: #00345F;
 }
 

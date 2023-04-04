@@ -112,7 +112,7 @@
     height: 50px;
     background: #FFFFFF;
     border-radius: 10px;
-    border: none;
+    border: solid #FFFFFF;
     margin-bottom: 30px;
     padding: 17px;
     color: #406C9A;
@@ -128,11 +128,11 @@
     height: 100px;
     background: #FFFFFF;
     border-radius: 10px;
-    border: none;
-    padding-bottom: 67px;
+    border: solid #FFFFFF;
     padding-left: 17px;
     color: #406C9A;
     font-size: 16px;
+    padding-top: 17px;
 }
 
 .multline:focus{
@@ -148,7 +148,7 @@
     height: 50px;
     background: #FFFFFF;
     border-radius: 10px;
-    border: none;
+    border: solid #FFFFFF;
 }
 
 .inline li input:focus{
@@ -364,9 +364,10 @@ input{
         height: 92px;
         background: #FFFFFF;
         border-radius: 10px;
-        border: none;
+        border: solid #FFFFFF;
         padding-bottom: 67px;
         padding-left: 17px;
+        padding-top: 17px;
         color: #406C9A;
         font-size: 16px;
     }
@@ -382,7 +383,7 @@ input{
         height: 46px;
         background: #FFFFFF;
         border-radius: 10px;
-        border: none;
+        border: solid #FFFFFF;
         margin-bottom: 30px;
         padding: 17px;
         color: #406C9A;
@@ -403,7 +404,7 @@ input{
         height: 46px;
         background: #FFFFFF;
         border-radius: 10px;
-        border: none;
+        border: solid #FFFFFF;
     }
 
     .inline li input:focus{

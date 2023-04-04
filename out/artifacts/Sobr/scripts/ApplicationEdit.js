@@ -99,26 +99,33 @@ $(document).ready(function () {
 });
 
 function Accept() {
-    if (document.getElementById('option').innerText !== 'Не выбрано') {
+    if (document.getElementById('option').innerText !== 'Не выбрано' && document.getElementById('demandSum').value !== "") {
         let sknum = window.location.href.split('?')[1].split('=')[1].split('&')[0]
 
         let status = {
             appId: window.location.href.split('&')[1].split('=')[1],
             status: "Допущена",
-            canVote: document.getElementById('option').innerText
+            canVote: document.getElementById('option').innerText,
+            demandSum: document.getElementById('demandSum').value
         }
         console.log(document.getElementById('option').innerText)
         $.get('/ApplicationUpdServlet', status)
 
         window.location.href = '/lichnui_kobinetu/lk_org/z_sobr/z_sobr_org_5.html?sk=' + sknum
-    } else {
+    }else if (document.getElementById('option').innerText === 'Не выбрано' && document.getElementById('demandSum').value === ""){
         document.getElementById('error').style.border = '2px solid red'
         document.getElementById('error').style.borderRadius = '10px'
+        document.getElementById('demandSum').style.border = '2px solid red'
+    }else if (document.getElementById('option').innerText === 'Не выбрано'){
+        document.getElementById('error').style.border = '2px solid red'
+        document.getElementById('error').style.borderRadius = '10px'
+    } else if (document.getElementById('demandSum').value !== ""){
+        document.getElementById('demandSum').style.border = '2px solid red'
     }
 }
 
 function White(id){
-    document.getElementById(id).style.border = 'none'
+    document.getElementById(id).style.borderColor = 'white'
 }
 
 function Decline() {
