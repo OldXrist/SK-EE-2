@@ -66,8 +66,11 @@
         <li>Электронная почта*</li>
         <li><input id="email" type="text" placeholder="ivanova12@mail.ru" onfocus="White(this.id)"/></li>
       </ul>
-      <p>Документы</p>
-      <h6>Максимальный объём загружаемого файла 15 Мб. <br>Документ должен быть в формате doc, docx, xls, xlsx, txt, pdf, jpg.</h6>
+      <div class="documents">
+        <div class="docsText">
+          <p>Документы</p>
+          <h6>Максимальный объём загружаемого файла 15 Мб. <br>Документ должен быть в формате doc, docx, xls, xlsx, txt, pdf, jpg.</h6>
+        </div>
       <div class="upload">
         <img src="../img/add%201%20(Traced).svg" />
         <label for="file">
@@ -75,9 +78,11 @@
           <input type="file" id="file">
         </label>
       </div>
-      <div id="captcha" class="g-recaptcha" data-sitekey="6Lfq_lUlAAAAAMA60GUsFMPdi8P_TRu-Q4W5g6G3">
       </div>
-      <button class="send_btn" type="button" onclick="sendFeedback()">Отправить заявку</button>
+      <div class="botButtons">
+        <div id="captcha" class="g-recaptcha" data-sitekey="6Lfq_lUlAAAAAMA60GUsFMPdi8P_TRu-Q4W5g6G3"></div>
+        <button class="send_btn" type="button" onclick="sendFeedback()">Отправить заявку</button>
+      </div>
     </div>
 
 

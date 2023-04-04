@@ -59,7 +59,7 @@
 .ep{
     position: absolute;
     width: 1160px;
-    height: 988px;
+    height: auto;
     top: 543px;
     background: #BAF3FC;
     border-radius: 15px;
@@ -112,7 +112,7 @@
     height: 50px;
     background: #FFFFFF;
     border-radius: 10px;
-    border: solid #FFFFFF;
+    border: 2px solid #FFFFFF;
     margin-bottom: 30px;
     padding: 17px;
     color: #406C9A;
@@ -128,7 +128,7 @@
     height: 100px;
     background: #FFFFFF;
     border-radius: 10px;
-    border: solid #FFFFFF;
+    border: 2px solid #FFFFFF;
     padding-left: 17px;
     color: #406C9A;
     font-size: 16px;
@@ -148,7 +148,7 @@
     height: 50px;
     background: #FFFFFF;
     border-radius: 10px;
-    border: solid #FFFFFF;
+    border: 2px solid #FFFFFF;
 }
 
 .inline li input:focus{
@@ -184,12 +184,20 @@ h6{
     color: #406C9A;
 }
 
+.documents{
+    width: 100%;
+    display: inline-flex;
+    gap: 40px;
+}
+
+.docsText{
+    display: flex;
+    flex-direction: column;
+}
+
 .upload{
-    position: absolute;
-    top: 600px;
     width: 500px;
     height: 90px;
-    margin-left: 545px;
 }
 
 .upload input{
@@ -207,31 +215,18 @@ label{
     padding-left: 16px;
 }
 
-.capcha{
-    position: absolute;
-    width: 300px;
-    height: 79px;
-    margin-left: 390px;
-    top: 752px;
-    background: #FFFFFF;
-    padding: 30px;
-    text-align: center;
-}
-
-.capcha p{
-    font-family: 'Exo 2';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 100%;
-    color: #104781;
+.botButtons{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 44px;
+    align-items: center;
 }
 
 .send_btn{
-    position: absolute;
     width: 360px;
     height: 55px;
-    margin-left: 360px;
     top: 881px;
     background: #37DCF5;
     border-radius: 10px;
@@ -250,11 +245,11 @@ input{
 }
 
 .base_bg {
-    margin-top: 1621px;
+    margin-top: 1421px;
 }
 
 .base{
-    margin-top: 1621px;
+    margin-top: 1421px;
 }
 
 @media (min-width: 375px) and (max-width: 720px) {
@@ -364,7 +359,7 @@ input{
         height: 92px;
         background: #FFFFFF;
         border-radius: 10px;
-        border: solid #FFFFFF;
+        border: 2px solid #FFFFFF;
         padding-bottom: 67px;
         padding-left: 17px;
         padding-top: 17px;
