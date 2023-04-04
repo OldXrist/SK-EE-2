@@ -1,5 +1,5 @@
-$("html").click(function (){
-    document.getElementById('captcha').style.borderColor = "white"
+$(".captchaCont").click(function (){
+    document.getElementById('captcha').style.borderColor = "#BAF3FC"
 })
 
 var onloadCallback = function() {

@@ -60,7 +60,7 @@ public class feedbackServlet extends HttpServlet {
         String email = (String) sesh.getAttribute("email");
         String fName = (String) sesh.getAttribute("fName");
 
-        String content = desc + "\n\nДанны отправителя: \n\n" + phone + "\n" + email;
+        String content = desc + "\n\nДанныe отправителя: \n\n" + phone + "\n" + email;
 
         try {
             Connection c = connect();

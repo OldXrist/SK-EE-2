@@ -17,10 +17,10 @@ public class feedbackFileServlet extends HttpServlet {
         HttpSession sesh = req.getSession();
 
         String fName = "";
-        new File("C:\\Users\\manager\\Desktop\\SK-EE-2\\src\\main\\webapp\\feedbackFiles").mkdirs();
+        new File("/opt/tomcat/webapps/ROOT/feedbackFiles").mkdirs();
         for (Part part : req.getParts()){
             fName = extractFileName(part);
-            part.write("C:\\Users\\manager\\Desktop\\SK-EE-2\\src\\main\\webapp\\feedbackFiles" + File.separator + fName);
+            part.write("/opt/tomcat/webapps/ROOT/feedbackFiles" + File.separator + fName);
         }
 
         sesh.setAttribute("fName", fName);
