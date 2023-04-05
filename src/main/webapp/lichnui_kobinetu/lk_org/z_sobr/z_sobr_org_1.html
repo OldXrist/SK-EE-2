@@ -67,7 +67,7 @@
             <input type="text" class="forms6" id="time_z2" placeholder="00:00" onfocus="White(this.id)">
         </div>
         <div class="data_vrem4">
-            <label for="date_b" class="txt_obsh">Начало приема бюллетеней*</label>
+            <label for="date_b" class="txt_obsh" id="timeErr">Начало приема бюллетеней*</label>
             <input type="text" class="forms5" id="date_b" placeholder="01.01.0000" onfocus="White(this.id)">
         </div>
         <div class="time4">
@@ -301,8 +301,16 @@
         <p>Ваша заявка на проведение собрания успешно<br>отправлена на проверку. Информация о<br>результатах проверки придет Вам на<br>электронную почту</p>
     </div>
 
-
-
+    <div class="timeError">
+        <img id="timeErrCross" src="/img/cross.svg"/>
+        <h1>Ошибка ввода</h1>
+        <p>
+            От момента окончания предоставления
+            <br>заявок на участие до момента начала
+            <br>приема бюллетеней промежуток времени
+            <br>должен составлять не менее 1 часа!
+        </p>
+    </div>
 
     <div class="container">
         <div class="content">

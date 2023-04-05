@@ -247,7 +247,7 @@ input{
 .success{
     position: fixed;
     bottom: 40%;
-    left: 510px;
+    left: 34%;
     display: flex;
     flex-direction: column;
     align-items: center;
