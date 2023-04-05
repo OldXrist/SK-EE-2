@@ -46,11 +46,11 @@ function sendFeedback(){
         $.post('/feedbackUtilsServlet', send, function (){
             fetch('/feedbackFileServlet', {method: "POST", body: file}).then(r => {
                 $.post('/feedbackServlet', function (){
-                    $('.success').fadeIn().scrollIntoView()
+                    $('.success').fadeIn()
                     $('.ep').animate({
                         opacity: '0.3'
                     })
-                    $('.send_btn').disabled = true
+                    document.getElementById('send').disabled = true
                 })
             })
         })

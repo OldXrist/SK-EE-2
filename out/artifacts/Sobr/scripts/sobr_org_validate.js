@@ -1,3 +1,12 @@
+$(document).ready(function(){
+    $('.timeError').hide()
+})
+$('#timeErrCross').click(function (){
+    $('.timeError').fadeOut()
+    $('.table_org').animate({
+        opacity: '1'
+    })
+})
 function Validate () {
     let k = 0;
 
@@ -102,9 +111,15 @@ function Validate () {
     if (dtValidate(date_p, time_p)){
         k++
     }
-    if ((dtParse(date_b, time_b) - dtParse(date_z2, time_z2)) < 300000){
+    if ((dtParse(date_b.value, time_b.value) - dtParse(date_z2.value, time_z2.value)) < 3600000){
         date_b.style.borderColor = 'red'
         time_b.style.borderColor = 'red'
+        document.getElementById('timeErr').style.color = '#FF0000'
+        date_b.scrollIntoView()
+        $('.timeError').fadeIn()
+        $('.table_org').animate({
+            opacity: '0.3'
+        })
     }
     if (document.getElementById("obem_sobr") !== null) {
         if (document.getElementById("obem_sobr").placeholder === "Выбрать количество") {
@@ -231,6 +246,7 @@ function Validate () {
 
 function dtParse(date, time){
     let d = date.split('.')
+    console.log(d[2] + "-" + d[1] + "-" + d[0] + "T" + time)
     return Date.parse(d[2] + "-" + d[1] + "-" + d[0] + "T" + time)
 }
 
