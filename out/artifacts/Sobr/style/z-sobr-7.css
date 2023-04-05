@@ -78,28 +78,6 @@ textarea:disabled {
     background-color: #FFFFFF;
 }
 
-.menu {
-    margin-left: 54px;
-}
-
-.menu>.a {
-    margin-left: 20px;
-}
-
-.signin {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-}
-
-.signin>.a {
-    margin-right: 20px;
-}
-
-.clock {
-    margin-right: 20px;
-}
-
 /*-----------------main------------------*/
 main {
     display: flex;

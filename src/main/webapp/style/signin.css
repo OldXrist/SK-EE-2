@@ -32,8 +32,7 @@ h2{
 
 .sign_block{
     position: absolute;
-    padding-top: 50px;
-    padding-left: 60px;
+    padding: 50px 55px 0 60px;
     list-style: none;
     width: 660px;
     height: 443px;
@@ -99,7 +98,7 @@ p{
     list-style: none;
     width: 200px;
     height: 55px;
-    margin-left: 310px;
+    float: right;
     margin-top: 10px;
     background-color: #37DCF5;
     border-radius: 10px;

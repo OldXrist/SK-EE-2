@@ -1,3 +1,11 @@
+$(document).ready(function (){
+    $('.success').hide()
+})
+
+$(".captchaCont").click(function (){
+    document.getElementById('captcha').style.borderColor = "#BAF3FC"
+})
+
 var onloadCallback = function() {
     grecaptcha.render('captcha', {
         'sitekey': '6Lfq_lUlAAAAAMA60GUsFMPdi8P_TRu-Q4W5g6G3'
@@ -7,10 +15,18 @@ var onloadCallback = function() {
 function sendFeedback(){
     let k = 0
 
+
     let ids = ['topic', 'desc', 'phone', 'email']
 
     for (let i = 0; i < ids.length; i++){
         k += validateFeedback(ids[i])
+    }
+
+    console.log(grecaptcha.getResponse())
+
+    if (grecaptcha.getResponse() === ''){
+        k++
+        document.getElementById('captcha').style.border = '1px solid red'
     }
 
     if (k === 0){
@@ -30,6 +46,11 @@ function sendFeedback(){
         $.post('/feedbackUtilsServlet', send, function (){
             fetch('/feedbackFileServlet', {method: "POST", body: file}).then(r => {
                 $.post('/feedbackServlet', function (){
+                    $('.success').fadeIn().scrollIntoView()
+                    $('.ep').animate({
+                        opacity: '0.3'
+                    })
+                    $('.send_btn').disabled = true
                 })
             })
         })

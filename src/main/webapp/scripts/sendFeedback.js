@@ -1,3 +1,7 @@
+$(document).ready(function (){
+    $('.success').hide()
+})
+
 $(".captchaCont").click(function (){
     document.getElementById('captcha').style.borderColor = "#BAF3FC"
 })
@@ -42,6 +46,11 @@ function sendFeedback(){
         $.post('/feedbackUtilsServlet', send, function (){
             fetch('/feedbackFileServlet', {method: "POST", body: file}).then(r => {
                 $.post('/feedbackServlet', function (){
+                    $('.success').fadeIn()
+                    $('.ep').animate({
+                        opacity: '0.3'
+                    })
+                    document.getElementById('send').disabled = true
                 })
             })
         })
