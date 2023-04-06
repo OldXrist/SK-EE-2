@@ -133,7 +133,10 @@
             <input type="text" class="forms2" id="kem_vudan" placeholder="Кем выдан">
         </div>
         <div class="pass11">
-            <label for="pass" class="txt_obsh">Придумайте пароль*</label>
+            <label for="pass" class="txt_obsh">
+                Придумайте пароль*
+                <img src="../img/tooltip.svg" id="questionMark"/>
+            </label>
             <input type="password" class="forms" id="pass" placeholder="********" onfocus="White(this.id)">
         </div>
         <div class="pass22">
@@ -151,7 +154,7 @@
         </tr>
     </table>
 
-    <button type="button" class="knopka2" onclick="Validate_reg()">Сохранить и подтвердить e-mail</button>
+    <button type="button" class="knopka2" onclick="emailCheck()">Сохранить и подтвердить e-mail</button>
 
 </div>
         <p class="doks_2">Документы</p>
@@ -176,6 +179,16 @@
                     <p>Ваши документы отправлены на проверку.<br>Информация о результатах проверки<br>придет Вам на электронную почту</p>
                     <button id="gotIt" type="button" href="../index.html">Понятно</button>
                 </div>
+            </div>
+
+            <div class="pwdConstraint">
+                <h1>Пароль должен содержать:</h1>
+                <p>
+                    -хотя бы 8 символов
+                    <br>-хотя бы одну цифру
+                    <br>-хотя бы одну большую букву
+                    <br>-хотя ты одну строчную букву
+                </p>
             </div>
 
             <div class="container">

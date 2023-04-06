@@ -359,7 +359,7 @@ input:focus{
     width: 1160px;
     height: 1252px;
     margin-left: 80px;
-    top: 707px;
+    top: 620px;
     display: block;
     background: #BAF3FC;
     border-radius: 15px;
@@ -411,7 +411,8 @@ input:focus{
 
 .txt_obsh {
     position: absolute;
-    width: 400px;
+    width: 100%;
+    display: inline-flex;
     height: 18px;
     left: 0;
     top: -40px;
@@ -421,6 +422,43 @@ input:focus{
     font-size: 18px;
     line-height: 100%;
     color: #406C9A;
+    justify-content: space-between;
+}
+
+.pwdConstraint{
+    position: absolute;
+    left: 16%;
+    top: 1320px;
+    padding: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    border-radius: 15px;
+    z-index: 1000;
+    box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0531481), 0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0425185), 0px 20px 13px rgba(0, 0, 0, 0.035), 0px 8.14815px 6.51852px rgba(0, 0, 0, 0.0274815), 0px 1.85185px 3.14815px rgba(0, 0, 0, 0.0168519);
+}
+
+.pwdConstraint h1{
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    color: #104781;
+    margin: 0 0 20px 0;
+}
+
+.pwdConstraint p{
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    color: #104781;
+}
+
+#questionMark{
+    cursor: pointer;
 }
 
 input{
@@ -909,6 +947,7 @@ input::placeholder{
     display: none;
 }
 
+
 .pointer{
     cursor: pointer;
 }
@@ -933,21 +972,9 @@ input::placeholder{
 }
 
 .base{
-    margin-top: 802px;
+    margin-top: 702px;
 }
 
 .base_bg{
-    margin-top: 802px;
-}
-
-.base2{
-    margin-top: 2217px;
-}
-
-.base_bg2{
-    margin-top: 2217px;
-}
-
-.menu{
-    top: 0;
+    margin-top: 702px;
 }
