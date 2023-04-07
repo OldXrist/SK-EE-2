@@ -283,7 +283,11 @@ input{
     top: 30px;
 }
 
-#footer {
+.base_bg {
+    margin-top: 1421px;
+}
+
+.base{
     margin-top: 1421px;
 }
 

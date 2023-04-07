@@ -20,7 +20,10 @@ function check() {
                 for (let i = 0; i < 10; i++) {
                     if (document.getElementById("tbl_" + i) !== null) {
                         document.getElementById("tbl_" + i).remove()
-                        $("#footer").animate({
+                        $(".base").animate({
+                            marginTop: '-=180px'
+                        }, 0);
+                        $(".base_bg").animate({
                             marginTop: '-=180px'
                         }, 0);
                         document.getElementsByClassName("qText")[i].style.width = '1040px'

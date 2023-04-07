@@ -125,7 +125,11 @@
     margin-top: 15px;
 }
 
-#footer {
+.base_bg {
+    margin-top: 846px;
+}
+
+.base{
     margin-top: 846px;
 }
 

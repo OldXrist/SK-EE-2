@@ -12,8 +12,18 @@
     <meta property="og:title" content="Собрание Кредиторов">
 </head>
 <body>
+<div class="menu">
+    <ul>
+        <li class="logo"><a href="../index.html"><img src="img/Logo.svg" /></a></li>
+        <li class="nav_item"><a href="../index.html">Главная</a></li>
+        <li class="nav_item"><a href="../reestr.html">Реестр собраний</a></li>
+        <li class="nav_item"><a href="../help/help_1.html">Помощь</a></li>
+        <li class="nav_item"><a href="../help/contacts.html">Контакты</a></li>
+        <li class="nav_item"><a href="../login.html"><button class="nav_btn">Войти</button></a></li>
+        <li class="nav_item"><a href="../signin.html">Зарегистрироваться</a></li>
+    </ul>
+</div>
 
-<div id="menu"></div>
 
 <div class="container">
     <div class="ogl">
@@ -137,10 +147,7 @@
                         <input type="text" class="forms2" id="kem_vudan" placeholder="Кем выдан" onfocus="White(this.id)">
                     </div>
                     <div class="pass11">
-                        <label for="pass" class="txt_obsh">
-                            Придумайте пароль*
-                            <img src="../img/tooltip.svg" id="questionMark"/>
-                        </label>
+                        <label for="pass" class="txt_obsh">Придумайте пароль*</label>
                         <input type="password" class="forms" id="pass" placeholder="********" onfocus="White(this.id)">
                     </div>
                     <div class="pass22">
@@ -184,16 +191,6 @@
                     <p>Ваши документы отправлены на проверку.<br>Информация о результатах проверки<br>придет Вам на электронную почту</p>
                     <button id="gotIt" type="button" href="../index.html">Понятно</button>
                 </div>
-            </div>
-
-            <div class="pwdConstraint">
-                <h1>Пароль должен содержать:</h1>
-                <p>
-                    -хотя бы 8 символов
-                    <br>-хотя бы одну цифру
-                    <br>-хотя бы одну большую букву
-                    <br>-хотя ты одну строчную букву
-                </p>
             </div>
 
             <div class="container">

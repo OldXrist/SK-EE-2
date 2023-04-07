@@ -1333,7 +1333,11 @@ input {
     color: #00345F;
 }
 
-#footer{
+.base {
+    margin-top: 3618px;
+}
+
+.base_bg {
     margin-top: 3618px;
 }
 

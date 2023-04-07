@@ -541,6 +541,10 @@ input{
  cursor: pointer;
 }
 
-#footer{
+.base_bg {
+    margin-top: 2053px;
+}
+
+.base{
     margin-top: 2053px;
 }

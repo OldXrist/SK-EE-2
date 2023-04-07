@@ -17,15 +17,22 @@ body {
     margin-bottom: 60px;
 }
 
-#footer{
-    margin-top: 573px;
+.base {
+    margin-top: 563px;
+    height: 310px;
+}
+
+.base_bg {
+    margin-top: 563px;
+    height: 310px;
+
 }
 
 .viewport {
     position: absolute;
     width: 100%;
     left: 0;
-    height: 660px;
+    height: 650px;
     top: -5px;
     background: linear-gradient(105.79deg, rgba(103, 200, 212, 0.3) 4.43%, rgba(0, 71, 129, 0.3) 47.8%), url(../img/back.png);
     background-size:100%;

@@ -58,7 +58,10 @@ $(".upl").click(function (){
     });
 }).click(function (){
     $(".docs_tbl").fadeIn("fast")
-    $("#footer").animate({
+    $(".base").animate({
+        marginTop: "+=65px"
+    });
+    $(".base_bg").animate({
         marginTop: "+=65px"
     });
     $(".add_docs img").show()

@@ -1,27 +1,3 @@
-$(document).ready(function (){
-    $('.pwdConstraint').hide()
-    $('#questionMark').mouseenter(function (){
-        $('.pwdConstraint').fadeIn()
-    }).mouseleave(function (){
-        $('.pwdConstraint').fadeOut()
-    })
-})
-
-function includesArray(string, array){
-    return array.some(v => string.includes(v));
-}
-
-function validatePwd(pwd){
-    let numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
-    let alphabetUpper = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-    let alphabetLower = []
-    for (let letter in alphabetUpper){
-        alphabetLower.push(alphabetUpper[letter].toLowerCase())
-    }
-
-    return (includesArray(pwd.value, numbers) && includesArray(pwd.value, alphabetUpper) && includesArray(pwd.value, alphabetLower) && pwd.value.length >= 8);
-}
-
 function Validate_reg () {
 
     let k = 0;
@@ -134,12 +110,6 @@ function Validate_reg () {
         document.getElementById("pass2").value !== document.getElementById("pass").value) {
         document.getElementById("pass2").style.borderColor = 'red';
         k += 1;
-    }
-    if(!validatePwd(document.getElementById("pass"))){
-        document.getElementById("pass").style.borderColor = 'red'
-        $('.pwdConstraint').fadeIn()
-        setTimeout(() => { $('.pwdConstraint').fadeOut() }, 5000);
-        //TODO tooltip show + error message
     }
     if (document.getElementById("email_2").value.length === 0 ||
         document.getElementById("email_2").value !== document.getElementById("email").value ||

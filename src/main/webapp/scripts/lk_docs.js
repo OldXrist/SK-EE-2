@@ -24,7 +24,10 @@ $(".knopka5").animate({
 $(".table_org").animate({
     height: "+=150px"
 });
-$("#footer").animate({
+$(".base").animate({
+    top: "+=150px"
+});
+$(".base_bg").animate({
     top: "+=150px"
 });
 
@@ -112,7 +115,10 @@ $(".upl").click(function (){
     $(".table_org").animate({
         height: "+=50px"
     });
-    $("#footer").animate({
+    $(".base").animate({
+        top: "+=50px"
+    });
+    $(".base_bg").animate({
         top: "+=50px"
     });
     $(".add_docs img").show()

@@ -2,10 +2,6 @@ body{
   overflow-x: hidden;
 }
 
-#footer{
-  width: 100%;
-}
-
 .ep{
   padding-bottom: 50px;
 }
@@ -92,11 +88,8 @@ body{
   text-decoration: none;
 }
 
-#footer{
-  margin-top: 1664px;
-}
-
 .base {
+
   position: absolute;
   width: 100%;
   height: 298px;

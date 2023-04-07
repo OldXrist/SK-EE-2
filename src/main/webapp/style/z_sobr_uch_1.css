@@ -368,7 +368,11 @@ input{
     resize: none;
 }
 
-#footer{
+.base_bg {
+    margin-top: 2076px;
+}
+
+.base{
     margin-top: 2076px;
 }
 

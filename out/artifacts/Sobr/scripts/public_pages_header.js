@@ -1,5 +1,4 @@
 $(document).ready(function (){
-    $('#footer').load('/footer.html')
     $('#menu').load('/header.html', function (){
         $('#logout_btn').hide()
         $('#clock').hide()

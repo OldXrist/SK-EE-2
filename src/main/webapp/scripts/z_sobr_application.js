@@ -33,10 +33,12 @@ $.get("/ZAPPServlet", function (data){
             "        <li>Электронная почта</li>\n" +
             "        <li><input type=\"text\" placeholder="+ d[7] +" + disabled/></li>\n" +
             "      </ul>\n"
-        $('#footer').animate({
+        $(".base").animate({
             marginTop: '1870px'
         })
-
+        $(".base_bg").animate({
+            marginTop: '1870px'
+        })
 
     } else if (role.includes("ФЛ")){
         document.getElementById("uData").innerHTML +=

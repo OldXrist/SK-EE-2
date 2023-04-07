@@ -240,7 +240,11 @@
     color: #406C9A;
 }
 
-#footer {
+.base_bg {
+    margin-top: 90px;
+}
+
+.base{
     margin-top: 90px;
 }
 

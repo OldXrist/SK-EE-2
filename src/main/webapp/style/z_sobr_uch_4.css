@@ -144,7 +144,11 @@
     margin-right: 67px;
 }
 
-#footer{
+.base_bg{
+    margin-top: 1073px;
+}
+
+.base{
     margin-top: 1073px;
 }
 

@@ -8,7 +8,10 @@ function Validate(){
     if (document.getElementById("check1").checked === false ||
         document.getElementById("check2").checked === false ||
         document.getElementById("check3").checked === false){
-        $("#footer").animate({
+        $(".base").animate({
+            marginTop: "+=68px"
+        });
+        $(".base_bg").animate({
             marginTop: "+=68px"
         });
         $(".stat_drop").animate({

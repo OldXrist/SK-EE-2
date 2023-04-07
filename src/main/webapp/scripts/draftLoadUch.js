@@ -24,7 +24,10 @@ if (draftLink.includes('draft')){
 
             $(".docs_tbl tbody").append(markup)
             $(".docs_tbl").fadeIn('fast')
-            $("#footer").animate({
+            $(".base").animate({
+                marginTop: "+=65px"
+            });
+            $(".base_bg").animate({
                 marginTop: "+=65px"
             });
             $(".add_docs img").show()
