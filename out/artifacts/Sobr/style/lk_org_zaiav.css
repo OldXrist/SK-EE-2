@@ -91,7 +91,7 @@
     width: 125px;
     height: 50px;
     left: 335px;
-    top: 322px;
+    top: 440px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -102,7 +102,7 @@
     width: 125px;
     height: 50px;
     left: 785px;
-    top: 322px;
+    top: 440px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -113,7 +113,7 @@
     width: 125px;
     height: 50px;
     left: 335px;
-    top: 440px;
+    top: 558px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -124,7 +124,7 @@
     width: 125px;
     height: 50px;
     left: 785px;
-    top: 440px;
+    top: 558px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -135,7 +135,7 @@
     width: 125px;
     height: 50px;
     left: 335px;
-    top: 558px;
+    top: 676px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -158,7 +158,7 @@
     width: 323px;
     height: 18px;
     left: 60px;
-    top: 236px;
+    top: 354px;
 
     font-family: 'Exo 2';
     font-style: normal;
@@ -194,7 +194,7 @@
     width: 250px;
     height: 50px;
     left: 60px;
-    top: 322px;
+    top: 440px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -205,7 +205,7 @@
     width: 250px;
     height: 50px;
     left: 510px;
-    top: 322px;
+    top: 440px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -216,7 +216,7 @@
     width: 250px;
     height: 50px;
     left: 60px;
-    top: 440px;
+    top: 558px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -227,7 +227,7 @@
     width: 250px;
     height: 50px;
     left: 510px;
-    top: 440px;
+    top: 558px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -238,7 +238,7 @@
     width: 250px;
     height: 50px;
     left: 60px;
-    top: 558px;
+    top: 676px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -249,7 +249,7 @@
     width: 400px;
     height: 50px;
     left: 510px;
-    top: 558px;
+    top: 676px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -260,7 +260,7 @@
     width: 280px;
     height: 18px;
     left: 60px;
-    top: 658px;
+    top: 776px;
 
     font-family: 'Exo 2';
     font-style: normal;
@@ -303,7 +303,7 @@ input {
     width: 400px;
     height: 50px;
     left: 60px;
-    top: 744px;
+    top: 980px;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -313,7 +313,7 @@ input {
     width: 590px;
     height: 50px;
     left: 510px;
-    top: 744px;
+    top: 980px;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -323,7 +323,7 @@ input {
     width: 1040px;
     height: 50px;
     left: 60px;
-    top: 862px;
+    top: 1098px;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -333,7 +333,7 @@ input {
     width: 1040px;
     height: 50px;
     left: 60px;
-    top: 980px;
+    top: 1226px;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -343,7 +343,7 @@ input {
     width: 1040px;
     height: 50px;
     left: 60px;
-    top: 1098px;
+    top: 1334px;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -353,23 +353,12 @@ input {
     width: 1040px;
     height: 50px;
     left: 60px;
-    top: 2253px;
+    top: 2371px;
     background: #FFFFFF;
     border-radius: 10px;
 }
 
 .qr_adres2 {
-    position: absolute;
-    width: 1040px;
-    height: 50px;
-    left: 60px;
-    top: 2371px;
-
-    background: #FFFFFF;
-    border-radius: 10px;
-}
-
-.pocht_adres3 {
     position: absolute;
     width: 1040px;
     height: 50px;
@@ -380,12 +369,23 @@ input {
     border-radius: 10px;
 }
 
+.pocht_adres3 {
+    position: absolute;
+    width: 1040px;
+    height: 50px;
+    left: 60px;
+    top: 2607px;
+
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
 .unn4 {
     position: absolute;
     width: 400px;
     height: 50px;
     left: 60px;
-    top: 2607px;
+    top: 2725px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -396,7 +396,7 @@ input {
     width: 590px;
     height: 50px;
     left: 510px;
-    top: 2607px;
+    top: 2725px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -407,7 +407,7 @@ input {
     width: 330px;
     height: 18px;
     left: 60px;
-    top: 1198px;
+    top: 1316px;
 
     font-family: 'Exo 2';
     font-style: normal;
@@ -425,7 +425,7 @@ input {
     width: 1040px;
     height: 50px;
     left: 60px;
-    top: 1284px;
+    top: 1402px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -436,7 +436,7 @@ input {
     width: 1040px;
     height: 50px;
     left: 60px;
-    top: 1402px;
+    top: 1520px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -447,7 +447,7 @@ input {
     width: 443px;
     height: 18px;
     left: 60px;
-    top: 1502px;
+    top: 1620px;
 
     font-family: 'Exo 2';
     font-style: normal;
@@ -462,7 +462,7 @@ input {
     width: 400px;
     height: 50px;
     left: 60px;
-    top: 1588px;
+    top: 1706px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -473,7 +473,7 @@ input {
     width: 590px;
     height: 50px;
     left: 510px;
-    top: 1588px;
+    top: 1706px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -484,7 +484,7 @@ input {
     width: 310px;
     height: 18px;
     left: 60px;
-    top: 1688px;
+    top: 1816px;
 
     font-family: 'Exo 2';
     font-style: normal;
@@ -507,7 +507,7 @@ input {
     width: 650px;
     height: 50px;
     left: 60px;
-    top: 1769px;
+    top: 1887px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -518,7 +518,7 @@ input {
     width: 340px;
     height: 50px;
     left: 760px;
-    top: 1769px;
+    top: 1887px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -529,7 +529,7 @@ input {
     width: 1040px;
     height: 100px;
     left: 60px;
-    top: 1887px;
+    top: 2015px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -540,7 +540,7 @@ input {
     width: 80px;
     height: 18px;
     left: 60px;
-    top: 2037px;
+    top: 2155px;
 
     font-family: 'Exo 2';
     font-style: normal;
@@ -558,7 +558,7 @@ input {
     width: 400px;
     height: 126px;
     margin-left: 590px;
-    top: 898px;
+    top: 1016px;
     background: #FFFFFF;
     box-shadow: 0px 6px 12px rgba(16, 71, 129, 0.1);
     border-radius: 10px;
@@ -592,7 +592,7 @@ input {
     width: 1040px;
     height: 50px;
     left: 60px;
-    top: 2123px;
+    top: 2241px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -603,7 +603,7 @@ input {
     width: 300px;
     height: 50px;
     left: 410px;
-    top: 2123px;
+    top: 2241px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -614,7 +614,7 @@ input {
     width: 340px;
     height: 50px;
     left: 760px;
-    top: 2123px;
+    top: 2241px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -625,7 +625,7 @@ input {
     width: 1040px;
     height: 50px;
     left: 60px;
-    top: 2241px;
+    top: 2359px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -642,7 +642,7 @@ input {
     width: 613px;
     height: 18px;
     left: 60px;
-    top: 2341px;
+    top: 2459px;
 
     font-family: 'Exo 2';
     font-style: normal;
@@ -660,7 +660,7 @@ input {
     width: 1040px;
     height: 50px;
     left: 60px;
-    top: 2389px;
+    top: 2507px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -672,7 +672,7 @@ input {
     width: 1040px;
     height: 50px;
     left: 60px;
-    top: 2469px;
+    top: 2587px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -831,7 +831,7 @@ input {
     width: 300px;
     height: 50px;
     left: 60px;
-    top: 2253px;
+    top: 2371px;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -841,7 +841,7 @@ input {
     width: 300px;
     height: 50px;
     left: 410px;
-    top: 2253px;
+    top: 2371px;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -851,7 +851,7 @@ input {
     width: 340px;
     height: 50px;
     left: 760px;
-    top: 2253px;
+    top: 2371px;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -861,7 +861,7 @@ input {
     width: 1040px;
     height: 50px;
     left: 60px;
-    top: 2371px;
+    top: 2489px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -872,7 +872,7 @@ input {
     width: 590px;
     height: 50px;
     left: 510px;
-    top: 2489px;
+    top: 2607px;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -882,7 +882,7 @@ input {
     width: 400px;
     height: 50px;
     left: 60px;
-    top: 2489px;
+    top: 2607px;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -892,7 +892,7 @@ input {
     width: 300px;
     height: 50px;
     left: 410px;
-    top: 2489px;
+    top: 2607px;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -902,7 +902,7 @@ input {
     width: 300px;
     height: 50px;
     left: 60px;
-    top: 2489px;
+    top: 2607px;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -912,7 +912,7 @@ input {
     width: 340px;
     height: 50px;
     left: 760px;
-    top: 2489px;
+    top: 2607px;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -922,7 +922,7 @@ input {
     width: 250px;
     height: 50px;
     left: 60px;
-    top: 2470px;
+    top: 2588px;
     background: #BAF3FC;
     border-radius: 10px;
     border: 1px solid #00345F;
@@ -940,7 +940,7 @@ input {
     width: 368px;
     height: 18px;
     left: 60px;
-    top: 2550px;
+    top: 2668px;
 
     font-family: 'Exo 2';
     font-style: normal;
@@ -955,7 +955,7 @@ input {
     width: 425px;
     height: 105px;
     left: 60px;
-    top: 2597px;
+    top: 2715px;
 
     font-family: 'Exo 2';
     font-style: normal;
@@ -970,7 +970,7 @@ input {
     width: 94px;
     height: 94px;
     left: 600px;
-    top: 2600px;
+    top: 2718px;
 }
 
 .prek_dok {
@@ -978,7 +978,7 @@ input {
     width: 194px;
     height: 18px;
     left: 709px;
-    top: 2615px;
+    top: 2733px;
     cursor: pointer;
     font-family: 'Exo 2';
     font-style: normal;
@@ -997,7 +997,7 @@ input {
     position: absolute;
     width: 520px;
     height: 401px;
-    margin-top: 2700px;
+    margin-top: 2818px;
     margin-left: 370px;
     background: #FFFFFF;
     box-shadow: 0 100px 80px rgba(0, 0, 0, 0.07), 0 64.8148px 46.8519px rgba(0, 0, 0, 0.0531481), 0 38.5185px 25.4815px rgba(0, 0, 0, 0.0425185), 0 20px 13px rgba(0, 0, 0, 0.035), 0 8.14815px 6.51852px rgba(0, 0, 0, 0.0274815), 0 1.85185px 3.14815px rgba(0, 0, 0, 0.0168519);
@@ -1090,7 +1090,7 @@ input {
 .povestka_drop {
     position: absolute;
     left: 60px;
-    top: 2850px;
+    top: 2968px;
 }
 
 .povestka_drop input {
@@ -1160,7 +1160,7 @@ input {
     width: 196px;
     height: 18px;
     left: 60px;
-    top: 2700px;
+    top: 2818px;
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 600;
@@ -1174,7 +1174,7 @@ input {
     width: 250px;
     height: 50px;
     left: 60px;
-    top: 2740px;
+    top: 2858px;
     background: #BAF3FC;
     border-radius: 10px;
     font-family: 'Exo 2';
@@ -1192,7 +1192,7 @@ input {
     width: 219px;
     height: 18px;
     left: 60px;
-    top: 2990px;
+    top: 3108px;
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 600;
@@ -1206,7 +1206,7 @@ input {
     width: 700px;
     height: 50px;
     left: 60px;
-    top: 2900px;
+    top: 3018px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -1217,7 +1217,7 @@ input {
     width: 250px;
     height: 50px;
     left: 850px;
-    top: 2900px;
+    top: 3018px;
     background: #BAF3FC;
     border-radius: 10px;
     font-family: 'Exo 2';
@@ -1234,7 +1234,7 @@ input {
     position: absolute;
     width: 1040px;
     left: 60px;
-    top: 2990px;
+    top: 3108px;
     background: #BAF3FC;
     font-family: 'Exo 2';
     font-style: normal;
@@ -1259,7 +1259,7 @@ input {
     width: 1040px;
     height: 126px;
     margin-left: 140px;
-    top: 2469px;
+    top: 2587px;
     background: #FFFFFF;
     box-shadow: 0 6px 12px rgba(16, 71, 129, 0.1);
     border-radius: 10px;
@@ -1293,7 +1293,7 @@ input {
     width: 439px;
     height: 55px;
     left: 116px;
-    top: 3090px;
+    top: 3208px;
 
     background: #37DCF5;
     border-radius: 10px;
@@ -1317,7 +1317,7 @@ input {
     width: 439px;
     height: 55px;
     left: 605px;
-    top: 3090px;
+    top: 3208px;
 
     background: #BAF3FC;
     border-radius: 10px;
@@ -1334,11 +1334,11 @@ input {
 }
 
 .base {
-    margin-top: 3500px;
+    margin-top: 3618px;
 }
 
 .base_bg {
-    margin-top: 3500px;
+    margin-top: 3618px;
 }
 
 .familOrg {
@@ -1346,7 +1346,7 @@ input {
     width: 300px;
     height: 50px;
     left: 60px;
-    top: 756px;
+    top: 874px;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -1356,7 +1356,7 @@ input {
     width: 300px;
     height: 50px;
     left: 410px;
-    top: 756px;
+    top: 874px;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -1366,7 +1366,7 @@ input {
     width: 340px;
     height: 50px;
     left: 760px;
-    top: 756px;
+    top: 874px;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -1376,7 +1376,7 @@ input {
     width: 1040px;
     height: 50px;
     left: 60px;
-    top: 874px;
+    top: 992px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -1387,7 +1387,7 @@ input {
     width: 590px;
     height: 50px;
     left: 510px;
-    top: 992px;
+    top: 1110px;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -1397,7 +1397,7 @@ input {
     width: 400px;
     height: 50px;
     left: 60px;
-    top: 992px;
+    top: 1110px;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -1407,7 +1407,7 @@ input {
     width: 300px;
     height: 50px;
     left: 60px;
-    top: 756px;
+    top: 874px;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -1417,7 +1417,7 @@ input {
     width: 300px;
     height: 50px;
     left: 410px;
-    top: 756px;
+    top: 874px;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -1427,7 +1427,7 @@ input {
     width: 340px;
     height: 50px;
     left: 760px;
-    top: 756px;
+    top: 874px;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -1437,7 +1437,7 @@ input {
     width: 1040px;
     height: 50px;
     left: 60px;
-    top: 874px;
+    top: 992px;
 
     background: #FFFFFF;
     border-radius: 10px;
@@ -1448,7 +1448,7 @@ input {
     width: 300px;
     height: 50px;
     left: 410px;
-    top: 992px;
+    top: 1110px;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -1458,7 +1458,7 @@ input {
     width: 300px;
     height: 50px;
     left: 60px;
-    top: 992px;
+    top: 1110px;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -1468,7 +1468,7 @@ input {
     width: 340px;
     height: 50px;
     left: 760px;
-    top: 992px;
+    top: 1110px;
     background: #FFFFFF;
     border-radius: 10px;
 }
@@ -1478,11 +1478,41 @@ input {
     width: 340px;
     height: 50px;
     left: 760px;
-    top: 992px;
+    top: 1110px;
     background: #FFFFFF;
     border-radius: 10px;
 }
 
 .under_org {
     position: absolute;
+}
+
+.demand{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: 60px;
+    position: absolute;
+    top: 216px;
+}
+
+.demand input{
+    width: 1040px;
+    height: 50px;
+    border-radius: 10px;
+    border-color: #FFFFFF;
+    padding: 17px;
+}
+
+.demand input:focus{
+    outline: none;
+}
+
+.demand label{
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 100%;
+    color: #406C9A;
 }

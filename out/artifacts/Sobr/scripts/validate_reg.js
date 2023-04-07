@@ -163,9 +163,7 @@ function Validate_reg () {
 
             $.post("/EmailSender", inputData, function (data) {
                 if (data === "") {
-                    alert("Вы успешно зарегестрированы!");
                 } else {
-                    alert(data);
                 }
             });
 

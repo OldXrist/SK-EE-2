@@ -9,6 +9,10 @@
     <file url="file://$PROJECT_DIR$/src/main/java/admin/servlets/GetInvoiceListMembers.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/admin/servlets/GetInvoiceListOrganizers.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/admin/servlets/GetMeetingsList.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/bbb/CreateMeetingServlet.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/bbb/JoinMeetingServlet.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/bbb/MeetingStatus.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/bbb/VotingRights.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/email/EmailSender.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/MAINServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/cards/ApplicationEditServlet.java" dialect="GenericSQL" />
@@ -19,34 +23,58 @@
     <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/cards/MREEServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/cards/ORGCARDServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/cards/ORGServlet.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/cards/ReestrServlet.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/cards/SearchMeetingServlet.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/cards/SortMeetingsServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/cards/ZAPPRServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/lk/ApplicationBtnServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/lk/ApplicationUpdServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/lk/CHECKTYPEServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/lk/CheckApplicationServlet.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/lk/DelDraftOrgServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/lk/EmailCheckServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/lk/LKAUServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/lk/LKFLServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/lk/LKIPServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/lk/LKQLServlet.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/lk/OrgDraftServlet.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/id/check/servlets/lk/UchDraftServlet.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/journal/create/checkForJournal.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/journal/create/getUchData.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/journal/create/journalCreateServlet.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/journal/create/journalUpdateServlet.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/journal/create/journalUtils.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/login/servlets/AUTHServlet.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/pipa_die/Servlet_orguch.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/pipa_die/Servlet_pagination.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/pipa_die/Servlet_sobr_kol.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/pipa_die/Servlet_uchorg.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/reg/servlets/AUServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/reg/servlets/FLServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/reg/servlets/IPServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/reg/servlets/ULServlet.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/reg/servlets/getUserId.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/ActivateDraftServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/AnswersCheckServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/CancelServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/CheckSobrStatusServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/DRAFTSevlet.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/DocsUploadServlet.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/DraftDataOrgServlet.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/DraftDataServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/GetEmailServlet.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/GetMeetingTypeServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/MailServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/NEWAPPServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/OServlet.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/ProtocolCheckServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/ProtocolCreateServlet.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/ProtocolUpdateServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/QServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/QuestionsServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/RegDocsServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/SendAnswersServlet.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/SobrDocsUploadServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/TimeUpdateServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/ZAPP1Servlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/sobr/servlets/ZAPPServlet.java" dialect="GenericSQL" />

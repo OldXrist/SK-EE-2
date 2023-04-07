@@ -196,7 +196,8 @@ function Create() {
             ogrn: document.getElementById("ogrn3").value,
             status: status,
             draft: isDraft.get('draft'),
-            typeSobr: typeSobr
+            typeSobr: typeSobr,
+            demandSum: document.getElementById('demandSum').value
         }
 
         console.log(sobr)
@@ -267,7 +268,8 @@ function Create() {
             snils: document.getElementById("snils").value,
             status: status,
             draft: isDraft.get('draft'),
-            typeSobr: typeSobr
+            typeSobr: typeSobr,
+            demandSum: document.getElementById('demandSum').value
         }
 
         console.log(sobr)
@@ -339,7 +341,8 @@ function Create() {
             ogrnip: document.getElementById("ogrnip").value,
             status: status,
             draft: isDraft.get('draft'),
-            typeSobr: typeSobr
+            typeSobr: typeSobr,
+            demandSum: document.getElementById('demandSum').value
         }
 
         console.log(sobr)
@@ -456,7 +459,8 @@ function CreateDraft() {
             inn: document.getElementById("unn4").value,
             ogrn: document.getElementById("ogrn3").value,
             status: status,
-            typeSobr: typeSobr
+            typeSobr: typeSobr,
+            demandSum: document.getElementById('demandSum').value
         }
 
         console.log(sobr)
@@ -498,7 +502,8 @@ function CreateDraft() {
             inn: document.getElementById("inn").value,
             snils: document.getElementById("snils").value,
             status: status,
-            typeSobr: typeSobr
+            typeSobr: typeSobr,
+            demandSum: document.getElementById('demandSum').value
         }
 
         console.log(sobr)
@@ -540,7 +545,8 @@ function CreateDraft() {
             snils: document.getElementById("snils2").value,
             ogrnip: document.getElementById("ogrnip").value,
             status: status,
-            typeSobr: typeSobr
+            typeSobr: typeSobr,
+            demandSum: document.getElementById('demandSum').value
         }
 
         console.log(sobr)
@@ -582,7 +588,8 @@ function CreateDraft() {
             snils: '',
             ogrnip: '',
             status: status,
-            typeSobr: typeSobr
+            typeSobr: typeSobr,
+            demandSum: document.getElementById('demandSum').value
         }
 
         console.log(sobr)

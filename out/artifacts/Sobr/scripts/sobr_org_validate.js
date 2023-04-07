@@ -16,6 +16,10 @@ function Validate () {
         document.getElementById("povestka").style.borderColor = 'red';
         k += 1;
     }
+    if (document.getElementById("demandSum").value.length === 0) {
+        document.getElementById("demandSum").style.borderColor = 'red';
+        k += 1;
+    }
     if (document.getElementById("date_z").value.length === 0 ||
         document.getElementById("date_z").value.length !== 10) {
         document.getElementById("date_z").style.borderColor = 'red';

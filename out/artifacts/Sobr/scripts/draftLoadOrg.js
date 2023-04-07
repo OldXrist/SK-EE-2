@@ -42,6 +42,7 @@ if (draftLinkOrg.includes('draft')){
 
         fillDate(d[0], 'date_sobr', 'time')
         fill(d[1], 'povestka')
+        fill(d[23], 'demandSum')
         fillDate(d[2], 'date_z', 'time_z')
         fillDate(d[3], 'date_z2', 'time_z2')
         fillDate(d[4], 'date_b', 'time_b')
