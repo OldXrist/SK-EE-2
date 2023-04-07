@@ -70,9 +70,9 @@
         <div class="stats">
             <ul>
                 <li class="stats_head">Общая статистика</li>
-                <li class="stats_item">Участников: <b>0</b></li>
-                <li class="stats_item">Организаторов: <b>0</b></li>
-                <li class="stats_item">Проведено собраний: <b>0</b></li>
+                <li class="stats_item">Участников: <b id="elemo">0</b></li>
+                <li class="stats_item">Организаторов: <b id="elemo2">0</b></li>
+                <li class="stats_item">Проведено собраний: <b id="sobrkol">0</b></li>
                 <li class="stats_item"><a  class="stats_btn"><b>Найти</b><img src="img/lupa.svg" /></a></li>
             </ul>
         </div>
@@ -96,8 +96,8 @@
             </ul>
             <ul class="form_gr3">
                 <li class="form_text">Даты приема заявок</li>
-                <li class="date_f"><a>с</a><input type="text" placeholder="00.00.0000" class="placeh" id="searchFrom"/></li>
-                <li class="date_f"><a>по</a><input type="text" placeholder="00.00.0000" class="placeh" id="searchUntil"/></li>
+                <li class="date_f"><a>с</a><input type="date" placeholder="00.00.0000" class="placeh" id="searchFrom"/></li>
+                <li class="date_f"><a>по</a><input type="date" placeholder="00.00.0000" class="placeh" id="searchUntil"/></li>
             </ul>
             <ul class="form_gr4 status">
                 <li class="form_text">Статус</li>
@@ -149,6 +149,9 @@
 
 <script src="scripts/clock.js"></script>
 <script src="jquery/jquery.maskedinput.min.js"></script>
+<script src="scripts/sobr_kol.js"></script>
+<script src="scripts/org-uch.js"></script>
+<script src="scripts/uch-org.js"></script>
 <script src="scripts/index_sobr_redirect.js"></script>
 <script src="scripts/index2.js"></script>
 <script src="scripts/get_reestr_index.js"></script>

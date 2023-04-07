@@ -227,10 +227,10 @@ $(document).ready(function(){
         $(".drop_arrw2").css("transform", "rotate(180deg)")
     });
 });
-$(document).ready(function() {
+/*$(document).ready(function() {
     $.mask.definitions['0'] = "[0-9]";
     $(".form_gr3 li input ").mask("00.00.0000");
-});
+});*/
 $(document).ready(function(){
     $(".form1").click(function(){
         $(".status li input").val("Не выбрано")
