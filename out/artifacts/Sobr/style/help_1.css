@@ -219,12 +219,8 @@
     color: #406C9A;
 }
 
-.base_bg {
-    margin-top: 1113px;
-}
-
-.base{
-    margin-top: 1113px;
+#footer {
+    margin-top: 1000px;
 }
 
 @media (min-width: 375px) and (max-width: 720px) {

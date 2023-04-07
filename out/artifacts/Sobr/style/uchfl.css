@@ -411,7 +411,7 @@ input:focus{
 
 .pwdConstraint{
     position: absolute;
-    left: 16%;
+    left: 23%;
     top: 1500px;
     padding: 20px 50px;
     display: flex;
@@ -962,16 +962,4 @@ a{
 
 #footer{
     margin-top: 2217px;
-}
-
-.base{
-    margin-top: 2217px;
-}
-
-.base_bg{
-    margin-top: 2217px;
-}
-
-.menu{
-    top: 0;
 }
