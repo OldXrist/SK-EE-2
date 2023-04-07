@@ -13,10 +13,7 @@ $.get('/QServlet', send, function (data){
             "                <li style='width: 1040px'>" + d[i] + "</li>\n" +
             "            </ul>\n"
 
-        $(".base").animate({
-            marginTop: '+=50px'
-        }, 0);
-        $(".base_bg").animate({
+        $("#footer").animate({
             marginTop: '+=50px'
         }, 0);
     }
