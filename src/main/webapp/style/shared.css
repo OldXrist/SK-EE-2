@@ -2,6 +2,10 @@ body{
   overflow-x: hidden;
 }
 
+#footer{
+  width: 100%;
+}
+
 .ep{
   padding-bottom: 50px;
 }
@@ -13,22 +17,9 @@ body{
   padding-right: 75px;
 }
 
-.menu {
-  position: absolute;
-  width: 100%;
-  background: linear-gradient(90.63deg, #67C8D4 6%, #004781 45.78%);
-  height: 82px;
-  padding: 0;
-  z-index: 999;
-  overflow: visible;
-  text-align: center;
-  font-family: 'Exo 2';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 136.5%;
-  color: #FFFFFF;
-  top: 0;
+#menu{
+  position: relative;
+  z-index: 1000;
 }
 
 #pages{
@@ -101,8 +92,11 @@ body{
   text-decoration: none;
 }
 
-.base {
+#footer{
+  margin-top: 1664px;
+}
 
+.base {
   position: absolute;
   width: 100%;
   height: 298px;

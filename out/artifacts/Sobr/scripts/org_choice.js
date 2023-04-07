@@ -59,10 +59,7 @@ $("#fl").click(function (){
         $(".under").animate({
             top: "+=344px"
         })
-        $(".base").animate({
-            top: "+=344px"
-        })
-        $(".base_bg").animate({
+        $("#footer").animate({
             top: "+=344px"
         })
         $(".dolg_drop").slideUp()
@@ -78,10 +75,7 @@ $("#fl").click(function (){
         $(".under").animate({
             top: "-=118px"
         })
-        $(".base").animate({
-            top: "-=118px"
-        })
-        $(".base_bg").animate({
+        $("#footer").animate({
             top: "-=118px"
         })
         $("#fl_form").slideDown()
@@ -111,10 +105,7 @@ $("#ip").click(function (){
         $(".under").animate({
             top: "+=344px"
         })
-        $(".base").animate({
-            top: "+=344px"
-        })
-        $(".base_bg").animate({
+        $("#footer").animate({
             top: "+=344px"
         })
         $(".dolg_drop").slideUp()
@@ -129,10 +120,7 @@ $("#ip").click(function (){
         $(".under").animate({
             top: "-=118px"
         })
-        $(".base").animate({
-            top: "-=118px"
-        })
-        $(".base_bg").animate({
+        $("#footer").animate({
             top: "-=118px"
         })
         $("#ip_form").slideDown()
@@ -162,10 +150,7 @@ $("#ql").click(function (){
         $(".under").animate({
             top: "+=462px"
         })
-        $(".base").animate({
-            top: "+=462px"
-        })
-        $(".base_bg").animate({
+        $("#footer").animate({
             top: "+=462px"
         })
         $(".dolg_drop").slideUp()
@@ -180,10 +165,7 @@ $("#ql").click(function (){
         $(".under").animate({
             top: "+=118px"
         })
-        $(".base").animate({
-            top: "+=118px"
-        })
-        $(".base_bg").animate({
+        $("#footer").animate({
             top: "+=118px"
         })
         $("#ql_form").slideDown()

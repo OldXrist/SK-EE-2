@@ -1,12 +1,3 @@
-$(document).ready(function (){
-    $('.base').animate({
-        marginTop: '800px'
-    })
-    $('.base_bg').animate({
-        marginTop: '800px'
-    })
-})
-
 let bull = {}
 
 function VoteDisable(id){
@@ -66,10 +57,7 @@ $.get('/QServlet', send, function (data){
             "                </tr>\n" +
             "            </table>"
 
-        $(".base").animate({
-            marginTop: '+=180px'
-        }, 0);
-        $(".base_bg").animate({
+        $("#footer").animate({
             marginTop: '+=180px'
         }, 0);
     }
@@ -96,10 +84,7 @@ $.get('/QServlet', send, function (data){
             for (let i = 0; i < 10; i++) {
                 if (document.getElementById("tbl_" + i) !== null) {
                     document.getElementById("tbl_" + i).remove()
-                    $(".base").animate({
-                        marginTop: '-=180px'
-                    }, 0);
-                    $(".base_bg").animate({
+                    $("#footer").animate({
                         marginTop: '-=180px'
                     }, 0);
                     document.getElementsByClassName("qText")[i].style.width = '1040px'
@@ -111,10 +96,7 @@ $.get('/QServlet', send, function (data){
             document.getElementById('ep').innerHTML +=
                 "<p class=\"attention\">Внимание!</p>\n" +
                 "<h6>Для голосования необходимо войти в личный<br> кабинет участника с правом голоса </h6>"
-            $(".base").animate({
-                marginTop: '+=110px'
-            }, 0);
-            $(".base_bg").animate({
+            $("#footer").animate({
                 marginTop: '+=110px'
             }, 0);
             checkMeetType()

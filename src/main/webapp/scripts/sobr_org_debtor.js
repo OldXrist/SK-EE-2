@@ -32,10 +32,7 @@ $.get("/DEBTServlet", send, function (data) {
             "                    <li>ОГРН</li>\n" +
             "                    <li><input type=\"text\" value="+d[13]+" class=\"ogrn\" disabled/></li>\n" +
             "                </ul>"
-        $('.base').animate({
-            marginTop: '+=50px'
-        });
-        $('.base_bg').animate({
+        $('#footer').animate({
             marginTop: '+=50px'
         });
     } else if (roleDebt.includes("Физическое")){

@@ -30,10 +30,7 @@ function qDelete(id) {
     $(".table_fio").animate({
         top: "-=50px"
     });
-    $(".base").animate({
-        top: "-=50px"
-    });
-    $(".base_bg").animate({
+    $("#footer").animate({
         top: "-=50px"
     });
     $(".table_org").animate({
@@ -66,10 +63,7 @@ function qAdd() {
         $(".table_fio").animate({
             top: "+=50px"
         });
-        $(".base").animate({
-            top: "+=50px"
-        });
-        $(".base_bg").animate({
+        $("#footer").animate({
             top: "+=50px"
         });
         $(".table_org").animate({
@@ -98,10 +92,7 @@ function zmail() {
         $(".knopka5").animate({
             top: "+=50px"
         });
-        $(".base").animate({
-            top: "+=50px"
-        });
-        $(".base_bg").animate({
+        $("#footer").animate({
             top: "+=50px"
         });
         $(".table_org").animate({

@@ -9,12 +9,8 @@
     background-attachment: fixed;
 }
 
-.base_bg{
-    margin-top: 788px;
-}
-
-.base{
-    margin-top: 788px;
+#footer{
+    margin-top: 706px;
 }
 
 h2{
@@ -32,8 +28,7 @@ h2{
 
 .sign_block{
     position: absolute;
-    padding-top: 50px;
-    padding-left: 60px;
+    padding: 50px 55px 0 60px;
     list-style: none;
     width: 660px;
     height: 443px;
@@ -81,7 +76,7 @@ h2{
     color: #104781;
 }
 
-p{
+.sign_block p{
     margin-bottom: 10px;
     position: relative;
     width: 318px;
@@ -99,7 +94,7 @@ p{
     list-style: none;
     width: 200px;
     height: 55px;
-    margin-left: 310px;
+    float: right;
     margin-top: 10px;
     background-color: #37DCF5;
     border-radius: 10px;
@@ -113,7 +108,6 @@ p{
     overflow: visible;
     color: #00345F;
     border: none;
-    padding-top: 18px;
     padding-right: 15px;
 }
 

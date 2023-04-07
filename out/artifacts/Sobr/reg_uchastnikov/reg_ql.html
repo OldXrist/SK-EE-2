@@ -12,17 +12,8 @@
     <meta property="og:title" content="Собрание Кредиторов">
 </head>
 <body>
-    <div class="menu">
-        <ul>
-            <li class="logo"><a href="../index.html"><img src="/img/Logo.svg" /></a></li>
-            <li class="nav_item"><a href="../index.html">Главная</a></li>
-            <li class="nav_item"><a href="../reestr.html">Реестр собраний</a></li>
-            <li class="nav_item"><a href="../help/help_1.html">Помощь</a></li>
-            <li class="nav_item"><a href="../help/contacts.html">Контакты</a></li>
-            <li class="nav_item"><a href="../login.html"><button class="nav_btn">Войти</button></a></li>
-            <li class="nav_item"><a href="../signin.html">Зарегистрироваться</a></li>
-        </ul>
-    </div>
+
+<div id="menu"></div>
 
     <div class="container">
     <div class="ogl">
@@ -114,7 +105,10 @@
             <input type="email" class="forms3" id="email_2" placeholder="Повторите адрес электронной почты" onfocus="White(this.id)">
         </div>
         <div class="pass1">
-            <label for="pass" class="txt_obsh">Придумайте пароль*</label>
+            <label for="pass" class="txt_obsh">
+                Придумайте пароль*
+                <img src="../img/tooltip.svg" id="questionMark"/>
+            </label>
             <input type="password" class="forms" id="pass" placeholder="********" onfocus="White(this.id)">
         </div>
         <div class="pass2">
@@ -128,7 +122,7 @@
             <td>Загруженные файлы</td>
         </tr>
     </table>
-    <button type="button" class="knopka" onclick="Validate_reg()">Сохранить и подтвердить e-mail</button>
+    <button type="button" class="knopka" onclick="emailCheck()">Сохранить и подтвердить e-mail</button>
 </div>
 
                 <p class="prikrepit-dokument pointer">Добавить документ</p>
@@ -160,31 +154,22 @@
             <button id="gotIt" type="button" href="../index.html">Понятно</button>
         </div>
 </div>
-    </div>
-    <div class="table">
-        <div class="table_item"></div>
+
+
+    <div class="pwdConstraint">
+        <h1>Пароль должен содержать:</h1>
+        <p>
+            -хотя бы 8 символов
+            <br>-хотя бы одну цифру
+            <br>-хотя бы одну большую букву
+            <br>-хотя ты одну строчную букву
+        </p>
     </div>
 
-    <div class="container">
-        <div class="content">
-            <div class="base_bg"></div>
-            <div class="base">
-                <ul>
-                    <li class="base_logo"><a href="../index.html"><img src="../img/Logo.svg" /></a></li>
-                    <li class="base_item1"><a></a></li>
-                </ul>
-                <ul class="base_links">
-                    <li class="base_item2"><a class="footer_txt" href="../index.html" >Главная</a></li>
-                    <li class="base_item2"><a class="footer_txt" href="../reestr.html">Реестр собраний</a></li>
-                    <li class="base_item2"><a class="footer_txt" href="../help/help_1.html">Помощь</a></li>
-                    <li class="base_item2"><a class="footer_txt" href="../help/contacts.html">Контакты</a></li>
-                </ul>
-                <p class="copyright">© 2011-2022 Оператор торговой площадки - ООО «ТендерСтандарт». Все права защищены.</p>
-            </div>
-        </div>
-    </div>
+<div id="footer"></div>
 
     <script src="../jquery/jquery-3.6.0.js"></script>
+    <script src="../scripts/public_pages_header.js"></script>
     <script src="../scripts/regDocsUpload.js"></script>
     <script src="../scripts/validate_reg.js"></script>
     <script src="../jquery/jquery.maskedinput.min.js"></script>

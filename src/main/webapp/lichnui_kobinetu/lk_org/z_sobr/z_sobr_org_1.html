@@ -12,19 +12,8 @@
     <meta property="og:title" content="Собрание Кредиторов">
 </head>
 <body>
-<div class="menu">
-    <ul>
-        <li class="logo"><a href="../../../index.html"><img src="../../../img/Logo.svg" /></a></li>
-        <li class="nav_item"><a href="../../../index.html">Главная</a></li>
-        <li class="nav_item"><a href="../../../reestr.html">Реестр собраний</a></li>
-        <li class="nav_item"><a href="../../../help/help_1.html">Помощь</a></li>
-        <li class="nav_item"><a href="../../../help/contacts.html">Контакты</a></li>
-        <li class="nav_item" ><a href="/FILTERServlet"><p class="nav_login" id="lk"></p></a></li>
-        <li class="nav_item"><a href="../../../signin.html"><span id="clock" style="color:#ffffff;"></span></a></li>
-        <li class="nav_item logout"><a href="/LOGOUTServlet"><img id="logout_btn" src="../../../img/logout%201%20(Traced).png" /></a></li>
-    </ul>
-</div>
 
+<div id="menu"></div>
 
 <div class="container">
     <div class="ogl">
@@ -44,11 +33,11 @@
         <p class="obshie_dan">Общие данные о собрании</p>
         <div class="data_vrem">
             <label for="date_sobr" class="txt_obsh">Дата и время собрания</label>
-            <input type="date" class="forms5" id="date_sobr" placeholder="01.01.0000" onfocus="White(this.id)">
+            <input type="text" class="forms5" id="date_sobr" placeholder="01.01.0000" onfocus="White(this.id)">
         </div>
         <div class="time">
             <label for="time" class="txt_obsh"></label>
-            <input type="time" class="forms6" id="time" placeholder="00:00" onfocus="White(this.id)">
+            <input type="text" class="forms6" id="time" placeholder="00:00" onfocus="White(this.id)">
         </div>
         <div class="povestka_dnia">
             <label for="povestka" class="txt_obsh">Повестка дня</label>
@@ -63,43 +52,43 @@
 
         <div class="data_vrem2">
             <label for="date_z" class="txt_obsh">Начало предоставления заявок на участие*</label>
-            <input type="date" class="forms5" id="date_z" placeholder="01.01.0000" onfocus="White(this.id)">
+            <input type="text" class="forms5" id="date_z" placeholder="01.01.0000" onfocus="White(this.id)">
         </div>
         <div class="time2">
             <label for="time_z" class="txt_obsh"></label>
-            <input type="time" class="forms6" id="time_z" placeholder="00:00" onfocus="White(this.id)">
+            <input type="text" class="forms6" id="time_z" placeholder="00:00" onfocus="White(this.id)">
         </div>
         <div class="data_vrem3">
             <label for="date_z2" class="txt_obsh">Окончание предоставления заявок на участие*</label>
-            <input type="date" class="forms5" id="date_z2" placeholder="01.01.0000" onfocus="White(this.id)">
+            <input type="text" class="forms5" id="date_z2" placeholder="01.01.0000" onfocus="White(this.id)">
         </div>
         <div class="time3">
             <label for="time_z2" class="txt_obsh"></label>
-            <input type="time" class="forms6" id="time_z2" placeholder="00:00" onfocus="White(this.id)">
+            <input type="text" class="forms6" id="time_z2" placeholder="00:00" onfocus="White(this.id)">
         </div>
         <div class="data_vrem4">
-            <label for="date_b" class="txt_obsh">Начало приема бюллетеней*</label>
-            <input type="date" class="forms5" id="date_b" placeholder="01.01.0000" onfocus="White(this.id)">
+            <label for="date_b" class="txt_obsh" id="timeErr">Начало приема бюллетеней*</label>
+            <input type="text" class="forms5" id="date_b" placeholder="01.01.0000" onfocus="White(this.id)">
         </div>
         <div class="time4">
             <label for="time_b" class="txt_obsh"></label>
-            <input type="time" class="forms6" id="time_b" placeholder="00:00" onfocus="White(this.id)">
+            <input type="text" class="forms6" id="time_b" placeholder="00:00" onfocus="White(this.id)">
         </div>
         <div class="data_vrem5">
             <label for="date_b2" class="txt_obsh">Окончание приема бюллетеней*</label>
-            <input type="date" class="forms5" id="date_b2" placeholder="01.01.0000" onfocus="White(this.id)">
+            <input type="text" class="forms5" id="date_b2" placeholder="01.01.0000" onfocus="White(this.id)">
         </div>
         <div class="time5">
             <label for="time_b2" class="txt_obsh"></label>
-            <input type="time" class="forms6" id="time_b2" placeholder="00:00" onfocus="White(this.id)">
+            <input type="text" class="forms6" id="time_b2" placeholder="00:00" onfocus="White(this.id)">
         </div>
         <div class="data_vrem6">
             <label for="date_p" class="txt_obsh">Дата подписания протокола собрания*</label>
-            <input type="date" class="forms5" id="date_p" placeholder="01.01.0000" onfocus="White(this.id)">
+            <input type="text" class="forms5" id="date_p" placeholder="01.01.0000" onfocus="White(this.id)">
         </div>
         <div class="time6">
             <label for="time_p" class="txt_obsh"></label>
-            <input type="time" class="forms6" id="time_p" placeholder="00:00" onfocus="White(this.id)">
+            <input type="text" class="forms6" id="time_p" placeholder="00:00" onfocus="White(this.id)">
         </div>
         <div class="obem_sobr">
             <label for="participants" class="txt_obsh">Общее количество участников</label>
@@ -120,7 +109,7 @@
             </div>
             <div class="data_razm">
                 <label for="date_razm" class="txt_obsh">Дата размещения сообщения о публикации торгов на сайте ЕФРСБ*</label>
-                <input type="date" class="forms2" id="date_razm" placeholder="01.01.0000" onfocus="White(this.id)" disabled>
+                <input type="text" class="forms2" id="date_razm" placeholder="01.01.0000" onfocus="White(this.id)" disabled>
             </div>
             <div class="telefon">
                 <label for="phone" class="txt_obsh">Телефон*</label>
@@ -312,28 +301,20 @@
         <p>Ваша заявка на проведение собрания успешно<br>отправлена на проверку. Информация о<br>результатах проверки придет Вам на<br>электронную почту</p>
     </div>
 
-
-
-
-    <div class="container">
-        <div class="content">
-            <div class="base_bg"></div>
-            <div class="base">
-                <ul>
-                    <li class="base_logo"><a href="../../../index.html"><img src="../../../img/Logo.svg" /></a></li>
-                    <li class="base_item1"><a>Выйти</a></li>
-                </ul>
-                <ul class="base_links">
-                    <li class="base_item2"><a class="footer_txt" href="../../../index.html" >Главная</a></li>
-                    <li class="base_item2"><a class="footer_txt" href="../../../reestr.html">Реестр собраний</a></li>
-                    <li class="base_item2"><a class="footer_txt" href="../../../help/help_1.html">Помощь</a></li>
-                    <li class="base_item2"><a class="footer_txt" href="../../../help/contacts.html">Контакты</a></li>
-                </ul>
-                <p class="copyright">© 2011-2022 Оператор торговой площадки - ООО «ТендерСтандарт». Все права защищены.</p>
-            </div>
-        </div>
+    <div class="timeError">
+        <img id="timeErrCross" src="/img/cross.svg"/>
+        <h1>Ошибка ввода</h1>
+        <p>
+            От момента окончания предоставления
+            <br>заявок на участие до момента начала
+            <br>приема бюллетеней промежуток времени
+            <br>должен составлять не менее 1 часа!
+        </p>
     </div>
 </div>
+
+<div id="footer"></div>
+
 <script>
     setInterval(function () {
         var now = new Date();
@@ -361,19 +342,19 @@
 <script>
     $(document).ready(function (){
         $.mask.definitions['0'] = "[0-9]"
-        //$("#date_sobr").mask("00.00.0000")
-        //$("#time").mask("00:00")
-        //$("#date_z").mask("00.00.0000")
-        //$("#time_z").mask("00:00")
-        //$("#date_z2").mask("00.00.0000")
-        //$("#time_z2").mask("00:00")
-        //$("#date_b").mask("00.00.0000")
-        /*$("#time_b").mask("00:00")
+        $("#date_sobr").mask("00.00.0000")
+        $("#time").mask("00:00")
+        $("#date_z").mask("00.00.0000")
+        $("#time_z").mask("00:00")
+        $("#date_z2").mask("00.00.0000")
+        $("#time_z2").mask("00:00")
+        $("#date_b").mask("00.00.0000")
+        $("#time_b").mask("00:00")
         $("#date_b2").mask("00.00.0000")
         $("#time_b2").mask("00:00")
         $("#date_p").mask("00.00.0000")
         $("#time_p").mask("00:00")
-        $("#date_razm").mask("00.00.0000")*/
+        $("#date_razm").mask("00.00.0000")
         $("#unn4").mask("0000000000")
         $("#ogrn3").mask("0000000000000")
         $("#inn").mask("000000000000")

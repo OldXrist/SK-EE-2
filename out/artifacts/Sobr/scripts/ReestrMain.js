@@ -13,7 +13,9 @@ function goTO(page){
         if (document.getElementById('c' + next) !== null) {
             document.getElementById('c' + next).style.display = ''
         }
-        document.getElementById('c' + first).style.display = ''
+        if(document.getElementById('c' + first) !== null){
+            document.getElementById('c' + first).style.display = ''
+        }
     }
 }
 

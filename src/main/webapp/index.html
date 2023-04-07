@@ -12,6 +12,7 @@
     <meta property="og:image" content="https://sk.tenderstandart.ru/img/OG.png">
     <meta property="og:title" content="Собрание Кредиторов">
     <title>Собрание Кредиторов</title>
+    <script src="jquery/jquery-3.6.0.js"></script>
 </head>
 <body>
 
@@ -28,20 +29,7 @@
     </div>
 </div>
 
-<div class="menu">
-    <ul>
-        <li class="logo"><a href="index.html"><img src="img/Logo.svg" /></a></li>
-        <li class="nav_item"><a href="index.html">Главная</a></li>
-        <li class="nav_item"><a href="reestr.html">Реестр собраний</a></li>
-        <li class="nav_item"><a href="help/help_1.html">Помощь</a></li>
-        <li class="nav_item"><a href="help/contacts.html">Контакты</a></li>
-        <li class="nav_item nouser"><a href="login.html"> <button class="nav_btn">Войти</button></a></li>
-        <li class="nav_item nouser"><a href="signin.html">Зарегистрироваться</a></li>
-        <li class="nav_item" ><a href="FILTERServlet"><p class="nav_login" id="lk"></p></a></li>
-        <li class="nav_item"><a href="signin.html"><span id="clock" style="color:#ffffff;"></span></a></li>
-        <li class="nav_item logout"><a href="/LOGOUTServlet"><img id="logout_btn" src="img/logout%201%20(Traced).png" /></a></li>
-    </ul>
-</div>
+<div id="menu"></div>
 
 <div class="container">
     <div class="content">
@@ -82,9 +70,9 @@
         <div class="stats">
             <ul>
                 <li class="stats_head">Общая статистика</li>
-                <li class="stats_item">Участников: <b id="elemo">0</b></li>
-                <li class="stats_item">Организаторов: <b id="elemo2">0</b></li>
-                <li class="stats_item">Проведено собраний: <b id="sobrkol">0</b></li>
+                <li class="stats_item">Участников: <b>0</b></li>
+                <li class="stats_item">Организаторов: <b>0</b></li>
+                <li class="stats_item">Проведено собраний: <b>0</b></li>
                 <li class="stats_item"><a  class="stats_btn"><b>Найти</b><img src="img/lupa.svg" /></a></li>
             </ul>
         </div>
@@ -154,27 +142,12 @@
         <div class="table" id="table">
 
         </div>
-        <div class="base_bg"></div>
-        <div class="base">
-            <div class="base_logo"><a href="index.html"><img src="img/Logo.svg" /></a></div>
-            <div class="base_item1"><a href="#"></a></div>
-            <div>
-                <ul class="base_links">
-                    <li class="base_item2"><a class="footer_txt" href="index.html" >Главная</a></li>
-                    <li class="base_item2"><a class="footer_txt" href="reestr.html">Реестр собраний</a></li>
-                    <li class="base_item2"><a class="footer_txt" href="help/help_1.html">Помощь</a></li>
-                    <li class="base_item2"><a class="footer_txt" href="help/contacts.html">Контакты</a></li>
-                </ul>
-            </div>
-            <div class="copyright">© 2011-2022 Оператор торговой площадки - ООО «ТендерСтандарт». Все права защищены.</div>
-        </div>
     </div>
 </div>
-<script src="jquery/jquery-3.6.0.js"></script>
+
+<div id="footer"></div>
+
 <script src="scripts/clock.js"></script>
-<script src="scripts/sobr_kol.js"></script>
-<script src="scripts/org-uch.js"></script>
-<script src="scripts/uch-org.js"></script>
 <script src="jquery/jquery.maskedinput.min.js"></script>
 <script src="scripts/index_sobr_redirect.js"></script>
 <script src="scripts/index2.js"></script>

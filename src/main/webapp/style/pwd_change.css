@@ -9,12 +9,8 @@
     background-attachment: fixed;
 }
 
-.base_bg{
-    margin-top: 887px;
-}
-
-.base{
-    margin-top: 887px;
+#footer{
+    margin-top: 805px;
 }
 
 h2{
@@ -57,7 +53,7 @@ h2{
     height: 50px;
     background: #E6F5F7;
     border-radius: 10px;
-    border: none;
+    border: 2px solid #FFFFFF;
     padding: 17px;
     font-family: 'Exo 2';
     font-style: normal;

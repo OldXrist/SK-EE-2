@@ -26,20 +26,8 @@
   </div>
 </div>
 
-<div class="menu">
-  <ul>
-    <li class="logo"><a href="../index.html"><img src="../img/Logo.svg" /></a></li>
-    <li class="nav_item"><a href="../index.html">Главная</a></li>
-    <li class="nav_item"><a href="../reestr.html">Реестр собраний</a></li>
-    <li class="nav_item"><a href="../help/help_1.html">Помощь</a></li>
-    <li class="nav_item"><a href="../help/contacts.html">Контакты</a></li>
-    <li class="nav_item nouser"><a href="../login.html"> <button class="nav_btn">Войти</button></a></li>
-    <li class="nav_item nouser"><a href="../signin.html">Зарегистрироваться</a></li>
-    <li class="nav_item" ><a href="FILTERServlet"><p class="nav_login" id="lk"></p></a></li>
-    <li class="nav_item"><a href="../signin.html"><span id="clock" style="color:#ffffff;"></span></a></li>
-    <li class="nav_item logout"><a href="LOGOUTServlet"><img id="logout_btn" src="../img/logout%201%20(Traced).png" /></a></li>
-  </ul>
-</div>
+<div id="menu"></div>
+
 <div class="container">
   <div class="content">
 
@@ -65,23 +53,24 @@
     <div class="ep">
       <p>Обратная связь</p>
       <ul>
-        <li>Выберите категорию*</li>
-        <li class="oneline"><a>Кто будет арбитражным управляющим?</a><img src="../img/down_arrow.svg"></li>
         <li>Тема сообщения*</li>
-        <li><input type="text" placeholder="Тема сообщения" class="oneline"/></li>
+        <li><input id="topic" type="text" placeholder="Тема сообщения" class="oneline" onfocus="White(this.id)"/></li>
         <li>Детальное описание*</li>
-        <li><input type="text" placeholder="Детальное описание" class="multline"/></li>
+        <li><textarea id="desc" placeholder="Детальное описание" class="multline" style="resize: none" onfocus="White(this.id)"></textarea></li>
       </ul>
       <ul class="inline">
         <li>Телефон*</li>
-        <li><input type="text" placeholder="+7 (900) 000-12-34" class="phone"/></li>
+        <li><input id="phone" type="text" placeholder="+7 (900) 000-12-34" class="phone" onfocus="White(this.id)"/></li>
       </ul>
       <ul class="inline second">
         <li>Электронная почта*</li>
-        <li><input type="text" placeholder="ivanova12@mail.ru"/></li>
+        <li><input id="email" type="text" placeholder="ivanova12@mail.ru" onfocus="White(this.id)"/></li>
       </ul>
-      <p>Документы</p>
-      <h6>Максимальный объём загружаемого файла 15 Мб. <br>Документ должен быть в формате doc, docx, xls, xlsx, txt, pdf, jpg.</h6>
+      <div class="documents">
+        <div class="docsText">
+          <p>Документы</p>
+          <h6>Максимальный объём загружаемого файла 15 Мб. <br>Документ должен быть в формате doc, docx, xls, xlsx, txt, pdf, jpg.</h6>
+        </div>
       <div class="upload">
         <img src="../img/add%201%20(Traced).svg" />
         <label for="file">
@@ -89,32 +78,36 @@
           <input type="file" id="file">
         </label>
       </div>
-      <div class="capcha">
-        <p>Капча</p>
       </div>
-      <button class="send_btn">Отправить заявку</button>
+      <div class="botButtons">
+        <div class="captchaCont">
+          <div id="captcha" class="g-recaptcha" data-sitekey="6Lfq_lUlAAAAAMA60GUsFMPdi8P_TRu-Q4W5g6G3"></div>
+        </div>
+        <button id="send" class="send_btn" type="button" onclick="sendFeedback()">Отправить заявку</button>
+      </div>
     </div>
 
-
-    <div class="base_bg"></div>
-    <div class="base">
-      <div class="base_logo"><a href="#"><img src="../img/Logo.svg" /></a></div>
-      <div>
-        <ul class="base_links">
-          <li class="base_item2"><a class="footer_txt" href="../index.html" >Главная</a></li>
-          <li class="base_item2"><a class="footer_txt" href="../reestr.html">Реестр собраний</a></li>
-          <li class="base_item2"><a class="footer_txt" href="../help/help_1.html">Помощь</a></li>
-          <li class="base_item2"><a class="footer_txt" href="../help/contacts.html">Контакты</a></li>
-        </ul>
-      </div>
-      <div class="copyright">© 2011-2022 Оператор торговой площадки - ООО «ТендерСтандарт». Все права защищены.</div>
+    <div class="success">
+      <a href="/"><img src="/img/cross.svg"/></a>
+      <h1>Заявка отправлена</h1>
+      <p>
+        Ваша заявка успешно отправлена
+        <br>на рассмотрение. Ожидайте ответа
+        <br>на указанную электронную почту
+      </p>
     </div>
   </div>
 </div>
+
+<div id="footer"></div>
+
 <script src="../jquery/jquery-3.6.0.js"></script>
 <script src="../scripts/public_pages_header.js"></script>
 <script src="../scripts/clock.js"></script>
-<script href="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
+<script src="../jquery/jquery.maskedinput.min.js"></script>
+<script src="../scripts/sendFeedback.js"></script>
+<script src="../scripts/white.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 <script>
   $(document).ready(function(){

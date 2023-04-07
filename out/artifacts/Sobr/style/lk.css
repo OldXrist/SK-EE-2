@@ -538,30 +538,8 @@
     color: #00345F;
 }
 
-.baselk {
-    position: absolute;
-    width: 1160px;
-    height: 298px;
-    top: 1746px;
-    margin-top: 290px;
-
-    font-family: 'Exo 2';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 136.5%;
-    color: #FFFFFF;
-}
-.base_bglk {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    height: 298px;
-    top: 1746px;
-    bottom: 0;
-    margin-top: 290px;
-
-    background: #104781;
+#footer{
+    margin-top: 2000px;
 }
 
 .lk_mal {position: absolute;
