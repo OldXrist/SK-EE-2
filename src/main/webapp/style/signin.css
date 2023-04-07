@@ -9,11 +9,7 @@
     background-attachment: fixed;
 }
 
-.base_bg{
-    margin-top: 706px;
-}
-
-.base{
+#footer{
     margin-top: 706px;
 }
 
@@ -80,7 +76,7 @@ h2{
     color: #104781;
 }
 
-p{
+.sign_block p{
     margin-bottom: 10px;
     position: relative;
     width: 318px;

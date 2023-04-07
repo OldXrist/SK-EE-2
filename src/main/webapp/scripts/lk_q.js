@@ -31,10 +31,7 @@ $(".knopka2").click(function (){
     $(".table_fio").animate({
         top: "+=200px"
     });
-    $(".base").animate({
-        top: "+=200px"
-    });
-    $(".base_bg").animate({
+    $("#footer").animate({
         top: "+=200px"
     });
     $(".table_org").animate({
@@ -133,10 +130,7 @@ $(".knopka").click(function (){
     $(".table_fio").animate({
         top: "+=65px"
     });
-    $(".base").animate({
-        top: "+=65px"
-    });
-    $(".base_bg").animate({
+    $("#footer").animate({
         top: "+=65px"
     });
     $(".table_org").animate({

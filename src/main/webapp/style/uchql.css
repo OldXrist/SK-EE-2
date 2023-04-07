@@ -427,7 +427,7 @@ input:focus{
 
 .pwdConstraint{
     position: absolute;
-    left: 16%;
+    left: 23%;
     top: 1320px;
     padding: 20px 50px;
     display: flex;
@@ -971,10 +971,6 @@ input::placeholder{
     color: #104781;
 }
 
-.base{
-    margin-top: 702px;
-}
-
-.base_bg{
+#footer{
     margin-top: 702px;
 }

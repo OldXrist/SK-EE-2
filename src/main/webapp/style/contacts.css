@@ -95,12 +95,8 @@
     margin-left: 80px;
 }
 
-.base_bg {
-    margin-top: 846px;
-}
-
-.base{
-    margin-top: 846px;
+#footer {
+    margin-top: 685px;
 }
 
 @media (min-width: 375px) and (max-width: 720px) {
