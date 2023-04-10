@@ -45,6 +45,7 @@ public class NEWAPPServlet extends HttpServlet {
             ps.executeUpdate();
 
             ps.close();
+            c.close();
 
         } catch (Exception e) {
             e.printStackTrace();

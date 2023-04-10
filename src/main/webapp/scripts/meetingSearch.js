@@ -15,14 +15,13 @@ function meetSearch(){
 
         document.getElementById('table').innerHTML = ""
 
-        let d = data.split("\n")
-        let k = 0;
-        for (let i = 1; i < 5; i++) {
-            Cards(d, k, i)
-            if (d[k + 10].includes('ЮЛ')){
-                k += 13
-            } else k += 15
+        if (data !== '') {
+            let d = data.split("\n")
+            let k = 0;
+            for (let i = 1; i < 5; i++) {
+                Cards(d, k, i)
+                k += 15
+            }
         }
-
     })
 }

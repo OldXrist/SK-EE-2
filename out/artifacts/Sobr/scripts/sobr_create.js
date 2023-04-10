@@ -1,15 +1,6 @@
 function dateFormat(date, time) {
-    let n = date.split('.')
-    let newd = ""
-
-    for (let i = 2; i > -1; i--) {
-        newd += n[i]
-        if (i !== 0) {
-            newd += '-'
-        }
-    }
     time += ":00"
-    return newd + "T" + time
+    return date + "T" + time
 }
 
 function qDelete(id) {

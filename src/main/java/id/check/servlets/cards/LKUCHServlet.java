@@ -109,6 +109,7 @@ public class LKUCHServlet extends HttpServlet {
                 ps5.close();
 
                 out.println(rs.getString(13));
+                c.close();
             }
 
         } catch (Exception e) {

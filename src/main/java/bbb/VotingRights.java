@@ -27,6 +27,10 @@ public class VotingRights {
                 }
             }
 
+            rs.close();
+            ps.close();
+            c.close();
+
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ": " + e.getMessage());

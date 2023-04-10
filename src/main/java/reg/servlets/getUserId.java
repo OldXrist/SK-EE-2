@@ -22,6 +22,8 @@ public class getUserId {
                 ID = Integer.parseInt(rs.getString(1));
             }
 
+            c.close();
+
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName()+": "+e.getMessage());

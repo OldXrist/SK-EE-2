@@ -52,11 +52,7 @@ $(document).ready(function () {
 });
 $(document).ready(function () {
     $(".stats_btn").click(function () {
-        $(".base_bg").animate({
-            marginTop: "2333px"
-        });
-    }).click(function () {
-        $(".base").animate({
+        $("#footer").animate({
             marginTop: "2333px"
         });
     });
@@ -90,11 +86,7 @@ $(document).ready(function () {
 });
 $(document).ready(function () {
     $(".cross").click(function () {
-        $(".base_bg").animate({
-            marginTop: "1748px"
-        });
-    }).click(function () {
-        $(".base").animate({
+        $("#footer").animate({
             marginTop: "1748px"
         });
     });
@@ -244,10 +236,10 @@ $(document).ready(function(){
         $(".drop_arrw2").css("transform", "rotate(180deg)")
     });
 });
-$(document).ready(function() {
+/*$(document).ready(function() {
     $.mask.definitions['0'] = "[0-9]";
     $(".form_gr3 li input ").mask("00.00.0000");
-});
+});*/
 $(document).ready(function(){
     $(".form1").click(function(){
         $(".status li input").val("")

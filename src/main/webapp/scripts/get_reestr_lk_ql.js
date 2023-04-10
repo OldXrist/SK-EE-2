@@ -291,7 +291,7 @@ $.get("/LKORGServlet", function (data){
         case pageNum === 1:
             break;
         case pageNum < pageLim:
-            for (let i = 1; i < pageLim; i++){
+            for (let i = 1; i < pageNum + 1; i++){
                 document.getElementById('pages').innerHTML += `<li class="pages" id=\"page_${i}\" onclick=\"page(this.id)\">${i}</li>`
             }
             break;

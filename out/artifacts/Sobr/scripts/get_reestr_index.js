@@ -1,17 +1,21 @@
 function dateParse (x){
-    let dateTime = x.split(" ");
-    let date = dateTime[0]
-    let dA = date.split('-')
+    if (x !== undefined) {
+        let dateTime = x.split(" ");
+        let date = dateTime[0]
+        let dA = date.split('-')
 
-    return dA[2] + '.' + dA[1] + '.' + dA[0]
+        return dA[2] + '.' + dA[1] + '.' + dA[0]
+    }
 }
 
 function timeParse (x){
-    let dateTime = x.split(" ");
-    let time = dateTime[1]
-    let tA = time.split(':')
+    if (x !== undefined) {
+        let dateTime = x.split(" ");
+        let time = dateTime[1]
+        let tA = time.split(':')
 
-    return tA[0] + ':' + tA[1]
+        return tA[0] + ':' + tA[1]
+    }
 }
 
 function Cards(dt, i, m){
@@ -146,10 +150,12 @@ function Cards(dt, i, m){
 $.get("/MREEServlet", function (data){
 
     console.log(data)
-    let d = data.split("\n")
-    let k = 0;
-    for (let i = 1; i < 5; i++) {
-        Cards(d, k, i)
-        k += 15
+    if (data !== "") {
+        let d = data.split("\n")
+        let k = 0;
+        for (let i = 1; i < 5; i++) {
+            Cards(d, k, i)
+            k += 15
+        }
     }
 })

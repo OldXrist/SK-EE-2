@@ -62,8 +62,8 @@
       </ul>
       <ul class="form_gr3">
         <li class="form_text">Даты приема заявок</li>
-        <li class="date_f"><a>с</a><input type="text" placeholder="00.00.0000" class="placeh" id="searchFrom"/></li>
-        <li class="date_f"><a>по</a><input type="text" placeholder="00.00.0000" class="placeh" id="searchUntil"/></li>
+        <li class="date_f"><a>с</a><input type="date" placeholder="00.00.0000" class="placeh" id="searchFrom"/></li>
+        <li class="date_f"><a>по</a><input type="date" placeholder="00.00.0000" class="placeh" id="searchUntil"/></li>
       </ul>
       <ul class="form_gr4 status">
         <li class="form_text">Статус</li>
@@ -99,9 +99,9 @@
 
     <p class="sort">Сортировать по <b class="sort_val">номеру</b><img src="img/down_arrow.svg" class="arrw"/></p>
     <ul class="sort_drop">
-      <li class="sort1" id="num" onclick="meetSort(this.id)">номеру</li>
-      <li class="sort2" id="date" onclick="meetSort(this.id)">дате добавления</li>
-      <li class="sort3" id="status" onclick="meetSort(this.id)">статусу</li>
+      <li class="sort1" id="num" onclick="reestrSort(this.id)">номеру</li>
+      <li class="sort2" id="date" onclick="reestrSort(this.id)">дате добавления</li>
+      <li class="sort3" id="status" onclick="reestrSort(this.id)">статусу</li>
     </ul>
     <ul id="pages">
     </ul>

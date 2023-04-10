@@ -84,6 +84,8 @@ public class ZAPPRServlet extends HttpServlet {
                         break;
                 }
                 out.println(rs.getString(5));
+
+                c.close();
             }
 
         } catch (Exception e) {

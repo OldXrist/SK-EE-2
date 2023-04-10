@@ -52,6 +52,7 @@ public class DEBTServlet extends HttpServlet {
 
             out.close();
             rs.close();
+            c.close();
 
         } catch (Exception e) {
             e.printStackTrace();

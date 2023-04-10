@@ -117,6 +117,7 @@ public class journalUtils {
                     k++;
                 }
             }
+            c.close();
 
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);

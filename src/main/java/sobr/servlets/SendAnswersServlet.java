@@ -34,7 +34,7 @@ public class SendAnswersServlet extends HttpServlet {
             ps.setString(12, email);
 
             ps.executeUpdate();
-
+            c.close();
             ps.close();
 
             } catch (SQLException | ClassNotFoundException e) {

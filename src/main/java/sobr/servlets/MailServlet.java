@@ -24,35 +24,37 @@ public class MailServlet extends HttpServlet {
 
         String num = req.getParameter("num");
 
-        try{
-            Connection c = connect();
+        if (num != null) {
+            try {
+                Connection c = connect();
 
-            String sql = "SELECT id FROM sobr_org WHERE email_org = ? ORDER BY id DESC LIMIT 1;";
-            PreparedStatement ps = c.prepareStatement(sql);
+                String sql = "SELECT id FROM sobr_org WHERE email_org = ? ORDER BY id DESC LIMIT 1;";
+                PreparedStatement ps = c.prepareStatement(sql);
 
-            ps.setString(1, email);
-            ResultSet rs = ps.executeQuery();
+                ps.setString(1, email);
+                ResultSet rs = ps.executeQuery();
 
-            while (rs.next()){
-                int id = rs.getInt(1);
-                out.println(id);
+                while (rs.next()) {
+                    int id = rs.getInt(1);
+                    out.println(id);
 
-                for (int i = 0; i < Integer.parseInt(num); i++) {
-                    String sql1 = "INSERT INTO email_send VALUES (?, ?)";
-                    PreparedStatement ps1 = c.prepareStatement(sql1);
+                    for (int i = 0; i < Integer.parseInt(num); i++) {
+                        String sql1 = "INSERT INTO email_send VALUES (?, ?)";
+                        PreparedStatement ps1 = c.prepareStatement(sql1);
 
-                    ps1.setInt(1, id);
-                    ps1.setString(2, req.getParameter("zmail" + i));
+                        ps1.setInt(1, id);
+                        ps1.setString(2, req.getParameter("zmail" + i));
 
-                    ps1.executeUpdate();
-                    ps1.close();
+                        ps1.executeUpdate();
+                        ps1.close();
+                    }
                 }
-            }
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.err.println(e.getClass().getName()+": "+e.getMessage());
-            System.exit(0);
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.err.println(e.getClass().getName() + ": " + e.getMessage());
+                System.exit(0);
+            }
         }
     }
 }

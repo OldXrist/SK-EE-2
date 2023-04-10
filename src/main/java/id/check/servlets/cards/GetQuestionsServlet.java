@@ -52,6 +52,8 @@ public class GetQuestionsServlet extends HttpServlet {
             response.setCharacterEncoding("UTF-8");
             response.getWriter().write(json);
 
+            c.close();
+
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName() + ": " + e.getMessage());

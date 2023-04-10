@@ -13,7 +13,7 @@ import static psql.connection.connect;
 @WebServlet(name = "SortMeetingsServlet", value = "/SortMeetingsServlet")
 public class SortMeetingsServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         PrintWriter out = res.getWriter();
 
         String sort = req.getParameter("param");
@@ -66,6 +66,8 @@ public class SortMeetingsServlet extends HttpServlet {
                         ResultSet rs1 = ps1.executeQuery();
                         while (rs1.next()){
                             out.println(rs1.getString(1));
+                            out.println("null");
+                            out.println("null");
                         };
                         break;
                     case "ИП":

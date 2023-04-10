@@ -123,7 +123,7 @@ $.get("/ORGServlet", send, function (data){
             "\n" +
             "                <div class='inline'>\n" +
             "                    <label for=\"auOrg\" class=\"txt_obsh\">Регистрационный номер АУ*</label>\n" +
-            "                    <input type=\"text\" class=\"three third\" id=\"auOrg\" value=\"+d[8]+\" disabled>\n" +
+            "                    <input disabled type=\"text\" class=\"three third\" id=\"auOrg\" value=" + d[7] + ">\n" +
             "                </div>"
     }
 })

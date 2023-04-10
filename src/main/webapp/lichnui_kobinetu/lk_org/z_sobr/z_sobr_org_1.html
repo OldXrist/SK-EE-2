@@ -33,7 +33,7 @@
         <p class="obshie_dan">Общие данные о собрании</p>
         <div class="data_vrem">
             <label for="date_sobr" class="txt_obsh">Дата и время собрания</label>
-            <input type="text" class="forms5" id="date_sobr" placeholder="01.01.0000" onfocus="White(this.id)">
+            <input type="date" class="forms5" id="date_sobr" placeholder="01.01.0000" onfocus="White(this.id)">
         </div>
         <div class="time">
             <label for="time" class="txt_obsh"></label>
@@ -52,7 +52,7 @@
 
         <div class="data_vrem2">
             <label for="date_z" class="txt_obsh">Начало предоставления заявок на участие*</label>
-            <input type="text" class="forms5" id="date_z" placeholder="01.01.0000" onfocus="White(this.id)">
+            <input type="date" class="forms5" id="date_z" placeholder="01.01.0000" onfocus="White(this.id)">
         </div>
         <div class="time2">
             <label for="time_z" class="txt_obsh"></label>
@@ -60,7 +60,7 @@
         </div>
         <div class="data_vrem3">
             <label for="date_z2" class="txt_obsh">Окончание предоставления заявок на участие*</label>
-            <input type="text" class="forms5" id="date_z2" placeholder="01.01.0000" onfocus="White(this.id)">
+            <input type="date" class="forms5" id="date_z2" placeholder="01.01.0000" onfocus="White(this.id)">
         </div>
         <div class="time3">
             <label for="time_z2" class="txt_obsh"></label>
@@ -68,7 +68,7 @@
         </div>
         <div class="data_vrem4">
             <label for="date_b" class="txt_obsh" id="timeErr">Начало приема бюллетеней*</label>
-            <input type="text" class="forms5" id="date_b" placeholder="01.01.0000" onfocus="White(this.id)">
+            <input type="date" class="forms5" id="date_b" placeholder="01.01.0000" onfocus="White(this.id)">
         </div>
         <div class="time4">
             <label for="time_b" class="txt_obsh"></label>
@@ -76,7 +76,7 @@
         </div>
         <div class="data_vrem5">
             <label for="date_b2" class="txt_obsh">Окончание приема бюллетеней*</label>
-            <input type="text" class="forms5" id="date_b2" placeholder="01.01.0000" onfocus="White(this.id)">
+            <input type="date" class="forms5" id="date_b2" placeholder="01.01.0000" onfocus="White(this.id)">
         </div>
         <div class="time5">
             <label for="time_b2" class="txt_obsh"></label>
@@ -84,7 +84,7 @@
         </div>
         <div class="data_vrem6">
             <label for="date_p" class="txt_obsh">Дата подписания протокола собрания*</label>
-            <input type="text" class="forms5" id="date_p" placeholder="01.01.0000" onfocus="White(this.id)">
+            <input type="date" class="forms5" id="date_p" placeholder="01.01.0000" onfocus="White(this.id)">
         </div>
         <div class="time6">
             <label for="time_p" class="txt_obsh"></label>
@@ -342,19 +342,12 @@
 <script>
     $(document).ready(function (){
         $.mask.definitions['0'] = "[0-9]"
-        $("#date_sobr").mask("00.00.0000")
         $("#time").mask("00:00")
-        $("#date_z").mask("00.00.0000")
         $("#time_z").mask("00:00")
-        $("#date_z2").mask("00.00.0000")
         $("#time_z2").mask("00:00")
-        $("#date_b").mask("00.00.0000")
         $("#time_b").mask("00:00")
-        $("#date_b2").mask("00.00.0000")
         $("#time_b2").mask("00:00")
-        $("#date_p").mask("00.00.0000")
         $("#time_p").mask("00:00")
-        $("#date_razm").mask("00.00.0000")
         $("#unn4").mask("0000000000")
         $("#ogrn3").mask("0000000000000")
         $("#inn").mask("000000000000")

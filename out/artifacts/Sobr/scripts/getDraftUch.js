@@ -13,7 +13,9 @@ function goTO(page){
         if (document.getElementById('c' + next) !== null) {
             document.getElementById('c' + next).style.display = ''
         }
-        document.getElementById('c' + first).style.display = ''
+        if (document.getElementById('c' + first) !== null) {
+            document.getElementById('c' + first).style.display = ''
+        }
     }
 }
 
@@ -51,9 +53,15 @@ function page(id){
         if (document.getElementById("prev_" + lastPrev) !== null) {
             document.getElementById("prev_" + lastPrev).style.display = 'none'
         }
-        document.getElementById('prev_'+x).style.display = ''
-        document.getElementById('next_'+newNext).style.display = ''
-        document.getElementById('page_'+x).style.display = ''
+        if (document.getElementById('prev_'+x) !== null) {
+            document.getElementById('prev_' + x).style.display = ''
+        }
+        if (document.getElementById('next_'+newNext) !== null) {
+            document.getElementById('next_' + newNext).style.display = ''
+        }
+        if (document.getElementById('page_'+x) !== null) {
+            document.getElementById('page_' + x).style.display = ''
+        }
         /*
         let x = parseInt(id.split('_')[1])
         document.getElementById(id).style.display = 'none'
@@ -301,7 +309,7 @@ $.get("/UchDraftServlet", function (data){
         case pageNum === 1:
             break;
         case pageNum < pageLim:
-            for (let i = 1; i < pageLim; i++){
+            for (let i = 1; i < pageNum + 1; i++){
                 document.getElementById('pages').innerHTML += `<li class="pages" id=\"page_${i}\" onclick=\"page(this.id)\">${i}</li>`
             }
             break;
