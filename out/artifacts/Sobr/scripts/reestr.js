@@ -8,7 +8,7 @@ $(document).ready(function () {
 });
 $(document).ready(function () {
     $(".stats_btn").click(function () {
-        $(".table").animate({
+        $("#table").animate({
             top: "1026px"
         });
     });
@@ -29,14 +29,7 @@ $(document).ready(function () {
 });
 $(document).ready(function () {
     $(".stats_btn").click(function () {
-        $(".base").animate({
-            marginTop: "1776px"
-        });
-    });
-});
-$(document).ready(function () {
-    $(".stats_btn").click(function () {
-        $(".base_bg").animate({
+        $("#footer").animate({
             marginTop: "1776px"
         });
     });
@@ -49,7 +42,7 @@ $(document).ready(function () {
 });
 $(document).ready(function () {
     $(".cross").click(function () {
-        $(".table").animate({
+        $("#table").animate({
             top: "449px"
         });
     });
@@ -70,18 +63,12 @@ $(document).ready(function () {
 });
 $(document).ready(function () {
     $(".cross").click(function () {
-        $(".base").animate({
+        $("#footer").animate({
             marginTop: "1199px"
         });
     });
 });
-$(document).ready(function () {
-    $(".cross").click(function () {
-        $(".base_bg").animate({
-            marginTop: "1199px"
-        });
-    });
-});
+
 $(document).ready(function () {
     $(".sort_drop").hide()
 })
@@ -89,7 +76,7 @@ $(document).ready(function(){
     $(".arrw").click(function(){
         $(".sort_drop").slideDown()
     }).click(function(){
-        $(".table").animate({
+        $("#table").animate({
             opacity: "0.3"
         });
     }).click(function(){
@@ -100,7 +87,7 @@ $(document).ready(function(){
     $(".sort_drop").mouseleave(function(){
         $(".sort_drop").slideUp()
     }).mouseleave(function(){
-        $(".table").animate({
+        $("#table").animate({
             opacity: "1"
         });
     }).mouseleave(function(){
@@ -111,7 +98,7 @@ $(document).ready(function(){
     $(".sort_drop li").click(function(){
         $(".sort_drop").slideToggle()
     }).click(function(){
-        $(".table").animate({
+        $("#table").animate({
             opacity: "1"
         });
     }).click(function(){
@@ -143,7 +130,7 @@ $(document).ready(function(){
     $(".status li input").click(function(){
         $(".form_drop1").slideDown()
     }).focus(function(){
-        $(".table").animate({
+        $("#table").animate({
             opacity: "0.3"
         });
     }).focus(function(){
@@ -154,7 +141,7 @@ $(document).ready(function(){
     $(".form_drop1").mouseleave(function(){
         $(".form_drop1").slideUp()
     }).mouseleave(function(){
-        $(".table").animate({
+        $("#table").animate({
             opacity: "1"
         });
     }).mouseleave(function(){
@@ -165,7 +152,7 @@ $(document).ready(function(){
     $(".form_drop1 li").click(function(){
         $(".form_drop1").slideToggle()
     }).click(function(){
-        $(".table").animate({
+        $("#table").animate({
             opacity: "1"
         });
     }).click(function(){
@@ -176,7 +163,7 @@ $(document).ready(function(){
     $(".drop_arrw1").click(function(){
         $(".form_drop1").slideDown()
     }).click(function(){
-        $(".table").animate({
+        $("#table").animate({
             opacity: "0.3"
         });
     }).click(function(){
@@ -187,7 +174,7 @@ $(document).ready(function(){
     $(".type li input").click(function(){
         $(".form_drop2").slideDown()
     }).focus(function(){
-        $(".table").animate({
+        $("#table").animate({
             opacity: "0.3"
         });
     }).focus(function(){
@@ -198,7 +185,7 @@ $(document).ready(function(){
     $(".form_drop2").mouseleave(function(){
         $(".form_drop2").slideUp()
     }).mouseleave(function(){
-        $(".table").animate({
+        $("#table").animate({
             opacity: "1"
         });
     }).mouseleave(function(){
@@ -209,7 +196,7 @@ $(document).ready(function(){
     $(".form_drop2 li").click(function(){
         $(".form_drop2").slideToggle()
     }).click(function(){
-        $(".table").animate({
+        $("#table").animate({
             opacity: "1"
         });
     }).click(function(){
@@ -220,17 +207,17 @@ $(document).ready(function(){
     $(".drop_arrw2").click(function(){
         $(".form_drop2").slideDown()
     }).click(function(){
-        $(".table").animate({
+        $("#table").animate({
             opacity: "0.3"
         });
     }).click(function(){
         $(".drop_arrw2").css("transform", "rotate(180deg)")
     });
 });
-$(document).ready(function() {
+/*$(document).ready(function() {
     $.mask.definitions['0'] = "[0-9]";
     $(".form_gr3 li input ").mask("00.00.0000");
-});
+});*/
 $(document).ready(function(){
     $(".form1").click(function(){
         $(".status li input").val("Не выбрано")

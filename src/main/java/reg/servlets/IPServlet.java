@@ -110,6 +110,8 @@ public class IPServlet extends HttpServlet {
             HttpSession sesh = req.getSession(true);
             sesh.setAttribute("email", email);
 
+            c.close();
+
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName()+": "+e.getMessage());

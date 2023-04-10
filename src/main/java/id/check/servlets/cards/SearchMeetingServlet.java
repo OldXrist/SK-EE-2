@@ -25,14 +25,12 @@ public class SearchMeetingServlet extends HttpServlet {
         String org = req.getParameter("org");
         String from = req.getParameter("from");
         String until = req.getParameter("until");
-        String[] fromArr = req.getParameter("from").split("\\.");
-        String[] untilArr = req.getParameter("until").split("\\.");
+        String[] fromArr = req.getParameter("from").split("-");
+        String[] untilArr = req.getParameter("until").split("-");
         String status = req.getParameter("status");
         String typeS = req.getParameter("type");
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-
-        String sqlTemp = "SELECT id, data_u_vrem_sobr,nachal_podach_zaiv, okonch_podach_zaiv, type_dolzh, famil, name, otch, poln_naum, email_org, type_org, type_sobr, status FROM sobr_org WHERE status NOT IN ('Черновик') ";
+        String sqlTemp = "SELECT id, data_u_vrem_sobr,nachal_podach_zaiv, okonch_podach_zaiv, type_dolzh, famil, name, otch, poln_naum, email_org, type_org, type_sobr, status FROM sobr_org WHERE status NOT IN ('Черновик')";
         String sql = "";
 
         if (!num.equals("")){
@@ -42,13 +40,13 @@ public class SearchMeetingServlet extends HttpServlet {
             sqlTemp += " AND famil LIKE " + "'%" + debtor + "%'" + "OR name LIKE " + "'%" + debtor + "%'" + "OR otch LIKE " + "'%" + debtor + "%'";
         }
         if (!org.equals("")){
-            sqlTemp += " AND email_org IN (SELECT email FROM main WHERE famil LIKE " + "'%" + org + "%'" + " OR name LIKE" + "'%" + org + "%'" + " OR otch LIKE" + "'%" + org + "%'" + ") ";
+            sqlTemp += " AND email_org in (SELECT email FROM au WHERE famil LIKE " + "'%" + org + "%'" + " OR name LIKE" + "'%" + org + "%'" + " OR otch LIKE" + "'%" + org + "%')";
         }
         if (!from.equals("")){
-            sqlTemp += " AND EXTRACT(year FROM nachal_podach_zaiv) = " + fromArr[2] + " AND EXTRACT(month FROM nachal_podach_zaiv) = " + fromArr[1] + " AND EXTRACT(day FROM nachal_podach_zaiv) = " + fromArr[0];
+            sqlTemp += " AND EXTRACT(year FROM nachal_podach_zaiv) = " + fromArr[0] + " AND EXTRACT(month FROM nachal_podach_zaiv) = " + fromArr[1] + " AND EXTRACT(day FROM nachal_podach_zaiv) = " + fromArr[2];
         }
         if (!until.equals("")){
-            sqlTemp += " AND EXTRACT(year FROM okonch_podach_zaiv) = " + untilArr[2] + " AND EXTRACT(month FROM okonch_podach_zaiv) = " + untilArr[1] + " AND EXTRACT(day FROM okonch_podach_zaiv) = " + untilArr[0];
+            sqlTemp += " AND EXTRACT(year FROM okonch_podach_zaiv) = " + untilArr[0] + " AND EXTRACT(month FROM okonch_podach_zaiv) = " + untilArr[1] + " AND EXTRACT(day FROM okonch_podach_zaiv) = " + untilArr[2];
         }
         if (!status.equals("")){
             sqlTemp += " AND status = " + "'" + status + "'";
@@ -89,6 +87,8 @@ public class SearchMeetingServlet extends HttpServlet {
                         ResultSet rs1 = ps1.executeQuery();
                         while (rs1.next()){
                             out.println(rs1.getString(1));
+                            out.println("null");
+                            out.println("null");
                         };
                         break;
                     case "ИП":

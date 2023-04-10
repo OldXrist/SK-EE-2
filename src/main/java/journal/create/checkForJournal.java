@@ -23,6 +23,8 @@ public class checkForJournal {
             path = rs.getString(1);
         }
 
+        c.close();
+
         return path;
     }
 }

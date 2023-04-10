@@ -96,6 +96,7 @@ public class ApplicationEditServlet extends HttpServlet {
                         break;
                 }
             }
+            c.close();
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -52,11 +52,7 @@ $(document).ready(function () {
 });
 $(document).ready(function () {
     $(".stats_btn").click(function () {
-        $(".base_bg").animate({
-            marginTop: "2333px"
-        });
-    }).click(function () {
-        $(".base").animate({
+        $("#footer").animate({
             marginTop: "2333px"
         });
     });
@@ -90,11 +86,7 @@ $(document).ready(function () {
 });
 $(document).ready(function () {
     $(".cross").click(function () {
-        $(".base_bg").animate({
-            marginTop: "1748px"
-        });
-    }).click(function () {
-        $(".base").animate({
+        $("#footer").animate({
             marginTop: "1748px"
         });
     });

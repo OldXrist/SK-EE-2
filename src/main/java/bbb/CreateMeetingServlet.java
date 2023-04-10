@@ -105,6 +105,8 @@ public class CreateMeetingServlet extends HttpServlet {
                         break;
                 }
 
+                c.close();
+
             } catch (Exception e) {
                 e.printStackTrace();
                 System.err.println(e.getClass().getName() + ": " + e.getMessage());

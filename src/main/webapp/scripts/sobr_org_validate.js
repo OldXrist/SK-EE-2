@@ -28,7 +28,6 @@ function Validate () {
         date.value.length !== 10) {
         date.style.borderColor = 'red';
         k += 1;
-        console.log(k)
     }
     if (time.value.length === 0 ||
         time.value.length !== 5) {
@@ -120,6 +119,7 @@ function Validate () {
         $('.table_org').animate({
             opacity: '0.3'
         })
+        k++
     }
     if (document.getElementById("obem_sobr") !== null) {
         if (document.getElementById("obem_sobr").placeholder === "Выбрать количество") {
@@ -245,9 +245,8 @@ function Validate () {
 }
 
 function dtParse(date, time){
-    let d = date.split('.')
-    console.log(d[2] + "-" + d[1] + "-" + d[0] + "T" + time)
-    return Date.parse(d[2] + "-" + d[1] + "-" + d[0] + "T" + time)
+    console.log(date + "T" + time)
+    return Date.parse(date + "T" + time)
 }
 
 function dtValidate(date, time){

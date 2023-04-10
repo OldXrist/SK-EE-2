@@ -131,6 +131,7 @@ public class OServlet extends HttpServlet {
 
 
             ps.executeUpdate();
+            c.close();
 
         } catch (Exception e) {
             e.printStackTrace();

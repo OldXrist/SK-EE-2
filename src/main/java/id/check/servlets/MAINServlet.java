@@ -72,6 +72,7 @@ public class MAINServlet extends HttpServlet {
             rs.close();
             ps.close();
             out.close();
+            c.close();
 
         } catch (Exception e) {
             e.printStackTrace();

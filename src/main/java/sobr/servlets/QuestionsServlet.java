@@ -50,6 +50,8 @@ public class QuestionsServlet extends HttpServlet {
                 }
             }
 
+            c.close();
+
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println(e.getClass().getName()+": "+e.getMessage());

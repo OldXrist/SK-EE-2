@@ -84,6 +84,7 @@ public class DRAFTSevlet extends HttpServlet {
 
             rs.close();
             ps.close();
+            c.close();
 
         } catch (Exception e) {
             e.printStackTrace();

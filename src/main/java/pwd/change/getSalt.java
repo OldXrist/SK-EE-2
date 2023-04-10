@@ -25,6 +25,7 @@ public class getSalt {
             while (rs.next()){
                 salt = fromHex(rs.getString(1));
             }
+            c.close();
 
         } catch (SQLException | ClassNotFoundException | NoSuchAlgorithmException e) {
             throw new RuntimeException(e);

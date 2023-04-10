@@ -227,6 +227,7 @@ public class ZServlet extends HttpServlet {
             ps.setInt(30, demandSum);
 
             ps.executeUpdate();
+            c.close();
 
         } catch (Exception e) {
             e.printStackTrace();

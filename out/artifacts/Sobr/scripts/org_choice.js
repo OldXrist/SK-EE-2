@@ -60,7 +60,7 @@ $("#fl").click(function (){
             top: "+=344px"
         })
         $("#footer").animate({
-            top: "+=344px"
+            marginTop: "+=344px"
         })
         $(".dolg_drop").slideUp()
 
@@ -76,7 +76,7 @@ $("#fl").click(function (){
             top: "-=118px"
         })
         $("#footer").animate({
-            top: "-=118px"
+            marginTop: "-=118px"
         })
         $("#fl_form").slideDown()
         $("#ip_form").hide()
@@ -106,7 +106,7 @@ $("#ip").click(function (){
             top: "+=344px"
         })
         $("#footer").animate({
-            top: "+=344px"
+            marginTop: "+=344px"
         })
         $(".dolg_drop").slideUp()
 
@@ -121,7 +121,7 @@ $("#ip").click(function (){
             top: "-=118px"
         })
         $("#footer").animate({
-            top: "-=118px"
+            marginTop: "-=118px"
         })
         $("#ip_form").slideDown()
         $("#ql_form").hide()
@@ -151,7 +151,7 @@ $("#ql").click(function (){
             top: "+=462px"
         })
         $("#footer").animate({
-            top: "+=462px"
+            marginTop: "+=462px"
         })
         $(".dolg_drop").slideUp()
 
@@ -166,7 +166,7 @@ $("#ql").click(function (){
             top: "+=118px"
         })
         $("#footer").animate({
-            top: "+=118px"
+            marginTop: "+=118px"
         })
         $("#ql_form").slideDown()
         $("#ip_form").hide()

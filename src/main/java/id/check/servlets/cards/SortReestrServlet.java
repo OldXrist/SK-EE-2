@@ -6,34 +6,48 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import static psql.connection.connect;
 
-@WebServlet(name = "LKORGServlet", value = "/LKORGServlet")
-public class LKORGServlet extends HttpServlet {
+@WebServlet(name = "SortReestrServlet", value = "/SortReestrServlet")
+public class SortReestrServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         PrintWriter out = res.getWriter();
 
-        HttpSession sesh = req.getSession();
-        String email1 = String.valueOf(sesh.getAttribute("sessionUser"));
+        String sort = req.getParameter("param");
+        String param = "";
+
+        String sqlTemp = "SELECT id, data_u_vrem_sobr,nachal_podach_zaiv, okonch_podach_zaiv, type_dolzh, famil, name, otch, poln_naum, email_org, type_org, type_sobr, status FROM sobr_org WHERE status NOT IN ('Черновик') ORDER BY ";
+        String sql = "";
+
+        switch (sort){
+            case "num":
+                param = "id;";
+                sql = sqlTemp + param;
+                break;
+            case "date":
+                param = "data_u_vrem_sobr;";
+                sql = sqlTemp + param;
+                break;
+            case "status":
+                param = "status;";
+                sql = sqlTemp + param;
+                break;
+        }
 
         try{
             Connection c = connect();
 
-            String sql = "SELECT id, data_u_vrem_sobr,nachal_podach_zaiv, okonch_podach_zaiv, type_dolzh, famil, name, otch, poln_naum, email_org, type_org, type_sobr, status\n" +
-                    "FROM sobr_org\n" +
-                    "WHERE email_org = ? AND status <> 'Черновик'" +
-                    "ORDER BY id";
             PreparedStatement ps = c.prepareStatement(sql);
 
-            ps.setString(1, email1);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()){
-                int id = rs.getInt(1);
-                out.println(id);
+                out.println(rs.getInt(1));
                 out.println(rs.getObject(2));
                 out.println(rs.getObject(3));
                 out.println(rs.getObject(4));
@@ -54,6 +68,8 @@ public class LKORGServlet extends HttpServlet {
                         ResultSet rs1 = ps1.executeQuery();
                         while (rs1.next()){
                             out.println(rs1.getString(1));
+                            out.println("null");
+                            out.println("null");
                         };
                         break;
                     case "ИП":
@@ -90,21 +106,7 @@ public class LKORGServlet extends HttpServlet {
                         };
                         break;
                 }
-                String sql5 = "SELECT status FROM uch WHERE email = ? AND id = ?";
-                PreparedStatement ps5 = c.prepareStatement(sql5);
-                
-                ps5.setString(1, email1);
-                ps5.setInt(2, id);
-
-                ResultSet rs5 = ps5.executeQuery();
-                while (rs5.next()){
-                    out.println(rs5.getString(1));
-                }
-                rs5.close();
-                ps5.close();
-
                 out.println(rs.getString(13));
-                c.close();
             }
 
         } catch (Exception e) {

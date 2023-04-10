@@ -10,8 +10,10 @@ $.get('/GetMeetingTypeServlet', send, function (data){
             marginLeft: '45px'
         }, 0)
 
-        document.getElementById('editMeetingBtn').style.border = '1px solid #00345F'
-        document.getElementById('editMeetingBtn').style.backgroundColor = '#BAF3FC'
+        if (document.getElementById('editMeetingBtn') !== null) {
+            document.getElementById('editMeetingBtn').style.border = '1px solid #00345F'
+            document.getElementById('editMeetingBtn').style.backgroundColor = '#BAF3FC'
+        }
     }
 })
 

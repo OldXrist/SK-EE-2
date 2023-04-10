@@ -112,6 +112,7 @@ public class ORGServlet extends HttpServlet {
 
             out.close();
             rs.close();
+            c.close();
 
         } catch (Exception e) {
             e.printStackTrace();

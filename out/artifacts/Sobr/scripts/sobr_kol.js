@@ -1,4 +1,4 @@
-/*let sobrkol = document.getElementById("sobrkol");
+let sobrkol = document.getElementById("sobrkol");
 
 $.get("/Sersobrkol", function (data) {
 
@@ -6,4 +6,4 @@ $.get("/Sersobrkol", function (data) {
 
     console.log(sobrkol)
 
-})*/
+})

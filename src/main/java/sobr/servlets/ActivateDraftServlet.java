@@ -209,6 +209,8 @@ public class ActivateDraftServlet extends HttpServlet {
             } else ps.setNull(30, Types.INTEGER);
 
             ps.executeUpdate();
+            ps.close();
+            c.close();
 
         } catch (Exception e) {
             e.printStackTrace();

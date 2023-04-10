@@ -37,6 +37,7 @@ public class CheckSobrStatusServlet extends HttpServlet {
             }
 
             ps.close();
+            c.close();
 
         } catch (Exception e) {
             e.printStackTrace();

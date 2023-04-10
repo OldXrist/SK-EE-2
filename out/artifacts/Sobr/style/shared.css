@@ -10,6 +10,11 @@ body{
   padding-bottom: 50px;
 }
 
+.regHelpLink{
+  color: #406C9A;
+  font-weight: 600;
+}
+
 .flex {
   display: inline-flex;
   width: 851px;

@@ -37,6 +37,7 @@ public class ZAPP1Servlet extends HttpServlet {
 
              rs.close();
              ps.close();
+            c.close();
 
         } catch (Exception e) {
             e.printStackTrace();
