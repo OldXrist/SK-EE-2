@@ -22,7 +22,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a class="anti_tekst" href="../index.html">Главная</a></li>
             <li class="breadcrumb-item"><a class="anti_tekst" href="../signin.html">Регистрация нового пользователя</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Участник собрания (Индивидуальный предприниматель)</li>
+            <li class="breadcrumb-item active" aria-current="page">Участник собрания (Физическое лицо)</li>
         </ol>
     </nav>
 </div>
@@ -79,17 +79,17 @@
 
                 <div class="famil">
                     <label for="famil" class="txt_obsh">Фамилия*</label>
-                    <input type="text" class="forms4" id="famil" placeholder="Фамилия">
+                    <input type="text" oninput="this.value=this.value.replace(/[^a-zA-ZА-Яа-яЁё]/g,'');" class="forms4" id="famil" placeholder="Фамилия">
                 </div>
 
                 <div class="name">
                     <label for="name" class="txt_obsh">Имя*</label>
-                    <input type="text" class="forms4" id="name" placeholder="Имя">
+                    <input type="text" oninput="this.value=this.value.replace(/[^a-zA-ZА-Яа-яЁё]/g,'');" class="forms4" id="name" placeholder="Имя">
                 </div>
 
                 <div class="otch">
                     <label for="otch" class="txt_obsh">Отчество*</label>
-                    <input type="text" class="forms5" id="otch" placeholder="Отчество">
+                    <input type="text" oninput="this.value=this.value.replace(/[^a-zA-ZА-Яа-яЁё]/g,'');" class="forms5" id="otch" placeholder="Отчество">
                 </div>
 
         <div class="pcht_adres2">

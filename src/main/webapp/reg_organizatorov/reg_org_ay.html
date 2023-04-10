@@ -83,17 +83,17 @@
 
                 <div class="famil">
                     <label for="famil" class="txt_obsh">Фамилия*</label>
-                    <input type="text" class="forms4" id="famil" placeholder="Фамилия" onfocus="White(this.id)">
+                    <input type="text" oninput="this.value=this.value.replace(/[^a-zA-ZА-Яа-яЁё]/g,'');" class="forms4" id="famil" placeholder="Фамилия" onfocus="White(this.id)">
                 </div>
 
                 <div class="name">
                     <label for="name" class="txt_obsh">Имя*</label>
-                    <input type="text" class="forms4" id="name" placeholder="Имя" onfocus="White(this.id)">
+                    <input type="text" oninput="this.value=this.value.replace(/[^a-zA-ZА-Яа-яЁё]/g,'');" class="forms4" id="name" placeholder="Имя" onfocus="White(this.id)">
                 </div>
 
                 <div class="otch">
                     <label for="otch" class="txt_obsh">Отчество*</label>
-                    <input type="text" class="forms5" id="otch" placeholder="Отчество" onfocus="White(this.id)">
+                    <input type="text" oninput="this.value=this.value.replace(/[^a-zA-ZА-Яа-яЁё]/g,'');" class="forms5" id="otch" placeholder="Отчество" onfocus="White(this.id)">
                 </div>
 
         <div class="pcht_adres2">
