@@ -52,7 +52,7 @@
                     <div class="form-check">
                         <input class="kub2" type="checkbox" value="" id="check2">
                         <label class="gal_txt2" for="check2">
-                            Настоящим сообщаю об ознакомлении и согласии с правилами, содержащимися в Регламенте электронной площадки*
+                            Настоящим сообщаю об ознакомлении и согласии с правилами, содержащимися в <a href="/Регалмент%20Собрания%20кредиторов%20Тендерстандарт.pdf">Регламенте электронной площадки*</a>
                         </label>
                     </div>
                     <div class="form-check">
@@ -83,17 +83,17 @@
 
                     <div class="famil">
                         <label for="famil" class="txt_obsh">Фамилия*</label>
-                        <input type="text" class="forms4" id="famil" placeholder="Фамилия" onfocus="White(this.id)">
+                        <input type="text" oninput="this.value=this.value.replace(/[^a-zA-ZА-Яа-яЁё]/g,'');" class="forms4" id="famil" placeholder="Фамилия" onfocus="White(this.id)">
                     </div>
 
                     <div class="name">
                         <label for="name" class="txt_obsh">Имя*</label>
-                        <input type="text" class="forms4" id="name" placeholder="Имя" onfocus="White(this.id)">
+                        <input type="text" oninput="this.value=this.value.replace(/[^a-zA-ZА-Яа-яЁё]/g,'');" class="forms4" id="name" placeholder="Имя" onfocus="White(this.id)">
                     </div>
 
                     <div class="otch">
                         <label for="otch" class="txt_obsh">Отчество*</label>
-                        <input type="text" class="forms5" id="otch" placeholder="Отчество" onfocus="White(this.id)">
+                        <input type="text" oninput="this.value=this.value.replace(/[^a-zA-ZА-Яа-яЁё]/g,'');" class="forms5" id="otch" placeholder="Отчество" onfocus="White(this.id)">
                     </div>
 
                     <div class="pcht_adres2">
@@ -148,7 +148,10 @@
                         <input type="password" class="forms3" id="pass2" placeholder="********" onfocus="White(this.id)">
                     </div>
 
-                    <p class="prikrepit-dokument2 pointer">Добавить документ</p>
+                    <div class="docs">
+                        <p class="prikrepit-dokument2 pointer">Добавить документ<br></p>
+                        <span id="docError">Для регистрации необходимо прикрепить документы</span>
+                    </div>
 
 
                     <div>
@@ -165,7 +168,7 @@
                     <p class="doks_2">Документы</p>
 
                     <div class="txt_2">Перечень документов, которые необходимо приложить
-                        к заявке, указан в Регламенте работы сервиса
+                        к заявке, указан в <a href="/Регалмент%20Собрания%20кредиторов%20Тендерстандарт.pdf">Регламенте работы сервиса</a>
                         <p></p>
                         Максимальный объём загружаемого файла 15 Мб. Документ должен быть в формате pdf или jpg
                     </div>
@@ -239,11 +242,6 @@
     $(document).ready(function() {
         $.mask.definitions['0'] = "[0-9]";
         $("#num").mask("000 000");
-    });
-
-    $(document).ready(function() {
-        $.mask.definitions['0'] = "[0-9]";
-        $("#data").mask("00.00.0000");
     });
 
     $(document).ready(function() {

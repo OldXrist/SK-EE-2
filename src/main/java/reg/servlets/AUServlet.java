@@ -10,6 +10,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Arrays;
 
 import static psql.connection.connect;
@@ -36,7 +38,9 @@ public class AUServlet extends HttpServlet {
         String reg_nomer_ay = req.getParameter("reg_nomer_au");
         String pass = req.getParameter("pass");
         String date = req.getParameter("data");
-        LocalDateTime ldt = LocalDateTime.now();
+
+        ZonedDateTime nowZoned = ZonedDateTime.now(ZoneId.of("Europe/Moscow"));
+        LocalDateTime ldt = nowZoned.toLocalDateTime();
 
         String unn = req.getParameter("unn");
         long inn = Long.parseLong(unn);

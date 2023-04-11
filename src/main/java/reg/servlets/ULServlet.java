@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 import static psql.connection.connect;
 import static reg.servlets.GFG.*;
@@ -30,7 +32,8 @@ public class ULServlet extends HttpServlet {
         String email = req.getParameter("email");
         String pass = req.getParameter("pass");
 
-        LocalDateTime ldt = LocalDateTime.now();
+        ZonedDateTime nowZoned = ZonedDateTime.now(ZoneId.of("Europe/Moscow"));
+        LocalDateTime ldt = nowZoned.toLocalDateTime();
 
         String unn = req.getParameter("unn");
         long inn = Long.parseLong(unn);

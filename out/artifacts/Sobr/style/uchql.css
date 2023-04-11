@@ -916,6 +916,10 @@ input::placeholder{
     top: 998px;
 }
 
+.txt_2 a, .txt2 a, .txt a, .gal_txt1 a, .gal_txt2 a{
+    color: #406C9A;
+}
+
 .doks2_2 {
     position: absolute;
     width: 94px;
@@ -925,21 +929,12 @@ input::placeholder{
 }
 
 .prikrepit-dokument {
-    position: absolute;
-    width: 194px;
-    height: 18px;
-    left: 709px;
-    top: 1014px;
-
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 100%;
-    /* identical to box height, or 18px */
-
     text-decoration-line: underline;
-
     color: #104781;
 }
 
@@ -954,11 +949,6 @@ input::placeholder{
 
 .prikrepit-dokument2 {
     position: absolute;
-    width: 194px;
-    height: 18px;
-    left: 709px;
-    top: 1200px;
-
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 600;
@@ -969,6 +959,20 @@ input::placeholder{
     text-decoration-line: underline;
 
     color: #104781;
+}
+
+.docs{
+    position: absolute;
+    width: auto;
+    left: 709px;
+    top: 1014px;
+}
+
+#docError{
+    font-weight: 400;
+    color: #ff0000;
+    font-size: 16px;
+
 }
 
 #footer{

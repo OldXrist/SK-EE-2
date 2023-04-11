@@ -4,33 +4,20 @@ $(document).ready(function () {
 $(document).ready(function () {
     $(".stats_btn").click(function () {
         $(".dropd").slideDown();
-    });
-});
-$(document).ready(function () {
-    $(".stats_btn").click(function () {
         $("#table").animate({
             top: "1026px"
         });
-    });
-});
-$(document).ready(function () {
-    $(".stats_btn").click(function () {
         $(".sort").animate({
             top: "978px"
         });
-    });
-});
-$(document).ready(function () {
-    $(".stats_btn").click(function () {
+        $('#pages').animate({
+            marginTop: "895px"
+        })
         $(".sort_drop").animate({
             top: "1016px"
         });
-    });
-});
-$(document).ready(function () {
-    $(".stats_btn").click(function () {
         $("#footer").animate({
-            marginTop: "1776px"
+            marginTop: "1826px"
         });
     });
 });
@@ -38,31 +25,18 @@ $(document).ready(function () {
 $(document).ready(function () {
     $(".cross").click(function () {
         $(".dropd").slideUp();
-    });
-});
-$(document).ready(function () {
-    $(".cross").click(function () {
         $("#table").animate({
             top: "449px"
         });
-    });
-});
-$(document).ready(function () {
-    $(".cross").click(function () {
         $(".sort").animate({
             top: "401px"
         });
-    });
-});
-$(document).ready(function () {
-    $(".cross").click(function () {
+        $('#pages').animate({
+            marginTop: "410px"
+        })
         $(".sort_drop").animate({
             top: "439px"
         });
-    });
-});
-$(document).ready(function () {
-    $(".cross").click(function () {
         $("#footer").animate({
             marginTop: "1199px"
         });

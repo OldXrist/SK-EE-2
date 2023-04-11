@@ -628,7 +628,7 @@ content {
 .form_drop1 {
   position: absolute;
   width: 280px;
-  height: 456px;
+  height: auto;
   margin-top: 17px;
   padding: 0;
   z-index: 1100;
@@ -636,7 +636,7 @@ content {
   background: #FFFFFF;
   box-shadow: 0px 6px 12px rgba(16, 71, 129, 0.1);
   border-radius: 10px;
-  padding-top: 18px;
+  padding: 18px;
 }
 
 .form_drop1 li {

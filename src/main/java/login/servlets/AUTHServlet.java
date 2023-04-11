@@ -7,6 +7,7 @@ import java.sql.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import static login.servlets.setLastSeen.setLastSeenDate;
 import static psql.connection.connect;
 import static reg.servlets.GFG.*;
 
@@ -60,6 +61,7 @@ public class AUTHServlet extends HttpServlet {
                     sesh.setAttribute("sessionUser", email);
                     sesh.setAttribute("role", rs.getString("role_users"));
                     sesh.setAttribute("type", rs.getString("type_users"));
+                    setLastSeenDate(email, rs.getString("role_users"));
                     out.println(true);
                 }
             }

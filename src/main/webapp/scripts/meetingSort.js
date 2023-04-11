@@ -41,7 +41,7 @@ function reestrSort(id){
         let pageLim = 4
 
         for (let i  =  6; i < Math.ceil(d.length / 15); i++){
-            if (document.getElementById('c'+i) !== null) {
+            if (document.getElementById('c' + i) !== null) {
                 document.getElementById('c' + i).style.display = 'none'
             }
         }

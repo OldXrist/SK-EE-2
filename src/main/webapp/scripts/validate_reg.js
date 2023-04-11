@@ -1,5 +1,6 @@
 $(document).ready(function (){
     $('.pwdConstraint').hide()
+    $('#docError').hide()
     $('#questionMark').mouseenter(function (){
         $('.pwdConstraint').fadeIn()
     }).mouseleave(function (){
@@ -134,6 +135,10 @@ function Validate_reg () {
         document.getElementById("pass2").value !== document.getElementById("pass").value) {
         document.getElementById("pass2").style.borderColor = 'red';
         k += 1;
+    }
+    if (document.getElementById('doc').files.length === 0){
+        $('#docError').fadeIn()
+        k++;
     }
     if(!validatePwd(document.getElementById("pass"))){
         document.getElementById("pass").style.borderColor = 'red'
@@ -302,7 +307,7 @@ function Validate_reg () {
             document.getElementById("snils").disabled = true
             document.getElementById("pocht_adres").disabled = true
             document.getElementById("ser").disabled = true
-            // document.getElementById("nomer").disabled = true
+            document.getElementById("nomer").disabled = true
             document.getElementById("data").disbled = true
             document.getElementById("kem_vudan").disabled = true
             document.getElementById("email_2").disabled = true

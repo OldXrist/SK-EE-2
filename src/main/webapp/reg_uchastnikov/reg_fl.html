@@ -53,7 +53,7 @@
                         <div class="form-check">
                             <input class="kub2" type="checkbox" value="" id="check2">
                             <label class="gal_txt2" for="check2">
-                                Настоящим сообщаю об ознакомлении и согласии с правилами, содержащимися в Регламенте электронной площадки*
+                                Настоящим сообщаю об ознакомлении и согласии с правилами, содержащимися в <a href="/Регалмент%20Собрания%20кредиторов%20Тендерстандарт.pdf">Регламенте электронной площадки*</a>
                             </label>
                         </div>
                         <div class="form-check">
@@ -143,7 +143,10 @@
             <label for="pass2" class="txt_obsh">Повторите пароль*</label>
             <input type="password" class="forms3" id="pass2" placeholder="********" onfocus="White(this.id)">
         </div>
-                        <p class="prikrepit-dokument2 pointer">Добавить документ</p>
+                        <div class="docs">
+                        <p class="prikrepit-dokument2 pointer">Добавить документ<br></p>
+                        <span id="docError">Для регистрации необходимо прикрепить документы</span>
+                        </div>
 
 
                         <div>
@@ -160,7 +163,7 @@
         <p class="doks_2">Документы</p>
 
         <div class="txt_2">Перечень документов, которые необходимо приложить
-            к заявке, указан в Регламенте работы сервиса
+            к заявке, указан в <a href="/Регалмент%20Собрания%20кредиторов%20Тендерстандарт.pdf">Регламенте работы сервиса</a>
 <p></p>
         Максимальный объём загружаемого файла 15 Мб. Документ должен быть в формате pdf или jpg
             </div>
@@ -232,11 +235,6 @@
     $(document).ready(function() {
         $.mask.definitions['0'] = "[0-9]";
         $("#num").mask("000 000");
-    });
-
-    $(document).ready(function() {
-        $.mask.definitions['0'] = "[0-9]";
-        $("#data").mask("00.00.0000");
     });
 
     $(document).ready(function() {

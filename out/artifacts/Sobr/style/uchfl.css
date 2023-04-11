@@ -815,6 +815,10 @@ input::placeholder{
     color: #406C9A;
 }
 
+.txt_2 a, .txt2 a, .txt a, .gal_txt1 a, .gal_txt2 a{
+    color: #406C9A;
+}
+
 .txt {position: absolute;
     width: 425px;
     height: 105px;
@@ -942,22 +946,28 @@ a{
 }
 
 .prikrepit-dokument2 {
-    position: absolute;
-    width: 194px;
-    height: 18px;
-    left: 709px;
-    top: 1200px;
-
+    width: auto;
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 100%;
-    /* identical to box height, or 18px */
-
     text-decoration-line: underline;
-
     color: #104781;
+}
+
+.docs{
+    position: absolute;
+    width: auto;
+    left: 709px;
+    top: 1200px;
+}
+
+#docError{
+    font-weight: 400;
+    color: #ff0000;
+    font-size: 16px;
+
 }
 
 #footer{
