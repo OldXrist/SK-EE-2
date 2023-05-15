@@ -18,7 +18,7 @@ function meetSearch(){
         if (data !== '') {
             let d = data.split("\n")
             let k = 0;
-            for (let i = 1; i < Math.ceil(d.length / 15); i++) {
+            for (let i = 1; i < 5; i++) {
                 Cards(d, k, i)
                 k += 15
             }

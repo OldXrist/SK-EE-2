@@ -52,10 +52,10 @@
             </ul>
             <ul>
                 <li><button class="down">Скачать журнал</button></li>
-                <li class="btns"><button class="down" id="createProtocol">Скачать протокол</button></li>
+                <li class="btns"><a id="downloadProtocol" download><button class="down" id="createProtocol">Скачать протокол</button></a></li>
                 <label for="protUpd" class="knopka4" id="changeProt">Заменить протокол</label>
                 <input type="file" id="protUpd" style="display: none"/>
-                <button class="knopka5" onclick="Signature()" id="signProt" disabled style="opacity: 0.7">Подписать протокол ЭЦП</button>
+                <button class="knopka5" onclick="Signature()" id="signProt">Подписать протокол ЭЦП</button>
 
             </ul>
 
@@ -77,7 +77,6 @@
             <h2>Выбор сертификата</h2>
             <div class="cert_container" id="certs"></div>
         </div>
-        <a id="link" download></a>
     </div>
 </div>
 

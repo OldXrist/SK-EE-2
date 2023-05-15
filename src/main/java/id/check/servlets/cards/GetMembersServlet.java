@@ -7,6 +7,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
 import java.sql.*;
@@ -43,8 +44,10 @@ public class GetMembersServlet extends HttpServlet {
 
     public void GetRolesAndOrganizerEmails(Connection _c, HashSet _userRoles, String _meetingNumber) {
         try {
-            String sql = "SELECT type_uch, email FROM uch WHERE id = " + _meetingNumber + ";";
+            String sql = "SELECT type_uch, email FROM uch WHERE id = ?;";
             PreparedStatement ps = _c.prepareStatement(sql);
+            ps.setInt(1, Integer.parseInt(_meetingNumber));
+
             ResultSet rs = ps.executeQuery();
             ResultSetMetaData meta = rs.getMetaData();
             int columnCount = meta.getColumnCount();
@@ -93,39 +96,41 @@ public class GetMembersServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String meetingNumber = request.getParameter("meetingNumber");
+        if (StringUtils.isNumeric(request.getParameter("meetingNumber"))) {
+            String meetingNumber = request.getParameter("meetingNumber");
 
-        try {
-            Connection c = connect();
+            try {
+                Connection c = connect();
 
-            //собираем роли
-            HashSet<ArrayList<String>> userRoles = new HashSet<ArrayList<String>>();
-            GetRolesAndOrganizerEmails(c, userRoles, meetingNumber);
+                //собираем роли
+                HashSet<ArrayList<String>> userRoles = new HashSet<ArrayList<String>>();
+                GetRolesAndOrganizerEmails(c, userRoles, meetingNumber);
 
-            //собираем имена участников
-            HashSet<ArrayList<String>> membersList = new HashSet<ArrayList<String>>();
-            for (ArrayList<String> item : userRoles) {
-                switch (item.get(0)) {
-                    case "ФЛ": SetMembersInfo(c, FlSql(meetingNumber), membersList);
-                        break;
-                    case "ИП": SetMembersInfo(c, IpSql(meetingNumber), membersList);
-                        break;
-                    case "ЮЛ": SetMembersInfo(c, QlSql(meetingNumber), membersList);
-                        break;
+                //собираем имена участников
+                HashSet<ArrayList<String>> membersList = new HashSet<ArrayList<String>>();
+                for (ArrayList<String> item : userRoles) {
+                    switch (item.get(0)) {
+                        case "ФЛ": SetMembersInfo(c, FlSql(meetingNumber), membersList);
+                            break;
+                        case "ИП": SetMembersInfo(c, IpSql(meetingNumber), membersList);
+                            break;
+                        case "ЮЛ": SetMembersInfo(c, QlSql(meetingNumber), membersList);
+                            break;
+                    }
                 }
+
+                //возвращаем данные на фронтенд в формате json
+                String json = new Gson().toJson(membersList);
+                response.setContentType("application/json");
+                response.setCharacterEncoding("UTF-8");
+                response.getWriter().write(json);
+                c.close();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.err.println(e.getClass().getName() + ": " + e.getMessage());
+                System.exit(0);
             }
-
-            //возвращаем данные на фронтенд в формате json
-            String json = new Gson().toJson(membersList);
-            response.setContentType("application/json");
-            response.setCharacterEncoding("UTF-8");
-            response.getWriter().write(json);
-            c.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.err.println(e.getClass().getName() + ": " + e.getMessage());
-            System.exit(0);
         }
     }
 }

@@ -40,10 +40,9 @@ public class ProtocolCreateServlet extends HttpServlet {
             if (!protocolExists) {
 
                 //String fName = "C:\\Users\\manager\\Desktop\\SK-EE-2\\src\\main\\webapp\\protocols\\" + protocolName;
-                String fName = "/opt/tomcat/webapps/ROOT/protocols/" + protocolName;
+                String fName = "/opt/tomcat/webapps/archive/protocols/" + protocolName;
 
                 File protocol = new File(fName);
-                out.println(protocol.getAbsolutePath());
                 //FileWriter w = new FileWriter(fName, true);
 
                 if (!protocol.exists() && protocol.createNewFile()) {
@@ -288,7 +287,7 @@ public class ProtocolCreateServlet extends HttpServlet {
             ResultSet protPathRs = protPathPs.executeQuery();
 
             while (protPathRs.next()){
-                out.println(protPathRs.getString(1));
+                out.println(protPathRs.getString(1).split("archive")[1]);
             }
 
             protPathRs.close();

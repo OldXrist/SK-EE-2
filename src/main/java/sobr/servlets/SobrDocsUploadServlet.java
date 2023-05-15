@@ -37,7 +37,7 @@ public class SobrDocsUploadServlet extends HttpServlet {
 
             //String path = "C:\\Users\\manager\\Desktop\\SK-EE-2\\src\\main\\webapp\\meetings\\meeting" + sk;
             //String path = "../../../meetings/meeting"+sk+"/" + user; TODO not sure what its for
-            String path = "../../../meetings/meeting"+sk;
+            String path = "/opt/tomcat/webapps/archive/meetings/meeting"+sk;
 
             //Part p = req.getPart("file");
             String ext;

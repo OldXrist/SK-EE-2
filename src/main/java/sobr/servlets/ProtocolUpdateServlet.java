@@ -20,7 +20,7 @@ public class ProtocolUpdateServlet extends HttpServlet {
         HttpSession sesh = req.getSession();
         long sk = Long.parseLong(String.valueOf(sesh.getAttribute("meetingID")));
 
-        String path = "/opt/tomcat/webapps/ROOT/protocols";
+        String path = "/opt/tomcat/webapps/archive/protocols";
         String fName = "";
 
         new File(path).mkdirs();

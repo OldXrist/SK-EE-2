@@ -21,7 +21,7 @@ public class journalUpdateServlet extends HttpServlet {
         HttpSession sesh = req.getSession();
         long sk = Long.parseLong(String.valueOf(sesh.getAttribute("meetingID")));
 
-        String path = "/opt/tomcat/webapps/ROOT/journals";
+        String path = "/opt/tomcat/webapps/archive/journals";
         String fName = "";
 
         new File(path).mkdirs();

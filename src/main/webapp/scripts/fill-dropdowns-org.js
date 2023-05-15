@@ -5,8 +5,7 @@ $(document).ready(function () {
     $(".tbl").hide()
     $(".hide").hide();
 
-    let url = location.href;
-    let meetingNumber = url.slice(url.lastIndexOf('=') + 1, url.length)
+    let meetingNumber = (new URL(document.location)).searchParams.get('sk')
     let inputData = {
         meetingNumber: meetingNumber,
     }

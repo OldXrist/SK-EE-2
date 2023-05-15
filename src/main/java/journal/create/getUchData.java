@@ -42,8 +42,10 @@ public class getUchData {
 
         ps.setInt(1, meetingId);
 
+        ResultSet rs = ps.executeQuery();
+
         c.close();
 
-        return ps.executeQuery();
+        return rs;
     }
 }

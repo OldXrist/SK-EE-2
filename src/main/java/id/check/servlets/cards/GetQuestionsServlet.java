@@ -7,6 +7,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 
 import java.io.IOException;
 import java.sql.*;
@@ -18,46 +20,47 @@ import static psql.connection.connect;
 @WebServlet("/GetQuestionsServlet")
 public class GetQuestionsServlet extends HttpServlet {
 
-    public String QuestionsSql(String meetingNumber) {
-        return "SELECT questions FROM public.questions WHERE id = '" + meetingNumber + "';";
-    }
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String meetingNumber = request.getParameter("meetingNumber");
+        if (StringUtils.isNumeric(request.getParameter("meetingNumber"))){
+            int meetingNumber = Integer.parseInt(request.getParameter("meetingNumber"));
 
-        try {
-            Connection c = connect();
+            try {
+                Connection c = connect();
 
-            //собираем вопросы
-            ArrayList<String> questionsList = new ArrayList<String>();
+                //собираем вопросы
+                ArrayList<String> questionsList = new ArrayList<String>();
 
-            PreparedStatement ps = c.prepareStatement(QuestionsSql(meetingNumber));
-            ResultSet rs = ps.executeQuery();
-            ResultSetMetaData meta = rs.getMetaData();
-            int columnCount = meta.getColumnCount();
-            while (rs.next()) {
-                for (int i = 1; i <= columnCount; ++i)
-                {
-                    Object value = rs.getObject(i);
-                    questionsList.add(String.valueOf(value));
+                String sql = "SELECT questions FROM questions WHERE id = ?;";
+                PreparedStatement ps = c.prepareStatement(sql);
+
+                ps.setInt(1, meetingNumber);
+                ResultSet rs = ps.executeQuery();
+                ResultSetMetaData meta = rs.getMetaData();
+                int columnCount = meta.getColumnCount();
+                while (rs.next()) {
+                    for (int i = 1; i <= columnCount; ++i)
+                    {
+                        Object value = rs.getObject(i);
+                        questionsList.add(String.valueOf(value));
+                    }
                 }
+                rs.close();
+                ps.close();
+
+                //возвращаем данные на фронтенд в формате json
+                String json = new Gson().toJson(questionsList);
+                response.setContentType("application/json");
+                response.setCharacterEncoding("UTF-8");
+                response.getWriter().write(json);
+
+                c.close();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.err.println(e.getClass().getName() + ": " + e.getMessage());
+                System.exit(0);
             }
-            rs.close();
-            ps.close();
-
-            //возвращаем данные на фронтенд в формате json
-            String json = new Gson().toJson(questionsList);
-            response.setContentType("application/json");
-            response.setCharacterEncoding("UTF-8");
-            response.getWriter().write(json);
-
-            c.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.err.println(e.getClass().getName() + ": " + e.getMessage());
-            System.exit(0);
         }
     }
 }

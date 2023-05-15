@@ -104,8 +104,8 @@ public class LKORGServlet extends HttpServlet {
                 ps5.close();
 
                 out.println(rs.getString(13));
-                c.close();
             }
+            c.close();
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -31,7 +31,7 @@ public class ProtocolCheckServlet extends HttpServlet {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                out.println(rs.getString(1));
+                out.println(rs.getString(1).split("archive")[1]);
             }
 
             rs.close();

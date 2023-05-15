@@ -139,10 +139,10 @@ public class journalUtils {
                 "(фамилия, инициалы, подпись арбитражного управляющего)";
         contentWithBreaks(run, content);
         run.setFontSize(10);
-        String path = "/opt/tomcat/webapps/ROOT/journals/Журнал регистрации участников собрания №"+ id +".docx";
+        String path = "/opt/tomcat/webapps/archive/journals/Журнал регистрации участников собрания №"+ id +".docx";
         saveWord(path, doc);
 
-        return path;
+        return path.split("archive")[1];
     }
 
     public static XWPFDocument replaceTextFor(XWPFDocument doc, String findText, String replaceText){

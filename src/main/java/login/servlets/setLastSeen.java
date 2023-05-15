@@ -30,17 +30,22 @@ public class setLastSeen {
             case "АУ":
                 type = "au";
                 break;
+            default:
+                type = null;
+                break;
         }
 
-        String sql = "UPDATE " + type + " SET last_login = ? WHERE email = ?;";
-        PreparedStatement ps = c.prepareStatement(sql);
+        if (type != null) {
+            String sql = "UPDATE " + type + " SET last_login = ? WHERE email = ?;";
+            PreparedStatement ps = c.prepareStatement(sql);
 
-        ps.setObject(1, now);
-        ps.setString(2, email);
+            ps.setObject(1, now);
+            ps.setString(2, email);
 
-        ps.executeUpdate();
+            ps.executeUpdate();
 
-        ps.close();
-        c.close();
+            ps.close();
+            c.close();
+        }
     }
 }
