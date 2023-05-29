@@ -21,7 +21,7 @@ function meetSort(id){
 function reestrSort(id){
 
     document.getElementById('pages').innerHTML = ""
-    document.getElementById('table').innerHTML = ""
+    document.getElementById('meetings').innerHTML = ""
 
     let sortParam = {
         param: id
@@ -41,8 +41,8 @@ function reestrSort(id){
         let pageLim = 4
 
         for (let i  =  6; i < Math.ceil(d.length / 15); i++){
-            if (document.getElementById('c' + i) !== null) {
-                document.getElementById('c' + i).style.display = 'none'
+            if (document.getElementById('meeting-' + i) !== null) {
+                document.getElementById('meeting-' + i).style.display = 'none'
             }
         }
 

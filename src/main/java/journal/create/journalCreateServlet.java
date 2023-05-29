@@ -42,6 +42,5 @@ public class journalCreateServlet extends HttpServlet {
         } catch (URISyntaxException | ClassNotFoundException | SQLException e) {
             throw new RuntimeException(e);
         }
-
     }
 }

@@ -71,5 +71,4 @@ public class GetOperatorCredentials extends HttpServlet {
             System.exit(0);
         }
     }
-
 }

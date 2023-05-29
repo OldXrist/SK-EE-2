@@ -5,43 +5,24 @@ function meetSearch(){
         org: document.getElementById('searchOrg').value,
         from: document.getElementById('searchFrom').value,
         until: document.getElementById('searchUntil').value,
-        status: document.getElementById('searchStatus').value,
-        type: document.getElementById('searchType').value
+        status: document.getElementById('searchStatus').innerText,
+        type: document.getElementById('searchType').innerText
+    }
+
+    if (search.status.includes('Не выбрано')){
+        search.status = ''
+    }
+    if (search.type.includes('Не выбрано')){
+        search.type = ''
     }
 
     $.get('/SearchMeetingServlet', search, function (data){
 
+        console.log(search)
         console.log(data)
 
-        document.getElementById('table').innerHTML = ""
-
-        if (data !== '') {
-            let d = data.split("\n")
-            let k = 0;
-            for (let i = 1; i < 5; i++) {
-                Cards(d, k, i)
-                k += 15
-            }
-        }
-    })
-}
-
-function meetSearchReestr(){
-    let search = {
-        number: document.getElementById('searchNum').value,
-        debtor: document.getElementById('searchDebtor').value,
-        org: document.getElementById('searchOrg').value,
-        from: document.getElementById('searchFrom').value,
-        until: document.getElementById('searchUntil').value,
-        status: document.getElementById('searchStatus').value,
-        type: document.getElementById('searchType').value
-    }
-
-    $.get('/SearchMeetingServlet', search, function (data){
-
-        console.log(data)
-
-        document.getElementById('table').innerHTML = ""
+        document.getElementById('meetings').innerHTML = ""
+        document.getElementById('pages').innerHTML = ""
 
         if (data !== '') {
             let d = data.split("\n")

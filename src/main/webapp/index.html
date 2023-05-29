@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="style/shared.css">
-    <link rel="stylesheet" type="text/css" href="bootstrap-5.2.0/dist/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="bootstrap-5.2.0/scss/_images.scss">
+
+    <link rel="stylesheet" type="text/css" href="style/normalize.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style/main.css">
+    <link rel="stylesheet" type="text/css" href="style/common.css">
+    <link rel="stylesheet" type="text/css" href="style/main-2.css">
     <meta property="og:image" content="https://sk.tenderstandart.ru/img/OG.png">
     <meta property="og:title" content="Собрание Кредиторов">
     <title>Собрание Кредиторов</title>
@@ -16,24 +15,90 @@
 </head>
 <body>
 
-<div class="dropdown">
-    <div class="logo"><a href="#"><img src="img/Logo.svg" /></a></div>
-    <button onclick="myFunction()" class="dropbtn"><img src="img/111.png" /></button>
-    <div id="myDropdown" class="dropdown-content">
-        <a class="nav_item" href="index.html">Главная</a>
-        <a class="nav_item" href="reestr.html">Реестр собраний</a>
-        <a class="nav_item" href="help/help_1.html">Помощь</a>
-        <a class="nav_item" href="help/contacts.html">Контакты</a>
-        <a class="nav_item" href="login.html"><button class="nav_btn">Войти</button></a>
-        <a class="nav_item" href="signin.html">Зарегистрироваться</a>
-    </div>
-</div>
-
 <div id="menu"></div>
 
 <div class="container">
     <div class="content">
-        <div class="viewport"></div>
+
+        <div class="viewport">
+            <div class="login-block">
+                <h2>Проводим собрания кредиторов в электронном формате</h2>
+                <p>
+                    Организация собраний кредиторов в Online и Offline
+                    режимах. Быстрый и удобный способ проведения
+                    собрания без лишних затрат
+                </p>
+                <div class="login-block-btns">
+                    <button onclick="window.location = '/login.html'">Войти</button>
+                    <a href="/signin.html">Зарегистрироваться</a>
+                </div>
+            </div>
+
+            <div class="vp_info">
+                <div class="card">
+                    <h3><span>01 /</span> Тех. поддержка</h3>
+                    <p>
+                        Наша поддержка поможет
+                        Вам настроить рабочее место,
+                        а также проконсультирует о
+                        порядке проведения
+                        собрания на ЭТП
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3><span>02 /</span> Автоматизация</h3>
+                    <p>
+                        Подсчет голосов кредиторов
+                        происходит автоматически,
+                        также составляются протоколы
+                        и рассылаются уведомления
+                        участникам собрания
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3><span>03 /</span> Видеосвязь и чат</h3>
+                    <p>
+                        Мы даем возможность
+                        провести собрания кредиторов
+                        с использованием видеосвязи
+                        и чата как для организаторов,
+                        так и для участников собрания
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3><span>04 /</span> Доступ 24/7</h3>
+                    <p>
+                        Вся информация о проведенных
+                        собраниях хранится в личном
+                        кабинете. Вам предоставляется
+                        круглосуточный доступ к
+                        данной информации
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="upcoming-meetings">
+            <div class="heading">
+                <h1>Ближайшие собрания</h1>
+                <a href="/reestr">Все собрания</a>
+            </div>
+
+            <div class="stats-bar">
+                <h4>Общая статистика</h4>
+                <div class="stats">
+                    <p id="participants">Участников: </p>
+                    <p id="orgs">Организаторов: </p>
+                    <p id="meetings-complete">Проведено собраний: </p>
+                </div>
+            </div>
+
+            <div id="meetings"></div>
+        </div>
+        <!--div class="viewport"></div>
         <div class="login_container">
             <div class="login_block">
                 <h2>Проводим собрания кредиторов<br>в электронном формате</h2>
@@ -103,21 +168,21 @@
                 <li class="form_text">Статус</li>
                 <li><input type="text" placeholder="Не выбрано" class="placeh mask_none" id="searchStatus" disabled/><img src="img/down_arrow.svg" class="drop_arrw1"/></li>
                 <ul class="form_drop1">
-                    <li class="form1">Не выбрано</li>
-                    <!--li class="form2">Объявлено</li-->
-                    <li class="form3">Прием заявок</li>
-                    <!--li class="form4">Прием заявок завершен</li>
-                    <li class="form5">Ожидание начала собрания</li-->
-                    <li class="form6">В стадии проведения</li>
-                    <li class="form7">Подведение итогов</li>
+                    <li class="form1">Не выбрано</li-->
+                    <!--li class="form2">Объявлено</li TODO-->
+                    <!--li class="form3">Прием заявок</li-->
+                    <!--li class="form4">Прием заявок завершен</li TODO>
+                    <li class="form5">Ожидание начала собрания</li TODO-->
+                    <!--li class="form6">В стадии проведения</li-->
+                    <!--li class="form7">Подведение итогов</li>
                     <li class="form8">Завершено</li>
-                    <li class="form9">Отменено</li>
+                    <li class="form9">Отменено</li-->
                     <!--li class="form10">TODO Не состоялось</li-->
-                    <li class="form11">Черновик</li>
-                    <!--li class="form12">Прием бюллетеней</li>
-                    <li class="form13">Прием бюллетеней завершен</li>
-                    <li class="form14">Приостановлено</li-->
-                </ul>
+                    <!--li class="form11">Черновик</li-->
+                    <!--li class="form12">Прием бюллетеней</li TODO>
+                    <li class="form13">Прием бюллетеней завершен</li TODO>
+                    <li class="form14">Приостановлено</li TODO-->
+                <!--/ul>
             </ul>
             <ul class="form_gr4 type">
                 <li class="form_text">Тип собрания</li>
@@ -141,17 +206,14 @@
         <div class="fade"></div>
         <div class="table" id="table">
 
-        </div>
+        </div-->
     </div>
 </div>
 
-<div id="footer"></div>
+<footer id="footer"></footer>
 
 <script src="scripts/clock.js"></script>
 <script src="jquery/jquery.maskedinput.min.js"></script>
-<script src="scripts/sobr_kol.js"></script>
-<script src="scripts/org-uch.js"></script>
-<script src="scripts/uch-org.js"></script>
 <script src="scripts/index_sobr_redirect.js"></script>
 <script src="scripts/index2.js"></script>
 <script src="scripts/get_reestr_index.js"></script>

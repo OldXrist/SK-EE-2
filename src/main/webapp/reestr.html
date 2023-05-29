@@ -3,110 +3,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="style/shared.css">
+  <link rel="stylesheet" type="text/css" href="style/common.css">
+  <link rel="stylesheet" type="text/css" href="style/normalize.css">
   <link rel="stylesheet" type="text/css" href="style/reestr.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   <title>Реестр собраний</title>
   <meta property="og:image" content="https://sk.tenderstandart.ru/img/OG.png">
   <meta property="og:title" content="Собрание Кредиторов">
 </head>
 <body>
 
-<div class="dropdown">
-  <div class="logo"><a href="#"><img src="img/Logo.svg" /></a></div>
-  <button onclick="myFunction()" class="dropbtn"><img src="img/111.png" /></button>
-  <div id="myDropdown" class="dropdown-content">
-    <a class="nav_item" href="index.html">Главная</a>
-    <a class="nav_item" href="reestr.html">Реестр собраний</a>
-    <a class="nav_item" href="help/help_1.html">Помощь</a>
-    <a class="nav_item" href="help/contacts.html">Контакты</a>
-    <a class="nav_item" href="login.html"><button class="nav_btn">Войти</button></a>
-    <a class="nav_item" href="signin.html">Зарегистрироваться</a>
-  </div>
-</div>
-
 <div id="menu"></div>
 
 <div class="container">
   <div class="content">
-    <div class="bc"><a href="index.html">Главная</a>&nbsp;/&nbsp;<a href="#">Реестр собраний</a></div>
-    <p class="heading">Реестр собраний</p>
 
-    <div class="stats">
-      <ul>
-        <li class="stats_head">Общая статистика</li>
-        <li class="stats_item">Участников: <b id="elemo">0</b></li>
-        <li class="stats_item">Организаторов: <b id="elemo2">0</b></li>
-        <li class="stats_item">Проведено собраний: <b id="sobrkol">0</b></li>
-        <li class="stats_item"><a  class="stats_btn"><b>Найти</b><img src="img/lupa.svg" /></a></li>
-      </ul>
-    </div>
+    <div class="all-meetings">
 
-    <form class="dropd">
-      <div>
-        <p class="drop_h">Поиск собрания</p>
-        <img src="img/cross.png" class="cross" />
+      <div class="heading">
+        <div class="bc"><a href="index.html">Главная</a>&nbsp;/&nbsp;<a href="#">Реестр собраний</a></div>
+        <h1 class="heading">Реестр собраний</h1>
       </div>
-      <ul class="form_gr1">
-        <li class="form_text">Номер собрания</li>
-        <li><input type="text" placeholder="Номер собрания" class="placeh" id="searchNum"/></li>
-      </ul>
-      <ul class="form_gr2">
-        <li class="form_text">Должник</li>
-        <li><input type="text" placeholder="Должник" class="placeh" id="searchDebtor"/></li>
-      </ul>
-      <ul class="form_3">
-        <li class="form_text">Организатор собрания (Арбитражный управляющий или кредитор)</li>
-        <li><input type="text" placeholder="Организатор собрания (Арбитражный управляющий или кредитор)" class="placeh" id="searchOrg"/></li>
-      </ul>
-      <ul class="form_gr3">
-        <li class="form_text">Даты приема заявок</li>
-        <li class="date_f"><a>с</a><input type="date" placeholder="00.00.0000" class="placeh" id="searchFrom"/></li>
-        <li class="date_f"><a>по</a><input type="date" placeholder="00.00.0000" class="placeh" id="searchUntil"/></li>
-      </ul>
-      <ul class="form_gr4 status">
-        <li class="form_text">Статус</li>
-        <li><input type="text" placeholder="Не выбрано" class="placeh mask_none" id="searchStatus" disabled/><img src="img/down_arrow.svg" class="drop_arrw1"/></li>
-        <ul class="form_drop1">
-          <li class="form1">Не выбрано</li>
-          <!--li class="form2">Объявлено</li-->
-          <li class="form3">Прием заявок</li>
-          <!--li class="form4">Прием заявок завершен</li>
-          <li class="form5">Ожидание начала собрания</li-->
-          <li class="form6">В стадии проведения</li>
-          <li class="form7">Подведение итогов</li>
-          <li class="form8">Завершено</li>
-          <li class="form9">Отменено</li>
-          <!--li class="form10">TODO Не состоялось</li-->
-          <li class="form11">Черновик</li>
-          <!--li class="form12">Прием бюллетеней</li>
-          <li class="form13">Прием бюллетеней завершен</li>
-          <li class="form14">Приостановлено</li-->
-        </ul>
-      </ul>
-      <ul class="form_gr4 type">
-        <li class="form_text">Тип собрания</li>
-        <li><input type="text" placeholder="Не выбрано" class="placeh" id="searchType" disabled/><img src="img/down_arrow.svg" class="drop_arrw2"/></li>
-        <ul class="form_drop2">
-          <li class="form21">Не выбрано</li>
-          <li class="form22">Очное</li>
-          <li class="form23">Заочное</li>
-        </ul>
-      </ul>
-      <input type="button" value="Поиск" class="srch_btn" onclick="meetSearchReestr()"/>
-    </form>
 
-    <p class="sort">Сортировать по <b class="sort_val">номеру</b><img src="img/down_arrow.svg" class="arrw"/></p>
-    <ul class="sort_drop">
-      <li class="sort1" id="num" onclick="reestrSort(this.id)">номеру</li>
-      <li class="sort2" id="date" onclick="reestrSort(this.id)">дате добавления</li>
-      <li class="sort3" id="status" onclick="reestrSort(this.id)">статусу</li>
-    </ul>
-    <ul id="pages">
-    </ul>
-    <div class="fade"></div>
-    <div id="table">
+      <div class="stats-bar">
+        <h4>Общая статистика</h4>
+        <div class="stats">
+          <p id="participants">Участников: </p>
+          <p id="orgs">Организаторов: </p>
+          <p id="meetings-complete">Проведено собраний: </p>
+          <div class="search">
+            <p>Поиск</p>
+            <img src="img/lupa.svg"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="search-dropdown" id="search">
+        <div class="dropdown-row-1">
+          <h3>Поиск собрания</h3>
+          <img src="img/cross.svg"/>
+        </div>
+
+        <div class="dropdown-row-2">
+          <div class="input-s">
+            <label for="searchNum">Номер собрания</label>
+            <input id="searchNum" type="text" placeholder="Номер собрания">
+          </div>
+
+          <div class="input-m">
+            <label for="searchDebtor">Должник</label>
+            <input id="searchDebtor" type="text" placeholder="Должник">
+          </div>
+        </div>
+
+        <div class="input-l">
+          <label for="searchOrg">Организатор собрания (Арбитражный управляющий или кредитор)</label>
+          <textarea id="searchOrg" placeholder="Организатор собрания (Арбитражный управляющий или кредитор)"></textarea>
+        </div>
+
+        <div class="dropdown-row-3">
+          <div class="dropdown-date">
+            <label>Даты приема заявок</label>
+            <div class="date-input-row">
+              <div class="date-input">
+                <span>с</span>
+                <input type="date" id="searchFrom"/>
+              </div>
+
+              <div class="date-input">
+                <span>по</span>
+                <input type="date" id="searchUntil"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="dropdown-select-row">
+            <div class="dropdown-select">
+              <label for="searchStatus">Статус</label>
+              <div class="search-select">
+                <p id="searchStatus">Не выбрано</p>
+                <img src="img/down_arrow.svg">
+              </div>
+
+              <div class="custom-select">
+                <div class="select-options" id="meetingStatus">
+                  <p>Не выбрано</p>
+                  <p>Объявлено</p>
+                  <p>Прием заявок</p>
+                  <p>В стадии проведения</p>
+                  <p>Подведение итогов</p>
+                  <p>Завершено</p>
+                  <p>Отменено</p>
+                  <p>Черновик</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="dropdown-select">
+              <label for="searchType">Тип</label>
+              <div class="search-select">
+                <p id="searchType">Не выбрано</p>
+                <img src="img/down_arrow.svg">
+              </div>
+
+            <div class="custom-select">
+              <div class="select-options" id="meetingType">
+                <p>Не выбрано</p>
+                <p>Заочное</p>
+                <p>Очное</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="search-btn">
+          <button type="button" onclick="meetSearch()">Поиск</button>
+        </div>
+      </div>
+
+      <div class="meetings-tools">
+        <div class="sort">
+          <div class="sort-container">
+            <div class="sort-text">
+              <p>Сортировать по</p>
+              <b id="sort-value">номеру</b>
+              <img src="img/down_arrow.svg">
+            </div>
+
+            <div class="sort-dropdown">
+              <p id="num" onclick="reestrSort(this.id)">номеру</p>
+              <p id="date" onclick="reestrSort(this.id)">дате добавления</p>
+              <p id="status" onclick="reestrSort(this.id)">статусу</p>
+            </div>
+          </div>
+        </div>
+
+        <ul id="pages"></ul>
+      </div>
+
+      <div id="meetings"></div>
 
     </div>
   </div>
@@ -116,15 +152,11 @@
 
 <script src="jquery/jquery-3.6.0.js"></script>
 <script src="scripts/public_pages_header.js"></script>
-<script src="scripts/sobr_kol.js"></script>
-<script src="scripts/org-uch.js"></script>
-<script src="scripts/uch-org.js"></script>
 <script src="scripts/clock.js"></script>
 <script src="scripts/index_sobr_redirect.js"></script>
 <script src="scripts/ReestrMain.js"></script>
 <script href="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
 <script href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-<script src="scripts/reestr.js"></script>
 <script src="scripts/meetingSort.js"></script>
 <script src="scripts/meetingSearch.js"></script>
 </body>

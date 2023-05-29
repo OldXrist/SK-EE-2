@@ -14,8 +14,6 @@ body{
 }
 
 .menu a{
-    font-family: 'Exo 2';
-    font-style: normal;
     font-weight: 400;
     font-size: 15px;
     line-height: 136.5%;
@@ -48,13 +46,92 @@ body{
     height: 36px;
     background: #37DCF5;
     border-radius: 10px;
-    font-family: 'Exo 2';
-    font-style: normal;
     font-weight: 500;
     font-size: 15px;
     line-height: 100%;
     color: #00345F;
     border: none;
+}
+
+.mobile-header {
+    display: none;
+}
+
+@media(max-width: 1160px) {
+    .menu {
+        display: none;
+    }
+
+    .mobile-header {
+        display: inline-flex;
+        width: calc(100% - 40px);
+        height: 82px;
+        background: linear-gradient(90.63deg, #67C8D4 6%, #004781 45.78%);
+        justify-content: space-between;
+        padding: 0 20px 0 20px;
+        align-items: center;
+        z-index: 999;
+    }
+
+    .mobile-menu {
+        padding: 35px 20px 60px 20px;
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 40px);
+        height: calc(100vh - 95px);
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: linear-gradient(90.63deg, #67C8D4 6%, #004781 45.78%);
+        gap: 100px;
+        align-items: center;
+        z-index: 1;
+    }
+
+    .mobile-menu a {
+        text-decoration: none;
+        color: #FFFFFF;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 136.5%;
+    }
+
+    .mobile-menu-top {
+        display: inline-flex;
+        width: calc(100% - 40px);
+        justify-content: space-between;
+        padding: 0 20px 0 20px;
+    }
+
+    .mobile-menu-middle {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .mobile-menu-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .mobile-menu-buttons button {
+        width: 120px;
+        height: 45px;
+        background: #37DCF5;
+        border-radius: 5px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 100%;
+        color: #00345F;
+        border: none;
+    }
+
+    #cross {
+        color: #FFFFFF;
+    }
 }
 
 

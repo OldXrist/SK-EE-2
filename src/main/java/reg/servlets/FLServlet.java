@@ -51,7 +51,6 @@ public class FLServlet extends HttpServlet {
         String encryptedPass = getSecurePassword(pass, salt);
 
         try{
-            Class.forName("org.postgresql.Driver");
             Connection c = connect();
 
             String sql = "INSERT INTO main (role_users, pass, email, type_users, salt) Values (?, ?, ?, ?, ?)";

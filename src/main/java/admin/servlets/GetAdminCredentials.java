@@ -71,5 +71,4 @@ public class GetAdminCredentials extends HttpServlet {
             System.exit(0);
         }
     }
-
 }

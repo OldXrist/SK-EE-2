@@ -1,5 +1,5 @@
 $(document).ready(function (){
-    $('#footer').load('/footer.html')
+    $('#footer').load('/footer-2.html')
     $('#menu').load('/header.html', function (){
         $('#logout_btn').hide()
         $('#clock').hide()

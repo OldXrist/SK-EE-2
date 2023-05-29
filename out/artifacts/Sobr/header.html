@@ -25,10 +25,44 @@
 </div>
 </div>
 
+
+<div class="mobile-header">
+  <a href="/"><img src="/img/Logo.svg"/></a>
+  <img id="burger" src="/img/burger.svg"/>
+
+  <div class="mobile-menu" style="display: none">
+    <div class="mobile-menu-top">
+      <a href="/"><img src="/img/Logo.svg"/></a>
+      <img id="cross" src="/img/cross-mobile.svg"/>
+    </div>
+
+    <div class="mobile-menu-middle">
+      <a href="/">Главная</a>
+      <a href="/reestr.html">Реестр собраний</a>
+      <a href="/help/help_1.html">Помощь</a>
+      <a href="/help/contacts.html">Контакты</a>
+    </div>
+
+    <div class="mobile-menu-buttons">
+      <button class="nouser" type="button" onclick="loginRedirect()">Войти</button>
+      <a class="nouser" href="/signin.html">Зарегистрироваться</a>
+      <a class="mobile-header-logout" href="/LOGOUTServlet" style="display: none">Выйти</a>
+    </div>
+  </div>
+</div>
+
 <script>
   function loginRedirect(){
     window.location.href = '/login.html'
   }
+
+  $("#burger").click(function (){
+    $(".mobile-menu").slideDown()
+  })
+
+  $("#cross").click(function (){
+    $(".mobile-menu").slideUp()
+  })
 </script>
 
 </body>

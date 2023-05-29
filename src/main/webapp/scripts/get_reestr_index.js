@@ -25,125 +25,159 @@ function Cards(dt, i, m){
         arr.push(dt[i])
     }
 
+    m = 'meeting-' + m
+
     let date1 = dateParse(arr[1]) + " " + timeParse(arr[1])
     let date2 = dateParse(arr[2]) + ' - ' + dateParse(arr[3])
     //console.log(arr[4], arr[10])
     if (arr[4].includes("Юридическое") && arr[10].includes("ЮЛ")){
-        document.getElementById("table").innerHTML += "<div id = "+m+" class=\"table_item\" onclick='Redirect(this.id)'/>\n" +
-            "                <h3 class=\"table_h\">"+ arr[0] + " " + arr[9]+"</h3>\n" +
-            "                <div class='flex'>" +
-            "                <ul class=\"table_data\">\n" +
-            "                    <li class=\"thin_text\">Организатор</li>\n" +
-            "                    <li>"+arr[11]+"</li>\n" +
-            "                </ul>\n" +
-            "                <ul class=\"table_data marg\">\n" +
-            "                    <li class=\"thin_text\">Должник</li>\n" +
-            "                    <li>"+arr[8]+"</li>\n" +
-            "                </ul>\n" +
-            "                <ul class=\"table_data marg\">\n" +
-            "                    <li class=\"thin_text\">Статус</li>\n" +
-            "                    <li>"+ arr[12] +"</li>\n" +
-            "                </ul>\n" +
-            "                </div>" +
-            "                <div class=\"vl\"></div>\n" +
-            "                <div class=\"date\">\n" +
-            "                    <ul class=\"datetime\">\n" +
-            "                        <li class=\"thin_text\">Дата проведения собрания</li>\n" +
-            "                        <li>"+date1+"</li>\n" +
-            "                    </ul>\n" +
-            "                    <ul class=\"datetime\">\n" +
-            "                        <li class=\"thin_text\">Даты приема заявок</li>\n" +
-            "                        <li>"+date2+"</li>\n" +
-            "                    </ul>\n" +
-            "                </div>\n" +
-            "            </div>"
+        document.getElementById("meetings").innerHTML += `
+                <div class="meeting" id="${m}" onclick="Redirect(this.id)">
+                    <div class="card-section-1">
+                        <h4>${arr[0]} ${arr[9]}</h4>
+                        <div class="bottom-info">
+                            <div class="meeting-info-col">
+                                <h6>Организатор</h6>
+                                <p>${arr[11]}</p>
+                            </div>
+
+                            <div class="meeting-info-col">
+                                <h6>Должник</h6>
+                                <p>${arr[8]}</p>
+                            </div>
+
+                            <div class="meeting-info-col">
+                                <h6>Статус</h6>
+                                <p>${arr[12]}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vertical-line"></div>
+
+                    <div class="card-section-2">
+                        <div class="meeting-info-col">
+                            <h6>Дата проведения собрания</h6>
+                            <p>${date1}</p>
+                        </div>
+
+                        <div class="meeting-info-col">
+                            <h6>Дата приёма заявок</h6>
+                            <p>${date2}</p>
+                        </div>
+                    </div>
+                </div>`
     } else if (arr[4].includes("Юридическое") && !arr[10].includes("ЮЛ")){
-        document.getElementById("table").innerHTML += "<div id = "+m+" class=\"table_item\" onclick='Redirect(this.id)'/>\n" +
-            "                <h3 class=\"table_h\">"+ arr[0] + " " + arr[9]+"</h3>\n" +
-            "                <div class='flex'>" +
-            "                <ul class=\"table_data\">\n" +
-            "                    <li class=\"thin_text\">Организатор</li>\n" +
-            "                    <li>"+arr[11] + " " + arr[12] + " " + arr[13]+"</li>\n" +
-            "                </ul>\n" +
-            "                <ul class=\"table_data marg\">\n" +
-            "                    <li class=\"thin_text\">Должник</li>\n" +
-            "                    <li>"+arr[8]+"</li>\n" +
-            "                </ul>\n" +
-            "                <ul class=\"table_data marg\">\n" +
-            "                    <li class=\"thin_text\">Статус</li>\n" +
-            "                    <li>"+ arr[14] +"</li>\n" +
-            "                </ul>\n" +
-            "                </div>" +
-            "                <div class=\"vl\"></div>\n" +
-            "                <div class=\"date\">\n" +
-            "                    <ul class=\"datetime\">\n" +
-            "                        <li class=\"thin_text\">Дата проведения собрания</li>\n" +
-            "                        <li>"+date1+"</li>\n" +
-            "                    </ul>\n" +
-            "                    <ul class=\"datetime\">\n" +
-            "                        <li class=\"thin_text\">Даты приема заявок</li>\n" +
-            "                        <li>"+date2+"</li>\n" +
-            "                    </ul>\n" +
-            "                </div>\n" +
-            "            </div>"
+        document.getElementById("meetings").innerHTML += `
+                <div class="meeting" id="${m}" onclick="Redirect(this.id)">
+                    <div class="card-section-1">
+                        <h4>${arr[0]} ${arr[9]}</h4>
+                        <div class="bottom-info">
+                            <div class="meeting-info-col">
+                                <h6>Организатор</h6>
+                                <p>${arr[11]} ${arr[12]} ${arr[13]}</p>
+                            </div>
+
+                            <div class="meeting-info-col">
+                                <h6>Должник</h6>
+                                <p>${arr[8]}</p>
+                            </div>
+
+                            <div class="meeting-info-col">
+                                <h6>Статус</h6>
+                                <p>${arr[14]}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vertical-line"></div>
+
+                    <div class="card-section-2">
+                        <div class="meeting-info-col">
+                            <h6>Дата проведения собрания</h6>
+                            <p>${date1}</p>
+                        </div>
+
+                        <div class="meeting-info-col">
+                            <h6>Дата приёма заявок</h6>
+                            <p>${date2}</p>
+                        </div>
+                    </div>
+                </div>`
     } else if (!arr[4].includes("Юридическое") && arr[10].includes("ЮЛ")){
-        document.getElementById("table").innerHTML += "<div id = "+m+" class=\"table_item\" onclick='Redirect(this.id)'/>\n" +
-            "                <h3 class=\"table_h\">"+ arr[0] + " " + arr[9]+"</h3>\n" +
-            "                <div class='flex'>" +
-            "                <ul class=\"table_data\">\n" +
-            "                    <li class=\"thin_text\">Организатор</li>\n" +
-            "                    <li>"+arr[11]+"</li>\n" +
-            "                </ul>\n" +
-            "                <ul class=\"table_data marg\">\n" +
-            "                    <li class=\"thin_text\">Должник</li>\n" +
-            "                    <li>"+arr[5] + " " + arr[6] + " " + arr[7]+"</li>\n" +
-            "                </ul>\n" +
-            "                <ul class=\"table_data marg\">\n" +
-            "                    <li class=\"thin_text\">Статус</li>\n" +
-            "                    <li>"+ arr[14] +"</li>\n" +
-            "                </ul>\n" +
-            "                </div>" +
-            "                <div class=\"vl\"></div>\n" +
-            "                <div class=\"date\">\n" +
-            "                    <ul class=\"datetime\">\n" +
-            "                        <li class=\"thin_text\">Дата проведения собрания</li>\n" +
-            "                        <li>"+date1+"</li>\n" +
-            "                    </ul>\n" +
-            "                    <ul class=\"datetime\">\n" +
-            "                        <li class=\"thin_text\">Даты приема заявок</li>\n" +
-            "                        <li>"+date2+"</li>\n" +
-            "                    </ul>\n" +
-            "                </div>\n" +
-            "            </div>"
+        document.getElementById("meetings").innerHTML += `
+                <div class="meeting" id="${m}" onclick="Redirect(this.id)">
+                    <div class="card-section-1">
+                        <h4>${arr[0]} ${arr[9]}</h4>
+                        <div class="bottom-info">
+                            <div class="meeting-info-col">
+                                <h6>Организатор</h6>
+                                <p>${arr[11]}</p>
+                            </div>
+
+                            <div class="meeting-info-col">
+                                <h6>Должник</h6>
+                                <p>${arr[5]} ${arr[6]} ${arr[7]}</p>
+                            </div>
+
+                            <div class="meeting-info-col">
+                                <h6>Статус</h6>
+                                <p>${arr[14]}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vertical-line"></div>
+
+                    <div class="card-section-2">
+                        <div class="meeting-info-col">
+                            <h6>Дата проведения собрания</h6>
+                            <p>${date1}</p>
+                        </div>
+
+                        <div class="meeting-info-col">
+                            <h6>Дата приёма заявок</h6>
+                            <p>${date2}</p>
+                        </div>
+                    </div>
+                </div>`
     } else {
-        document.getElementById("table").innerHTML += "<div id = "+m+" class=\"table_item\" onclick='Redirect(this.id)'>\n" +
-            "                <h3 class=\"table_h\">" + arr[0] + " " + arr[9] + "</h3>\n" +
-            "                <div class='flex'>" +
-            "                <ul class=\"table_data\">\n" +
-            "                    <li class=\"thin_text\">Организатор</li>\n" +
-            "                    <li>" + arr[11] + " " + arr[12] + " " + arr[13] + "</li>\n" +
-            "                </ul>\n" +
-            "                <ul class=\"table_data marg\">\n" +
-            "                    <li class=\"thin_text\">Должник</li>\n" +
-            "                    <li>" + arr[5] + " " + arr[6] + " " + arr[7] + "</li>\n" +
-            "                </ul>\n" +
-            "                <ul class=\"table_data marg\">\n" +
-            "                    <li class=\"thin_text\">Статус</li>\n" +
-            "                    <li>"+ arr[14] +"</li>\n" +
-            "                </ul>\n" +
-            "                </div>" +
-            "                <div class=\"vl\"></div>\n" +
-            "                <div class=\"date\">\n" +
-            "                    <ul class=\"datetime\">\n" +
-            "                        <li class=\"thin_text\">Дата проведения собрания</li>\n" +
-            "                        <li>" + date1 + "</li>\n" +
-            "                    </ul>\n" +
-            "                    <ul class=\"datetime\">\n" +
-            "                        <li class=\"thin_text\">Даты приема заявок</li>\n" +
-            "                        <li>" + date2 + "</li>\n" +
-            "                    </ul>\n" +
-            "                </div>\n" +
-            "            </div>"
+        document.getElementById("meetings").innerHTML += `
+                <div class="meeting" id="${m}" onclick="Redirect(this.id)">
+                    <div class="card-section-1">
+                        <h4>${arr[0]} ${arr[9]}</h4>
+                        <div class="bottom-info">
+                            <div class="meeting-info-col">
+                                <h6>Организатор</h6>
+                                <p>${arr[11]} ${arr[12]} ${arr[13]}</p>
+                            </div>
+
+                            <div class="meeting-info-col">
+                                <h6>Должник</h6>
+                                <p>${arr[5]} ${arr[6]} ${arr[7]}</p>
+                            </div>
+
+                            <div class="meeting-info-col">
+                                <h6>Статус</h6>
+                                <p>${arr[14]}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vertical-line"></div>
+
+                    <div class="card-section-2">
+                        <div class="meeting-info-col">
+                            <h6>Дата проведения собрания</h6>
+                            <p>${date1}</p>
+                        </div>
+
+                        <div class="meeting-info-col">
+                            <h6>Дата приёма заявок</h6>
+                            <p>${date2}</p>
+                        </div>
+                    </div>
+                </div>`
     }
 }
 

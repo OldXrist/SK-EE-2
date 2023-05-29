@@ -1,0 +1,55 @@
+html {
+    font-family: "Exo 2";
+    font-style: normal;
+}
+
+.bc a {
+    text-decoration: none;
+    color: #406C9A;
+}
+
+.heading h1 {
+    color: #104781;
+    margin: 0;
+}
+
+#pages {
+    display: inline-flex;
+    list-style: none;
+    gap: 5px;
+}
+
+.pages {
+    padding: 6px 8px;
+    border-radius: 5px;
+    color: #104781;
+    cursor: pointer;
+}
+
+.pages:hover {
+    color: #FFFFFF;
+    background: #104781;
+}
+
+input[type="date"] {
+    display: inline-flex;
+}
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    min-width: 1160px;
+}
+
+@media(max-width: 1160px) {
+    html{
+        font-size: 14px;
+    }
+
+    .heading {
+        width: 100%;
+        min-width: auto;
+        justify-content: space-around;
+    }
+}
