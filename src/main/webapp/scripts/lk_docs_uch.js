@@ -47,7 +47,7 @@ $(".upl").click(function (){
     let f = tr.split("\\")
     let file = f[2]
     console.log(f,file)
-    let markup = "<tr><td>" + file + "<img src='../../../img/cross.png' style='position: absolute; left: 1050px;'/> </td></tr>"
+    let markup = "<tr><td>" + file + "<img src='../../../img/cross.png' style='position: absolute; left: 1050px;' onclick='console.log(this.parentNode.parentNode.remove())'/> </td></tr>"
 
     $(".docs_tbl tbody").append(markup)
 }).click(function (){

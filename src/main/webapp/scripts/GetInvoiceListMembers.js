@@ -23,7 +23,7 @@ $(document).ready(function () {
                         <div class="meeting-left-side">
                             <div class="top-side">
                                 <div class="m-name" id = "m-name">
-                                    <span class=\"heading-name\">Заявка № ${invoiceNumber}</span>
+                                    <a href="application.html?email=${organizerEmail}" class=\"heading-name\">Заявка № ${invoiceNumber}</a>
                                 </div>
                             </div>
                             <div class="bottom-side">
@@ -53,7 +53,7 @@ $(document).ready(function () {
                         <div class="meeting-left-side">
                             <div class="top-side">
                                 <div class="m-name" id = "m-name">
-                                    <span class=\"heading-name\">Заявка № ${invoiceNumber}</span>
+                                    <a href="application.html?email=${organizerEmail}" class=\"heading-name\">Заявка № ${invoiceNumber}</a>
                                 </div>
                             </div>
                             <div class="bottom-side">
@@ -79,7 +79,7 @@ $(document).ready(function () {
                         <div class="meeting-left-side">
                             <div class="top-side">
                                 <div class="m-name" id = "m-name">
-                                    <span class=\"heading-name\">Заявка № ${invoiceNumber}</span>
+                                    <a href="application.html?email=${organizerEmail}" class=\"heading-name\">Заявка № ${invoiceNumber}</a>
                                 </div>
                             </div>
                             <div class="bottom-side">

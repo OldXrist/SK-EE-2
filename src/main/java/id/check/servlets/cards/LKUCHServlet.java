@@ -15,6 +15,53 @@ import static psql.connection.connect;
 
 @WebServlet(name = "LKUCHServlet", value = "/LKUCHServlet")
 public class LKUCHServlet extends HttpServlet {
+
+    public static String getIdentity(String sql, String email){
+        String data = null;
+
+        try{
+            Connection c = connect();
+
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setString(1, email);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()){
+                data = rs.getString(1) + "\n" + rs.getString(2) + "\n" + rs.getString(3);
+            };
+
+            c.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println(e.getClass().getName()+": "+e.getMessage());
+            System.exit(0);
+        }
+        return data;
+    }
+
+    public static String getIdentityUl(String sql, String email){
+        String data = null;
+
+        try{
+            Connection c = connect();
+
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setString(1, email);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()){
+                data = rs.getString(1) + "\nnull" + "\nnull";
+            };
+
+            c.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println(e.getClass().getName()+": "+e.getMessage());
+            System.exit(0);
+        }
+        return data;
+    }
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         PrintWriter out = res.getWriter();
@@ -28,7 +75,7 @@ public class LKUCHServlet extends HttpServlet {
             String sql = "SELECT id, data_u_vrem_sobr,nachal_podach_zaiv, okonch_podach_zaiv, type_dolzh, famil, name, otch, poln_naum, email_org, type_org, type_sobr, status\n" +
                     "FROM sobr_org\n" +
                     "WHERE id IN (SELECT id FROM uch WHERE email = ?)" +
-                    "ORDER BY id";
+                    "ORDER BY id;";
             PreparedStatement ps = c.prepareStatement(sql);
 
             ps.setString(1, email1);
@@ -51,51 +98,19 @@ public class LKUCHServlet extends HttpServlet {
                 out.println(type);
                 switch (type){
                     case "ЮЛ":
-                        String sql1 = "SELECT poln_naim FROM ql WHERE email = ?";
-                        PreparedStatement ps1 = c.prepareStatement(sql1);
-                        ps1.setString(1, email);
-                        ResultSet rs1 = ps1.executeQuery();
-                        while (rs1.next()){
-                            out.println(rs1.getString(1));
-                            out.println("null");
-                            out.println("null");
-                        };
+                        out.println(getIdentityUl("SELECT poln_naim FROM ql WHERE email = ?;", email));
                         break;
                     case "ИП":
-                        String sql2 = "SELECT famil, name, otch FROM ip WHERE email = ?";
-                        PreparedStatement ps2 = c.prepareStatement(sql2);
-                        ps2.setString(1, email);
-                        ResultSet rs2 = ps2.executeQuery();
-                        while (rs2.next()){
-                            out.println(rs2.getString(1));
-                            out.println(rs2.getString(2));
-                            out.println(rs2.getString(3));
-                        };
+                        out.println(getIdentity("SELECT famil, name, otch FROM ip WHERE email = ?;", email));
                         break;
                     case "ФЛ":
-                        String sql3 = "SELECT famil, name, otch FROM fl WHERE email = ?";
-                        PreparedStatement ps3 = c.prepareStatement(sql3);
-                        ps3.setString(1, email);
-                        ResultSet rs3 = ps3.executeQuery();
-                        while (rs3.next()){
-                            out.println(rs3.getString(1));
-                            out.println(rs3.getString(2));
-                            out.println(rs3.getString(3));
-                        };
+                        out.println(getIdentity("SELECT famil, name, otch FROM fl WHERE email = ?;", email));
                         break;
                     case "АУ":
-                        String sql4 = "SELECT famil, name, otch FROM au WHERE email = ?";
-                        PreparedStatement ps4 = c.prepareStatement(sql4);
-                        ps4.setString(1, email);
-                        ResultSet rs4 = ps4.executeQuery();
-                        while (rs4.next()){
-                            out.println(rs4.getString(1));
-                            out.println(rs4.getString(2));
-                            out.println(rs4.getString(3));
-                        };
+                        out.println(getIdentity("SELECT famil, name, otch FROM au WHERE email = ?;", email));
                         break;
                 }
-                String sql5 = "SELECT status FROM uch WHERE email = ? AND id = ?";
+                String sql5 = "SELECT status FROM uch WHERE email = ? AND id = ?;";
                 PreparedStatement ps5 = c.prepareStatement(sql5);
 
                 ps5.setString(1, email1);

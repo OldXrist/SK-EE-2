@@ -23,7 +23,7 @@ public class ReestrServlet extends HttpServlet {
             Connection c = connect();
 
             String sql = "SELECT id, data_u_vrem_sobr,nachal_podach_zaiv, okonch_podach_zaiv, type_dolzh, famil, name, otch, poln_naum, email_org, type_org, type_sobr, status\n" +
-                    "FROM sobr_org\n" +
+                    "FROM sobr_org WHERE status <> 'Черновик'\n" +
                     "ORDER BY id;";
             PreparedStatement ps = c.prepareStatement(sql);
 

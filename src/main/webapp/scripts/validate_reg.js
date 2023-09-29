@@ -143,6 +143,7 @@ function Validate_reg () {
     if(!validatePwd(document.getElementById("pass"))){
         document.getElementById("pass").style.borderColor = 'red'
         $('.pwdConstraint').fadeIn()
+        k += 1;
         setTimeout(() => { $('.pwdConstraint').fadeOut() }, 5000);
         //TODO tooltip show + error message
     }

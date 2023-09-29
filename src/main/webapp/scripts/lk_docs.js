@@ -22,11 +22,9 @@ $(".knopka5").animate({
     top: "+=150px"
 });
 $(".table_org").animate({
-    height: "+=150px"
+    height: "+=250px"
 });
-$("#footer").animate({
-    top: "+=150px"
-});
+
 
 $(document).ready(function(){
     $(".add_docs").hide()
@@ -110,11 +108,9 @@ $(".upl").click(function (){
         top: "+=50px"
     });
     $(".table_org").animate({
-        height: "+=50px"
+        height: "+= 100px"
     });
-    $("#footer").animate({
-        top: "+=50px"
-    });
+
     $(".add_docs img").show()
     $("#doc").hide()
     $(".add_docs a").show()

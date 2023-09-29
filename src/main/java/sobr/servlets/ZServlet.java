@@ -209,8 +209,10 @@ public class ZServlet extends HttpServlet {
             } else ps.setNull(24, Types.VARCHAR);
 
             if (og != null) {
-                long ogrn = Long.parseLong(og);
-                ps.setLong(25, ogrn);
+                if (!og.equals("")) {
+                    long ogrn = Long.parseLong(og);
+                    ps.setLong(25, ogrn);
+                } else ps.setNull(25, Types.BIGINT);
             } else ps.setNull(25, Types.BIGINT);
 
             ps.setString(26, typeSobr);

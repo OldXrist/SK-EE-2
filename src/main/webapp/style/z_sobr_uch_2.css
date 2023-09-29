@@ -20,6 +20,20 @@
     color: #406C9A;
 }
 
+.confirm-btn {
+    padding: 18px 116px;
+    margin-top: 15px;
+    border-radius: 10px;
+    background: #37DCF5;
+    color: #00345F;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    text-decoration: none;
+}
+
 .heading{
     position: absolute;
     width: 600px;

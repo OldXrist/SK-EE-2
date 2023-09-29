@@ -24,6 +24,21 @@
     border-radius: 15px;
 }
 
+.user-table {
+    margin: 450px 0 0 80px
+}
+
+.user-table td {
+    padding: 15px 25px;
+}
+
+.user-table,.user-table th,.user-table td {
+    border: 2px solid #406C9A;
+    border-collapse: collapse;
+    text-align: center;
+    color: #104781;
+}
+
 .oper {
     /*position: absolute;*/
     /*width: 122px;*/

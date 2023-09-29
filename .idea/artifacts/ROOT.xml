@@ -6,6 +6,7 @@
         <element id="directory" name="classes">
           <element id="module-output" name="SK-EE-2" />
           <element id="jpa-descriptors" facet="SK-EE-2/jpa/JPA" />
+          <element id="library" level="application" name="api" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.9" />

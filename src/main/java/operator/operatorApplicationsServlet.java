@@ -1,4 +1,4 @@
-package id.check.servlets.cards;
+package operator;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -6,38 +6,39 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import static psql.connection.connect;
 
-@WebServlet(name = "ApplicationEditServlet", value = "/ApplicationEditServlet")
-public class ApplicationEditServlet extends HttpServlet {
+@WebServlet(name = "operatorApplicationsServlet", value = "/operatorApplicationsServlet")
+public class operatorApplicationsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         PrintWriter out = res.getWriter();
 
-        String id = req.getParameter("appId");
-        int appId = Integer.parseInt(id);
+        String appId = req.getParameter("appId");
 
 
         try{
             Connection c = connect();
 
-            String sql = "SELECT id, type_uch, email, status FROM uch WHERE application_id = ?";
+            String sql = "SELECT id, role_users FROM main WHERE email = ?";
             PreparedStatement ps = c.prepareStatement(sql);
 
-            ps.setInt(1, appId);
+            ps.setString(1, appId);
 
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()){
                 String type = rs.getString(2);
-                String email = rs.getString(3);
+                String email = appId;
 
                 out.println(rs.getString(1));
                 out.println(type);
                 out.println(email);
-                out.println(rs.getString(4));
+                out.println("null");
                 switch (type){
                     case "ЮЛ":
                         String sql1 = "SELECT poln_naim, ur_addr, pocht_adres, inn, ogrn, phone FROM ql WHERE email = ?";
@@ -93,6 +94,28 @@ public class ApplicationEditServlet extends HttpServlet {
                             out.println(rs3.getLong(10));
                             out.println(rs3.getString(11));
                             out.println(email);
+                        };
+                        break;
+                    case "АУ":
+                        String sql4 = "SELECT famil, name, otch, ser, num, date_pass, kem_vudan, pocht_adres, inn, snils, phone, reg_nomer_au, naim_org FROM au WHERE email = ?";
+                        PreparedStatement ps4 = c.prepareStatement(sql4);
+                        ps4.setString(1, email);
+                        ResultSet rs4 = ps4.executeQuery();
+                        while (rs4.next()){
+                            out.println(rs4.getString(1));
+                            out.println(rs4.getString(2));
+                            out.println(rs4.getString(3));
+                            out.println(rs4.getInt(4));
+                            out.println(rs4.getInt(5));
+                            out.println(rs4.getObject(6));
+                            out.println(rs4.getString(7));
+                            out.println(rs4.getString(8));
+                            out.println(rs4.getLong(9));
+                            out.println(rs4.getLong(10));
+                            out.println(rs4.getString(11));
+                            out.println(email);
+                            out.println(rs4.getString(12));
+                            out.println(rs4.getString(13));
                         };
                         break;
                 }

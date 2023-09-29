@@ -97,7 +97,7 @@ public class UchDraftServlet extends HttpServlet {
 
                 out.println(rs.getString(13));
 
-                String idSql = "SELECT id_uch FROM uch WHERE email = ? AND id = ? LIMIT 1;";
+                String idSql = "SELECT application_id FROM uch WHERE email = ? AND id = ? LIMIT 1;";
                 PreparedStatement idPs = c.prepareStatement(idSql);
 
                 idPs.setString(1, email1);
